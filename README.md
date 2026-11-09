@@ -9,6 +9,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | Preparación | Entorno, configuración de los LLM y verificación | Hecha |
 | 0 — Auditoría | Etiqueta toda la documentación: qué es usable, qué no y por qué, y qué falta | Hecha |
 | 1 — Catálogo y contrato | Catálogo de documentos, herramienta de consulta y criterios para construir los ejemplos | Hecha |
+| 2 — Separación | Reparte los software en entrenamiento, validación y prueba | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -21,6 +22,7 @@ src/               Todo el código del flujo
   check_setup.py     Verificación del entorno
   fase0/             Fase 0: auditoría de la documentación
   fase1/             Fase 1: catálogo, herramienta y contrato de los ejemplos
+  fase2/             Fase 2: separación en conjuntos
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
@@ -42,7 +44,7 @@ requirements.txt   Dependencias de Python, con versiones fijas
 
   Las dos formas usan el mismo modelo y producen el mismo tipo de salida; solo cambia cómo te autenticas.
 
-  El paso 1 de la fase 0 y toda la fase 1 no usan ningún LLM: para ejecutarlos solo necesitas Python.
+  El paso 1 de la fase 0 y las fases 1 y 2 no usan ningún LLM: para ejecutarlos solo necesitas Python.
 
 ## Configuración
 
@@ -284,6 +286,41 @@ python -m src.fase1.run
 
 El detalle de cada paso está en **[docs/fase1.md](docs/fase1.md)**.
 
+## Fase 2 — Separación en conjuntos
+
+Antes de generar preguntas, se reparte cada software completo, con todas sus versiones, en **entrenamiento**, **validación** o **prueba**. Así la evaluación se hace sobre documentación que el modelo nunca vio al entrenar. La herramienta sigue teniendo el catálogo completo: el reparto decide a qué conjunto va cada conversación, según el software sobre el que pregunta.
+
+**Criterio.** Lo importante es que en cada conjunto se puedan plantear **los mismos tipos de pregunta**. Cuántas de cada tipo se balancea en la fase 3. El criterio tiene dos niveles:
+
+1. **Mínimo obligatorio.**
+   - **En los tres conjuntos:** tablas, código, diagramas, OpenAPI, huecos, conflictos y algún software con varias versiones.
+   - **Solo en prueba:** un software cuyas versiones difieran en contenido.
+   - **Excepciones:**
+     - no se exige lo que aparece en menos de 3 software, como la única fórmula del corpus;
+     - los dos software de los ejemplos de referencia van a entrenamiento.
+2. **Objetivo.** Entre los repartos que cumplen el mínimo, el más cercano a 60/20/20 en secciones aprovechables. Con pocos software se prueban todas las combinaciones; con muchos, se colocan uno a uno donde más falta.
+
+**Resultado:**
+
+| Conjunto | Software | Secciones |
+|---|---|---:|
+| `train` | vendor-stockkeeper, payment-promise, zenith-keeper, demand-forecast, order-workflow | 56% |
+| `validation` | catalog-portfolio, price-engine | 24% |
+| `test` | traffic-gate, 2p-revenue, unified-transaction-configs | 19% |
+
+No se llega al 60/20/20 exacto porque cada software va entero y algunos son muy grandes: catalog-portfolio por sí solo es el 21% del material.
+
+```bash
+python -m src.fase2.run
+```
+
+| Archivo | Contenido |
+|---|---|
+| `data/fase2/splits.json` | Asignación, perfil de cada software, cobertura y documentos de cada conjunto |
+| `reports/fase2/estadisticas.md` | Tipos de pregunta que permite cada conjunto, cobertura y fugas entre conjuntos |
+
+El detalle está en **[docs/fase2.md](docs/fase2.md)**.
+
 ## Reproducir y verificar los resultados
 
 Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
@@ -292,15 +329,16 @@ Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que
 python -m src.fase0.run
 python -m src.fase0.finalize
 python -m src.fase1.run
+python -m src.fase2.run
 git status --short data/ reports/
 ```
 
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
-- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final y toda la fase 1.
+- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final y las fases 1 y 2.
 - **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/`.
 
-Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) y [docs/fase1.md](docs/fase1.md).
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md) y [docs/fase2.md](docs/fase2.md).
 
 Para ejecutar los tests:
 

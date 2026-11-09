@@ -1,0 +1,642 @@
+{
+  "corpus_version": "docs_b36991f86732",
+  "criterio": {
+    "objetivo": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2
+    },
+    "peso": "secciones aprovechables (usable + parcial, sin copias heredadas)",
+    "obligatorio": {
+      "train": [
+        "tabla",
+        "codigo",
+        "diagrama",
+        "especificacion",
+        "huecos",
+        "conflictos",
+        "varias_versiones"
+      ],
+      "validation": [
+        "tabla",
+        "codigo",
+        "diagrama",
+        "especificacion",
+        "huecos",
+        "conflictos",
+        "varias_versiones"
+      ],
+      "test": [
+        "tabla",
+        "codigo",
+        "diagrama",
+        "especificacion",
+        "huecos",
+        "conflictos",
+        "varias_versiones",
+        "versiones_distintas"
+      ]
+    },
+    "no_exigible_por_escaso": [
+      "formula"
+    ],
+    "forzados": {
+      "payment-promise-gateway": "train",
+      "vendor-stockkeeper-api": "train"
+    },
+    "desempates": [
+      "validation y test lo más parecidos en tamaño",
+      "test más grande",
+      "orden alfabético de la asignación"
+    ],
+    "metodo": "exhaustivo",
+    "combinaciones": 6561,
+    "combinaciones_validas": 138
+  },
+  "grupos": [
+    [
+      "2p-revenue-optimizer-api"
+    ],
+    [
+      "catalog-portfolio-api"
+    ],
+    [
+      "demand-forecast-docs"
+    ],
+    [
+      "order-workflow-api"
+    ],
+    [
+      "payment-promise-gateway"
+    ],
+    [
+      "price-engine-api"
+    ],
+    [
+      "traffic-gate-api"
+    ],
+    [
+      "unified-transaction-configs"
+    ],
+    [
+      "vendor-stockkeeper-api"
+    ],
+    [
+      "zenith-keeper"
+    ]
+  ],
+  "perfiles": {
+    "2p-revenue-optimizer-api": {
+      "secciones": 13,
+      "versiones": [
+        "0.2.2",
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "tabla": 49,
+        "codigo": 8
+      },
+      "huecos": 5,
+      "conflictos": 0,
+      "varias_versiones": true,
+      "versiones_distintas": true
+    },
+    "catalog-portfolio-api": {
+      "secciones": 44,
+      "versiones": [
+        "0.0.1-test-bench-v2a",
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "tabla": 108,
+        "codigo": 419,
+        "diagrama": 74
+      },
+      "huecos": 14,
+      "conflictos": 9,
+      "varias_versiones": true,
+      "versiones_distintas": false
+    },
+    "demand-forecast-docs": {
+      "secciones": 14,
+      "versiones": [
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "codigo": 159,
+        "diagrama": 603,
+        "formula": 9
+      },
+      "huecos": 2,
+      "conflictos": 6,
+      "varias_versiones": false,
+      "versiones_distintas": false
+    },
+    "order-workflow-api": {
+      "secciones": 12,
+      "versiones": [
+        "5.6.2-hotfix-1"
+      ],
+      "lineas_por_tipo": {
+        "tabla": 18,
+        "codigo": 139,
+        "diagrama": 281
+      },
+      "huecos": 8,
+      "conflictos": 0,
+      "varias_versiones": false,
+      "versiones_distintas": false
+    },
+    "payment-promise-gateway": {
+      "secciones": 30,
+      "versiones": [
+        "0.0.10-test-crc-migration",
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "codigo": 201,
+        "diagrama": 152
+      },
+      "huecos": 3,
+      "conflictos": 2,
+      "varias_versiones": true,
+      "versiones_distintas": false
+    },
+    "price-engine-api": {
+      "secciones": 6,
+      "versiones": [
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "especificacion": 136
+      },
+      "huecos": 5,
+      "conflictos": 2,
+      "varias_versiones": false,
+      "versiones_distintas": false
+    },
+    "traffic-gate-api": {
+      "secciones": 22,
+      "versiones": [
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "codigo": 12,
+        "diagrama": 81,
+        "especificacion": 393
+      },
+      "huecos": 1,
+      "conflictos": 7,
+      "varias_versiones": false,
+      "versiones_distintas": false
+    },
+    "unified-transaction-configs": {
+      "secciones": 5,
+      "versiones": [
+        "v0.0.2"
+      ],
+      "lineas_por_tipo": {
+        "codigo": 11
+      },
+      "huecos": 1,
+      "conflictos": 0,
+      "varias_versiones": false,
+      "versiones_distintas": false
+    },
+    "vendor-stockkeeper-api": {
+      "secciones": 43,
+      "versiones": [
+        "0.0.10-stock-consumer",
+        "0.0.3-paused-seller",
+        "0.0.6-ep-restock-man",
+        "latest"
+      ],
+      "lineas_por_tipo": {
+        "tabla": 33,
+        "codigo": 469,
+        "diagrama": 24
+      },
+      "huecos": 22,
+      "conflictos": 10,
+      "varias_versiones": true,
+      "versiones_distintas": true
+    },
+    "zenith-keeper": {
+      "secciones": 17,
+      "versiones": [
+        "1.1.6"
+      ],
+      "lineas_por_tipo": {
+        "diagrama": 305,
+        "especificacion": 560
+      },
+      "huecos": 2,
+      "conflictos": 14,
+      "varias_versiones": false,
+      "versiones_distintas": false
+    }
+  },
+  "asignacion": {
+    "2p-revenue-optimizer-api": "test",
+    "catalog-portfolio-api": "validation",
+    "demand-forecast-docs": "train",
+    "order-workflow-api": "train",
+    "payment-promise-gateway": "train",
+    "price-engine-api": "validation",
+    "traffic-gate-api": "test",
+    "unified-transaction-configs": "test",
+    "vendor-stockkeeper-api": "train",
+    "zenith-keeper": "train"
+  },
+  "conjuntos": {
+    "train": {
+      "software": [
+        "demand-forecast-docs",
+        "order-workflow-api",
+        "payment-promise-gateway",
+        "vendor-stockkeeper-api",
+        "zenith-keeper"
+      ],
+      "proporcion": 0.5631,
+      "cobertura": {
+        "secciones": 116,
+        "huecos": 37,
+        "conflictos": 32,
+        "lineas_por_tipo": {
+          "tabla": 51,
+          "codigo": 968,
+          "diagrama": 1365,
+          "especificacion": 560,
+          "formula": 9
+        },
+        "varias_versiones": [
+          "payment-promise-gateway",
+          "vendor-stockkeeper-api"
+        ],
+        "versiones_distintas": [
+          "vendor-stockkeeper-api"
+        ]
+      },
+      "documentos": [
+        {
+          "id": "demand-forecast-docs/latest/guide/README.md",
+          "sha256_canonico": "8273ce6695034cecbbf9b44c926ca7b0c70c41f1184f85a33f36cd143fe5e9e8"
+        },
+        {
+          "id": "demand-forecast-docs/latest/guide/explicabilidad/README.md",
+          "sha256_canonico": "0485cf6d46dad2ee8622eba15c9b2b80714791601a86336ab591e8d2bb5296e5"
+        },
+        {
+          "id": "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md",
+          "sha256_canonico": "cb2e445cdd4c2b37cc04720dced0c84ba0494e67f9f97e423782a3b94bc6d3e8"
+        },
+        {
+          "id": "demand-forecast-docs/latest/guide/overview.md",
+          "sha256_canonico": "b5c2c645d5a65aa965d8056a910fc23e6acf8aaf78f5a2e39eae92d9e56f1710"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md",
+          "sha256_canonico": "2cfbf9e036f25d1591566b14ff30a8507de298d99a7383356aff4a1312753564"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/architecture.md",
+          "sha256_canonico": "4a4a7967cdadee9f3720db2e88ea88653ca031bd1a3c48c63fbf3f7edc7665f0"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/development.md",
+          "sha256_canonico": "d8b5c1bb4e7490ecdc53ad683f7497aea6252d85de7b024bb17f8b16a022016f"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md",
+          "sha256_canonico": "893f05046171a06f4a620bab90e0fa0dffbed55bd763f5461df5ea3db7e17144"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md",
+          "sha256_canonico": "f8228244e322ab9175aeca7443d794ee8d6e598ef3d52ab5a20719cf61e6d673"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md",
+          "sha256_canonico": "311113c4eaee15427996548f8dba88af12d5ca63d5c2af105cb7f8505a89f03b"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/usage.md",
+          "sha256_canonico": "64b1c41f13230ef4043732d7a9c5de06ffd3df7f9cf1418fba173136374d9268"
+        },
+        {
+          "id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md",
+          "sha256_canonico": "eb642ed3c15fa27fe01a29400e98f5d4cef0ce3929bf0c37df54eb2b1f45b0cf"
+        },
+        {
+          "id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md",
+          "sha256_canonico": "9beec0ec4c06446b33e6319a9d966672df86fd4bc2720e9e3af76d862541dbdb"
+        },
+        {
+          "id": "payment-promise-gateway/latest/guide/README.md",
+          "sha256_canonico": "9beec0ec4c06446b33e6319a9d966672df86fd4bc2720e9e3af76d862541dbdb"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md",
+          "sha256_canonico": "1ee876cbd1c687cde82af88c55806d0e631968e09551f9c2b5014448e16ebdac"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md",
+          "sha256_canonico": "edd393ed8d32472d927417222b942528a0784bc663e019fff33d4cd7cdfabe3a"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md",
+          "sha256_canonico": "8cfa8b008daabfacd42f6ce72e39d69cd1d284859fb8f3e1f7fb795000457d66"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md",
+          "sha256_canonico": "6627030d292053bbcfb90f8a1b8c01777836bab1d086bb94237bb679eb825b8c"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/introduction.md",
+          "sha256_canonico": "ccfb86abc72f0444b58541f44eadb87d1068d4817012a7b00deff02a4a39b25b"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md",
+          "sha256_canonico": "1ee876cbd1c687cde82af88c55806d0e631968e09551f9c2b5014448e16ebdac"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md",
+          "sha256_canonico": "cd627e5257ec8b6ecf4b92a3d3e42c74c7354f1967b247987e2a1919a4a7a1a6"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md",
+          "sha256_canonico": "8cfa8b008daabfacd42f6ce72e39d69cd1d284859fb8f3e1f7fb795000457d66"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md",
+          "sha256_canonico": "ded3cdb21a0fe2e7f0eeba2c2f6f79776cfb6b22fa4d8152b5b613b3b0bc08f8"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/introduction.md",
+          "sha256_canonico": "ccfb86abc72f0444b58541f44eadb87d1068d4817012a7b00deff02a4a39b25b"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md",
+          "sha256_canonico": "bf23b2289fa366ebce15f8d6455c50e43324af9ab6d582874150abff40f0c5ad"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md",
+          "sha256_canonico": "cd627e5257ec8b6ecf4b92a3d3e42c74c7354f1967b247987e2a1919a4a7a1a6"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md",
+          "sha256_canonico": "8cfa8b008daabfacd42f6ce72e39d69cd1d284859fb8f3e1f7fb795000457d66"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md",
+          "sha256_canonico": "ded3cdb21a0fe2e7f0eeba2c2f6f79776cfb6b22fa4d8152b5b613b3b0bc08f8"
+        },
+        {
+          "id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/introduction.md",
+          "sha256_canonico": "ccfb86abc72f0444b58541f44eadb87d1068d4817012a7b00deff02a4a39b25b"
+        },
+        {
+          "id": "vendor-stockkeeper-api/latest/guide/alerts.md",
+          "sha256_canonico": "1ee876cbd1c687cde82af88c55806d0e631968e09551f9c2b5014448e16ebdac"
+        },
+        {
+          "id": "vendor-stockkeeper-api/latest/guide/api.md",
+          "sha256_canonico": "cd627e5257ec8b6ecf4b92a3d3e42c74c7354f1967b247987e2a1919a4a7a1a6"
+        },
+        {
+          "id": "vendor-stockkeeper-api/latest/guide/database.md",
+          "sha256_canonico": "8cfa8b008daabfacd42f6ce72e39d69cd1d284859fb8f3e1f7fb795000457d66"
+        },
+        {
+          "id": "vendor-stockkeeper-api/latest/guide/important.md",
+          "sha256_canonico": "ded3cdb21a0fe2e7f0eeba2c2f6f79776cfb6b22fa4d8152b5b613b3b0bc08f8"
+        },
+        {
+          "id": "vendor-stockkeeper-api/latest/guide/introduction.md",
+          "sha256_canonico": "ccfb86abc72f0444b58541f44eadb87d1068d4817012a7b00deff02a4a39b25b"
+        },
+        {
+          "id": "zenith-keeper/1.1.6/guide/README.md",
+          "sha256_canonico": "e1ead5502e7325826fcad9d2222c5d4b57b5c235f9c738307f9a8ee7c7d34163"
+        },
+        {
+          "id": "zenith-keeper/1.1.6/guide/use-cases.md",
+          "sha256_canonico": "656cd6f200d717aa1e4dc40258741582a073a05a4a878c5049ada06cb1af465b"
+        },
+        {
+          "id": "zenith-keeper/1.1.6/specs/swagger.yaml",
+          "sha256_canonico": "ad726b5634af8977e13363aee8b7303efc7163d8f47a4061cd83eec00524cd74"
+        }
+      ]
+    },
+    "validation": {
+      "software": [
+        "catalog-portfolio-api",
+        "price-engine-api"
+      ],
+      "proporcion": 0.2427,
+      "cobertura": {
+        "secciones": 50,
+        "huecos": 19,
+        "conflictos": 11,
+        "lineas_por_tipo": {
+          "tabla": 108,
+          "codigo": 419,
+          "diagrama": 74,
+          "especificacion": 136,
+          "formula": 0
+        },
+        "varias_versiones": [
+          "catalog-portfolio-api"
+        ],
+        "versiones_distintas": []
+      },
+      "documentos": [
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md",
+          "sha256_canonico": "934197dc605ce05e78e3bfd09183aa85c04032dc7a87cd4c64f37754e77a8462"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md",
+          "sha256_canonico": "7bbd3e021ea0223713a3a053f2b01ce92d355758e4eb51b358e8cae707d7a2a6"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md",
+          "sha256_canonico": "c6b1f62f36aa0ba64f48deb3793a7a3d3a083f2030d01dad32ebc66165b8b2df"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md",
+          "sha256_canonico": "390163f4608703cfb58add80083b7c38f51977b692527dd646005493c2adb30b"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md",
+          "sha256_canonico": "ceb67021a8edd9d981d18bc58aab9a614437e2ef67f426aebc680ed5cb90b0ed"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md",
+          "sha256_canonico": "46c97404c3c929df5abc021abe91d5d567a455489b460ebcfcdc0ef57415a197"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md",
+          "sha256_canonico": "69bc58f5cc2621130f753a7c0b1f79af6f9f557f7f89c849beab1fc3951e8165"
+        },
+        {
+          "id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md",
+          "sha256_canonico": "b41643445267df09ae31fc958ac27630ebe4a0ba4569becb95675e1c164c676c"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/README.md",
+          "sha256_canonico": "934197dc605ce05e78e3bfd09183aa85c04032dc7a87cd4c64f37754e77a8462"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/api-reference/README.md",
+          "sha256_canonico": "7bbd3e021ea0223713a3a053f2b01ce92d355758e4eb51b358e8cae707d7a2a6"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/api-reference/brands.md",
+          "sha256_canonico": "c6b1f62f36aa0ba64f48deb3793a7a3d3a083f2030d01dad32ebc66165b8b2df"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/architecture/README.md",
+          "sha256_canonico": "390163f4608703cfb58add80083b7c38f51977b692527dd646005493c2adb30b"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/brand-management/README.md",
+          "sha256_canonico": "ceb67021a8edd9d981d18bc58aab9a614437e2ef67f426aebc680ed5cb90b0ed"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/setup/README.md",
+          "sha256_canonico": "46c97404c3c929df5abc021abe91d5d567a455489b460ebcfcdc0ef57415a197"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/setup/local-development.md",
+          "sha256_canonico": "69bc58f5cc2621130f753a7c0b1f79af6f9f557f7f89c849beab1fc3951e8165"
+        },
+        {
+          "id": "catalog-portfolio-api/latest/guide/troubleshooting/README.md",
+          "sha256_canonico": "b41643445267df09ae31fc958ac27630ebe4a0ba4569becb95675e1c164c676c"
+        },
+        {
+          "id": "price-engine-api/latest/guide/arquitectura.md",
+          "sha256_canonico": "19e1457f02ba3141b58547c77af1db5bddd539b29b7b07d3c0d9639c212ec5e0"
+        },
+        {
+          "id": "price-engine-api/latest/guide/contacto.md",
+          "sha256_canonico": "579ff76ca93765ad8afdca8a409bd83547636f39f88f49de05aaecd4d344cdaf"
+        },
+        {
+          "id": "price-engine-api/latest/guide/flujos.md",
+          "sha256_canonico": "cd82ce7b7d713fc948684c7396b1b4b9b589f1539da36e9593dd1c91c6983e56"
+        },
+        {
+          "id": "price-engine-api/latest/guide/general.md",
+          "sha256_canonico": "8945ad14c07495195c9c1e6024f122dcacaa74472b1a602f7e7fe766525441eb"
+        },
+        {
+          "id": "price-engine-api/latest/specs/swagger.yaml",
+          "sha256_canonico": "2e6a4bbab77eecee910ffcf649c283fef63bcefb1a042f8d06b37f3290c58de9"
+        }
+      ]
+    },
+    "test": {
+      "software": [
+        "2p-revenue-optimizer-api",
+        "traffic-gate-api",
+        "unified-transaction-configs"
+      ],
+      "proporcion": 0.1942,
+      "cobertura": {
+        "secciones": 40,
+        "huecos": 7,
+        "conflictos": 7,
+        "lineas_por_tipo": {
+          "tabla": 49,
+          "codigo": 31,
+          "diagrama": 81,
+          "especificacion": 393,
+          "formula": 0
+        },
+        "varias_versiones": [
+          "2p-revenue-optimizer-api"
+        ],
+        "versiones_distintas": [
+          "2p-revenue-optimizer-api"
+        ]
+      },
+      "documentos": [
+        {
+          "id": "2p-revenue-optimizer-api/0.2.2/guide/README.md",
+          "sha256_canonico": "3d1153ff569e1b06905c0ad727e4afedb4f12fb068b12d02becc9b3940374418"
+        },
+        {
+          "id": "2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md",
+          "sha256_canonico": "93901e7b9736238c552653530cd8c71c689e47a5e28d693eabed1e06d6531b6e"
+        },
+        {
+          "id": "2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md",
+          "sha256_canonico": "a38e9023aa4778fba5c066708bb0b5c69252816ec67b9a7cb552d5617a701216"
+        },
+        {
+          "id": "2p-revenue-optimizer-api/latest/guide/README.md",
+          "sha256_canonico": "3d1153ff569e1b06905c0ad727e4afedb4f12fb068b12d02becc9b3940374418"
+        },
+        {
+          "id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md",
+          "sha256_canonico": "c61218354a1eb5b424c47335a033d320d8d21da7e19ed5c0de69107dbad53815"
+        },
+        {
+          "id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md",
+          "sha256_canonico": "f0437b01779533ec6f84f398620833a744ee73e66914f8cd29673efa5431f3ba"
+        },
+        {
+          "id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md",
+          "sha256_canonico": "87ca016f50b91c26eae266f0fff662acdf3d7df25f7bd801e2e0b0b4ec85e5c0"
+        },
+        {
+          "id": "traffic-gate-api/latest/guide/README.md",
+          "sha256_canonico": "541e19cc195663eff9255cc0a58e13c5d9de554b6d318f468e648cfa4ecd6693"
+        },
+        {
+          "id": "traffic-gate-api/latest/guide/coverpage.md",
+          "sha256_canonico": "0437202ee03c1120a576a0484f0a1a36fdd851d232210031c41e54796d8c45ac"
+        },
+        {
+          "id": "traffic-gate-api/latest/guide/sections/arch.md",
+          "sha256_canonico": "bdccd484815172e4c684c9b770b77c3b0d66be574c61b316b3a903d93252c46f"
+        },
+        {
+          "id": "traffic-gate-api/latest/guide/sections/database.md",
+          "sha256_canonico": "166413ec16840004f869559a49ae83fe6b9994a3fe1e80bccf347d8873d0d8b8"
+        },
+        {
+          "id": "traffic-gate-api/latest/guide/sections/processes.md",
+          "sha256_canonico": "b42ef06d31de723b6fff3ff640424771cc3130c2671ba00694549b6503fc913d"
+        },
+        {
+          "id": "traffic-gate-api/latest/guide/sections/waf_config.md",
+          "sha256_canonico": "2ab96c6c6b5eb6189c7dafdcc7a474827a9cb00a03414bc508f0857f2a9941e8"
+        },
+        {
+          "id": "traffic-gate-api/latest/specs/swagger.yaml",
+          "sha256_canonico": "938ca87c2d72e269ba5931843437af8b60831b40038d5d0e85a4c884c501788c"
+        },
+        {
+          "id": "unified-transaction-configs/v0.0.2/guide/README.md",
+          "sha256_canonico": "053b37fd3c91aa15d526f8f36523bac8894f272d51a38ef3efddc809aecb6941"
+        },
+        {
+          "id": "unified-transaction-configs/v0.0.2/guide/howto.md",
+          "sha256_canonico": "a3c8b27c2cdb5cd582f8c7af96b900136333aec162898f82510b36fffc2776d1"
+        }
+      ]
+    }
+  },
+  "lineas_compartidas_entre_conjuntos": [
+    {
+      "linea": "-H \"Content-Type: application/json\" \\",
+      "conjuntos": [
+        "train",
+        "validation"
+      ]
+    }
+  ]
+}
