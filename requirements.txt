@@ -1,0 +1,7 @@
+# Clientes de los LLM: A (análisis) y B (validación) en la fase 0
+anthropic==0.125.0
+openai==2.48.0
+# Carga de las API keys desde .env
+python-dotenv==1.2.1
+# Lectura de swagger.yaml y del archivo de configuración
+pyyaml==6.0.3
