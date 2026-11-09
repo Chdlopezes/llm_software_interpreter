@@ -1,0 +1,985 @@
+﻿section_id,software,version,archivo,lineas,titulo,contenido,estado_a,categoria_a,justificacion_a,problemas_a,estado_b,categoria_b,explicacion_b,cita_b,motivo_revision,decision
+2p-revenue-optimizer-api/0.2.2/guide/README.md#1,2p-revenue-optimizer-api,0.2.2,2p-revenue-optimizer-api/0.2.2/guide/README.md,3-8,Spring Boot App model for Java 17,"# Spring Boot App model for Java 17
+
+We provide a basic model for JDK 17 / Spring based web applications.
+
+Please address any questions and comments to [VendorFlow Issue Tracker](https://github.com/vendorflow/vendorflow/issues).
+",no_usable,descripcion_general,Es texto genérico de plantilla que no describe la función del servicio.,sin_contenido_tecnico: «We provide a basic model for JDK 17 / Spring based web applications.»,usable,descripcion_general,"A descarta por genérica una sección que sí identifica una base técnica concreta de JDK 17 y Spring, coherente con las demás secciones.",,estados distintos: A=no_usable / B=usable,
+2p-revenue-optimizer-api/latest/guide/README.md#1,2p-revenue-optimizer-api,latest,2p-revenue-optimizer-api/latest/guide/README.md,3-8,Spring Boot App model for Java 17,"# Spring Boot App model for Java 17
+
+We provide a basic model for JDK 17 / Spring based web applications.
+
+Please address any questions and comments to [VendorFlow Issue Tracker](https://github.com/vendorflow/vendorflow/issues).
+",no_usable,descripcion_general,Texto de plantilla genérica sin información sobre el servicio.,sin_contenido_tecnico: «We provide a basic model for JDK 17 / Spring based web applications.»,usable,descripcion_general,"A descarta por genérico un texto que sí identifica concretamente Java 17 y Spring Boot como base tecnológica, sin contradicciones en la documentación.",,estados distintos: A=no_usable / B=usable,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#5,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md,78-94,🛠️ Local Development,"## 🛠️ Local Development
+
+To run this documentation locally:
+
+```bash
+# Install docsify globally
+npm install -g docsify-cli
+
+# Navigate to guide directory
+cd docs/guide
+
+# Start development server
+docsify serve --port 3000
+```
+
+Visit `http://localhost:3000` to view the documentation.
+",no_usable,procedimiento,"Trata de la herramienta de documentación, no del servicio.",sin_contenido_tecnico: «To run this documentation locally:»,usable,procedimiento,A descartó instrucciones técnicas concretas y autosuficientes para servir localmente la documentación con docsify.,,estados distintos: A=no_usable / B=usable,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#1,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md,5-12,Authentication,"## Authentication
+
+All API endpoints require proper authentication. See the [Authentication](authentication.md) section for detailed information.
+
+**Available Items:**
+
+- [Brand Endpoints](brands.md) - Brand CRUD operations and search functionality
+",no_usable,navegacion_metadatos,Afirma que hace falta autenticación pero el detalle está en una página que no existe; el resto es navegación.,incompleto: «See the [Authentication](authentication.md) section for detailed information.»,parcial,configuracion,"A descartó el requisito explícito de autenticación, que es aprovechable aunque falte la página con su configuración.",See the [Authentication](authentication.md) section for detailed information.,estados distintos: A=no_usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md,13-56,Quick Reference,"## Quick Reference
+
+### Core Endpoints
+
+
+  <i class=""fas fa-download""></i> Download API Reference Template
+
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/catalog/brands/ping` | Health check |
+| `GET` | `/catalog/brands/search` | Search brands |
+| `POST` | `/catalog/brands` | Create new brand |
+| `GET` | `/catalog/brands/{brandId}` | Get brand by ID |
+| `GET` | `/catalog/brands/{brandId}/allstatus` | Get brand with all status information |
+| `PUT` | `/catalog/brands/{brandId}` | Update brand |
+| `DELETE` | `/catalog/brands/{brandId}` | Delete brand |
+| `PUT` | `/catalog/brands/{brandId}/activate` | Activate brand |
+| `GET` | `/catalog/brands/{brandId}/activable` | Check if brand can be activated |
+| `DELETE` | `/catalog/brands/{brandId}/tags/{tagName}` | Delete brand tag |
+
+### Logo Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/catalog/brands/{brandId}/logos` | Get brand logos |
+| `POST` | `/catalog/brands/{brandId}/logos` | Upload brand logo |
+| `PUT` | `/catalog/brands/{brandId}/logos/{logoId}` | Update logo |
+| `DELETE` | `/catalog/brands/{brandId}/logos/{logoId}` | Delete logo |
+
+### Collector Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/catalog/brands/{brandId}/collectors` | Get brand collectors |
+| `POST` | `/catalog/brands/{brandId}/collectors` | Associate brand with collectors |
+| `DELETE` | `/catalog/brands/{brandId}/collectors/{collectorId}` | Remove brand-collector association |
+
+### Resource Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `PUT` | `/catalog/brands/{brandId}/resources` | Create or update brand resources |
+",usable,endpoint_api,"Tabla concreta de métodos, rutas y descripciones de los endpoints.",,parcial,endpoint_api,A pasó por alto que la ruta de búsqueda contradice el GET / y el ejemplo sobre la URL base de brands.md.,`/catalog/brands/search`,estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#3,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md,70-125,Create Brand,"## Create Brand
+
+Create a new brand in the system.
+
+### `POST /`
+
+**Request Body:**
+
+```json
+{
+  ""name"": ""Example Brand"",
+  ""soft_descriptor"": ""EXAMPLE"",
+  ""site"": ""MLA"",
+  ""category"": 5611201,
+  ""subcategories"": [123, 456],
+  ""type"": ""lighthouse"",
+  ""tags"": [""tag1"", ""tag2""],
+  ""priority"": 5,
+  ""business_description"": ""Business description text""
+}
+```
+
+**Required Fields:**
+- `name`: Brand name (must be unique within site)
+- `site`: RetailFlow site code
+- `category`: Primary category ID
+- `type`: Brand type (lighthouse or standard)
+
+**Example Request:**
+
+```bash
+curl -X POST ""https://api.mp.internal.retailflow.com/catalog/brands/"" \
+  -H ""Content-Type: application/json"" \
+  -d '{
+    ""name"": ""Example Brand"",
+    ""site"": ""MLA"",
+    ""category"": 5611201,
+    ""type"": ""lighthouse""
+  }'
+```
+
+**Example Response:**
+
+```json
+{
+  ""id"": 123,
+  ""name"": ""Example Brand"",
+  ""site"": ""MLA"",
+  ""category"": 5611201,
+  ""type"": ""lighthouse"",
+  ""status"": ""STAND_BY"",
+  ""date_created"": ""2024-01-15T10:30:00.000-03:00"",
+  ""date_last_updated"": ""2024-01-15T10:30:00.000-03:00""
+}
+```
+",usable,endpoint_api,"Cuerpo, campos obligatorios y ejemplos completos para crear una marca.",,parcial,endpoint_api,A omitió que la respuesta de creación carece del envoltorio data y status declarado obligatorio para todas las respuestas.,"""id"": 123,",estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#4,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md,126-171,Get Brand,"## Get Brand
+
+Retrieve a specific brand by ID.
+
+### `GET /{brandId}`
+
+**Path Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `brandId` | integer | Yes | Brand ID |
+
+**Example Request:**
+
+```bash
+curl ""https://api.mp.internal.retailflow.com/catalog/brands/123""
+```
+
+**Example Response:**
+
+```json
+{
+  ""id"": 123,
+  ""name"": ""Example Brand"",
+  ""soft_descriptor"": ""EXAMPLE"",
+  ""site"": ""MLA"",
+  ""category"": 5611201,
+  ""subcategories"": [],
+  ""type"": ""lighthouse"",
+  ""tags"": [],
+  ""logos"": [
+    {
+      ""id"": 456,
+      ""brand_id"": 123,
+      ""type"": ""main"",
+      ""picture_id"": ""ML123456789""
+    }
+  ],
+  ""resources"": [],
+  ""priority"": 5,
+  ""status"": ""STAND_BY"",
+  ""date_created"": ""2024-01-15T10:30:00.000-03:00"",
+  ""date_last_updated"": ""2024-01-15T10:30:00.000-03:00""
+}
+```
+",usable,endpoint_api,Documenta el parámetro y la respuesta para obtener una marca.,,parcial,endpoint_api,A omitió que el objeto de respuesta directo contradice el formato universal con data y status.,"""id"": 123,",estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#6,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md,209-242,Delete Brand,"## Delete Brand
+
+Permanently delete a brand from the system.
+
+### `DELETE /{brandId}`
+
+**Path Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `brandId` | integer | Yes | Brand ID |
+
+**Headers:**
+
+| Header | Type | Required | Description |
+|--------|------|----------|-------------|
+| `X-Client-Id` | string | Yes | Client ID (must be whitelisted) |
+
+**Example Request:**
+
+```bash
+curl -X DELETE ""https://api.mp.internal.retailflow.com/catalog/brands/123"" \
+  -H ""X-Client-Id: your-client-id""
+```
+
+**Example Response:**
+
+```json
+{
+  ""message"": ""Brand deleted successfully"",
+  ""status"": 200
+}
+```
+",usable,endpoint_api,Documenta el borrado con la cabecera X-Client-Id obligatoria y la respuesta.,,parcial,endpoint_api,A omitió que la respuesta de borrado no utiliza el envoltorio data declarado universal.,"""message"": ""Brand deleted successfully"",",estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#7,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md,243-271,Activate Brand,"## Activate Brand
+
+Activate a brand after validation.
+
+### `PUT /{brandId}/activate`
+
+**Path Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `brandId` | integer | Yes | Brand ID |
+
+**Example Request:**
+
+```bash
+curl -X PUT ""https://api.mp.internal.retailflow.com/catalog/brands/123/activate""
+```
+
+**Example Response:**
+
+```json
+{
+  ""id"": 123,
+  ""name"": ""Example Brand"",
+  ""status"": ""ACTIVE"",
+  ""date_last_updated"": ""2024-01-15T11:00:00.000-03:00""
+}
+```
+",usable,endpoint_api,Documenta el endpoint de activación con un ejemplo.,,parcial,endpoint_api,A omitió que la respuesta directa con status de negocio contradice el envoltorio universal y su status numérico.,"""status"": ""ACTIVE"",",estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#8,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md,272-301,Check Brand Activable,"## Check Brand Activable
+
+Check if a brand can be activated.
+
+### `GET /{brandId}/activable`
+
+**Path Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `brandId` | integer | Yes | Brand ID |
+
+**Example Request:**
+
+```bash
+curl ""https://api.mp.internal.retailflow.com/catalog/brands/123/activable""
+```
+
+**Example Response:**
+
+```json
+{
+  ""valid"": false,
+  ""validationDetails"": [
+    ""Main logo is missing"",
+    ""Category validation failed""
+  ]
+}
+```
+",usable,endpoint_api,Documenta la comprobación de si una marca es activable y su respuesta.,,parcial,endpoint_api,A omitió que la respuesta de validación carece del envoltorio data y status declarado universal.,"""valid"": false,",estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#9,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md,302-326,Error Responses,"## Error Responses
+
+### Common Error Codes
+
+| Code | Error | Description |
+|------|-------|-------------|
+| 400 | `validation_error` | Request validation failed |
+| 401 | `unauthorized` | Missing or invalid authentication |
+| 403 | `forbidden` | Insufficient permissions |
+| 404 | `brand_not_found` | Brand ID does not exist |
+| 409 | `brand_name_already_exists` | Brand name already exists in site |
+| 422 | `logos_missing` | Required logos not uploaded |
+| 500 | `internal_server_error` | Internal server error |
+
+### Error Response Format
+
+```json
+{
+  ""error"": ""brand_not_found"",
+  ""message"": ""Brand with ID 123 was not found"",
+  ""status"": 404,
+  ""cause"": []
+}
+```
+",parcial,troubleshooting,"La tabla de errores es útil, pero el código de error de validación no coincide con el de otras secciones.",contradiccion: «| 400 | `validation_error` | Request validation failed |»,usable,troubleshooting,"A confundió la validación de solicitudes con la de reglas de negocio, que pueden tener códigos diferentes sin contradicción.",,estados distintos: A=parcial / B=usable,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#7,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md,164-170,Error Handling,"## Error Handling
+
+Common errors and their meanings:
+- `brand_not_found`: Brand ID does not exist
+- `logos_missing`: Required logos not uploaded
+- `validation_failed`: Business rules validation failed
+- `unauthorized`: Missing permissions for the operation ",parcial,troubleshooting,"La lista de errores es útil, pero el código de validación no coincide con la referencia de la API.",contradiccion: «`validation_failed`: Business rules validation failed»,usable,troubleshooting,A consideró contradictorios códigos que el texto distingue entre validación de negocio y validación de solicitudes.,,estados distintos: A=parcial / B=usable,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#2,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md,15-54,Quick Diagnostic,"## Quick Diagnostic
+
+### Health Check
+
+First, verify the service is running:
+
+```bash
+# Check service health
+curl http://localhost:8080/catalog/brands/ping
+# Expected: ""pong""
+
+# Check if port is in use
+lsof -i :8080
+```
+
+### Database Connection
+
+Verify database connectivity:
+
+```bash
+# Test MySQL connection
+mysql -h localhost -u your_username -p -e ""SELECT 1;""
+
+# Check database exists
+mysql -h localhost -u your_username -p -e ""SHOW DATABASES LIKE 'brands_%';""
+```
+
+### Configuration Check
+
+Verify configuration files:
+
+```bash
+# Check if configuration files exist
+ls -la src/main/resources/development/
+ls -la src/main/resources/production/
+
+# Validate properties format
+grep -v '^#' src/main/resources/development/application.properties
+```
+",usable,troubleshooting,"Comandos concretos de diagnóstico de salud, base de datos y configuración.",,parcial,troubleshooting,"A omitió que la respuesta pong del health check contradice el formato JSON declarado universal, aunque los comandos restantes son aprovechables.","# Expected: ""pong""",estados distintos: A=usable / B=parcial,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#4,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md,84-108,Error Code Reference,"## Error Code Reference
+
+### HTTP Status Codes
+
+| Code | Error Type | Description | Action Required |
+|------|------------|-------------|-----------------|
+| `400` | Bad Request | Invalid request format | Fix request payload |
+| `401` | Unauthorized | Missing/invalid auth | Check authentication |
+| `403` | Forbidden | Insufficient permissions | Verify client permissions |
+| `404` | Not Found | Resource doesn't exist | Verify resource ID |
+| `409` | Conflict | Resource already exists | Use different name/ID |
+| `422` | Unprocessable | Business logic error | Check validation rules |
+| `500` | Server Error | Internal error | Check server logs |
+
+### Application Error Codes
+
+| Error Code | Description | Common Causes |
+|------------|-------------|---------------|
+| `brand_not_found` | Brand ID doesn't exist | Invalid ID, deleted brand |
+| `brand_name_already_exists` | Duplicate brand name | Name conflict within site |
+| `logos_missing` | Required logos not uploaded | Missing main logo for activation |
+| `validation_failed` | Business rules failed | Category issues, invalid data |
+| `unauthorized` | Permission denied | Missing client permissions |
+| `database_error` | Database operation failed | Connection issues, constraints |
+",parcial,troubleshooting,"La referencia de errores es útil, pero el código de validación no coincide con la referencia de la API.","contradiccion: «| `validation_failed` | Business rules failed | Category issues, invalid data |»",usable,troubleshooting,A atribuyó una contradicción a validation_failed aunque describe reglas de negocio y validation_error describe validación de solicitudes.,,estados distintos: A=parcial / B=usable,
+catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#9,catalog-portfolio-api,0.0.1-test-bench-v2a,catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md,214-236,Getting Help,"## Getting Help
+
+### Log Analysis
+
+When reporting issues, include:
+
+1. **Error messages** from application logs
+2. **Request/response** examples
+3. **Environment details** (Java version, MySQL version)
+4. **Configuration** (sanitized, no passwords)
+
+### Support Channels
+
+- **Email**: [instore_devs@retailflow.com](mailto:instore_devs@retailflow.com)
+- **Slack**: #instore-dev
+- **Monitoring**: [DataDog Dashboard](https://monitoring.retailflow.io/dashboard/vua-inb-9et?fromUser=false&refresh_mode=sliding&from_ts=1750955519638&to_ts=1750959119638&live=true)
+
+### Escalation Process
+
+1. **Level 1**: Check this troubleshooting guide
+2. **Level 2**: Search existing documentation and logs
+3. **Level 3**: Contact development team with detailed information
+4. **Level 4**: Emergency escalation for production issues ",no_usable,otro,Son contactos y un proceso de escalado sin información técnica del servicio.,sin_contenido_tecnico: «- **Slack**: #instore-dev»,usable,procedimiento,"A descartó el procedimiento concreto para reportar incidencias, que especifica evidencias técnicas necesarias además de contactos y escalado.",,estados distintos: A=no_usable / B=usable,
+demand-forecast-docs/latest/guide/README.md#1,demand-forecast-docs,latest,demand-forecast-docs/latest/guide/README.md,11-15,Welcome to marketplace forecasting technical documentation!,"# Welcome to marketplace forecasting technical documentation!
+
+This documentation is the repository of explanations for methodologies used in the marketplace forecasting project. The public of this documentation is the team of data scientists that work on the project. However, if you are a PL, PM, or any other role that is interested in the project, you are welcome to read it and ask questions.
+
+",usable,descripcion_general,Explica qué es la documentación y a qué público va dirigida.,,no_usable,navegacion_metadatos,"A consideró usable una bienvenida que solo presenta la documentación y su audiencia, sin describir técnicamente el servicio.",The public of this documentation is the team of data scientists that work on the project.,estados distintos: A=usable / B=no_usable,
+demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#3,demand-forecast-docs,latest,demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md,31-77,Approach,"## Approach
+
+```mermaid
+graph TD
+    A[Month] --> B[Day 1]
+    A[Month] --> C[Day 2]
+    A[Month] --> D[Day 3]
+    A[Month] --> AC[...]
+    A[Month] --> AD[Day 29]
+    A[Month] --> AE[Day 30]
+    A[Month] --> AF[Day 31]
+
+
+```
+
+Time-hierarchies can be seen as standard hierarchies. This can be easily visualized by the linear constraint of having the sum of daily values equal to the monthly value.
+
+$$
+\sum\limits_{t \in month} x_i(t) = x_i(t\in month)
+$$
+
+
+where $month$ is the set of days in the month. and $x_i(t\in month)$ is the value of the exogenous variable $i$ at that month.
+
+This is not different of what we do in the hierarchical forecasting, where the sum of bottom levels must be equal to the total level forecast. Hence, we can use forecast reconciliation strategies to disaggregate the monthly values to a daily level.
+
+In our particular case, we do not want just to reconcile - we want to reconcile and keep the total level (month level) input exactly before. The reconciliation should treat the month level as correct. There are two reconcilation strategies that accomplish this: top-down and forecast proportions. The problem of topdown is that it is not clear how it could be applied to this temporal hierarchy since months have different lengths, and Forecast Proportions seems to be the best option.
+
+
+### Forecast proportions for temporal hierarchies
+
+The approach is to use a base forecast $\tilde{x}_i$ of the exogenous variable for future dates, and re-scale the it so that the total of the month is the given total value $x_i(t\in month)$. The base total forecast for the month is
+
+$$
+\tilde{x}_{i}(t \in month) = \sum\limits_{t \in month} \tilde{x}_i(t) \cdot
+$$
+
+To reconcile the daily forecasts, we multiply them by the ratio of $x_i(t\in month)$ and $\tilde{x}_i(t \in month)$:
+
+$$
+\hat{x}_i(t) = \tilde{x}_i(t) \cdot \frac{x_i(t\in month)}{\tilde{x}_i(t \in month)}
+$$
+
+This reconciled forecast can then be used as an input for the model.
+
+As a toy example, suppose that we receive from the responsible team that it will be invested 300 dollars in some mechanism such as rebates. In other words, $x_i(t \in month) = 300$. If our base forecasts for total of the month is 400 dollars ($\tilde{x}_i(t \in month) = 400$), we should re-scale them to that the total is 300 dollars, while using these base forecasts to compute the share of each day in the month. This could be achieved by multiplying the base forecasts of the given month by $300/400 = 0.75$.
+",usable,arquitectura,Describe con fórmulas y un ejemplo el método de forecast proportions para jerarquías temporales.,,parcial,arquitectura,"A pasó por alto que la fórmula del total mensual termina con una multiplicación sin operando, aunque la explicación y el ejemplo permiten aprovechar el resto.",\tilde{x}_{i}(t \in month) = \sum\limits_{t \in month} \tilde{x}_i(t) \cdot,estados distintos: A=usable / B=parcial,
+order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#0,order-workflow-api,5.6.2-hotfix-1,order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md,1-106,Use cases / Workflow,"# Use cases
+
+## Workflow
+
+- Activate workflow for an app
+```mermaid
+    sequenceDiagram
+    participant C as Configs API
+    participant D as Database
+    participant W as Workflow API
+    participant G as Github Proxy
+
+    C-&gt;&gt;W: Activate workflow message
+    activate W
+    W-&gt;&gt;D: Get workflow settings
+    activate D
+    D--&gt;&gt;W: Return workflow settings
+    deactivate D
+    W-&gt;&gt;G: Get all stable branches
+    activate G
+    G--&gt;&gt;W: Return branches
+    deactivate G
+    W--&gt;&gt;W: Set specified context to branches
+    loop forAllStableBranches
+        W-&gt;&gt;G: Protect branch and activate required checks
+        activate G
+        G--&gt;&gt;W: Return OK
+        deactivate G
+    end
+    W--&gt;G: Set default branch as configured
+    activate G
+    G--&gt;&gt;W: Return OK
+    deactivate G
+    W--&gt;&gt;C: Return OK
+    deactivate W
+```
+- Edit the configured workflow of an app
+```mermaid
+    sequenceDiagram
+    participant C as Configs API
+    participant D as Database
+    participant W as Workflow API
+    participant G as Github Proxy
+
+    C-&gt;&gt;W: Edit workflow message
+    activate W
+    W-&gt;&gt;D: Get FROM workflow settings
+    activate D
+    D--&gt;&gt;W: Return FROM workflow settings
+    deactivate D
+    W-&gt;&gt;D: Get TO workflow settings
+    activate D
+    D--&gt;&gt;W: Return TO workflow settings
+    deactivate D
+    loop forAllStableBranches
+         W-&gt;&gt;G: Unprotect FROM Workflow branch
+         activate G
+         G--&gt;&gt;W: Return OK
+         deactivate G
+     end
+    W--&gt;G: Set default branch as master
+    activate G
+    G--&gt;&gt;W: Return OK
+    deactivate G
+    W--&gt;&gt;W: Set TO Workflow specified context to branches
+    loop forAllStableBranches
+        W-&gt;&gt;G: Protect TO Workflow  branch 
+        activate G
+        G--&gt;&gt;W: Return OK
+        deactivate G
+    end
+    W--&gt;G: Set TO Workflow default branch
+    activate G
+    G--&gt;&gt;W: Return OK
+    deactivate G
+    W--&gt;&gt;C: Return OK
+    deactivate W
+```
+- Deactivate workflow from an app
+```mermaid
+    sequenceDiagram
+    participant C as Configs API
+    participant D as Database
+    participant W as Workflow API
+    participant G as Github Proxy
+
+    C-&gt;&gt;W: Deactivate workflow message
+    activate W
+    W-&gt;&gt;D: Get workflow settings
+    activate D
+    D--&gt;&gt;W: Return workflow settings
+    deactivate D
+    loop forAllStableBranches
+         W-&gt;&gt;G: Unprotect branch
+         activate G
+         G--&gt;&gt;W: Return OK
+         deactivate G
+     end
+    W--&gt;G: Set default branch as master
+    activate G
+    G--&gt;&gt;W: Return OK
+    deactivate G
+    W--&gt;&gt;C: Return OK
+    deactivate W
+```
+",no_usable,arquitectura,Los diagramas de secuencia están dañados por entidades HTML y no son fiables.,roto: «C-&gt;&gt;W: Activate workflow message»,parcial,arquitectura,"A descartó demasiado contenido: las entidades dañan la sintaxis Mermaid, pero los participantes, mensajes y pasos de los tres flujos siguen siendo legibles.",C-&gt;&gt;W: Activate workflow message,estados distintos: A=no_usable / B=parcial,
+order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#1,order-workflow-api,5.6.2-hotfix-1,order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md,107-309,Pipeline,"## Pipeline
+- Search for a pipeline
+- Validate a pipeline
+```mermaid
+    sequenceDiagram
+        participant O as Orchestrator
+        participant B as BigQ
+        participant W as Workflow API
+        participant D as Database
+        participant C as Configs API
+        participant G as GH Proxy
+
+        O-&gt;&gt;B: Workflow validation start
+        activate B
+        B-&gt;&gt;W: Start workflow validation
+        activate W
+        W-&gt;&gt;O: Get pipeline information
+        activate O
+        O--&gt;&gt;W: Return information
+        deactivate O
+        W--&gt;&gt;B: Return HTTP 200 OK
+        deactivate B
+        W-&gt;&gt;W: Start workflow validation
+        W-&gt;&gt;C: Get workflow config for repo
+        activate C
+        C--&gt;&gt;W: Return config
+        deactivate C
+        W-&gt;&gt;D: Create Pipeline Execution (Wait)
+        activate D
+        D--&gt;&gt;W: Return OK
+        deactivate D
+        W-&gt;&gt;B: Send ACK to Orchestrator
+        activate B
+        B--&gt;&gt;W: Return OK
+        deactivate B
+        alt isForkPullRequestFlow
+            W-&gt;&gt;W: Run fork validations
+        end 
+        W-&gt;&gt;W: Run branch validations
+        alt isMigration
+            loop remainingPages &gt; 0 
+                W-&gt;&gt;G: Get diff files information paginated
+                activate G
+                G--&gt;&gt;W: Return files information
+                deactivate G
+            end
+            W-&gt;&gt;W: Validate files migration path
+        end 
+        W-&gt;&gt;G: Set pull request status check
+        activate G
+        G--&gt;&gt;W: Return OK
+        deactivate G
+        W-&gt;&gt;D: Save pipeline execution result
+        activate D
+        D--&gt;&gt;W: Return OK
+        deactivate D
+        W-&gt;&gt;B: Send ACK to Orchestrator
+        activate B
+        B--&gt;&gt;W: Return OK
+        deactivate B
+        deactivate W
+```
+- Abort a pipeline
+
+#### Admin
+Manage the default workflows.
+- Search for a workflow
+```mermaid
+    sequenceDiagram
+        participant U as User
+        participant W as Workflow
+        participant D as Database
+
+    U-&gt;&gt;W: Request a workflow
+    activate W
+    W-&gt;&gt;D: Search workflow
+    activate D
+    D--&gt;&gt;W: Return result
+    deactivate D
+    W--&gt;&gt;U: Return result
+    deactivate W
+```
+- Insert a workflow
+```mermaid
+    sequenceDiagram
+        participant U as User
+        participant W as Workflow
+        participant D as Database
+
+    U-&gt;&gt;W: Send workflow values
+    activate W
+    W-&gt;&gt;D: Search workflow
+    activate D
+    D--&gt;&gt;W: Return results
+    deactivate D
+    alt not workflowExists
+        W-&gt;&gt;D: Insert workflow
+        activate D
+        D--&gt;&gt;W: Return OK
+        deactivate D
+        W--&gt;&gt;U: Return HTTP 201 CREATED
+    else
+        W--&gt;&gt;U: Return HTTP 409 CONFLICT
+    end
+    deactivate W
+```
+- Update a workflow
+```mermaid
+    sequenceDiagram
+        participant U as User
+        participant W as Workflow
+        participant D as Database
+
+    U-&gt;&gt;W: Send workflow values
+    activate W
+    W-&gt;&gt;D: Search workflow
+    activate D
+    D--&gt;&gt;W: Return results
+    deactivate D
+    alt workflowExists
+        W-&gt;&gt;D: Update workflow
+        activate D
+        D--&gt;&gt;W: Return OK
+        deactivate D
+        W--&gt;&gt;U: Return HTTP 200 OK
+    else
+        W--&gt;&gt;U: Return HTTP 400 BAD REQUEST
+    end
+    deactivate W
+```
+
+#### Branches
+- Apply branches protection for an application
+- Create a branch backport
+
+#### Cron
+- Create a midday cron
+```mermaid
+    sequenceDiagram
+        participant F as RetailCorp
+        participant W as Workflow
+        participant C as Configs API
+        participant D as Database
+        participant B as Build API
+        participant G as GH Proxy
+
+    F-&gt;&gt;W: Trigger midday cron
+    activate W
+    W-&gt;&gt;C: Get configured crons
+    activate C
+    C--&gt;&gt;W: Return results
+    deactivate C
+
+    loop forConfiguredCrons
+         W-&gt;&gt;D: Get workflow type config
+         activate D
+         D--&gt;&gt;W: Return workflow type config
+         deactivate D
+    
+        alt workflow has cronBranches
+            
+            loop findLastVersion
+                W-&gt;&gt;B: Get last version
+                activate B
+                B--&gt;&gt;W: Return last version
+                deactivate B
+                W-&gt;&gt;G: Check if version branch exist
+                activate G
+                G--&gt;&gt;W: Return result
+                deactivate G
+               
+                Note right of W: Exit when branch does not exist or MAX_RETRY reached
+               
+            end
+    
+            alt MAX_RETRY reached
+                W--&gt;&gt;F: Return error 500
+            else
+                W-&gt;&gt;G: Create version branch
+                activate G
+                G--&gt;&gt;W: Return response
+                deactivate G
+                
+                W-&gt;&gt;G: Open pull request
+                activate G
+                G--&gt;&gt;W: return response
+                deactivate G
+    
+                W-&gt;&gt;D: Save cron version
+                activate D
+                D--&gt;&gt;W: Return OK
+                deactivate D
+
+            end
+        end
+    end
+
+    W--&gt;&gt;F: Return 200
+    deactivate W
+```
+
+- Create a nightly cron
+    (Has the same flow as midday)",no_usable,arquitectura,El contenido principal son diagramas rotos y casos de uso sin desarrollar.,roto: «O-&gt;&gt;B: Workflow validation start»; incompleto: «- Abort a pipeline»,parcial,arquitectura,"A descartó flujos con pasos y respuestas legibles, aunque la sintaxis Mermaid está dañada y varios casos solo están enumerados.",- Abort a pipeline,estados distintos: A=no_usable / B=parcial,
+payment-promise-gateway/latest/guide/README.md#8,payment-promise-gateway,latest,payment-promise-gateway/latest/guide/README.md,306-385,API Examples,"## API Examples
+
+Below are examples of how to interact with the API using curl commands:
+
+```bash
+#!/bin/bash
+
+# Common variables
+BASE_URL=""http://localhost:8080/payments/self-service""
+AUTH_TOKEN=""your-bearer-token""
+
+# 1. GET /payment_promise/form
+# Gets the form options for payment promises
+curl -X GET ""${BASE_URL}/payment_promise/form"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json"" \
+  --data-urlencode ""caller.id=24517"" \
+  --data-urlencode ""site_id=nta""
+
+# 2. GET /payment_promise/active
+# Gets the user's active payment promise
+curl -X GET ""${BASE_URL}/payment_promise/active"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json"" \
+  -H ""x-caller-id: 24517"" \
+  --data-urlencode ""caller.id=24517""
+
+# 3. GET /offers
+# Gets available offers for the user
+curl -X GET ""${BASE_URL}/offers"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json"" \
+  --data-urlencode ""caller.id=24517"" \
+  --data-urlencode ""site_id=ntb"" \
+  --data-urlencode ""vertical=consumer""
+
+# 4. POST /payment_promise
+# Creates a new payment promise
+curl -X POST ""${BASE_URL}/payment_promise"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json"" \
+  -d '{
+    ""borrowerId"": 987654321,
+    ""amount"": 1000.50,
+    ""siteId"": ""NTA"",
+    ""paymentMethod"": ""CREDIT_CARD"",
+    ""dateCreated"": ""2025-05-12T15:54:43-05:00"",
+    ""datePaid"": ""2025-05-15T15:54:43-05:00"",
+    ""originEntity"": ""SELF_SERVICE""
+  }'
+
+# 5. POST /forgiveness_proposal
+# Creates a late fee forgiveness proposal
+curl -X POST ""${BASE_URL}/forgiveness_proposal"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json"" \
+  -d '{
+    ""borrowerId"": 987654321,
+    ""amount"": 500.75,
+    ""siteId"": ""NTA""
+  }'
+
+# 6. PUT /forgiveness_proposal
+# Confirms a late fee forgiveness proposal
+curl -X PUT ""${BASE_URL}/forgiveness_proposal"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json"" \
+  -d '{
+    ""borrowerId"": 987654321,
+    ""proposalId"": 123456789,
+    ""siteId"": ""NTA""
+  }'
+
+# 7. GET /forgiveness_proposal/{promiseId}
+# Gets the late fee forgiveness information for a specific promise
+curl -X GET ""${BASE_URL}/forgiveness_proposal/7741596914"" \
+  -H ""Authorization: Bearer ${AUTH_TOKEN}"" \
+  -H ""Content-Type: application/json""
+```
+",parcial,endpoint_api,"Los ejemplos curl son útiles, pero el cuerpo de POST /payment_promise trae valores que no cuadran con otras secciones.","inconsistencia: «""paymentMethod"": ""CREDIT_CARD"",»; inconsistencia: «""dateCreated"": ""2025-05-12T15:54:43-05:00"",»",usable,endpoint_api,A deduce inconsistencias no demostradas: la respuesta de ejemplo no establece un catálogo exhaustivo de métodos y calcular dateCreated no impide recibir ese campo.,,estados distintos: A=parcial / B=usable,
+price-engine-api/latest/guide/_coverpage.md#1,price-engine-api,latest,price-engine-api/latest/guide/_coverpage.md,3-10,Price Engine API,"# Price Engine API
+
+> Aplicación destinada a gestionar y modelar los ajustes de configuraciones de ventas del seller.
+
+[GitHub](https://github.com/commercehub/price-engine-api)
+[Start](README.md)
+
+![color](#FFFFFF)",no_usable,navegacion_metadatos,Portada de navegación sin contenido técnico propio.,sin_contenido_tecnico: «[Start](README.md)»,parcial,descripcion_general,"A descarta una descripción concreta del propósito del servicio por estar repetida, aunque es aprovechable; el enlace de inicio ausente impide considerar toda la sección fiable.",[Start](README.md),estados distintos: A=no_usable / B=parcial,
+price-engine-api/latest/guide/general.md#0,price-engine-api,latest,price-engine-api/latest/guide/general.md,1-4,General,"# General
+
+![technology Go](https://img.shields.io/badge/technology-go-blue.svg)
+",no_usable,navegacion_metadatos,"Título con una insignia, sin contenido técnico.",sin_contenido_tecnico: «![technology Go](https://img.shields.io/badge/technology-go-blue.svg)»,usable,descripcion_general,A pasa por alto que el texto y la URL de la insignia identifican explícitamente Go como tecnología del servicio.,,estados distintos: A=no_usable / B=usable,
+traffic-gate-api/latest/guide/README.md#2,traffic-gate-api,latest,traffic-gate-api/latest/guide/README.md,61-65,Monitores y Alertas,"## Monitores y Alertas
+
+* [Traffic Gate General](https://app.datadoghq.com/dashboard/u6e-jhc-hi4/traffic-gate-general?from_ts=1596648503767&live=true&to_ts=1596652103767)
+* [Traffic Gate errors in 5 minutes](https://app.datadoghq.com/monitors/20766846)
+",usable,troubleshooting,"Nombra el dashboard y el monitor de Datadog del servicio, con sus enlaces.",,no_usable,navegacion_metadatos,"A consideró técnicos unos enlaces de navegación que no explican métricas, alertas ni procedimientos de diagnóstico.",## Monitores y Alertas,estados distintos: A=usable / B=no_usable,
+traffic-gate-api/latest/guide/coverpage.md#1,traffic-gate-api,latest,traffic-gate-api/latest/guide/coverpage.md,5-12,**Traffic Gate**,"# **Traffic Gate**
+
+>RetailHub Service Name: traffic-gate-api
+
+**API para agregar o remover direcciones IP alcanzadas por reglas de ratelimit en el WAF**
+
+[GitHub](https://github.com/retailhub/traffic-gate-api)
+[Get Started](#Traffic-Gate)",no_usable,navegacion_metadatos,Es una portada sin contenido técnico propio.,sin_contenido_tecnico: «[Get Started](#Traffic-Gate)»,usable,descripcion_general,"A descartó una descripción explícita del propósito de la API y su identificador de servicio, de los que sí pueden extraerse respuestas.",,estados distintos: A=no_usable / B=usable,
+traffic-gate-api/latest/guide/sections/arch.md#1,traffic-gate-api,latest,traffic-gate-api/latest/guide/sections/arch.md,14-28,Jobs,"## Jobs
+
+RetailHub provee un servicio de [Jobs](https://retailhubdocs.io/docs/3.3.5/guide/#/lang-es/services/jobs/jobs) que se personalizan mediante una expresión de cron, para que realicen el llamado periódico de servicios web expuestos por nuestras aplicaciones, para la ejecución de algún proceso. Estos llamados se hacen mediante solicitudes HTTP tipo POST únicamente y no está soportado el envío de un body en la solicitud, por lo que cualquier información o parámetro que se requiera entregar al servicio web, debe ser enviado por medio de query params. 
+
+Las reglas de ratelimit que limitan el tráfico hacia RetailHub según la región, tienen asociado un scope. El scope es un parámetro que determina el tipo de aplicaciones que están siendo protegidas por un conjunto de reglas de ratelimit, es decir, si son aplicaciones tipo GUI o frontend, APIs o apps de retailhubpay. Se tienen 4 posibles valores para el scope: front, api, pci, pci_global. Los dos últimos valores están relacionados a RetailHub Pay.
+
+Traffic Gate expone dos servicios web que se requieren ejecutar de manera periódica: 
+
+- **POST /whitelist?scope=x**  Este servicio consulta las direcciones IPs bloqueadas por reglas de ratelimit asociadas al scope x, y las envía a una cola de mensajes para su posterior análisis
+
+- **POST /whitelist/purge?scope=x** Este servicio consulta las direcciones IPs que han sido agregadas a una whitelist para el scope x, y evalúa seguir autorizando el tráfico a tales IPs o eliminarlas de la whitelist
+
+Teniendo en cuenta que Traffic Gate requiere la ejecución periódica de los anteriores servicios web (uno para enviar a whitelist, otro para purgar) por cada uno de los scopes, esta aplicación tiene configurados en RetailHub 8 jobs, dos por cada uno de los 4 scopes (front, api, pci y pci_global).
+Todos los 4 jobs que llaman el proceso de whitelist, se ejecutan cada minuto. Por su parte, los 4 jobs que llaman el proceso de purga de las whitelist, se ejecutan cada hora. En conclusión, para todos los scopes, cada minuto se está evaluando qué IPs bloqueadas se deben agregar a whitelist, y cada hora se evalúa cuales IPs en whitelist, ya pueden ser removidas.
+",usable,arquitectura,"Detalla los jobs, los endpoints a los que llaman, el número de jobs y su frecuencia de ejecución.",,parcial,arquitectura,A pasó por alto que el scope utilizado por los jobs difiere del enum pci-global de los endpoints correspondientes.,"front, api, pci, pci_global",estados distintos: A=usable / B=parcial,
+traffic-gate-api/latest/specs/swagger.yaml#4,traffic-gate-api,latest,traffic-gate-api/latest/specs/swagger.yaml,153-196,PUT /v1/whitelist,"  /v1/whitelist:
+    put:
+      tags:
+        - whitelist
+      summary: Add an IP address to whitelist.
+      description: Este servicio se utiliza para enviar manualmente una o más direcciones IPs a la whitelist de las reglas de un scope específico. Estas direcciones son guardadas en la base de datos en la tabla 'ip' con una información por defecto y con la columna 'manually_added' en true.
+      operationId: whitelistIP
+      requestBody:
+        description: IP address that will be whitelisted.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ips:
+                  type: array
+                  items:
+                    type: string
+                    example: 192.168.0.1
+                description:
+                  type: string
+                scope:
+                    type: string
+                    enum:
+                      - api
+                      - front
+                      - pci
+                      - pci-global
+        required: true
+      responses:
+        ""201"":
+          description: Successful operation
+        ""400"":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: ""#/components/schemas/ErrorResponse""
+        ""500"":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ""#/components/schemas/ErrorResponse""",usable,endpoint_api,La operación PUT para la whitelist manual está completa.,,parcial,endpoint_api,A pasó por alto que el valor del scope global contradice la enumeración general de scopes de la guía.,- pci-global,estados distintos: A=usable / B=parcial,
+traffic-gate-api/latest/specs/swagger.yaml#7,traffic-gate-api,latest,traffic-gate-api/latest/specs/swagger.yaml,258-290,POST /whitelist/purge,"  /whitelist/purge:
+    post:
+      tags:
+        - job
+      summary: Check if the whitelisted IPs should be removed from the whitelist.
+      description: Se encarga de actualizar la metadata de las direcciones IP en whitelist y determinar cuál debería ser removida o continuar en whitelist.
+      operationId: whitelistPurge
+      parameters:
+        - in: query
+          name: scope
+          schema:
+            type: string
+            enum:
+              - api
+              - front
+              - pci
+              - pci-global
+          description: The scope to check.
+      responses:
+        ""200"":
+          description: Successful operation
+        ""400"":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: ""#/components/schemas/ErrorResponse""
+        ""500"":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ""#/components/schemas/ErrorResponse""",usable,endpoint_api,La operación de purga está documentada.,,parcial,endpoint_api,A omitió que el enum del scope de purga difiere del pci_global indicado para los jobs en la guía.,- pci-global,estados distintos: A=usable / B=parcial,
+unified-transaction-configs/v0.0.2/guide/howto.md#3,unified-transaction-configs,v0.0.2,unified-transaction-configs/v0.0.2/guide/howto.md,42-47,Actualizacion de configuraciones en mobile-flow-manager,"## Actualizacion de configuraciones en mobile-flow-manager
+
+Para que una actualización impacte es necesario:
+
+- Hacer un merge a master en el repositorio de [unified transaction configs](https://github.com/globalpay/unified-transaction-configs)
+- Realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/) ",usable,procedimiento,Indica los dos pasos necesarios para que una actualización tenga efecto: merge a master y el PUT en transaction flow orchestrator.,,parcial,procedimiento,"A pasó por alto que el merge está documentado, pero el PUT necesario depende de documentación externa ausente y no puede ejecutarse con la información recibida.",Realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/),estados distintos: A=usable / B=parcial,
+vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#0,vendor-stockkeeper-api,0.0.10-stock-consumer,vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md,1-8,Verification of Items in Inventory Flows / Introduction,"# Verification of Items in Inventory Flows
+
+## Introduction
+
+Before executing any action on the inventory flows, it is crucial to ensure that both the inbound and outbound
+movement contain all their test items. This check is fundamental to avoid affecting the item API and, therefore, the inventory.
+API and, therefore, in the inventory.
+",parcial,descripcion_general,"Explica por qué hay que verificar los ítems de prueba, pero tiene texto duplicado y dañado.","roto: «API and, therefore, in the inventory.»",usable,descripcion_general,A penaliza una repetición editorial que no altera la instrucción comprensible de verificar los ítems de prueba en ambos movimientos.,,estados distintos: A=parcial / B=usable,
+vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#0,vendor-stockkeeper-api,0.0.3-paused-seller,vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md,1-8,Verification of Items in Inventory Flows / Introduction,"# Verification of Items in Inventory Flows
+
+## Introduction
+
+Before executing any action on the inventory flows, it is crucial to ensure that both the inbound and outbound
+movement contain all their test items. This check is fundamental to avoid affecting the item API and, therefore, the inventory.
+API and, therefore, in the inventory.
+",parcial,procedimiento,"Explica que hay que verificar los ítems de prueba, pero tiene texto duplicado y corrupto.","roto: «API and, therefore, in the inventory.»",usable,procedimiento,A penalizó una repetición editorial que no altera la instrucción clara de verificar los ítems de prueba antes de actuar sobre los flujos.,,estados distintos: A=parcial / B=usable,
+vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#0,vendor-stockkeeper-api,0.0.6-ep-restock-man,vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md,1-8,Verification of Items in Inventory Flows / Introduction,"# Verification of Items in Inventory Flows
+
+## Introduction
+
+Before executing any action on the inventory flows, it is crucial to ensure that both the inbound and outbound
+movement contain all their test items. This check is fundamental to avoid affecting the item API and, therefore, the inventory.
+API and, therefore, in the inventory.
+",parcial,procedimiento,"El propósito de la verificación está claro, pero hay una línea duplicada y rota.","roto: «API and, therefore, in the inventory.»",usable,procedimiento,A penalizó una repetición editorial que no altera la instrucción completa y comprensible de verificar los ítems de prueba antes de actuar.,,estados distintos: A=parcial / B=usable,

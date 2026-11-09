@@ -1,0 +1,169 @@
+{
+ "unit": "payment-promise-gateway/0.0.10-test-crc-migration",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "40407305a85d445f526b912b90a14f1d24212fb03a6a6097bf19f706bbdb26b6",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://workflowdocs.s3.amazonaws.com",
+        "otras_secciones": [],
+        "explicacion": "Solo es un metadato con la URL de la guía publicada."
+       }
+      ],
+      "justificacion": "Metadato de publicación sin información sobre el servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica con claridad qué es el servicio y qué papel cumple como intermediario."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#1",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "El diagrama mermaid incluido describe las capas internas y los servicios externos."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#2",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el stack técnico con versiones concretas."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#3",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe la estructura de paquetes del proyecto y para qué sirve cada uno."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#4",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Enumera los patrones de diseño usados, con ejemplos de clases."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#5",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Lista las funcionalidades principales del servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#6",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Enumera los endpoints principales con su método y ruta."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#7",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Detalla el flujo de cada endpoint: parámetros, llamadas a servicios y DTOs que devuelve."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#8",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Incluye ejemplos curl concretos con URL base, cabeceras y cuerpos de petición."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#9",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Muestra respuestas JSON de ejemplo para cada endpoint."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#10",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica la variable SCOPE y las VM options concretas para ejecutar en local."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#11",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da los prerrequisitos y los comandos para compilar y ejecutar."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#12",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el comando concreto para ejecutar los tests."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#13",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica la herramienta de métricas y las métricas clave que se recogen."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#14",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe, aunque de forma general, cómo gestiona el servicio los errores."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#15",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Follow the existing code structure",
+        "otras_secciones": [],
+        "explicacion": "Son pautas genéricas de contribución que no dicen nada sobre el comportamiento del servicio."
+       }
+      ],
+      "justificacion": "Pautas de contribución sin contenido técnico sobre el servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#16",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "This project is proprietary software owned by GreatMart.",
+        "otras_secciones": [],
+        "explicacion": "Solo es un aviso de licencia."
+       }
+      ],
+      "justificacion": "Aviso de licencia sin información técnica."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#6",
+      "descripcion": "La documentación detallada de la API (OpenAPI/Swagger) se remite a specs-hub y no está incluida en esta documentación.",
+      "evidencia": "Detailed API documentation can be found in [specs-hub](https://web.workflowcloud.io/payment-promise-gateway/specs-hub)."
+     }
+    ]
+   }
+  }
+ ]
+}

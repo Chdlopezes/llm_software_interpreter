@@ -1,0 +1,78 @@
+{
+ "unit": "unified-transaction-configs/v0.0.2",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "f0421a8f78d892727d18943626fe76870796702eea3e8ba144d4a2ce064cabbe",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://globalpaydocs.s3.amazonaws.com/unified-transaction-configs/v0.0.2/guide/index.html\"",
+      "explicacion": "Solo contiene la URL de publicación de la guía."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Describe de forma breve y explícita la finalidad del proyecto."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "- [**Inicio**](README.md)",
+      "explicacion": "Contiene únicamente enlaces de navegación."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Define la carga mediante PR y la estructura de directorios, incluidas las configuraciones por defecto obligatorias."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Especifica la ubicación y el nombre del archivo y muestra esquemáticamente una lista de usuarios, con puntos suspensivos que representan su continuación."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Enumera restricciones concretas y coherentes con la estructura y los valores por defecto descritos."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#3",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "procedimiento",
+      "cita": "Realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/)",
+      "explicacion": "A pasó por alto que el merge está documentado, pero el PUT necesario depende de documentación externa ausente y no puede ejecutarse con la información recibida."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "La sección exige un PUT y remite sus detalles a una documentación externa cuyo contenido no está incluido."
+     }
+    ]
+   }
+  }
+ ]
+}

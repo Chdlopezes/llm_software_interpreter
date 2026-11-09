@@ -1,0 +1,186 @@
+{
+ "unit": "vendor-stockkeeper-api/0.0.3-paused-seller",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "ad4a4d15b4582ed84ab6a4a178ef8e1bea533472113d686f7ac96d6acc9da10d",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://techzone-docs.s3.amazonaws.com",
+      "explicacion": "Solo indica la ubicación de publicación de la guía."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/_coverpage.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "![logo](assets/images/logo-transparent.png ':size=200')",
+      "explicacion": "Solo contiene un comentario y un logo cuyo recurso está ausente."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/_coverpage.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "[Start](introduction.md)",
+      "explicacion": "Es una portada con una descripción mínima y enlaces de navegación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "- [Important aspects](/important)",
+      "explicacion": "Contiene exclusivamente el menú de navegación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "troubleshooting",
+      "cita": "This section is about the alerts in the project and how to resolve them.",
+      "explicacion": "Anuncia el contenido de alertas sin aportar información técnica concreta."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Relaciona alertas concretas con sus condiciones y monitores, sin que los defectos tipográficos alteren su interpretación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Documenta comprobaciones, prioridades y acciones de resolución por alerta, aunque algunos casos requieran investigar los logs."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "endpoint_api",
+      "cita": "# API",
+      "explicacion": "Solo contiene el encabezado."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Especifica el nombre del servicio y los dominios de producción y stage para ambos accesos."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#2",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "[Get Detail](#Get-Detail)",
+      "explicacion": "Las rutas y ejemplos POST son aprovechables, pero hay enlaces rotos y detalles GET ausentes; el host test no contradice por sí solo una lista limitada a prod y stage."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "configuracion",
+      "cita": "![img.png](img.png)",
+      "explicacion": "Los datos de conexión por entorno son aprovechables, pero falta una imagen referenciada y las credenciales son marcadores explícitos."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#0",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "A penalizó una repetición editorial que no altera la instrucción clara de verificar los ítems de prueba antes de actuar sobre los flujos."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Identifica explícitamente Restock y Feed como los flujos que requieren verificación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#2",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "descripcion_general",
+      "cita": "**API Integrity**: Ensuring that the data sent to the item API is correct is essential to maintain the integrity of the system.",
+      "explicacion": "Expone beneficios generales de validar datos sin describir mecanismos ni comportamiento concreto del servicio."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Indica qué revisar en el inbound de Restock y en el operationId de Feed antes de proceder."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#4",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "Implementing this systematic verification is key to maintaining the integrity of the inventory and item API.",
+      "explicacion": "Es un cierre exhortativo sin información técnica adicional."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#5",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "procedimiento",
+      "cita": "check that it has **test_items**",
+      "explicacion": "El procedimiento es aprovechable, pero contiene un curl sin comilla de cierre, discrepancias de tags e identificadores, material_id ausente del ejemplo e imágenes faltantes."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.3-paused-seller/guide/introduction.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Describe la responsabilidad del servicio y distingue las actualizaciones por movimientos 3PL e inbound."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "Get Detail se lista con un enlace a un desarrollo inexistente y solo se proporciona su método y ruta."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Internal Item Detail aparece en la tabla, pero su enlace no tiene destino ni existe una sección que lo detalle."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "Get Detail Doma se anuncia mediante un enlace sin destino y carece de desarrollo posterior."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": true,
+      "explicacion": "La sección de base de datos referencia img.png y el chequeo automático confirma que falta."
+     },
+     {
+      "hueco": 5,
+      "de_acuerdo": true,
+      "explicacion": "Ambas imágenes están referenciadas y ausentes, aunque el texto permite recuperar parte del procedimiento sin ellas."
+     }
+    ]
+   }
+  }
+ ]
+}

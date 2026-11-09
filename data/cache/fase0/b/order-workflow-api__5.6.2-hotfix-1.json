@@ -1,0 +1,193 @@
+{
+ "unit": "order-workflow-api/5.6.2-hotfix-1",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "14b86f959c1569aeaab7c6105791ec55d47ff4123df5af1d5299782cae52a9a6",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":",
+      "explicacion": "Solo contiene la URL de publicación de la guía."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "Release Process - Workflow API",
+      "explicacion": "Es una portada con logos y enlaces, sin explicaciones técnicas del servicio."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Describe responsabilidades concretas del servicio sin contradicciones internas."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Identifica MySQL y la información que almacena este componente."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Explica la función del consumidor BigQ y los sistemas que le envían mensajes."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Define la responsabilidad de Jobs en la creación automática de versiones."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "- [Support](/support.md)",
+      "explicacion": "Contiene únicamente navegación y además enlaza una página de soporte ausente."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/architecture.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "arquitectura",
+      "cita": "![Prod](/assets/workflow-api-architecture.png)",
+      "explicacion": "Toda la explicación arquitectónica depende de dos imágenes cuya ausencia está comprobada."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/development.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Proporciona requisitos y pasos concretos para compilar, probar y ejecutar localmente."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Las tablas especifican scopes, topics, consumidores y rutas por entorno sin contradicciones demostrables."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#1",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "### Protect branch",
+      "explicacion": "La explicación de validación es aprovechable, pero Protect branch está vacío y el ejemplo JSON contiene entidades sin decodificar y una coma final."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Especifica el tipo de base de datos, esquema y cluster de cada entorno."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#1",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "_TODO_",
+      "explicacion": "La definición de workflows aporta información, pero el ejemplo contiene entidades sin decodificar y Cron History queda pendiente."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Documenta reglas horarias y endpoints de producción y declara explícitamente que test no está configurado."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/usage.md#0",
+      "de_acuerdo": false,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "This application exposes a REST API which is specified [here](http://retailcorp-docs.io/order-workflow-api/specs/)",
+      "explicacion": "A acertó al descartarla, pero su contenido es una remisión a otra documentación y no la descripción de un endpoint."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#0",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "arquitectura",
+      "cita": "C-&gt;&gt;W: Activate workflow message",
+      "explicacion": "A descartó demasiado contenido: las entidades dañan la sintaxis Mermaid, pero los participantes, mensajes y pasos de los tres flujos siguen siendo legibles."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#1",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "arquitectura",
+      "cita": "- Abort a pipeline",
+      "explicacion": "A descartó flujos con pasos y respuestas legibles, aunque la sintaxis Mermaid está dañada y varios casos solo están enumerados."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "La página support.md está referenciada y su ausencia está comprobada."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Se referencian diagramas de producción y test cuyos archivos no están disponibles."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "El encabezado Protect branch anuncia un mensaje sin describir su contenido."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": true,
+      "explicacion": "Cron History aparece explícitamente marcado como pendiente."
+     },
+     {
+      "hueco": 5,
+      "de_acuerdo": true,
+      "explicacion": "La búsqueda de pipelines se enumera sin explicar su recorrido."
+     },
+     {
+      "hueco": 6,
+      "de_acuerdo": true,
+      "explicacion": "Abortar un pipeline figura como caso de uso sin desarrollo."
+     },
+     {
+      "hueco": 7,
+      "de_acuerdo": true,
+      "explicacion": "Los casos de Branches carecen de desarrollo propio, aunque la protección de ramas aparece como paso de los flujos de activación y edición."
+     },
+     {
+      "hueco": 8,
+      "de_acuerdo": true,
+      "explicacion": "La especificación REST anunciada queda fuera del contenido recibido, aunque no hay evidencia de que el enlace externo esté roto."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "unit": "payment-promise-gateway/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "965cdc56b953f4b88b3065d01119dda1626105381654f27d1cb82d116b4798c3",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "payment-promise-gateway/latest/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://workflowdocs.s3.amazonaws.com/payment-promise-gateway/3.7.0/guide/index.html\"",
+      "explicacion": "Solo contiene metadatos de publicación de la guía."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Describe la finalidad del servicio y su papel como intermediario."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Identifica componentes internos, dependencias externas y sus relaciones."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Enumera tecnologías y versiones sin contradicciones documentadas."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Documenta la organización de paquetes y sus responsabilidades."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Describe patrones utilizados y proporciona ejemplos sin incompatibilidades demostrables."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Presenta capacidades coherentes con los endpoints documentados."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#6",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "La lista de métodos y rutas coincide con los diagramas y ejemplos."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#7",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Documenta entradas, interacciones y resultados de los siete endpoints."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#8",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "A deduce inconsistencias no demostradas: la respuesta de ejemplo no establece un catálogo exhaustivo de métodos y calcular dateCreated no impide recibir ese campo."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#9",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Los ejemplos permiten identificar campos y estructuras de respuesta; los rótulos dentro del bloque no alteran su contenido."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#10",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Especifica valores de SCOPE y opciones de VM para la ejecución local."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#11",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Proporciona requisitos y comandos de compilación y ejecución complementados por la configuración local anterior."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#12",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Indica explícitamente el comando para ejecutar las pruebas."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#13",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A la clasifica como configuración, pero solo describe la herramienta de monitorización y las métricas recogidas, sin parámetros de configuración."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#14",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A la clasifica como troubleshooting, pero describe el enfoque de gestión de errores sin ofrecer diagnóstico ni resolución de problemas."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#15",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "Follow the existing code structure",
+      "explicacion": "Contiene pautas genéricas de contribución sin detalles técnicos concretos del servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#16",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "This project is proprietary software owned by GreatMart.",
+      "explicacion": "Solo informa sobre la propiedad y licencia del software."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "Se remite explícitamente a documentación detallada en specs-hub cuyo contenido no forma parte del material recibido."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Se anuncia un formato uniforme de errores y excepciones propias, pero no se proporciona su estructura ni su detalle."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": false,
+      "explicacion": "El árbol identifica el propósito del paquete workflowconfig, pero no anuncia ni referencia una explicación adicional ausente."
+     }
+    ]
+   }
+  }
+ ]
+}

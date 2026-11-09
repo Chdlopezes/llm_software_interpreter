@@ -1,0 +1,137 @@
+{
+ "unit": "2p-revenue-optimizer-api/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "c7b9c6fb88a158b04f7bbd19678052d50f5588230048c8710eaaa0423937b0a3",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "{\"guide\":\"https://vendorflow-docs.s3.amazonaws.com/2p-revenue-optimizer-api/0.0.3-rc-1/guide/index.html\"}",
+        "otras_secciones": [],
+        "explicacion": "Solo es un metadato con la URL de la guía publicada; no dice nada sobre el servicio."
+       }
+      ],
+      "justificacion": "Es un metadato de publicación sin contenido técnico."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "vacio",
+        "cita": "# 2p-revenue-optimizer-api",
+        "otras_secciones": [],
+        "explicacion": "Solo tiene el título, sin contenido debajo."
+       }
+      ],
+      "justificacion": "La sección está vacía salvo por el título."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#1",
+      "categoria": "descripcion_general",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "We provide a basic model for JDK 17 / Spring based web applications.",
+        "otras_secciones": [],
+        "explicacion": "Es texto genérico de plantilla con un enlace al tracker de incidencias; no describe qué hace el servicio."
+       }
+      ],
+      "justificacion": "Texto de plantilla genérica sin información sobre el servicio."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#2",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica de forma concreta la carga de properties según SCOPE, el servidor web Jetty, la clase main y el manejo de errores."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#3",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe el uso de OpenAPI, la clase SpringDocConfig y los pasos para usar Specs Hub, con datos concretos."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#4",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da pasos concretos con las imágenes base de Dockerfile y Dockerfile.runtime."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md#0",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "The `rule_custom_field` table stores , receiving data from PME.",
+        "otras_secciones": [],
+        "explicacion": "La descripción de qué guarda la tabla está cortada: falta el objeto de 'stores'."
+       }
+      ],
+      "justificacion": "Las columnas son útiles, pero la descripción de la tabla está incompleta."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#0",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "The `rule_header` table stores , receiving data from PME.",
+        "otras_secciones": [],
+        "explicacion": "La descripción de qué guarda la tabla está cortada."
+       }
+      ],
+      "justificacion": "Las columnas son útiles, pero la descripción de la tabla está incompleta y la columna type no tiene descripción."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md#0",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "The `rule_row` table stores , receiving data from PME.",
+        "otras_secciones": [],
+        "explicacion": "La descripción de qué guarda la tabla está cortada."
+       }
+      ],
+      "justificacion": "Las columnas son útiles, pero la descripción de la tabla está incompleta."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#0",
+      "descripcion": "Falta qué almacenan las tablas rule_header, rule_row y rule_custom_field; la frase que debería explicarlo está vacía.",
+      "evidencia": "The `rule_header` table stores , receiving data from PME."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#0",
+      "descripcion": "La columna type de rule_header aparece en la tabla pero sin descripción.",
+      "evidencia": "| type                     | varchar(180) | Not null    |                                 |                          |"
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#0",
+      "descripcion": "El README tiene el título del servicio, pero no describe el servicio 2p-revenue-optimizer-api.",
+      "evidencia": "# 2p-revenue-optimizer-api"
+     }
+    ]
+   }
+  }
+ ]
+}

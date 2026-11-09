@@ -1,0 +1,101 @@
+{
+ "unit": "2p-revenue-optimizer-api/0.2.2",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "d48292bef6fe5cce2a42794db754920e438085cc94b4ae370f6937e64c888267",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://vendorflow-docs.s3.amazonaws.com/2p-revenue-optimizer-api/0.2.2/guide/index.html\"",
+      "explicacion": "Solo contiene metadatos que enlazan a la guía."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# 2p-revenue-optimizer-api",
+      "explicacion": "Solo contiene el título del servicio, sin información técnica."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/README.md#1",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A descarta por genérica una sección que sí identifica una base técnica concreta de JDK 17 y Spring, coherente con las demás secciones."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Documenta reglas concretas de SCOPE, precedencia de configuración, servidor y clases de inicio y excepciones sin contradicciones internas."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Identifica OpenAPI y SpringDocConfig y describe capacidades de Specs Hub que permiten formular preguntas respondibles con el texto."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Proporciona instrucciones concretas y ejemplos completos de las imágenes base para ambos Dockerfiles."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "The `rule_header` table stores , receiving data from PME.",
+      "explicacion": "El esquema es aprovechable, pero faltan el objeto de la descripción y el significado de type, y termina con una fila incompleta."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "The `rule_row` table stores , receiving data from PME.",
+      "explicacion": "Las columnas y la referencia a rule_header son utilizables, pero la frase que describe qué almacena la tabla está incompleta."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "La frase anuncia qué almacena rule_header y omite precisamente ese contenido."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "La celda de descripción de type está vacía, aunque la documentación no promete enumerar sus valores posibles."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "La frase anuncia qué almacena rule_row y deja esa información sin completar."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": false,
+      "explicacion": "El título no anuncia ni referencia una descripción del servicio, por lo que su ausencia no constituye un hueco según el criterio establecido."
+     }
+    ]
+   }
+  }
+ ]
+}

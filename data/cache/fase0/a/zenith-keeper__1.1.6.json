@@ -1,0 +1,625 @@
+{
+ "unit": "zenith-keeper/1.1.6",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "4deabfe224c94fe4f479cee40af05348a0cf81a709e764321f9834c38929f6f9",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "zenith-keeper/1.1.6/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://nimbuslib-docs.s3.amazonaws.com/zenith-keeper/1.1.6/guide/index.html\"",
+        "otras_secciones": [],
+        "explicacion": "Solo da las URLs donde se publica la documentación."
+       }
+      ],
+      "justificacion": "Son metadatos de publicación y no dicen nada del servicio."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "vacio",
+        "cita": "#API FRESH PRODUCTS DOCUMENTATION",
+        "otras_secciones": [],
+        "explicacion": "La página Getting started solo tiene el título."
+       }
+      ],
+      "justificacion": "Sección vacía, solo tiene el título."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "* [Use cases](use-cases.md)",
+        "otras_secciones": [],
+        "explicacion": "Es solo el menú de navegación."
+       }
+      ],
+      "justificacion": "Sidebar de navegación sin contenido técnico."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/use-cases.md#0",
+      "categoria": "arquitectura",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "C-->>M: HTTP 201 - List<ProductDTO>",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#6"
+        ],
+        "explicacion": "El GET de una orden devuelve 201 según el diagrama y 200 según el swagger."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "S-->>C: WarehousesWithoutStockException",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#5",
+         "zenith-keeper/1.1.6/specs/swagger.yaml#7"
+        ],
+        "explicacion": "En POST y PUT de orders el diagrama devuelve HTTP 404 en los errores, pero el swagger define 400."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "GET /fresh-products/list{productId}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#8"
+        ],
+        "explicacion": "Este endpoint sin sort no existe en el swagger."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "GET /fresh-products/list/{productId}/{sort}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#8"
+        ],
+        "explicacion": "La ruta lleva '/' antes de {productId}; en el swagger es list{productId}/{sort}."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "M->>C: GET /warehouse/{productId}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#9"
+        ],
+        "explicacion": "La ruta no cuadra con /api/v1/fresh-products/warehouse{productId} del swagger."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "GET /due-date/{quantityOfDays}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#10"
+        ],
+        "explicacion": "La ruta no cuadra con due-date{quantityOfDays} del swagger."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "M->>C: GET /due-date/list{quantityOfDays}/{category}",
+        "otras_secciones": [],
+        "explicacion": "El título del caso incluye {sort}, pero la llamada del diagrama no lo lleva."
+       }
+      ],
+      "justificacion": "Los diagramas de secuencia son útiles, pero varias rutas y códigos HTTP chocan con el swagger."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Cabecera OpenAPI con título, contacto, versión y servidor local concretos."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#1",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación POST inboundorder completa, con petición y respuesta."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#2",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación PUT inboundorder completa y coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#3",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "GET de la lista de productos con respuestas 200 y 404, coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#4",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "GET por categoría, con su parámetro y respuestas, coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#5",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "description: ERROR",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "El swagger define el error como 400; la guía dice 404."
+       }
+      ],
+      "justificacion": "La operación está bien definida, pero el código de error contradice la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#6",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "'200':",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "El swagger responde 200; la guía, 201."
+       }
+      ],
+      "justificacion": "El GET de una orden está definido, pero su código de éxito contradice la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#7",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "description: ERROR",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "El swagger define el error como 400; la guía dice 404."
+       }
+      ],
+      "justificacion": "El PUT de orders está definido, pero el código de error contradice la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#8",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "/api/v1/fresh-products/list{productId}/{sort}:",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "La ruta difiere de la guía, que pone list/{productId}/{sort}."
+       }
+      ],
+      "justificacion": "La operación es útil, pero la forma de la ruta no coincide con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#9",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "/api/v1/fresh-products/warehouse{productId}:",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "La guía usa /warehouse/{productId}."
+       }
+      ],
+      "justificacion": "La operación es útil, pero la ruta no coincide con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#10",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "/api/v1/fresh-products/due-date{quantityOfDays}:",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "La guía usa /due-date/{quantityOfDays}."
+       }
+      ],
+      "justificacion": "La operación es útil, pero la ruta no coincide con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#11",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "- name: quatintyOfDays",
+        "otras_secciones": [],
+        "explicacion": "El nombre del parámetro no coincide con el placeholder {quantityOfDays} de la ruta."
+       }
+      ],
+      "justificacion": "La operación es útil, pero el nombre de un parámetro de ruta es inconsistente."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#12",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación sign-in completa, con petición y respuestas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#13",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación sign-up completa, con petición y respuestas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#14",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Healthcheck /ping definido de forma concreta."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#15",
+      "categoria": "modelo_datos",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Esquemas de datos detallados, con sus campos y tipos."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/README.md#0",
+      "descripcion": "La página Getting started, enlazada en el sidebar, solo tiene el título.",
+      "evidencia": "* [Getting started](README.md)"
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/use-cases.md#0",
+      "descripcion": "La guía documenta GET /fresh-products/list{productId} sin sort, pero ese endpoint no aparece en el swagger.",
+      "evidencia": "GET /fresh-products/list{productId}"
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#12",
+      "descripcion": "Las operaciones de autenticación (sign-in y sign-up) están en el swagger pero la guía no las explica.",
+      "evidencia": "/auth/sign-in:"
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#14",
+      "descripcion": "El healthcheck /ping está en el swagger pero la guía no lo explica.",
+      "evidencia": "summary: Ping healthcheck"
+     }
+    ]
+   }
+  },
+  {
+   "intento": 2,
+   "clave": "88269c2dd44ffc2ff8ad4bddc52301ce6b1205585143d4c4b54080549b4f3a24",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "zenith-keeper/1.1.6/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://nimbuslib-docs.s3.amazonaws.com/zenith-keeper/1.1.6/guide/index.html\"",
+        "otras_secciones": [],
+        "explicacion": "Solo da las URLs donde se publica la documentación."
+       }
+      ],
+      "justificacion": "Son metadatos de publicación y no dicen nada del servicio."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "vacio",
+        "cita": "#API FRESH PRODUCTS DOCUMENTATION",
+        "otras_secciones": [],
+        "explicacion": "La página Getting started solo tiene el título."
+       }
+      ],
+      "justificacion": "Sección vacía, solo tiene el título."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "* [Use cases](use-cases.md)",
+        "otras_secciones": [],
+        "explicacion": "Es solo el menú de navegación."
+       }
+      ],
+      "justificacion": "Sidebar de navegación sin contenido técnico."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/use-cases.md#0",
+      "categoria": "arquitectura",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "C-->>M: HTTP 201 - List<ProductDTO>",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#6"
+        ],
+        "explicacion": "El GET de una orden devuelve 201 según el diagrama y 200 según el swagger."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "S-->>C: WarehousesWithoutStockException",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#5",
+         "zenith-keeper/1.1.6/specs/swagger.yaml#7"
+        ],
+        "explicacion": "En POST y PUT de orders el diagrama devuelve HTTP 404 en los errores, pero el swagger define 400."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "GET /fresh-products/list{productId}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#8"
+        ],
+        "explicacion": "Este endpoint sin sort no existe en el swagger."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "GET /fresh-products/list/{productId}/{sort}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#8"
+        ],
+        "explicacion": "La ruta lleva '/' antes de {productId}; en el swagger es list{productId}/{sort}."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "M->>C: GET /warehouse/{productId}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#9"
+        ],
+        "explicacion": "La ruta no cuadra con /api/v1/fresh-products/warehouse{productId} del swagger."
+       },
+       {
+        "motivo": "contradiccion",
+        "cita": "GET /due-date/{quantityOfDays}",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/specs/swagger.yaml#10"
+        ],
+        "explicacion": "La ruta no cuadra con due-date{quantityOfDays} del swagger."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "M->>C: GET /due-date/list{quantityOfDays}/{category}",
+        "otras_secciones": [],
+        "explicacion": "El título del caso incluye {sort}, pero la llamada del diagrama no lo lleva."
+       }
+      ],
+      "justificacion": "Los diagramas de secuencia son útiles, pero varias rutas y códigos HTTP chocan con el swagger."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Cabecera OpenAPI con título, contacto, versión y servidor local concretos."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#1",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación POST inboundorder completa, con petición y respuesta."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#2",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación PUT inboundorder completa y coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#3",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "GET de la lista de productos con respuestas 200 y 404, coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#4",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "GET por categoría, con su parámetro y respuestas, coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#5",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "description: ERROR",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "El swagger define el error como 400; la guía dice 404."
+       }
+      ],
+      "justificacion": "La operación está bien definida, pero el código de error contradice la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#6",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "'200':",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "El swagger responde 200; la guía, 201."
+       }
+      ],
+      "justificacion": "El GET de una orden está definido, pero su código de éxito contradice la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#7",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "description: ERROR",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "El swagger define el error como 400; la guía dice 404."
+       }
+      ],
+      "justificacion": "El PUT de orders está definido, pero el código de error contradice la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#8",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "/api/v1/fresh-products/list{productId}/{sort}:",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "La ruta difiere de la guía, que pone list/{productId}/{sort}."
+       }
+      ],
+      "justificacion": "La operación es útil, pero la forma de la ruta no coincide con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#9",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "/api/v1/fresh-products/warehouse{productId}:",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "La guía usa /warehouse/{productId}."
+       }
+      ],
+      "justificacion": "La operación es útil, pero la ruta no coincide con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#10",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "/api/v1/fresh-products/due-date{quantityOfDays}:",
+        "otras_secciones": [
+         "zenith-keeper/1.1.6/guide/use-cases.md#0"
+        ],
+        "explicacion": "La guía usa /due-date/{quantityOfDays}."
+       }
+      ],
+      "justificacion": "La operación es útil, pero la ruta no coincide con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#11",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "- name: quatintyOfDays",
+        "otras_secciones": [],
+        "explicacion": "El nombre del parámetro no coincide con el placeholder {quantityOfDays} de la ruta."
+       }
+      ],
+      "justificacion": "La operación es útil, pero el nombre de un parámetro de ruta es inconsistente."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#12",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación sign-in completa, con petición y respuestas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#13",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Operación sign-up completa, con petición y respuestas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#14",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Healthcheck /ping definido de forma concreta."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#15",
+      "categoria": "modelo_datos",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Esquemas de datos detallados, con sus campos y tipos."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/_sidebar.md#0",
+      "descripcion": "La página Getting started, enlazada en el sidebar, solo tiene el título.",
+      "evidencia": "* [Getting started](README.md)"
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/use-cases.md#0",
+      "descripcion": "La guía documenta GET /fresh-products/list{productId} sin sort, pero ese endpoint no aparece en el swagger.",
+      "evidencia": "GET /fresh-products/list{productId}"
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#12",
+      "descripcion": "Las operaciones de autenticación (sign-in y sign-up) están en el swagger pero la guía no las explica.",
+      "evidencia": "/auth/sign-in:"
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#14",
+      "descripcion": "El healthcheck /ping está en el swagger pero la guía no lo explica.",
+      "evidencia": "summary: Ping healthcheck"
+     }
+    ]
+   }
+  }
+ ]
+}

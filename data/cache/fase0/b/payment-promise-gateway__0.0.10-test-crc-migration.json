@@ -1,0 +1,166 @@
+{
+ "unit": "payment-promise-gateway/0.0.10-test-crc-migration",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "496e893942d74676fafd71e935957ba77a5bc3f694354571559e28ccc768dd9d",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://workflowdocs.s3.amazonaws.com/payment-promise-gateway/0.0.10-test-crc-migration/guide/index.html\"",
+      "explicacion": "Solo contiene la dirección de publicación de la guía."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Define el propósito del servicio y su papel entre el frontend y los servicios de pagos."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "El diagrama identifica componentes internos, dependencias externas y sus relaciones."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Enumera tecnologías y versiones sin contradicciones con las demás secciones."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Describe la organización de los paquetes y sus responsabilidades."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Documenta patrones de diseño y ejemplos sin incompatibilidades demostrables en el texto recibido."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Presenta capacidades funcionales que concuerdan con los endpoints documentados."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#6",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "La lista de métodos y rutas es aprovechable aunque la especificación detallada se remita a una fuente externa."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#7",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Describe los siete endpoints mediante flujos, entradas y resultados coherentes con el resto de la guía."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#8",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Proporciona ejemplos de solicitudes y no presenta contradicciones demostrables únicamente con la documentación recibida."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#9",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Las respuestas están claramente separadas por endpoint y sus etiquetas no impiden interpretar los objetos de ejemplo."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#10",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Especifica valores de SCOPE y opciones de la JVM para la ejecución local."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#11",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Ofrece prerrequisitos y comandos de compilación y ejecución complementados por la configuración local anterior."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#12",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Proporciona un comando concreto para ejecutar las pruebas."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#13",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A acertó en el estado, pero el texto describe la herramienta y las métricas observadas sin proporcionar configuración."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#14",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A acertó en el estado, pero la sección describe el enfoque de manejo de errores sin ofrecer diagnóstico ni resolución de problemas."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#15",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "Follow the existing code structure",
+      "explicacion": "Las pautas genéricas de contribución no aportan detalles técnicos concretos del servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#16",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "This project is proprietary software owned by GreatMart.",
+      "explicacion": "El aviso de propiedad no contiene información técnica aprovechable."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "Se referencia expresamente una documentación detallada en specs-hub cuyo contenido no está incluido en el material recibido."
+     }
+    ]
+   }
+  }
+ ]
+}

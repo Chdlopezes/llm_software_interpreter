@@ -1,0 +1,257 @@
+{
+ "unit": "order-workflow-api/5.6.2-hotfix-1",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "04d8c7051fb96b869aa83ac1dbf6a2db32d3a0ef4136d7bfbe09965cf153e1d7",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":",
+        "otras_secciones": [],
+        "explicacion": "Es solo el metadato con la URL de la guía publicada."
+       }
+      ],
+      "justificacion": "Solo es un metadato de publicación y no explica nada del servicio."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Release Process - Workflow API",
+        "otras_secciones": [],
+        "explicacion": "Portada con logos (que además no existen) y enlaces a dashboards y a CI, sin contenido técnico."
+       }
+      ],
+      "justificacion": "Es una portada con insignias y enlaces externos."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#1",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe con claridad qué tareas hace Workflow API."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#2",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica qué información se guarda en la base de datos MySQL."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#3",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica de qué orígenes recibe mensajes el consumidor BigQ."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/README.md#4",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica para qué sirve el servicio Jobs."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- [Support](/support.md)",
+        "otras_secciones": [],
+        "explicacion": "Es un índice de navegación, y el enlace a Support está roto."
+       }
+      ],
+      "justificacion": "Es un sidebar de navegación sin contenido técnico."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/architecture.md#0",
+      "categoria": "arquitectura",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "![Prod](/assets/workflow-api-architecture.png)",
+        "otras_secciones": [],
+        "explicacion": "Todo el contenido son dos diagramas que no existen."
+       }
+      ],
+      "justificacion": "La sección depende entera de imágenes ausentes."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/development.md#0",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da pasos concretos para clonar, compilar, probar y ejecutar en local."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Tablas concretas de scopes, topics, consumidores y rutas por entorno."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#1",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "&#34;pipeline_id&#34;: 847291,",
+        "otras_secciones": [],
+        "explicacion": "El JSON de Pipeline tiene entidades HTML sin decodificar y no se puede copiar tal cual."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "### Protect branch",
+        "otras_secciones": [],
+        "explicacion": "El apartado se anuncia pero no tiene contenido."
+       }
+      ],
+      "justificacion": "La descripción del flujo de validación sirve, pero el ejemplo JSON está roto y el apartado Protect branch está vacío."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el tipo, el esquema y el cluster por entorno."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#1",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "&#34;default_branch&#34;: &#34;develop&#34;,",
+        "otras_secciones": [],
+        "explicacion": "El JSON de Workflow tiene entidades HTML sin decodificar."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "_TODO_",
+        "otras_secciones": [],
+        "explicacion": "El apartado Cron History está pendiente."
+       }
+      ],
+      "justificacion": "La descripción de los tipos de workflow sirve, pero el ejemplo JSON está roto y Cron History está pendiente."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da los crons concretos con su regla horaria y su endpoint."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/usage.md#0",
+      "categoria": "endpoint_api",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "which is specified [here](http://retailcorp-docs.io/order-workflow-api/specs/)",
+        "otras_secciones": [],
+        "explicacion": "Remite a una especificación externa y no documenta la API."
+       }
+      ],
+      "justificacion": "No contiene detalle de la API; solo un enlace externo."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#0",
+      "categoria": "arquitectura",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "C-&gt;&gt;W: Activate workflow message",
+        "otras_secciones": [],
+        "explicacion": "Los diagramas mermaid, que son todo el contenido, tienen entidades HTML sin decodificar."
+       }
+      ],
+      "justificacion": "Los diagramas de secuencia están dañados por entidades HTML y no son fiables."
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#1",
+      "categoria": "arquitectura",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "O-&gt;&gt;B: Workflow validation start",
+        "otras_secciones": [],
+        "explicacion": "Los diagramas mermaid tienen entidades HTML sin decodificar."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "- Abort a pipeline",
+        "otras_secciones": [],
+        "explicacion": "Varios casos de uso solo aparecen listados, sin detalle."
+       }
+      ],
+      "justificacion": "El contenido principal son diagramas rotos y casos de uso sin desarrollar."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/_sidebar.md#0",
+      "descripcion": "La página de soporte enlazada no existe.",
+      "evidencia": "- [Support](/support.md)"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/architecture.md#0",
+      "descripcion": "Faltan los diagramas de arquitectura de producción y de test.",
+      "evidencia": "![Test](/assets/workflow-api-architecture-test.png)"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#1",
+      "descripcion": "El mensaje Protect branch se anuncia pero no se documenta.",
+      "evidencia": "### Protect branch"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#1",
+      "descripcion": "El objeto Cron History está pendiente de documentar.",
+      "evidencia": "#### Cron History"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#1",
+      "descripcion": "El caso de uso de búsqueda de pipeline se lista sin detalle.",
+      "evidencia": "- Search for a pipeline"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#1",
+      "descripcion": "El caso de uso de abortar un pipeline se lista sin detalle.",
+      "evidencia": "- Abort a pipeline"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#1",
+      "descripcion": "Los casos de uso de protección de ramas y de creación de backports se listan sin detalle.",
+      "evidencia": "- Create a branch backport"
+     },
+     {
+      "section_id": "order-workflow-api/5.6.2-hotfix-1/guide/usage.md#0",
+      "descripcion": "La API REST no se documenta en la guía; solo se remite a una especificación externa.",
+      "evidencia": "This application exposes a REST API which is specified"
+     }
+    ]
+   }
+  }
+ ]
+}

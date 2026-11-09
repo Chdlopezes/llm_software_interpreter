@@ -1,0 +1,324 @@
+{
+ "unit": "traffic-gate-api/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "a0d594fc02bd8dbcfa3cd4f332b09ca1de9a24405e9a05188f7022f9fc8cceec",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "traffic-gate-api/latest/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://retailhubdocs.s3.amazonaws.com/traffic-gate-api/1.65.0/guide/index.html\"",
+        "otras_secciones": [],
+        "explicacion": "Solo contiene URLs de publicación de la documentación."
+       }
+      ],
+      "justificacion": "Son metadatos de publicación sin información sobre el servicio."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/README.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica con claridad el propósito del servicio; que falte la imagen de portada no afecta al contenido."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/README.md#1",
+      "categoria": "descripcion_general",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "s- La dirección IP pertenece a infraestructura RetailHub.",
+        "otras_secciones": [],
+        "explicacion": "El elemento de lista está dañado por un carácter suelto, así que no queda claro si el criterio forma parte de la lista del scope PCI GLOBAL."
+       }
+      ],
+      "justificacion": "Los criterios de whitelist por scope son concretos, pero un elemento del scope PCI GLOBAL tiene el formato dañado."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/README.md#2",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Nombra el dashboard y el monitor de Datadog del servicio, con sus enlaces."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/README.md#3",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Escríbenos a:",
+        "otras_secciones": [],
+        "explicacion": "Solo da direcciones de correo de contacto."
+       }
+      ],
+      "justificacion": "Son datos de contacto sin contenido técnico."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- Documentación Traffic Gate",
+        "otras_secciones": [],
+        "explicacion": "Es el índice de navegación."
+       }
+      ],
+      "justificacion": "Es la barra lateral de navegación."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/coverpage.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "vacio",
+        "cita": "<img src=\"_media/traffic_gate_logo.png\" align=\"center\"/>",
+        "otras_secciones": [],
+        "explicacion": "Solo contiene un logo, que además no existe."
+       }
+      ],
+      "justificacion": "No tiene contenido."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/coverpage.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "[Get Started](#Traffic-Gate)",
+        "otras_secciones": [],
+        "explicacion": "Es una portada con un eslogan y enlaces."
+       }
+      ],
+      "justificacion": "Es una portada sin contenido técnico propio."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/arch.md#0",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe con claridad los tres módulos de la aplicación y sus responsabilidades."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/arch.md#1",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Detalla los jobs, los endpoints a los que llaman, el número de jobs y su frecuencia de ejecución."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/arch.md#2",
+      "categoria": "arquitectura",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "![Diagrama de Arquitectura](_media/../../_media/traffic_gate_arch.png \"Diagrama de Arquitectura\")",
+        "otras_secciones": [],
+        "explicacion": "La imagen del diagrama no existe y la sección no tiene otro contenido."
+       }
+      ],
+      "justificacion": "Solo contiene un diagrama ausente."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/database.md#0",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "(front, api, pci, global_pci)",
+        "otras_secciones": [
+         "traffic-gate-api/latest/guide/README.md#1",
+         "traffic-gate-api/latest/guide/sections/arch.md#1"
+        ],
+        "explicacion": "Llama al scope 'global_pci', mientras que el resto de la documentación usa 'pci_global' o 'pci-global'."
+       }
+      ],
+      "justificacion": "Describe bien las tablas, pero el nombre de uno de los scopes no cuadra con el resto de la documentación."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/database.md#1",
+      "categoria": "modelo_datos",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "El diagrama entidad-relación en mermaid recoge los campos de cada tabla y sus relaciones."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/processes.md#0",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "\"WafID\": \"SUSPECT_COUNTRIES_REST\",",
+        "otras_secciones": [
+         "traffic-gate-api/latest/specs/swagger.yaml#9"
+        ],
+        "explicacion": "El mensaje encolado usa el campo 'WafID' y un ID numérico, mientras que el esquema del swagger define 'WafId' y un ID de tipo string."
+       }
+      ],
+      "justificacion": "El flujo de encolamiento está detallado, pero la estructura del mensaje no coincide con el esquema del swagger."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/processes.md#1",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "tópico process-blocks.traffic-gate-api de MegaQueue",
+        "otras_secciones": [
+         "traffic-gate-api/latest/guide/sections/processes.md#0",
+         "traffic-gate-api/latest/specs/swagger.yaml#6"
+        ],
+        "explicacion": "Llama 'MegaQueue' a la cola, mientras que el resto de la documentación la llama Big-Queue o BigQ."
+       }
+      ],
+      "justificacion": "El análisis de IPs está bien explicado, salvo el nombre de la cola, que no cuadra con el resto."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/processes.md#2",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "endpoint DETELE /v1/whitelist",
+        "otras_secciones": [],
+        "explicacion": "El método HTTP 'DETELE' no es válido, así que el método exacto queda en duda."
+       }
+      ],
+      "justificacion": "Describe bien el proceso de purga, pero el método del endpoint de borrado está mal escrito."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/waf_config.md#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Detalla las reglas de ratelimit del WAF, sus límites y los países incluidos en cada una."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#0",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "version: 1.7.0",
+        "otras_secciones": [
+         "traffic-gate-api/latest/documentationTypes.json#0"
+        ],
+        "explicacion": "La versión declarada en la especificación no coincide con la versión publicada, 1.65.0."
+       }
+      ],
+      "justificacion": "Los servidores, tags y la seguridad son útiles, pero la versión declarada no cuadra con la publicada."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#1",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "La operación está completa: cuerpo de la petición, respuestas y comportamiento por defecto."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#2",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "La operación está completa y documentada."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#3",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "La operación está completa y su respuesta está definida."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#4",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "La operación PUT para la whitelist manual está completa."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#5",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "- pci-global",
+        "otras_secciones": [
+         "traffic-gate-api/latest/guide/sections/arch.md#1",
+         "traffic-gate-api/latest/guide/sections/processes.md#0"
+        ],
+        "explicacion": "El enum define 'pci-global', mientras que la descripción de la propia operación y la guía usan 'pci_global' para el query param."
+       }
+      ],
+      "justificacion": "La operación está documentada, pero el valor del scope no coincide con el de la guía."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#6",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "La operación está documentada y referencia el esquema del mensaje."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#7",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "La operación de purga está documentada."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#8",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "El ping está documentado."
+     },
+     {
+      "section_id": "traffic-gate-api/latest/specs/swagger.yaml#9",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "WafId:",
+        "otras_secciones": [
+         "traffic-gate-api/latest/guide/sections/processes.md#0"
+        ],
+        "explicacion": "El esquema define 'WafId' con un ID de tipo string, mientras que el mensaje de ejemplo de la guía usa 'WafID' y un ID numérico."
+       }
+      ],
+      "justificacion": "Los esquemas y la seguridad son útiles, pero un nombre de campo contradice la guía."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "traffic-gate-api/latest/guide/sections/arch.md#2",
+      "descripcion": "Se anuncia un diagrama de arquitectura cuya imagen no existe.",
+      "evidencia": "![Diagrama de Arquitectura](_media/../../_media/traffic_gate_arch.png \"Diagrama de Arquitectura\")"
+     }
+    ]
+   }
+  }
+ ]
+}

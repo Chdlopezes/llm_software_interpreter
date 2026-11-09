@@ -1,0 +1,178 @@
+{
+ "unit": "price-engine-api/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "1af431c896146cebe16bb402ae67f21456ccb5904f7a2d143e58c4aacf571a6d",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "price-engine-api/latest/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://commerce-hub-docs.s3.amazonaws.com/price-engine-api/0.0.2-setting-up/guide/index.html\"",
+      "explicacion": "Contiene únicamente las direcciones de publicación de la documentación."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/_coverpage.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "![logo](media/icon.png)",
+      "explicacion": "Solo referencia un logo ausente y no aporta información técnica."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/_coverpage.md#1",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "descripcion_general",
+      "cita": "[Start](README.md)",
+      "explicacion": "A descarta una descripción concreta del propósito del servicio por estar repetida, aunque es aprovechable; el enlace de inicio ausente impide considerar toda la sección fiable."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "* **Atlas Addresses API**",
+      "explicacion": "Es un índice de navegación cuyo título además identifica un servicio distinto."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/arquitectura.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "arquitectura",
+      "cita": "![arch](media/arch.png)",
+      "explicacion": "El recurso local está ausente y el enlace externo no aporta contenido arquitectónico incluido en la documentación recibida."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/contacto.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "Estos son los medios de contacto ante cualquier eventualidad.",
+      "explicacion": "Es una introducción a los contactos sin información técnica del servicio."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/contacto.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "### Commerce Operations & Support",
+      "explicacion": "Enumera integrantes y contactos del equipo sin describir el servicio."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/contacto.md#2",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "`#war_room_operations` </br>",
+      "explicacion": "Indica un canal de contacto y su finalidad sin aportar instrucciones técnicas."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/flujos.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "procedimiento",
+      "cita": "Flujos.",
+      "explicacion": "El encabezado y su repetición no describen ningún proceso."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/flujos.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "procedimiento",
+      "cita": "Funcionamiento 1.",
+      "explicacion": "El supuesto flujo contiene únicamente texto de plantilla."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/general.md#0",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A pasa por alto que el texto y la URL de la insignia identifican explícitamente Go como tecnología del servicio."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/general.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "descripcion_general",
+      "cita": "TO DO.",
+      "explicacion": "La introducción está pendiente y carece de contenido aprovechable."
+     },
+     {
+      "section_id": "price-engine-api/latest/guide/general.md#2",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "descripcion_general",
+      "cita": "TO DO.",
+      "explicacion": "Tanto las responsabilidades como las exclusiones están pendientes."
+     },
+     {
+      "section_id": "price-engine-api/latest/specs/swagger.yaml#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Expone el propósito del servicio, su versión declarada y el servidor de producción sin contradicciones demostradas."
+     },
+     {
+      "section_id": "price-engine-api/latest/specs/swagger.yaml#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Define la ruta GET, su comportamiento y las respuestas referenciadas sin atribuir significados individuales a los parámetros intercambiados."
+     },
+     {
+      "section_id": "price-engine-api/latest/specs/swagger.yaml#2",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "SellerID:\n      in: path\n      name: service_id",
+      "explicacion": "Las claves SellerID y ServiceID tienen intercambiados los nombres y significados esperados, mientras que los demás parámetros y respuestas son aprovechables."
+     },
+     {
+      "section_id": "price-engine-api/latest/specs/swagger.yaml#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "modelo_datos",
+      "cita": "",
+      "explicacion": "Describe de forma concreta los campos del error y el array de cadenas de zonas."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "El enlace Start referencia README.md y su ausencia está comprobada."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Falta la imagen local del diagrama y el enlace externo no proporciona su contenido en el material recibido."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "El apartado Introducción anuncia contenido que permanece marcado como TO DO."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": true,
+      "explicacion": "Los apartados de responsabilidades y exclusiones están explícitamente anunciados y pendientes."
+     },
+     {
+      "hueco": 5,
+      "de_acuerdo": true,
+      "explicacion": "Se anuncia un flujo de endpoint sin desarrollarlo, aunque el texto no permite asegurar que se refiera específicamente al endpoint de cobertura."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "unit": "unified-transaction-configs/v0.0.2",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "54d0c55b0b0a4b7bf2b9287bb48d68f8fa4f4dd7dcdfa8bdf32a0370da0d0aa5",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://globalpaydocs.s3.amazonaws.com/unified-transaction-configs/v0.0.2/guide/index.html\"",
+        "otras_secciones": [],
+        "explicacion": "Solo es un metadato con la URL de la guía; no dice nada sobre el servicio."
+       }
+      ],
+      "justificacion": "Es un metadato de publicación sin contenido técnico."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/README.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica en pocas palabras para qué sirve el proyecto: cargar las configuraciones de los distintos flujos."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- [**Inicio**](README.md)",
+        "otras_secciones": [],
+        "explicacion": "Es un menú de navegación con enlaces, sin información técnica."
+       }
+      ],
+      "justificacion": "Es la barra lateral de navegación."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#0",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Detalla cómo cargar una configuración por PR y la estructura de directorios obligatoria."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#1",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica la ruta de la carpeta y el formato del archivo users.json para dar de alta un grupo de usuarios."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#2",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Enumera restricciones concretas: tamaño máximo de 50kb por KVS, JSON válido, semver de hasta 4 dígitos y versión default obligatoria."
+     },
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#3",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica los dos pasos necesarios para que una actualización tenga efecto: merge a master y el PUT en transaction flow orchestrator."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "unified-transaction-configs/v0.0.2/guide/howto.md#3",
+      "descripcion": "Se pide hacer un PUT para que la actualización tenga efecto, pero no se documenta qué endpoint es, ni sus parámetros ni el cuerpo; se remite a documentación externa.",
+      "evidencia": "Realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/)"
+     }
+    ]
+   }
+  }
+ ]
+}

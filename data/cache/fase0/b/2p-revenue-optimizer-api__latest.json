@@ -1,0 +1,104 @@
+{
+ "unit": "2p-revenue-optimizer-api/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "cabaaf899603559c0aa788e1f17afb557b774763c1c2976ad1a5cf70646908fe",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "{\"guide\":\"https://vendorflow-docs.s3.amazonaws.com/2p-revenue-optimizer-api/0.0.3-rc-1/guide/index.html\"}",
+      "explicacion": "Solo contiene la ubicación de publicación de la guía."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# 2p-revenue-optimizer-api",
+      "explicacion": "Solo contiene el título del servicio."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#1",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "A descarta por genérico un texto que sí identifica concretamente Java 17 y Spring Boot como base tecnológica, sin contradicciones en la documentación."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Documenta la selección y precedencia de archivos de configuración, Jetty y las clases de inicio y manejo de excepciones."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Identifica OpenAPI y SpringDocConfig y describe capacidades concretas de Specs Hub sin inconsistencias internas."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Proporciona instrucciones concretas y ejemplos de imágenes base para ambos Dockerfiles."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "The `rule_custom_field` table stores , receiving data from PME.",
+      "explicacion": "La descripción omite qué almacena la tabla, pero las columnas y su referencia a rule_row son aprovechables."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "The `rule_header` table stores , receiving data from PME.",
+      "explicacion": "La descripción de la tabla está incompleta y falta la descripción de type, aunque los tipos y restricciones documentados son aprovechables."
+     },
+     {
+      "section_id": "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "modelo_datos",
+      "cita": "The `rule_row` table stores , receiving data from PME.",
+      "explicacion": "Falta el objeto de stores, pero las columnas y la referencia a rule_header aportan información utilizable."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "Las tres tablas incluyen una frase explícita sobre su contenido cuyo objeto está ausente."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "La fila de type deja vacía la descripción prevista por el diccionario de datos."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": false,
+      "explicacion": "El título identifica el servicio, pero no anuncia una descripción funcional pendiente; exigirla sería añadir contenido deseable."
+     }
+    ]
+   }
+  }
+ ]
+}

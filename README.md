@@ -7,7 +7,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | Fase | Qué hace | Estado |
 |---|---|---|
 | Preparación | Entorno, configuración de los LLM y verificación | Hecha |
-| 0 — Auditoría | Etiqueta toda la documentación: qué es usable, qué no y por qué, y qué falta | Paso 1 de 6 hecho |
+| 0 — Auditoría | Etiqueta toda la documentación: qué es usable, qué no y por qué, y qué falta | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -19,8 +19,10 @@ src/               Todo el código del flujo
   llm.py             Capa única para llamar a los LLM (CLI o API)
   check_setup.py     Verificación del entorno
   fase0/             Fase 0: auditoría de la documentación
+  utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
+reports/           Estadísticas de cada fase, para el reporte final
 docs/              Explicación detallada de cada fase y sus decisiones
 requirements.txt   Dependencias de Python, con versiones fijas
 .env.example       Plantilla de las variables de entorno (LLM y API keys)
@@ -171,68 +173,71 @@ Si algo falla, cada línea `[error]` indica qué falta y cómo corregirlo.
 
 ## Fase 0 — Auditoría de la documentación
 
-Etiqueta toda la documentación de `docs_raw/`. Cada sección de cada software/versión queda evaluada (usable, parcial o no usable) y categorizada, y se registra lo que falta por documentar. Las fases siguientes solo generan datos a partir de lo que esta fase marca como usable.
+Antes de generar datos de entrenamiento hay que saber qué parte de la documentación es fiable. La fase 0 parte toda la documentación en secciones y las etiqueta **todas**, sin excepciones:
+- **Estado:** `usable`, `parcial` o `no_usable`. Una sección es usable si de ella se pueden sacar pares pregunta-respuesta cuya respuesta está en el propio texto y es fiable.
+- **Categoría:** endpoint, configuración, procedimiento, etc.
 
-El diseño completo, la justificación de cada regla y el significado de cada campo de salida están en **[docs/fase0.md](docs/fase0.md)**.
+También registra qué partes anuncia la documentación sin llegar a cubrirlas. Las fases siguientes solo generan datos a partir de las secciones `usable` y `parcial`.
 
-### Paso 1 — Inventario, secciones y chequeos automáticos
+La clasificación la hacen dos LLM de proveedores distintos: **A** clasifica cada sección y **B** revisa cada clasificación de A. Cuando dan estados distintos, una persona elige cuál de los dos criterios usar.
+
+### 1. Ejecutar la auditoría
 
 ```bash
-python -m src.fase0.extract
+python -m src.fase0.run
 ```
 
-Qué hace (sin usar ningún LLM):
+Ejecuta todos los pasos hasta generar el archivo de revisión humana:
+1. Inventario de archivos, partición en secciones y chequeos automáticos (sin LLM).
+2. El LLM A clasifica cada sección.
+3. El LLM B revisa cada clasificación de A.
+4. Se escribe `data/fase0/human_review.csv` con las secciones en las que A y B dan estados distintos.
 
-1. **Inventaría** todos los archivos de `docs_raw/`, con su software, versión y hash SHA-256.
-2. **Parte cada archivo en secciones**, con su archivo y su rango de líneas:
-   - Markdown: por títulos `#` y `##`.
-   - OpenAPI: una sección por operación.
-   - JSON: el archivo completo.
-3. **Corre chequeos automáticos:** enlaces y anclas rotas, recursos ausentes, secciones vacías, entidades HTML sin decodificar en el código, archivos que no se pueden interpretar y metadatos de versión incoherentes.
-4. **Detecta versiones idénticas,** que heredarán las etiquetas en lugar de auditarse dos veces.
-5. **Verifica la cobertura.** Las secciones de cada archivo deben cubrir el 100% de sus líneas y reconstruirlo exactamente; si no, el proceso termina con error.
+Cada respuesta de los LLM se guarda en `data/cache/`, que está en el repositorio. Por eso, con los resultados entregados, este comando **no llama a ningún LLM**: reutiliza las respuestas guardadas y no necesita sesión ni API key.
 
-Salida esperada:
+### 2. Revisar el CSV
 
-```
-Unidades software/versión: 16
-Archivos inventariados:    107 (todos los de docs_raw/)
-Secciones:                 360 (cubren el 100% de las líneas)
-Idéntica:                  catalog-portfolio-api/latest = catalog-portfolio-api/0.0.1-test-bench-v2a (heredará etiquetas)
-Chequeos deterministas:
-    29  recurso_ausente
-    20  ancla_rota
-    14  enlace_roto
-     9  metadatos_latest_resuelve_a
-     7  seccion_vacia
-     5  entidad_html_en_codigo
-     2  enlace_correo_sin_mailto
-     1  enlace_mal_formado
-Salidas en data/fase0/
+Abre `data/fase0/human_review.csv` con Excel o cualquier hoja de cálculo. Cada fila es una sección en la que A y B discrepan, con:
+- su contenido;
+- el criterio de A: estado, categoría, justificación y problemas citados;
+- el criterio de B: estado, categoría, explicación y cita.
+
+En la columna `decision`, escribe **`A`** o **`B`**, el criterio que te parezca correcto, y guarda el archivo. La sección toma la etiqueta completa del modelo elegido.
+
+Puedes dejar filas vacías. Al finalizar, se completan por defecto: gana el modelo que eligió `parcial`; si ninguno lo eligió, el que eligió `usable`.
+
+### 3. Finalizar la fase
+
+```bash
+python -m src.fase0.finalize
 ```
 
-Qué significa cada tipo de chequeo, y qué no permite concluir, está en [docs/fase0.md, sección 3.3](docs/fase0.md#33-chequeos-automáticos).
-
-Archivos que escribe en `data/fase0/`:
+Aplica las decisiones, verifica que todas las secciones tengan una etiqueta final válida (si no, termina con error) y escribe:
 
 | Archivo | Contenido |
 |---|---|
-| `units.jsonl` | Un registro por software/versión, con su huella de contenido y la versión idéntica de la que hereda etiquetas, si existe. |
-| `inventory.jsonl` | Un registro por archivo: hash, tipo, número de secciones y resultado de los chequeos. |
-| `sections.jsonl` | Un registro por sección: `section_id`, archivo, `line_start`, `line_end` y texto original. |
+| `data/fase0/section_status.jsonl` | **Resultado de la fase 0.** Etiqueta final de cada sección, con su procedencia (archivo y líneas), su estado, su categoría y, si es `parcial`, las afirmaciones que no se deben usar. |
+| `data/fase0/gaps.jsonl` | Partes que la documentación anuncia y no cubre. |
+| `reports/fase0/estadisticas.md` | Estadísticas principales de la fase. |
+
+El detalle de cada paso, los prompts, las reglas y el significado de cada archivo están en **[docs/fase0.md](docs/fase0.md)**.
 
 ## Reproducir y verificar los resultados
 
-Las salidas de cada paso están commiteadas en `data/`. Para comprobar que tu ejecución da exactamente los mismos resultados, corre el paso y compara con lo commiteado:
+Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
 
 ```bash
-python -m src.fase0.extract
-git status --short data/
+python -m src.fase0.run
+python -m src.fase0.finalize
+git status --short data/ reports/
 ```
 
-Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. El paso 1 es determinista: no usa LLM ni red, y recorre los archivos siempre en el mismo orden.
+Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
-Los pasos que usan LLM no son deterministas: el mismo prompt puede dar respuestas distintas. Esos pasos se reproducen con un caché de respuestas que también se sube a `data/`. Ver [docs/fase0.md, sección 4](docs/fase0.md#4-reproducibilidad).
+- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones y etiqueta final.
+- **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/`.
+
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad).
 
 Para ejecutar los tests:
 
@@ -240,14 +245,13 @@ Para ejecutar los tests:
 python -m pytest src/tests
 ```
 
-Comprueban cada regla de partición y los chequeos principales con casos escritos a mano. Además verifican, sobre todo el corpus, que cada sección coincide exactamente con sus líneas de origen.
-
 ## Decisiones principales
 
 - **La unidad de auditoría es el software/versión.** La consistencia se evalúa solo dentro de una misma versión: que v1 y v2 digan cosas distintas no es un defecto.
 - **Cada versión se audita completa en una sola llamada.** El corpus es pequeño (~320 KB) y la versión más grande ronda los 12k tokens, así que el LLM puede ver todos sus archivos a la vez y detectar contradicciones entre ellos.
 - **Las secciones cubren el 100% de cada archivo.** Ninguna parte de la documentación puede quedar sin evaluar, y el código lo garantiza.
 - **Los chequeos automáticos no deciden, informan.** Son pistas para los LLM, que deciden con el contexto si un problema invalida la sección.
-- **Dos LLM de proveedores distintos.** A etiqueta y B valida cada etiqueta; lo que B no confirma pasa a revisión humana.
+- **Dos LLM de proveedores distintos.** A clasifica y B revisa cada clasificación. Si dan estados distintos, una persona elige el criterio de A o el de B. Si no elige, se aplica una regla fija: gana `parcial`; si no hay `parcial`, gana `usable`.
+- **La categoría no se revisa.** Si A y B solo discrepan en la categoría, se usa la de A.
 
 El detalle y la justificación de cada regla están en [docs/fase0.md](docs/fase0.md).

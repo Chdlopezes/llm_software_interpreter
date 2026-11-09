@@ -1,0 +1,212 @@
+{
+ "unit": "demand-forecast-docs/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "6c713880c1d2d784bd352ba56d2331253416f2acff43487d9fe327410920380d",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "demand-forecast-docs/latest/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://retaildocs.s3.amazonaws.com/demand-forecast-docs/0.1.3/guide/index.html\"",
+        "otras_secciones": [],
+        "explicacion": "Solo es un metadato de publicación con la URL de la guía."
+       }
+      ],
+      "justificacion": "Es un metadato de publicación y no dice nada técnico."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "The artifacts (README, CONTRIBUTING and CODING GUIDELINES) provided in this initial scaffold comply",
+        "otras_secciones": [],
+        "explicacion": "Es un comentario que quedó de la plantilla inicial y no habla del proyecto."
+       }
+      ],
+      "justificacion": "Es un comentario de plantilla y no tiene contenido técnico."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/README.md#1",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica qué es la documentación y a qué público va dirigida."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/README.md#2",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da pasos concretos para contribuir a la documentación, incluido el comando retail create-version."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "* [Overview of tools and pipelines](/overview.md)",
+        "otras_secciones": [],
+        "explicacion": "Es solo la barra lateral de navegación."
+       }
+      ],
+      "justificacion": "Es navegación y no tiene contenido técnico."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/explicabilidad/README.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el objetivo del proyecto de explicabilidad: pronosticar y explicar el TGMV y el impacto de las acciones planificadas."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica brevemente que la sección trata de la diarización de variables exógenas mensuales."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#1",
+      "categoria": "modelo_datos",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "($j \\in \\{1, \\ldots, N\\}$)",
+        "otras_secciones": [],
+        "explicacion": "N se define como el número de timestamps, pero aquí se usa como índice de series."
+       }
+      ],
+      "justificacion": "La notación sirve, salvo el rango del índice j, que no encaja con la definición de N."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#2",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica por qué hay que desagregar a nivel diario las variables exógenas mensuales."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#3",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe con fórmulas y un ejemplo el método de forecast proportions para jerarquías temporales."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#4",
+      "categoria": "otro",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el archivo concreto donde está implementada la transformación."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe el propósito del proyecto: pronóstico de TGMV y TSI para 9 categorías más el total de cada sitio."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#1",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica el modelo gitflow del proyecto y da los comandos concretos para crear las ramas feature y release."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#2",
+      "categoria": "configuracion",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "Notice that app.pipes.main is a module inside this project src/.",
+        "otras_secciones": [],
+        "explicacion": "El ejemplo justo anterior importa marketplace.pipes.main, no app.pipes.main."
+       }
+      ],
+      "justificacion": "Lo que cuenta sobre Poetry sirve, pero el nombre del módulo no cuadra con el ejemplo."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#3",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "On the other hand, the `ENV` is a parameter that we define when we run the workflow.",
+        "otras_secciones": [],
+        "explicacion": "Unas líneas más abajo dice que el valor se da al preparar el workflow, y el ejemplo usa rda workflow prepare."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "rda workflow prepare monitoring_workflow --version 0.0.1 --user-param ENV:DEV",
+        "otras_secciones": [],
+        "explicacion": "Los tags definidos para las imágenes están en minúscula (dev, hml, prd), pero aquí ENV se pasa como DEV, en mayúscula."
+       }
+      ],
+      "justificacion": "Describe bien RDA, las tareas y los workflows, pero hay dudas sobre cuándo se define ENV y con qué mayúsculas se escribe el tag."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#4",
+      "categoria": "arquitectura",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "The ingest classes can be found at `src/app/pipes/ingest`.",
+        "otras_secciones": [
+         "demand-forecast-docs/latest/guide/overview.md#2"
+        ],
+        "explicacion": "Los imports de los ejemplos usan el paquete marketplace (marketplace.pipes.ingest), no app."
+       }
+      ],
+      "justificacion": "Describe con detalle el pipeline y su uso desde un notebook, pero las rutas de los directorios no cuadran con el nombre del paquete."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#5",
+      "categoria": "arquitectura",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "If you take a look at the `src/app/pipes/main.py`, you will see",
+        "otras_secciones": [
+         "demand-forecast-docs/latest/guide/overview.md#2"
+        ],
+        "explicacion": "El código importa el catálogo desde marketplace.pipes.main, no desde app.pipes.main."
+       }
+      ],
+      "justificacion": "Explica la orquestación y el catálogo, pero la ruta de main.py no cuadra con el paquete marketplace."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#5",
+      "descripcion": "No se dice cuál es el archivo yml donde se definen los datasets del catálogo ni cómo está estructurado.",
+      "evidencia": "In marketplace, the datasets are defined in a yml file."
+     },
+     {
+      "section_id": "demand-forecast-docs/latest/guide/overview.md#3",
+      "descripcion": "Se anuncia el paso de ejecutar un plan con rda workflow run, pero no se explica ni se da un ejemplo.",
+      "evidencia": "3. We run a specific plan"
+     }
+    ]
+   }
+  }
+ ]
+}

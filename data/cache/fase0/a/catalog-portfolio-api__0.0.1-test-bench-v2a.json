@@ -1,0 +1,755 @@
+{
+ "unit": "catalog-portfolio-api/0.0.1-test-bench-v2a",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "bc7a0b018c625469a9538308219912334c73cb4069500d58d7f1308f54c24bb2",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":",
+        "otras_secciones": [],
+        "explicacion": "Solo es metadato con la URL de la guía publicada."
+       }
+      ],
+      "justificacion": "Es un metadato de publicación y no dice nada técnico del servicio."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica el propósito del servicio (API REST para marcas, logos, collectors y recursos) y su stack básico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Navigate through the sections below",
+        "otras_secciones": [],
+        "explicacion": "Es texto introductorio de navegación."
+       }
+      ],
+      "justificacion": "Es una introducción de navegación sin información técnica."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#2",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "<h3>Setup &amp; Installation</h3>",
+        "otras_secciones": [],
+        "explicacion": "Son tarjetas de índice que describen las secciones de la documentación."
+       }
+      ],
+      "justificacion": "Es un índice visual de las secciones de la documentación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#3",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "<h3>Metrics Dashboard</h3>",
+        "otras_secciones": [],
+        "explicacion": "Son tarjetas de accesos rápidos sin enlaces ni datos concretos."
+       }
+      ],
+      "justificacion": "Son accesos rápidos sin contenido técnico concreto."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#4",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "**Complete API Documentation**: All endpoints with request/response examples",
+        "otras_secciones": [],
+        "explicacion": "Enumera el contenido de la documentación, no del servicio."
+       }
+      ],
+      "justificacion": "Es un resumen de lo que contiene la documentación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#5",
+      "categoria": "procedimiento",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "To run this documentation locally:",
+        "otras_secciones": [],
+        "explicacion": "Explica cómo servir la documentación con docsify, no cómo usar el servicio."
+       }
+      ],
+      "justificacion": "Trata de la herramienta de documentación, no del servicio."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#6",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "**🌙 Dark Theme**: Professional JetBrains Darcula theme",
+        "otras_secciones": [],
+        "explicacion": "Describe funciones del sitio de documentación."
+       }
+      ],
+      "justificacion": "Describe funciones del portal de documentación, no del servicio."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- [🏠 Home](/)",
+        "otras_secciones": [],
+        "explicacion": "Es la barra lateral de navegación."
+       }
+      ],
+      "justificacion": "Es la barra lateral de navegación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# API Reference",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título con una frase introductoria."
+       }
+      ],
+      "justificacion": "Es un encabezado introductorio sin datos concretos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "See the [Authentication](authentication.md) section for detailed information.",
+        "otras_secciones": [],
+        "explicacion": "Remite a authentication.md, que no existe (enlace roto), así que no se sabe cómo autenticarse."
+       }
+      ],
+      "justificacion": "Afirma que hace falta autenticación pero el detalle está en una página que no existe; el resto es navegación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Tabla concreta de métodos, rutas y descripciones de los endpoints."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#3",
+      "categoria": "endpoint_api",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "\"data\": {",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#2",
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#3"
+        ],
+        "explicacion": "Dice que todas las respuestas van envueltas en 'data' y 'status', pero los ejemplos de brands.md devuelven 'results' u objetos sin envoltorio."
+       }
+      ],
+      "justificacion": "El formato de respuesta 'consistente' contradice los ejemplos reales de los endpoints."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#4",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Formato de error concreto y coherente con brands.md."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#5",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da un límite de peticiones concreto y las cabeceras asociadas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#6",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Use the interactive [Swagger UI]",
+        "otras_secciones": [],
+        "explicacion": "Solo enlaza a una herramienta externa."
+       }
+      ],
+      "justificacion": "Es solo un enlace a Swagger UI."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# Brand Endpoints",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título."
+       }
+      ],
+      "justificacion": "Es un encabezado sin contenido técnico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#1",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da las URL base concretas de producción y de desarrollo."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#2",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "\"results\": [",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#3"
+        ],
+        "explicacion": "La respuesta usa 'results' sin envoltorio 'data', en contra del formato general declarado."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "\"site\": \"MLB\",",
+        "otras_secciones": [],
+        "explicacion": "La petición filtra por site=MLA, pero el resultado de ejemplo devuelve una marca de MLB."
+       }
+      ],
+      "justificacion": "Los parámetros están bien documentados, pero el ejemplo de respuesta es incoherente con el filtro y con el formato general."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#3",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Cuerpo, campos obligatorios y ejemplos completos para crear una marca."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#4",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Documenta el parámetro y la respuesta para obtener una marca."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#5",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Documenta el parámetro, el cuerpo y un ejemplo de actualización."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#6",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Documenta el borrado con la cabecera X-Client-Id obligatoria y la respuesta."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#7",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Documenta el endpoint de activación con un ejemplo."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#8",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Documenta la comprobación de si una marca es activable y su respuesta."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#9",
+      "categoria": "troubleshooting",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "| 400 | `validation_error` | Request validation failed |",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#7",
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#4"
+        ],
+        "explicacion": "Aquí el código de error de validación es 'validation_error'; en las otras secciones es 'validation_failed'."
+       }
+      ],
+      "justificacion": "La tabla de errores es útil, pero el código de error de validación no coincide con el de otras secciones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#10",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da el límite de peticiones y las cabeceras con su significado."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# Architecture Overview",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título."
+       }
+      ],
+      "justificacion": "Es un encabezado sin contenido técnico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#1",
+      "categoria": "descripcion_general",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "built with Java and Spark framework",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#3"
+        ],
+        "explicacion": "Dice que el framework es Spark; el stack tecnológico dice Javalin."
+       }
+      ],
+      "justificacion": "Describe bien el propósito, pero el framework citado contradice la tabla del stack."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#2",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "El diagrama mermaid detalla capas, componentes e integraciones externas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#3",
+      "categoria": "arquitectura",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "| **Framework** | Javalin | Lightweight REST API framework |",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#1"
+        ],
+        "explicacion": "Dice que el framework es Javalin; la visión general dice Spark."
+       }
+      ],
+      "justificacion": "El stack es concreto, pero el framework contradice la visión general."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#4",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe la arquitectura en capas y los principios de diseño."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#5",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Detalla los flujos entre componentes y las integraciones externas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#6",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da características de rendimiento concretas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# Brand Management",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título."
+       }
+      ],
+      "justificacion": "Es un encabezado sin contenido técnico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "- [Brand Lifecycle](lifecycle.md) - Complete brand state management and transitions",
+        "otras_secciones": [],
+        "explicacion": "Todos los enlaces listados (lifecycle, creation, updates, activation, validation) están rotos."
+       }
+      ],
+      "justificacion": "Es un índice cuyos enlaces apuntan a páginas inexistentes."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#2",
+      "categoria": "modelo_datos",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Muestra la estructura completa de una marca con logos y recursos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#3",
+      "categoria": "modelo_datos",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Define los estados de una marca y sus transiciones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#4",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Reglas de negocio concretas de creación, activación y borrado."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#5",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Ejemplos curl concretos para crear, actualizar y activar una marca."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#6",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Lista las validaciones previas a la activación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#7",
+      "categoria": "troubleshooting",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "`validation_failed`: Business rules validation failed",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#9"
+        ],
+        "explicacion": "La referencia de la API llama 'validation_error' al error de validación."
+       }
+      ],
+      "justificacion": "La lista de errores es útil, pero el código de validación no coincide con la referencia de la API."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# Setup & Installation",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título."
+       }
+      ],
+      "justificacion": "Es un encabezado sin contenido técnico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- [Local Development](local-development.md) - Step-by-step local setup guide",
+        "otras_secciones": [],
+        "explicacion": "Es un índice de navegación."
+       }
+      ],
+      "justificacion": "Es navegación hacia otra página."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#2",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "# See Database Setup section for details",
+        "otras_secciones": [],
+        "explicacion": "El paso de configurar la base de datos remite a una sección 'Database Setup' que no existe."
+       }
+      ],
+      "justificacion": "Los comandos son concretos, pero el paso de base de datos depende de una sección ausente."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#3",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Lista los prerrequisitos con sus versiones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#4",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "After completing the setup, proceed to:",
+        "otras_secciones": [],
+        "explicacion": "Solo enlaza a otras secciones."
+       }
+      ],
+      "justificacion": "Es navegación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# Local Development Setup",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título."
+       }
+      ],
+      "justificacion": "Es un encabezado sin contenido técnico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#1",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Prerrequisitos concretos con sus versiones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#2",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Paso concreto para clonar el repositorio con el CLI."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#3",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Comandos concretos de compilación, tests y ejecución."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#4",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Estructura del código y comandos de tests y calidad."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#5",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Configuración concreta de los IDE."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#6",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Problemas comunes con su solución y comandos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#7",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "After successful setup:",
+        "otras_secciones": [],
+        "explicacion": "Solo enlaza a otras secciones."
+       }
+      ],
+      "justificacion": "Es navegación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "# Troubleshooting",
+        "otras_secciones": [],
+        "explicacion": "Solo es un título."
+       }
+      ],
+      "justificacion": "Es un encabezado sin contenido técnico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "This section provides comprehensive troubleshooting information",
+        "otras_secciones": [],
+        "explicacion": "Es texto introductorio y repetido."
+       }
+      ],
+      "justificacion": "Es una introducción sin información técnica."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#2",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Comandos concretos de diagnóstico de salud, base de datos y configuración."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#3",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Tablas de problema, síntoma y solución."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#4",
+      "categoria": "troubleshooting",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "contradiccion",
+        "cita": "| `validation_failed` | Business rules failed | Category issues, invalid data |",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#9"
+        ],
+        "explicacion": "La referencia de la API usa 'validation_error' para el error de validación."
+       }
+      ],
+      "justificacion": "La referencia de errores es útil, pero el código de validación no coincide con la referencia de la API."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#5",
+      "categoria": "troubleshooting",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "<Logger name=\"com.retailflow.catalog.portfolio\" level=\"DEBUG\"/>",
+        "otras_secciones": [
+         "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#4"
+        ],
+        "explicacion": "El paquete del logger no coincide con la estructura de código declarada (com/retailflow/catalog/brands)."
+       }
+      ],
+      "justificacion": "Las estrategias de depuración son útiles, pero el paquete del logger es incoherente con la estructura del código."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#6",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Pasos y comandos concretos para problemas de rendimiento y memoria."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#7",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Problemas por entorno con su solución."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#8",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Métricas clave con umbrales concretos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#9",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- **Slack**: #instore-dev",
+        "otras_secciones": [],
+        "explicacion": "Son canales de contacto y escalado, no comportamiento del servicio."
+       }
+      ],
+      "justificacion": "Son contactos y un proceso de escalado sin información técnica del servicio."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#1",
+      "descripcion": "No existe la página de autenticación, aunque se dice que todos los endpoints la requieren.",
+      "evidencia": "See the [Authentication](authentication.md) section for detailed information."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#1",
+      "descripcion": "Faltan las páginas de ciclo de vida, creación, actualización, activación y validación de marcas.",
+      "evidencia": "- [Brand Lifecycle](lifecycle.md) - Complete brand state management and transitions"
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2",
+      "descripcion": "Los endpoints de logos aparecen en la tabla pero no tienen detalle de parámetros ni respuestas.",
+      "evidencia": "| `POST` | `/catalog/brands/{brandId}/logos` | Upload brand logo |"
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2",
+      "descripcion": "Los endpoints de collectors aparecen en la tabla pero no tienen detalle.",
+      "evidencia": "| `POST` | `/catalog/brands/{brandId}/collectors` | Associate brand with collectors |"
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2",
+      "descripcion": "El endpoint de recursos aparece en la tabla pero no tiene detalle.",
+      "evidencia": "| `PUT` | `/catalog/brands/{brandId}/resources` | Create or update brand resources |"
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2",
+      "descripcion": "Los endpoints allstatus, ping y borrado de tags están listados pero brands.md no los detalla.",
+      "evidencia": "| `GET` | `/catalog/brands/{brandId}/allstatus` | Get brand with all status information |"
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#2",
+      "descripcion": "Se referencia una sección de configuración de la base de datos que no existe.",
+      "evidencia": "# See Database Setup section for details"
+     }
+    ]
+   }
+  }
+ ]
+}

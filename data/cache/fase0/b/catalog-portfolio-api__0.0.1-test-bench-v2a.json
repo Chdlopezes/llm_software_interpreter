@@ -1,0 +1,572 @@
+{
+ "unit": "catalog-portfolio-api/0.0.1-test-bench-v2a",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "600f4b0dc595ed57fc209d4dcfe770c51177b37808a3572979241cf56d899913",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":",
+      "explicacion": "Solo contiene la URL de publicación de la guía."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Identifica el propósito del servicio y tecnologías coherentes con el resto."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "Navigate through the sections below",
+      "explicacion": "Introduce la navegación sin aportar especificaciones técnicas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#2",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "<h3>Setup &amp; Installation</h3>",
+      "explicacion": "Describe las secciones del portal mediante tarjetas de índice."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#3",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "<h3>Metrics Dashboard</h3>",
+      "explicacion": "Presenta accesos rápidos sin instrucciones ni especificaciones concretas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#4",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "**Complete API Documentation**: All endpoints with request/response examples",
+      "explicacion": "Enumera contenidos anunciados por la documentación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#5",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "A descartó instrucciones técnicas concretas y autosuficientes para servir localmente la documentación con docsify."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#6",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "**🌙 Dark Theme**: Professional JetBrains Darcula theme",
+      "explicacion": "Enumera características de presentación y navegación del portal."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "- [🏠 Home](/)",
+      "explicacion": "Contiene únicamente enlaces de navegación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# API Reference",
+      "explicacion": "Es una portada introductoria sin especificaciones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#1",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "configuracion",
+      "cita": "See the [Authentication](authentication.md) section for detailed information.",
+      "explicacion": "A descartó el requisito explícito de autenticación, que es aprovechable aunque falte la página con su configuración."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#2",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "`/catalog/brands/search`",
+      "explicacion": "A pasó por alto que la ruta de búsqueda contradice el GET / y el ejemplo sobre la URL base de brands.md."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#3",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "endpoint_api",
+      "cita": "All API responses follow a consistent format:",
+      "explicacion": "La afirmación universal y su envoltorio contradicen los ejemplos de respuestas específicas y el pong del diagnóstico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "El formato de error coincide con el ejemplo de errores de marcas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Define un límite por cliente y cabeceras sin contradicciones internas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#6",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "Use the interactive [Swagger UI]",
+      "explicacion": "Solo remite a una herramienta externa de pruebas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# Brand Endpoints",
+      "explicacion": "Solo presenta la página de referencia."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Especifica las URL base de producción y desarrollo."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#2",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "\"site\": \"MLB\",",
+      "explicacion": "El resultado contradice el filtro site=MLA, el envoltorio difiere del formato universal y la ruta difiere de /search en la tabla general."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#3",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "\"id\": 123,",
+      "explicacion": "A omitió que la respuesta de creación carece del envoltorio data y status declarado obligatorio para todas las respuestas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#4",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "\"id\": 123,",
+      "explicacion": "A omitió que el objeto de respuesta directo contradice el formato universal con data y status."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Documenta ruta, parámetro y cuerpo de actualización sin inconsistencias demostrables."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#6",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "\"message\": \"Brand deleted successfully\",",
+      "explicacion": "A omitió que la respuesta de borrado no utiliza el envoltorio data declarado universal."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#7",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "\"status\": \"ACTIVE\",",
+      "explicacion": "A omitió que la respuesta directa con status de negocio contradice el envoltorio universal y su status numérico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#8",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "\"valid\": false,",
+      "explicacion": "A omitió que la respuesta de validación carece del envoltorio data y status declarado universal."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#9",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "A confundió la validación de solicitudes con la de reglas de negocio, que pueden tener códigos diferentes sin contradicción."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#10",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Documenta el límite y el significado de las cabeceras de control."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# Architecture Overview",
+      "explicacion": "Es un encabezado con una descripción genérica del contenido."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#1",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "descripcion_general",
+      "cita": "built with Java and Spark framework",
+      "explicacion": "El propósito es aprovechable, pero Spark contradice Javalin en la tabla tecnológica."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "El diagrama identifica capas, componentes e integraciones de manera concreta."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#3",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "arquitectura",
+      "cita": "| **Framework** | Javalin | Lightweight REST API framework |",
+      "explicacion": "La identificación de Javalin contradice Spark en la visión general, aunque el resto del stack es aprovechable."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Define responsabilidades de capas y principios arquitectónicos explícitos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Describe recorridos entre componentes y funciones de las integraciones externas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#6",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "arquitectura",
+      "cita": "",
+      "explicacion": "Expone características de rendimiento sin contradicciones demostrables en la documentación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# Brand Management",
+      "explicacion": "Presenta el tema de la guía sin reglas ni detalles técnicos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "[Brand Lifecycle](lifecycle.md)",
+      "explicacion": "Es un índice cuyos cinco documentos enlazados están ausentes."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "modelo_datos",
+      "cita": "",
+      "explicacion": "Proporciona una estructura de marca concreta con logos y recursos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "modelo_datos",
+      "cita": "",
+      "explicacion": "Define tres estados y sus transiciones sin que el nodo auxiliar de requisito añada otro estado declarado."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Establece reglas concretas de creación, activación y eliminación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Ofrece ejemplos concretos y coherentes de creación, actualización y activación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#6",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Enumera requisitos de validación previos a la activación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#7",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "A consideró contradictorios códigos que el texto distingue entre validación de negocio y validación de solicitudes."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# Setup & Installation",
+      "explicacion": "Es una presentación genérica de la guía de instalación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "[Local Development](local-development.md)",
+      "explicacion": "Solo introduce y enlaza la guía de desarrollo local."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#2",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "procedimiento",
+      "cita": "# See Database Setup section for details",
+      "explicacion": "Los comandos son aprovechables, pero la configuración de base de datos depende de una sección ausente."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Lista dependencias y versiones mínimas coherentes con la guía detallada."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#4",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "After completing the setup, proceed to:",
+      "explicacion": "Únicamente recomienda otras páginas de la documentación."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# Local Development Setup",
+      "explicacion": "Es un título y una introducción sin instrucciones concretas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Especifica herramientas necesarias y sus versiones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Proporciona el comando para obtener el repositorio y entrar en él."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Documenta comandos de compilación, comprobación y ejecución sin que se pueda deducir otra versión del artefacto desde la versión documental."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Describe la estructura del código y comandos concretos de pruebas y análisis."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#5",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Proporciona ajustes concretos de IntelliJ IDEA y extensiones para VS Code."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#6",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Relaciona problemas de desarrollo con soluciones y comandos de diagnóstico."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#7",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "After successful setup:",
+      "explicacion": "Contiene únicamente enlaces para continuar leyendo."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "# Troubleshooting",
+      "explicacion": "Es una portada sin diagnósticos concretos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "This section provides comprehensive troubleshooting information",
+      "explicacion": "Anuncia el contenido de la guía sin aportar soluciones."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#2",
+      "de_acuerdo": false,
+      "estado": "parcial",
+      "categoria": "troubleshooting",
+      "cita": "# Expected: \"pong\"",
+      "explicacion": "A omitió que la respuesta pong del health check contradice el formato JSON declarado universal, aunque los comandos restantes son aprovechables."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Asocia problemas y síntomas concretos con acciones correctivas."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#4",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "A atribuyó una contradicción a validation_failed aunque describe reglas de negocio y validation_error describe validación de solicitudes."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#5",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "troubleshooting",
+      "cita": "<Logger name=\"com.retailflow.catalog.portfolio\" level=\"DEBUG\"/>",
+      "explicacion": "El logger no coincide con el paquete documentado y el ejemplo de tiempos depende además de curl-format.txt, cuyo contenido no se proporciona."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#6",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Contiene procedimientos concretos de diagnóstico sin contradicciones verificables usando exclusivamente la documentación recibida."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#7",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Propone acciones concretas para problemas locales y de producción."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#8",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Define métricas de supervisión y umbrales explícitos."
+     },
+     {
+      "section_id": "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#9",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "A descartó el procedimiento concreto para reportar incidencias, que especifica evidencias técnicas necesarias además de contactos y escalado."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "La página authentication.md está enlazada y su ausencia está confirmada por el chequeo automático."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Las cinco páginas anunciadas están ausentes, aunque el README cubra parcialmente sus temas."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "Las operaciones de logos están listadas sin documentación detallada de sus solicitudes y respuestas."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": true,
+      "explicacion": "Las operaciones de collectors aparecen en la referencia rápida sin desarrollo posterior."
+     },
+     {
+      "hueco": 5,
+      "de_acuerdo": true,
+      "explicacion": "Se anuncia la operación de recursos sin especificar su cuerpo ni sus respuestas."
+     },
+     {
+      "hueco": 6,
+      "de_acuerdo": true,
+      "explicacion": "Falta el detalle de allstatus y borrado de tags, aunque ping sí tiene un ejemplo con respuesta esperada en el diagnóstico."
+     },
+     {
+      "hueco": 7,
+      "de_acuerdo": true,
+      "explicacion": "El inicio rápido remite explícitamente a Database Setup y ninguna sección recibida proporciona esa configuración."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,287 @@
+{
+ "unit": "vendor-stockkeeper-api/0.0.6-ep-restock-man",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "1edde23c5d55b46caaedc45578f363a9d2697aabe2ea137bd349d661699e1a28",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":",
+        "otras_secciones": [],
+        "explicacion": "Solo contiene la URL de publicación de la guía."
+       }
+      ],
+      "justificacion": "Es un metadato de publicación y no dice nada técnico sobre el servicio."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/_coverpage.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "![logo](assets/images/logo-transparent.png ':size=200')",
+        "otras_secciones": [],
+        "explicacion": "Solo hay un logo, y además el recurso no existe."
+       }
+      ],
+      "justificacion": "Es la portada con un logo y no tiene contenido técnico."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/_coverpage.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "[Start](introduction.md)",
+        "otras_secciones": [],
+        "explicacion": "Es una portada con enlaces; la única frase descriptiva ya está más completa en la introducción."
+       }
+      ],
+      "justificacion": "Es una portada de navegación sin información técnica propia."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- [Important aspects](/important)",
+        "otras_secciones": [],
+        "explicacion": "Es solo el índice de navegación."
+       }
+      ],
+      "justificacion": "Es la barra lateral de navegación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#0",
+      "categoria": "troubleshooting",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "This section is about the alerts in the project and how to resolve them.",
+        "otras_secciones": [],
+        "explicacion": "Es una frase introductoria sin datos concretos."
+       }
+      ],
+      "justificacion": "Es solo una introducción a la sección de alertas."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#1",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Es una tabla concreta de alertas con su descripción y el enlace al monitor."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#2",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica paso a paso cómo resolver cada alerta."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#0",
+      "categoria": "endpoint_api",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "vacio",
+        "cita": "# API",
+        "otras_secciones": [],
+        "explicacion": "Solo tiene el título, sin contenido."
+       }
+      ],
+      "justificacion": "La sección está vacía."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#1",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da el nombre del dominio y las URL base de prod y stage."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#2",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "[Feed Consumer](#vendor-branch-search)",
+        "otras_secciones": [],
+        "explicacion": "El enlace apunta a un ancla de otro servicio que no existe."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "[Restock Consumer](#get-branches-by-vendor-id)",
+        "otras_secciones": [],
+        "explicacion": "El enlace apunta a un ancla que no corresponde y está rota."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/restock-new",
+        "otras_secciones": [
+         "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#1"
+        ],
+        "explicacion": "El host -test no figura entre las URL base documentadas (prod/stage)."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "| GET               | [Get Detail](#Get-Detail)",
+        "otras_secciones": [],
+        "explicacion": "Los endpoints GET se listan sin ningún detalle, y sus anclas están rotas."
+       }
+      ],
+      "justificacion": "Los ejemplos de Restock y Feed sirven, pero los enlaces son incoherentes, el host de ejemplo no está documentado y faltan los endpoints GET."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md#0",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da el host, el puerto y el nombre de la base de datos por entorno; la imagen ausente al final no cambia el contenido."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#0",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "API and, therefore, in the inventory.",
+        "otras_secciones": [],
+        "explicacion": "Es un fragmento de texto duplicado y dañado."
+       }
+      ],
+      "justificacion": "El propósito de la verificación está claro, pero hay una línea duplicada y rota."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#1",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Identifica los dos flujos (Restock y Feed) que requieren verificación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#2",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica de forma concreta por qué es necesaria la verificación de ítems de prueba."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#3",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da los pasos concretos de verificación para cada flujo."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#4",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Be sure to follow these steps before executing any action on inventory flows.",
+        "otras_secciones": [],
+        "explicacion": "Es una conclusión genérica sin información nueva."
+       }
+      ],
+      "justificacion": "Es una conclusión sin contenido técnico propio."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#5",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "curl --location 'https://internal-api.techzone.com/items/MLA1737779958?caller.scopes=admin&include_attributes=all",
+        "otras_secciones": [],
+        "explicacion": "Falta la comilla de cierre, así que el comando no se puede copiar tal cual."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "check that it has **test_items** or any of the tags",
+        "otras_secciones": [],
+        "explicacion": "La respuesta de ejemplo muestra la etiqueta test_item, no test_items."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "Which are: **[sap_sku, material_id, site_id, seller_id]**",
+        "otras_secciones": [],
+        "explicacion": "El JSON de ejemplo de la tabla no contiene material_id."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "![img_1.png](assets/images/img_1.png)",
+        "otras_secciones": [],
+        "explicacion": "La imagen de la tabla de base de datos referenciada no existe."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "![img.png](assets/images/img.png)",
+        "otras_secciones": [],
+        "explicacion": "La imagen ilustrativa de las etiquetas no existe."
+       }
+      ],
+      "justificacion": "El procedimiento general sirve, pero hay comandos rotos, nombres de etiquetas y campos incoherentes e imágenes ausentes."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/introduction.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe con claridad el propósito del servicio y sus dos endpoints principales."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#2",
+      "descripcion": "El endpoint Get Detail aparece en la tabla pero no tiene detalle documentado.",
+      "evidencia": "| GET               | [Get Detail](#Get-Detail)                             | `/fp/inventory/item/detail/{identifierRegister}`     |"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#2",
+      "descripcion": "El endpoint Internal Item Detail aparece en la tabla pero no tiene detalle documentado.",
+      "evidencia": "[Internal Item Detail](#internal-item-detail)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#2",
+      "descripcion": "El endpoint Get Detail Doma aparece en la tabla pero no tiene detalle documentado.",
+      "evidencia": "[Get Detail Doma](#item-detail)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#5",
+      "descripcion": "Falta la imagen de la tabla 1p_3pl_product_stock_mov de la base de datos de 1p-3pl-integrator.",
+      "evidencia": "![img_1.png](assets/images/img_1.png)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#5",
+      "descripcion": "Falta la imagen ilustrativa de las etiquetas de ítem de prueba.",
+      "evidencia": "![img.png](assets/images/img.png)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md#0",
+      "descripcion": "Falta la imagen referenciada en la sección de base de datos.",
+      "evidencia": "![img.png](img.png)"
+     }
+    ]
+   }
+  }
+ ]
+}

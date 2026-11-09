@@ -1,0 +1,191 @@
+{
+ "unit": "vendor-stockkeeper-api/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "78340b24c0f5d5ca566ad9994c20ec1dedcb0b790cbfc4f29474c740367818e1",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "vendor-stockkeeper-api/latest/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "{\"guide\":\"https://techzone-docs.s3.amazonaws.com/vendor-stockkeeper-api/0.41.0/guide/index.html\"}",
+      "explicacion": "Solo contiene el enlace de publicación de la guía."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/_coverpage.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "![logo](assets/images/logo-transparent.png ':size=200')",
+      "explicacion": "Solo referencia un logo ausente, sin información técnica."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/_coverpage.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "[Start](introduction.md)",
+      "explicacion": "Es una portada con navegación y una descripción demasiado genérica para extraer información técnica concreta."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "- [About](/introduction)",
+      "explicacion": "Contiene únicamente el menú de navegación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/alerts.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "troubleshooting",
+      "cita": "This section is about the alerts in the project and how to resolve them.",
+      "explicacion": "Solo anuncia el contenido de los apartados siguientes."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/alerts.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Identifica alertas, sus condiciones y sus monitores sin inconsistencias demostrables."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/alerts.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Describe acciones de diagnóstico y resolución concretas para cada alerta."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/api.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "endpoint_api",
+      "cita": "# API",
+      "explicacion": "Esta sección individual solo contiene un título."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/api.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Documenta el nombre del servicio y los dominios de producción y stage."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/api.md#2",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "[Internal Item Detail](#internal-item-detail)",
+      "explicacion": "Las rutas y ejemplos POST son aprovechables, pero hay anclas rotas y GET sin detalle; el host de test no contradice por sí solo una lista limitada a prod y stage."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/database.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Los nombres de bases, el host y el puerto están explícitos y no dependen de la imagen ausente."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/important.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Establece la verificación previa de los ítems de prueba y su finalidad, pese a una repetición editorial."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/important.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Identifica Restock y Feed como los flujos que requieren verificación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/important.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Explica los efectos de la verificación sobre los errores, los datos enviados y el inventario."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/important.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Indica qué comprobar en el inbound y en el operationId antes de actuar."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/important.md#4",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "descripcion_general",
+      "cita": "Be sure to follow these steps before executing any action on inventory flows.",
+      "explicacion": "Es un cierre exhortativo que no especifica operaciones, parámetros ni condiciones técnicas concretas."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/important.md#5",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "procedimiento",
+      "cita": "check that it has **test_items**",
+      "explicacion": "El procedimiento es aprovechable, pero contiene una comilla sin cerrar, test_items frente a test_item, material_id ausente del ejemplo e imágenes faltantes."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/latest/guide/introduction.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Explica la responsabilidad del servicio y distingue los movimientos 3PL de los inbound."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "Get Detail está listado y enlazado, pero no existe el apartado que debería desarrollarlo."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Internal Item Detail está listado y enlazado, pero carece de su apartado de detalle."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "Get Detail Doma está listado y enlazado, pero su destino y explicación no aparecen."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": true,
+      "explicacion": "Ambas imágenes están referenciadas y los chequeos confirman que sus recursos no existen."
+     },
+     {
+      "hueco": 5,
+      "de_acuerdo": true,
+      "explicacion": "La sección referencia img.png y el chequeo confirma su ausencia, aunque el texto de configuración sea utilizable."
+     },
+     {
+      "hueco": 6,
+      "de_acuerdo": false,
+      "explicacion": "El título aislado está vacío, pero el documento API sí desarrolla dominios, rutas y ejemplos en las secciones siguientes."
+     }
+    ]
+   }
+  }
+ ]
+}

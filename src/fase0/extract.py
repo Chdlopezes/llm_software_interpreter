@@ -244,7 +244,10 @@ HTML_LINK_RE = re.compile(r"""\b(href|src)\s*=\s*["']([^"']+)["']""", re.IGNOREC
 HTML_ID_RE = re.compile(r"""\b(?:id|name)\s*=\s*["']([^"']+)["']""", re.IGNORECASE)
 HTML_ENTITY_RE = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|quot|amp|lt|gt|apos);")
 SCHEME_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
-HEX_COLOR_RE = re.compile(r"^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
+# Línea que es solo un marcador de contenido pendiente ('TO DO.', 'TBD', ...). Se exige
+# la línea completa y en mayúsculas para no confundirlo con frases como 'To do this'.
+PLACEHOLDER_RE = re.compile(r"^\s*(TO ?DO|TBD|FIXME|WIP|PENDIENTE)\b[\s.:!…-]*$")
+HEX_COLOR_RE =re.compile(r"^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".ico"}
 
 
@@ -291,6 +294,8 @@ def check_markdown(rec: FileRecord, lines: list[str], mask: list[bool], file_pat
             if HTML_ENTITY_RE.search(line):
                 entity_lines.append(i)
             continue
+        if PLACEHOLDER_RE.match(line):
+            rec.add_check("marcador_pendiente", i, line.strip())
         links = [(bang == "!", tgt) for bang, _, tgt in MD_LINK_RE.findall(line)]
         links += [(attr.lower() == "src", tgt) for attr, tgt in HTML_LINK_RE.findall(line)]
         for is_image, raw in links:

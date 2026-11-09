@@ -1,0 +1,191 @@
+{
+ "unit": "vendor-stockkeeper-api/0.0.6-ep-restock-man",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "d3e063bc0417859d48d47bc99ef7fb4b4186f8cd565d19e8f0ef348598a9a587",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":",
+      "explicacion": "Solo proporciona la ubicación de publicación de la guía."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/_coverpage.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "![logo](assets/images/logo-transparent.png ':size=200')",
+      "explicacion": "Solo contiene una referencia a un logo ausente."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/_coverpage.md#1",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "[Start](introduction.md)",
+      "explicacion": "Es una portada con enlaces y una descripción demasiado genérica para aportar contenido técnico concreto."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "- [About](/introduction)",
+      "explicacion": "Contiene únicamente enlaces de navegación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "troubleshooting",
+      "cita": "This section is about the alerts in the project and how to resolve them.",
+      "explicacion": "Anuncia el tema sin describir ninguna alerta ni solución."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Relaciona alertas concretas con sus causas generales y sus monitores sin daños que alteren la tabla."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "troubleshooting",
+      "cita": "",
+      "explicacion": "Documenta acciones de diagnóstico y resolución para las cuatro alertas sin contradicciones demostrables."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "endpoint_api",
+      "cita": "# API",
+      "explicacion": "Solo contiene el título de la sección."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Identifica el servicio y sus dominios para producción y stage."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#2",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "[Get Detail](#Get-Detail)",
+      "explicacion": "Los ejemplos POST son aprovechables, pero hay anclas rotas y faltan los detalles anunciados de los GET; el host de test no demuestra por sí solo una inconsistencia con los dominios de prod y stage."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Los nombres de las bases, el host y el puerto están explícitos y siguen siendo utilizables pese a la imagen ausente y las credenciales de ejemplo."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#0",
+      "de_acuerdo": false,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "A penalizó una repetición editorial que no altera la instrucción completa y comprensible de verificar los ítems de prueba antes de actuar."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Identifica explícitamente Restock y Feed como los flujos que requieren verificación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Explica las consecuencias de omitir la verificación y su relación con la integridad del inventario y de la API."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "procedimiento",
+      "cita": "",
+      "explicacion": "Indica qué revisar en cada flujo y exige una validación final antes de proceder."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#4",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "otro",
+      "cita": "Be sure to follow these steps before executing any action on inventory flows.",
+      "explicacion": "Es un cierre genérico que remite a los pasos anteriores sin aportar detalles técnicos."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#5",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "procedimiento",
+      "cita": "check that it has **test_items**",
+      "explicacion": "El procedimiento es aprovechable, pero contiene un curl sin comilla de cierre, la discrepancia test_items/test_item, un material_id ausente del ejemplo y dos imágenes faltantes."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/introduction.md#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "descripcion_general",
+      "cita": "",
+      "explicacion": "Describe la responsabilidad del servicio y distingue los dos tipos principales de movimientos que actualizan stock."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "Get Detail figura con una ruta y un enlace a un desarrollo inexistente en la documentación recibida."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "Internal Item Detail está listado, pero no aparece la sección de detalle que anuncia su enlace."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": true,
+      "explicacion": "Get Detail Doma está listado y enlazado sin que exista su detalle correspondiente."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": true,
+      "explicacion": "El procedimiento referencia una imagen de la tabla y los chequeos confirman que el recurso falta."
+     },
+     {
+      "hueco": 5,
+      "de_acuerdo": true,
+      "explicacion": "La imagen de apoyo para identificar etiquetas está referenciada y su ausencia está comprobada."
+     },
+     {
+      "hueco": 6,
+      "de_acuerdo": true,
+      "explicacion": "La sección de base de datos referencia img.png y el recurso no está disponible."
+     }
+    ]
+   }
+  }
+ ]
+}

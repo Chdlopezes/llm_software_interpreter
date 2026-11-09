@@ -1,0 +1,196 @@
+{
+ "unit": "payment-promise-gateway/latest",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "1dad54f588598ff64e444263173994474297a5fee22594c702423ebdaf7bdd49",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "payment-promise-gateway/latest/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "\"guide\":\"https://workflowdocs.s3.amazonaws.com/payment-promise-gateway/3.7.0/guide/index.html\"",
+        "otras_secciones": [],
+        "explicacion": "Solo contiene la URL de publicación de la guía; no describe el servicio."
+       }
+      ],
+      "justificacion": "Son metadatos de publicación y no dicen nada técnico sobre el servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica con claridad para qué sirve el servicio y qué papel de intermediario cumple."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#1",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "El diagrama muestra las capas internas y los servicios externos de los que depende, sin contradicciones."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#2",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el stack tecnológico con versiones concretas."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#3",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe la estructura de paquetes del proyecto y qué contiene cada uno."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#4",
+      "categoria": "arquitectura",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Enumera los patrones de diseño que se usan, con ejemplos de clases."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#5",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Lista las funcionalidades principales del servicio de forma coherente con el resto de la guía."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#6",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Lista los siete endpoints principales con su método y ruta, y coincide con las demás secciones."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#7",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Detalla el flujo de cada endpoint (parámetros, llamadas internas y DTOs que se devuelven) de forma coherente."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#8",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "inconsistencia",
+        "cita": "\"paymentMethod\": \"CREDIT_CARD\",",
+        "otras_secciones": [
+         "payment-promise-gateway/latest/guide/README.md#9"
+        ],
+        "explicacion": "El ejemplo de respuesta del formulario solo ofrece CASH, DEBIT y ACCOUNT_MONEY como métodos de pago; CREDIT_CARD no aparece."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "\"dateCreated\": \"2025-05-12T15:54:43-05:00\",",
+        "otras_secciones": [
+         "payment-promise-gateway/latest/guide/README.md#7"
+        ],
+        "explicacion": "El diagrama de secuencia dice que el servicio calcula dateCreated, pero el ejemplo lo envía en el cuerpo de la petición."
+       }
+      ],
+      "justificacion": "Los ejemplos curl son útiles, pero el cuerpo de POST /payment_promise trae valores que no cuadran con otras secciones."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#9",
+      "categoria": "endpoint_api",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Muestra ejemplos concretos de respuesta JSON para cada endpoint."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#10",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica la variable SCOPE y las opciones de VM concretas para ejecutar el proyecto en local."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#11",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da los requisitos previos y los comandos concretos para compilar y ejecutar."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#12",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Da el comando concreto para lanzar los tests."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#13",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica que las métricas se recogen con DataDog y enumera las métricas clave."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#14",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe en términos generales, pero sin contradicciones, cómo se gestionan los errores."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#15",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Follow the existing code structure",
+        "otras_secciones": [],
+        "explicacion": "Son pautas genéricas para contribuir, no información sobre el funcionamiento del servicio."
+       }
+      ],
+      "justificacion": "Son normas para contribuidores y no dicen nada técnico sobre el servicio."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#16",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "This project is proprietary software owned by GreatMart.",
+        "otras_secciones": [],
+        "explicacion": "Es solo una nota de licencia."
+       }
+      ],
+      "justificacion": "Información de licencia sin contenido técnico."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#6",
+      "descripcion": "La documentación detallada de la API (OpenAPI/Swagger) se remite a specs-hub, que no está incluida en esta documentación.",
+      "evidencia": "Detailed API documentation can be found in [specs-hub](https://web.workflowcloud.io/payment-promise-gateway/specs-hub)."
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#14",
+      "descripcion": "Se anuncia un formato de error común y excepciones propias, pero no se documentan ni el formato, ni los códigos HTTP, ni las excepciones.",
+      "evidencia": "Consistent error format in responses"
+     },
+     {
+      "section_id": "payment-promise-gateway/latest/guide/README.md#3",
+      "descripcion": "Se menciona un paquete de configuración de WorkflowCloud, pero su contenido no se explica en ninguna parte.",
+      "evidencia": "workflowconfig/ # WorkflowCloud configuration"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,197 @@
+{
+ "unit": "zenith-keeper/1.1.6",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "f930c3b3fd05481871817fdaf3290e136423d07381ff9e8d38496160906e8d5f",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "zenith-keeper/1.1.6/documentationTypes.json#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "\"guide\":\"https://nimbuslib-docs.s3.amazonaws.com/zenith-keeper/1.1.6/guide/index.html\"",
+      "explicacion": "Solo contiene enlaces de publicación de la documentación."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/README.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "#API FRESH PRODUCTS DOCUMENTATION",
+      "explicacion": "La página contiene únicamente un título, sin instrucciones técnicas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/_sidebar.md#0",
+      "de_acuerdo": true,
+      "estado": "no_usable",
+      "categoria": "navegacion_metadatos",
+      "cita": "* [Use cases](use-cases.md)",
+      "explicacion": "Es un menú de navegación sin contenido técnico propio."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/guide/use-cases.md#0",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "arquitectura",
+      "cita": "C-->>M: HTTP 201 - List<ProductDTO>",
+      "explicacion": "Los diagramas aportan recorridos internos útiles, pero presentan discrepancias de rutas y códigos HTTP y omiten sort en la última llamada."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#0",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "configuracion",
+      "cita": "",
+      "explicacion": "Declara la versión de OpenAPI y la dirección del servidor local sin contradicciones demostrables."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#1",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Define el POST de ingreso de lotes con esquemas existentes y respuesta 201 coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#2",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Define el PUT bajo la ruta anterior con petición y respuesta referenciadas y código de éxito coherente."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#3",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Documenta la lista de productos y sus respuestas 200 y 404 de forma coherente con la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#4",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "La ruta por categoría, su parámetro y sus respuestas coinciden con lo descrito en la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#5",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "'400':",
+      "explicacion": "La petición y la respuesta de éxito son aprovechables, pero el error 400 discrepa del 404 de la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#6",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "'200':",
+      "explicacion": "El código de éxito 200 contradice el 201 del diagrama para consultar los productos de una orden."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#7",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "'400':",
+      "explicacion": "La operación conserva información útil, pero su error 400 contradice los errores 404 del diagrama."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#8",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "/api/v1/fresh-products/list{productId}/{sort}:",
+      "explicacion": "La ruta omite la barra entre list y productId que aparece en el caso equivalente de la guía."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#9",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "/api/v1/fresh-products/warehouse{productId}:",
+      "explicacion": "La ruta difiere de la llamada del diagrama en la barra anterior a productId."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#10",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "/api/v1/fresh-products/due-date{quantityOfDays}:",
+      "explicacion": "La ruta difiere de la guía en la barra anterior a quantityOfDays."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#11",
+      "de_acuerdo": true,
+      "estado": "parcial",
+      "categoria": "endpoint_api",
+      "cita": "- name: quatintyOfDays",
+      "explicacion": "El parámetro quatintyOfDays no coincide con el marcador quantityOfDays de la ruta."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#12",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Define sign-in con un esquema de petición existente y respuestas concretas sin contradicciones internas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#13",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Define sign-up con un esquema de petición existente y respuestas concretas sin contradicciones internas."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#14",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "endpoint_api",
+      "cita": "",
+      "explicacion": "Especifica el método, la ruta y la respuesta del healthcheck."
+     },
+     {
+      "section_id": "zenith-keeper/1.1.6/specs/swagger.yaml#15",
+      "de_acuerdo": true,
+      "estado": "usable",
+      "categoria": "modelo_datos",
+      "cita": "",
+      "explicacion": "Describe campos, tipos y relaciones entre esquemas cuyas referencias están presentes en el bloque."
+     }
+    ],
+    "huecos": [
+     {
+      "hueco": 1,
+      "de_acuerdo": true,
+      "explicacion": "El enlace promete una página Getting started cuyo destino solo contiene un título."
+     },
+     {
+      "hueco": 2,
+      "de_acuerdo": true,
+      "explicacion": "El endpoint sin sort anunciado en la guía carece de una operación correspondiente en la especificación."
+     },
+     {
+      "hueco": 3,
+      "de_acuerdo": false,
+      "explicacion": "La autenticación está documentada en el swagger y no se anuncia una explicación adicional en la guía."
+     },
+     {
+      "hueco": 4,
+      "de_acuerdo": false,
+      "explicacion": "El healthcheck está documentado en el swagger y no existe una referencia a contenido adicional ausente."
+     }
+    ]
+   }
+  }
+ ]
+}

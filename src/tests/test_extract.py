@@ -127,6 +127,12 @@ def test_ancla_inexistente_y_color_de_portada(unit):
     assert not cover
 
 
+def test_marcador_pendiente_solo_en_lineas_completas(unit):
+    (unit / "general.md").write_text("## Intro\nTO DO.\n\nTo do this, run make.\n")
+    checks, _ = checks_of(unit / "general.md", unit.parent)
+    assert [d for t, d in checks if t == "marcador_pendiente"] == ["TO DO."]
+
+
 def test_archivo_vacio_produce_una_seccion(unit):
     (unit / "vacio.md").write_text("")
     checks, secs = checks_of(unit / "vacio.md", unit.parent)

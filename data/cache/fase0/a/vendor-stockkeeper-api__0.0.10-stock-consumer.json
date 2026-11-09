@@ -1,0 +1,305 @@
+{
+ "unit": "vendor-stockkeeper-api/0.0.10-stock-consumer",
+ "intentos": [
+  {
+   "intento": 1,
+   "clave": "f27e1f0f1e18e8b8ecfb962f3e006b515a48cf3e91ead24986f21372ac9aac83",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "secciones": [
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/documentationTypes.json#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "{\"guide\":\"https://techzone-docs.s3.amazonaws.com",
+        "otras_secciones": [],
+        "explicacion": "Solo es metadato con la URL de publicación de la guía."
+       }
+      ],
+      "justificacion": "Es un metadato de publicación y no describe el servicio."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/_coverpage.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "![logo](assets/images/logo-transparent.png",
+        "otras_secciones": [],
+        "explicacion": "Solo contiene un logo, que además no existe."
+       }
+      ],
+      "justificacion": "Es la imagen de portada, sin contenido técnico."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/_coverpage.md#1",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "[Start](introduction.md)",
+        "otras_secciones": [
+         "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/introduction.md#0"
+        ],
+        "explicacion": "Es una portada con enlaces; la descripción de una línea ya está, más completa, en la introducción."
+       }
+      ],
+      "justificacion": "Es una portada con título, eslogan y enlaces."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/_sidebar.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "- [Important aspects](/important)",
+        "otras_secciones": [],
+        "explicacion": "Es solo la barra lateral de navegación."
+       }
+      ],
+      "justificacion": "Es un índice de navegación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "This section is about the alerts in the project and how to resolve them.",
+        "otras_secciones": [],
+        "explicacion": "Solo presenta la sección, sin ningún dato."
+       }
+      ],
+      "justificacion": "Es una introducción que no aporta información técnica."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#1",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Tabla concreta de alertas con su descripción y su monitor de Datadog."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#2",
+      "categoria": "troubleshooting",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica paso a paso cómo resolver cada alerta e indica su prioridad."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#0",
+      "categoria": "navegacion_metadatos",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "vacio",
+        "cita": "# API",
+        "otras_secciones": [],
+        "explicacion": "Solo tiene el título, sin contenido."
+       }
+      ],
+      "justificacion": "Sección vacía."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#1",
+      "categoria": "configuracion",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Indica el nombre del dominio y las URL base de prod y stage para cada contexto."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#2",
+      "categoria": "endpoint_api",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "--header &#39;x-api-scope: stage&#39; \\",
+        "otras_secciones": [],
+        "explicacion": "Los ejemplos curl tienen entidades HTML sin decodificar y no se pueden copiar tal cual."
+       },
+       {
+        "motivo": "roto",
+        "cita": "OrdersNewsRouter -&gt; ValidationRestockOrderNews : accept()",
+        "otras_secciones": [],
+        "explicacion": "El diagrama PlantUML tiene entidades HTML sin decodificar."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "[Feed Consumer](#vendor-branch-search)",
+        "otras_secciones": [],
+        "explicacion": "Las anclas de la tabla apuntan a apartados de otro servicio (vendor-branch) que no existen."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "[Operation Validation Consumer](#)",
+        "otras_secciones": [],
+        "explicacion": "La tabla lo declara como GET, pero el ejemplo envía un cuerpo con --data, que corresponde a un POST; además el enlace está vacío."
+       }
+      ],
+      "justificacion": "Los paths y los cuerpos de ejemplo son útiles, pero hay código con entidades HTML, anclas erróneas y un método HTTP que no cuadra."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md#0",
+      "categoria": "configuracion",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "incompleto",
+        "cita": "![img.png](img.png)",
+        "otras_secciones": [],
+        "explicacion": "Hace referencia a una imagen que no existe y cuyo contenido se desconoce."
+       }
+      ],
+      "justificacion": "Los hosts, puertos y nombres de base de datos por entorno son útiles, pero la imagen de referencia no está."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#0",
+      "categoria": "descripcion_general",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "API and, therefore, in the inventory.",
+        "otras_secciones": [],
+        "explicacion": "Hay un fragmento de frase duplicado y mal unido al texto."
+       }
+      ],
+      "justificacion": "Explica por qué hay que verificar los ítems de prueba, pero tiene texto duplicado y dañado."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#1",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Nombra los dos flujos de inventario (Restock y Feed) en los que hace falta la verificación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#2",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Explica de forma concreta los motivos de la verificación."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#3",
+      "categoria": "procedimiento",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Enumera los pasos de verificación de cada flujo."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#4",
+      "categoria": "otro",
+      "estado": "no_usable",
+      "problemas": [
+       {
+        "motivo": "sin_contenido_tecnico",
+        "cita": "Be sure to follow these steps before executing any action on inventory flows.",
+        "otras_secciones": [],
+        "explicacion": "Es una conclusión genérica que no aporta información nueva."
+       }
+      ],
+      "justificacion": "Es un cierre sin contenido técnico."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#5",
+      "categoria": "procedimiento",
+      "estado": "parcial",
+      "problemas": [
+       {
+        "motivo": "roto",
+        "cita": "&#34;received&#34;: [",
+        "otras_secciones": [],
+        "explicacion": "Los bloques de código JSON y curl tienen entidades HTML sin decodificar."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "![img.png](assets/images/img.png)",
+        "otras_secciones": [],
+        "explicacion": "Falta la imagen que ilustra los tags de ítem de prueba."
+       },
+       {
+        "motivo": "incompleto",
+        "cita": "![img_1.png](assets/images/img_1.png)",
+        "otras_secciones": [],
+        "explicacion": "Falta la imagen de la consulta a la tabla 1p_3pl_product_stock_mov."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "check that it has **test_items**",
+        "otras_secciones": [],
+        "explicacion": "El texto dice test_items, pero el tag del ejemplo es test_item."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "Which are: **[sap_sku, material_id, site_id, seller_id]**",
+        "otras_secciones": [],
+        "explicacion": "Incluye material_id, que no aparece en el registro de ejemplo de la tabla."
+       },
+       {
+        "motivo": "inconsistencia",
+        "cita": "MLA1737779958?caller.scopes=admin&amp;include_attributes=all",
+        "otras_secciones": [],
+        "explicacion": "El item_id consultado no aparece en la conciliación del ejemplo, la respuesta devuelve otro id y a la comilla del curl le falta el cierre."
+       }
+      ],
+      "justificacion": "El procedimiento para identificar ítems de prueba es útil, pero tiene código dañado, imágenes ausentes y valores que no cuadran."
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/introduction.md#0",
+      "categoria": "descripcion_general",
+      "estado": "usable",
+      "problemas": [],
+      "justificacion": "Describe el propósito del servicio y sus dos endpoints principales de restock."
+     }
+    ],
+    "huecos": [
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#2",
+      "descripcion": "El endpoint Get Detail aparece en la tabla de servicios pero no tiene detalle, y su ancla está rota.",
+      "evidencia": "[Get Detail](#Get-Detail)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#2",
+      "descripcion": "El endpoint Internal Item Detail aparece en la tabla pero no tiene documentación.",
+      "evidencia": "[Internal Item Detail](#internal-item-detail)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#2",
+      "descripcion": "El endpoint Get Detail Doma aparece en la tabla pero no tiene documentación.",
+      "evidencia": "[Get Detail Doma](#item-detail)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#2",
+      "descripcion": "Los enlaces de Feed Consumer y Restock Consumer apuntan a anclas que no existen.",
+      "evidencia": "[Restock Consumer](#get-branches-by-vendor-id)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md#0",
+      "descripcion": "Se hace referencia a una imagen de la base de datos que no existe.",
+      "evidencia": "![img.png](img.png)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#5",
+      "descripcion": "Faltan las imágenes de apoyo de los flujos Restock y Feed.",
+      "evidencia": "![img_1.png](assets/images/img_1.png)"
+     },
+     {
+      "section_id": "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#2",
+      "descripcion": "Se menciona el endpoint de item del API core para comprobar el estado del ítem, pero no se documenta.",
+      "evidencia": "You need to use api core item endpoint with item_id and check"
+     }
+    ]
+   }
+  }
+ ]
+}
