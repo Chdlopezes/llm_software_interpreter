@@ -5,3 +5,5 @@ openai==2.48.0
 python-dotenv==1.2.1
 # Lectura de swagger.yaml y del archivo de configuración
 pyyaml==6.0.3
+# Tests deterministas (python -m pytest)
+pytest==9.2.0

@@ -24,6 +24,7 @@ PACKAGES = {
     "openai": "openai",
     "python-dotenv": "dotenv",
     "pyyaml": "yaml",
+    "pytest": "pytest",
 }
 
 ROLES = {"A": "análisis", "B": "validación"}

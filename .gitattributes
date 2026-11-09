@@ -1,0 +1,5 @@
+# Los archivos de entrada y las salidas se conservan byte a byte en cualquier
+# sistema operativo: Git no convierte sus saltos de línea. Los hashes y los
+# rangos de líneas de data/ dependen de ello.
+docs_raw/** -text
+data/** -text
