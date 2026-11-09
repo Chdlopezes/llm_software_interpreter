@@ -1,0 +1,53 @@
+{
+  "title": "Caso de evaluación",
+  "description": "Solo historial y pregunta llegan al modelo evaluado; el resto se queda en el evaluador.",
+  "type": "object",
+  "required": ["case_id", "corpus_version", "situacion", "idioma", "historial", "pregunta", "expected_action",
+               "expected_tool", "expected_document_ids", "reference_answer", "answer_checks",
+               "tipo_evidencia", "restricciones", "procedencia"],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "corpus_version": {"type": "string", "pattern": "^docs_[0-9a-f]{12}$"},
+    "situacion": {"enum": ["version_explicita", "sin_version", "en_que_version", "comparacion_versiones",
+                           "falta_software", "software_en_historial", "evidencia_parcial", "sin_evidencia",
+                           "contradiccion", "sin_documentos"]},
+    "idioma": {"enum": ["es", "en"]},
+    "historial": {"type": "array"},
+    "pregunta": {"type": "string", "minLength": 1},
+    "expected_action": {"enum": ["tool_call", "clarification"]},
+    "expected_tool": {
+      "type": ["object", "null"],
+      "required": ["name", "arguments"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"enum": ["obtener_documentacion"]},
+        "arguments": {
+          "type": "object",
+          "required": ["software", "version"],
+          "additionalProperties": false,
+          "properties": {"software": {"type": "string"}, "version": {"type": ["string", "null"]}}
+        }
+      }
+    },
+    "expected_document_ids": {"type": "array", "items": {"type": "string"}},
+    "reference_answer": {"type": "string", "minLength": 1},
+    "answer_checks": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "tipo_evidencia": {"type": "array", "items": {"enum": ["texto", "tabla", "codigo", "diagrama",
+                                                           "especificacion", "formula"]}},
+    "restricciones": {"type": "array", "items": {"type": "object"}},
+    "procedencia": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["documento", "lineas", "sha256_canonico"],
+        "additionalProperties": false,
+        "properties": {
+          "documento": {"type": "string"},
+          "lineas": {"type": "array", "minItems": 2, "items": {"type": "integer"}},
+          "sha256_canonico": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}

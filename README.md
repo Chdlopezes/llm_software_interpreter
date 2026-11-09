@@ -8,6 +8,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 |---|---|---|
 | Preparación | Entorno, configuración de los LLM y verificación | Hecha |
 | 0 — Auditoría | Etiqueta toda la documentación: qué es usable, qué no y por qué, y qué falta | Hecha |
+| 1 — Catálogo y contrato | Catálogo de documentos, herramienta de consulta y criterios para construir los ejemplos | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -19,6 +20,7 @@ src/               Todo el código del flujo
   llm.py             Capa única para llamar a los LLM (CLI o API)
   check_setup.py     Verificación del entorno
   fase0/             Fase 0: auditoría de la documentación
+  fase1/             Fase 1: catálogo, herramienta y contrato de los ejemplos
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
@@ -40,7 +42,7 @@ requirements.txt   Dependencias de Python, con versiones fijas
 
   Las dos formas usan el mismo modelo y producen el mismo tipo de salida; solo cambia cómo te autenticas.
 
-  El paso 1 de la fase 0 no usa ningún LLM: para ejecutarlo solo necesitas Python.
+  El paso 1 de la fase 0 y toda la fase 1 no usan ningún LLM: para ejecutarlos solo necesitas Python.
 
 ## Configuración
 
@@ -222,6 +224,66 @@ Aplica las decisiones, verifica que todas las secciones tengan una etiqueta fina
 
 El detalle de cada paso, los prompts, las reglas y el significado de cada archivo están en **[docs/fase0.md](docs/fase0.md)**.
 
+## Fase 1 — Catálogo, herramienta y criterios de los ejemplos
+
+El asistente que se va a entrenar no recibe fragmentos elegidos de antemano. Ante una pregunta técnica, **llama a la herramienta `obtener_documentacion(software, version)`**, que devuelve los **documentos completos** de ese software (de todas sus versiones si `version` es `null`), y responde citando `[documento:Linicio-Lfin]`. La fase 1 deja listo todo lo necesario para generar esas conversaciones, sin generar todavía ninguna:
+
+1. **Catálogo.** Un documento por archivo de `docs_raw`, con su contenido normalizado (sin mover ninguna línea, para que las citas apunten al original), sus hashes y los tipos de evidencia que contiene (texto, tabla, código, diagrama, especificación OpenAPI, fórmula).
+2. **Restricciones.** Los resultados de la fase 0, trasladados a líneas de cada documento.
+3. **Herramienta.** El filtro exacto por software y versión, sin búsqueda semántica.
+4. **Contrato.** El prompt de sistema, las reglas, el formato de la conversación de entrenamiento y del caso de evaluación, y 10 conversaciones de referencia escritas a mano.
+
+**Decisión: los archivos de navegación quedan fuera del catálogo.** `_sidebar.md`, `_coverpage.md` y `documentationTypes.json` (33 de los 107 archivos) son índice, portada y metadatos de docsify. La fase 0 los clasificó como navegación, no contienen evidencia técnica y ocuparían contexto en cada llamada. El catálogo tiene 74 documentos.
+
+### Criterios para crear los ejemplos
+
+- **La fase 0 decide de qué se crean ejemplos, no qué ve el modelo.** La herramienta siempre devuelve los documentos completos, como en el uso real. Las preguntas y respuestas objetivo, en cambio, solo pueden apoyarse en secciones `usable` o `parcial`, y nunca en sus afirmaciones excluidas.
+  - **Única excepción, la situación «contradicción»:** cita las líneas en conflicto para señalarlo, nunca como un hecho.
+  - **Documentos idénticos en varias versiones:** una línea es no citable si lo es en cualquiera de las copias.
+- **Diez situaciones que cubrir:**
+  - versión explícita;
+  - sin versión;
+  - «¿en qué versión…?»;
+  - comparación de versiones;
+  - falta el software (se pregunta por él, sin llamar a la herramienta);
+  - software ya indicado en un turno anterior;
+  - evidencia parcial;
+  - sin evidencia;
+  - contradicción;
+  - versión o software sin documentos.
+
+  Los huecos de la fase 0 son la fuente de los casos sin evidencia completa, y sus contradicciones, la de los conflictos.
+- **Llamada:** la versión solo se fija si la pregunta la nombra. En las preguntas «¿en qué versión?», en las comparaciones y cuando no se indica versión, va `null`.
+- **Respuesta:**
+  - usa solo los documentos devueltos;
+  - cita cada afirmación técnica;
+  - no mezcla versiones;
+  - distingue «no está documentado» de «no se soporta»;
+  - responde lo que tiene respaldo y declara lo que falta.
+- **Idioma:** la mayoría de las preguntas en español y una parte en inglés. La respuesta va en el idioma de la pregunta.
+
+Las reglas completas están en [src/fase1/contract/reglas.md](src/fase1/contract/reglas.md).
+
+### Ejecutar la fase
+
+Requiere la fase 0 terminada.
+
+```bash
+python -m src.fase1.run
+```
+
+| Archivo | Contenido |
+|---|---|
+| `data/fase1/catalogo.jsonl` | Un documento por línea: contenido canónico, hashes, transformaciones y tipos de evidencia por líneas. |
+| `data/fase1/restricciones.jsonl` | Por documento: líneas no citables, afirmaciones excluidas y conflictos. |
+| `data/fase1/huecos.jsonl` | Huecos confirmados por software/versión, con sus líneas. |
+| `data/fase1/llamadas.jsonl` | Cada llamada posible a la herramienta, con sus documentos y su tamaño estimado en tokens. |
+| `data/fase1/ejemplos_referencia.jsonl` | Las 10 conversaciones de referencia (una por situación), validadas contra el contrato. |
+| `src/fase1/contract/` | Prompt de sistema, reglas y esquemas de la conversación y del caso de evaluación. |
+| `reports/fase1/estadisticas.md` | Estadísticas de la fase. |
+
+El detalle de cada paso está en **[docs/fase1.md](docs/fase1.md)**.
+
 ## Reproducir y verificar los resultados
 
 Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
@@ -229,15 +291,16 @@ Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que
 ```bash
 python -m src.fase0.run
 python -m src.fase0.finalize
+python -m src.fase1.run
 git status --short data/ reports/
 ```
 
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
-- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones y etiqueta final.
+- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final y toda la fase 1.
 - **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/`.
 
-Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad).
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) y [docs/fase1.md](docs/fase1.md).
 
 Para ejecutar los tests:
 
