@@ -1,0 +1,317 @@
+{
+ "contabilidad": {
+  "tareas": 412,
+  "candidatos_fase3": 407,
+  "aceptados": 386,
+  "rechazados": 26,
+  "rechazados_por_etapa": {
+   "duplicado": 21,
+   "fase3": 5
+  }
+ },
+ "por_conjunto": {
+  "train": {
+   "aceptados": 211,
+   "rechazados": 21,
+   "situaciones": {
+    "version_explicita": 34,
+    "sin_version": 29,
+    "software_en_historial": 30,
+    "en_que_version": 11,
+    "comparacion_versiones": 15,
+    "evidencia_parcial": 22,
+    "sin_evidencia": 23,
+    "contradiccion": 19,
+    "falta_software": 14,
+    "sin_documentos": 14
+   },
+   "idiomas": {
+    "en": 49,
+    "es": 162
+   },
+   "tipo_evidencia": {
+    "codigo": 58,
+    "diagrama": 29,
+    "especificacion": 21,
+    "formula": 2,
+    "tabla": 28,
+    "texto": 138
+   },
+   "software": {
+    "demand-forecast-docs": 38,
+    "order-workflow-api": 35,
+    "payment-promise-gateway": 41,
+    "vendor-stockkeeper-api": 66,
+    "zenith-keeper": 31
+   },
+   "tokens": {
+    "min": 590,
+    "mediana": 6649,
+    "p95": 22695,
+    "max": 23156,
+    "total": 1904402
+   },
+   "tokens_supervisados": {
+    "min": 9,
+    "mediana": 259,
+    "p95": 517,
+    "max": 872,
+    "total": 56562
+   }
+  },
+  "validation": {
+   "aceptados": 97,
+   "rechazados": 3,
+   "situaciones": {
+    "version_explicita": 14,
+    "sin_version": 15,
+    "software_en_historial": 14,
+    "en_que_version": 8,
+    "comparacion_versiones": 7,
+    "evidencia_parcial": 10,
+    "sin_evidencia": 10,
+    "contradiccion": 7,
+    "falta_software": 6,
+    "sin_documentos": 6
+   },
+   "idiomas": {
+    "en": 20,
+    "es": 77
+   },
+   "tipo_evidencia": {
+    "codigo": 34,
+    "diagrama": 6,
+    "especificacion": 12,
+    "tabla": 31,
+    "texto": 54
+   },
+   "software": {
+    "catalog-portfolio-api": 83,
+    "price-engine-api": 14
+   },
+   "tokens": {
+    "min": 586,
+    "mediana": 11109,
+    "p95": 21214,
+    "max": 21323,
+    "total": 1150256
+   },
+   "tokens_supervisados": {
+    "min": 9,
+    "mediana": 253,
+    "p95": 420,
+    "max": 504,
+    "total": 24282
+   }
+  },
+  "test": {
+   "aceptados": 78,
+   "rechazados": 2,
+   "situaciones": {
+    "version_explicita": 12,
+    "sin_version": 12,
+    "software_en_historial": 11,
+    "en_que_version": 6,
+    "comparacion_versiones": 6,
+    "evidencia_parcial": 8,
+    "sin_evidencia": 8,
+    "contradiccion": 5,
+    "falta_software": 5,
+    "sin_documentos": 5
+   },
+   "idiomas": {
+    "en": 13,
+    "es": 65
+   },
+   "tipo_evidencia": {
+    "codigo": 5,
+    "diagrama": 7,
+    "especificacion": 17,
+    "tabla": 17,
+    "texto": 40
+   },
+   "software": {
+    "2p-revenue-optimizer-api": 34,
+    "traffic-gate-api": 36,
+    "unified-transaction-configs": 8
+   },
+   "tokens": {
+    "min": 587,
+    "mediana": 4642,
+    "p95": 10357,
+    "max": 10534,
+    "total": 454627
+   },
+   "tokens_supervisados": {
+    "min": 11,
+    "mediana": 255,
+    "p95": 488,
+    "max": 588,
+    "total": 20522
+   }
+  }
+ },
+ "revision_humana": {
+  "aprobado": 175,
+  "pendiente": 0,
+  "no_aplica": 211,
+  "rechazado": 0
+ },
+ "duplicados": [
+  {
+   "task_id": "test-software_en_historial-009",
+   "conjunto": "test",
+   "situacion": "software_en_historial",
+   "etapa": "duplicado",
+   "motivo": "duplicado de test-software_en_historial-004: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.50)"
+  },
+  {
+   "task_id": "train-comparacion_versiones-004",
+   "conjunto": "train",
+   "situacion": "comparacion_versiones",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-comparacion_versiones-003: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.56)"
+  },
+  {
+   "task_id": "train-en_que_version-006",
+   "conjunto": "train",
+   "situacion": "en_que_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-en_que_version-001: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.08)"
+  },
+  {
+   "task_id": "train-en_que_version-008",
+   "conjunto": "train",
+   "situacion": "en_que_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-en_que_version-003: misma sección y mismo contenido (líneas citadas 0.50, respuesta 0.37)"
+  },
+  {
+   "task_id": "train-en_que_version-009",
+   "conjunto": "train",
+   "situacion": "en_que_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-en_que_version-004: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.41)"
+  },
+  {
+   "task_id": "train-en_que_version-010",
+   "conjunto": "train",
+   "situacion": "en_que_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-en_que_version-005: misma sección y mismo contenido (líneas citadas 0.50, respuesta 0.37)"
+  },
+  {
+   "task_id": "train-en_que_version-013",
+   "conjunto": "train",
+   "situacion": "en_que_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-en_que_version-002: misma sección y mismo contenido (líneas citadas 0.67, respuesta 0.07)"
+  },
+  {
+   "task_id": "train-en_que_version-015",
+   "conjunto": "train",
+   "situacion": "en_que_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-en_que_version-004: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.36)"
+  },
+  {
+   "task_id": "train-sin_version-017",
+   "conjunto": "train",
+   "situacion": "sin_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-sin_version-002: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.43)"
+  },
+  {
+   "task_id": "train-sin_version-023",
+   "conjunto": "train",
+   "situacion": "sin_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-sin_version-008: misma sección y mismo contenido (líneas citadas 0.25, respuesta 0.41)"
+  },
+  {
+   "task_id": "train-sin_version-031",
+   "conjunto": "train",
+   "situacion": "sin_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-sin_version-019: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.79)"
+  },
+  {
+   "task_id": "train-sin_version-032",
+   "conjunto": "train",
+   "situacion": "sin_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-sin_version-022: misma sección y mismo contenido (líneas citadas 0.25, respuesta 0.58)"
+  },
+  {
+   "task_id": "train-sin_version-033",
+   "conjunto": "train",
+   "situacion": "sin_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-sin_version-025: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.05)"
+  },
+  {
+   "task_id": "train-sin_version-035",
+   "conjunto": "train",
+   "situacion": "sin_version",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-sin_version-027: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.35)"
+  },
+  {
+   "task_id": "train-software_en_historial-007",
+   "conjunto": "train",
+   "situacion": "software_en_historial",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-software_en_historial-005: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.48)"
+  },
+  {
+   "task_id": "train-software_en_historial-008",
+   "conjunto": "train",
+   "situacion": "software_en_historial",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-software_en_historial-006: misma sección y mismo contenido (líneas citadas 0.67, respuesta 0.28)"
+  },
+  {
+   "task_id": "train-software_en_historial-009",
+   "conjunto": "train",
+   "situacion": "software_en_historial",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-software_en_historial-005: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.68)"
+  },
+  {
+   "task_id": "train-software_en_historial-010",
+   "conjunto": "train",
+   "situacion": "software_en_historial",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-software_en_historial-006: misma sección y mismo contenido (líneas citadas 0.67, respuesta 0.42)"
+  },
+  {
+   "task_id": "train-software_en_historial-012",
+   "conjunto": "train",
+   "situacion": "software_en_historial",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-software_en_historial-005: misma sección y mismo contenido (líneas citadas 1.00, respuesta 0.01)"
+  },
+  {
+   "task_id": "train-version_explicita-026",
+   "conjunto": "train",
+   "situacion": "version_explicita",
+   "etapa": "duplicado",
+   "motivo": "duplicado de train-version_explicita-018: misma sección y mismo contenido (líneas citadas 0.80, respuesta 0.19)"
+  },
+  {
+   "task_id": "validation-contradiccion-008",
+   "conjunto": "validation",
+   "situacion": "contradiccion",
+   "etapa": "duplicado",
+   "motivo": "duplicado de validation-contradiccion-004: pregunta casi igual (Jaccard 0.56)"
+  }
+ ],
+ "reglas": {
+  "modelo": "Qwen/Qwen3.5-4B",
+  "revision_tokenizer": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "max_tokens": 32768,
+  "jaccard_lineas": 0.5,
+  "jaccard_respuesta": 0.4,
+  "jaccard_pregunta": 0.5
+ }
+}

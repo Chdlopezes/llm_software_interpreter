@@ -11,6 +11,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | 1 — Catálogo y contrato | Catálogo de documentos, herramienta de consulta y criterios para construir los ejemplos | Hecha |
 | 2 — Separación | Reparte los software en entrenamiento, validación y prueba | Hecha |
 | 3 — Generación | Genera y verifica las conversaciones candidatas de los tres conjuntos | Hecha |
+| 4 — Validación y exportación | Controles, duplicados, revisión humana y datasets finales para Qwen3.5 | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -25,6 +26,7 @@ src/               Todo el código del flujo
   fase1/             Fase 1: catálogo, herramienta y contrato de los ejemplos
   fase2/             Fase 2: separación en conjuntos
   fase3/             Fase 3: generación y verificación de los ejemplos
+  fase4/             Fase 4: validación y exportación de los datasets
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
@@ -93,6 +95,7 @@ pip install -r requirements.txt
 | `python-dotenv` | Leer la configuración de `.env` |
 | `pyyaml` | Validar los `swagger.yaml` de la documentación |
 | `pytest` | Ejecutar los tests |
+| `transformers`, `jinja2` | Fase 4: plantilla de chat y tokenizer de Qwen3.5 para medir las conversaciones en tokens (no instala PyTorch ni descarga los pesos del modelo) |
 
 ### 4. Configurar los LLM
 
@@ -367,6 +370,46 @@ Para ver ejemplos al azar, con las citas resueltas contra el documento: `python 
 
 Los candidatos todavía no son el dataset final. En la fase 4 se eliminan duplicados, se hace la revisión humana, se miden las longitudes en tokens y se exportan. El detalle está en **[docs/fase3.md](docs/fase3.md)**.
 
+## Fase 4 — Validación y exportación
+
+Se validan los candidatos de la fase 3 y se exportan los datasets finales. Es determinista y no usa LLM.
+
+**Modelo a ajustar: Qwen3.5-4B.** Solo se descarga su tokenizer, en una revisión fija, para renderizar cada conversación con su plantilla de chat y medirla en tokens. Al renderizar se aplican dos ajustes:
+- `version: null` se escribe como `null`, para que el parser de llamadas de Qwen lo lea como nulo;
+- se desactiva el modo de razonamiento (`enable_thinking=False`).
+
+Los datos canónicos no cambian.
+
+**Pasos:**
+1. **Controles:** contrato de la fase 1, citas resueltas hasta el catálogo con su hash, aislamiento (ningún caso recibe documentos de otro conjunto), presupuesto de tokens y máscara de pérdida (solo se entrenan la llamada y la respuesta).
+2. **Duplicados:** dentro de cada conjunto y situación, los casos que piden el mismo contenido. Típicamente salen de una sección idéntica en dos versiones. La regla se calibró revisando a mano todos los pares candidatos.
+3. **Revisión humana** de validation y test, en `data/fase4/revision_humana.csv`. Con `python -m src.fase4.revisar --conjunto test` se recorren los casos pendientes uno a uno, con sus citas resueltas, y cada decisión se guarda al momento. En esta entrega se aprobaron en bloque como ejercicio del flujo, así que las referencias cuentan como verificadas por el LLM, no por una persona.
+4. **Exportación** de los datasets, con un manifiesto de hashes.
+
+**Resultado:**
+
+| Conjunto | Aceptados | Tokens (mediana / máximo) |
+|---|---:|---:|
+| `train` | 211 | ~6.500 / ~23.000 |
+| `validation` | 97 | ~11.100 / ~21.300 |
+| `test` | 78 | ~4.650 / ~10.500 |
+
+Se rechazaron 26 de 412 tareas: 21 duplicados y las 5 omitidas en la fase 3. Ninguna conversación supera el presupuesto de 32.768 tokens.
+
+```bash
+python -m src.fase4.run
+```
+
+| Archivo | Contenido |
+|---|---|
+| `data/fase4/train.jsonl`, `validation.jsonl`, `test.jsonl` | Conversaciones en formato de chat con *tool calling* (`messages` + `tools`, el formato conversacional de TRL), con su caso de evaluación, sus tokens y su estado de revisión humana |
+| `data/fase4/rejected.jsonl` | Tareas rechazadas, con la etapa y el motivo |
+| `data/fase4/revision_humana.csv` | Decisiones de la revisión humana |
+| `data/fase4/dataset_report.json`, `dataset_manifest.json` | Conteos por conjunto, situación, idioma, evidencia y software; hashes de archivos, entradas, prompts y tokenizer |
+| `reports/fase4/estadisticas.md` | Las cifras en tablas y la lista de duplicados |
+
+El detalle está en **[docs/fase4.md](docs/fase4.md)**.
+
 ## Reproducir y verificar los resultados
 
 Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
@@ -377,15 +420,16 @@ python -m src.fase0.finalize
 python -m src.fase1.run
 python -m src.fase2.run
 python -m src.fase3.run --solo-cache
+python -m src.fase4.run
 git status --short data/ reports/
 ```
 
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
-- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1 y 2 y el plan de tareas de la fase 3.
+- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1, 2 y 4 y el plan de tareas de la fase 3.
 - **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/` (fase 0) y `data/fase3/cache/` (fase 3). Con `--solo-cache`, la fase 3 no llama a ningún LLM ni necesita API keys.
 
-Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md) y [docs/fase3.md](docs/fase3.md).
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md), [docs/fase3.md](docs/fase3.md) y [docs/fase4.md](docs/fase4.md).
 
 Para ejecutar los tests:
 

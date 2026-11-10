@@ -1,0 +1,65 @@
+{
+ "corpus_version": "docs_b36991f86732",
+ "archivos": {
+  "train": {
+   "ruta": "data/fase4/train.jsonl",
+   "sha256": "319209985778a2d19ba926de27f8e6a97baaa1762c5edf7ba9b9891b7c858945",
+   "filas": 211
+  },
+  "validation": {
+   "ruta": "data/fase4/validation.jsonl",
+   "sha256": "b1a2c2e8c9bcfbb99f0eae95517b9f29bb7062c8b30cc1eb2a45a0aa64a43553",
+   "filas": 97
+  },
+  "test": {
+   "ruta": "data/fase4/test.jsonl",
+   "sha256": "e2b90777fc999723eec98f6bbd23e8013d4cd2b0957744536134de0567eace29",
+   "filas": 78
+  },
+  "rejected": {
+   "ruta": "data/fase4/rejected.jsonl",
+   "sha256": "cccb9c96b75b56f209ad4fd728ef183fc57858a4963b549d619349c8e690b52e",
+   "filas": 26
+  }
+ },
+ "entradas": {
+  "data/fase1/catalogo.jsonl": "84193de13741eefcbfe89e80ed10176d77291d8e20bbe396c9d12ebbafcea7e9",
+  "data/fase1/restricciones.jsonl": "87f7b0ad19696e341a9bcb563bcbc8af4092b1e60194b8ecef313686b33325d7",
+  "data/fase2/splits.json": "7ee3b3a2af199b954f941993921a26a851e6ca8bba787065fe8dc72ed3e92091",
+  "data/fase3/candidatos.jsonl": "6352d63a59cd082effb87719fe4ae288c830de5cb11faf0e4ce47faea606b243",
+  "data/fase4/revision_humana.csv": "26126275d4ffb63567f2fc44814711248d720107a3f89c1ddb3889bf02834159"
+ },
+ "prompts_y_contrato": {
+  "src/fase1/contract/system_prompt.md": "6f45609394833917c0a5cb82d62eaa31f70c38dbaf71b0126901df54d6f9e124",
+  "src/fase1/contract/reglas.md": "16fc6131129e544196a5b1ace5f6d56440bee26e8b93668898366ec9097aaa43",
+  "src/fase1/contract/conversation_schema.json": "95b6bd2d8713859393a24b7969ef2b345faf6ac4f705d605f4c19ad84a91971c",
+  "src/fase1/contract/eval_case_schema.json": "be7599e5397fa64f6862a0256538ba29ae92035f6cb5868b03fa91d8d64f248d",
+  "src/fase3/prompts/generador.md": "48aac49b24ae8357fff40b40617b428318251173c4e35b8e50916b389d276709",
+  "src/fase3/prompts/verificador.md": "9b7277347fa90ce43c120cc2f2d9020d969ca7fa7c6c27c06f285402023f9b4d"
+ },
+ "modelos_fase3": {
+  "generador": [
+   "claude_code:claude-opus-5-5"
+  ],
+  "verificador": [
+   "openai_api:gpt-6-luna"
+  ]
+ },
+ "render": {
+  "modelo": "Qwen/Qwen3.5-4B",
+  "revision_tokenizer": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "transformers": "5.22.2",
+  "enable_thinking": false,
+  "max_tokens": 32768
+ },
+ "contabilidad": {
+  "tareas": 412,
+  "candidatos_fase3": 407,
+  "aceptados": 386,
+  "rechazados": 26,
+  "rechazados_por_etapa": {
+   "duplicado": 21,
+   "fase3": 5
+  }
+ }
+}
