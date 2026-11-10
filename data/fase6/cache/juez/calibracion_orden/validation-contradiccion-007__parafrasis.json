@@ -1,0 +1,66 @@
+{
+ "task_id": "calibracion_orden/validation-contradiccion-007__parafrasis",
+ "llamadas": [
+  {
+   "clave": "d1d99f7073ed2b0bfec0f595223feaaf4b35fb0640f47e61c2bd3021f514aaf3",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Solo menciona los dos códigos documentados y presenta la posible distinción entre validaciones como incertidumbre."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara: «no puedo asegurar qué identificador devuelve realmente la API», sin elegir ninguno."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md:L308 para validation_error (400) y brand-management/README.md:L169 para validation_failed. Las líneas no citables se usan correctamente para mostrar el conflicto."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica que «la documentación no es coherente» y explica los dos nombres distintos."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La documentación usa nombres distintos para el error de validación.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]; [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La referencia de endpoints de marcas indica validation_error para HTTP 400, descrito como «Request validation failed».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management enumera validation_failed como error común, descrito como «Business rules validation failed».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Recomienda comprobar una respuesta real del servicio antes de capturar el error por su nombre.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

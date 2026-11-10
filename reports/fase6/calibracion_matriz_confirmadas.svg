@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="508" height="478" viewBox="0 0 508 478" role="img" aria-label="Matriz de confusión del juez (confirmadas)">
+<style>svg{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif}.bg{fill:#fcfcfb}.t1{fill:#0b0b0b}.t2{fill:#52514e}.t3{fill:#898781}.on{fill:#ffffff}.off{fill:#0b0b0b}.c0{fill:#f0efec}.c1{fill:#b7d3f6}.c2{fill:#86b6ef}.c3{fill:#5598e7}.c4{fill:#2a78d6}.c5{fill:#1c5cab}.c6{fill:#104281}@media (prefers-color-scheme: dark){.bg{fill:#1a1a19}.t1{fill:#f0efec}.t2{fill:#c3c2b7}.on{fill:#0b0b0b}.off{fill:#f0efec}.c0{fill:#2c2c2a}.c1{fill:#104281}.c2{fill:#1c5cab}.c3{fill:#2a78d6}.c4{fill:#5598e7}.c5{fill:#86b6ef}.c6{fill:#b7d3f6}}</style>
+<rect class="bg" width="508" height="478" rx="8"/>
+<text class="t1" x="16" y="28" font-size="16" font-weight="600">Juez: lo que debía decir frente a lo que dijo (confirmadas)</text>
+<text class="t3" x="321.0" y="62" font-size="12" text-anchor="middle">Lo que dijo el juez</text>
+<text class="t3" x="22" y="263.0" font-size="12" text-anchor="middle" transform="rotate(-90 22 263.0)">Lo que debía decir</text>
+<text class="t2" x="206.0" y="82" font-size="13" text-anchor="middle">Aprueba</text>
+<text class="t2" x="320.0" y="82" font-size="13" text-anchor="middle">Falla</text>
+<text class="t2" x="434.0" y="82" font-size="13" text-anchor="middle">Incidencia ref.</text>
+<text class="t2" x="138" y="152.0" font-size="13" text-anchor="end">Aprueba</text>
+<rect class="c6" x="150" y="92" width="112" height="112" rx="4"><title>Debía: Aprueba · dijo: Aprueba · 26 de 26 (100%)</title></rect>
+<text class="on" x="206.0" y="148.0" font-size="22" font-weight="600" text-anchor="middle">26</text>
+<text class="on" x="206.0" y="168.0" font-size="12" text-anchor="middle">100%</text>
+<rect class="c0" x="264" y="92" width="112" height="112" rx="4"><title>Debía: Aprueba · dijo: Falla · 0 de 26 (0%)</title></rect>
+<text class="off" x="320.0" y="148.0" font-size="22" font-weight="600" text-anchor="middle">0</text>
+<text class="off" x="320.0" y="168.0" font-size="12" text-anchor="middle">0%</text>
+<rect class="c0" x="378" y="92" width="112" height="112" rx="4"><title>Debía: Aprueba · dijo: Incidencia ref. · 0 de 26 (0%)</title></rect>
+<text class="off" x="434.0" y="148.0" font-size="22" font-weight="600" text-anchor="middle">0</text>
+<text class="off" x="434.0" y="168.0" font-size="12" text-anchor="middle">0%</text>
+<text class="t2" x="138" y="266.0" font-size="13" text-anchor="end">Falla</text>
+<rect class="c0" x="150" y="206" width="112" height="112" rx="4"><title>Debía: Falla · dijo: Aprueba · 0 de 26 (0%)</title></rect>
+<text class="off" x="206.0" y="262.0" font-size="22" font-weight="600" text-anchor="middle">0</text>
+<text class="off" x="206.0" y="282.0" font-size="12" text-anchor="middle">0%</text>
+<rect class="c6" x="264" y="206" width="112" height="112" rx="4"><title>Debía: Falla · dijo: Falla · 26 de 26 (100%)</title></rect>
+<text class="on" x="320.0" y="262.0" font-size="22" font-weight="600" text-anchor="middle">26</text>
+<text class="on" x="320.0" y="282.0" font-size="12" text-anchor="middle">100%</text>
+<rect class="c0" x="378" y="206" width="112" height="112" rx="4"><title>Debía: Falla · dijo: Incidencia ref. · 0 de 26 (0%)</title></rect>
+<text class="off" x="434.0" y="262.0" font-size="22" font-weight="600" text-anchor="middle">0</text>
+<text class="off" x="434.0" y="282.0" font-size="12" text-anchor="middle">0%</text>
+<text class="t2" x="138" y="380.0" font-size="13" text-anchor="end">Incidencia ref.</text>
+<rect class="c0" x="150" y="320" width="112" height="112" rx="4"><title>Debía: Incidencia ref. · dijo: Aprueba · 0 de 4 (0%)</title></rect>
+<text class="off" x="206.0" y="376.0" font-size="22" font-weight="600" text-anchor="middle">0</text>
+<text class="off" x="206.0" y="396.0" font-size="12" text-anchor="middle">0%</text>
+<rect class="c0" x="264" y="320" width="112" height="112" rx="4"><title>Debía: Incidencia ref. · dijo: Falla · 0 de 4 (0%)</title></rect>
+<text class="off" x="320.0" y="376.0" font-size="22" font-weight="600" text-anchor="middle">0</text>
+<text class="off" x="320.0" y="396.0" font-size="12" text-anchor="middle">0%</text>
+<rect class="c6" x="378" y="320" width="112" height="112" rx="4"><title>Debía: Incidencia ref. · dijo: Incidencia ref. · 4 de 4 (100%)</title></rect>
+<text class="on" x="434.0" y="376.0" font-size="22" font-weight="600" text-anchor="middle">4</text>
+<text class="on" x="434.0" y="396.0" font-size="12" text-anchor="middle">100%</text>
+<text class="t3" x="16" y="462" font-size="12">Filas: lo que debía decir. Color: parte de la fila. La diagonal son los aciertos.</text>
+</svg>

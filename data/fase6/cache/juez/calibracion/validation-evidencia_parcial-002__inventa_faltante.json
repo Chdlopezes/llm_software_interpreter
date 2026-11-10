@@ -1,0 +1,76 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-002__inventa_faltante",
+ "llamadas": [
+  {
+   "clave": "44b5eacdb00502c3b7014b975fb2653be7bac0f9fd1c20b7f0a2280bb1d5af05",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica GET /catalog/brands/{brandId}/allstatus."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita api-reference/README.md:L27-L27, que lista el endpoint y su finalidad."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No declara la ausencia del esquema de respuesta; afirma campos que la documentación no especifica para allstatus."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Atribuye a allstatus el ejemplo de GET /{brandId} de brands.md:L146-L169 e inventa status_history, from_status, to_status, date y activable."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Responde directamente con el endpoint documentado, sin abstenerse sobre esa parte."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "GET /catalog/brands/{brandId}/allstatus obtiene una marca con toda su información de estado.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "allstatus devuelve el mismo objeto que GET por ID, con id, name, soft_descriptor, site, category, subcategories, type, tags, logos, resources, priority, status, date_created y date_last_updated.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L146-L169]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "allstatus incluye un array status_history con cada transición de estado y los campos from_status, to_status y date.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L146-L169]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "allstatus incluye un booleano activable que indica si la marca cumple los requisitos para pasar a ACTIVE.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L146-L169]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "omision",
+     "falta_incertidumbre"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "El endpoint y su cita son correctos, pero la respuesta inventa el esquema de allstatus y utiliza como respaldo un ejemplo de otro endpoint. Debía declarar que los campos de respuesta de allstatus no están documentados."
+   }
+  }
+ ]
+}

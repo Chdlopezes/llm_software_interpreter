@@ -1,0 +1,53 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-002__parafrasis",
+ "llamadas": [
+  {
+   "clave": "c955ed1e0eb82ca8c551369c2811a01b3232cbbf30e74d93f0faabdffb68a291",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica GET /catalog/brands/{brandId}/allstatus."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita api-reference/README.md:L27-L27, que lista el endpoint y su descripción."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no se documentan los campos, el esquema ni un ejemplo de respuesta de allstatus."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No atribuye campos ni el ejemplo de GET /{brandId} a allstatus."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Responde de forma explícita qué endpoint debe llamarse."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para obtener una marca con toda su información de estado se llama GET /catalog/brands/{brandId}/allstatus.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

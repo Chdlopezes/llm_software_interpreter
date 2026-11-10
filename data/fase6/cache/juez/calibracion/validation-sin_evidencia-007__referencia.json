@@ -1,0 +1,65 @@
+{
+ "task_id": "calibracion/validation-sin_evidencia-007__referencia",
+ "llamadas": [
+  {
+   "clave": "95665f40dda2a6ab2e9a72f88429ce3444ff4387d50508675a381cb0032a6c4d",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "La llamada a obtener_documentacion usa software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara que ningún documento de esta versión explica el procedimiento ni el endpoint para desactivar una marca."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone endpoint, método HTTP ni cuerpo para desactivar; el PUT mencionado corresponde explícitamente a la activación."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Aclara que la ausencia de documentación no implica que la operación no exista."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Cita brand-management/README.md:L87-L90 y L105-L105 para la transición y STAND_BY, y api-reference/README.md:L30-L30 para la activación."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El diagrama muestra que una marca puede pasar de ACTIVE a STAND_BY.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "STAND_BY describe una marca todavía no activa o temporalmente desactivada.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La activación se realiza con PUT /catalog/brands/{brandId}/activate.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

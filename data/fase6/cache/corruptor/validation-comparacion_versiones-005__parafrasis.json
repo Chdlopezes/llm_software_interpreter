@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-comparacion_versiones-005__parafrasis",
+ "llamadas": [
+  {
+   "clave": "d0d08f2327fe560790dcdb8d7469cc0b14ba2c17e8c67929e94289a0937f0170",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "No: para lo que preguntas, entre las dos versiones no cambia nada. Tanto 0.0.1-test-bench-v2a como latest documentan de forma idéntica estos tres códigos y la forma del cuerpo de error.\n\nEn la tabla de errores comunes de las dos versiones aparecen los mismos tres casos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]:\n- 404 `brand_not_found`: no hay ninguna brand con ese ID.\n- 409 `brand_name_already_exists`: el site ya tiene una brand con ese nombre.\n- 422 `logos_missing`: faltan por subir los logos obligatorios.\n\nEl cuerpo de error también es el mismo en las dos versiones: un objeto JSON con los campos `error`, `message`, `status` y `cause`. En el ejemplo, `cause` es un array [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325].\n\nPor tanto, para estos casos te vale el mismo manejo de errores en ambas versiones.",
+    "cambio": "Reescribí la respuesta de referencia con otras palabras y cambié el orden de algunas frases: puse primero la mención a la tabla y redacté de otra forma las descripciones de cada código y la conclusión. Los hechos (los tres códigos con sus identificadores, los cuatro campos del cuerpo y `cause` como array en el ejemplo) son los mismos, y las citas también."
+   }
+  }
+ ]
+}

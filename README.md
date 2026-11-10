@@ -13,6 +13,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | 3 — Generación | Genera y verifica las conversaciones candidatas de los tres conjuntos | Hecha |
 | 4 — Validación y exportación | Controles, duplicados, revisión humana y datasets finales para Qwen3.5 | Hecha |
 | 5 — Diseño del experimento | Baseline, entrenamiento con LoRA, ablación, inferencia y selección (sin entrenar) | Hecha |
+| 6 — Evaluación | Juez calibrado, métricas y diseño de la evaluación del modelo | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -29,6 +30,7 @@ src/               Todo el código del flujo
   fase3/             Fase 3: generación y verificación de los ejemplos
   fase4/             Fase 4: validación y exportación de los datasets
   fase5/             Fase 5: diseño del experimento (configuración y comprobaciones)
+  fase6/             Fase 6: juez, calibración y evaluación
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
@@ -430,7 +432,7 @@ Se diseña cómo comprobar si estos datos mejoran el modelo. **No se entrena nin
 | **E1** | SFT con LoRA sobre todo `train` (211 conversaciones) |
 | **E2** | Ablación: como E1, pero sin los casos de información insuficiente o parcial (166). Ve los mismos ejemplos que E1, en más épocas, para que la comparación no dependa del volumen |
 
-- **La misma inferencia para los tres:** el modelo recibe solo el sistema, el historial y la pregunta. Él decide la llamada a la herramienta, y el arnés la ejecuta.
+- **La misma inferencia para los tres:** el modelo recibe solo el sistema, el historial y la pregunta. Él decide la llamada a la herramienta, y el orquestador la ejecuta.
 - **La selección se hace con `validation`;** `test` se evalúa una sola vez, al cierre.
 
 **Entrenar con Hugging Face.** `src/fase5/entrenar.py` entrena E1 o E2 con el `SFTTrainer` de TRL y LoRA, sobre `data/fase4/sft/`. Antes de dar el flujo por bueno se probó con TRL, y aparecieron cuatro problemas que habrían arruinado el entrenamiento sin dar ningún error:
@@ -456,6 +458,78 @@ python -m src.fase5.entrenar --experimento E1              # en una GPU
 
 El detalle, con lo que está fijado y lo pendiente, está en **[docs/fase5.md](docs/fase5.md)**.
 
+## Fase 6 — Evaluación
+
+Cada respuesta del modelo se evalúa en tres niveles. Los dos primeros son deterministas; el tercero lo hace un LLM juez:
+
+| Medición | Pregunta | Quién |
+|---|---|---|
+| Llamada | ¿Llamó a la herramienta cuando debía, con el software y la versión correctos? | Código |
+| Documentos | ¿Recibió los documentos esperados? (también se comprueba que sus citas existan y estén permitidas) | Código |
+| Respuesta | ¿Es correcta y completa, cada afirmación tiene una cita que la respalda, y declara lo que falta sin inventarlo? | Juez (`LLM_JUEZ_*`) |
+
+**El juez** recibe los documentos que recibió el modelo, la pregunta, la referencia con sus `answer_checks` y la respuesta, sin saber qué modelo la escribió. Devuelve un juicio por criterio, por afirmación y por cita, con etiquetas de error. **La aprobación no la decide él**, sino una regla fija del programa. Si la referencia contradice a los documentos, marca una incidencia y no penaliza al modelo.
+
+### Calibración del juez
+
+Antes de medir un modelo con un juez, hay que medir al juez. Se tomaron 15 casos de `validation` (y 2 de `train` para la mezcla de versiones; nunca de `test`). De cada uno se armaron variantes cuyo veredicto correcto se conoce de antemano:
+- correctas: la referencia y una paráfrasis;
+- con un error a propósito: un hecho falso con una cita real, una respuesta que no contesta, una abstención excesiva, una mezcla de versiones, una respuesta sin citas, un dato inventado o una respuesta que elige una sola fuente en un conflicto;
+- con la referencia equivocada.
+
+Las variantes con error las escribe otro LLM, el corruptor (`LLM_CORRUPTOR_*`), y una persona las confirmó: 56 de 57, sin descartar ninguna.
+
+![Matriz de confusión del juez](reports/fase6/calibracion_matriz_todas.svg)
+
+**Cómo leer la matriz.** Las filas son lo que el juez debía decir y las columnas lo que dijo. La diagonal son los aciertos. La celda «debía fallar / dijo aprueba» son los falsos aprobados, el error más grave, porque inflarían las métricas del modelo.
+
+**Resultado:** 57 de 57 aciertos.
+- Rechazó las 27 respuestas con error (sensibilidad 100%).
+- Aprobó las 26 correctas (especificidad 100%).
+- Señaló las 4 referencias equivocadas.
+- Dio el mismo veredicto con los criterios en orden inverso.
+
+Para llegar ahí se corrigió una regla del juez: en las contradicciones, citar las líneas del conflicto es correcto. Con 57 variantes, esto dice que el juez detecta estos tipos de error, no que no se equivoque nunca. Por eso la evaluación incluye revisión humana de respuestas reales. El verificador de la fase 3, probado con las mismas variantes, no aprobó ninguna con error.
+
+### Diseño de la evaluación del modelo
+
+1. **Inferencia.** B0, E1 y E2 reciben las mismas entradas (`data/fase5/entradas_validation.jsonl`: sistema, historial y pregunta). Un **orquestador**, el programa que corre el modelo, ejecuta las llamadas a la herramienta que el modelo pida y guarda su respuesta en `predicciones_validation.jsonl`.
+2. **Evaluación.** `python -m src.fase6.evaluar --predicciones <archivo> --experimento E1` aplica los controles por código y el juez, y calcula las métricas de la guía con numerador y denominador, en total y por situación:
+   - llamada y documentos correctos;
+   - citas válidas;
+   - corrección y completitud;
+   - respaldo y cobertura de citas;
+   - abstención correcta e indebida;
+   - respuesta parcial correcta.
+3. **Selección.** Se comparan los tres en `validation`. Gana el de mayor corrección sin empeorar el respaldo de citas ni la abstención, con márgenes fijados antes de mirar resultados. Las etiquetas de error de cada juicio dicen qué falla y orientan el siguiente experimento.
+4. **Revisión humana.** Una persona lee hasta 30 respuestas reales (10 con evidencia suficiente, 10 insuficiente y 10 parcial) para vigilar al juez con errores reales, que pueden ser más sutiles que los fabricados.
+5. **`test`, una sola vez,** con la configuración elegida (`--conjunto test --final`; sin `--final` el script se niega).
+
+### Extensión a otras formas de recuperar la documentación
+
+En esta versión la recuperación es deliberadamente simple: `obtener_documentacion` es un **filtro por software y versión que devuelve documentos completos**. Por eso, comprobar si recibió los documentos esperados es una comparación exacta de identificadores.
+
+El mismo pipeline sirve para un sistema con recuperación más compleja, por ejemplo un buscador semántico (embeddings, *reranker*) o una herramienta que use un LLM para elegir fragmentos. Lo que cambiaría:
+
+- **La herramienta** devolvería fragmentos con su documento y su rango de líneas. Las secciones de la fase 0 ya son una unidad de fragmento natural.
+- **La medición de documentos** pasaría a medir la recuperación sobre fragmentos concretos. La evidencia esperada de cada caso ya está guardada línea a línea en `procedencia`, con su hash, así que bastaría con medir si los fragmentos recuperados se solapan con esas líneas (*recall@k*, precisión, MRR). En una contradicción, por ejemplo, se exigiría recuperar las dos fuentes.
+- **Las citas, el juez y el contrato no cambian.** Las citas siguen siendo `[documento:Linicio-Lfin]`, y el juez evalúa la respuesta contra lo que el modelo recibió, sea un documento completo o un fragmento. Bastaría con regenerar las conversaciones (fases 3 y 4) con la nueva herramienta y recalibrar al juez.
+
+```bash
+python -m src.fase6.calibracion --variantes                              # el corruptor escribe las variantes
+python -m src.fase6.calibracion --revisar                                # una persona confirma cada variante
+python -m src.fase6.calibracion --juzgar --estabilidad --verificador     # el juez (y el verificador) las evalúan
+python -m src.fase6.evaluar --predicciones <archivo> --experimento E1    # con respuestas reales de un modelo
+```
+
+| Archivo | Contenido |
+|---|---|
+| `reports/fase6/calibracion.md` | Matriz de confusión, sensibilidad, especificidad, falsos aprobados, estabilidad y resultados del verificador |
+| `data/fase6/calibracion/` | Variantes, confirmación humana (`etiquetas.csv`), juicios y resumen |
+| `src/fase6/prompts/` | Prompts del juez y del corruptor |
+
+El detalle, con el protocolo completo, está en **[docs/fase6.md](docs/fase6.md)**.
+
 ## Reproducir y verificar los resultados
 
 Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
@@ -468,6 +542,7 @@ python -m src.fase2.run
 python -m src.fase3.run --solo-cache
 python -m src.fase4.run
 python -m src.fase5.run
+python -m src.fase6.calibracion --juzgar --estabilidad --verificador --solo-cache
 git status --short data/ reports/
 ```
 
@@ -476,7 +551,7 @@ Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los e
 - **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1, 2, 4 y 5 y el plan de tareas de la fase 3.
 - **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/` (fase 0) y `data/fase3/cache/` (fase 3). Con `--solo-cache`, la fase 3 no llama a ningún LLM ni necesita API keys.
 
-Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md), [docs/fase3.md](docs/fase3.md), [docs/fase4.md](docs/fase4.md) y [docs/fase5.md](docs/fase5.md).
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md), [docs/fase3.md](docs/fase3.md), [docs/fase4.md](docs/fase4.md), [docs/fase5.md](docs/fase5.md) y [docs/fase6.md](docs/fase6.md).
 
 Para ejecutar los tests:
 

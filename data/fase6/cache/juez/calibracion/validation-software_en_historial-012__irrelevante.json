@@ -1,0 +1,74 @@
+{
+ "task_id": "calibracion/validation-software_en_historial-012__irrelevante",
+ "llamadas": [
+  {
+   "clave": "2678d89ad20bec7cd2d35cd8f93fd20f43d221b2ca99782c89a5c647b3178571",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a, sin pedirlos nuevamente."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No indica los estados de origen de DELETED: STAND_BY y ACTIVE, documentados en brand-management/README.md:L87-L92."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No responde si ACTIVE puede volver a STAND_BY, transición presente en brand-management/README.md:L89-L90."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Dice que el borrado es permanente y que no se puede deshacer, citando brands.md:L209-L225 y brand-management/README.md:L122-L125."
+     },
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "Las citas usadas son citables, pero ninguna corresponde al diagrama ni a las descripciones de estados de brand-management/README.md."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "DELETE /{brandId} elimina permanentemente una marca del sistema.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L209-L225]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para eliminar una marca es obligatoria la cabecera X-Client-Id y su valor debe estar en la lista blanca.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L209-L225]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Las reglas de borrado exigen un client ID en la lista blanca, establecen que el borrado es irreversible y mantienen un registro de auditoría completo.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L122-L125]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La activación requiere al menos un logo principal subido, superar las validaciones de negocio y cumplir los requisitos del servicio de regulaciones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L117-L120]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "omision",
+     "no_responde"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta contiene información respaldada sobre borrado y activación, pero no responde las dos preguntas sobre transiciones de estados: STAND_BY y ACTIVE permiten llegar a DELETED, y ACTIVE puede volver a STAND_BY."
+   }
+  }
+ ]
+}

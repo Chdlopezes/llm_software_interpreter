@@ -1,0 +1,60 @@
+{
+ "task_id": "calibracion_orden/validation-contradiccion-007__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "a05f54694eca4eef2d27fd623874c4409d0fed77c72bbe8d51e622b550a474a5",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Solo menciona los códigos documentados y presenta la posible distinción entre validaciones como incertidumbre."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no puede confirmar cuál identificador devuelve realmente la API."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management L169 y brands.md L308, que asocia validation_error con HTTP 400."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Expone explícitamente la contradicción entre validation_failed y validation_error."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La documentación usa nombres distintos para el error de validación.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management incluye validation_failed con la descripción Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La referencia de endpoints incluye validation_error, asociado a HTTP 400 y descrito como Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": true,
+    "motivo_incidencia": "La respuesta de referencia atribuye HTTP 422 a validation_error, pero brands.md L308 indica HTTP 400. El modelo sigue correctamente la fuente y el criterio 2.",
+    "resumen": ""
+   }
+  }
+ ]
+}

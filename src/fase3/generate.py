@@ -325,8 +325,8 @@ def cache_key(system: str, prompt: str, schema: dict, model: str | None) -> str:
 class TaskCache:
     """Respuestas de las llamadas de una tarea. Al terminar solo conserva las usadas."""
 
-    def __init__(self, task_id: str):
-        self.path = CACHE_DIR / f"{task_id}.json"
+    def __init__(self, task_id: str, cache_dir: Path | None = None):
+        self.path = (cache_dir or CACHE_DIR) / f"{task_id}.json"
         data = json.loads(self.path.read_text(encoding="utf-8")) if self.path.exists() else {}
         self.entries = {e["clave"]: e for e in data.get("llamadas", [])}
         self.used: list[str] = []
@@ -336,6 +336,12 @@ class TaskCache:
     def call(self, tarea: str, system: str, prompt: str, schema: dict, cfg, solo_cache: bool) -> dict:
         model = cfg.model if cfg else None
         key = cache_key(system, prompt, schema, model)
+        if key not in self.entries and cfg is None:
+            # Sin configuración (--solo-cache): vale la respuesta de cualquier modelo ya registrado en la caché.
+            for m in sorted({e["modelo"] for e in self.entries.values()}):
+                if cache_key(system, prompt, schema, m) in self.entries:
+                    key = cache_key(system, prompt, schema, m)
+                    break
         if key not in self.entries:
             if solo_cache or cfg is None:
                 raise LLMError(f"falta en la caché la llamada al {tarea} (y no se permiten llamadas nuevas)")
@@ -398,12 +404,12 @@ def agrupar(listos: list[tuple[dict, dict]]) -> list[list[tuple[dict, dict]]]:
             for i in range(0, len(ts), TAMANO_GRUPO)]
 
 
-def verificar(grupo: list[tuple[dict, dict]], ctx: dict) -> tuple[dict, dict, int]:
+def verificar(grupo: list[tuple[dict, dict]], ctx: dict, cache_dir: Path | None = None) -> tuple[dict, dict, int]:
     """Una llamada al verificador para el grupo. Devuelve (entrada de caché, veredicto por task_id, nuevas)."""
     sys_ver = system_verificador()
     prompt = prompt_verificador([(t, g["caso"]) for t, g in grupo], ctx)
     model = ctx["cfg_ver"].model if ctx["cfg_ver"] else None
-    cache = TaskCache("verificador/" + cache_key(sys_ver, prompt, VER_SCHEMA, model)[:24])
+    cache = TaskCache("verificador/" + cache_key(sys_ver, prompt, VER_SCHEMA, model)[:24], cache_dir=cache_dir)
     e = cache.call("verificador", sys_ver, prompt, VER_SCHEMA, ctx["cfg_ver"], ctx["solo_cache"])
     cache.save()
     vers = {v["case_id"]: v for v in e["respuesta"]["casos"]}

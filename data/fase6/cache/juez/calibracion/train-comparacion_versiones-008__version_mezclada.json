@@ -1,0 +1,99 @@
+{
+ "task_id": "calibracion/train-comparacion_versiones-008__version_mezclada",
+ "llamadas": [
+  {
+   "clave": "8f79c3bb43f7daf02018876df82f9594228d10bbf16c57b9737b0567e8610688",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Concluye que no cambia; important.md de ambas versiones, L239-L254, describe el mismo procedimiento."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Incluye Operation id, 1p_3pl_product_stock_mov de 1p-3pl-integrator, consulta a materials y revisión de tags, conforme a L239-L254."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Cita important.md de 0.0.10-stock-consumer y latest en los tres primeros párrafos."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Añade que ambas guías documentan Operation Validation Consumer; latest/api.md:L12-L20 no lo documenta."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El procedimiento de verificación de Feed es igual en ambas versiones.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240] [vendor-stockkeeper-api/latest/guide/important.md:L239-L240]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El Operation id se usa para consultar 1p_3pl_product_stock_mov de 1p-3pl-integrator.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240] [vendor-stockkeeper-api/latest/guide/important.md:L239-L240]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "De esa tabla se obtienen datos clave para comprobar si los ítems son de prueba.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L245-L245] [vendor-stockkeeper-api/latest/guide/important.md:L245-L245]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Se consulta materials por sap sku o material id para obtener el ítem y revisar sus tags mediante la API de ítems.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254] [vendor-stockkeeper-api/latest/guide/important.md:L252-L254]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El curl de ejemplo es igual en ambas versiones y usa materials/facade/search?limit=100&offset=0 con Content-Type application/json.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L257-L282] [vendor-stockkeeper-api/latest/guide/important.md:L257-L282]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El cuerpo combina mediante and un filtro in sobre sap_sku y eq sobre site_id, y solicita projections id, sap_sku, site_id e items.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L257-L282] [vendor-stockkeeper-api/latest/guide/important.md:L257-L282]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Las guías de API de ambas versiones documentan Operation Validation Consumer en /stock-operations/3pl/validation/restock-consumer.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L68] [vendor-stockkeeper-api/latest/guide/api.md:L12-L20]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Operation Validation Consumer recibe item_id, sap_sku y material_id.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L68] [vendor-stockkeeper-api/latest/guide/api.md:L12-L20]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Operation Validation Consumer pausa el ítem si su stock queda por debajo de la tolerancia.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L68] [vendor-stockkeeper-api/latest/guide/api.md:L12-L20]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La comparación del flujo Feed es correcta. El último párrafo atribuye sin respaldo Operation Validation Consumer a latest y cita líneas que no sustentan la pausa por tolerancia, aunque esta aparece en 0.0.10/api.md:L86-L88."
+   }
+  }
+ ]
+}

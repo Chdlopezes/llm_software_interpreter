@@ -1,0 +1,48 @@
+{
+ "task_id": "calibracion_orden/validation-sin_evidencia-005__referencia",
+ "llamadas": [
+  {
+   "clave": "9e126627124f3b5774789319011499ee0c49eb6abdf4b7de9f7baa461181108d",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Declara que el endpoint no está detallado; no afirma que no exista ni que no acepte cuerpo."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone campos ni requisitos de obligatoriedad."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Indica explícitamente que no se describe el cuerpo de la petición ni los campos obligatorios."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Identifica POST /catalog/brands/{brandId}/collectors y cita api-reference/README.md:L48-L48, que documenta la asociación."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La tabla de referencia de la versión 0.0.1-test-bench-v2a incluye POST /catalog/brands/{brandId}/collectors para asociar una marca con collectors.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

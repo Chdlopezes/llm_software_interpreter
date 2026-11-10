@@ -1,0 +1,297 @@
+{
+ "task_id": "verificador/a901a9721a7573b06fe0006c",
+ "llamadas": [
+  {
+   "clave": "a901a9721a7573b06fe0006cd936c8979aa8a884b017a05f79ad6d9a27307db5",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-version_explicita-004__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, e identifica price-engine-api y la versión latest, que coinciden con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La respuesta dice que no se documentan la estructura ni los códigos, pero el modelo RequestError define los campos y el enum en L122-L131 y L125-L128."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No da la forma del cuerpo ni los valores de code, aunque están documentados en L122-L131 y L125-L128."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a L44-L47 y L92-L97 solo respalda respuestas y contenido JSON, no la falta de un modelo; la cita a general.md L1-L4 no respalda que las secciones estén marcadas TO DO (L5-L13, además, son no citables)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas que sí formula llevan citas, aunque algunas no las respaldan."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Declara insuficiente la información sobre estructura y códigos, pese a que están especificados en swagger.yaml L122-L131 y L125-L128."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene de responder datos que la documentación entregada sí proporciona en L122-L131 y L125-L128."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene un hilo coherente, aunque su conclusión sobre la falta de información es errónea."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden campos, tipos y valores que se verifican en swagger.yaml L122-L131 y L125-L128."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta omite y niega información disponible sobre RequestError y sus códigos; además usa una cita no citable para respaldar una afirmación sobre las guías."
+     },
+     {
+      "case_id": "validation-version_explicita-004__hecho_falso",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y coherente con la llamada para price-engine-api latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Añade not_found al enum, pero swagger.yaml L125-L128 solo enumera bad_request e internal_server_error."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Describe los campos y tipos en L122-L131, pero da un valor extra e incorrecto para code frente al enum de L125-L128."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a L125-L128 no respalda que not_found sea un valor: el enum citado contiene solo bad_request e internal_server_error."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas, aunque la cita del enum contradice el valor añadido."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para describir el modelo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción es internamente coherente, aunque el enum no coincide con el documento."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los campos y los dos valores del enum documentados en L122-L131 y L125-L128."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta inventa el valor not_found para el enum, que en las líneas citadas contiene solo dos valores."
+     },
+     {
+      "case_id": "validation-version_explicita-004__irrelevante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta identifica correctamente software y versión y corresponde a la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre endpoint, respuesta exitosa, site_id y Accept-Version concuerdan con swagger.yaml L24-L35, L86-L91, L51-L59 y L76-L83."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "Describe el endpoint y la respuesta exitosa, pero no la forma del cuerpo de error ni los valores de code, documentados en L122-L131 y L125-L128."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones técnicas que acompañan."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas están acompañadas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene, aunque responde con información distinta de la solicitada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones incluidas son coherentes entre sí."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden propiedades comprobables en swagger.yaml L122-L131 y L125-L128, sin exigir una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta aporta datos técnicamente respaldados del endpoint, pero no contesta la pregunta sobre el cuerpo de error ni el campo code."
+     },
+     {
+      "case_id": "validation-version_explicita-004__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, para price-engine-api latest, en concordancia con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Los campos, tipos y valores del enum son correctos (L122-L131 y L125-L128), pero afirmar que siempre se usa ese esquema para cualquier error excede lo documentado; se describen respuestas 400 y 500 en L92-L97 y L111-L116."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la estructura de RequestError y los valores documentados de code en L122-L131 y L125-L128."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan las respuestas 400 y 500 y el modelo (L92-L97, L111-L116, L122-L131), pero no la afirmación absoluta de que siempre se aplica a todo error."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para responder la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni presenta contradicciones internas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y corresponden al modelo y enum de L122-L131 y L125-L128."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta describe correctamente el modelo y sus códigos, pero generaliza al afirmar que el esquema se usa siempre para cualquier error."
+     },
+     {
+      "case_id": "validation-version_explicita-004__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y coherente con la llamada para price-engine-api latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "RequestError tiene las propiedades code y message y el enum contiene bad_request e internal_server_error, según L122-L131 y L125-L128; las respuestas 400 y 500 lo referencian en L92-L97 y L111-L116."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica la forma del cuerpo de error, los tipos y los valores de code en L122-L131 y L125-L128."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el modelo, los valores del enum y las referencias de las respuestas 400 y 500 (L92-L97, L111-L116, L122-L131)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por una cita pertinente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No falta información necesaria para la pregunta ni se afirma que falte."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia entregada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a campos, tipos y valores comprobables en L122-L131 y L125-L128."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-004__sin_citas",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y coherente con price-engine-api latest y los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La estructura y los valores descritos coinciden con swagger.yaml L122-L131 y L125-L128; las respuestas 400 y 500 están referenciadas en L92-L97 y L111-L116."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da la forma del cuerpo de error y los valores admitidos para code."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La respuesta no incluye citas para sus afirmaciones, aunque están respaldadas por swagger.yaml L122-L131, L125-L128, L92-L97 y L111-L116."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el modelo, el enum y las respuestas carecen de citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para contestar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas del modelo y las respuestas de error y no imponen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es técnicamente correcta, pero omite todas las citas requeridas para sus afirmaciones."
+     }
+    ]
+   }
+  }
+ ]
+}

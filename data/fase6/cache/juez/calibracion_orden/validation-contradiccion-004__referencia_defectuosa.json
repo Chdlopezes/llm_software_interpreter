@@ -1,0 +1,72 @@
+{
+ "task_id": "calibracion_orden/validation-contradiccion-004__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "71795476dfb69ec09b33016f4187a4de20e2b87061b6160df95344e0b9d70767",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma el comportamiento real del servidor y declara que no puede confirmar cuál de los dos valores devuelve la API."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Expone la discrepancia entre brands.md:L308, Brand Management:L169 y Troubleshooting:L105 sin confirmar ninguno de los códigos."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management:L169 y Troubleshooting:L105, ambas con validation_failed."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md:L308 e identifica correctamente HTTP 400 y validation_error."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La tabla de errores de marcas indica HTTP 400, validation_error y la descripción Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management identifica el error de validación como validation_failed, con la descripción Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Troubleshooting utiliza validation_failed con la descripción Business rules failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El formato de respuesta de error contiene error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Conviene que el cliente no dependa de uno solo de los códigos mientras no se confirme el valor.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": true,
+    "motivo_incidencia": "La respuesta de referencia atribuye HTTP 422 a brands.md:L308, pero esa línea indica HTTP 400. La respuesta evaluada sigue correctamente la fuente y el criterio 1.",
+    "resumen": "La respuesta identifica el conflicto, cita correctamente las fuentes y mantiene la incertidumbre sobre el valor real devuelto por la API."
+   }
+  }
+ ]
+}

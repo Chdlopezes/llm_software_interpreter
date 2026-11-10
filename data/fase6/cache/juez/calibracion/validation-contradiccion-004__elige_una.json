@@ -1,0 +1,79 @@
+{
+ "task_id": "calibracion/validation-contradiccion-004__elige_una",
+ "llamadas": [
+  {
+   "clave": "8ff92e3cde02b74d41ede4f7e9207a96ae5b82449f365ff9311aacb4cc075137",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md:L308-L308 e identifica el 400 y validation_error."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Omite validation_failed y las fuentes Brand Management:L169 y Troubleshooting:L105."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Afirma que la API devuelve validation_error y recomienda hacer match con ese valor sin señalar el conflicto."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Presenta como confirmado el comportamiento real del servidor, que las fuentes contradictorias no permiten determinar."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Ante un fallo de validación de petición, la API devuelve 400 con validation_error.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla de errores describe validation_error como Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El valor validation_error llega en el campo error.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "El formato de error contiene error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El cliente puede hacer match con validation_error y comprobar status 400 como valores confirmados.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "falta_cita",
+     "omision",
+     "falta_incertidumbre",
+     "conflicto_no_senalado"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta selecciona validation_error sin mencionar las fuentes que indican validation_failed. Recomienda un match definitivo que la documentación contradictoria no permite confirmar."
+   }
+  }
+ ]
+}

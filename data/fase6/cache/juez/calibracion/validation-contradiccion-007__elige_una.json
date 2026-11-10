@@ -1,0 +1,67 @@
+{
+ "task_id": "calibracion/validation-contradiccion-007__elige_una",
+ "llamadas": [
+  {
+   "clave": "353d317ea62fc25a3ccc4c9f12eefe68498d5dc0a1df1b8c305686f31e474279",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "no_cumple",
+      "evidencia": "No señala la discrepancia entre validation_error (brands.md:L308) y validation_failed (brand-management/README.md:L169)."
+     },
+     {
+      "indice": 2,
+      "resultado": "parcial",
+      "evidencia": "Cita brands.md:L308 para validation_error y HTTP 400, pero omite la guía de Brand Management y validation_failed."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Afirma que «la API devuelve [...] validation_error» y recomienda capturarlo por ese nombre."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No introduce otros códigos ni explicaciones adicionales; el campo error está documentado en brands.md:L318-L324."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La API devuelve validation_error cuando falla la validación en esta versión.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La tabla de endpoints asocia validation_error con HTTP 400 y la descripción Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "El cliente puede capturar el fallo de validación comparando error con validation_error y comprobando HTTP 400.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "falta_cita",
+     "omision",
+     "falta_incertidumbre",
+     "conflicto_no_senalado"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "El modelo elige validation_error como identificador confirmado sin advertir el conflicto con validation_failed. Además, utiliza una línea no citable para afirmar el comportamiento, en lugar de mostrar la discrepancia."
+   }
+  }
+ ]
+}

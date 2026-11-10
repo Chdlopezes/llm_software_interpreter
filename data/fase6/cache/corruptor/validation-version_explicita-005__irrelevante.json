@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-005__irrelevante",
+ "llamadas": [
+  {
+   "clave": "363a3d16e8b70f0fc449e394eadfd12f7120f5af42b7ea42a500b5fe040aac6d",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Al crear una marca con `POST /` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74], la respuesta de ejemplo devuelve la marca recién creada con su `id`, `name`, `site`, `category` y `type`, junto con las fechas `date_created` y `date_last_updated`, y con el estado `STAND_BY` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L111-L123]. Ese estado indica que la marca está creada pero todavía no está activa, por ejemplo porque le faltan logos obligatorios [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105].\n\nPara pasarla a `ACTIVE` hay que llamar a `PUT /{brandId}/activate` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L243-L247]. Antes de hacerlo, puedes comprobar si se puede activar con `GET /{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L272-L276].",
+    "cambio": "En vez de enumerar los campos obligatorios (name, site, category, type) y la restricción de unicidad del nombre dentro del site, la respuesta habla de lo que devuelve el POST (estado STAND_BY) y de cómo activar la marca. Todo es cierto y está citado, pero no contesta la pregunta."
+   }
+  }
+ ]
+}

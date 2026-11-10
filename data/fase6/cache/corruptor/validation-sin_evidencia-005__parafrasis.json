@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-sin_evidencia-005__parafrasis",
+ "llamadas": [
+  {
+   "clave": "f748bb5346aca6d332826e1c018264726a4e82497c68659e6d20f6c850c4b3f1",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "La documentación de catalog-portfolio-api 0.0.1-test-bench-v2a no explica ese endpoint. Ningún documento de esta versión describe qué cuerpo hay que enviar, qué campos son obligatorios ni cómo es la respuesta, así que no te puedo decir qué incluir en la petición.\n\nLa operación que buscas solo aparece en la tabla de referencia rápida, como `POST /catalog/brands/{brandId}/collectors` con la descripción «Associate brand with collectors» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]. No tiene ninguna sección propia con más detalles.",
+    "cambio": "Cambié el orden y la redacción: ahora la respuesta empieza diciendo que el endpoint no está documentado (ni cuerpo, ni campos obligatorios, ni respuesta) y después da la entrada de la tabla con la misma cita L48. No añadí ni quité ningún dato."
+   }
+  }
+ ]
+}

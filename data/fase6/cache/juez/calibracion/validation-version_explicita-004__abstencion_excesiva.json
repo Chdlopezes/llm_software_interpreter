@@ -1,0 +1,70 @@
+{
+ "task_id": "calibracion/validation-version_explicita-004__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "c1cbb9f40dc51e6bf5309ba7883f7cccdbe91566356a22831abb100aaeaba4ee",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software=\"price-engine-api\" y version=\"latest\"."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No describe RequestError como objeto con code y message de tipo string, aunque está definido en swagger.yaml:L122-L131."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No informa los valores bad_request e internal_server_error, enumerados en swagger.yaml:L128."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Solo cita swagger.yaml:L44-L47; no cita las líneas del modelo RequestError."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No introduce campos adicionales ni valores de code ajenos al documento."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La sección general está sin completar y contiene «TO DO».",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La guía de flujos solo contiene texto de ejemplo.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "El endpoint de cobertura declara respuestas 400 y 500.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L44-L47]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "abstencion_indebida",
+     "omision",
+     "no_responde",
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente: la documentación recibida define explícitamente RequestError, sus campos string code y message y los dos valores permitidos de code. La cita sobre los estados HTTP es correcta, pero no responde lo solicitado."
+   }
+  }
+ ]
+}

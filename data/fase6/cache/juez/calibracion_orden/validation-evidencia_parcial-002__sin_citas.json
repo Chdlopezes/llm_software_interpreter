@@ -1,0 +1,55 @@
+{
+ "task_id": "calibracion_orden/validation-evidencia_parcial-002__sin_citas",
+ "llamadas": [
+  {
+   "clave": "d6432f753ba5ed825ea0b77bc2b13b078f3e260a309d58fedce59bd3d9f8dc28",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Indica el endpoint documentado sin abstenerse sobre él."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No atribuye campos ni el ejemplo de GET /{brandId} a allstatus."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no aparecen el esquema ni un ejemplo de respuesta de allstatus."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Menciona la tabla de referencia rápida, pero no incluye una cita al documento y sus líneas."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica GET /catalog/brands/{brandId}/allstatus, coincidente con api-reference/README.md, línea 27."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "GET /catalog/brands/{brandId}/allstatus obtiene una marca con toda su información de estado, según la tabla de referencia rápida.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta identifica correctamente el endpoint y reconoce el hueco documental sobre sus campos. Falta la cita que respalde el endpoint."
+   }
+  }
+ ]
+}

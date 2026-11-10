@@ -1,0 +1,89 @@
+{
+ "task_id": "calibracion_orden/validation-version_explicita-005__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "71c605b45b379a71f7a11cc9553982a285bc2a30c640964a65904cd144fa116f",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Solo enumera los cuatro campos y las restricciones documentadas en brands.md:L92-L96."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita expresamente brands.md:L92-L96, correspondiente a Required Fields."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica que name debe ser «único dentro del site», conforme a brands.md:L93."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Enumera name, site, category y type como obligatorios, conforme a brands.md:L92-L96."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La creación de una marca se realiza con POST /.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los campos obligatorios son name, site, category y type.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "name es el nombre de la marca y debe ser único dentro del site.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "site es el código de site de RetailFlow.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "category es el ID de la categoría principal.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "type es el tipo de marca y puede ser lighthouse o standard.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La petición de ejemplo envía solo esos cuatro campos en JSON con la cabecera Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": true,
+    "motivo_incidencia": "La respuesta de referencia afirma que el nombre debe ser único dentro de la categoría principal, pero brands.md:L93 establece que debe ser único dentro del site. El modelo sigue correctamente la fuente y el criterio 3.",
+    "resumen": "La respuesta es correcta y todas sus afirmaciones técnicas están respaldadas por las citas. Corrige la restricción de unicidad expresada erróneamente en la respuesta de referencia."
+   }
+  }
+ ]
+}

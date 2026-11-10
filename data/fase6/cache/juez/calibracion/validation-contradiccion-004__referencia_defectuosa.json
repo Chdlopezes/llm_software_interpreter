@@ -1,0 +1,78 @@
+{
+ "task_id": "calibracion/validation-contradiccion-004__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "649ed0194b8fa0e16c9aa17a893f8e9db4b64ec75b3ca8cd8634e729dcc3a706",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md:L308-L308 e identifica correctamente HTTP 400 y validation_error."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management:L169 y Troubleshooting:L105, ambos con validation_failed."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que la documentación no es coherente y que no puede confirmar cuál de los dos valores devuelve la API."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No atribuye al servidor ningún comportamiento confirmado ni introduce información externa."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La documentación presenta códigos de validación discrepantes.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]; [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]; [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla de brands.md indica HTTP 400 con error validation_error y descripción Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management indica validation_failed con descripción Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Troubleshooting indica validation_failed con descripción Business rules failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El formato de respuesta de error contiene error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Conviene que el cliente no dependa de un único código mientras no se confirme el valor.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": true,
+    "motivo_incidencia": "La respuesta de referencia atribuye validation_error a HTTP 422, pero brands.md:L308 indica HTTP 400. El modelo sigue correctamente la fuente y el criterio 1.",
+    "resumen": "La respuesta identifica el conflicto y mantiene la incertidumbre sobre el código real. Las citas de líneas no citables son válidas porque se usan para mostrar la discrepancia."
+   }
+  }
+ ]
+}

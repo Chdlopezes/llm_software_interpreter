@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-contradiccion-007__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "adeac8730f110f664f1a61b4513facdcecfdb9bc074a177c951a0d755d24ee70",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "La documentación de esta versión se contradice en este punto. La guía de Brand Management incluye `validation_failed` entre los errores comunes, con la descripción «Business rules validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]. En cambio, la tabla de códigos de error de la referencia de endpoints de marcas lo llama `validation_error`, asociado al HTTP 422, con la descripción «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]. Como las dos fuentes usan nombres distintos, no puedo confirmar cuál es el identificador que devuelve realmente la API. Tampoco queda claro si se trata del mismo error o de dos errores distintos: uno de validación de reglas de negocio y otro de validación de la petición. Antes de capturar el error por su nombre en el cliente, conviene comprobarlo con una respuesta real del servicio.",
+    "cambio": "En la segunda frase cambié el código HTTP asociado a `validation_error` de 400 a 422 y dejé la cita a brands.md:L308, aunque esa línea dice 400 (el 422 corresponde a `logos_missing` en la L313). Todo lo demás es igual que en la referencia."
+   }
+  }
+ ]
+}

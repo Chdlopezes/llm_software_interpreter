@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-005__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "d7a6d7cd6da3f0e1f830c0b7438347dbb66249b834f20467157668a9ced06ed3",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Al crear una marca con `POST /` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74], la documentación marca cuatro campos como obligatorios: `name`, el nombre de la marca, que debe ser único dentro de la categoría principal; `site`, el código de site de RetailFlow; `category`, el ID de la categoría principal; y `type`, el tipo de marca, que puede ser `lighthouse` o `standard` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96].\n\nLa petición de ejemplo envía solo esos cuatro campos en JSON, con la cabecera `Content-Type: application/json` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109].",
+    "cambio": "En el primer párrafo cambié la restricción del nombre: la referencia dice que debe ser «único dentro del site», y ahora dice «único dentro de la categoría principal». Mantuve la cita a brands.md:L92-L96, pero la línea 93 dice «must be unique within site»."
+   }
+  }
+ ]
+}

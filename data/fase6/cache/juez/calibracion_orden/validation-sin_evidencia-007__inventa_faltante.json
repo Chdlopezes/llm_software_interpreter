@@ -1,0 +1,95 @@
+{
+ "task_id": "calibracion_orden/validation-sin_evidencia-007__inventa_faltante",
+ "llamadas": [
+  {
+   "clave": "049f49070e8a9d698c7c27fd62ae99d21c3063c40101893eb7e9f5aca67856f7",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "La activación se cita con api-reference/README.md:L30 y la transición con brand-management/README.md:L87-L90."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma que la desactivación no exista o no esté soportada."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Inventa PUT /catalog/brands/{brandId}/deactivate; api-reference/README.md:L30-L31 solo enumera activate y activable."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No declara que el endpoint y el procedimiento de desactivación no están documentados."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para pasar de ACTIVE a STAND_BY se debe llamar a PUT /catalog/brands/{brandId}/deactivate.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L31]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "El endpoint deactivate es el inverso del endpoint de activación.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La activación se realiza mediante PUT /catalog/brands/{brandId}/activate.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El diagrama permite la transición de ACTIVE a STAND_BY.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "STAND_BY describe una marca todavía no activa o temporalmente desactivada.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Tras llamar al endpoint propuesto, la marca vuelve a STAND_BY.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La marca puede activarse de nuevo mediante el endpoint de activación.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "falta_cita",
+     "omision",
+     "falta_incertidumbre"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta inventa el endpoint de desactivación y su resultado, apoyándose en una cita que solo documenta activación y consulta de activabilidad. Debía declarar que los documentos entregados no especifican cómo desactivar una marca."
+   }
+  }
+ ]
+}

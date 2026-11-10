@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-sin_version-009__parafrasis",
+ "llamadas": [
+  {
+   "clave": "746f2d136966740c4783a911452935a656321a515764777e24225e90730eab65",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, indican exactamente la misma configuración del IDE.\n\nSi trabajas con IntelliJ IDEA, sigue estos tres pasos en orden:\n\n1. Importa el proyecto como proyecto Gradle.\n2. Elige Java 17 como Project SDK.\n3. Configura el estilo de código. Importa `config/checkstyle/checkstyle-main.xml`, pon LF como separador de línea y UTF-8 como codificación.\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]\n\nSi prefieres VS Code, la documentación recomienda instalar tres extensiones: Java Extension Pack, Gradle for Java y MySQL [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L106-L111] [catalog-portfolio-api/latest/guide/setup/local-development.md:L106-L111].",
+    "cambio": "Reescribí la respuesta con otras palabras y otra estructura: los pasos de IntelliJ van en una lista numerada y las citas de esa parte quedan al final del bloque. Los hechos, el orden de los pasos, las tres extensiones de VS Code, la afirmación de que las dos versiones coinciden y las citas no cambian."
+   }
+  }
+ ]
+}

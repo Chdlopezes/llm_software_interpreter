@@ -6,7 +6,7 @@ Uso, desde la raíz del repositorio (después de la fase 4):
 No entrena ningún modelo. Hace, de forma determinista:
 1. Entradas de inferencia de validation y test: cada conversación cortada justo después de la
    pregunta del usuario (sistema, historial y pregunta). Es lo único que verán B0, E1 y E2; la
-   llamada a la herramienta la tiene que hacer el modelo, y su salida la pone el arnés.
+   llamada a la herramienta la tiene que hacer el modelo, y su salida la pone el orquestador.
 2. Datos y presupuesto de cada experimento: qué conversaciones de train usa, cuántos pasos,
    cuántos ejemplos y tokens ve. E2 tiene menos conversaciones y, con los mismos pasos que E1,
    más épocas: el reporte lo hace explícito.

@@ -1,0 +1,56 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-002__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "879467597ea796b178fb5674cb6502c692be2562ddf4d654b2cf984066983aec",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "no_cumple",
+      "evidencia": "No identifica GET /catalog/brands/{brandId}/allstatus, listado en api-reference/README.md:L27."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Solo cita brands.md:L126-L130; no cita la tabla de referencia rápida."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no hay esquema ni ejemplo de respuesta para la variante con información de estado ampliada."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No inventa campos ni atribuye a allstatus el ejemplo de GET /{brandId}."
+     },
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "Afirma que no sabe qué endpoint llamar pese a que api-reference/README.md:L27 lo especifica."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La consulta normal de una marca por ID es GET /{brandId}.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L126-L130]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Se abstiene indebidamente de identificar el endpoint allstatus, que está documentado en la tabla de referencia rápida. Sí reconoce correctamente que sus campos de respuesta no están documentados."
+   }
+  }
+ ]
+}

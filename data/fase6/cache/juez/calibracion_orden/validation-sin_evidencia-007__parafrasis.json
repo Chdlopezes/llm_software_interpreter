@@ -1,0 +1,65 @@
+{
+ "task_id": "calibracion_orden/validation-sin_evidencia-007__parafrasis",
+ "llamadas": [
+  {
+   "clave": "ac883b6b41ff4a9913dcd8f864b917abd35580d6ae8e08d9e47f8fe1738f3ca8",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Cita la transición en brand-management/README.md:L87-L90 y el endpoint de activación en api-reference/README.md:L30-L30."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Aclara que la ausencia en la documentación no significa que la operación no exista."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone endpoint, método ni cuerpo para desactivar."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara explícitamente que no aparece ni el procedimiento ni el endpoint de desactivación."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El diagrama muestra una transición de ACTIVE a STAND_BY.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "STAND_BY describe una marca aún no activa o temporalmente desactivada.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para activar una marca se usa PUT /catalog/brands/{brandId}/activate.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

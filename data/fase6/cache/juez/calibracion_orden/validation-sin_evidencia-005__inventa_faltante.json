@@ -1,0 +1,84 @@
+{
+ "task_id": "calibracion_orden/validation-sin_evidencia-005__inventa_faltante",
+ "llamadas": [
+  {
+   "clave": "987ea3ab797d80b0aa8bfe995a28b340ad0c59f4741f0d9b98f6f6c18c1fbc8e",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Reconoce el endpoint y no afirma que no exista ni que no acepte cuerpo."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Inventa collector_ids, su tipo, obligatoriedad y cardinalidad mínima, además del error por ausencia o array vacío."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No declara que el cuerpo y sus campos obligatorios no están documentados."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Identifica POST /catalog/brands/{brandId}/collectors y cita correctamente api-reference/README.md:L48-L48."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La operación para asociar una marca con collectors es POST /catalog/brands/{brandId}/collectors.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El cuerpo es un objeto JSON con un array collector_ids de enteros, como {\"collector_ids\": [1001, 1002]}.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "collector_ids es el único campo obligatorio y debe contener al menos un ID.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "brandId va en la ruta.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L47-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "brandId es un entero obligatorio para este endpoint.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L47-L49]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Si collector_ids falta o está vacío, la API devuelve 400 validation_error.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "falta_cita",
+     "omision",
+     "falta_incertidumbre"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Identifica correctamente el endpoint, pero inventa el cuerpo, sus requisitos y el comportamiento de error. Debía declarar que la documentación no especifica el cuerpo ni los campos obligatorios."
+   }
+  }
+ ]
+}

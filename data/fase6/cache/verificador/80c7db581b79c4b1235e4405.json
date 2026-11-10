@@ -1,0 +1,156 @@
+{
+ "task_id": "verificador/80c7db581b79c4b1235e4405",
+ "llamadas": [
+  {
+   "clave": "80c7db581b79c4b1235e440581ba3952186d7ca28f4a4a15df8136352a2ad54c",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-version_explicita-005__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e indica software y versión, coincidentes con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cuatro campos y la unicidad del nombre dentro del site coinciden con las líneas 92-96. El ejemplo y la cabecera descritos aparecen en las líneas 100-109."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica los campos obligatorios y la restricción solicitada, según las líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint (líneas 70-74), los campos y la restricción (92-96), y el ejemplo y la cabecera (100-109). Son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas de citas a las líneas 70-74, 92-96 y 100-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene evidencia suficiente para responder."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder las dos partes de la pregunta (líneas 92-96)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del body de ejemplo concuerda con el JSON de las líneas 103-108 y no contradice los campos obligatorios de las líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre la llamada, los campos, la unicidad y las citas son verificables y concuerdan con las líneas 92-96."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-005__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e indica software y versión, coincidentes con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cuatro campos y la unicidad del nombre dentro del site coinciden con las líneas 92-96. El ejemplo y la cabecera descritos aparecen en las líneas 100-109."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica los campos obligatorios y la restricción solicitada, según las líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint (líneas 70-74), los campos y la restricción (92-96), y el ejemplo y la cabecera (100-109). Son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas de citas a las líneas 70-74, 92-96 y 100-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene evidencia suficiente para responder."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder las dos partes de la pregunta (líneas 92-96)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del body de ejemplo concuerda con el JSON de las líneas 103-108 y no contradice los campos obligatorios de las líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre la llamada, los campos, la unicidad y las citas son verificables y concuerdan con las líneas 92-96."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-005__sin_citas",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e indica software y versión, coincidentes con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los campos, la restricción y la descripción del ejemplo concuerdan con las líneas 92-96 y 100-109."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica los campos obligatorios y la restricción solicitada (líneas 92-96)."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La respuesta no incluye citas, pese a presentar afirmaciones técnicas respaldadas en las líneas 70-74, 92-96 y 100-109."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Ninguna de las afirmaciones técnicas tiene cita; son verificables en las líneas 70-74, 92-96 y 100-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene evidencia suficiente para responder."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información disponible en las líneas 92-96."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del ejemplo concuerda con las líneas 103-108 y la lista de campos obligatorios con las líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check que exige citar la sección no se cumple en la respuesta, que carece de citas, aunque el check es verificable y la información citada sería pertinente según las líneas 92-96."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta no cita sus afirmaciones técnicas y, por tanto, tampoco satisface el check que exige una cita."
+     }
+    ]
+   }
+  }
+ ]
+}

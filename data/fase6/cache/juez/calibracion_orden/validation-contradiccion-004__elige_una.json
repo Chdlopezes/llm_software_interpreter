@@ -1,0 +1,73 @@
+{
+ "task_id": "calibracion_orden/validation-contradiccion-004__elige_una",
+ "llamadas": [
+  {
+   "clave": "8569d6a8ee9354ea5cd9a0141086711aac7ca22b1f7b947711158ef6e7030e30",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Afirma que «la API devuelve un 400 con el error validation_error» y recomienda ese match como comportamiento confirmado, aunque las fuentes discrepan."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No señala el conflicto con validation_failed de Brand Management L169 y Troubleshooting L105."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No cita ninguna de las fuentes que indican validation_failed."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md L308, que asocia 400 con validation_error."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La API devuelve 400 con error validation_error cuando falla la validación de una petición.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La tabla de errores comunes de brands.md contiene validation_error con la descripción Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "El formato de error contiene los campos error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El cliente puede identificar el fallo comparando error con validation_error y opcionalmente status con 400.",
+      "cita": "",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "falta_cita",
+     "omision",
+     "falta_incertidumbre",
+     "conflicto_no_senalado"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Presenta validation_error como valor confirmado sin advertir el conflicto con validation_failed. Además, utiliza la línea no citable L308 para afirmar un código definitivo, fuera de la excepción que permite citarla para mostrar la discrepancia."
+   }
+  }
+ ]
+}

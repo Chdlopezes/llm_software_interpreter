@@ -1,0 +1,203 @@
+{
+ "task_id": "verificador/276e080b0a3dae590f07c51f",
+ "llamadas": [
+  {
+   "clave": "276e080b0a3dae590f07c51f98fd7a393cde98c0cc96f65d4880a3b7a4e79dba",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-comparacion_versiones-008__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta compara dos versiones del software nombrado; la llamada usa version=null, como corresponde a una comparación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El procedimiento descrito y el ejemplo de consulta coinciden en ambas versiones: tabla y flujo en important.md, líneas 239-254; curl y estructura en 257-282."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara cómo se comprueba si los ítems del flujo Feed son de prueba y concluye que el procedimiento no cambia; important.md, líneas 239-254."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones sostienen las afirmaciones: tabla y pasos en líneas 239-254, y consulta de ejemplo en 257-282."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre procedimiento, datos y curl tienen citas a ambas versiones, líneas 239-254 y 257-282."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene evidencia para responder la comparación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de ambas versiones y responde la comparación con el procedimiento documentado en important.md, líneas 239-282."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones: atribuye cada dato a los documentos de 0.0.10-stock-consumer y latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta comparación."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks expresan resultados verificables en ambas versiones y no exigen una redacción concreta; important.md, líneas 239-282."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-008__version_mezclada",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta compara dos versiones del software nombrado; la llamada usa version=null, como corresponde a una comparación."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La última afirmación no está respaldada para latest: su api.md, líneas 12-20, no documenta el Operation Validation Consumer ni que pause el ítem. En 0.0.10, la ruta y el ejemplo aparecen en líneas 51-68, pero no respaldan por sí solos toda la conducta atribuida."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "La respuesta compara correctamente el procedimiento Feed en important.md, líneas 239-282, pero añade una afirmación ajena a la pregunta y no respaldada para latest."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita latest/api.md:L12-L20 no contiene el endpoint ni los campos afirmados; esa sección enumera otros servicios. La cita de 0.0.10/api.md:L51-L68 sí muestra el endpoint y un ejemplo de cuerpo, pero no prueba que pause el ítem."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas, incluida la adicional sobre el endpoint, llevan citas; la falta de respaldo de esa cita se evalúa en respaldo_citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no declara que falte evidencia para la comparación solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la comparación Feed con la evidencia disponible en important.md, líneas 239-282."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no se contradice internamente, aunque la afirmación añadida sobre el endpoint no está respaldada en latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental que requiera resolver."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y reflejan lo documentado sobre el procedimiento Feed y la necesidad de no inventar diferencias; important.md, líneas 239-282."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La comparación Feed está respaldada, pero la respuesta añade que latest documenta un endpoint y una conducta que no aparecen en su api.md, líneas 12-20."
+     },
+     {
+      "case_id": "train-comparacion_versiones-013__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta compara dos versiones del software nombrado; la llamada con version=null es adecuada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "En 0.10 los encabezados llevan [IMPORTANT] y en 0.6 no; las descripciones y pasos citados coinciden entre versiones, alerts.md líneas 17-39."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica tanto el cambio de prioridad como si cambió la resolución de las dos alertas, con evidencia de ambas versiones, líneas 17-39."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de encabezados, descripciones y procedimientos sostienen las afirmaciones; alerts.md, líneas 17-39, en ambas versiones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre prioridades, descripciones y pasos llevan citas a los dos alerts.md, líneas 17-39."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados contienen las instrucciones de resolución de ambas alertas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa las instrucciones disponibles para describir ambas alertas y comparar sus versiones, alerts.md, líneas 17-39."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las versiones y no se contradice al comparar encabezados y pasos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes para las afirmaciones comparadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen hechos verificables en los alerts.md de ambas versiones, líneas 17-39, y no exigen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-013__version_mezclada",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta compara dos versiones del software nombrado; la llamada con version=null es adecuada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Invierte las prioridades: 0.6 no lleva [IMPORTANT] en los encabezados de las líneas 17 y 29, mientras 0.10 sí las lleva en esas mismas líneas."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Describe las instrucciones de resolución, pero responde incorrectamente qué versión lleva la marca de prioridad; alerts.md, líneas 17-39."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las citas de 0.6:L17 y L29 no muestran [IMPORTANT], y las de 0.10:L17 y L29 sí lo muestran; por tanto, contradicen la afirmación citada. Las citas sobre las instrucciones de resolución sí las respaldan, líneas 19-39."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas a las secciones correspondientes de ambas versiones, líneas 17-39, aunque las citas de las prioridades contradicen lo afirmado."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación contiene evidencia explícita sobre las prioridades y los procedimientos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para comparar las alertas, aunque invierte las marcas de prioridad; alerts.md, líneas 17-39."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es internamente coherente, pero atribuye las prioridades a las versiones equivocadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las versiones no presentan un conflicto documental sobre estas alertas; la respuesta simplemente invierte los datos."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check sobre las prioridades sí coincide con los documentos —0.10 tiene [IMPORTANT] y 0.6 no, líneas 17 y 29—, pero contradice la respuesta que pretende evaluar."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta invierte qué versión lleva [IMPORTANT]; los encabezados de alerts.md, líneas 17 y 29, muestran lo contrario."
+     }
+    ]
+   }
+  }
+ ]
+}

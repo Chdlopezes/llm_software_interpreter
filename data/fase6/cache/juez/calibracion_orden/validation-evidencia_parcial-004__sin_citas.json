@@ -1,0 +1,73 @@
+{
+ "task_id": "calibracion_orden/validation-evidencia_parcial-004__sin_citas",
+ "llamadas": [
+  {
+   "clave": "f84feb5fc4c3779d020babf95fb8b4b068e659ab9fb9b1446ec722adec1dc152",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Da POST /catalog/brands/{brandId}/collectors sin abstenerse sobre método y ruta."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Declara que el body no está documentado; no afirma que no se admita ni que la operación no esté soportada."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone campos, estructura JSON ni formato para los IDs."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Dice explícitamente: «Lo que no está documentado es el body»."
+     },
+     {
+      "indice": 1,
+      "resultado": "parcial",
+      "evidencia": "Indica correctamente el método y la ruta de api-reference/README.md:L48, pero no cita la tabla."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para asociar una marca con collectors se usa POST /catalog/brands/{brandId}/collectors.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Para quitar una asociación se usa DELETE /catalog/brands/{brandId}/collectors/{collectorId}.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Los endpoints de collectors solo aparecen en la tabla de referencia rápida con método, ruta y descripción.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La única página recibida con detalle por endpoint es la de endpoints de marca.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta proporciona los endpoints correctos y reconoce adecuadamente que el body no está documentado. Sin embargo, no incluye citas para sus afirmaciones."
+   }
+  }
+ ]
+}

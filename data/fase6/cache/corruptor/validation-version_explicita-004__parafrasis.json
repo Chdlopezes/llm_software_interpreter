@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-004__parafrasis",
+ "llamadas": [
+  {
+   "clave": "c56d1fe09464301d31d9c86f61c3808bb5c08da6b611fe719dffbeee0d644f9f",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Tanto la respuesta 400, que corresponde a un parámetro inválido [price-engine-api/latest/specs/swagger.yaml:L92-L97], como la 500, que corresponde a un error no controlado del servidor [price-engine-api/latest/specs/swagger.yaml:L111-L116], devuelven el cuerpo con el modelo RequestError.\n\nRequestError es un objeto con dos propiedades, ambas de tipo string: `code`, con la descripción \"código de respuesta\", y `message`, con la descripción \"mensaje de respuesta\" [price-engine-api/latest/specs/swagger.yaml:L122-L131]. Los valores de `code` están limitados por un enum que solo admite `bad_request` e `internal_server_error` [price-engine-api/latest/specs/swagger.yaml:L125-L128].",
+    "cambio": "Es una paráfrasis. Cambié el orden: primero digo qué respuestas (400 y 500) usan RequestError y después describo el modelo y el enum de `code`. También reformulé las frases. Los hechos y las citas son los mismos que en la referencia."
+   }
+  }
+ ]
+}

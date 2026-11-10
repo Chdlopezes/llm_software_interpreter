@@ -1,0 +1,69 @@
+{
+ "task_id": "calibracion/validation-sin_version-009__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "42d3166aee3bcaff266c43290b23560c3952709a3c5af15779ae5ba80492580d",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "no_cumple",
+      "evidencia": "Niega que se indiquen la importación o el SDK, aunque local-development.md:L99-L100 de ambas versiones prescribe importar como proyecto Gradle y usar Java 17."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Niega que exista configuración de estilo y omite config/checkstyle/checkstyle-main.xml, LF y UTF-8, documentados en L101-L104 de ambas versiones."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Afirma que no se recomienda ninguna extensión, pero L108-L111 de ambas versiones enumera Java Extension Pack, Gradle for Java y MySQL."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Menciona ambas versiones únicamente para negar que contengan la respuesta; no comunica que compartan la configuración documentada ni cita ambas."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No incorpora ajustes del IDE ni extensiones adicionales; los requisitos y canales de soporte que menciona están documentados."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Los requisitos previos son Java JDK 17 o superior, Gradle 7.3 o superior o el wrapper, MySQL 8.0 o superior, RetailFlow CLI y Git.",
+      "cita": "[catalog-portfolio-api/latest/guide/setup/local-development.md:L7-L13]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La guía incluye comandos para compilar, ejecutar pruebas y realizar comprobaciones de calidad de código.",
+      "cita": "[catalog-portfolio-api/latest/guide/setup/local-development.md:L32-L41]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los canales de soporte son instore_devs@retailflow.com y #instore-dev en Slack.",
+      "cita": "[catalog-portfolio-api/latest/guide/troubleshooting/README.md:L227-L228]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente: ambas versiones documentan explícitamente la configuración de IntelliJ IDEA y las tres extensiones recomendadas para VS Code en local-development.md:L95-L111. Los datos auxiliares citados son correctos, pero no responden a la consulta."
+   }
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "task_id": "calibracion/validation-version_explicita-004__irrelevante",
+ "llamadas": [
+  {
+   "clave": "264b0eb0797180d49badf05a12ed3b61e08be8ab5d340cb16454717b69f6cdb1",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software price-engine-api y version latest."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No describe RequestError ni los campos code y message documentados en swagger.yaml:L122-L131."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Omite los valores bad_request e internal_server_error del enum de code (L125-L128)."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "No cita las líneas del modelo RequestError; sus citas se refieren al endpoint, parámetros y respuesta exitosa."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No inventa campos de error ni valores de code, aunque tampoco describe los documentados."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint es GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L24-L35]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El endpoint devuelve el estado del ajuste de configuración de cobertura del seller y un array vacío si no tiene ajustes de cobertura activos.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L24-L35]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "site_id es un parámetro de path obligatorio con valores MLA, MLB, MLC, MCO, MLU, MPE, MLM y MEC.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L51-L59]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La cabecera Accept-Version es obligatoria, de tipo string y tiene como ejemplo v1.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L76-L83]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La respuesta exitosa es un 200 que contiene el modelo Zones.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L86-L91]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Zones es un array de strings cuyos elementos representan zonas.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L132-L136]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "cita_no_respalda"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta describe el endpoint y su respuesta exitosa, pero no contesta la pregunta sobre la estructura de los errores ni los valores de code. Además, la cita L86-L91 identifica el modelo de respuesta, pero no acredita el estado HTTP 200, que aparece en L42-L43."
+   }
+  }
+ ]
+}

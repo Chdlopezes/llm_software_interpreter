@@ -1,0 +1,56 @@
+{
+ "task_id": "calibracion_orden/validation-evidencia_parcial-002__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "29b3bc5bff4c9deb85f900c1923700d87d470c690c3e5f3bcc139ba2218b28e2",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "Se abstiene de identificar el endpoint, aunque api-reference/README.md:L27 lo indica explícitamente."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No inventa campos ni atribuye a allstatus el ejemplo de GET /{brandId}."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no hay esquema de respuesta ni ejemplo para la consulta con información de estado ampliada."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Solo cita brands.md:L126-L130; no cita la tabla de api-reference/README.md."
+     },
+     {
+      "indice": 1,
+      "resultado": "no_cumple",
+      "evidencia": "No proporciona GET /catalog/brands/{brandId}/allstatus, documentado en api-reference/README.md:L27."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La consulta normal de una marca por ID es GET /{brandId}.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L126-L130]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente de dar el endpoint allstatus, que sí aparece en la referencia rápida. Reconoce correctamente que sus campos de respuesta no están documentados."
+   }
+  }
+ ]
+}

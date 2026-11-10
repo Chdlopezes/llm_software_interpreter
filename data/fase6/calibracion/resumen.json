@@ -1,0 +1,243 @@
+{
+ "todas": {
+  "variantes": 57,
+  "errores": 0,
+  "matriz": {
+   "aprueba": {
+    "aprueba": 26,
+    "falla": 0,
+    "incidencia_referencia": 0
+   },
+   "falla": {
+    "aprueba": 0,
+    "falla": 27,
+    "incidencia_referencia": 0
+   },
+   "incidencia_referencia": {
+    "aprueba": 0,
+    "falla": 0,
+    "incidencia_referencia": 4
+   }
+  },
+  "binario": {
+   "sensibilidad": {
+    "num": 27,
+    "den": 27,
+    "valor": 1.0
+   },
+   "especificidad": {
+    "num": 26,
+    "den": 26,
+    "valor": 1.0
+   },
+   "precision_aprobados": {
+    "num": 26,
+    "den": 26,
+    "valor": 1.0
+   }
+  },
+  "aciertos": 57,
+  "falsos_aprobados": [],
+  "falsos_rechazos": [],
+  "por_tipo": {
+   "referencia": {
+    "aciertos": 14,
+    "total": 14,
+    "etiqueta": null
+   },
+   "parafrasis": {
+    "aciertos": 12,
+    "total": 12,
+    "etiqueta": null
+   },
+   "hecho_falso": {
+    "aciertos": 5,
+    "total": 5,
+    "etiqueta": 5
+   },
+   "irrelevante": {
+    "aciertos": 3,
+    "total": 3,
+    "etiqueta": 3
+   },
+   "abstencion_excesiva": {
+    "aciertos": 6,
+    "total": 6,
+    "etiqueta": 6
+   },
+   "version_mezclada": {
+    "aciertos": 2,
+    "total": 2,
+    "etiqueta": 1
+   },
+   "sin_citas": {
+    "aciertos": 5,
+    "total": 5,
+    "etiqueta": 5
+   },
+   "inventa_faltante": {
+    "aciertos": 4,
+    "total": 4,
+    "etiqueta": 4
+   },
+   "elige_una": {
+    "aciertos": 2,
+    "total": 2,
+    "etiqueta": 2
+   },
+   "referencia_defectuosa": {
+    "aciertos": 4,
+    "total": 4,
+    "etiqueta": null
+   }
+  },
+  "estabilidad": {
+   "iguales": 57,
+   "total": 57
+  }
+ },
+ "confirmadas": {
+  "variantes": 56,
+  "errores": 0,
+  "matriz": {
+   "aprueba": {
+    "aprueba": 26,
+    "falla": 0,
+    "incidencia_referencia": 0
+   },
+   "falla": {
+    "aprueba": 0,
+    "falla": 26,
+    "incidencia_referencia": 0
+   },
+   "incidencia_referencia": {
+    "aprueba": 0,
+    "falla": 0,
+    "incidencia_referencia": 4
+   }
+  },
+  "binario": {
+   "sensibilidad": {
+    "num": 26,
+    "den": 26,
+    "valor": 1.0
+   },
+   "especificidad": {
+    "num": 26,
+    "den": 26,
+    "valor": 1.0
+   },
+   "precision_aprobados": {
+    "num": 26,
+    "den": 26,
+    "valor": 1.0
+   }
+  },
+  "aciertos": 56,
+  "falsos_aprobados": [],
+  "falsos_rechazos": [],
+  "por_tipo": {
+   "referencia": {
+    "aciertos": 14,
+    "total": 14,
+    "etiqueta": null
+   },
+   "parafrasis": {
+    "aciertos": 12,
+    "total": 12,
+    "etiqueta": null
+   },
+   "hecho_falso": {
+    "aciertos": 5,
+    "total": 5,
+    "etiqueta": 5
+   },
+   "irrelevante": {
+    "aciertos": 3,
+    "total": 3,
+    "etiqueta": 3
+   },
+   "abstencion_excesiva": {
+    "aciertos": 6,
+    "total": 6,
+    "etiqueta": 6
+   },
+   "version_mezclada": {
+    "aciertos": 2,
+    "total": 2,
+    "etiqueta": 1
+   },
+   "sin_citas": {
+    "aciertos": 5,
+    "total": 5,
+    "etiqueta": 5
+   },
+   "inventa_faltante": {
+    "aciertos": 4,
+    "total": 4,
+    "etiqueta": 4
+   },
+   "elige_una": {
+    "aciertos": 1,
+    "total": 1,
+    "etiqueta": 1
+   },
+   "referencia_defectuosa": {
+    "aciertos": 4,
+    "total": 4,
+    "etiqueta": null
+   }
+  },
+  "estabilidad": {
+   "iguales": 56,
+   "total": 56
+  }
+ },
+ "etiquetas": {
+  "confirmar": 56,
+  "pendiente": 1
+ },
+ "verificador": {
+  "aciertos": 52,
+  "total": 53,
+  "falsos_aprobados": [],
+  "por_tipo": {
+   "referencia": {
+    "aciertos": 13,
+    "total": 14
+   },
+   "parafrasis": {
+    "aciertos": 12,
+    "total": 12
+   },
+   "hecho_falso": {
+    "aciertos": 5,
+    "total": 5
+   },
+   "irrelevante": {
+    "aciertos": 3,
+    "total": 3
+   },
+   "abstencion_excesiva": {
+    "aciertos": 6,
+    "total": 6
+   },
+   "version_mezclada": {
+    "aciertos": 2,
+    "total": 2
+   },
+   "sin_citas": {
+    "aciertos": 5,
+    "total": 5
+   },
+   "inventa_faltante": {
+    "aciertos": 4,
+    "total": 4
+   },
+   "elige_una": {
+    "aciertos": 2,
+    "total": 2
+   }
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "task_id": "calibracion/validation-contradiccion-007__referencia",
+ "llamadas": [
+  {
+   "clave": "e9340ce676cde91e0c6f91bb6ab719663481cfe870d79b710c74fef1819b31df",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Declara expresamente que la documentación se contradice sobre el nombre del error."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management L169 para validation_failed y brands.md L308 para validation_error con HTTP 400. Ambas citas son válidas para mostrar el conflicto."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Dice que no puede confirmar el identificador que devuelve realmente la API y no elige ninguno."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No añade códigos; plantea como incertidumbre, sin afirmarla, la posible distinción entre validación de negocio y de petición."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Brand Management incluye validation_failed con la descripción Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La referencia de endpoints de marcas incluye validation_error asociado a HTTP 400 y descrito como Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

@@ -103,12 +103,12 @@ Igual para B0, E1 y E2:
 | Parámetro | Valor |
 |---|---|
 | Entrada | Solo el prompt de sistema, el historial y la pregunta (`data/fase5/entradas_{validation,test}.jsonl`) |
-| Herramienta | `obtener_documentacion`, ejecutada por el arnés con el catálogo de la fase 1. El modelo decide si llamarla y con qué argumentos |
+| Herramienta | `obtener_documentacion`, ejecutada por el orquestador (el programa que corre el modelo y ejecuta sus llamadas) con el catálogo de la fase 1. El modelo decide si llamarla y con qué argumentos |
 | Razonamiento | `enable_thinking=False` |
 | Decodificación | Voraz (temperatura 0), hasta 1.024 tokens nuevos |
 | Llamadas | Hasta 2 por caso. Si el modelo pide una tercera, el caso cuenta como fallo de llamada |
 
-**Por qué la entrada termina en la pregunta.** La primera medición de la evaluación es si el modelo llama a la herramienta y con qué argumentos. Si se le diera la llamada, no habría nada que medir. Por eso el arnés ejecuta la herramienta con los argumentos que el modelo elija, y la segunda medición compara los documentos que recibió con los esperados.
+**Por qué la entrada termina en la pregunta.** La primera medición de la evaluación es si el modelo llama a la herramienta y con qué argumentos. Si se le diera la llamada, no habría nada que medir. Por eso el orquestador ejecuta la herramienta con los argumentos que el modelo elija, y la segunda medición compara los documentos que recibió con los esperados.
 
 Se guarda cada respuesta con el ID del caso, el experimento y la configuración (`predictions.jsonl`, fase 6).
 

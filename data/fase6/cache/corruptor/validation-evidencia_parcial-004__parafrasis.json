@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-evidencia_parcial-004__parafrasis",
+ "llamadas": [
+  {
+   "clave": "d905f7c5ecb61c1699e2dafd3f05770827741807fbe585eabf2f32489779c8c1",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "El endpoint que tienes que llamar es `POST /catalog/brands/{brandId}/collectors`, que la tabla describe como la operación para asociar una marca con collectors [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]. Para deshacer una asociación más adelante está `DELETE /catalog/brands/{brandId}/collectors/{collectorId}` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L49-L49].\n\nEl contenido del body no aparece en la documentación. Los endpoints de collectors solo figuran en la tabla de referencia rápida, que da el método, la ruta y una descripción [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]. La guía solo tiene una página con detalle por endpoint, y es la de marcas [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L9-L11]. Así que no puedo decirte qué campos lleva el JSON ni en qué formato van los IDs de los collectors.",
+    "cambio": "Reescribí la referencia con otras palabras y otro orden de frases: el endpoint va primero como respuesta directa y la falta de documentación del body se explica después. Los hechos, las citas y la mención de lo que no está documentado (campos del JSON y formato de los IDs) son los mismos."
+   }
+  }
+ ]
+}

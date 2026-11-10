@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-software_en_historial-012__parafrasis",
+ "llamadas": [
+  {
+   "clave": "a94be1c4f99a15bb0e953ed7862a2cdd938c1fd4bfa9fbb541173537513bdc9d",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "El diagrama de estados recoge dos caminos hacia DELETED: uno desde STAND_BY y otro desde ACTIVE. Respecto a la segunda pregunta, la respuesta es sí: ese mismo diagrama muestra una transición que lleva de ACTIVE otra vez a STAND_BY [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L92]. Esto es coherente con cómo se describe STAND_BY: puede ser una marca a la que aún le faltan los logos obligatorios o una marca desactivada de forma temporal [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]. Recuerda que DELETED indica una eliminación permanente de la marca y que esa acción es irreversible [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L107-L107].",
+    "cambio": "Solo cambié la redacción y el orden de las frases: el «sí» va al principio de la segunda parte y la descripción de STAND_BY está reformulada. Los hechos siguen igual: a DELETED se llega desde STAND_BY y desde ACTIVE, existe la transición ACTIVE→STAND_BY, la descripción de STAND_BY no cambia y DELETED sigue siendo irreversible. Las tres citas son las mismas que en la referencia."
+   }
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "task_id": "calibracion_orden/validation-evidencia_parcial-004__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "84830d1cef415c938d5632a05c2dcf637c11d55f009e9c154367f837597c3461",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "Se abstiene de confirmar el endpoint, aunque README.md L48 documenta el método POST y la ruta."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma que el endpoint rechace un body ni que la operación no esté soportada."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No inventa campos, estructura JSON ni formato de IDs."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara que no puede determinar los campos del JSON ni el formato de los IDs porque la tabla no documenta ese contrato."
+     },
+     {
+      "indice": 1,
+      "resultado": "no_cumple",
+      "evidencia": "Omite POST /catalog/brands/{brandId}/collectors, documentado en README.md L48."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La referencia de la API solo enlaza en detalle los endpoints de marca, con operaciones CRUD y búsqueda.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L9-L11]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La sección de collectors solo presenta una tabla de referencia rápida y no detalla el contrato de las peticiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Recomienda consultar Swagger UI o al equipo responsable antes de implementar la llamada.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La abstención sobre el JSON es correcta, pero se extiende indebidamente al endpoint. La documentación sí indica POST /catalog/brands/{brandId}/collectors para asociar collectors."
+   }
+  }
+ ]
+}

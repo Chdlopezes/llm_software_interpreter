@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-005__parafrasis",
+ "llamadas": [
+  {
+   "clave": "5959205e0b363c1ac59b65e94cd8320cfcd7fbf6786b21d101ac61480fb651d8",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Según la referencia de la API, el endpoint de creación de marcas es `POST /` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]. El body tiene cuatro campos obligatorios: `site`, que es el código de site de RetailFlow; `category`, el ID de la categoría principal; `type`, el tipo de marca, con los valores `lighthouse` o `standard`; y `name`, el nombre de la marca. La restricción del nombre es que no puede repetirse dentro del mismo site [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96].\n\nEn el ejemplo de petición, el body JSON solo lleva esos cuatro campos y se envía con la cabecera `Content-Type: application/json` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109].",
+    "cambio": "He cambiado la redacción y el orden: los campos aparecen como site, category, type y name, y la restricción del nombre va en una frase aparte («no puede repetirse dentro del mismo site», que equivale a «único dentro del site»). Los hechos y las citas son los mismos que en la referencia."
+   }
+  }
+ ]
+}

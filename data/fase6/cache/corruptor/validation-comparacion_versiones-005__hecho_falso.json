@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-comparacion_versiones-005__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "e9a48a9298bf9c831e2983c29f519856a94b4f6c416c8734a0fe73cddc681d18",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "No, en lo que preguntas no hay cambios. Las dos versiones documentan exactamente lo mismo para esos tres códigos y para el formato del cuerpo de error.\n\nLos códigos son estos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]:\n- 404 `brand_not_found`: el ID de brand no existe.\n- 409 `brand_already_exists`: ya existe una brand con ese nombre en el site.\n- 422 `logos_missing`: no se han subido los logos requeridos.\n\nEn las dos versiones, el cuerpo de error es un objeto JSON con los campos `error`, `message`, `status` y `cause`. En el ejemplo, `cause` aparece como un array [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325].\n\nAsí que, para estos casos, el mismo manejo de errores sirve para las dos versiones.",
+    "cambio": "En la lista de códigos cambié el identificador del error 409, que pasa de `brand_name_already_exists` a `brand_already_exists`. Mantuve las citas a brands.md:L311-L313 de las dos versiones, y en ambas la línea 312 dice `brand_name_already_exists`."
+   }
+  }
+ ]
+}

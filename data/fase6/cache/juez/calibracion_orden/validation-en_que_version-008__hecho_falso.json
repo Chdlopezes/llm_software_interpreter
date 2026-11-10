@@ -1,0 +1,92 @@
+{
+ "task_id": "calibracion_orden/validation-en_que_version-008__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "338806d1005015d37a77c0fbff902c692b9ee99d477c040c1a5a684369c3a275",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Limita expresamente la respuesta a la documentación recibida y no excluye otras versiones."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita troubleshooting/README.md, L98-L100 y L107, de ambas versiones."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Afirma que el contenido es idéntico entre ambas versiones; sus respectivas líneas 107 coinciden."
+     },
+     {
+      "indice": 2,
+      "resultado": "parcial",
+      "evidencia": "Indica correctamente «Database operation failed» y problemas de conexión, pero sustituye «constraints» por «lock timeouts», que no figura en L107."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Identifica 0.0.1-test-bench-v2a y latest, ambas con database_error en troubleshooting/README.md:L107."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "database_error está documentado en 0.0.1-test-bench-v2a en la tabla Application Error Codes.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "database_error está documentado en latest en la tabla Application Error Codes.",
+      "cita": "[catalog-portfolio-api/latest/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La descripción de database_error es «Database operation failed».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los problemas de conexión son una causa común de database_error.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla atribuye database_error a bloqueos con timeout y dice «Connection issues, lock timeouts».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La descripción y las causas documentadas son iguales en ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "latest también atribuye database_error a bloqueos con timeout.",
+      "cita": "[catalog-portfolio-api/latest/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "contradiccion_con_fuente",
+     "cita_no_respalda"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Identifica y cita correctamente ambas versiones, pero altera las causas documentadas: las fuentes dicen «Connection issues, constraints», no «Connection issues, lock timeouts»."
+   }
+  }
+ ]
+}

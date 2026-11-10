@@ -1,0 +1,73 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-004__sin_citas",
+ "llamadas": [
+  {
+   "clave": "5150a3cd3cd74d37741478cfd9ee3fbad0d82387e610ba1792da514d82f5adea",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "parcial",
+      "evidencia": "Da correctamente POST /catalog/brands/{brandId}/collectors, respaldado por api-reference/README.md:L48, pero no cita la tabla."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara expresamente: «Lo que no está documentado es el body»."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone campos, estructura JSON ni formato para los IDs."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma que el endpoint rechace body ni que la operación no esté soportada."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Proporciona el método POST y la ruta documentada."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para asociar una marca con collectors se usa POST /catalog/brands/{brandId}/collectors.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Para quitar una asociación se usa DELETE /catalog/brands/{brandId}/collectors/{collectorId}.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Los endpoints de collectors solo aparecen en la tabla de referencia rápida, con método, ruta y descripción.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Entre los documentos recibidos, la única página con detalle por endpoint es la de endpoints de marca.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "El contenido es correcto y reconoce adecuadamente que falta la documentación del body, pero omite todas las citas."
+   }
+  }
+ ]
+}

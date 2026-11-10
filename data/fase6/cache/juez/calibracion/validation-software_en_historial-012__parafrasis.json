@@ -1,0 +1,71 @@
+{
+ "task_id": "calibracion/validation-software_en_historial-012__parafrasis",
+ "llamadas": [
+  {
+   "clave": "b5bdccba97482dd8389f36d4db30f5cdddf487ef9fbac9f8a7c113cebb49a854",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a, sin volver a preguntarlos."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Indica dos caminos hacia DELETED, desde STAND_BY y desde ACTIVE; el diagrama los muestra en L91-L92."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Afirma que ACTIVE puede volver a STAND_BY, respaldado por L90, y menciona la desactivación temporal descrita en L105."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Explica que DELETED es una eliminación permanente e irreversible y cita L107."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Cita brand-management/README.md:L87-L92, L105-L105 y L107-L107; todas son líneas citables."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Se puede llegar a DELETED desde STAND_BY y desde ACTIVE.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L92]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Una marca ACTIVE puede volver a STAND_BY.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L92]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "STAND_BY puede corresponder a una marca a la que le faltan logos obligatorios o que está temporalmente desactivada.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "DELETED indica una eliminación permanente e irreversible.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

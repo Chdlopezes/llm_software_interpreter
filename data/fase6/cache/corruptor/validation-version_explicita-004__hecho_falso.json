@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-004__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "8e6be2584d34ceb7f9852b63e05439e009140eb94894e9b2cb46ef17072a58b6",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Los errores se devuelven con el modelo RequestError. Es un objeto con dos propiedades de tipo string: `code`, descrito como código de respuesta, y `message`, descrito como mensaje de respuesta [price-engine-api/latest/specs/swagger.yaml:L122-L131]. El campo `code` está restringido a un enum con dos valores: `bad_request` e `internal_error` [price-engine-api/latest/specs/swagger.yaml:L125-L128].\n\nEste modelo lo usan tanto la respuesta 400 por parámetro inválido [price-engine-api/latest/specs/swagger.yaml:L92-L97] como la 500 por error no controlado del servidor [price-engine-api/latest/specs/swagger.yaml:L111-L116].",
+    "cambio": "En la primera parte cambié el segundo valor del enum de `code`: puse `internal_error` en lugar de `internal_server_error`. Dejé la misma cita [swagger.yaml:L125-L128], y en la línea 128 el valor real es `internal_server_error`."
+   }
+  }
+ ]
+}

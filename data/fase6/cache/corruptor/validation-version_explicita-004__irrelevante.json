@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-004__irrelevante",
+ "llamadas": [
+  {
+   "clave": "e614ce22a185ae14cf6ec20e209f0ffb2995a5e1af946e6ef571ca14745c61f3",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "El endpoint expuesto por price-engine-api latest es `GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1`. Devuelve el estado del ajuste de configuración de cobertura del seller y, si el seller no tiene ajustes de cobertura activos, responde con un array vacío [price-engine-api/latest/specs/swagger.yaml:L24-L35].\n\nEl parámetro de path `site_id` es obligatorio y está restringido a un enum: `MLA`, `MLB`, `MLC`, `MCO`, `MLU`, `MPE`, `MLM` y `MEC` [price-engine-api/latest/specs/swagger.yaml:L51-L59]. También hay que enviar la cabecera obligatoria `Accept-Version`, de tipo string, por ejemplo `\"v1\"` [price-engine-api/latest/specs/swagger.yaml:L76-L83].\n\nSi la llamada va bien, el endpoint responde con un 200 que contiene el modelo Zones [price-engine-api/latest/specs/swagger.yaml:L86-L91]. Ese modelo es un array de strings, donde cada elemento es una zona [price-engine-api/latest/specs/swagger.yaml:L132-L136].",
+    "cambio": "En lugar de explicar el modelo RequestError (`code` y `message`) y los valores del enum de `code` (`bad_request`, `internal_server_error`), la respuesta describe el endpoint, el enum de `site_id`, la cabecera `Accept-Version` y la respuesta 200 con Zones. Todo es cierto y está citado, pero no contesta a la pregunta sobre el cuerpo de error."
+   }
+  }
+ ]
+}

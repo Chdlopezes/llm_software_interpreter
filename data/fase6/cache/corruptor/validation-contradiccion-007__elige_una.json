@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-contradiccion-007__elige_una",
+ "llamadas": [
+  {
+   "clave": "d3f3d10852780e73e2d6cf1ce4ddb9061578e0953742bc7f12a6c853e398469d",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "En la versión 0.0.1-test-bench-v2a, cuando falla la validación la API devuelve el código de error `validation_error`. Según la tabla de códigos de error de la referencia de endpoints de marcas, va asociado al HTTP 400 y su descripción es «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]. En el cliente puedes capturarlo comparando el campo `error` del cuerpo de la respuesta con el valor `validation_error`, y conviene comprobar también que el estado HTTP es 400.",
+    "cambio": "Esta variante da por bueno solo el nombre `validation_error` de brands.md L308. Quité la mención a `validation_failed` de la guía de Brand Management (L169), la discrepancia entre las dos fuentes y la recomendación de comprobarlo con una respuesta real del servicio."
+   }
+  }
+ ]
+}

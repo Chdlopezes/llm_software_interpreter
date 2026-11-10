@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-en_que_version-008__parafrasis",
+ "llamadas": [
+  {
+   "clave": "5b7c153760e003b2c3420f22e595b8e06458134136b5ae5eda50c8eb31211d28",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "En la documentación que recibí, `database_error` figura en dos versiones de catalog-portfolio-api: latest y 0.0.1-test-bench-v2a. En ambas está en la guía de troubleshooting, dentro de la tabla «Application Error Codes», y lo que dicen las dos es exactamente lo mismo.\n\n- **latest:** la descripción del código es «Database operation failed». Como causas comunes se indican los problemas de conexión y las restricciones («Connection issues, constraints») [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107].\n- **0.0.1-test-bench-v2a:** tiene la misma descripción y las mismas causas [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107].\n\nEsta respuesta se limita a los documentos que recibí. No dice nada de otras versiones que no aparezcan en ellos.",
+    "cambio": "Es una paráfrasis. Reescribí la introducción con otras palabras y cambié el orden de las versiones: ahora latest va primero con el detalle de la descripción y las causas, y 0.0.1-test-bench-v2a va después como «la misma». Las versiones, el texto citado («Database operation failed», «Connection issues, constraints»), las citas y la aclaración de que solo se cubren los documentos recibidos no cambian."
+   }
+  }
+ ]
+}

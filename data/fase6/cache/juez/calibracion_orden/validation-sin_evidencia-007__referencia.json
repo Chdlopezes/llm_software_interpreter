@@ -1,0 +1,65 @@
+{
+ "task_id": "calibracion_orden/validation-sin_evidencia-007__referencia",
+ "llamadas": [
+  {
+   "clave": "af63ff30bdc40c2c3c7b0c162e733c2ddbe5ca4abfefa3c8d0a3b364540e945a",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Cita la transición en brand-management/README.md:L87-L90, la descripción de STAND_BY en L105 y el endpoint de activación en api-reference/README.md:L30."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Aclara que la ausencia de documentación no implica que la operación no exista."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone endpoint, método HTTP ni cuerpo de petición para desactivar."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara que ningún documento entregado explica el procedimiento ni el endpoint para desactivar."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "La llamada a obtener_documentacion usa software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El diagrama muestra la transición de ACTIVE a STAND_BY.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "STAND_BY describe una marca todavía no activa o temporalmente desactivada.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La activación se realiza con PUT /catalog/brands/{brandId}/activate.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

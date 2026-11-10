@@ -1,0 +1,81 @@
+{
+ "task_id": "calibracion_orden/validation-version_explicita-005__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "f3ffa580750a965453475da5f8ca72825ec03d3310626f2a65e9bbea73a6cca0",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No añade otros campos obligatorios ni reglas de validación inventadas."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Cita Create Brand, pero omite la lista Required Fields de brands.md:L92-L96."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No indica que el nombre debe ser único dentro del site, pese a que brands.md:L93 lo establece explícitamente."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Menciona name, site, category y type solo como campos de un ejemplo y rechaza confirmar su obligatoriedad, documentada en brands.md:L92-L96."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint de creación de marcas es POST /.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El body de ejemplo incluye name, soft_descriptor, site, category, subcategories, type, tags, priority y business_description.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L76-L90]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La petición de ejemplo envía solo name, site, category y type en JSON, con Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Un ejemplo con pocos campos no demuestra por sí solo que esos campos sean obligatorios.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Se recomienda revisar Swagger o el código del validador para confirmar los requisitos.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente: brands.md:L92-L96 enumera explícitamente los cuatro campos obligatorios y establece que name debe ser único dentro del site. Aunque describe correctamente los ejemplos, no responde las dos cuestiones solicitadas."
+   }
+  }
+ ]
+}

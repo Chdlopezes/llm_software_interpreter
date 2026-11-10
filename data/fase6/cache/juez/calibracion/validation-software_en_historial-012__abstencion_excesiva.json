@@ -1,0 +1,63 @@
+{
+ "task_id": "calibracion/validation-software_en_historial-012__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "c6498daea8a9c9fae56d56e756e49880414680a3fc5213805a3171e4b562f9cd",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a, sin volver a solicitarlos."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No identifica STAND_BY y ACTIVE como estados de origen de DELETED, aunque el diagrama los muestra en brand-management/README.md:L91-L92."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Dice que no se puede confirmar el retorno de ACTIVE a STAND_BY, pero esa transición aparece explícitamente en brand-management/README.md:L90."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Indica que DELETED es una eliminación permanente que no se puede revertir y cita L107."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Cita las descripciones de STAND_BY y DELETED en brand-management/README.md:L105 y L107, ambas citables."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "STAND_BY corresponde a una marca creada pero no activa, que puede carecer de logos obligatorios o estar desactivada temporalmente.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "DELETED indica una eliminación permanente e irreversible.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente de contestar ambas preguntas: el diagrama documenta STAND_BY → DELETED, ACTIVE → DELETED y ACTIVE → STAND_BY. Las descripciones de estados que sí proporciona están correctamente citadas."
+   }
+  }
+ ]
+}

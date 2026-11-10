@@ -1,0 +1,55 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-002__sin_citas",
+ "llamadas": [
+  {
+   "clave": "f8aa59ed06390668a33d9a6fa654783ce89619b4f856da376e79e45545282cf6",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica GET /catalog/brands/{brandId}/allstatus."
+     },
+     {
+      "indice": 2,
+      "resultado": "parcial",
+      "evidencia": "Menciona la tabla de referencia rápida, pero no incluye una cita al README de api-reference, L27."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no aparecen el esquema de respuesta ni un ejemplo de allstatus."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No atribuye campos ni el ejemplo de GET /{brandId} a allstatus."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Responde de forma concreta qué endpoint llamar."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "GET /catalog/brands/{brandId}/allstatus obtiene una marca con toda su información de estado, según la tabla de referencia rápida.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "El endpoint y la abstención sobre sus campos son correctos. Falta una cita explícita a la línea 27 del README de api-reference."
+   }
+  }
+ ]
+}

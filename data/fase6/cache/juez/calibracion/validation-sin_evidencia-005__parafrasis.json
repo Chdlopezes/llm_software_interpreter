@@ -1,0 +1,48 @@
+{
+ "task_id": "calibracion/validation-sin_evidencia-005__parafrasis",
+ "llamadas": [
+  {
+   "clave": "aad5960d8e3929e330550aa8f8c5601069b7ce09efe8b0dba8a502181b245b68",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Identifica POST /catalog/brands/{brandId}/collectors y cita api-reference/README.md:L48-L48."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara expresamente que no se documentan el cuerpo ni los campos obligatorios."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone campos ni requisitos de obligatoriedad."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Reconoce la operación y limita su conclusión a la falta de documentación."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La operación para asociar una marca con collectors es POST /catalog/brands/{brandId}/collectors, descrita como «Associate brand with collectors».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

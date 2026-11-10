@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-version_explicita-005__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "493e039809c2204a91af84af581350e416e3e0b314cfc470e07f674e20804a82",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "La documentación de catalog-portfolio-api 0.0.1-test-bench-v2a describe el endpoint de creación de marcas `POST /` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74] y muestra un body de ejemplo con `name`, `soft_descriptor`, `site`, `category`, `subcategories`, `type`, `tags`, `priority` y `business_description` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L76-L90]. Sin embargo, no indica de forma explícita cuáles de esos campos son obligatorios ni qué restricciones de validación tiene el nombre de la marca, así que con estos documentos no puedo confirmar ninguna de las dos cosas.\n\nLa petición de ejemplo envía solo `name`, `site`, `category` y `type` en JSON, con la cabecera `Content-Type: application/json` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109]. Aun así, que un ejemplo use pocos campos no demuestra que sean los obligatorios. Para saberlo con seguridad, conviene revisar la especificación en Swagger o el código del validador del servicio.",
+    "cambio": "Quité la lista de campos obligatorios (name, site, category, type) y la restricción de que el nombre sea único dentro del site, que están en brands.md:L92-L96. En su lugar la respuesta dice que la documentación no especifica qué campos son obligatorios ni qué restricción tiene el nombre. Mantuve la cita del endpoint y la del ejemplo de petición."
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/caa1cb93d4f68aae322330a3",
+ "llamadas": [
+  {
+   "clave": "caa1cb93d4f68aae322330a335dca6fe71af8cb45136b82221ed6fe4873bb3c4",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-comparacion_versiones-005__hecho_falso",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural para comparar las dos versiones; la llamada usa version=null, como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "El código de 409 está mal transcrito: las líneas 311-313 indican `brand_name_already_exists`, no `brand_already_exists`."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Compara ambas versiones y describe el cuerpo, pero da incorrectamente el nombre del error 409; líneas 311-313 y 318-325."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita de las líneas 311-313 contradice el nombre de 409 que afirma la respuesta; las líneas 318-325 sí respaldan el formato."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas a las líneas 311-313 y 318-325 de ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La pregunta tiene respuesta documentada en ambas versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la documentación disponible para comparar versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni incurre en contradicciones internas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las secciones citadas coinciden entre versiones; líneas 311-313 y 318-325."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks reflejan correctamente el nombre documentado del error 409, pero la respuesta lo transcribe mal; líneas 311-313."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cambia incorrectamente el nombre documentado del error 409."
+     },
+     {
+      "case_id": "validation-comparacion_versiones-005__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural para comparar las dos versiones; la llamada usa version=null, como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos 404, 409 y 422 y el formato descrito coinciden con ambas versiones; líneas 311-313 y 318-325."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara los tres errores pedidos y el formato del cuerpo de error."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de brands.md en ambas versiones respaldan los códigos y los campos enumerados; líneas 311-313 y 318-325."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La pregunta tiene respuesta documentada en ambas versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder la comparación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene la comparación y los datos coherentes entre versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las secciones citadas coinciden entre versiones; líneas 311-313 y 318-325."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coinciden con las líneas 311-313 y 318-325 y con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-comparacion_versiones-005__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural para comparar las dos versiones; la llamada usa version=null, como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos 404, 409 y 422 y el formato descrito coinciden con ambas versiones; líneas 311-313 y 318-325."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara los tres errores pedidos y el formato del cuerpo de error."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de brands.md en ambas versiones respaldan los códigos y los campos enumerados; líneas 311-313 y 318-325."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La pregunta tiene respuesta documentada en ambas versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder la comparación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene la comparación y los datos coherentes entre versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las secciones citadas coinciden entre versiones; líneas 311-313 y 318-325."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coinciden con las líneas 311-313 y 318-325 y con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-004__elige_una",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Presenta `validation_error` como valor confirmado, aunque brand-management y troubleshooting registran `validation_failed`; líneas 169 y 105."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No resuelve la incertidumbre documental ni informa del conflicto entre las fuentes; líneas 308, 169 y 105."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La línea 308 se usa como respaldo de un valor definitivo, no para señalar el conflicto, y omite las fuentes discrepantes; líneas 169 y 105."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita el código elegido y el formato, pero no cita ni cubre la evidencia discrepante de las líneas 169 y 105."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma un valor exacto pese a que las fuentes entregadas no permiten confirmarlo; líneas 308, 169 y 105."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene; el defecto es que elige arbitrariamente una fuente pese al conflicto documentado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no se contradice internamente, aunque omite evidencia relevante."
+       },
+       "conflictos": {
+        "resultado": "no_cumple",
+        "justificacion": "No identifica el conflicto ni cita ambas fuentes; brands.md indica `validation_error` en la línea 308 y las otras secciones `validation_failed` en las líneas 169 y 105."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks exigen identificar y citar el conflicto, pero la respuesta presenta un valor como confirmado."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta elige `validation_error` y omite que otras secciones documentan `validation_failed`."
+     },
+     {
+      "case_id": "validation-contradiccion-004__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Describe correctamente la discrepancia: brands.md registra `validation_error` y las otras secciones `validation_failed`; líneas 308, 169 y 105."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no se puede confirmar un único valor y presenta la discrepancia pertinente."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas versiones de la evidencia en conflicto; la excepción permite citar esas líneas no citables para mostrar la contradicción."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre los códigos y el formato están citadas; líneas 308, 169, 105 y 318-325."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara correctamente que la documentación no permite confirmar cuál valor devuelve la API; líneas 308, 169 y 105."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La incertidumbre está justificada por el conflicto documental y la respuesta informa lo que sí consta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene la distinción entre los dos valores y no selecciona uno como confirmado."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la contradicción, cita brands.md y las otras fuentes y no la resuelve por invención; líneas 308, 169 y 105."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y concuerdan con las fuentes en conflicto y con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-004__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Describe correctamente la discrepancia: brands.md registra `validation_error` y Brand Management y Troubleshooting `validation_failed`; líneas 308, 169 y 105."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede confirmarse un identificador único y cubre el campo y el formato documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas fuentes en conflicto; la excepción permite citar esas líneas no citables para mostrar la contradicción."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre los códigos y el formato están citadas; líneas 308, 169, 105 y 318-325."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que el dato no exista: señala que las fuentes no permiten confirmar cuál valor devuelve la API."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La cautela está justificada por el conflicto y la respuesta expone la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla ni resuelve arbitrariamente los valores en conflicto."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita las fuentes discrepantes sin elegir una; líneas 308, 169 y 105."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coherentes con los documentos y la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-007__elige_una",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Presenta `validation_error` como respuesta confirmada pese a que Brand Management documenta `validation_failed`; líneas 308 y 169."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No informa del conflicto que impide confirmar un solo nombre; líneas 308 y 169."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La línea 308 se usa como respaldo definitivo y no se cita la fuente discrepante de Brand Management, línea 169."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita el código elegido, pero no cubre con una cita la evidencia contradictoria de la línea 169."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma un nombre exacto como confirmado aunque la documentación entregada contiene dos nombres; líneas 308 y 169."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene; el problema es que elige arbitrariamente pese al conflicto."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no se contradice internamente, pero omite evidencia pertinente."
+       },
+       "conflictos": {
+        "resultado": "no_cumple",
+        "justificacion": "No señala la contradicción entre `validation_error` y `validation_failed` ni cita ambas fuentes; líneas 308 y 169."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks exigen explicar el conflicto y citar ambas fuentes, pero la respuesta solo elige `validation_error`."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta presenta un código como confirmado y omite la discrepancia con Brand Management."
+     },
+     {
+      "case_id": "validation-contradiccion-007__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente `validation_error` en la referencia y `validation_failed` en Brand Management; líneas 308 y 169."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede confirmar un único identificador y señala la posible distinción sin afirmarla como hecho."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas fuentes discrepantes; la excepción permite citar esas líneas no citables para mostrar el conflicto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre los dos nombres y sus descripciones están citadas; líneas 308 y 169."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la documentación no permite asegurar qué identificador devuelve la API."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La cautela está justificada por el conflicto y la respuesta informa lo que consta en cada fuente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados los dos nombres y no confirma arbitrariamente uno."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la contradicción, cita ambas fuentes y no la resuelve por invención; líneas 308 y 169."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coherentes con los documentos y la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-007__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Describe la discrepancia entre `validation_failed` en Brand Management y `validation_error` en la referencia; líneas 169 y 308."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede confirmar el identificador y responde por qué la documentación no basta para elegir uno."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas fuentes en conflicto; la excepción permite citar esas líneas no citables para señalarlo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos, descripciones y la explicación de la discrepancia están citados; líneas 169 y 308."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala correctamente que la documentación no permite confirmar cuál valor devuelve la API."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La cautela está justificada por la evidencia contradictoria y se presenta lo que aporta cada fuente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde los dos nombres ni presenta uno como resuelto."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto, cita las dos fuentes y no elige arbitrariamente; líneas 169 y 308."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y concuerdan con la documentación y la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-008__hecho_falso",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre las versiones documentadas; la llamada usa version=null, como corresponde a en_que_version."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Identifica ambas versiones y la descripción, pero atribuye «lock timeouts» como causa de `database_error`; la fila de la línea 107 dice «Connection issues, constraints»."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Responde las versiones y la descripción, pero no proporciona correctamente las causas de la tabla: sustituye `constraints` por «lock timeouts»; línea 107."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "La cita de la línea 107 respalda conexión y restricciones, no que `database_error` tenga como causa común «lock timeouts»."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita la fila de `database_error`, pero la afirmación de «lock timeouts» no queda respaldada por esa fila; línea 107."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que su alcance se limita a los documentos entregados y no afirma exhaustividad sobre otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia para identificar ambas versiones y la descripción."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones; ambas contienen la misma fila de `database_error`, línea 107."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las dos filas comparadas; línea 107."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check de causas exige conexión y restricciones, pero la respuesta dice conexión y lock timeouts; la línea 107 muestra el dato documentado."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta atribuye a `database_error` causas distintas de las indicadas en la tabla: conexión y restricciones (línea 107)."
+     }
+    ]
+   }
+  }
+ ]
+}

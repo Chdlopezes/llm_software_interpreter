@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/2086e47ea74c58aeba66da33",
+ "llamadas": [
+  {
+   "clave": "2086e47ea74c58aeba66da33d2e81a9cf814347a78978f71eadf1e75be0460d4",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-en_que_version-008__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español por las versiones documentadas y sin versión concreta, coherente con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila de database_error indica «Database operation failed» y «Connection issues, constraints» en ambas guías (troubleshooting: líneas 102-107 de cada versión)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos versiones y las causas comunes solicitadas; señala que el contenido coincide."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambas tablas incluyen la fila pertinente de database_error (troubleshooting: líneas 98-100 y 107 de cada versión)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre descripción y causas están citadas; también se citan las dos versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita la afirmación a los documentos recibidos y no concluye que el código no exista en otras versiones (troubleshooting: líneas 98-107 de ambas versiones)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para contestar las versiones, la descripción y las causas (troubleshooting: líneas 102-107 de ambas versiones)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y afirma correctamente que las filas coinciden (troubleshooting: líneas 102-107 de ambas versiones)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos tablas presentan el mismo contenido; no hay conflicto documental (troubleshooting: líneas 102-107 de ambas versiones)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan versiones, descripción, causas y alcance de la evidencia; son verificables en las tablas (troubleshooting: líneas 98-107 de ambas versiones)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-008__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español por las versiones documentadas y sin versión concreta, coherente con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila de database_error indica «Database operation failed» y «Connection issues, constraints» en ambas guías (troubleshooting: líneas 102-107 de cada versión)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos versiones, la descripción y las causas comunes."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las dos tablas respaldan descripción y causas (troubleshooting: líneas 98-100 y 107 de cada versión)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la identificación de versiones están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que se limita a los documentos recibidos y no afirma que el código no exista en otras versiones (troubleshooting: líneas 98-107 de ambas versiones)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible sobre ambas versiones y las causas (troubleshooting: líneas 102-107 de ambas versiones)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las versiones y describe correctamente su contenido idéntico (troubleshooting: líneas 102-107 de ambas versiones)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay diferencias entre las dos tablas (troubleshooting: líneas 102-107 de ambas versiones)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en las filas citadas y no imponen una formulación concreta (troubleshooting: líneas 98-107 de ambas versiones)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-002__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada en la llamada; pide endpoint y campos de respuesta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma que no hay variante documentada, aunque la referencia rápida sí lista GET /catalog/brands/{brandId}/allstatus (api-reference/README.md: líneas 25-27)."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No da el endpoint, que sí está documentado en la referencia rápida (api-reference/README.md: línea 27); los campos de allstatus sí faltan en la documentación entregada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita respalda la consulta normal por ID (brands.md: líneas 126-130), pero no respalda que no exista una variante; esa variante aparece en api-reference/README.md: línea 27."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La respuesta omite citar el endpoint allstatus documentado en api-reference/README.md: línea 27."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Declara que no puede determinar el endpoint, aunque está listado en la referencia rápida (api-reference/README.md: línea 27). Los campos de respuesta sí no están detallados en los documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene sobre el endpoint pese a que está documentado (api-reference/README.md: línea 27)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni se contradice internamente."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental; la referencia rápida lista el endpoint y no hay esquema específico para allstatus (api-reference/README.md: línea 27; brands.md: líneas 126-169)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks exigen el endpoint listado y que se reconozca la falta de campos específicos; ambos puntos son verificables en los documentos (api-reference/README.md: línea 27; brands.md: líneas 126-169)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta pasa por alto el endpoint allstatus, que sí aparece en la referencia rápida, y se abstiene injustificadamente de esa parte."
+     },
+     {
+      "case_id": "validation-evidencia_parcial-002__inventa_faltante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada en la llamada; pide endpoint y campos de respuesta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La referencia rápida lista el endpoint, pero no documenta los campos de su respuesta. La respuesta atribuye a allstatus campos y transiciones que no constan en los documentos; la cita corresponde a la respuesta de GET /{brandId} (brands.md: líneas 146-169)."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Da el endpoint correcto (api-reference/README.md: línea 27), pero responde con campos no respaldados en vez de señalar que el esquema de allstatus no está documentado."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita de brands.md: líneas 146-169 refiere al ejemplo de GET /{brandId}, no a allstatus, e incluye la línea 148, marcada no citable. No respalda los campos adicionales afirmados."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones sobre campos llevan citas, pero estas no respaldan que correspondan a allstatus; tampoco se citan las afirmaciones sobre status_history y activable con evidencia pertinente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "No declara que el esquema de allstatus falta en la documentación y afirma campos no documentados. El endpoint sí figura en api-reference/README.md: línea 27."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene; da el endpoint que consta en api-reference/README.md: línea 27, aunque añade afirmaciones no respaldadas."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "Atribuye a allstatus el ejemplo de respuesta de la consulta normal por ID y añade campos que no aparecen en ese ejemplo (brands.md: líneas 146-169)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay dos fuentes que contradigan sus datos; el problema es que los campos atribuidos a allstatus no están documentados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre endpoint, ausencia de esquema y no invención son verificables en api-reference/README.md: línea 27 y brands.md: líneas 126-169."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta inventa campos para allstatus y cita el ejemplo de GET /{brandId} como si documentara esa otra ruta; además, el rango citado incluye una línea no citable."
+     },
+     {
+      "case_id": "validation-evidencia_parcial-002__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada en la llamada; pide endpoint y campos de respuesta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint aparece como GET /catalog/brands/{brandId}/allstatus (api-reference/README.md: línea 27). Los documentos entregados no describen un esquema o ejemplo de respuesta para esa ruta."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el endpoint y declara que no puede especificar sus campos porque no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita de la referencia rápida sostiene el endpoint y su propósito (api-reference/README.md: línea 27); la afirmación de falta de detalle coincide con los documentos entregados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica del endpoint está citada; la falta de esquema se delimita a la documentación entregada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La referencia rápida lista el endpoint, pero no su esquema; la respuesta no afirma que los campos o la función no existan (api-reference/README.md: línea 27; brands.md: líneas 126-169)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible para dar el endpoint y reserva la incertidumbre para el esquema ausente (api-reference/README.md: línea 27)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el endpoint listado de la consulta normal y no atribuye a allstatus el ejemplo de esta última (api-reference/README.md: línea 27; brands.md: líneas 126-169)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes contradictorias; solo falta detalle específico de allstatus."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la referencia rápida y en la ausencia de un esquema específico entre los documentos entregados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-002__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada en la llamada; pide endpoint y campos de respuesta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint está listado en la referencia rápida (api-reference/README.md: línea 27) y la respuesta reconoce que su esquema no está detallado."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Proporciona el endpoint e identifica correctamente que no se pueden determinar sus campos con la documentación entregada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita respalda el endpoint y su descripción (api-reference/README.md: línea 27); la consulta normal se distingue de allstatus sin atribuirle sus campos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "El dato técnico del endpoint está citado; la falta de esquema se refiere a los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La tabla lista la ruta, pero los documentos no dan su esquema de respuesta; no se afirma que la información no exista fuera de ellos (api-reference/README.md: línea 27; brands.md: líneas 126-169)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Contesta la parte documentada y solo se abstiene respecto de los campos que no constan."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla la respuesta de GET /{brandId} con la de allstatus (api-reference/README.md: línea 27; brands.md: líneas 126-169)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks exigen datos respaldados y ausencia de invención; son comprobables en api-reference/README.md: línea 27 y los documentos entregados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-002__sin_citas",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada en la llamada; pide endpoint y campos de respuesta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint está listado en api-reference/README.md: línea 27; no hay esquema de respuesta específico de allstatus en los documentos entregados."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el endpoint y reconoce que los campos de respuesta no están detallados."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La respuesta no incluye ninguna cita para el endpoint ni para la descripción de la evidencia."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las afirmaciones técnicas carecen de citas, aunque el endpoint está listado en api-reference/README.md: línea 27."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa campos y limita la falta de información al esquema de respuesta de allstatus, que no aparece detallado en los documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Proporciona el endpoint documentado y solo expresa incertidumbre sobre los campos."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni atribuye a allstatus la respuesta normal por ID."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y exigen el endpoint y la falta de esquema; el requisito de cita es apropiado (api-reference/README.md: línea 27)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es sustancialmente correcta, pero omite todas las citas requeridas."
+     },
+     {
+      "case_id": "validation-evidencia_parcial-004__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada y pide endpoint y cuerpo JSON para asociar collectors."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Es correcto que la tabla no detalla el contrato del body, pero la respuesta dice que no puede confirmar el endpoint aunque la tabla lista POST /catalog/brands/{brandId}/collectors (api-reference/README.md: líneas 43-49)."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Reconoce que no está documentado el contrato del body, pero omite el endpoint que sí está listado (api-reference/README.md: líneas 43-49)."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas sostienen que la referencia rápida lista collectors y que la página enlaza el detalle de marcas (api-reference/README.md: líneas 9-11, 43-49), pero no respaldan la abstención sobre la ruta."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita la información de contexto, pero no proporciona ni cita el endpoint disponible en api-reference/README.md: línea 48."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "parcial",
+        "justificacion": "Es correcto que la tabla no documenta el body (api-reference/README.md: líneas 43-49), pero también presenta como indeterminada la ruta, que sí está listada en la línea 48."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene sobre el endpoint pese a que la tabla indica POST /catalog/brands/{brandId}/collectors (api-reference/README.md: línea 48)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni se contradice internamente."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental; la ruta está listada y el body no se detalla."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la ruta que aparece en la tabla y la falta de un contrato del body (api-reference/README.md: líneas 43-49)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta reconoce correctamente que falta el contrato del body, pero se abstiene de dar el endpoint que sí está documentado."
+     },
+     {
+      "case_id": "validation-evidencia_parcial-004__inventa_faltante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada y pide endpoint y cuerpo JSON para asociar collectors."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La ruta está listada (api-reference/README.md: línea 48), pero el body, collector_ids y su formato no están documentados. El filtro collector_id de brands.md: línea 26 no respalda un array collector_ids."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Da el endpoint correcto, pero inventa el cuerpo JSON y el formato de los IDs en lugar de señalar que faltan."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las citas de la tabla solo respaldan la ruta, no el body; collector_id en brands.md: línea 26 no respalda collector_ids ni un array."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Aunque cita las afirmaciones inventadas, las líneas citadas no las sustentan; además, el body no está documentado en la tabla (api-reference/README.md: líneas 43-49)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "No declara que el body falta y atribuye a la ruta campos y tipos no documentados; la documentación entregada solo lista la operación (api-reference/README.md: líneas 43-49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene y proporciona la ruta documentada (api-reference/README.md: línea 48), aunque inventa el contrato del body."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es internamente coherente, aunque sus afirmaciones sobre el body no están respaldadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes contradictorias; el body simplemente no está documentado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen requisitos verificables: la ruta está listada y el contrato del body no aparece documentado (api-reference/README.md: líneas 43-49)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "Inventa un campo y una estructura para el body que la documentación no especifica; las citas ofrecidas no respaldan esos detalles."
+     },
+     {
+      "case_id": "validation-evidencia_parcial-004__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la versión indicada y pide endpoint y cuerpo JSON para asociar collectors."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ruta POST está listada y el body no se detalla en los documentos entregados (api-reference/README.md: líneas 43-49)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el endpoint y explica que el contenido del body no está documentado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la ruta y muestran que la tabla de collectors ofrece solo método, ruta y descripción (api-reference/README.md: líneas 43-49)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ruta y alcance del detalle llevan citas; no inventa formato para el body."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El body no aparece en la documentación entregada; la respuesta no concluye que no se admita ni que la operación no exista (api-reference/README.md: líneas 43-49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Da la ruta documentada y limita la abstención al body ausente (api-reference/README.md: línea 48)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue claramente la ruta de asociación del endpoint DELETE y no añade campos sin respaldo (api-reference/README.md: líneas 48-49)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en la tabla de collectors y no exigen una redacción específica (api-reference/README.md: líneas 43-49)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "task_id": "calibracion/train-comparacion_versiones-013__referencia",
+ "llamadas": [
+  {
+   "clave": "74b38ee4017779d10a77f9edaa2e8e481cc5225535b5f93eacf1832d9f093330",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "La llamada usa software=\"vendor-stockkeeper-api\" y version=null."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Compara correctamente los encabezados de ambas versiones, citando alerts.md:L17 y L29."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica que las descripciones y los pasos permanecen iguales e incluye avisar a Envio Pack; respaldado por L19-L25 y L31-L39 de ambas versiones."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Solo describe las dos alertas consultadas y no incorpora cambios de Validation stock."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Cita los alerts.md de ambas versiones con los rangos correspondientes a encabezados, descripciones y procedimientos."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El único cambio en ambas alertas es la etiqueta de prioridad: IMPORTANT en 0.0.10 y ninguna etiqueta en 0.0.6.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L17-L17] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L29-L29] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L17-L17] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L29-L29]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La descripción de Error restock no cambia: puede ser un caso raro no controlado y requiere revisar los logs.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L19-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L19-L20]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones, Error restock requiere identificar el ítem y la causa en logs, resolver el problema y eventualmente realizar restock manual por base de datos o publicar una nueva versión.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L22-L25] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L22-L25]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La descripción de la alerta negative quantity no cambia.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L31-L32] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L31-L32]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones, el primer paso para negative quantity es identificar en logs el ítem asociado.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones se debe avisar a Envio Pack.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones se debe investigar por qué el restock deja cantidades por debajo de cero.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones se debe resolver el problema de negative quantity.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones puede ser necesario realizar un restock manual o publicar una versión nueva para negative quantity.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

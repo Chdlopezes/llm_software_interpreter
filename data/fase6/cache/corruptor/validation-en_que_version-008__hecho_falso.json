@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-en_que_version-008__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "2776950369cbdf194d56ca4a5acb73d0d1512240373b4ddfbc1a557072847206",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "El código `database_error` está documentado en dos versiones: 0.0.1-test-bench-v2a y latest. En las dos aparece en la tabla «Application Error Codes» de la guía de troubleshooting, y el contenido es idéntico.\n\n- **0.0.1-test-bench-v2a:** se describe como «Database operation failed». Las causas comunes que se le atribuyen son problemas de conexión y bloqueos con timeout («Connection issues, lock timeouts») [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107].\n- **latest:** la descripción y las causas son las mismas [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107].\n\nEsto solo cubre la documentación que recibí. No dice nada sobre otras versiones que no estén en esos documentos.",
+    "cambio": "En el punto de 0.0.1-test-bench-v2a cambié la segunda causa común de «constraints» (restricciones) por «lock timeouts» (bloqueos con timeout) y mantuve la cita L107. Como latest dice que las causas son «las mismas», el error también le afecta. Según la línea 107 de ambos documentos, las causas son «Connection issues, constraints»."
+   }
+  }
+ ]
+}

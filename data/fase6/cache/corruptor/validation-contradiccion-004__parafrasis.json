@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-contradiccion-004__parafrasis",
+ "llamadas": [
+  {
+   "clave": "e3fe451f989e3e0a654953faa83810e6ce57426d7ed8717c9f7b8b2ad4db1604",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "La documentación de esta versión se contradice en este punto. Dos secciones usan `validation_failed`: la guía de Brand Management, que lo describe como «Business rules validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169], y la tabla de códigos de aplicación de Troubleshooting, que lo describe como «Business rules failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]. En cambio, la tabla de códigos de error comunes de la referencia de endpoints de marcas asigna al 400 el error `validation_error`, descrito como «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308].\n\nAsí que no puedo decirte con certeza cuál de los dos valores devuelve de verdad la API. La documentación tampoco aclara si es un mismo error con dos nombres o si son dos errores distintos: uno para la validación de la petición y otro para la validación de las reglas de negocio. Lo que sí está documentado es que `error` es uno de los campos del formato de respuesta de error, junto con `message`, `status` y `cause` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]. Hasta que se confirme el valor, es mejor que tu cliente no dependa de solo uno de los dos.",
+    "cambio": "Cambié la redacción y el orden: ahora aparecen primero las dos fuentes que usan `validation_failed` y después la tabla de brands.md con `validation_error`. Los hechos, las descripciones, las citas, las dudas sin resolver y la recomendación final son los mismos que en la referencia."
+   }
+  }
+ ]
+}

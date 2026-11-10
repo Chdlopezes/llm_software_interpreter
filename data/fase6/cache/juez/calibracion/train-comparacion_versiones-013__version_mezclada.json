@@ -1,0 +1,100 @@
+{
+ "task_id": "calibracion/train-comparacion_versiones-013__version_mezclada",
+ "llamadas": [
+  {
+   "clave": "249a84cb6d79ff4c9bd74d35002ca88e46aa718a57a8e33bfbb9e25de8f2219b",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "La llamada usa software=\"vendor-stockkeeper-api\" y version=null."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Invierte las versiones: [IMPORTANT] aparece en 0.0.10, líneas 17 y 29, y no aparece en 0.0.6."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica correctamente que las descripciones y los procedimientos son iguales, incluido avisar a Envio Pack; alerts.md de ambas versiones, líneas 19-25 y 31-39."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Atribuye erróneamente la marca [IMPORTANT] a 0.0.6 y su ausencia a 0.0.10."
+     },
+     {
+      "indice": 5,
+      "resultado": "parcial",
+      "evidencia": "Cita ambas versiones correctamente para descripciones y pasos, pero las citas de las líneas 17 y 29 contradicen lo afirmado sobre la prioridad."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El único cambio en estas dos alertas es la etiqueta de prioridad.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "En 0.0.6 Error restock lleva la marca [IMPORTANT].",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L17-L17]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "En 0.0.6 Error restocking item (negative quantity) lleva la marca [IMPORTANT].",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L29-L29]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "En 0.0.10 ambas alertas carecen de etiqueta de prioridad.",
+      "cita": "[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L17-L17] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L29-L29]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La descripción de Error restock no cambia: puede deberse a un caso raro no controlado y requiere revisar los logs.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L19-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L19-L20]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los pasos de Error restock son iguales: identificar ítem y causa en logs, resolver y, si hace falta, reponer manualmente por base de datos o publicar una versión nueva.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L22-L25] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L22-L25]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La descripción de negative quantity no cambia.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L31-L32] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L31-L32]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los cinco pasos de negative quantity son idénticos: identificar el ítem en logs, avisar a Envio Pack, investigar las cantidades negativas, resolver y considerar restock manual o versión nueva.",
+      "cita": "[vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "contradiccion_con_fuente",
+     "cita_no_respalda",
+     "falta_cita",
+     "version_incorrecta"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Invierte el cambio de prioridad: las marcas [IMPORTANT] están en 0.0.10, no en 0.0.6. La comparación de las descripciones y los pasos de resolución es correcta."
+   }
+  }
+ ]
+}

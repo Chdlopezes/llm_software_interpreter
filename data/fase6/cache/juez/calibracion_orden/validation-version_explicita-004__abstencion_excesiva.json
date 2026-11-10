@@ -1,0 +1,63 @@
+{
+ "task_id": "calibracion_orden/validation-version_explicita-004__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "6c7808143b5f62ceee0941aa9679bd404363182398896ab368e309a9a57becce",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No inventa campos ni valores de code; se abstiene de describirlos."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Solo cita L44-L47 del swagger; no cita la definición de RequestError en L122-L131."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No indica bad_request e internal_server_error, enumerados explícitamente en L128."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Niega disponer de una definición formal, aunque L122-L131 definen RequestError como objeto con code y message de tipo string."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software price-engine-api y version latest."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint de cobertura declara respuestas 400 y 500.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L44-L47]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Recomienda confirmar el contrato de error con el equipo antes de implementar lógica basada en code.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente: la documentación recibida sí define RequestError con code y message de tipo string y restringe code a bad_request e internal_server_error en L122-L131."
+   }
+  }
+ ]
+}

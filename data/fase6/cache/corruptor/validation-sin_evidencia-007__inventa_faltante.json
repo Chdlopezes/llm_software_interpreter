@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-sin_evidencia-007__inventa_faltante",
+ "llamadas": [
+  {
+   "clave": "af8a629472e8601b4d40bd8e1e99662eef47df08c0ebb487e6d919671e8e082b",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "En 0.0.1-test-bench-v2a, para pasar una marca de ACTIVE a STAND_BY tienes que llamar a `PUT /catalog/brands/{brandId}/deactivate` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L31]. Es el endpoint inverso de la activación, que se hace con `PUT /catalog/brands/{brandId}/activate` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30].\n\nEl diagrama de estados muestra que una marca puede pasar de ACTIVE a STAND_BY [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]. Además, STAND_BY se describe como el estado de una marca que todavía no está activa o que se desactivó temporalmente [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]. Tras la llamada, la marca vuelve a STAND_BY y, cuando quieras, puedes activarla de nuevo con el endpoint de activación.",
+    "cambio": "La referencia dice que ningún documento explica el endpoint para desactivar una marca. Aquí, en cambio, se inventa el endpoint `PUT /catalog/brands/{brandId}/deactivate` y se presenta como un hecho, citando las líneas L30-L31 de api-reference/README.md, que en realidad solo contienen activate y activable. También se ha quitado la frase que declaraba que la desactivación no está documentada."
+   }
+  }
+ ]
+}

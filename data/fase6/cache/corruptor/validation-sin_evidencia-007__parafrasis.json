@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-sin_evidencia-007__parafrasis",
+ "llamadas": [
+  {
+   "clave": "737a38d132848f74ec9bcc0f3c84e3e98d3cfc515312f22f7c1d17913f2c66d8",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "En la documentación de 0.0.1-test-bench-v2a no aparece ni el procedimiento ni el endpoint para desactivar una marca, así que no puedo indicarte cuál llamar. Que no figure en la documentación no significa que la operación no exista.\n\nLo que sí recogen los documentos es esto. En el diagrama de estados hay una transición de ACTIVE a STAND_BY [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]. STAND_BY se define como el estado de una marca que aún no está activa o que se ha desactivado temporalmente [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]. La operación inversa sí tiene endpoint documentado: para activar una marca se usa `PUT /catalog/brands/{brandId}/activate` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30].",
+    "cambio": "Cambié el orden: la respuesta empieza diciendo que no hay procedimiento ni endpoint de desactivación documentado, con la aclaración de que eso no quiere decir que no exista, y después da los datos que sí están documentados. Usé otras palabras, pero los hechos, la declaración de lo que falta y las tres citas son los mismos."
+   }
+  }
+ ]
+}

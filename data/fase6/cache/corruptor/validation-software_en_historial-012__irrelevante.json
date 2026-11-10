@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-software_en_historial-012__irrelevante",
+ "llamadas": [
+  {
+   "clave": "679ef7ed80260fca7ad11d546a63451b7a253cf9a35854c2d0e6181ead09206c",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Para eliminar una marca se usa el endpoint `DELETE /{brandId}`, que la borra de forma permanente del sistema. Hay que enviar la cabecera `X-Client-Id`, que es obligatoria, y el client ID tiene que estar en la lista blanca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L209-L225]. Las reglas de negocio lo confirman: para borrar se necesita que el client ID esté en la lista blanca, el borrado no se puede deshacer y se guarda un registro de auditoría completo [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L122-L125]. Para activar una marca, en cambio, hay que tener subido al menos un logo principal y superar todas las validaciones de negocio y los requisitos del servicio de regulaciones [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L117-L120].",
+    "cambio": "Cambié toda la respuesta por datos verdaderos y citados sobre cómo se borra (endpoint DELETE, cabecera X-Client-Id, lista blanca, auditoría) y sobre los requisitos para activar. No dice desde qué estados se llega a DELETED (STAND_BY y ACTIVE) ni que ACTIVE puede volver a STAND_BY."
+   }
+  }
+ ]
+}

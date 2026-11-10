@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-contradiccion-004__elige_una",
+ "llamadas": [
+  {
+   "clave": "a3e876161413b22d1f6b815d3fbf2f7e5ab9b313ce7be2dda9c1ac90c848a9f2",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Cuando falla la validación de una petición, la API devuelve un 400 con el error `validation_error`. En la tabla de códigos de error comunes de la referencia de endpoints de marcas aparece con la descripción «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308].\n\nEse valor llega en el campo `error` de la respuesta. Según el formato documentado, ese campo va junto a `message`, `status` y `cause` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]. En el cliente puedes comparar `error` con la cadena exacta `validation_error` y, si quieres, comprobar también que `status` es 400.",
+    "cambio": "Elegí `validation_error` (brands.md L308) como el único valor válido. Quité la mención a `validation_failed` en Brand Management (L169) y Troubleshooting (L105), y también la advertencia de que la documentación se contradice y de que el cliente no dependa de un solo valor."
+   }
+  }
+ ]
+}

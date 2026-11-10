@@ -1,0 +1,72 @@
+{
+ "task_id": "calibracion_orden/validation-contradiccion-004__parafrasis",
+ "llamadas": [
+  {
+   "clave": "503fadd7efb376722fdd6e75d619ce2bf699c932badbcf68b4e20049a52cbc6d",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma el comportamiento real del servidor; declara que no puede confirmar cuál de los dos valores devuelve."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Señala expresamente la contradicción entre validation_failed y validation_error y no confirma ninguno."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management L169 y Troubleshooting L105, ambas con validation_failed."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md L308, que asigna validation_error al HTTP 400."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Brand Management usa validation_failed y lo describe como Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Troubleshooting usa validation_failed y lo describe como Business rules failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla de errores de marcas asigna al 400 validation_error, descrito como Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Las fuentes presentan una discrepancia entre validation_failed y validation_error.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El formato de respuesta de error incluye error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

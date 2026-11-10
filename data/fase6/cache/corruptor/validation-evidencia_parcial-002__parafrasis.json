@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-evidencia_parcial-002__parafrasis",
+ "llamadas": [
+  {
+   "clave": "24f76f6be121d9e6f839104b5aa7ac02b3d10d227585717645f1de30262e4af0",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "El endpoint que tienes que llamar es `GET /catalog/brands/{brandId}/allstatus`. En la tabla de referencia rápida figura con la descripción «Get brand with all status information» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]. Lo que no puedo decirte es qué campos trae la respuesta: la referencia de endpoints de marcas no lo documenta y no incluye ni su esquema de respuesta ni un ejemplo. Por eso tampoco sé en qué se diferencia de la consulta normal de una marca por ID.",
+    "cambio": "Reescribí la referencia con otras palabras y en otro orden: primero el endpoint con su cita y después lo que falta en la documentación. Se mantienen el mismo endpoint, la misma cita y la misma aclaración de que ni los campos ni la diferencia con GET por ID están documentados."
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/eb9ed2c063f7caf56a1a08ae",
+ "llamadas": [
+  {
+   "clave": "eb9ed2c063f7caf56a1a08aefc213cb1c1daa3d6952f0ae0fc46d106f3a36596",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-evidencia_parcial-004__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, y coincide con software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla documenta POST para asociar collectors y DELETE para quitar una asociación (api-reference/README.md, líneas 43-49)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el endpoint y explica correctamente que el body no está documentado entre los documentos entregados."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas a las líneas 48-49 respaldan las rutas. La cita a líneas 9-11 solo lista la referencia de marcas y no demuestra por sí sola que sea la única página con detalle."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre rutas y alcance de la documentación llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa el body y limita la ausencia a lo que no está documentado; el endpoint sí aparece en la tabla (líneas 43-49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada —el endpoint— y señala la parte faltante (líneas 43-49)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables: la ruta figura en líneas 43-49 y el body no se detalla en los documentos entregados."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es correcta en lo esencial; la cita de la afirmación de que esa es la única página detallada es algo indirecta."
+     },
+     {
+      "case_id": "validation-evidencia_parcial-004__sin_citas",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y coherente con la llamada para catalog-portfolio-api 0.0.1-test-bench-v2a."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ruta y la descripción del endpoint constan en la tabla (api-reference/README.md, líneas 43-49); no se documenta allí su body."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el endpoint y declara que no puede especificar el body por falta de documentación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "No incluye citas incorrectas; la falta de citas se evalúa en cobertura."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "No cita ninguna afirmación técnica, aunque la ruta y la información sobre lo documentado requerían referencias."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa campos y no afirma que el endpoint carezca de body o no exista; la tabla muestra la ruta en líneas 43-49."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Informa la ruta disponible y se abstiene solo respecto del body no descrito (líneas 43-49)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no contiene contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks exigen citar la tabla, pero la respuesta no contiene citas."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es técnicamente adecuada, pero omite todas las citas y no satisface el check que exige citar la tabla."
+     },
+     {
+      "case_id": "validation-sin_evidencia-005__inventa_faltante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, específica a la versión indicada y coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Inventa el body collector_ids, su obligatoriedad, formato y error 400; ninguno está documentado. La tabla solo describe la operación (api-reference/README.md, líneas 43-49)."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "Ofrece una estructura y requisitos sin respaldo, en vez de reconocer que el body no está documentado."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a línea 48 respalda la ruta y la descripción, no el JSON, su obligatoriedad ni el supuesto error."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las afirmaciones sobre campos, obligatoriedad y respuesta 400 carecen de citas válidas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "La documentación entregada no describe body ni campos para collectors; la respuesta los inventa (api-reference/README.md, líneas 43-49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene de la parte conocida: identifica el endpoint de la tabla, aunque inventa el resto."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "Presenta como documentados detalles que no aparecen en los documentos entregados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks describen correctamente lo que debía contestarse, pero contradicen la respuesta, que sí inventa body y requisitos."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta fabrica el esquema del body, campos obligatorios y un código de error que no constan en los documentos entregados."
+     },
+     {
+      "case_id": "validation-sin_evidencia-005__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y coincide con software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ruta POST aparece en la tabla, pero los documentos entregados no describen el body ni sus campos obligatorios (api-reference/README.md, líneas 43-49)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué información falta y aporta la ruta identificable en la tabla."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a línea 48 respalda la ruta y la descripción del endpoint."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La información técnica sobre la operación está citada; la respuesta delimita el resto como no documentado."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Comprueba la falta de body y de campos obligatorios en los documentos entregados, sin afirmar que la operación no exista (líneas 43-49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la ruta que sí está documentada y solo se abstiene sobre los detalles faltantes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni se contradice."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la evidencia: la tabla identifica el endpoint y no detalla su body."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-005__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, y específica al software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ruta de asociación figura en la tabla; no se especifica body, campos ni respuesta para ese endpoint (api-reference/README.md, líneas 43-49)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la operación y aclara que la documentación no permite determinar el body solicitado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a línea 48 respalda la ruta y la descripción citadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre la ruta lleva cita; la falta de detalles se limita a la documentación entregada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación entregada solo muestra la operación en la tabla y no detalla el body ni los campos obligatorios (líneas 43-49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el endpoint que sí puede recuperarse y se abstiene únicamente del body no documentado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es internamente consistente y se refiere a una sola versión."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y concuerdan con la tabla y con la ausencia de detalles del body."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-007__inventa_faltante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, especifica software y versión, y coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La ruta /deactivate no aparece en la tabla: las líneas 30-31 documentan activate y activable, no deactivate (api-reference/README.md)."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "Da un endpoint inventado para la desactivación, precisamente el dato que no está documentado."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a líneas 30-31 no respalda /deactivate; solo contiene activate y activable."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La afirmación del endpoint de desactivación no tiene respaldo; tampoco se citan todas las afirmaciones sobre el resultado de la llamada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Los documentos muestran la transición ACTIVE→STAND_BY, pero no documentan un endpoint /deactivate; la respuesta lo presenta como hecho (brand-management/README.md, líneas 87-90; api-reference/README.md, líneas 30-31)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con seguridad, pero lo hace inventando; el problema se evalúa en corrección y evidencia insuficiente."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "Confunde la transición de estados con la existencia de un endpoint concreto de desactivación."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay dos fuentes que documenten afirmaciones opuestas."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks son verificables y adecuados, pero contradicen la respuesta, que inventa método y ruta de desactivación."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La documentación permite ver la transición de estado, pero no documenta el endpoint /deactivate citado por la respuesta."
+     },
+     {
+      "case_id": "validation-sin_evidencia-007__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y coherente con software, versión y llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La transición ACTIVE→STAND_BY y la definición de STAND_BY constan en líneas 87-90 y 105; la activación se documenta en api-reference/README.md, línea 30. No se atribuye un endpoint de desactivación."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no puede proporcionar el endpoint no documentado y aporta el contexto relacionado disponible."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la transición, la definición del estado y el endpoint de activación; son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Distingue lo que la documentación muestra de lo que no describe y no concluye que la operación no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre estados y activación, sin inventar cómo desactivar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y concuerdan con la respuesta y las líneas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-007__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, identifica software y versión y coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La transición ACTIVE→STAND_BY y la definición de STAND_BY se documentan en líneas 87-90 y 105; el endpoint citado es el de activación (api-reference/README.md, línea 30)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Señala que el procedimiento de desactivación no está documentado y responde con la información relacionada que sí consta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la transición, la definición del estado y la ruta de activación; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa un procedimiento y evita concluir que la operación no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia sobre estados y el endpoint de activación, y limita la abstención al procedimiento faltante."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar con las líneas citadas y concuerdan con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-009__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no fija versión y la llamada usa version=null, conforme al caso sin_version."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma que no hay información sobre IntelliJ ni VS Code, pero la guía sí indica configuración y extensiones (latest/local-development.md, líneas 97-111)."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No contesta la configuración de IntelliJ ni las extensiones de VS Code, aunque ambas están documentadas."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas a líneas 7-13 y 32-41 respaldan prerrequisitos y comandos, pero no la afirmación de que faltan los datos del IDE; la cita a soporte sí respalda esos canales."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita la información incidental que incluye, pero no da ni cita la configuración del IDE y las extensiones solicitadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Declara ausente información que sí aparece en los documentos entregados, incluidos importación Gradle, SDK Java 17 y extensiones (latest/local-development.md, líneas 97-111)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene pese a que la configuración de IntelliJ y las extensiones de VS Code están documentadas en líneas 97-111."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "Dice que no hay información sobre configuración del IDE y luego aporta contenido de las guías, aunque sea de otros temas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos versiones entregadas coinciden y no hay conflicto relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks describen correctamente la información documentada, pero no concuerdan con la respuesta, que la omite y niega que esté disponible."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta afirma que falta información que sí consta en ambas versiones y se abstiene de contestar la pregunta."
+     },
+     {
+      "case_id": "validation-sin_version-009__hecho_falso",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no fija versión y coincide con la llamada sin versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Indica Java 11 como Project SDK, pero ambas guías indican Java 17 (local-development.md, líneas 99-100). El resto de los ajustes y extensiones citados sí coincide con líneas 101-111."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Cubre IntelliJ y VS Code y da la configuración, pero incluye un valor incorrecto para el SDK."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las citas incluyen las líneas 99-100, que contradicen la afirmación de Java 11."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas de citas a ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara faltantes; la información solicitada está documentada en ambas guías (líneas 97-111)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las dos partes de la pregunta, aunque se equivoca en la versión del SDK."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones: ambas guías coinciden; el error es el valor de Java indicado."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos versiones entregadas contienen la misma configuración, sin conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks son verificables y correctos, pero contradicen la afirmación de Java 11 de la respuesta; la guía especifica Java 17 en líneas 99-100."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta ofrece casi toda la información solicitada, pero indica Java 11 en lugar de Java 17 y cita las líneas que lo desmienten."
+     }
+    ]
+   }
+  }
+ ]
+}

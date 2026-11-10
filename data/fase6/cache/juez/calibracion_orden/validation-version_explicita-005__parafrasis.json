@@ -1,0 +1,89 @@
+{
+ "task_id": "calibracion_orden/validation-version_explicita-005__parafrasis",
+ "llamadas": [
+  {
+   "clave": "5a9949302408b1db26a52fdeee778be11b85d567961a616c7639a3c8d4a08814",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Solo presenta como obligatorios los cuatro campos documentados en brands.md:L92-L96 y no añade reglas de validación."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita explícitamente brands.md:L92-L96, correspondiente a Required Fields de Create Brand."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica que el nombre «no puede repetirse dentro del mismo site», conforme a brands.md:L93."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Enumera site, category, type y name como los cuatro campos obligatorios."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "La llamada a obtener_documentacion utiliza software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint de creación de marcas es POST /.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los cuatro campos obligatorios del body son site, category, type y name.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "site es el código de site de RetailFlow.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "category es el ID de la categoría principal.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "type es el tipo de marca y admite lighthouse o standard.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "name es el nombre de la marca y debe ser único dentro del mismo site.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La petición de ejemplo contiene únicamente esos cuatro campos en JSON y usa Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

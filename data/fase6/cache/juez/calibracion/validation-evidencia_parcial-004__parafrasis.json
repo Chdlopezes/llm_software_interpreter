@@ -1,0 +1,71 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-004__parafrasis",
+ "llamadas": [
+  {
+   "clave": "a04d2d67c83f448548f5d6064c70df961fadde984c48a2f90df186c3e802099f",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica POST /catalog/brands/{brandId}/collectors y cita la tabla de Collector Endpoints, L48."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara explícitamente: «El contenido del body no aparece en la documentación»."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone campos ni estructura JSON y aclara que no puede determinar el formato de los IDs."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Limita la incertidumbre a la documentación del body; no niega que se admita ni que la operación esté soportada."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Responde la parte documentada con el método POST y la ruta completa."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para asociar una marca con collectors se usa POST /catalog/brands/{brandId}/collectors.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para quitar una asociación se usa DELETE /catalog/brands/{brandId}/collectors/{collectorId}.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L49-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla de referencia rápida de collectors proporciona método, ruta y descripción.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La página de detalle por endpoint disponible en la guía es la de marcas.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L9-L11]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta proporciona el endpoint documentado con una cita válida y declara correctamente que no se especifica el JSON del body, sin inventar su estructura."
+   }
+  }
+ ]
+}

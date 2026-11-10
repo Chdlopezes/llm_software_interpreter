@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/a22db8ca6e345afd972d68e7",
+ "llamadas": [
+  {
+   "clave": "a22db8ca6e345afd972d68e73ffed7007ed44c0fb2a89eea38530630f284af79",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-sin_version-009__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, corresponde a catalog-portfolio-api sin versión concreta y la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La configuración de IntelliJ y las extensiones de VS Code coinciden con ambas versiones: local-development.md, líneas 97-111."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde los pasos de IntelliJ y enumera las tres extensiones recomendadas, según las líneas 97-111."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan las instrucciones y extensiones mencionadas: líneas 97-104 y 106-111."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con rangos que las cubren: líneas 97-104 y 106-111."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada cubre lo preguntado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para responder ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla comportamientos distintos; las dos versiones documentan lo mismo en las líneas 97-111."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar contra las líneas 97-111 y no exigen una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-009__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, corresponde a catalog-portfolio-api sin versión concreta y la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La configuración de IntelliJ y las extensiones de VS Code coinciden con ambas versiones: local-development.md, líneas 97-111."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde los pasos de IntelliJ y enumera las tres extensiones recomendadas, según las líneas 97-111."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan las instrucciones y extensiones mencionadas: líneas 97-104 y 106-111."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con rangos que las cubren: líneas 97-104 y 106-111."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada cubre lo preguntado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para responder ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla comportamientos distintos; las dos versiones documentan lo mismo en las líneas 97-111."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar contra las líneas 97-111 y no exigen una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-009__sin_citas",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, corresponde a catalog-portfolio-api sin versión concreta y la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La configuración de IntelliJ y las extensiones de VS Code coinciden con la documentación de ambas versiones: líneas 97-111."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los pasos de IntelliJ y las extensiones recomendadas para VS Code, según las líneas 97-111."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "No incluye citas que respalden sus afirmaciones técnicas; la documentación pertinente está en las líneas 97-111."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las afirmaciones técnicas sobre IDE y extensiones carecen de citas; véanse las líneas 97-111."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada sí contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información disponible en las líneas 97-111."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es internamente coherente y concuerda con ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen información comprobable en las líneas 97-111 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta contiene la información correcta, pero omite las citas requeridas para sus afirmaciones técnicas."
+     },
+     {
+      "case_id": "validation-software_en_historial-012__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica catalog-portfolio-api 0.0.1-test-bench-v2a y la llamada usa ese software y versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma que no se detallan las transiciones, pero el diagrama muestra STAND_BY y ACTIVE hacia DELETED y ACTIVE hacia STAND_BY, líneas 87-92."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No responde las transiciones solicitadas, aunque están mostradas en el diagrama de las líneas 87-92."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas de las líneas 105 y 107 respaldan las descripciones de los estados, pero no la afirmación de que las transiciones no están documentadas; el diagrama está en 87-92."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita las descripciones, pero no cita ni cubre el diagrama con las transiciones solicitadas, líneas 87-92."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Declara que falta información sobre transiciones, pero estas están documentadas en el diagrama, líneas 87-92."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene pese a que las transiciones están disponibles en las líneas 87-92."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "La conclusión de que las transiciones no están detalladas contradice el diagrama de las líneas 87-92."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre fuentes en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan las transiciones del diagrama y las descripciones, líneas 87-107."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta declara que faltan transiciones que sí aparecen en el diagrama de estados."
+     },
+     {
+      "case_id": "validation-software_en_historial-012__irrelevante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la llamada emplea esos mismos argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre DELETE, X-Client-Id, permisos y requisitos de activación concuerdan con las líneas citadas."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "Describe la eliminación por endpoint y requisitos de activación, pero no indica los estados que llevan a DELETED ni si ACTIVE vuelve a STAND_BY (líneas 87-92)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de api-reference/brands.md, líneas 209-225, y brand-management/README.md, líneas 117-125, respaldan lo afirmado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas están acompañadas de citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara falta de evidencia; la respuesta simplemente aborda otro tema."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "parcial",
+        "justificacion": "Aporta datos documentados, pero no aprovecha el diagrama de estados que responde la pregunta, líneas 87-92."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones incluidas no se contradicen entre sí."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen las transiciones y propiedades verificables en las líneas 87-107."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta ofrece datos correctos sobre borrado y activación, pero no contesta las transiciones de estado preguntadas."
+     },
+     {
+      "case_id": "validation-software_en_historial-012__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica catalog-portfolio-api 0.0.1-test-bench-v2a y la llamada usa ese software y versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama muestra ambas rutas hacia DELETED y la vuelta de ACTIVE a STAND_BY; las descripciones de estados también concuerdan, líneas 87-107."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde desde qué estados se llega a DELETED y si ACTIVE puede volver a STAND_BY."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de las líneas 87-92 respaldan las transiciones; las líneas 105 y 107 respaldan las descripciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por citas pertinentes, líneas 87-107."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información solicitada está documentada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa el diagrama disponible para contestar ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación concuerda con el diagrama y las descripciones de estado, líneas 87-107."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al diagrama y las descripciones de estado, líneas 87-107."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-012__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica catalog-portfolio-api 0.0.1-test-bench-v2a y la llamada usa ese software y versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama indica las transiciones mencionadas y las descripciones de STAND_BY y DELETED las respaldan, líneas 87-107."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde las dos preguntas sobre las transiciones entre estados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de las líneas 87-92 respaldan las transiciones y las líneas 105-107 las descripciones de estado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas con rangos pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha el diagrama y las descripciones disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta concuerda con las transiciones y descripciones de las líneas 87-107."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas 87-107 y no prescriben una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-005__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta nombra catalog-portfolio-api y la versión 0.0.1-test-bench-v2a, igual que la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La respuesta dice que no se explicitan los campos obligatorios ni la regla del nombre, pero la lista Required Fields y la unicidad dentro del site aparecen en las líneas 92-96."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No identifica los cuatro campos obligatorios ni la restricción del nombre, que están documentados en las líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan la estructura y los ejemplos, pero no la afirmación de que la información no está especificada; la lista pertinente está en 92-96."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita los ejemplos, pero no las líneas 92-96 que contienen la respuesta a la pregunta."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Declara que no puede confirmar datos que sí constan en la lista Required Fields, líneas 92-96."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene de responder pese a la evidencia explícita de las líneas 92-96."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "La afirmación de que no hay una lista explícita ignora la sección Required Fields, líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre fuentes en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los campos y la restricción que aparecen en las líneas 92-96."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta afirma que faltan datos que están explícitamente documentados en la lista de campos obligatorios."
+     },
+     {
+      "case_id": "validation-version_explicita-005__hecho_falso",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta nombra catalog-portfolio-api y la versión 0.0.1-test-bench-v2a, igual que la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Los campos obligatorios son correctos, pero el nombre debe ser único dentro del site, no en todo el sistema, según la línea 93."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Indica los cuatro campos obligatorios, pero da una restricción incorrecta para el nombre."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "La cita de las líneas 92-96 respalda los campos, pero contradice la afirmación de unicidad global: la línea 93 dice que la unicidad es dentro del site."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas, aunque la afirmación sobre el alcance de la unicidad interpreta erróneamente la cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara falta de información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la lista de campos documentada en las líneas 92-96."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es internamente coherente, aunque contiene un dato técnicamente falso."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la lista de campos y la regla explícita de unicidad dentro del site, líneas 92-96."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cambia incorrectamente el alcance de la regla: el nombre debe ser único dentro del site, no en todo el sistema."
+     },
+     {
+      "case_id": "validation-version_explicita-005__irrelevante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta nombra catalog-portfolio-api y la versión 0.0.1-test-bench-v2a, igual que la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta describe correctamente el ejemplo de respuesta y los endpoints, según las líneas citadas."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No indica los campos obligatorios ni la regla del nombre, que aparecen en las líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones sobre la respuesta de ejemplo, estados y endpoints, en las líneas indicadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas están acompañadas de citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara falta de evidencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "parcial",
+        "justificacion": "Aporta información documentada, pero no usa la evidencia de las líneas 92-96 que responde la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones incluidas no se contradicen entre sí."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a campos y restricciones verificables en las líneas 92-96."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta aporta información relacionada con creación y activación, pero no contesta los campos obligatorios ni la restricción del nombre."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "task_id": "calibracion/validation-version_explicita-005__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "1e04c528eac01aaaaf21188d2a00eb79b63dcb847053f950ad4904227f312547",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Menciona los cuatro campos como parte de un ejemplo, pero niega poder confirmar que sean obligatorios, pese a la lista Required Fields en brands.md:L92-L96."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No indica la unicidad del nombre dentro del site, documentada en brands.md:L93 y brand-management/README.md:L112."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Cita otras partes de Create Brand, pero omite la lista Required Fields de brands.md:L92-L96."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No añade campos obligatorios ni reglas de validación no documentados."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint de creación de marcas es POST /.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El body de ejemplo contiene name, soft_descriptor, site, category, subcategories, type, tags, priority y business_description.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L76-L90]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La petición de ejemplo envía solo name, site, category y type en JSON con Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "indebida",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "abstencion_indebida"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta se abstiene indebidamente: la documentación enumera explícitamente name, site, category y type como obligatorios y exige que el nombre sea único dentro del site. Las citas aportadas son correctas, pero omite la sección que responde directamente a la pregunta."
+   }
+  }
+ ]
+}

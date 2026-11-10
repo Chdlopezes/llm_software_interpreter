@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-sin_version-009__abstencion_excesiva",
+ "llamadas": [
+  {
+   "clave": "00673a8300a60ccaed4e043b5b536c7bb3bea24d99fc565d8ed88efc609fa838",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "He revisado la documentación de las dos versiones disponibles, 0.0.1-test-bench-v2a y latest, y no hay nada que permita responder a lo que preguntas sobre la configuración del IDE.\n\nLa guía de desarrollo local explica los requisitos previos: Java JDK 17 o superior, Gradle 7.3 o superior (o el wrapper), MySQL 8.0 o superior, RetailFlow CLI y Git [catalog-portfolio-api/latest/guide/setup/local-development.md:L7-L13]. También incluye los comandos para compilar, ejecutar las pruebas y pasar los análisis de calidad de código [catalog-portfolio-api/latest/guide/setup/local-development.md:L32-L41]. Sin embargo, no indica cómo configurar IntelliJ IDEA para este proyecto: no dice cómo importarlo, qué SDK poner ni qué estilo de código aplicar. Tampoco recomienda ninguna extensión de VS Code.\n\nPara concretar la configuración del IDE, te sugiero preguntar al equipo por los canales de soporte (instore_devs@retailflow.com o #instore-dev en Slack) [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L227-L228].",
+    "cambio": "La respuesta afirma que la documentación no explica cómo configurar IntelliJ IDEA ni recomienda extensiones de VS Code. Sin embargo, local-development.md:L97-L111 de las dos versiones lo documenta: importarlo como proyecto Gradle, poner Java 17 como SDK, usar checkstyle-main.xml, LF y UTF-8, y las extensiones Java Extension Pack, Gradle for Java y MySQL. En su lugar se citan datos que son ciertos pero no vienen al caso (requisitos previos, comandos y canales de soporte)."
+   }
+  }
+ ]
+}

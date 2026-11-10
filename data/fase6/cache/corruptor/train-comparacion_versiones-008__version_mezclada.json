@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/train-comparacion_versiones-008__version_mezclada",
+ "llamadas": [
+  {
+   "clave": "bf4f7dfc1351ea568a9d571139bdf476e031638176bab73f5356bade91422d3e",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "No. El procedimiento del flujo Feed es igual en las dos versiones. En las dos, el flujo tiene un Operation id que se usa para consultar la base de datos de 1p-3pl-integrator llamada 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240] [vendor-stockkeeper-api/latest/guide/important.md:L239-L240]. De esa tabla salen los datos clave para comprobar si los ítems son de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L245-L245] [vendor-stockkeeper-api/latest/guide/important.md:L245-L245].\n\nCon esos datos se consulta **materials**, por sap sku o por material id. Así se obtiene el ítem, y luego se consulta la API de ítems para revisar sus tags y validar si es de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254] [vendor-stockkeeper-api/latest/guide/important.md:L252-L254].\n\nEl curl de ejemplo también es igual en ambas. Llama a `https://1p-materials.techzoneoffice.com/materials/facade/search?limit=100&offset=0` con `Content-Type: application/json`. El cuerpo lleva un `query` con un `and` que combina un filtro `in` sobre `sap_sku` y un `eq` sobre `site_id`, y pide las projections `id`, `sap_sku`, `site_id` e `items` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L257-L282] [vendor-stockkeeper-api/latest/guide/important.md:L257-L282].\n\nLa guía de API de las dos versiones también documenta el Operation Validation Consumer (`/stock-operations/3pl/validation/restock-consumer`). Este endpoint recibe `item_id`, `sap_sku` y `material_id` y pausa el ítem si su stock queda por debajo de la tolerancia [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L68] [vendor-stockkeeper-api/latest/guide/api.md:L12-L20].",
+    "cambio": "Añadí un párrafo final que dice que la guía de API de latest también documenta el Operation Validation Consumer (`/stock-operations/3pl/validation/restock-consumer`). En realidad ese endpoint solo aparece en la guía de 0.0.10-stock-consumer (api.md L51-L68), y la cita a latest/guide/api.md:L12-L20 apunta a una tabla de servicios que no lo incluye."
+   }
+  }
+ ]
+}

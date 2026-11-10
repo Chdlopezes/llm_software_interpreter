@@ -1,0 +1,72 @@
+{
+ "task_id": "calibracion_orden/validation-contradiccion-004__referencia",
+ "llamadas": [
+  {
+   "clave": "e5fe8000505d9c330f50deccb8804b581f5c6ecec28481ce4279fec5c50e04e5",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma el comportamiento real del servidor; declara que no puede confirmar cuál de los dos valores devuelve la API."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Señala que la documentación no es coherente y contrapone validation_error con validation_failed sin confirmar ninguno."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management L169 y Troubleshooting L105 para validation_failed."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md L308 para el código validation_error asociado al 400."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La tabla de errores de marcas indica validation_error para el 400, con la descripción Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management usa validation_failed para Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Troubleshooting usa validation_failed para Business rules failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El formato de respuesta de error incluye error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Conviene que el cliente no dependa de un único código mientras no se confirme el valor.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

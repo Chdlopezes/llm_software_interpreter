@@ -1,0 +1,297 @@
+{
+ "task_id": "verificador/b192f85a9c7adbbdcd5d46e7",
+ "llamadas": [
+  {
+   "clave": "b192f85a9c7adbbdcd5d46e7aded153b37b327bf3072944801035452c0dbbfe5",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-version_explicita-005__abstencion_excesiva",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, sobre catalog-portfolio-api 0.0.1-test-bench-v2a, que coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma que la documentación no aclara los campos obligatorios ni la restricción del nombre, pero sí los especifica en brands.md, líneas 92-96."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "No indica los campos obligatorios ni que el nombre debe ser único dentro del site; ambos datos constan en brands.md, líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a las líneas 70-74 identifica la operación, pero no respalda la afirmación de que los campos y la restricción no están claros; las líneas 92-96 proporcionan esa información."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Cita los ejemplos del body y la operación, pero no respalda adecuadamente la afirmación sobre qué información falta ni cubre con citas una recomendación sobre probar en desarrollo."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Presenta como insuficientemente documentados datos que sí aparecen en la lista de Required Fields, brands.md líneas 92-96."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_cumple",
+        "justificacion": "Se abstiene de responder aunque los campos obligatorios y la unicidad dentro del site están documentados en brands.md, líneas 92-96."
+       },
+       "consistencia": {
+        "resultado": "parcial",
+        "justificacion": "Dice que los campos no están claros, pero a continuación reconoce que el ejemplo contiene cuatro campos; no resuelve la discrepancia con la lista explícita de líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados no presentan un conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks son verificables en brands.md líneas 92-96, pero no son coherentes con la respuesta, que niega que esos datos estén claros y no los proporciona."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta omite datos que sí están explícitamente documentados y se abstiene sin justificación."
+     },
+     {
+      "case_id": "validation-version_explicita-005__hecho_falso",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, sobre catalog-portfolio-api 0.0.1-test-bench-v2a, de acuerdo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Afirma que el nombre debe ser único en todo el sistema, pero brands.md línea 93 limita la unicidad al site."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Identifica los cuatro campos obligatorios, pero da una restricción falsa para el nombre; brands.md líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a brands.md líneas 92-96 contradice la afirmación de unicidad global: la línea 93 especifica que el nombre es único dentro del site."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre campos, restricción y body de ejemplo llevan citas; brands.md líneas 92-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara que falte información; la restricción correcta está documentada en brands.md línea 93."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Intenta responder las dos partes de la pregunta con la evidencia disponible, aunque se equivoca sobre la restricción."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "La afirmación de unicidad global contradice la especificación citada, que dice que la unicidad es dentro del site, brands.md línea 93."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto entre documentos: la respuesta contradice la evidencia, no un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks coinciden con brands.md líneas 92-96, pero el check sobre unicidad dentro del site contradice la respuesta, que afirma unicidad global."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta convierte la regla de unicidad dentro del site en una regla global, contradiciendo la línea 93."
+     },
+     {
+      "case_id": "validation-version_explicita-005__irrelevante",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, sobre catalog-portfolio-api 0.0.1-test-bench-v2a, de acuerdo con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el ejemplo de creación, el estado STAND_BY y los requisitos y endpoint de activación coinciden con brands.md líneas 116-123, 243-259, y brand-management/README.md líneas 105-120."
+       },
+       "responde_pregunta": {
+        "resultado": "no_cumple",
+        "justificacion": "Habla del estado y la activación, pero no responde qué campos son obligatorios ni la restricción del nombre, documentados en brands.md líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones sobre la respuesta de ejemplo, STAND_BY, requisitos y endpoint de activación: brands.md líneas 116-123 y 243-259; brand-management/README.md líneas 105-120."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas que presenta llevan citas a las líneas pertinentes de ambos documentos."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte información; la documentación entregada sí especifica lo preguntado en brands.md líneas 92-96."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "parcial",
+        "justificacion": "No se abstiene, pero usa la evidencia para responder sobre activación en lugar de aprovechar la que contesta la pregunta, brands.md líneas 92-96."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre creación y activación no se contradicen entre sí ni mezclan versiones; brands.md líneas 116-123, 243-259, y brand-management/README.md líneas 105-120."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks son verificables en brands.md líneas 92-109, pero la respuesta no proporciona los datos que esos checks requieren."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es técnicamente respaldada, pero trata la activación y no contesta la pregunta sobre campos obligatorios y unicidad."
+     },
+     {
+      "case_id": "validation-version_explicita-005__parafrasis",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, que nombra el software y la versión indicados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Identifica type, category, site y name como obligatorios, y explica correctamente la unicidad dentro del mismo site; brands.md líneas 92-96."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde qué campos son obligatorios y cuál es la restricción del nombre; brands.md líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los campos y la unicidad (brands.md líneas 92-96), y el contenido de la petición de ejemplo (líneas 100-109)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la operación, los campos y el ejemplo llevan citas a brands.md líneas 70-74, 92-96 y 100-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara que falte información; los datos requeridos aparecen en brands.md líneas 92-96."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia y contesta ambas partes de la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene coherencia entre los campos enumerados y la regla de unicidad, conforme a brands.md líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta respuesta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en brands.md líneas 92-109 y corresponden a lo que afirma la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-005__referencia",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, sobre catalog-portfolio-api 0.0.1-test-bench-v2a, como indican los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los campos obligatorios y la unicidad dentro del site correctamente; brands.md líneas 92-96."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde las dos partes: los campos obligatorios y la restricción del nombre; brands.md líneas 92-96."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los campos, la regla del nombre y el ejemplo de petición; brands.md líneas 70-74, 92-96 y 100-109."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas en brands.md líneas 70-74, 92-96 y 100-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte información; la documentación respalda la respuesta en brands.md líneas 92-96."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la evidencia disponible, sin abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones son coherentes entre sí y con la especificación de brands.md líneas 92-96."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental que identificar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables, acordes con brands.md líneas 92-109 y coherentes con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-005__sin_citas",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, que indica el software y la versión incluidos en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los campos enumerados y la restricción del nombre son correctos según brands.md líneas 92-96; el ejemplo coincide con líneas 100-109."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contesta cuáles son los campos obligatorios y qué restricción tiene el nombre."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "No incluye ninguna cita, aunque la respuesta presenta afirmaciones técnicas respaldadas por brands.md líneas 92-109."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las afirmaciones sobre campos, restricción y petición de ejemplo no tienen citas; brands.md líneas 92-109."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte información; la documentación contiene los datos en brands.md líneas 92-96."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible y responde ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones son coherentes con brands.md líneas 92-109."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "Los checks son verificables en brands.md líneas 92-109, pero incluyen el requisito de citar, que la respuesta no cumple."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es correcta, pero omite todas las citas exigidas para sus afirmaciones técnicas."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "task_id": "calibracion/validation-en_que_version-008__referencia",
+ "llamadas": [
+  {
+   "clave": "0accc33c79a3c83aaf057280cbd85ec035d8bd7ae1572992629845dd3baa6b0f",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Identifica explícitamente 0.0.1-test-bench-v2a y latest; ambas documentan database_error en troubleshooting/README.md, L107."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Incluye «Database operation failed» y las causas «problemas de conexión y restricciones», coincidentes con L107 de ambas versiones."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Afirma que el contenido es idéntico y que la descripción y las causas son las mismas; las filas L107 coinciden."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita L98-L100 y L107 de troubleshooting/README.md de ambas versiones, que identifican la tabla y contienen la fila correspondiente."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Limita expresamente la conclusión a la documentación recibida y no afirma nada sobre otras versiones."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "database_error aparece en la tabla Application Error Codes de troubleshooting en 0.0.1-test-bench-v2a.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En 0.0.1-test-bench-v2a, database_error significa que falló una operación de base de datos y sus causas comunes son problemas de conexión y restricciones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "database_error aparece en la tabla Application Error Codes de troubleshooting en latest.",
+      "cita": "[catalog-portfolio-api/latest/guide/troubleshooting/README.md:L98-L100] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La descripción y las causas comunes de database_error en latest son idénticas a las de 0.0.1-test-bench-v2a.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L107-L107] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L107-L107]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

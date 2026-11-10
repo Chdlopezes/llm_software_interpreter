@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-contradiccion-007__parafrasis",
+ "llamadas": [
+  {
+   "clave": "96ae132e7391496afaa3cfec786f486b9aa0770ecfb5f4b20f96002f5ac71c85",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "En esta versión la documentación no es coherente en este punto. La tabla de códigos de error de la referencia de endpoints de marcas indica `validation_error` para el HTTP 400 y lo describe como «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]. La guía de Brand Management, por su parte, pone `validation_failed` en su lista de errores comunes y lo describe como «Business rules validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]. Con dos nombres distintos en las fuentes, no puedo asegurar qué identificador devuelve realmente la API. Tampoco se aclara si es un único error o si son dos: uno para la validación de la petición y otro para la validación de reglas de negocio. Antes de capturar el error por su nombre en el cliente, te recomiendo comprobarlo con una respuesta real del servicio.",
+    "cambio": "Reescribí la respuesta con otras palabras y presenté primero la fuente brands.md (validation_error, 400) y después la de Brand Management (validation_failed). Los hechos, las citas, la falta de certeza sobre el nombre real y la recomendación de comprobarlo no cambian."
+   }
+  }
+ ]
+}

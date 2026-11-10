@@ -1,0 +1,87 @@
+{
+ "task_id": "calibracion/validation-version_explicita-005__irrelevante",
+ "llamadas": [
+  {
+   "clave": "86c4ded12efa0dc3cf2e1b5027a8d056522fbca923579833a21f8d8d396ca0a9",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "Enumera campos de la respuesta de ejemplo, pero no identifica name, site, category y type como campos obligatorios del body (brands.md:L92-L96)."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Omite que el nombre debe ser único dentro del site, indicado en brands.md:L93."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "Cita el inicio de Create Brand y su respuesta de ejemplo, pero no la lista Required Fields de brands.md:L92-L96."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No añade campos obligatorios ni reglas de validación inventadas; se desvía hacia el estado y la activación de marcas."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La creación de marcas se realiza con POST /.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La respuesta de ejemplo de creación contiene un id.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L111-L123]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La respuesta de ejemplo contiene name, site, category, type, date_created, date_last_updated y estado STAND_BY.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L111-L123]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "STAND_BY indica que la marca está creada pero aún no activa y puede deberse a logos obligatorios faltantes.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para activar una marca se utiliza PUT /{brandId}/activate.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L243-L247]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "GET /{brandId}/activable permite comprobar si una marca se puede activar.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L272-L276]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "omision",
+     "no_responde",
+     "cita_no_respalda"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta describe el resultado de creación y la activación, pero no responde cuáles son los campos obligatorios ni la restricción de unicidad del nombre. Además, el id del ejemplo se apoya en la línea 115, marcada como no citable."
+   }
+  }
+ ]
+}

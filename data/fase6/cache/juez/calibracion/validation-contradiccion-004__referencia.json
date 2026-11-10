@@ -1,0 +1,72 @@
+{
+ "task_id": "calibracion/validation-contradiccion-004__referencia",
+ "llamadas": [
+  {
+   "clave": "abdcde62a6ca008101b6c28ece06129d85458276874d265831ce2534e847357b",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md:L308-L308 para el código 400 validation_error."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita Brand Management:L169-L169 y Troubleshooting:L105-L105 para validation_failed."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que la documentación no es coherente y que no puede confirmar cuál valor devuelve realmente la API."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No resuelve el conflicto con información externa ni afirma el comportamiento real del servidor."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La documentación presenta códigos de validación discrepantes.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308], [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169], [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla de brands.md indica validation_error para el 400, descrito como Request validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management indica validation_failed para Business rules validation failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Troubleshooting usa validation_failed para Business rules failed.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El formato de respuesta de error contiene error, message, status y cause.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

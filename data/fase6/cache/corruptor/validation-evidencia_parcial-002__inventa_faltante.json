@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/validation-evidencia_parcial-002__inventa_faltante",
+ "llamadas": [
+  {
+   "clave": "5b1040f67cfe4d729e0d47cf1cacf67f1ad7b9038d5c6ddd2d01c6f76bb6e845",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "Para obtener una marca con toda su información de estado se usa `GET /catalog/brands/{brandId}/allstatus`, que la tabla de referencia rápida describe como «Get brand with all status information» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]. Devuelve el mismo objeto de marca que la consulta normal por ID (`id`, `name`, `soft_descriptor`, `site`, `category`, `subcategories`, `type`, `tags`, `logos`, `resources`, `priority`, `status`, `date_created` y `date_last_updated`) [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L146-L169]. A diferencia de esa consulta, además incluye un array `status_history` con cada transición de estado (`from_status`, `to_status` y `date`) y el campo booleano `activable`, que indica si la marca cumple los requisitos para pasar a `ACTIVE` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L146-L169].",
+    "cambio": "Donde la referencia decía que brands.md no detalla el esquema de respuesta de /allstatus, me inventé los campos como si fueran hechos. Puse los mismos campos que GET /{brandId}, más un array `status_history` (con `from_status`, `to_status` y `date`) y un booleano `activable`, y lo cité con el ejemplo de Get Brand (brands.md:L146-L169). Ese ejemplo no menciona allstatus."
+   }
+  }
+ ]
+}

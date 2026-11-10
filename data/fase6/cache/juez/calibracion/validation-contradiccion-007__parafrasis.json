@@ -1,0 +1,60 @@
+{
+ "task_id": "calibracion/validation-contradiccion-007__parafrasis",
+ "llamadas": [
+  {
+   "clave": "4807d4edb15b8a0e5c48cb3efebd409ba64b7b0aad9d800e451dd121faafbe28",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Declara que «la documentación no es coherente» y señala los dos nombres distintos."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md:L308 para validation_error (HTTP 400) y brand-management/README.md:L169 para validation_failed. Las líneas no citables se usan correctamente para mostrar el conflicto."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Dice que no puede asegurar qué identificador devuelve realmente la API y no elige ninguno."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No añade códigos ni explicaciones afirmadas como hechos; presenta la posible distinción entre validaciones como una incertidumbre."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La referencia de endpoints documenta validation_error con HTTP 400 y la descripción «Request validation failed».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Brand Management documenta validation_failed entre los errores comunes con la descripción «Business rules validation failed».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Recomienda comprobar una respuesta real del servicio antes de capturar el error por nombre.",
+      "cita": "",
+      "respaldo": "sin_verificar",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

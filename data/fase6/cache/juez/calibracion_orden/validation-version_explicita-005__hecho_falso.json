@@ -1,0 +1,86 @@
+{
+ "task_id": "calibracion_orden/validation-version_explicita-005__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "09a782c742933517de6414927ecdb2fe2fbf75a5aa2af5f2d185da73fe9c6eb1",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "Inventa una restricción de unicidad global para name; brands.md:L93 exige unicidad dentro del site."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita la sección Create Brand, brands.md:L70-L74, y la lista Required Fields, brands.md:L92-L96."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Afirma «único en todo el sistema y no solo dentro del site», en contradicción con brands.md:L93."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Identifica los cuatro campos obligatorios: name, site, category y type, conforme a brands.md:L92-L96."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La creación de una marca se realiza con POST /.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los cuatro campos obligatorios son name, site, category y type.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El nombre de la marca debe ser único en todo el sistema y no solo dentro del site.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "site es el código de site de RetailFlow y category es el ID de la categoría principal.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "type puede ser lighthouse o standard.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La petición de ejemplo envía únicamente esos cuatro campos en JSON con la cabecera Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "contradiccion_con_fuente",
+     "cita_no_respalda"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Identifica correctamente los campos obligatorios, pero cambia la unicidad del nombre dentro del site por una unicidad global. La cita que acompaña esa afirmación dice expresamente lo contrario."
+   }
+  }
+ ]
+}

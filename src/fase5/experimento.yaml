@@ -14,7 +14,7 @@ modelo:
 # Igual para B0, E1 y E2: lo único que cambia entre ellos son los pesos.
 inferencia:
   prompt_sistema: src/fase1/contract/system_prompt.md
-  herramientas: obtener_documentacion            # ejecutada por el arnés con el catálogo de la fase 1
+  herramientas: obtener_documentacion            # ejecutada por el orquestador con el catálogo de la fase 1
   enable_thinking: false
   temperatura: 0.0                               # decodificación voraz: misma entrada, misma salida
   max_new_tokens: 1024

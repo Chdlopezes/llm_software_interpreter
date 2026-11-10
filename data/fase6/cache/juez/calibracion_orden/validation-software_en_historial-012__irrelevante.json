@@ -1,0 +1,80 @@
+{
+ "task_id": "calibracion_orden/validation-software_en_historial-012__irrelevante",
+ "llamadas": [
+  {
+   "clave": "6b075059f36d7e5d9ea563c626efc2d49c0d717dbb3a986f33133209dcfd68be",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "No cita el diagrama (L87-L92) ni las descripciones de estados (L105-L107); cita permisos de borrado y requisitos de activación."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Indica que el borrado es permanente y no se puede deshacer, con respaldo en brands.md:L209-L213 y brand-management/README.md:L122-L125."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "No responde si ACTIVE puede volver a STAND_BY, transición documentada en brand-management/README.md:L89-L90."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No identifica STAND_BY y ACTIVE como estados de origen de DELETED, documentados en brand-management/README.md:L91-L92."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a, sin volver a solicitarlos."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint DELETE /{brandId} elimina permanentemente una marca del sistema.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L209-L225]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La eliminación requiere la cabecera X-Client-Id y un client ID incluido en la lista blanca.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L209-L225]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Las reglas de negocio exigen un client ID en la lista blanca para borrar.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L122-L125]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El borrado no se puede deshacer y se mantiene un registro de auditoría completo.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L122-L125]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La activación requiere al menos un logo principal subido, superar las validaciones de negocio y cumplir los requisitos del servicio de regulaciones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L117-L120]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "omision",
+     "no_responde"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Las afirmaciones incluidas están respaldadas, pero la respuesta no contesta las dos preguntas centrales: se puede llegar a DELETED desde STAND_BY y ACTIVE, y ACTIVE puede volver a STAND_BY."
+   }
+  }
+ ]
+}

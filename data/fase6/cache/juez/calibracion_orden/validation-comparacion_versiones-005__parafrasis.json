@@ -1,0 +1,83 @@
+{
+ "task_id": "calibracion_orden/validation-comparacion_versiones-005__parafrasis",
+ "llamadas": [
+  {
+   "clave": "f981a451e57c2257e0faae513f7384880a56588ffa8b3ed4d41c25629faa03b3",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No inventa diferencias ni menciona otros códigos: se limita a 404, 409 y 422 y al cuerpo documentado."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md de ambas versiones, tanto L311-L313 como L318-L325."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Enumera error, message, status y cause, y aclara que cause es un array en el ejemplo, conforme a L318-L325."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Asocia 404 con brand_not_found, 409 con brand_name_already_exists y 422 con logos_missing, conforme a L311-L313 de ambas versiones."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica explícitamente que no cambian esos tres errores ni la forma del cuerpo; los fragmentos citados son idénticos en ambas versiones."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "No hay diferencias documentadas entre ambas versiones para los errores 404, 409 y 422 ni para el cuerpo de error.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "404 brand_not_found indica que no existe una brand con ese ID en ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "409 brand_name_already_exists indica que ya existe una brand con ese nombre en el site en ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "422 logos_missing indica que no se han subido los logos requeridos en ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El cuerpo de error es un objeto JSON con error, message, status y cause; cause aparece como array en el ejemplo de ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para estos casos sirve el mismo manejo de errores en ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

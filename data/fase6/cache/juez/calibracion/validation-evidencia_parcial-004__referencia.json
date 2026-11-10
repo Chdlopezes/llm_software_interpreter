@@ -1,0 +1,71 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-004__referencia",
+ "llamadas": [
+  {
+   "clave": "933cb1f668378ead8dc5c91ff7ff747528e8db317e5b6d4b65bc24c4ef81f406",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica POST /catalog/brands/{brandId}/collectors y cita la línea 48 de la tabla Collector Endpoints."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Declara expresamente: «Lo que no está documentado es el body»."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "No propone campos ni estructuras JSON y aclara que no puede determinar el formato de los IDs."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Distingue la falta de documentación del body de la disponibilidad de la operación; no afirma que el endpoint rechace un body."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Proporciona el método y la ruta documentados antes de señalar la información faltante."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para asociar una marca con collectors se usa POST /catalog/brands/{brandId}/collectors.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para quitar una asociación se usa DELETE /catalog/brands/{brandId}/collectors/{collectorId}.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L49-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Los endpoints de collectors aparecen en la tabla de referencia rápida con método, ruta y descripción.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La única página con detalle por endpoint entre los documentos recibidos es la de endpoints de marca.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L9-L11]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

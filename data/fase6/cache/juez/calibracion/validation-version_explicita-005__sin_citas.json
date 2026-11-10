@@ -1,0 +1,91 @@
+{
+ "task_id": "calibracion/validation-version_explicita-005__sin_citas",
+ "llamadas": [
+  {
+   "clave": "c0d35588ab69ef8a72271968c2e97ab77ec8e8f10b91038815e0038d26e1c01d",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Enumera name, site, category y type como obligatorios, conforme a brands.md:L92-L96."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica que el nombre debe ser único dentro del site, conforme a brands.md:L93."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "No incluye ninguna cita a la documentación ni a la lista Required Fields."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No añade campos obligatorios ni reglas ajenas a brands.md:L92-L96."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La creación de una marca se realiza con POST /.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Los campos obligatorios son name, site, category y type.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "name es el nombre de la marca y debe ser único dentro del site.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "site es el código de site de RetailFlow.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "category es el ID de la categoría principal.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "type es el tipo de marca y puede ser lighthouse o standard.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La petición de ejemplo envía únicamente esos cuatro campos en JSON con Content-Type: application/json.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "El contenido es correcto y está respaldado por la documentación, pero la respuesta no incluye citas, incluida la exigida a la lista Required Fields."
+   }
+  }
+ ]
+}

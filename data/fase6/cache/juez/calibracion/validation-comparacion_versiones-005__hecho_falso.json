@@ -1,0 +1,86 @@
+{
+ "task_id": "calibracion/validation-comparacion_versiones-005__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "93633dc9988a0cd062b859c32b337b3b44b94026687d0eef106e9c8c4053fee6",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica que no hay cambios; las líneas L311-L313 y L318-L325 de brands.md son iguales en ambas versiones."
+     },
+     {
+      "indice": 2,
+      "resultado": "parcial",
+      "evidencia": "Asocia correctamente 404 y 422, pero escribe 409 `brand_already_exists` en lugar de `brand_name_already_exists`, documentado en L312 de ambas versiones."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Enumera error, message, status y cause, conforme al ejemplo de L318-L325 de ambas versiones."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita brands.md de 0.0.1-test-bench-v2a y latest para los códigos y el cuerpo de error."
+     },
+     {
+      "indice": 5,
+      "resultado": "parcial",
+      "evidencia": "No inventa diferencias entre versiones, pero introduce el identificador `brand_already_exists`, que no figura en las fuentes citadas."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "No hay diferencias entre ambas versiones para los errores 404, 409 y 422 ni para el formato del cuerpo de error.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "404 corresponde a brand_not_found: el ID de brand no existe.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "409 corresponde a brand_already_exists: ya existe una brand con ese nombre en el site.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "422 corresponde a logos_missing: no se han subido los logos requeridos.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En ambas versiones, el cuerpo de error es un objeto JSON con error, message, status y cause; cause aparece como array en el ejemplo.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El mismo manejo de errores sirve para estos casos en ambas versiones.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "contradiccion_con_fuente",
+     "cita_no_respalda"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La comparación entre versiones y el formato del cuerpo son correctos. Sin embargo, el identificador del error 409 es `brand_name_already_exists`, no `brand_already_exists`."
+   }
+  }
+ ]
+}

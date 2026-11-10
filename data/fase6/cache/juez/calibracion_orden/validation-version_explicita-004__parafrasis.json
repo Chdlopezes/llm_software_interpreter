@@ -1,0 +1,71 @@
+{
+ "task_id": "calibracion_orden/validation-version_explicita-004__parafrasis",
+ "llamadas": [
+  {
+   "clave": "bdb8ac1fd0eaf534fde88dbede643bc0fa49807a842663cf18a4b6a4c9524670",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Solo menciona los campos code y message y los valores bad_request e internal_server_error, conforme a L122-L131."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita explícitamente price-engine-api/latest/specs/swagger.yaml:L122-L131 y L125-L128."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica que el enum de code solo admite bad_request e internal_server_error, según L125-L128."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Describe RequestError como objeto con las propiedades code y message, ambas string, según L122-L131."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software price-engine-api y version latest."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La respuesta 400 corresponde a un parámetro inválido y usa el modelo RequestError.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L92-L97]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La respuesta 500 corresponde a un error no controlado del servidor y usa el modelo RequestError.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L111-L116]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "RequestError es un objeto con las propiedades code y message, ambas de tipo string, descritas como código de respuesta y mensaje de respuesta.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L122-L131]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El enum de code solo admite bad_request e internal_server_error.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L125-L128]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

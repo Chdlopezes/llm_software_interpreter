@@ -1,0 +1,15 @@
+{
+ "task_id": "corruptor/train-comparacion_versiones-013__version_mezclada",
+ "llamadas": [
+  {
+   "clave": "05780fc0c534d8de29b465bedc67a66bc4ba13c6203264adef7713d149b6c5b4",
+   "tarea": "corruptor",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "respuesta": "El único cambio en estas dos alertas es la etiqueta de prioridad. En 0.0.6-ep-restock-man las dos secciones llevan la marca [IMPORTANT]: \"[IMPORTANT] Error restock in vendor-stockkeeper-api\" [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L17-L17] y \"[IMPORTANT] Stockkeeper-api - Error restocking item (negative quantity)\" [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L29-L29]. En 0.0.10-stock-consumer esos mismos encabezados no tienen ninguna etiqueta de prioridad [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L17-L17] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L29-L29].\n\nEl resto es igual en las dos versiones:\n\n- **Error restock:** la descripción no cambia. Puede deberse a un caso muy raro no controlado en el código, así que hay que revisar los logs [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L19-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L19-L20]. Los tres pasos también son los mismos: identificar en los logs qué ítem no se pudo reponer y por qué, resolver el problema y, si hace falta, hacer un restock manual por base de datos o, en el caso más extremo, sacar una versión nueva [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L22-L25] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L22-L25].\n- **Negative quantity:** la descripción tampoco cambia [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L31-L32] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L31-L32]. Los cinco pasos son idénticos:\n  1. Identificar en los logs el ítem del restock negativo.\n  2. Avisar a Envio Pack.\n  3. Averiguar por qué el restock dejó las cantidades por debajo de 0.\n  4. Resolver el problema.\n  5. Si hace falta, hacer un restock manual o sacar una versión nueva.\n\n  [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L34-L39] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L34-L39]",
+    "cambio": "En el primer párrafo invertí las versiones de la etiqueta [IMPORTANT]. Ahora se la atribuyo a 0.0.6-ep-restock-man, citando sus líneas L17 y L29, y digo que 0.0.10-stock-consumer no tiene etiqueta. En los documentos es al revés: los encabezados de 0.0.6 no llevan etiqueta y los de 0.0.10 llevan [IMPORTANT]. El resto de la respuesta queda igual que la referencia."
+   }
+  }
+ ]
+}

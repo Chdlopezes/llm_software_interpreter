@@ -1,0 +1,73 @@
+{
+ "task_id": "calibracion/validation-version_explicita-004__sin_citas",
+ "llamadas": [
+  {
+   "clave": "f0d9d0b3c297cca22f1193b7fde25de649d13754e93f373644f622ce82fe6873",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software=\"price-engine-api\" y version=\"latest\"."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Indica que RequestError es un objeto con code y message, ambos string, conforme a swagger.yaml:L122-L131."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Enumera exclusivamente bad_request e internal_server_error, conforme a swagger.yaml:L128."
+     },
+     {
+      "indice": 4,
+      "resultado": "no_cumple",
+      "evidencia": "La respuesta no incluye ninguna cita a las líneas del modelo RequestError."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No añade campos ni valores de code ajenos al documento."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El cuerpo de error usa RequestError, un objeto con code y message de tipo string, descritos como código y mensaje de respuesta.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "code solo admite bad_request e internal_server_error.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La respuesta 400 por parámetro inválido usa RequestError.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "La respuesta 500 por error no controlado del servidor usa RequestError.",
+      "cita": "",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "falta_cita"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "El contenido es correcto y está respaldado por la documentación, pero la respuesta omite todas las citas, incluida la exigida al modelo RequestError."
+   }
+  }
+ ]
+}

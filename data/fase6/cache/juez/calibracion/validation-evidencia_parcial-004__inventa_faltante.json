@@ -1,0 +1,94 @@
+{
+ "task_id": "calibracion/validation-evidencia_parcial-004__inventa_faltante",
+ "llamadas": [
+  {
+   "clave": "3f754554e9bd9c889e6927065480d863fab18452db50d18be6ac03882038188a",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica POST /catalog/brands/{brandId}/collectors y cita correctamente la fila L48 de api-reference/README.md."
+     },
+     {
+      "indice": 2,
+      "resultado": "no_cumple",
+      "evidencia": "No declara que el body esté sin documentar; presenta como conocido un esquema que no aparece en las fuentes."
+     },
+     {
+      "indice": 3,
+      "resultado": "no_cumple",
+      "evidencia": "Inventa el campo obligatorio collector_ids, el objeto JSON y el array de enteros. Las líneas L43-L49 solo contienen métodos, rutas y descripciones."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No afirma que el endpoint rechace un body ni que la asociación no esté soportada."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Responde la parte documentada dando el método POST y la ruta de asociación."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "Para asociar una marca con collectors se usa POST /catalog/brands/{brandId}/collectors.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para quitar una asociación se usa DELETE /catalog/brands/{brandId}/collectors/{collectorId}.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L49-L49]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El body es un objeto JSON con un único campo obligatorio collector_ids que contiene un array de IDs, como {\"collector_ids\": [1001, 1002, 1003]}.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Los IDs de collectors en el body de asociación se envían como enteros.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L26-L26]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "El filtro collector_id de la búsqueda de marcas es de tipo integer.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L26-L26]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La petición de asociación de collectors se envía con Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L108]",
+      "respaldo": "no_respaldada",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Los demás endpoints de marca que llevan body usan Content-Type: application/json.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L108]",
+      "respaldo": "respaldada",
+      "cita_respalda": false
+     }
+    ],
+    "abstencion": "faltante",
+    "etiquetas_error": [
+     "afirmacion_sin_respaldo",
+     "cita_no_respalda",
+     "omision",
+     "falta_incertidumbre"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "Da correctamente el endpoint de asociación, pero inventa el esquema del body y su Content-Type. Las citas sobre la tabla de collectors, el filtro de búsqueda y la creación de marcas no documentan el cuerpo de esta operación."
+   }
+  }
+ ]
+}

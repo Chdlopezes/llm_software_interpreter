@@ -1,0 +1,87 @@
+{
+ "task_id": "calibracion_orden/validation-sin_version-009__hecho_falso",
+ "llamadas": [
+  {
+   "clave": "cb2e7eb8a56780601857032d8e739a9e58a0ff3284f0a343622c326214f976c7",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "no_cumple",
+      "evidencia": "Añade Java 11 como Project SDK, ajuste contrario a Java 17 indicado en local-development.md:L100 en ambas versiones."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Declara que la configuración es la misma en ambas versiones y cita las dos; sus líneas L97-L111 coinciden."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Nombra Java Extension Pack, Gradle for Java y MySQL, conforme a L106-L111 de ambas versiones."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Incluye config/checkstyle/checkstyle-main.xml, LF y UTF-8, conforme a L101-L104 de ambas versiones."
+     },
+     {
+      "indice": 1,
+      "resultado": "parcial",
+      "evidencia": "Indica correctamente importar como proyecto Gradle, pero dice Java 11 en lugar de Java 17 como Project SDK (L99-L100)."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La configuración del IDE es la misma en 0.0.1-test-bench-v2a y latest.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L106-L111] [catalog-portfolio-api/latest/guide/setup/local-development.md:L106-L111]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En IntelliJ IDEA se importa el proyecto como proyecto Gradle.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Se debe poner Java 11 como Project SDK.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "contradicha",
+      "cita_respalda": false
+     },
+     {
+      "texto": "Para el estilo de código se importa config/checkstyle/checkstyle-main.xml.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Se usa LF como separador de línea y UTF-8 como codificación.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Las extensiones recomendadas para VS Code son Java Extension Pack, Gradle for Java y MySQL.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L106-L111] [catalog-portfolio-api/latest/guide/setup/local-development.md:L106-L111]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [
+     "contradiccion_con_fuente",
+     "cita_no_respalda",
+     "version_incorrecta"
+    ],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": "La respuesta indica Java 11 como Project SDK, pero ambas versiones documentadas exigen Java 17. El resto de la configuración y las extensiones recomendadas están correctamente respaldados."
+   }
+  }
+ ]
+}

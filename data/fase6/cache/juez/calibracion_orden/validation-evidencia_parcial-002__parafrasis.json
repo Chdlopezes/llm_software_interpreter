@@ -1,0 +1,59 @@
+{
+ "task_id": "calibracion_orden/validation-evidencia_parcial-002__parafrasis",
+ "llamadas": [
+  {
+   "clave": "6535930bc75d3fb72e36c4d75c17d8db70c115ac2aef2acef1eb2da4ae14675e",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "codex",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Proporciona el endpoint documentado sin abstenerse."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "No enumera campos ni atribuye a allstatus el ejemplo de GET /{brandId}."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Declara que no se documentan los campos, el esquema ni un ejemplo de respuesta de allstatus."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Cita api-reference/README.md:L27-L27 como fuente del endpoint."
+     },
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Indica GET /catalog/brands/{brandId}/allstatus, coincidiendo con la línea 27."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El endpoint para obtener una marca con toda su información de estado es GET /catalog/brands/{brandId}/allstatus.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La tabla de referencia rápida describe el endpoint como «Get brand with all status information».",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "correcta",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}

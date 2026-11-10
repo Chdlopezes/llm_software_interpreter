@@ -1,0 +1,71 @@
+{
+ "task_id": "calibracion/validation-version_explicita-004__referencia_defectuosa",
+ "llamadas": [
+  {
+   "clave": "b8fed19414d0bb52c4037975d8af7614b8e8bad82ec530cfcf5ea338595f3952",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Llamó a obtener_documentacion con software=\"price-engine-api\" y version=\"latest\"."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "Describe RequestError como un objeto con code y message de tipo string, conforme a L122-L131."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Indica los valores bad_request e internal_server_error, exactamente los del enum en L128."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Cita price-engine-api/latest/specs/swagger.yaml:L122-L131 y L125-L128."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "No añade campos ni valores de code ajenos al documento."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "El cuerpo de error usa el modelo RequestError, un objeto con propiedades code y message, ambas de tipo string.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L122-L131]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "El campo code solo admite bad_request e internal_server_error.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L125-L128]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La respuesta 400 por parámetro inválido utiliza RequestError.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L92-L97]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "La respuesta 500 por error no controlado del servidor utiliza RequestError.",
+      "cita": "[price-engine-api/latest/specs/swagger.yaml:L111-L116]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": true,
+    "motivo_incidencia": "La respuesta de referencia menciona internal_error como valor del enum, pero el documento en L128 establece internal_server_error. El modelo sigue correctamente la fuente y el criterio 3.",
+    "resumen": "La respuesta es correcta y sus afirmaciones están respaldadas por las citas. Usa internal_server_error conforme al documento, corrigiendo el valor erróneo de la referencia."
+   }
+  }
+ ]
+}

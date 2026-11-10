@@ -75,6 +75,35 @@ def intersects(a: list[int], b: list[int]) -> bool:
     return a[0] <= b[1] and b[0] <= a[1]
 
 
+def errores_de_citas(text: str, delivered: set[str], situation: str, catalog: list[dict],
+                     restrictions: list[dict]) -> list[str]:
+    """Citas de una respuesta: a documentos entregados, dentro del documento y sin líneas no citables
+    (salvo en «contradiccion», y solo las del conflicto). La usa también la evaluación (fase 6)."""
+    errors = []
+    restr = {r["id"]: r for r in restrictions}
+    lengths = {d["id"]: d["n_lineas"] for d in catalog}
+    cites = citations(text)
+    if not cites and situation not in NO_CITE_SITUATIONS:
+        errors.append("la respuesta no tiene citas")
+    for doc, a, b in cites:
+        if doc not in delivered:
+            errors.append(f"cita a un documento no entregado: {doc}")
+            continue
+        if not 1 <= a <= b <= lengths[doc]:
+            errors.append(f"rango fuera del documento: {doc}:L{a}-L{b}")
+            continue
+        conflict_lines = [c["lineas"] for c in restr[doc]["conflictos"] if c["lineas"]]
+        for nc in restr[doc]["no_citables"]:
+            if not intersects([a, b], nc):
+                continue
+            allowed = situation == "contradiccion" and all(
+                any(c[0] <= n <= c[1] for c in conflict_lines)
+                for n in range(max(a, nc[0]), min(b, nc[1]) + 1))
+            if not allowed:
+                errors.append(f"cita líneas no citables: {doc}:L{a}-L{b} (no citables {nc[0]}-{nc[1]})")
+    return errors
+
+
 def check_example(conversation: dict, case: dict, catalog: list[dict], restrictions: list[dict]) -> list[str]:
     """Errores de contrato de una conversación de entrenamiento y su caso de evaluación."""
     errors = check_schema(conversation, load_schema("conversation_schema.json"), "conversacion")
@@ -129,27 +158,7 @@ def check_example(conversation: dict, case: dict, catalog: list[dict], restricti
 
     # Citas: en la respuesta final, sobre documentos entregados en esta llamada.
     delivered = {d["id"]: d for d in result["documentos"]}
-    restr = {r["id"]: r for r in restrictions}
-    lengths = {d["id"]: d["n_lineas"] for d in catalog}
-    cites = citations(answer["content"])
-    if not cites and situation not in NO_CITE_SITUATIONS:
-        errors.append("la respuesta no tiene citas")
-    for doc, a, b in cites:
-        if doc not in delivered:
-            errors.append(f"cita a un documento no entregado: {doc}")
-            continue
-        if not 1 <= a <= b <= lengths[doc]:
-            errors.append(f"rango fuera del documento: {doc}:L{a}-L{b}")
-            continue
-        conflict_lines = [c["lineas"] for c in restr[doc]["conflictos"] if c["lineas"]]
-        for nc in restr[doc]["no_citables"]:
-            if not intersects([a, b], nc):
-                continue
-            allowed = situation == "contradiccion" and all(
-                any(c[0] <= n <= c[1] for c in conflict_lines)
-                for n in range(max(a, nc[0]), min(b, nc[1]) + 1))
-            if not allowed:
-                errors.append(f"cita líneas no citables: {doc}:L{a}-L{b} (no citables {nc[0]}-{nc[1]})")
+    errors += errores_de_citas(answer["content"], set(delivered), situation, catalog, restrictions)
     for p in case["procedencia"]:
         if p["documento"] not in delivered:
             errors.append(f"procedencia en un documento no entregado: {p['documento']}")

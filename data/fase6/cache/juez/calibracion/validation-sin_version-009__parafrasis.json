@@ -1,0 +1,89 @@
+{
+ "task_id": "calibracion/validation-sin_version-009__parafrasis",
+ "llamadas": [
+  {
+   "clave": "f2921fcd090288b9790a76e983818701e91c2f3caa1a9bb6bbec3f9882b6050d",
+   "tarea": "juez",
+   "modelo": "gpt-6.1-sol",
+   "backend": "openai_api",
+   "respuesta": {
+    "checks": [
+     {
+      "indice": 1,
+      "resultado": "cumple",
+      "evidencia": "Los pasos 1 y 2 indican importar como proyecto Gradle y elegir Java 17 como Project SDK, según local-development.md:L99-L100 de ambas versiones."
+     },
+     {
+      "indice": 2,
+      "resultado": "cumple",
+      "evidencia": "El paso 3 incluye config/checkstyle/checkstyle-main.xml, LF y UTF-8, respaldados por L101-L104 de ambas versiones."
+     },
+     {
+      "indice": 3,
+      "resultado": "cumple",
+      "evidencia": "Nombra Java Extension Pack, Gradle for Java y MySQL y cita L106-L111 de ambas versiones."
+     },
+     {
+      "indice": 4,
+      "resultado": "cumple",
+      "evidencia": "Declara explícitamente que la configuración es idéntica en 0.0.1-test-bench-v2a y latest y aporta citas de ambas."
+     },
+     {
+      "indice": 5,
+      "resultado": "cumple",
+      "evidencia": "Solo incluye los ajustes y las extensiones enumerados en local-development.md:L97-L111."
+     }
+    ],
+    "afirmaciones": [
+     {
+      "texto": "La configuración del IDE es la misma en 0.0.1-test-bench-v2a y latest.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L106-L111] [catalog-portfolio-api/latest/guide/setup/local-development.md:L106-L111]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "En IntelliJ IDEA se importa el proyecto como proyecto Gradle.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Se configura Java 17 como Project SDK.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Para el estilo de código se importa config/checkstyle/checkstyle-main.xml.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Se usa LF como separador de línea.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Se usa UTF-8 como codificación.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L97-L104] [catalog-portfolio-api/latest/guide/setup/local-development.md:L97-L104]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     },
+     {
+      "texto": "Las extensiones recomendadas para VS Code son Java Extension Pack, Gradle for Java y MySQL.",
+      "cita": "[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L106-L111] [catalog-portfolio-api/latest/guide/setup/local-development.md:L106-L111]",
+      "respaldo": "respaldada",
+      "cita_respalda": true
+     }
+    ],
+    "abstencion": "no_aplica",
+    "etiquetas_error": [],
+    "incidencia_referencia": false,
+    "motivo_incidencia": "",
+    "resumen": ""
+   }
+  }
+ ]
+}
