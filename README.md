@@ -16,8 +16,6 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | 6 — Evaluación | Juez calibrado, métricas y diseño de la evaluación del modelo | Hecha |
 | 7 — Escalado | Cómo procesar diez millones de documentos (diseño) | Hecha |
 
-Las fases siguientes se añadirán a esta tabla a medida que se implementen.
-
 ## Estructura del repositorio
 
 ```
@@ -45,16 +43,15 @@ requirements-entrenamiento.txt   Dependencias extra solo para entrenar (PyTorch,
 ## Requisitos
 
 - **Python 3.10 o superior.** Comprueba tu versión con `python3 --version`.
-- Acceso a un modelo de **Anthropic** y a uno de **OpenAI**. El flujo usa dos LLM: **A** analiza la documentación (por defecto `claude-opus-5-5`) y **B** valida ese análisis (por defecto `gpt-6.1-sol`). Cada uno se puede usar de dos formas; elige la que tengas:
+- **Para reproducir los resultados entregados no hace falta ningún LLM.** Todas las respuestas de los LLM están guardadas en el repositorio, y cada fase se vuelve a ejecutar desde esa caché, sin sesión ni API keys (ver «Reproducir y verificar los resultados»).
+- **Para volver a generar con LLM** (por ejemplo, tras cambiar un prompt), hace falta acceso a un modelo de **Anthropic** y a uno de **OpenAI**. Cada tarea que usa un LLM tiene su propia configuración. Cada modelo se puede usar de dos formas; elige la que tengas:
 
-| LLM | Con tu sesión (sin API key) | Con API key |
+| Proveedor | Con tu sesión (sin API key) | Con API key |
 |---|---|---|
-| A | [Claude Code](https://docs.claude.com/en/docs/claude-code) — backend `claude_code` | `ANTHROPIC_API_KEY` — backend `anthropic_api` |
-| B | [Codex CLI](https://github.com/openai/codex) — backend `codex` | `OPENAI_API_KEY` — backend `openai_api` |
+| Anthropic | [Claude Code](https://docs.claude.com/en/docs/claude-code) — backend `claude_code` | `ANTHROPIC_API_KEY` — backend `anthropic_api` |
+| OpenAI | [Codex CLI](https://github.com/openai/codex) — backend `codex` | `OPENAI_API_KEY` — backend `openai_api` |
 
-  Las dos formas usan el mismo modelo y producen el mismo tipo de salida; solo cambia cómo te autenticas.
-
-  El paso 1 de la fase 0 y las fases 1 y 2 no usan ningún LLM: para ejecutarlos solo necesitas Python.
+  Las dos formas usan el mismo modelo; solo cambia cómo te autenticas.
 
 ## Configuración
 
@@ -582,7 +579,7 @@ git status --short data/ reports/
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
 - **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1, 2, 4 y 5 y el plan de tareas de la fase 3.
-- **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/` (fase 0) y `data/fase3/cache/` (fase 3). Con `--solo-cache`, la fase 3 no llama a ningún LLM ni necesita API keys.
+- **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/` (fase 0), `data/fase3/cache/` (fase 3) y `data/fase6/cache/` (fase 6). Con estos comandos ninguna fase llama a un LLM ni necesita API keys.
 
 Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md), [docs/fase3.md](docs/fase3.md), [docs/fase4.md](docs/fase4.md), [docs/fase5.md](docs/fase5.md) y [docs/fase6.md](docs/fase6.md).
 
@@ -592,13 +589,25 @@ Para ejecutar los tests:
 python -m pytest src/tests
 ```
 
+Un test comprueba la máscara de pérdida con TRL; se salta si no están instaladas las dependencias de `requirements-entrenamiento.txt`.
+
 ## Decisiones principales
 
-- **La unidad de auditoría es el software/versión.** La consistencia se evalúa solo dentro de una misma versión: que v1 y v2 digan cosas distintas no es un defecto.
-- **Cada versión se audita completa en una sola llamada.** El corpus es pequeño (~320 KB) y la versión más grande ronda los 12k tokens, así que el LLM puede ver todos sus archivos a la vez y detectar contradicciones entre ellos.
-- **Las secciones cubren el 100% de cada archivo.** Ninguna parte de la documentación puede quedar sin evaluar, y el código lo garantiza.
-- **Los chequeos automáticos no deciden, informan.** Son pistas para los LLM, que deciden con el contexto si un problema invalida la sección.
-- **Dos LLM de proveedores distintos.** A clasifica y B revisa cada clasificación. Si dan estados distintos, una persona elige el criterio de A o el de B. Si no elige, se aplica una regla fija: gana `parcial`; si no hay `parcial`, gana `usable`.
-- **La categoría no se revisa.** Si A y B solo discrepan en la categoría, se usa la de A.
+**Datos**
+- **Cada fila se puede rastrear hasta su origen.** Cada cita apunta a un documento y a un rango de líneas con su hash, y el código la verifica antes de aceptar un ejemplo.
+- **Se audita todo antes de generar** (fase 0). Las secciones cubren el 100% de cada archivo. Dos LLM de proveedores distintos clasifican y revisan, y una persona resuelve las discrepancias. Los chequeos automáticos informan, no deciden.
+- **El modelo recibe documentos completos, no fragmentos elegidos de antemano** (fase 1). Así aprende a leer y a declarar lo que falta, como en el uso real. La recuperación es un filtro simple por software y versión; la fase 6 explica cómo evaluar un buscador más complejo con este mismo pipeline.
+- **La separación es por software completo** (fase 2). La evaluación se hace sobre documentación que el modelo nunca vio al entrenar.
 
-El detalle y la justificación de cada regla están en [docs/fase0.md](docs/fase0.md).
+**Generación y validación**
+- **Cada tarea con LLM tiene su propia configuración,** y quien verifica nunca es el mismo modelo que quien genera.
+- **El programa decide, el LLM informa.** Los argumentos de la llamada, la aprobación de un caso y el veredicto del juez salen de reglas fijas aplicadas sobre la salida del LLM, no de su opinión.
+- **No hay ejemplos malos a propósito en los datasets.** Los errores deliberados solo existen en el conjunto de calibración del juez, que no sale de `test`.
+- **Los datos se prepararon para Hugging Face y se probaron con TRL** (fases 4 y 5). Esa prueba encontró cuatro problemas que habrían arruinado el entrenamiento sin dar error, y quedaron resueltos.
+
+**Evaluación**
+- **Primero lo determinista, después el LLM.** La llamada, los documentos y las citas se comprueban con código; el juez solo evalúa el contenido.
+- **El juez se calibra antes de usarlo,** con respuestas de etiqueta conocida y confirmadas por una persona. Se mide sobre todo cuántas respuestas malas aprueba, que es el error que inflaría las métricas.
+- **`test` se usa una sola vez.** La selección se hace con `validation`, y el código exige `--final` para evaluar `test`.
+
+El detalle y la justificación de cada decisión están en los documentos de cada fase, en [docs/](docs/).
