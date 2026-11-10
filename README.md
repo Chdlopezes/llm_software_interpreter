@@ -14,6 +14,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | 4 — Validación y exportación | Controles, duplicados, revisión humana y datasets finales para Qwen3.5 | Hecha |
 | 5 — Diseño del experimento | Baseline, entrenamiento con LoRA, ablación, inferencia y selección (sin entrenar) | Hecha |
 | 6 — Evaluación | Juez calibrado, métricas y diseño de la evaluación del modelo | Hecha |
+| 7 — Escalado | Cómo procesar diez millones de documentos (diseño) | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -529,6 +530,38 @@ python -m src.fase6.evaluar --predicciones <archivo> --experimento E1    # con r
 | `src/fase6/prompts/` | Prompts del juez y del corruptor |
 
 El detalle, con el protocolo completo, está en **[docs/fase6.md](docs/fase6.md)**.
+
+## Fase 7 — Escalar a diez millones de documentos
+
+Esta fase es solo de diseño: no se procesaron diez millones de documentos. Explica cómo crecería el mismo flujo sin comparar todo contra todo ni hacer llamadas ilimitadas a LLM.
+
+**Lo que ya está preparado en el código:**
+- **Cada resultado tiene una clave estable.** Las llamadas a LLM se guardan con un hash del prompt, el esquema y el modelo, y los documentos con su hash. Reintentar no duplica nada, y si cambia una fuente, un prompt o una regla, solo se repite lo que depende de ese cambio.
+- **Cada etapa se puede retomar.** Se comprobó en la práctica: la calibración se cortó al agotarse los créditos de la API después de 64 llamadas, se retomó con otro backend y solo hizo las 50 que faltaban. `--solo-cache` reproduce cada fase byte a byte sin llamar a ningún LLM.
+- **Primero lo barato.** Los controles deterministas (formato, citas, hashes, aislamiento) van antes que cualquier LLM, y el verificador evalúa en grupos de casos del mismo software, lo que redujo sus tokens a una quinta parte.
+
+**Cuellos de botella:**
+
+| Etapa | En la muestra | A diez millones | Cómo se probaría |
+|---|---|---|---|
+| Ingesta | Se lee todo `docs_raw/` cada vez | Manifiesto particionado por hash; solo se procesan los archivos nuevos o modificados | Modificar una fuente invalida solo sus derivados (T7.3) |
+| Deduplicación | Hash exacto y comparación de líneas entre todos los software | Hash para copias exactas; MinHash + LSH para generar candidatos a casi duplicados, verificados antes de agrupar | Dos copias en particiones distintas terminan en el mismo grupo (T7.4) |
+| Separación en conjuntos | Búsqueda exhaustiva (3⁸ combinaciones) | Asignación voraz, ya implementada y probada con 200 software simulados. Los grupos se resuelven de forma global y se versionan. Un archivo nuevo que conecte train con test queda en cuarentena | Ya cubierto por los tests de la fase 2 |
+| Auditoría con LLM | Una llamada por software y versión, ~30 en total | Por lotes, con límites de concurrencia y de tokens. Las copias heredan la auditoría del original | Al agotarse el presupuesto se detiene y lista lo pendiente (T7.5) |
+| Generación y verificación | 464 + 56 llamadas para 386 casos aceptados | Se genera una muestra de las secciones, no todas, y se verifica por grupos | Throughput, latencia y fallos con volumen creciente (T7.6) |
+
+**Estimación parametrizada.** Las proporciones salen de la muestra; el resto son supuestos que habría que validar con una muestra mayor:
+
+| Paso | Fórmula | En la muestra |
+|---|---|---|
+| Documentos únicos | N × u | u = 53/74 ≈ 0,72 (a escala suele ser menor) |
+| Tokens de auditoría | 2 × tokens únicos (dos LLM leen todo una vez) | 222 KB únicos → ~65 mil tokens, ~130 mil leídos |
+| Secciones aprovechables | N × u × 4,9 secciones/documento × 0,69 | 250 de 360 |
+| Casos | 2 × secciones aprovechables × a (fracción que se decide generar) | a = 1 en la muestra |
+| Llamadas | 1,2 al generador por caso + 1 al verificador cada ~7 casos | 464 + 56 para 412 tareas |
+| Aceptados | ~94% de los casos | 386 de 412 |
+
+Por ejemplo, con N = 10 millones, u = 0,5 y a = 1% serían unas 17 millones de secciones aprovechables, unos 340 mil casos, unas 410 mil llamadas al generador y unas 46 mil al verificador. La auditoría seguiría leyendo todo el contenido único: es el costo dominante, y la razón para auditar con el modelo más barato que pase la calibración. **No es un resultado medido**, y no se debe suponer que escale de forma lineal sin probarlo antes con una muestra mayor.
 
 ## Reproducir y verificar los resultados
 
