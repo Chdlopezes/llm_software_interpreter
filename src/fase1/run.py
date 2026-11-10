@@ -8,7 +8,7 @@ Pasos:
     2. restrictions       data/fase1/restricciones.jsonl y huecos.jsonl
     3. tool               data/fase1/llamadas.jsonl
     4. reference_examples data/fase1/ejemplos_referencia.jsonl (validados contra el contrato)
-    5. report             reports/fase1/estadisticas.md
+    5. report             data/reportes/fase1/estadisticas.md
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ def main() -> int:
         step.main()
     report.write_report()
     print(f"Reporte → {report.REPORT_PATH.relative_to(ROOT)}")
-    print("Fase 1 terminada. Para comprobar que el resultado es el entregado: git status --short data/ reports/")
+    print("Fase 1 terminada. Para comprobar que el resultado es el entregado: git status --short data/")
     return 0
 
 

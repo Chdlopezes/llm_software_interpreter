@@ -28,7 +28,7 @@ Se ejecuta con dos comandos:
 | Comando | Qué hace |
 |---|---|
 | `python -m src.fase0.run` ([`run.py`](../src/fase0/run.py)) | Pasos 1 a 4 y genera `data/fase0/human_review.csv` con las secciones en las que A y B dan estados distintos. |
-| `python -m src.fase0.finalize` ([`finalize.py`](../src/fase0/finalize.py)) | Se ejecuta después de rellenar el CSV. Pasos 5 y 6, y genera `reports/fase0/estadisticas.md`. |
+| `python -m src.fase0.finalize` ([`finalize.py`](../src/fase0/finalize.py)) | Se ejecuta después de rellenar el CSV. Pasos 5 y 6, y genera `data/reportes/fase0/estadisticas.md`. |
 
 Cada paso también se puede ejecutar por separado, con los comandos indicados en su sección. Es útil para depurar o para probar con una sola versión.
 
@@ -333,7 +333,7 @@ Si algo falla, el proceso termina con error y lista las secciones afectadas. No 
 | `data/fase0/section_status.jsonl` | **La salida principal de la fase 0, la que usarán las fases siguientes.** Una línea por sección con: procedencia (`file`, `line_start`, `line_end`), `estado`, `categoria`, `origen`, `motivo_revision`, `decision` (`A`, `B` o vacío si A y B coincidieron), `afirmaciones_excluidas`, los veredictos completos de A y de B, y `heredada_de`. |
 | `data/fase0/gaps.jsonl` | Huecos con su descripción, evidencia, sección, si están `confirmado`s y la explicación de B. |
 | `data/fase0/human_review.csv` | Cola de revisión, con las decisiones tomadas. |
-| `reports/fase0/estadisticas.md` | Estadísticas principales, para el reporte final: corpus, chequeos, uso de los LLM, acuerdo entre A y B (con la matriz de estados), decisiones humanas y por defecto, etiqueta final por versión y por categoría, motivos, material disponible para generar datos y huecos confirmados. |
+| `data/reportes/fase0/estadisticas.md` | Estadísticas principales, para el reporte final: corpus, chequeos, uso de los LLM, acuerdo entre A y B (con la matriz de estados), decisiones humanas y por defecto, etiqueta final por versión y por categoría, motivos, material disponible para generar datos y huecos confirmados. |
 
 ### 5.6 Inspeccionar secciones en la terminal
 

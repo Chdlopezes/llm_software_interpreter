@@ -14,7 +14,7 @@ No entrena ningún modelo. Hace, de forma determinista:
    reservado). Si alguno falla, el script termina con error.
 
 Salidas: data/fase5/entradas_validation.jsonl, entradas_test.jsonl, experimentos.json y
-reports/fase5/estadisticas.md.
+data/reportes/fase5/estadisticas.md.
 """
 
 from __future__ import annotations
@@ -142,14 +142,14 @@ def main() -> int:
     errors += errores_diseno(cfg, budget, data["train"])
     (FASE5 / "experimentos.json").write_text(json.dumps({"config": cfg, "presupuesto": budget},
                                                         ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    write_report(ROOT / "reports" / "fase5" / "estadisticas.md", cfg, budget, data)
+    write_report(ROOT / "data" / "reportes" / "fase5" / "estadisticas.md", cfg, budget, data)
 
     for name in ("E1", "E2"):
         b = budget[name]
         print(f"{name}: {b['conversaciones']} conversaciones · {b['epocas']} épocas · {b['pasos']} pasos · "
               f"{b['tokens_supervisados_vistos']} tokens supervisados vistos")
     print(f"Entradas de inferencia → data/fase5/entradas_validation.jsonl ({len(data['validation'])}), "
-          f"entradas_test.jsonl ({len(data['test'])}) · Reporte → reports/fase5/estadisticas.md")
+          f"entradas_test.jsonl ({len(data['test'])}) · Reporte → data/reportes/fase5/estadisticas.md")
     if errors:
         print("[error] El diseño no pasa los controles:")
         print("\n".join(f"  - {e}" for e in errors))

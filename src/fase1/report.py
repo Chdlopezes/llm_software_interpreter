@@ -1,4 +1,4 @@
-"""Estadísticas de la fase 1, en reports/fase1/estadisticas.md. Determinista (sin fechas)."""
+"""Estadísticas de la fase 1, en data/reportes/fase1/estadisticas.md. Determinista (sin fechas)."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from src.fase1.reference_examples import REFERENCE_PATH, REFERENCE_SOFTWARE
 from src.fase1.restrictions import GAPS_PATH, RESTRICTIONS_PATH
 from src.fase1.tool import CALLS_PATH, CHARS_PER_TOKEN, MAX_CONTEXT_TOKENS, RESERVED_TOKENS
 
-REPORT_PATH = ROOT / "reports" / "fase1" / "estadisticas.md"
+REPORT_PATH = ROOT / "data" / "reportes" / "fase1" / "estadisticas.md"
 TYPES = ["texto", "tabla", "codigo", "diagrama", "especificacion", "formula"]
 
 

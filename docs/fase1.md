@@ -23,7 +23,7 @@ La fase 1 prepara todo lo que necesita la generación de conversaciones, **sin g
 | 2. Restricciones | `src/fase1/restrictions.py` | `data/fase1/restricciones.jsonl`, `data/fase1/huecos.jsonl` |
 | 3. Herramienta | `src/fase1/tool.py` | `data/fase1/llamadas.jsonl` |
 | 4. Ejemplos de referencia | `src/fase1/reference_examples.py`, validados con `src/fase1/validate.py` | `data/fase1/ejemplos_referencia.jsonl` |
-| 5. Reporte | `src/fase1/report.py` | `reports/fase1/estadisticas.md` |
+| 5. Reporte | `src/fase1/report.py` | `data/reportes/fase1/estadisticas.md` |
 
 `src/fase1/run.py` ejecuta los cinco pasos en orden. Si falta la salida de la fase 0, termina con un error.
 
@@ -270,7 +270,7 @@ Tienen dos usos: ejemplos dentro del prompt del generador (fase 3) y fixtures de
 
 ## 7. Resultado sobre el corpus entregado
 
-Las cifras completas están en [reports/fase1/estadisticas.md](../reports/fase1/estadisticas.md):
+Las cifras completas están en [data/reportes/fase1/estadisticas.md](../data/reportes/fase1/estadisticas.md):
 
 - **Catálogo:**
   - 74 documentos, 9.180 líneas y ~310.000 caracteres;
@@ -320,7 +320,7 @@ La fase 1 solo lee `docs_raw/` y las salidas de la fase 0. No usa LLM ni depende
 
 ```bash
 python -m src.fase1.run
-git status --short data/ reports/
+git status --short data/
 ```
 
 Si `git status` no muestra nada, los archivos son idénticos byte a byte a los entregados.

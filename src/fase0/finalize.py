@@ -15,7 +15,7 @@ No llama a ningún LLM y es determinista. Tiene dos partes:
    cobertura (paso 6) y escribe:
        data/fase0/section_status.jsonl  etiqueta final de cada sección
        data/fase0/gaps.jsonl            huecos de documentación
-       reports/fase0/estadisticas.md    estadísticas principales de la fase 0
+       data/reportes/fase0/estadisticas.md    estadísticas principales de la fase 0
 
 Reglas de la etiqueta final:
 - A y B dan el mismo estado (y sus respuestas son válidas) -> estado y categoría de A.

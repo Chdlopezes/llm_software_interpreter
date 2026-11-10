@@ -1,4 +1,4 @@
-"""Estadísticas de la fase 2, en reports/fase2/estadisticas.md. Determinista (sin fechas)."""
+"""Estadísticas de la fase 2, en data/reportes/fase2/estadisticas.md. Determinista (sin fechas)."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from src.fase0.label import ROOT
 from src.fase0.report import table
 from src.fase2.split import CONTENT_TYPES, SETS, TARGET
 
-REPORT_PATH = ROOT / "reports" / "fase2" / "estadisticas.md"
+REPORT_PATH = ROOT / "data" / "reportes" / "fase2" / "estadisticas.md"
 
 # Qué hace falta en un conjunto para poder plantear cada tipo de pregunta.
 SITUATION_NEEDS = [

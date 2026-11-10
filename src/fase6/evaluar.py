@@ -210,7 +210,7 @@ def main() -> int:
     write_jsonl(out / "judgments.jsonl", [{k: v for k, v in r.items() if k not in ("caso", "documentos")}
                                          for r in resultados])
     (out / "metricas.json").write_text(json.dumps(met, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    write_report(ROOT / "reports" / "fase6" / f"evaluacion_{args.experimento}_{args.conjunto}.md",
+    write_report(ROOT / "data" / "reportes" / "fase6" / f"evaluacion_{args.experimento}_{args.conjunto}.md",
                  args.experimento, args.conjunto, met)
     print(f"{len(resultados)} casos evaluados · llamadas nuevas al juez: {nuevas} · "
           f"aprobados: {fmt(met['total']['aprobados'])}")

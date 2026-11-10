@@ -93,7 +93,7 @@ def main() -> int:
     write_jsonl(out_dir / "generation_log.jsonl", log)
     (out_dir / "coverage_report.json").write_text(json.dumps(cov, ensure_ascii=False, indent=1) + "\n",
                                                   encoding="utf-8")
-    report_path = ROOT / "reports" / "fase3" / (f"{sub}.md" if sub else "estadisticas.md")
+    report_path = ROOT / "data" / "reportes" / "fase3" / (f"{sub}.md" if sub else "estadisticas.md")
     report.write_report(report_path, results, cov, verifications)
 
     nuevas = out["nuevas"]

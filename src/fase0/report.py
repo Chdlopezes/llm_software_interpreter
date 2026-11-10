@@ -1,4 +1,4 @@
-"""Estadísticas principales de la fase 0, en reports/fase0/estadisticas.md.
+"""Estadísticas principales de la fase 0, en data/reportes/fase0/estadisticas.md.
 
 Lo genera src.fase0.finalize al terminar. Es determinista (no incluye fechas), así
 que se puede comparar con la versión entregada con `git status`.
@@ -11,7 +11,7 @@ from pathlib import Path
 
 from src.fase0.label import CATEGORIAS, ESTADOS, FASE0, MOTIVOS, ROOT, read_jsonl
 
-REPORT_PATH = ROOT / "reports" / "fase0" / "estadisticas.md"
+REPORT_PATH = ROOT / "data" / "reportes" / "fase0" / "estadisticas.md"
 
 
 def pct(n: int, total: int) -> str:

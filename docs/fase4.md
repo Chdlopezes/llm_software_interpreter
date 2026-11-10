@@ -64,7 +64,7 @@ La fase 3 dedujo copias por archivo, no por sección. Cuando una sección es id�
 - Las líneas citadas son la mejor señal: reconocen el mismo contenido aunque la pregunta esté parafraseada o en otro idioma.
 - La respuesta parecida solo se compara entre casos de la misma sección. Entre secciones distintas daría falsos positivos, porque todas las aclaraciones de `falta_software` son casi iguales («¿Sobre qué software es tu consulta?»), y la guía advierte que eso no es un duplicado.
 
-**Resultado.** Se eliminaron 21 duplicados: 19 en `train`, 1 en `validation` y 1 en `test`. La lista, con el motivo de cada uno, está en [reports/fase4/estadisticas.md](../reports/fase4/estadisticas.md). Queda una paráfrasis sin detectar que se vio en la revisión (`train-sin_version-026` / `-034`, sobre el manejo de errores): cita líneas distintas y su texto se parece poco.
+**Resultado.** Se eliminaron 21 duplicados: 19 en `train`, 1 en `validation` y 1 en `test`. La lista, con el motivo de cada uno, está en [data/reportes/fase4/estadisticas.md](../data/reportes/fase4/estadisticas.md). Queda una paráfrasis sin detectar que se vio en la revisión (`train-sin_version-026` / `-034`, sobre el manejo de errores): cita líneas distintas y su texto se parece poco.
 
 **Entre conjuntos no hay duplicados posibles.** La fase 2 reparte software completos, y el control de aislamiento comprueba que ningún caso reciba documentos de otro conjunto.
 
@@ -118,7 +118,7 @@ Las 10 situaciones están en los tres conjuntos. Los duplicados se concentraban 
 - **Ninguna conversación supera los 23.000 tokens.** Todas caben en el presupuesto de 32.768 de la fase 1.
 - **Casi todo el texto son documentos.** Los tokens supervisados (la llamada y la respuesta) son unos 250 por conversación. Para entrenar habrá que elegir una longitud máxima de al menos 24.576 tokens; si se cortaran las conversaciones, se perdería justo la respuesta, que va al final.
 
-Las cifras exactas están en [reports/fase4/estadisticas.md](../reports/fase4/estadisticas.md).
+Las cifras exactas están en [data/reportes/fase4/estadisticas.md](../data/reportes/fase4/estadisticas.md).
 
 ## 7. Salidas
 
@@ -131,7 +131,7 @@ Las cifras exactas están en [reports/fase4/estadisticas.md](../reports/fase4/es
 | `data/fase4/revision_humana.csv` | Las decisiones de la revisión humana de validation y test |
 | `data/fase4/dataset_report.json` | Contabilidad, y por conjunto: situaciones, idiomas, tipos de evidencia, software, tokens y revisión humana |
 | `data/fase4/dataset_manifest.json` | Hash y número de filas de cada archivo exportado, hashes de las entradas, del contrato y de los prompts, modelos de la fase 3, tokenizer y versión de `transformers` |
-| `reports/fase4/estadisticas.md` | Las mismas cifras en tablas, con la lista de duplicados |
+| `data/reportes/fase4/estadisticas.md` | Las mismas cifras en tablas, con la lista de duplicados |
 
 **Por qué los tres conjuntos tienen el mismo formato.** `validation` también se usa durante el entrenamiento, para calcular la pérdida en datos no vistos, y para eso necesita la conversación completa. `test` tiene el mismo formato por simplicidad. Que el modelo no vea su referencia lo garantiza el adaptador de evaluación, que corta la conversación antes de la llamada a la herramienta.
 
@@ -165,7 +165,7 @@ Las cifras exactas están en [reports/fase4/estadisticas.md](../reports/fase4/es
 
 ```bash
 python -m src.fase4.run
-git status --short data/ reports/
+git status --short data/
 ```
 
 Si `git status` no muestra nada, los datasets son idénticos byte a byte a los entregados. La primera ejecución descarga el tokenizer de Qwen3.5 (unos 13 MB) desde Hugging Face en la revisión fija; después se usa la copia local.

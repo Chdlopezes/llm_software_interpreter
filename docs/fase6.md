@@ -82,7 +82,7 @@ Con el mismo material se prueba también al **verificador** de la fase 3 (T4.2�
 
 15 casos (13 de `validation` y 2 de `train` para la mezcla de versiones) y 57 variantes. El juez, en su versión final, evaluó cada variante dos veces: con los criterios en el orden original y en orden inverso.
 
-![Matriz de confusión del juez](../reports/fase6/calibracion_matriz_todas.svg)
+![Matriz de confusión del juez](../data/reportes/fase6/calibracion_matriz_todas.svg)
 
 **Cómo leer la matriz:**
 - Cada fila es lo que el juez **debía** decir; cada columna, lo que **dijo**.
@@ -125,7 +125,7 @@ Con el juez calibrado, así se evaluarían B0, E1 y E2:
    python -m src.fase6.evaluar --predicciones runs/E1/predicciones_validation.jsonl --experimento E1
    ```
 
-   Aplica los controles por código y el juez, y escribe `data/fase6/evaluaciones/E1/validation/judgments.jsonl` (cada juicio, con sus etiquetas y su evidencia) y `metricas.json`, más el reporte en `reports/fase6/`.
+   Aplica los controles por código y el juez, y escribe `data/fase6/evaluaciones/E1/validation/judgments.jsonl` (cada juicio, con sus etiquetas y su evidencia) y `metricas.json`, más el reporte en `data/reportes/fase6/`.
 3. **Métricas**, siempre con numerador y denominador, en total y por situación:
 
 | Métrica | Cálculo |
@@ -186,7 +186,7 @@ Cambiar el buscador cambia qué recibe el modelo y cómo se puntúa la recuperac
 | `data/fase6/calibracion/variantes.jsonl` | Las variantes de calibración, con su tipo, el veredicto esperado y qué cambió |
 | `data/fase6/calibracion/etiquetas.csv` | La confirmación humana de cada variante |
 | `data/fase6/calibracion/juicios.jsonl`, `resumen.json` | Lo que dijo el juez de cada variante y el resumen |
-| `reports/fase6/calibracion.md` | Matriz de confusión, sensibilidad, especificidad, falsos aprobados, estabilidad y resultados del verificador |
+| `data/reportes/fase6/calibracion.md` | Matriz de confusión, sensibilidad, especificidad, falsos aprobados, estabilidad y resultados del verificador |
 | `data/fase6/cache/` | Respuestas del corruptor, del juez y del verificador (para `--solo-cache`) |
 | `data/fase6/evaluaciones/<experimento>/<conjunto>/` | Con predicciones reales: `judgments.jsonl` y `metricas.json` |
 

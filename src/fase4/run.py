@@ -11,7 +11,7 @@ Pasos, todos deterministas (sin LLM):
 5. Revisión humana: aplica las decisiones de data/fase4/revision_humana.csv (el archivo se crea
    la primera vez con los casos de validation y test, y se conservan las decisiones al regenerarlo).
 6. Exporta train/validation/test.jsonl, rejected.jsonl, dataset_report.json y
-   dataset_manifest.json, y escribe reports/fase4/estadisticas.md.
+   dataset_manifest.json, y escribe data/reportes/fase4/estadisticas.md.
 
 Cada candidato termina en exactamente un estado: aceptado (en su conjunto) o rechazado (con su motivo).
 """
@@ -178,7 +178,7 @@ def main() -> int:
     manifest = build_manifest(files, report, catalog)
     (FASE4 / "dataset_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n",
                                                  encoding="utf-8")
-    write_markdown(ROOT / "reports" / "fase4" / "estadisticas.md", report)
+    write_markdown(ROOT / "data" / "reportes" / "fase4" / "estadisticas.md", report)
 
     c = report["contabilidad"]
     print(f"Tareas: {c['tareas']} · aceptados: {c['aceptados']} · rechazados: {c['rechazados']} "
@@ -188,7 +188,7 @@ def main() -> int:
     pend = report["revision_humana"]["pendiente"]
     if pend:
         print(f"Revisión humana: {pend} casos de validation/test pendientes en {REVIEW_PATH.relative_to(ROOT)}")
-    print(f"Datasets → {FASE4.relative_to(ROOT)}/ · Reporte → reports/fase4/estadisticas.md")
+    print(f"Datasets → {FASE4.relative_to(ROOT)}/ · Reporte → data/reportes/fase4/estadisticas.md")
     if c["tareas"] != c["aceptados"] + c["rechazados"]:
         print("[error] La contabilidad no cuadra.")
         return 1

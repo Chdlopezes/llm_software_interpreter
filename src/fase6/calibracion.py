@@ -450,7 +450,7 @@ def main() -> int:
         write_jsonl(var_path.parent / "juicios.jsonl", juicios)
         (var_path.parent / "resumen.json").write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n",
                                                      encoding="utf-8")
-        report = ROOT / "reports" / "fase6" / (f"calibracion_{sub}.md" if sub else "calibracion.md")
+        report = ROOT / "data" / "reportes" / "fase6" / (f"calibracion_{sub}.md" if sub else "calibracion.md")
         write_report(report, res)
         t = res["todas"]
         print(f"Juez: {t['aciertos']}/{t['variantes'] - t['errores']} aciertos · falsos aprobados: "

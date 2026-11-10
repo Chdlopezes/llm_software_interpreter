@@ -165,4 +165,4 @@ Se guarda cada respuesta con el ID del caso, el experimento y la configuración 
 | `requirements-entrenamiento.txt` | Dependencias solo para entrenar: PyTorch, TRL, PEFT y `datasets` |
 | `data/fase5/entradas_validation.jsonl`, `entradas_test.jsonl` | Lo que recibirán los modelos en inferencia: `messages` hasta la pregunta y `tools` |
 | `data/fase5/experimentos.json` | La configuración y el presupuesto de cada experimento, con las conversaciones de `train` que usa |
-| `reports/fase5/estadisticas.md` | Experimentos, situaciones en el entrenamiento y entradas de inferencia |
+| `data/reportes/fase5/estadisticas.md` | Experimentos, situaciones en el entrenamiento y entradas de inferencia |

@@ -2,19 +2,43 @@
 
 Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de entrenamiento y evaluación para un modelo abierto pequeño. Cada fila de salida se puede rastrear hasta su archivo y sus líneas de origen.
 
-## Estado
+## Diseño general
 
-| Fase | Qué hace | Estado |
-|---|---|---|
-| Preparación | Entorno, configuración de los LLM y verificación | Hecha |
-| 0 — Auditoría | Etiqueta toda la documentación: qué es usable, qué no y por qué, y qué falta | Hecha |
-| 1 — Catálogo y contrato | Catálogo de documentos, herramienta de consulta y criterios para construir los ejemplos | Hecha |
-| 2 — Separación | Reparte los software en entrenamiento, validación y prueba | Hecha |
-| 3 — Generación | Genera y verifica las conversaciones candidatas de los tres conjuntos | Hecha |
-| 4 — Validación y exportación | Controles, duplicados, revisión humana y datasets finales para Qwen3.5 | Hecha |
-| 5 — Diseño del experimento | Baseline, entrenamiento con LoRA, ablación, inferencia y selección (sin entrenar) | Hecha |
-| 6 — Evaluación | Juez calibrado, métricas y diseño de la evaluación del modelo | Hecha |
-| 7 — Escalado | Cómo procesar diez millones de documentos (diseño) | Hecha |
+**Enfoque: SFT con la recuperación como herramienta.** El modelo no memoriza la documentación: la consulta. Ante una pregunta técnica, llama a la herramienta `obtener_documentacion(software, version)`, que en esta versión es un filtro simple que devuelve los documentos completos. Después lee los documentos y responde citando cada afirmación con su documento y sus líneas. Con SFT (*supervised fine-tuning*) se le enseña esa conducta completa:
+- buscar la fuente correcta;
+- responder solo con lo que dice la evidencia, citándola (trazabilidad);
+- cuando la evidencia no alcanza, decirlo y explicar qué falta, en lugar de inventar.
+
+Por eso cada ejemplo de entrenamiento es una conversación completa: pregunta → llamada a la herramienta con los argumentos correctos → documentos devueltos → respuesta con citas, o aclaración de lo que no se puede responder. Hay un ejemplo real, comentado, en [Un ejemplo de entrenamiento](#un-ejemplo-de-entrenamiento).
+
+**Por qué SFT y no *continued pretraining* (CPT).** El CPT entrena al modelo a predecir el texto de la documentación para que la absorba como conocimiento. Aquí eso no sirve, por cuatro razones:
+- La documentación cambia y tiene versiones: el conocimiento memorizado queda viejo y mezcla versiones.
+- Lo memorizado no se puede citar ni rastrear hasta una línea.
+- No enseña a decir «no está documentado».
+- No sirve para software que el modelo nunca vio.
+
+Lo que hay que enseñar es una conducta (consultar, leer, citar y abstenerse cuando corresponde), y eso se supervisa con SFT sobre conversaciones. El conocimiento llega en el momento de responder, por la herramienta. Así el mismo modelo sirve para documentación nueva o desconocida, que es la condición para escalar a millones de documentos.
+
+**Modelo: Qwen3.5-4B.** Es abierto (Apache 2.0) y pequeño (4.000 millones de parámetros), admite 262.144 tokens de contexto (nuestras conversaciones llegan a ~23.000) y su plantilla de chat soporta llamadas a herramientas. Para probar el entrenamiento sin GPU se usa `tiny-Qwen3_5ForConditionalGeneration-Think`, un modelo de prueba de Hugging Face (`trl-internal-testing`). Tiene la misma arquitectura, la misma plantilla de chat y el mismo vocabulario que el 4B, pero solo 2 capas y pesos aleatorios. No aprende nada útil, pero da un paso de entrenamiento real en CPU y comprueba que los datos, la máscara de pérdida y la configuración funcionan de punta a punta.
+
+**El flujo, fase por fase:**
+
+| Fase | Qué hace |
+|---|---|
+| 0. Auditoría | Parte toda la documentación en secciones y decide cuáles son fiables. Hay chequeos automáticos, y dos LLM de proveedores distintos: uno clasifica cada sección (usable, parcial o no usable, con el motivo: inconsistencias, contenido roto o incompleto, documentación que se anuncia y falta) y el otro revisa esa clasificación. Donde discrepan, decide una persona |
+| 1. Catálogo y contrato | Normaliza cada documento sin mover ninguna línea, para que las citas sigan apuntando al original: decodifica entidades HTML (`&gt;` → `>`), quita marcas de docsify e insignias, y oculta datos personales. Cada cambio queda registrado y se puede deshacer. Además excluye los archivos de navegación, marca las copias idénticas entre versiones por hash y clasifica cada documento por tipo de evidencia (texto, tabla, código, diagrama, OpenAPI, fórmula), para saber qué tipos de pregunta admite. También fija las reglas de los ejemplos |
+| 2. Separación | Reparte cada software entero en train, validation o test. Así ningún software aparece en dos conjuntos, la evaluación se hace sobre documentación que el modelo nunca vio, y cada conjunto tiene todos los tipos de contenido |
+| 3. Generación | Un LLM escribe los ejemplos de 10 situaciones: con evidencia suficiente, parcial o nula, con contradicciones, sin software o sin documentos. El código comprueba el formato y las citas mientras se generan, y otro LLM de otro proveedor verifica cada caso con la rúbrica de evaluación |
+| 4. Validación y exportación | Repite los controles, elimina casi duplicados, aplica la revisión humana y exporta los datasets en el formato del `SFTTrainer` de Hugging Face |
+| 5. Experimento | Define B0 (el modelo sin ajustar), E1 (SFT con todos los ejemplos) y E2 (una ablación) |
+| 6. Evaluación | Las reglas deterministas comprueban la recuperación y las citas: si llamó a la herramienta con los argumentos correctos, si recibió los documentos esperados y si las citas son válidas. Un LLM juez evalúa la calidad de la respuesta. Antes de usarlo se lo calibra: un LLM «corruptor» fabrica respuestas con errores conocidos (y paráfrasis correctas), y se mide si el juez las distingue |
+| 7. Escalado | Qué cambia para procesar millones de documentos |
+
+**La ablación (E2).** E2 se entrena **sin** los ejemplos de evidencia parcial o sin evidencia, pero se evalúa con el mismo conjunto completo que E1, que sí incluye esos casos. Así se mide qué aportan: si, al no haberlos visto, el modelo inventa respuestas donde debería decir que no puede responder. E2 ve el mismo número de ejemplos que E1, para que la diferencia no se deba al volumen.
+
+**Escalabilidad.** El diseño piensa en millones de documentos: claves estables por hash, reanudación, controles baratos antes de cualquier LLM y verificación por lotes. No todo escala tal cual: la fase 7 detalla qué habría que cambiar.
+
+Este fue el diseño que planteé; los scripts, los documentos generados y los tests fueron creados con [Claude Code](https://claude.com/claude-code).
 
 ## Estructura del repositorio
 
@@ -32,13 +56,16 @@ src/               Todo el código del flujo
   fase6/             Fase 6: juez, calibración y evaluación
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
-data/              Todas las salidas generadas por el flujo (se suben al repositorio)
-reports/           Estadísticas de cada fase, para el reporte final
+model_data/        Copia de los conjuntos finales (train, validation y test), para revisarlos fácilmente
+data/              Todas las salidas del flujo, incluidas las estadísticas de cada fase en data/reportes/ (se suben al repositorio)
+reports/           Presentación del proyecto (presentacion.pptx)
 docs/              Explicación detallada de cada fase y sus decisiones
 requirements.txt   Dependencias de Python, con versiones fijas
 requirements-entrenamiento.txt   Dependencias extra solo para entrenar (PyTorch, TRL, PEFT, datasets)
 .env.example       Plantilla de las variables de entorno (LLM y API keys)
 ```
+
+`model_data/` es solo una copia de `data/fase4/{train,validation,test}.jsonl` (211, 97 y 78 conversaciones), para que los conjuntos finales se puedan revisar sin recorrer el flujo. El flujo no la usa: cada fase sigue leyendo de `data/` y escribiendo en su carpeta. Si se vuelve a ejecutar la fase 4, la copia se actualiza con `cp data/fase4/{train,validation,test}.jsonl model_data/`.
 
 ## Requisitos
 
@@ -155,26 +182,7 @@ Este comando no llama a ningún LLM ni consume saldo. Comprueba:
 - que exista `docs_raw/`;
 - para cada LLM, lo que necesita su backend: la CLI instalada con sesión iniciada, o la API key definida.
 
-Si todo está bien, la salida termina así:
 
-```
-[ok] Python 3.x.x
-[ok] anthropic instalado
-[ok] openai instalado
-[ok] python-dotenv instalado
-[ok] pyyaml instalado
-[ok] pytest instalado
-[ok] LLM clasificador (fase 0: clasifica cada sección): claude_code:claude-opus-5-5
-[ok] LLM validador (fase 0: valida cada clasificación): codex:gpt-6.1-sol
-[ok] LLM generador (fase 3: genera las conversaciones candidatas): claude_code:claude-opus-5-5
-[ok] LLM verificador (fase 3: verifica cada candidato): codex:gpt-6.1-sol
-[ok] LLM corruptor (fase 6: escribe respuestas con errores deliberados para calibrar al juez): claude_code:claude-opus-5-5
-[ok] LLM juez (fase 6: evalúa las respuestas del modelo): codex:gpt-6.1-sol
-[ok] docs_raw/ encontrada (107 archivos)
-[ok] data/ disponible para las salidas
-
-Entorno listo. Para probar una llamada real: python -m src.check_setup --ping
-```
 
 Para confirmar que todos los LLM responden, haz una llamada mínima real a cada uno. Tarda unos segundos y consume muy pocos tokens:
 
@@ -182,16 +190,6 @@ Para confirmar que todos los LLM responden, haz una llamada mínima real a cada 
 python -m src.check_setup --ping
 ```
 
-```
-[ok] ping LLM clasificador (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.1s
-[ok] ping LLM validador (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.2s
-[ok] ping LLM generador (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.0s
-[ok] ping LLM verificador (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.3s
-[ok] ping LLM corruptor (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.1s
-[ok] ping LLM juez (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.2s
-
-Entorno listo.
-```
 
 Si algo falla, cada línea `[error]` indica qué falta y cómo corregirlo.
 
@@ -242,7 +240,7 @@ Aplica las decisiones, verifica que todas las secciones tengan una etiqueta fina
 |---|---|
 | `data/fase0/section_status.jsonl` | **Resultado de la fase 0.** Etiqueta final de cada sección, con su procedencia (archivo y líneas), su estado, su categoría y, si es `parcial`, las afirmaciones que no se deben usar. |
 | `data/fase0/gaps.jsonl` | Partes que la documentación anuncia y no cubre. |
-| `reports/fase0/estadisticas.md` | Estadísticas principales de la fase. |
+| `data/reportes/fase0/estadisticas.md` | Estadísticas principales de la fase. |
 
 El detalle de cada paso, los prompts, las reglas y el significado de cada archivo están en **[docs/fase0.md](docs/fase0.md)**.
 
@@ -302,7 +300,7 @@ python -m src.fase1.run
 | `data/fase1/llamadas.jsonl` | Cada llamada posible a la herramienta, con sus documentos y su tamaño estimado en tokens. |
 | `data/fase1/ejemplos_referencia.jsonl` | Las 10 conversaciones de referencia (una por situación), validadas contra el contrato. |
 | `src/fase1/contract/` | Prompt de sistema, reglas y esquemas de la conversación y del caso de evaluación. |
-| `reports/fase1/estadisticas.md` | Estadísticas de la fase. |
+| `data/reportes/fase1/estadisticas.md` | Estadísticas de la fase. |
 
 El detalle de cada paso está en **[docs/fase1.md](docs/fase1.md)**.
 
@@ -337,7 +335,7 @@ python -m src.fase2.run
 | Archivo | Contenido |
 |---|---|
 | `data/fase2/splits.json` | Asignación, perfil de cada software, cobertura y documentos de cada conjunto |
-| `reports/fase2/estadisticas.md` | Tipos de pregunta que permite cada conjunto, cobertura y fugas entre conjuntos |
+| `data/reportes/fase2/estadisticas.md` | Tipos de pregunta que permite cada conjunto, cobertura y fugas entre conjuntos |
 
 El detalle está en **[docs/fase2.md](docs/fase2.md)**.
 
@@ -373,7 +371,7 @@ python -m src.fase3.run            # corrida completa (usa la caché; solo llama
 | `data/fase3/candidatos.jsonl` | Conversación, caso de evaluación y veredicto de cada candidato |
 | `data/fase3/generation_log.jsonl` | Cada llamada al generador y al verificador, incluidos los rechazos |
 | `data/fase3/coverage_report.json` | Cuotas y resultados por conjunto y situación, y uso de cada sección |
-| `reports/fase3/estadisticas.md` | Resultado por situación, idioma, tipo de evidencia y calidad del generador |
+| `data/reportes/fase3/estadisticas.md` | Resultado por situación, idioma, tipo de evidencia y calidad del generador |
 
 Para ver ejemplos al azar, con las citas resueltas contra el documento: `python -m src.utils.show_example --conjunto test` (filtros por situación, idioma, software, tipo de evidencia, texto o casos rechazados; ver `--help`).
 
@@ -405,6 +403,36 @@ Los datos canónicos no cambian.
 
 Se rechazaron 26 de 412 tareas: 21 duplicados y las 5 omitidas en la fase 3. Ninguna conversación supera el presupuesto de 32.768 tokens.
 
+### Un ejemplo de entrenamiento
+
+Todo el flujo existe para producir filas como esta, así que conviene verla antes de entrar en los detalles. Es la fila `train-version_explicita-007` de `data/fase4/sft/train.jsonl`, tal como la recibe el `SFTTrainer`. Para que se lea mejor, están abreviados (`…`) el prompt de sistema, la salida de la herramienta y la definición de la herramienta. Debajo van las líneas citadas del documento que la contiene:
+
+```json
+{
+  "id": "train-version_explicita-007",
+  "messages": [
+    {"role": "system", "content": "Responde preguntas técnicas sobre software usando su documentación como evidencia. […] Cita cada afirmación técnica como [documento:Linicio-Lfin] […]"},
+    {"role": "user", "content": "En order-workflow-api 5.6.2-hotfix-1, ¿qué tipo de base de datos usa y en qué schema y cluster está, tanto en producción como en test?"},
+    {"role": "assistant", "content": "", "tool_calls": [{"type": "function", "function": {
+      "name": "obtener_documentacion",
+      "arguments": {"software": "order-workflow-api", "version": "5.6.2-hotfix-1"}}}]},
+    {"role": "tool", "name": "obtener_documentacion", "content": "{\"status\": \"ok\", \"documentos\": [ … 8 documentos completos de esa versión, entre ellos guide/services/database.md … ]}"},
+    {"role": "assistant", "content": "En los dos entornos la base de datos es MySQL. En producción usa el schema `fulfillment` en el cluster `orderworkflowapi00` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L4-L7]. En test usa el schema `fulfillment2` en el cluster `testenv02` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L9-L12]."}
+  ],
+  "tools": [{"type": "function", "function": {"name": "obtener_documentacion", "parameters": {"software": "…", "version": "… o null"}}}],
+  "chat_template_kwargs": {"enable_thinking": false}
+}
+```
+
+**Cómo leerlo:**
+- **Qué se entrena:** solo los dos mensajes del asistente, la llamada a la herramienta y la respuesta. El sistema, la pregunta y los documentos son contexto.
+- **La llamada lleva la versión** porque la pregunta la nombra. Si no la nombrara, iría `null` y la herramienta devolvería todas las versiones.
+- **La herramienta devuelve los 8 documentos completos de esa versión,** no solo el que hace falta. El modelo tiene que aprender a encontrar la evidencia, como en el uso real.
+- **Cada afirmación lleva su cita a líneas concretas,** y el código comprueba que existan, que estén en un documento recibido y que se puedan citar.
+- **El mismo caso tiene su versión de evaluación** en `data/fase4/train.jsonl`: la llamada esperada, los 8 documentos esperados, la procedencia de cada cita con su hash y los criterios del juez. Por ejemplo: «Indica que en test la base de datos es MySQL, con schema fulfillment2 y cluster testenv02» y «No mezcla los valores de producción y de test».
+
+En otras situaciones cambia la respuesta, no la estructura. Con evidencia parcial, responde lo documentado y declara lo que falta. Sin evidencia, dice que la documentación no lo permite responder. Si falta el software, pregunta por él sin llamar a la herramienta. Para ver más ejemplos: `python -m src.utils.show_example --conjunto train`.
+
 ```bash
 python -m src.fase4.run
 ```
@@ -416,7 +444,7 @@ python -m src.fase4.run
 | `data/fase4/rejected.jsonl` | Tareas rechazadas, con la etapa y el motivo |
 | `data/fase4/revision_humana.csv` | Decisiones de la revisión humana |
 | `data/fase4/dataset_report.json`, `dataset_manifest.json` | Conteos por conjunto, situación, idioma, evidencia y software; hashes de archivos, entradas, prompts y tokenizer |
-| `reports/fase4/estadisticas.md` | Las cifras en tablas y la lista de duplicados |
+| `data/reportes/fase4/estadisticas.md` | Las cifras en tablas y la lista de duplicados |
 
 El detalle está en **[docs/fase4.md](docs/fase4.md)**.
 
@@ -452,7 +480,7 @@ python -m src.fase5.entrenar --experimento E1              # en una GPU
 |---|---|
 | `data/fase5/entradas_validation.jsonl`, `entradas_test.jsonl` | Lo que recibirán los modelos en inferencia |
 | `data/fase5/experimentos.json` | Configuración y presupuesto (pasos, épocas, tokens) de cada experimento |
-| `reports/fase5/estadisticas.md` | Experimentos, situaciones de cada uno y entradas de inferencia |
+| `data/reportes/fase5/estadisticas.md` | Experimentos, situaciones de cada uno y entradas de inferencia |
 
 El detalle, con lo que está fijado y lo pendiente, está en **[docs/fase5.md](docs/fase5.md)**.
 
@@ -477,7 +505,7 @@ Antes de medir un modelo con un juez, hay que medir al juez. Se tomaron 15 casos
 
 Las variantes con error las escribe otro LLM, el corruptor (`LLM_CORRUPTOR_*`), y una persona las confirmó: 56 de 57, sin descartar ninguna.
 
-![Matriz de confusión del juez](reports/fase6/calibracion_matriz_todas.svg)
+![Matriz de confusión del juez](data/reportes/fase6/calibracion_matriz_todas.svg)
 
 **Cómo leer la matriz.** Las filas son lo que el juez debía decir y las columnas lo que dijo. La diagonal son los aciertos. La celda «debía fallar / dijo aprueba» son los falsos aprobados, el error más grave, porque inflarían las métricas del modelo.
 
@@ -522,7 +550,7 @@ python -m src.fase6.evaluar --predicciones <archivo> --experimento E1    # con r
 
 | Archivo | Contenido |
 |---|---|
-| `reports/fase6/calibracion.md` | Matriz de confusión, sensibilidad, especificidad, falsos aprobados, estabilidad y resultados del verificador |
+| `data/reportes/fase6/calibracion.md` | Matriz de confusión, sensibilidad, especificidad, falsos aprobados, estabilidad y resultados del verificador |
 | `data/fase6/calibracion/` | Variantes, confirmación humana (`etiquetas.csv`), juicios y resumen |
 | `src/fase6/prompts/` | Prompts del juez y del corruptor |
 
@@ -530,39 +558,19 @@ El detalle, con el protocolo completo, está en **[docs/fase6.md](docs/fase6.md)
 
 ## Fase 7 — Escalar a diez millones de documentos
 
-Esta fase es solo de diseño: no se procesaron diez millones de documentos. Explica cómo crecería el mismo flujo sin comparar todo contra todo ni hacer llamadas ilimitadas a LLM.
+Esta fase es solo de diseño. Así se llevaría el mismo flujo a millones de documentos:
 
-**Lo que ya está preparado en el código:**
-- **Cada resultado tiene una clave estable.** Las llamadas a LLM se guardan con un hash del prompt, el esquema y el modelo, y los documentos con su hash. Reintentar no duplica nada, y si cambia una fuente, un prompt o una regla, solo se repite lo que depende de ese cambio.
-- **Cada etapa se puede retomar.** Se comprobó en la práctica: la calibración se cortó al agotarse los créditos de la API después de 64 llamadas, se retomó con otro backend y solo hizo las 50 que faltaban. `--solo-cache` reproduce cada fase byte a byte sin llamar a ningún LLM.
-- **Primero lo barato.** Los controles deterministas (formato, citas, hashes, aislamiento) van antes que cualquier LLM, y el verificador evalúa en grupos de casos del mismo software, lo que redujo sus tokens a una quinta parte.
+- **Procesar solo lo nuevo.** Cada documento y cada resultado se identifican por su hash. Al llegar documentación nueva o modificada, solo se reprocesa eso y lo que depende de ello; lo demás sale de la caché.
+- **Deduplicar sin comparar todo contra todo.** El hash detecta las copias exactas y MinHash con LSH los casi duplicados, que se verifican antes de agruparlos. La separación en conjuntos se resuelve de forma global, para que dos copias nunca terminen en conjuntos distintos.
+- **Primero lo barato, después el LLM.** Los controles deterministas filtran antes de cualquier llamada. Las llamadas van por lotes, con límites de concurrencia y presupuesto, y las copias heredan el resultado del original.
+- **Muestrear en lugar de generar todo.** No hace falta un ejemplo por cada sección: basta una muestra que cubra todos los tipos de contenido y de situación.
+- **Medir por etapa y poder retomar.** Se registran documentos por segundo, tokens, errores y costo por ejemplo aceptado, y cada etapa se puede retomar donde se cortó. Esto último ya se comprobó: cuando se agotaron los créditos de la API, la calibración se retomó sin repetir ninguna llamada.
 
-**Cuellos de botella:**
-
-| Etapa | En la muestra | A diez millones | Cómo se probaría |
-|---|---|---|---|
-| Ingesta | Se lee todo `docs_raw/` cada vez | Manifiesto particionado por hash; solo se procesan los archivos nuevos o modificados | Modificar una fuente invalida solo sus derivados (T7.3) |
-| Deduplicación | Hash exacto y comparación de líneas entre todos los software | Hash para copias exactas; MinHash + LSH para generar candidatos a casi duplicados, verificados antes de agrupar | Dos copias en particiones distintas terminan en el mismo grupo (T7.4) |
-| Separación en conjuntos | Búsqueda exhaustiva (3⁸ combinaciones) | Asignación voraz, ya implementada y probada con 200 software simulados. Los grupos se resuelven de forma global y se versionan. Un archivo nuevo que conecte train con test queda en cuarentena | Ya cubierto por los tests de la fase 2 |
-| Auditoría con LLM | Una llamada por software y versión, ~30 en total | Por lotes, con límites de concurrencia y de tokens. Las copias heredan la auditoría del original | Al agotarse el presupuesto se detiene y lista lo pendiente (T7.5) |
-| Generación y verificación | 464 + 56 llamadas para 386 casos aceptados | Se genera una muestra de las secciones, no todas, y se verifica por grupos | Throughput, latencia y fallos con volumen creciente (T7.6) |
-
-**Estimación parametrizada.** Las proporciones salen de la muestra; el resto son supuestos que habría que validar con una muestra mayor:
-
-| Paso | Fórmula | En la muestra |
-|---|---|---|
-| Documentos únicos | N × u | u = 53/74 ≈ 0,72 (a escala suele ser menor) |
-| Tokens de auditoría | 2 × tokens únicos (dos LLM leen todo una vez) | 222 KB únicos → ~65 mil tokens, ~130 mil leídos |
-| Secciones aprovechables | N × u × 4,9 secciones/documento × 0,69 | 250 de 360 |
-| Casos | 2 × secciones aprovechables × a (fracción que se decide generar) | a = 1 en la muestra |
-| Llamadas | 1,2 al generador por caso + 1 al verificador cada ~7 casos | 464 + 56 para 412 tareas |
-| Aceptados | ~94% de los casos | 386 de 412 |
-
-Por ejemplo, con N = 10 millones, u = 0,5 y a = 1% serían unas 17 millones de secciones aprovechables, unos 340 mil casos, unas 410 mil llamadas al generador y unas 46 mil al verificador. La auditoría seguiría leyendo todo el contenido único: es el costo dominante, y la razón para auditar con el modelo más barato que pase la calibración. **No es un resultado medido**, y no se debe suponer que escale de forma lineal sin probarlo antes con una muestra mayor.
+El código ya incluye las bases: claves estables por hash, caché por llamada, reanudación y verificación por lotes. Lo que falta para la escala real es la infraestructura: colas, almacenamiento particionado y ejecución distribuida.
 
 ## Reproducir y verificar los resultados
 
-Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
+Todas las salidas están commiteadas en `data/` (las estadísticas de cada fase, en `data/reportes/`). Para comprobar que obtienes exactamente los mismos resultados:
 
 ```bash
 python -m src.fase0.run
@@ -573,7 +581,7 @@ python -m src.fase3.run --solo-cache
 python -m src.fase4.run
 python -m src.fase5.run
 python -m src.fase6.calibracion --juzgar --estabilidad --verificador --solo-cache
-git status --short data/ reports/
+git status --short data/
 ```
 
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.

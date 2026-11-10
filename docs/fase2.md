@@ -80,7 +80,7 @@ El criterio y los datos son los mismos en los dos casos. Solo cambia la forma de
 
 El 60/20/20 exacto no se alcanza porque los software son piezas grandes: catalog-portfolio por sí solo es el 21% del material.
 
-**Tipos de pregunta por conjunto** (detalle en [reports/fase2/estadisticas.md](../reports/fase2/estadisticas.md)): los tres conjuntos permiten todos los tipos, con dos excepciones que no se pueden resolver con este corpus:
+**Tipos de pregunta por conjunto** (detalle en [data/reportes/fase2/estadisticas.md](../data/reportes/fase2/estadisticas.md)): los tres conjuntos permiten todos los tipos, con dos excepciones que no se pueden resolver con este corpus:
 
 - **Comparación de versiones con diferencias reales en `validation`.** Sus versiones son idénticas (catalog-portfolio), así que la respuesta correcta siempre será «no cambia».
 - **Preguntas sobre fórmulas fuera de `train`.** Hay una sola fórmula en todo el corpus.
@@ -96,7 +96,7 @@ El 60/20/20 exacto no se alcanza porque los software son piezas grandes: catalog
 | Archivo | Contenido |
 |---|---|
 | `data/fase2/splits.json` | Criterio aplicado, grupos, perfil de cada software, asignación, y por conjunto sus software, proporción, cobertura y documentos con su hash |
-| `reports/fase2/estadisticas.md` | Reparto, tipos de pregunta por conjunto, cobertura, perfiles y fugas entre conjuntos |
+| `data/reportes/fase2/estadisticas.md` | Reparto, tipos de pregunta por conjunto, cobertura, perfiles y fugas entre conjuntos |
 
 ## 5. Tests
 
@@ -112,7 +112,7 @@ El 60/20/20 exacto no se alcanza porque los software son piezas grandes: catalog
 
 ```bash
 python -m src.fase2.run
-git status --short data/ reports/
+git status --short data/
 ```
 
 Si `git status` no muestra nada, el reparto es idéntico al entregado.

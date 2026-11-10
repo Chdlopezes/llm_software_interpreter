@@ -3,7 +3,7 @@
 Uso, desde la raíz del repositorio (después de la fase 1):
     python -m src.fase2.run
 
-Escribe data/fase2/splits.json y reports/fase2/estadisticas.md.
+Escribe data/fase2/splits.json y data/reportes/fase2/estadisticas.md.
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ def main() -> int:
     split.main()
     report.write_report(split.build())
     print(f"Reporte → {report.REPORT_PATH.relative_to(ROOT)}")
-    print("Fase 2 terminada. Para comprobar que el resultado es el entregado: git status --short data/ reports/")
+    print("Fase 2 terminada. Para comprobar que el resultado es el entregado: git status --short data/")
     return 0
 
 

@@ -153,7 +153,7 @@ El riesgo de esta decisión es que el generador aprenda a contentar al verificad
   - generador: 464, de las cuales 15 fueron correcciones por errores de código;
   - verificador: 56, que hicieron 445 verificaciones de caso.
 - **Rechazos del verificador:** 38 (9%), resueltos casi todos en la ronda 2. Los criterios que más fallaron fueron `respaldo_citas` (20), `correccion_tecnica` (19) y `cobertura_citas` (17).
-- **Todas las situaciones están cubiertas en los tres conjuntos.** El detalle por situación, idioma y tipo de evidencia está en [reports/fase3/estadisticas.md](../reports/fase3/estadisticas.md).
+- **Todas las situaciones están cubiertas en los tres conjuntos.** El detalle por situación, idioma y tipo de evidencia está en [data/reportes/fase3/estadisticas.md](../data/reportes/fase3/estadisticas.md).
 
 **Omitidos.** De los 5, cuatro los descartó el propio generador porque la semilla no permitía un caso válido:
 - dos secciones casi vacías o cuyo único contenido técnico está en líneas no citables;
@@ -195,7 +195,7 @@ Los filtros se combinan entre sí. `python -m src.utils.show_example --help` los
 | `data/fase3/generation_log.jsonl` | Cada llamada al generador y al verificador: ronda, corrección, modelo, clave de caché y resultado; en el verificador, también el grupo y el veredicto completo, incluidos los rechazos |
 | `data/fase3/coverage_report.json` | Cuotas y resultados por conjunto y situación, idiomas, omitidos y uso de cada sección |
 | `data/fase3/cache/` | Respuestas de los LLM: `<tarea>.json` las del generador, `verificador/<clave>.json` las del verificador (una por grupo) |
-| `reports/fase3/estadisticas.md` | Resultado por conjunto y situación, idioma, tipo de evidencia, calidad del generador y omitidos |
+| `data/reportes/fase3/estadisticas.md` | Resultado por conjunto y situación, idioma, tipo de evidencia, calidad del generador y omitidos |
 
 ## 8. Tests
 
@@ -224,7 +224,7 @@ Los filtros se combinan entre sí. `python -m src.utils.show_example --help` los
 
 ```bash
 python -m src.fase3.run --solo-cache
-git status --short data/ reports/
+git status --short data/
 ```
 
 `--solo-cache` usa solo las respuestas guardadas y falla si falta alguna, así que no llama a ningún LLM ni necesita API keys. Tampoco depende del `.env`: usa los modelos registrados en `generation_log.jsonl`, que son los que produjeron las salidas (Claude Opus 5.5 y gpt-6-luna). Esto importa porque la clave de la caché incluye el modelo. Si `git status` no muestra nada, los candidatos son idénticos a los entregados.
