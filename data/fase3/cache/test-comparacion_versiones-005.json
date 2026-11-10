@@ -1,0 +1,26 @@
+{
+ "task_id": "test-comparacion_versiones-005",
+ "llamadas": [
+  {
+   "clave": "6c9299af4f0119ec1bcc397953854f23a1314d8229118ebcb00ba26f0658a2a3",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api, ¿cambia algo del Release Process entre la 0.2.2 y latest? Lo que me interesa sobre todo es qué imágenes base hay que poner en el Dockerfile y en el Dockerfile.runtime.",
+    "respuesta": "No. Las dos versiones documentan el Release Process igual, y las imágenes base son las mismas.\n\n- **Primer paso:** en las dos se pide poner el tag correcto en el `Dockerfile` y en el `Dockerfile.runtime` según la versión de Java que quieras usar [2p-revenue-optimizer-api/0.2.2/guide/README.md:L67-L67] [2p-revenue-optimizer-api/latest/guide/README.md:L67-L67].\n- **Dockerfile:** en las dos el ejemplo usa `FROM hub.vendorflow-cloud.io/vendorflow/java:17-mini` [2p-revenue-optimizer-api/0.2.2/guide/README.md:L69-L72] [2p-revenue-optimizer-api/latest/guide/README.md:L69-L72].\n- **Dockerfile.runtime:** en las dos el ejemplo usa `FROM hub.vendorflow-cloud.io/vendorflow/java:17-runtime-mini` [2p-revenue-optimizer-api/0.2.2/guide/README.md:L76-L79] [2p-revenue-optimizer-api/latest/guide/README.md:L76-L79].\n- **Tags disponibles:** las dos remiten a los mismos enlaces: el repositorio `vendorflow_java-mini` para el `Dockerfile` y `vendorflow_java-mini-runtime` para el `Dockerfile.runtime` [2p-revenue-optimizer-api/0.2.2/guide/README.md:L74-L74] [2p-revenue-optimizer-api/0.2.2/guide/README.md:L81-L81] [2p-revenue-optimizer-api/latest/guide/README.md:L74-L74] [2p-revenue-optimizer-api/latest/guide/README.md:L81-L81].\n- **Segundo paso y dudas:** el segundo paso es «Start coding!» en ambas, y las dos mandan las dudas al Release Process Issue Tracker [2p-revenue-optimizer-api/0.2.2/guide/README.md:L83-L87] [2p-revenue-optimizer-api/latest/guide/README.md:L83-L87].",
+    "answer_checks": [
+     "Llama con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que el Release Process no cambia entre 0.2.2 y latest.",
+     "Indica que el Dockerfile usa hub.vendorflow-cloud.io/vendorflow/java:17-mini y el Dockerfile.runtime usa hub.vendorflow-cloud.io/vendorflow/java:17-runtime-mini en ambas versiones.",
+     "Cita el README.md de ambas versiones (0.2.2 y latest).",
+     "No inventa diferencias ni tags adicionales que no aparecen en los documentos."
+    ]
+   }
+  }
+ ]
+}

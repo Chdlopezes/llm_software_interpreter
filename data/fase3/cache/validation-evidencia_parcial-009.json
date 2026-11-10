@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-009",
+ "llamadas": [
+  {
+   "clave": "1edf928bf6f4d628957ac700e3935fcd8b067c98ea75d6213ce7bbf9ab484a85",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For price-engine-api latest, what does the seller coverage GET endpoint return if the seller has no active coverage adjustments? Also, can you walk me through the internal flow of how the service decides which zones get moderated by coverage?",
+    "respuesta": "The endpoint is `GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1` [price-engine-api/latest/specs/swagger.yaml:L24-L25]. It returns an array of the seller's zones that are moderated by coverage [price-engine-api/latest/specs/swagger.yaml:L30-L31]. If the seller has no active coverage configuration adjustments, it returns an empty array [price-engine-api/latest/specs/swagger.yaml:L33-L34]. A successful response is a JSON array of strings, one per zone [price-engine-api/latest/specs/swagger.yaml:L86-L91] [price-engine-api/latest/specs/swagger.yaml:L132-L136].\n\nThe documentation I have doesn't explain the internal flow, meaning how the service decides which zones are moderated by coverage. The spec describes only what the endpoint returns, not the logic behind it, and I didn't find a functional description of that flow in the guide. So I can't walk you through it.",
+    "answer_checks": [
+     "States that when the seller has no active coverage adjustments the endpoint returns an empty array, citing the swagger spec.",
+     "Indicates that the endpoint returns an array of the seller's zones moderated by coverage.",
+     "Declares that the internal flow or logic for deciding which zones are moderated is not documented.",
+     "Does not invent steps, rules or business logic for how zones are selected or moderated.",
+     "Does not cite the placeholder lines of flujos.md or the non-citable SellerID/ServiceID parameter lines as support."
+    ]
+   }
+  }
+ ]
+}

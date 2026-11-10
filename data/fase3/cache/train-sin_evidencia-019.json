@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-019",
+ "llamadas": [
+  {
+   "clave": "85bfae88b71f3c7a8deedb24ac6f32e670dd22ddca7e8ca9fd8fb966de7eae4c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, how do I abort a pipeline that's already running? What's the sequence of calls between the services when it gets aborted?",
+    "respuesta": "I can't answer this from the 5.6.2-hotfix-1 documentation. None of the documents for that version say how a pipeline is aborted or which calls happen between services when it is.\n\nThe only pipeline flow the docs describe step by step is validation, and it has its own sequence diagram [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L109-L168]. In that flow, the Orchestrator starts the validation through BigQ, and the Workflow API then requests the pipeline information from the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L119-L125]. The abort sequence may follow a similar pattern, but the docs don't describe it, so I can't tell you what it looks like.",
+    "answer_checks": [
+     "Calls the tool with software order-workflow-api and version 5.6.2-hotfix-1.",
+     "States that the provided documentation does not describe how to abort a pipeline or the sequence of calls involved.",
+     "Does not invent an abort flow, endpoints, messages or participants for aborting a pipeline.",
+     "Does not claim that aborting a pipeline is unsupported or does not exist.",
+     "Any related information mentioned (e.g., the validate-pipeline flow) is cited to lines that actually contain it, without citing line 169."
+    ]
+   }
+  }
+ ]
+}

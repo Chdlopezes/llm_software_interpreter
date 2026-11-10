@@ -1,0 +1,26 @@
+{
+ "task_id": "test-software_en_historial-008",
+ "llamadas": [
+  {
+   "clave": "eda02a83b8379c4519c82bb92f9c425008c2052207fc0f5dc5e05653bc8bcfef",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con 2p-revenue-optimizer-api 0.2.2 y tengo que preparar un proceso que inserte reglas en sus tablas.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber de las tablas o del servicio y lo revisamos.",
+    "pregunta": "En la tabla rule_row, ¿qué tipo de dato tienen columnas como seller_id, brand o custom_fields? ¿Puedo dejarlas vacías?",
+    "respuesta": "En rule_row, seller_id (Sellers Ids), brand (Brands) y custom_fields (Custom Fields) son de tipo json y su restricción es Null, así que admiten valores nulos. Las demás columnas de filtro, site_id (Sites Ids), domain (Domains) e item (Items), siguen el mismo patrón: json y Null [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L11-L16]. En cambio, id (bigint, clave primaria autoincremental) y rule_id (bigint, clave foránea que referencia rule_header(id)) son Not null [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L9-L10].",
+    "answer_checks": [
+     "Llama a la herramienta con 2p-revenue-optimizer-api y la versión 0.2.2 del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que seller_id, brand y custom_fields son de tipo json y admiten Null.",
+     "Cita la tabla de rule_row de la versión 0.2.2 en las líneas de esas columnas (L11-L16).",
+     "No cita la línea 3 del documento rule_row ni presenta datos de la versión latest como si fueran de 0.2.2.",
+     "No inventa formatos internos del JSON ni valores por defecto que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

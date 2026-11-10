@@ -1,0 +1,20 @@
+{
+ "task_id": "validation-version_explicita-006",
+ "llamadas": [
+  {
+   "clave": "434efb3dec9cf40a57d0561977a29bfa8d2471a0c12d8a3825a6f0ded3c54635",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": true,
+    "motivo_omision": "La semilla es la sección «System Overview» (líneas 5-10 de catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md), y en ella no queda nada que se pueda preguntar y citar. El único contenido técnico está en la línea 7 (microservicio REST en Java con el framework Spark, gestión de marcas, alta disponibilidad), y esa línea es no citable. Probablemente lo es porque choca con la línea 67, que dice Javalin y tampoco es citable. Las demás líneas de la sección son el título (L5), líneas vacías y una frase genérica sin datos (L9: «This section provides a comprehensive overview...»). Cualquier pregunta sobre la sección tendría que apoyarse en la línea 7, o bien salir de otra sección y dejar de corresponder a la semilla. Por eso no se puede escribir un caso version_explicita válido.",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "",
+    "respuesta": "",
+    "answer_checks": []
+   }
+  }
+ ]
+}

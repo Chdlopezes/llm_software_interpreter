@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-004",
+ "llamadas": [
+  {
+   "clave": "c88ee709a4284c2da64c43eef7c2413d33796b0e2c071bd0ffa15ec644ba72cf",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, cuando preparo el monitoring_workflow con rda workflow prepare para que tome las task-images de desarrollo, ¿el parámetro ENV va como DEV o como dev?",
+    "respuesta": "La documentación no es coherente en este punto. Por un lado, dice que los entornos se separan con los tags de las task-images y que esos tags son _dev_ para desarrollo, _hml_ para staging y _prd_ para producción, en minúscula [demand-forecast-docs/latest/guide/overview.md:L148-L148]. Los ejemplos de creación de imágenes también los usan así, por ejemplo `--version 0.0.1-dev` [demand-forecast-docs/latest/guide/overview.md:L162-L162]. Por otro lado, el ejemplo de preparación del workflow pasa el parámetro en mayúscula, `--user-param ENV:DEV` [demand-forecast-docs/latest/guide/overview.md:L228-L228]. Luego explica que la versión se interpreta como \">=0.0.1, DEV\" y que se usará la imagen más reciente con el tag \"DEV\" [demand-forecast-docs/latest/guide/overview.md:L231-L231]. Como el valor de ENV se sustituye en la versión de la task-image (`\">=0.0.1, {{ ENV }}\"`) [demand-forecast-docs/latest/guide/overview.md:L214-L214], la diferencia entre mayúscula y minúscula importa. Con esta documentación no puedo confirmar cuál de las dos formas es la correcta, ni si la comparación de tags distingue entre mayúsculas y minúsculas.",
+    "answer_checks": [
+     "Indica que los tags de las task-images se documentan en minúscula (dev, hml, prd), citando la línea 148 o los ejemplos con -dev.",
+     "Señala que el ejemplo de rda workflow prepare pasa ENV:DEV en mayúscula, citando la línea 228 o la explicación de la línea 231.",
+     "Explica la discrepancia sin elegir DEV ni dev como valor correcto.",
+     "No afirma, sin respaldo, que la comparación de tags distinga o no entre mayúsculas y minúsculas."
+    ]
+   }
+  }
+ ]
+}

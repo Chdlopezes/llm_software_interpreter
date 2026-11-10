@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-003",
+ "llamadas": [
+  {
+   "clave": "9fe7c05e98387b8e481fb6fd2d6f375aeda8c44dc10f746baefa52c30ce0feef",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api viene documentada la URL base de Postman para el entorno de stage?",
+    "respuesta": "La URL base de Postman para stage aparece en el api.md de las cuatro versiones que devolvió la consulta, y en todas tiene el mismo valor: `vendor-stockkeeper-stage.techzoneoffice.com`. Para producción, la URL de Postman es `vendor-stockkeeper.techzoneoffice.com`.\n\n- 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L7-L9]\n- 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L7-L9]\n- 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L7-L9]\n- latest [vendor-stockkeeper-api/latest/guide/api.md:L7-L9]\n\nEn las cuatro versiones, esa misma sección de URL base también lista las URLs de TechZone Platform: `vendor-stockkeeper.techzonesystems.com` para prod y `vendor-stockkeeper-stage.techzonesystems.com` para stage [vendor-stockkeeper-api/latest/guide/api.md:L8].",
+    "answer_checks": [
+     "Identifica las versiones 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest como las que documentan la URL base de Postman.",
+     "Indica que la URL de Postman para stage es vendor-stockkeeper-stage.techzoneoffice.com y que no cambia entre versiones.",
+     "Cita el api.md (líneas de Base URL) de cada versión que menciona, o al menos de varias versiones.",
+     "No pide al usuario que indique una versión.",
+     "No confunde la URL de Postman con la de TechZone Platform (techzonesystems.com) ni con el host -test de los ejemplos curl."
+    ]
+   }
+  }
+ ]
+}

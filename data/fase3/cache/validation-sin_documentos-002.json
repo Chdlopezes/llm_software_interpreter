@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_documentos-002",
+ "llamadas": [
+  {
+   "clave": "cb98e0f0f1b0e258b45f4da87f4983ec2bf93e924f618ce2067d97519ee01030",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 9.4 me está saliendo el código de error database_error al crear marcas. ¿Qué suele causarlo y cómo lo resuelvo?",
+    "respuesta": "No he encontrado documentación de la versión 9.4 de catalog-portfolio-api en el catálogo, así que no puedo decirte qué causa el error database_error en esa versión ni cómo resolverlo. Si quieres, consulto la documentación de las versiones de catalog-portfolio-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 9.4, y recibe not_found.",
+     "Explica que no hay documentación de catalog-portfolio-api 9.4 en el catálogo.",
+     "No inventa causas ni soluciones del error database_error y no aporta datos de otras versiones como si fueran de la 9.4.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedirle al usuario que diga qué versión usa."
+    ]
+   }
+  }
+ ]
+}

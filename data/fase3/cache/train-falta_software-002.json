@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-002",
+ "llamadas": [
+  {
+   "clave": "c60d331fcef477dc6bd3c77bb7d13a47335175ec0e0329cedcc3b7d3edf461fa",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "If the username/password check on the sign-in endpoint fails, what status code do I get back and what does the response body look like?",
+    "respuesta": "Which software are you asking about?",
+    "answer_checks": [
+     "Does not call the documentation tool.",
+     "Asks the user which software the question is about.",
+     "Does not ask for the version.",
+     "Does not give a technical answer (no status codes, response formats or endpoint details)."
+    ]
+   }
+  }
+ ]
+}

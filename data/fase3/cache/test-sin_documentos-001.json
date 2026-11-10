@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_documentos-001",
+ "llamadas": [
+  {
+   "clave": "fe6c561b1c0d65c7e32e25bbf55f65739b1e043312fa6559619951c14afc7d06",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el chequeo de IPs bloqueadas de traffic-gate-api 3.1.0: ¿qué campo tengo que mandar en el body a /v1/blocked/ip y qué me devuelve aparte de si está bloqueada?",
+    "respuesta": "No encontré documentación de traffic-gate-api 3.1.0 en el catálogo, así que no puedo decirte qué campo lleva el body de /v1/blocked/ip en esa versión ni qué devuelve la respuesta. Si quieres, consulto la documentación de las versiones de traffic-gate-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión 3.1.0, y recibe not_found.",
+     "Explica que no hay documentación de traffic-gate-api para la versión 3.1.0.",
+     "No inventa el campo del body ni los campos de la respuesta de /v1/blocked/ip (por ejemplo, no menciona address ni web_acls como si fueran de la 3.1.0).",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no responde la parte técnica con datos de otra versión."
+    ]
+   }
+  }
+ ]
+}

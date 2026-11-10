@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-020",
+ "llamadas": [
+  {
+   "clave": "990c81fc56188321674f4d2eb8091abfc67f3f281361b81d0bc30be6293d9136",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cómo llamo con curl al endpoint de payment-promise-gateway que confirma una propuesta de condonación de recargos por mora? Quiero saber qué headers lleva y qué campos van en el cuerpo.",
+    "respuesta": "El ejemplo es el mismo en las dos versiones documentadas, 0.0.10-test-crc-migration y latest, así que no cambia de una a otra.\n\nPara confirmar la propuesta se hace un `PUT` a `${BASE_URL}/forgiveness_proposal` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L368-L370] [payment-promise-gateway/latest/guide/README.md:L368-L370]. En los ejemplos, `BASE_URL` apunta a `http://localhost:8080/payments/self-service` y el token se guarda en la variable `AUTH_TOKEN` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L313-L315] [payment-promise-gateway/latest/guide/README.md:L313-L315].\n\nLa petición lleva dos headers, `Authorization: Bearer ${AUTH_TOKEN}` y `Content-Type: application/json`. El cuerpo es un JSON con tres campos: `borrowerId`, `proposalId` y `siteId` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L370-L377] [payment-promise-gateway/latest/guide/README.md:L370-L377]. Los valores que aparecen en el ejemplo son solo ilustrativos.",
+    "answer_checks": [
+     "Indica que se usa el método PUT sobre /forgiveness_proposal, citando el bloque de ejemplos curl.",
+     "Menciona los headers Authorization con Bearer token y Content-Type: application/json.",
+     "Enumera los campos del cuerpo borrowerId, proposalId y siteId.",
+     "Indica que el ejemplo no cambia entre 0.0.10-test-crc-migration y latest, sin atribuirlo solo a una versión.",
+     "No presenta los valores de ejemplo (identificadores, sitio) como valores obligatorios o reales."
+    ]
+   }
+  }
+ ]
+}

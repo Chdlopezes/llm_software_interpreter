@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-014",
+ "llamadas": [
+  {
+   "clave": "f02f680ae797a9fc7570027e9aa88526635441ff0799b86c8187e5b5f6e59fc1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy empezando a contribuir al repo de marketplace forecasting y voy a seguir la guía de demand-forecast-docs en su versión latest para organizar mis ramas.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber sobre el flujo de trabajo y lo consulto en la documentación.",
+    "pregunta": "Ya me aprobaron el PR de mi feature contra develop. ¿Cómo sigo para llevarlo a master? Me interesa sobre todo cómo nombro la rama release y quién aprueba ese último PR.",
+    "respuesta": "Una vez aprobado el PR de la feature, el siguiente paso es crear una rama release y fusionarla con master. Primero te cambias a develop y lo actualizas con `git checkout develop` y `git pull` [demand-forecast-docs/latest/guide/overview.md:L36-L43].\n\nDespués creas la rama release subiendo la versión respecto a la release anterior. Para saber qué versión toca, puedes preguntarle a tu equipo o mirar la lista de ramas `release/` en la interfaz de GitHub. La rama se llama `release/X.Y.Z`, donde X.Y.Z es la versión que corresponda, y se crea y se sube con `git checkout -b release/X.Y.Z` y `git push --set-upstream release/X.Y.Z` [demand-forecast-docs/latest/guide/overview.md:L45-L51].\n\nPor último abres el PR desde la interfaz de GitHub. No hace falta que lo apruebe nadie: como fusionas desde una rama release, el proceso de release de RetailCorp lo aprueba automáticamente [demand-forecast-docs/latest/guide/overview.md:L53].\n\nUn detalle más: estos pasos no incluyen la creación de las imágenes de retail. En el flujo feature → develop → release → master también se pueden crear task-images para probar los cambios antes de desplegarlos a producción [demand-forecast-docs/latest/guide/overview.md:L56-L57].",
+    "answer_checks": [
+     "Llama a la herramienta con demand-forecast-docs y la versión latest del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que hay que hacer checkout de develop y pull antes de crear la rama release.",
+     "Indica que la rama se llama release/X.Y.Z y que la versión sube respecto a la release anterior (preguntando al equipo o mirando las ramas release/ en GitHub).",
+     "Indica que el PR se abre desde la interfaz de GitHub y que la aprobación es automática por el proceso de release de RetailCorp.",
+     "Cita líneas de demand-forecast-docs/latest/guide/overview.md dentro del rango 36-57 y no inventa pasos que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

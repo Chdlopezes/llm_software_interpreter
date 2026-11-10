@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-006",
+ "llamadas": [
+  {
+   "clave": "f2afce8e2af2f240d725c39ab017a53b19566dca541e831ce6ced9bc3ef6ddef",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando la parte de administración de order-workflow-api 5.6.2-hotfix-1. Cuando doy de alta un workflow nuevo, ¿qué códigos HTTP puede devolver? ¿Y qué ruta y qué método HTTP tengo que usar para esa llamada?",
+    "respuesta": "Al insertar un workflow, el servicio primero busca en la base de datos si ese workflow ya existe [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L196-L201]. Si no existe, lo inserta y devuelve HTTP 201 CREATED [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L202-L207]. Si ya existe, devuelve HTTP 409 CONFLICT [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L208-L210].\n\nLa ruta y el método HTTP de esa llamada no aparecen en la documentación de esta versión. El diagrama solo dice que el usuario envía los valores del workflow [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L196], sin indicar el endpoint, el verbo ni el formato del cuerpo. Por eso no puedo darte esos datos.",
+    "answer_checks": [
+     "Indica que, si el workflow no existe, se inserta y se devuelve HTTP 201 CREATED, y que, si ya existe, se devuelve HTTP 409 CONFLICT.",
+     "Cita el diagrama de inserción de workflow de use-cases.md para los códigos HTTP.",
+     "Declara que la ruta y el método HTTP del endpoint de alta de workflows no están documentados.",
+     "No inventa una ruta (como /workflows) ni un método HTTP concreto para esa llamada, y no presenta las rutas de BigQ o de Jobs como si fueran la ruta de alta.",
+     "No cita las líneas de usage.md como respaldo."
+    ]
+   }
+  }
+ ]
+}

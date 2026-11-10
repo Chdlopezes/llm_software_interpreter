@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-026",
+ "llamadas": [
+  {
+   "clave": "750270a8a55c4f0dbc473c7dfee59abd8bbc51ef3924e7ab6e7feb6dabc075ff",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "How does payment-promise-gateway handle errors? I'm wiring up a frontend client and want to know what to expect when a call fails.",
+    "respuesta": "Both documented versions, 0.0.10-test-crc-migration and latest, describe error handling in the same words. The service handles errors in one standard way, which has four parts: HTTP status codes in API responses, detailed error messages, custom exceptions for business logic, and the same error format across responses [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L530-L536] [payment-promise-gateway/latest/guide/README.md:L530-L536].\n\nFor your client, that means you can read the HTTP status code and expect error responses to share one format. The documentation doesn't list which status codes are used, what the error body looks like, or which custom exceptions exist. You'd need to confirm those details elsewhere.",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the service uses a standard error handling approach based on HTTP status codes, detailed error messages, custom exceptions for business logic and the same error format across responses.",
+     "Indicates that this description is the same in 0.0.10-test-crc-migration and latest, without assigning it to only one version.",
+     "Does not make up specific status codes, error body fields or exception names that the documents don't contain.",
+     "Does not cite the Contributing or License sections (lines 538-548) as support."
+    ]
+   }
+  }
+ ]
+}

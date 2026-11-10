@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-005",
+ "llamadas": [
+  {
+   "clave": "a08ef4c1811830bcdc075d31c68eb1857c06d8a0c54ac48179378ccb507c2de7",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, cuando pasamos una variable exógena mensual a nivel diario, ¿cómo se reescalan los pronósticos diarios base para que cuadren con el total del mes? ¿Y por qué se usa forecast proportions en lugar de top-down?",
+    "respuesta": "El enfoque trata la jerarquía temporal como una jerarquía estándar: la suma de los valores diarios del mes tiene que ser igual al valor mensual [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L46-L53]. Por eso se puede usar reconciliación de pronósticos para desagregar los valores mensuales a nivel diario [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L55-L55].\n\nPara reescalar, se parte de un pronóstico base diario de la variable exógena para las fechas futuras y se ajusta para que el total del mes sea el valor mensual dado [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L62-L62]. Cada pronóstico diario base se multiplica por el cociente entre el total mensual recibido y el total mensual del pronóstico base: x̂_i(t) = x̃_i(t) · x_i(t∈month) / x̃_i(t∈month) [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L68-L72]. El pronóstico reconciliado se usa luego como entrada del modelo [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L74-L74]. En el ejemplo de la guía, si el mes trae 300 dólares de inversión y los pronósticos base suman 400, se multiplican los pronósticos base de ese mes por 300/400 = 0.75. Así se conserva la parte de cada día dentro del mes [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L76-L76].\n\nSobre la elección del método: no basta con reconciliar, también hay que mantener exactamente el valor mensual de entrada y tratar ese nivel como correcto. Las dos estrategias que lo cumplen son top-down y forecast proportions. Se descarta top-down porque no está claro cómo aplicarla a esta jerarquía temporal, ya que los meses tienen longitudes distintas. Por eso forecast proportions se considera la mejor opción [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L57-L57].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión latest.",
+     "Indica que cada pronóstico diario base se multiplica por el cociente entre el total mensual dado y el total mensual del pronóstico base.",
+     "Explica que se descarta top-down porque no está claro cómo aplicarlo a la jerarquía temporal, dado que los meses tienen longitudes distintas, y que forecast proportions mantiene el total mensual como correcto.",
+     "Cita el documento demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md en la sección Approach (líneas 46-76) y no cita la línea 65.",
+     "No inventa detalles de implementación ni pasos que no aparezcan en la documentación."
+    ]
+   }
+  }
+ ]
+}

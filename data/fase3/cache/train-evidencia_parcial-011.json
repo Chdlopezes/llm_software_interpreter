@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-011",
+ "llamadas": [
+  {
+   "clave": "3c0f5885dbf2224b67268e597f41aa5d8645e8bda7bbb11bdb05915e351e12cb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway latest, ¿qué endpoints principales expone la API y cuáles son los campos obligatorios, con sus tipos, del body de POST /payment_promise según la especificación OpenAPI?",
+    "respuesta": "La API está documentada con OpenAPI/Swagger y sus endpoints principales son: `GET /payment_promise/form`, `GET /payment_promise/active`, `GET /offers`, `POST /payment_promise`, `POST /forgiveness_proposal`, `PUT /forgiveness_proposal` y `GET /forgiveness_proposal/{promiseId}` [payment-promise-gateway/latest/guide/README.md:L104-L112].\n\nSobre `POST /payment_promise`, la documentación indica que crea una nueva promesa de pago, que requiere un objeto `PromiseCommand` con los detalles de la promesa y que valida los datos antes de crearla [payment-promise-gateway/latest/guide/README.md:L286-L289]. Pero no detalla el esquema de `PromiseCommand`: qué campos son obligatorios ni de qué tipo es cada uno. Para la documentación detallada de la API remite a specs-hub [payment-promise-gateway/latest/guide/README.md:L114], que no forma parte de la documentación que tengo. Por eso no puedo decirte qué campos son obligatorios ni sus tipos según la especificación OpenAPI.",
+    "answer_checks": [
+     "Enumera los siete endpoints principales documentados (GET /payment_promise/form, GET /payment_promise/active, GET /offers, POST /payment_promise, POST /forgiveness_proposal, PUT /forgiveness_proposal, GET /forgiveness_proposal/{promiseId}).",
+     "Indica que POST /payment_promise requiere un objeto PromiseCommand.",
+     "Declara que los campos obligatorios y sus tipos según la especificación OpenAPI no están documentados, y menciona que la documentación detallada se remite a specs-hub.",
+     "No inventa qué campos son obligatorios ni sus tipos, ni los deduce del cuerpo del curl de ejemplo.",
+     "No afirma que la especificación no exista o que no haya campos obligatorios."
+    ]
+   }
+  }
+ ]
+}

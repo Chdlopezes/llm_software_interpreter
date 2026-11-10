@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-falta_software-001",
+ "llamadas": [
+  {
+   "clave": "d6cc4417ef95f140343c8e6e9e818459adf71c43af5e27e59bea1a8127466749",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What base URL should I point my client at when I'm hitting the development environment instead of production? Is it plain HTTP or HTTPS there?",
+    "respuesta": "Which software or API are you asking about?",
+    "answer_checks": [
+     "Does not call the documentation tool.",
+     "Asks the user which software or API the question refers to.",
+     "Does not ask for the version.",
+     "Does not give a technical answer (no base URL, protocol or environment details)."
+    ]
+   }
+  }
+ ]
+}

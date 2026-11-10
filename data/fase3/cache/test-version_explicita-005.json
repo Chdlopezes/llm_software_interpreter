@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-005",
+ "llamadas": [
+  {
+   "clave": "1eadcab3757052b84d832e720fa84d767e055c320971b29ba91f30eaef62480c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest quiero comprobar si una IP está bloqueada ahora mismo. ¿Qué le mando en el body a POST /v1/blocked/ip y qué campos trae la respuesta cuando todo sale bien?",
+    "respuesta": "POST /v1/blocked/ip comprueba si una dirección IP está bloqueada en este momento por alguna regla de ratelimit y devuelve el Web_ACL asociado [traffic-gate-api/latest/specs/swagger.yaml:L108-L113].\n\nEl body es obligatorio. Es un objeto JSON con un único campo, `address`, de tipo string, donde va la dirección IP que se quiere analizar [traffic-gate-api/latest/specs/swagger.yaml:L115-L125].\n\nSi todo sale bien, responde 200 con un objeto de dos campos: `is_blocked`, un booleano, y `web_acls`, un array de strings con los nombres de los Web_ACL [traffic-gate-api/latest/specs/swagger.yaml:L126-L140].\n\nSi algo falla, puede devolver 400 (Bad request) o 500 (Internal server error), los dos con el esquema ErrorResponse [traffic-gate-api/latest/specs/swagger.yaml:L141-L152].",
+    "answer_checks": [
+     "Llama con software traffic-gate-api y versión latest.",
+     "Indica que el body es un objeto JSON con el campo address (string) y que es obligatorio.",
+     "Indica que la respuesta 200 incluye is_blocked (booleano) y web_acls (array de strings).",
+     "Cita el swagger.yaml de latest en el rango del endpoint /v1/blocked/ip (líneas 108-152).",
+     "No inventa campos adicionales en la petición ni en la respuesta, ni presenta el valor de ejemplo de la IP como un dato real."
+    ]
+   }
+  }
+ ]
+}

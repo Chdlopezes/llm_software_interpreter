@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-008",
+ "llamadas": [
+  {
+   "clave": "7ee8c420318b4c254149e6fa353337a664f0bb59617fe47fd93f616276ff686b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In zenith-keeper 2.0, what does the response body look like when the full products list endpoint returns a 404? I need to handle that case in my client.",
+    "respuesta": "I couldn't find any documentation for zenith-keeper 2.0 in the catalog, so I can't tell you what the products list endpoint returns with a 404 in that version. If you want, I can look up the documentation for the zenith-keeper versions that are available.",
+    "answer_checks": [
+     "Calls the tool with software zenith-keeper and version 2.0 and gets not_found.",
+     "Says there is no documentation for zenith-keeper 2.0.",
+     "Does not describe the 404 response body or schema of the products list endpoint, and does not make up any technical details.",
+     "Includes no citations to documents.",
+     "Does not ask the user which software they mean; it may offer to check the available versions."
+    ]
+   }
+  }
+ ]
+}

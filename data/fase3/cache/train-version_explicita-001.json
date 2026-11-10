@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-001",
+ "llamadas": [
+  {
+   "clave": "3dd81245104bf11a58f487415dfc4c514ce638db42a642f1994f05740aaf45de",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, I'm wiring up the test environment for the orchestrator integration. Which BigQ scope, topic and consumer should I use there, and which path does it deliver to? Is it different from production?",
+    "respuesta": "In the test environment, the orchestrator integration uses the BigQ scope `order-orchestrator-test`, the topic `batesting-orchestrator-testing.order-orchestrator-api` and the consumer `order-workflow-test-consumer`. It delivers to the path `/pipeline/validate` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L13-L13].\n\nProduction uses different values: the scope is `order-orchestrator`, the topic is `batesting-orchestrator.order-orchestrator-api` and the consumer is `order-orchestrator-consumer`. The path is the same, `/pipeline/validate` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L7-L7]. So the scope, topic and consumer change between the two environments, but the path stays the same.",
+    "answer_checks": [
+     "Calls the tool with software order-workflow-api and version 5.6.2-hotfix-1.",
+     "States that the test scope is order-orchestrator-test, with topic batesting-orchestrator-testing.order-orchestrator-api and consumer order-workflow-test-consumer.",
+     "Indicates that the path is /pipeline/validate.",
+     "Explains that production uses scope order-orchestrator, topic batesting-orchestrator.order-orchestrator-api and consumer order-orchestrator-consumer, with the same path.",
+     "Cites the BigQ Scopes tables in services/bigq.md (lines 7 and 13) and does not cite lines 25 or 43."
+    ]
+   }
+  }
+ ]
+}

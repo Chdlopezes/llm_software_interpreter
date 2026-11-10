@@ -1,0 +1,26 @@
+{
+ "task_id": "train-falta_software-006",
+ "llamadas": [
+  {
+   "clave": "f7847f41aff83b9cefaf544aa8a574cde6dc9d6cc44e1e3837faf7424a5341f1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En el diagrama de arquitectura, ¿con qué servicios externos se comunica directamente la capa de Services y qué componentes internos usa además de los Commands?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica ni nombra servicios o componentes de ninguna arquitectura.",
+     "No incluye citas a documentos."
+    ]
+   }
+  }
+ ]
+}

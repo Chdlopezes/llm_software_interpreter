@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-003",
+ "llamadas": [
+  {
+   "clave": "a1a7d16346cf813a2cae01a9652020f7da2aa3bb3238c51ade4cddd8270039d5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy leyendo la notación que se usa para pasar variables exógenas mensuales a nivel diario y me lío con los símbolos: ¿qué diferencia hay entre la y con tilde y la y con sombrero?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica sobre la notación ni sobre la reconciliación de pronósticos."
+    ]
+   }
+  }
+ ]
+}

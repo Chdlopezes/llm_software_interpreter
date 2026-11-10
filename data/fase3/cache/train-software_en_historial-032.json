@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-032",
+ "llamadas": [
+  {
+   "clave": "28eb0e6076cb5a18489d7cf3f3f5ca83c5b7ec780cb73393356cbe6d42b0e5f5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi! I'm building a client for zenith-keeper 1.1.6. Right now I'm working on the due-date reporting screens of our warehouse dashboard.",
+    "historial_asistente": "Sounds good. Ask me anything you need about the API for those due-date screens and I'll look it up.",
+    "pregunta": "For the endpoint that lists batch stock by due date filtered by category, what responses can I get back, and what does the body look like when the call succeeds?",
+    "respuesta": "That endpoint is GET /api/v1/fresh-products/due-date/list{quantityOfDays}/{category}/{sort}. It returns batch stock sorted by due date and filtered by category [zenith-keeper/1.1.6/specs/swagger.yaml:L256-L261]. Two responses are documented: a 200 (OK) whose application/json body uses the BatchStockDTOResp schema, and a 404 (Not Found) whose application/json body is a generic object [zenith-keeper/1.1.6/specs/swagger.yaml:L278-L290].\n\nOn success, BatchStockDTOResp holds a single property, batchStock, which is an array of BatchDueDateDTOResp items [zenith-keeper/1.1.6/specs/swagger.yaml:L510-L516]. Each item has these fields: batchNumber (object, format Long), productId (string), productTypeId (string), dueDate (object, format LocalDate), currentQuantity (integer) and section (string) [zenith-keeper/1.1.6/specs/swagger.yaml:L517-L533].",
+    "answer_checks": [
+     "Calls the tool with software zenith-keeper and version 1.1.6 taken from the history, without asking for the software or version again.",
+     "States that the documented responses are 200 (OK) with a BatchStockDTOResp body and 404 (Not Found) with a generic object body.",
+     "Describes BatchStockDTOResp as a batchStock array of BatchDueDateDTOResp items with fields such as batchNumber, productId, productTypeId, dueDate, currentQuantity and section.",
+     "Cites the swagger.yaml lines for the responses and the schemas, and does not cite non-citable lines such as L263.",
+     "Does not invent other status codes or fields that are not in the documentation."
+    ]
+   }
+  }
+ ]
+}

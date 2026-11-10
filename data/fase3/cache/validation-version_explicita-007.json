@@ -1,0 +1,47 @@
+{
+ "task_id": "validation-version_explicita-007",
+ "llamadas": [
+  {
+   "clave": "7d8f76bc52f73588a8a77c47a0170033fb6b67b84987a1da93d46bef5ebb9d3b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿cómo recupero una marca concreta por su ID? Necesito saber qué parámetro de ruta lleva, de qué tipo es y qué campos vienen en la respuesta, sobre todo si trae los logos.",
+    "respuesta": "Para recuperar una marca concreta se usa `GET /{brandId}` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L126-L130], sobre la base `/catalog/brands`. Por ejemplo, en producción es `https://api.mp.internal.retailflow.com/catalog/brands` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L7-L10]. El único parámetro de ruta es `brandId`, de tipo integer y obligatorio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L132-L136]. Una petición de ejemplo es `curl \"https://api.mp.internal.retailflow.com/catalog/brands/123\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L138-L142].\n\nSegún la respuesta de ejemplo, el objeto devuelto trae estos campos:\n\n- **Datos de la marca:** `name`, `soft_descriptor`, `site`, `category`, `subcategories`, `type` y `tags` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L149-L155].\n- **Logos:** sí vienen. Hay un array `logos` en el que cada logo tiene `id`, `brand_id`, `type` (en el ejemplo, `main`) y `picture_id` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L156-L163].\n- **Recursos:** un array `resources` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L164-L164].\n- **Prioridad, estado y fechas:** `priority`, `status`, `date_created` y `date_last_updated` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L165-L168].",
+    "answer_checks": [
+     "Indica que el endpoint es GET /{brandId} (bajo /catalog/brands).",
+     "Indica que brandId es un parámetro de ruta obligatorio de tipo integer.",
+     "Indica que la respuesta incluye un array logos con campos como id, brand_id, type y picture_id.",
+     "Menciona otros campos de la respuesta como resources, status o priority sin inventar campos que no aparecen en el ejemplo.",
+     "Cita la sección Get Brand de brands.md de la versión 0.0.1-test-bench-v2a."
+    ]
+   }
+  },
+  {
+   "clave": "6f1064c88391c4d79aae141957edb4ce23c09995c82c1300aa756cc09860f788",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, quiero obtener una marca concreta por su ID. ¿Qué endpoint uso, qué parámetro de ruta lleva y de qué tipo es? Y en la respuesta, ¿vienen los logos de la marca? Si vienen, ¿qué campos tiene cada logo?",
+    "respuesta": "Para recuperar una marca concreta se usa `GET /{brandId}` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L126-L130]. Esa ruta cuelga de la base `/catalog/brands`, que en producción es `https://api.mp.internal.retailflow.com/catalog/brands` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L7-L10]. El parámetro de ruta es `brandId`: es de tipo integer, es obligatorio y corresponde al ID de la marca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L132-L136]. La petición de ejemplo es `curl \"https://api.mp.internal.retailflow.com/catalog/brands/123\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L138-L142].\n\nSí, los logos vienen en la respuesta. La respuesta de ejemplo incluye un array `logos`, y cada logo tiene cuatro campos: `id`, `brand_id`, `type` (en el ejemplo vale `main`) y `picture_id` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L156-L163].",
+    "answer_checks": [
+     "Indica que el endpoint es GET /{brandId}, bajo la base /catalog/brands.",
+     "Indica que brandId es un parámetro de ruta obligatorio de tipo integer.",
+     "Indica que la respuesta incluye un array logos y que cada logo tiene id, brand_id, type y picture_id.",
+     "No inventa campos de logo ni parámetros que no aparecen en la sección Get Brand.",
+     "Cita la sección Get Brand de brands.md de la versión 0.0.1-test-bench-v2a."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/0e95071d34dc4fa8584559a0",
+ "llamadas": [
+  {
+   "clave": "0e95071d34dc4fa8584559a0c6abea6e17a2bb1902964d29e797f7bd473b429f",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_version-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre order-workflow-api sin versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "README indica que el consumidor BigQ recibe tareas del Orchestrator y webhooks de EventCollector; también remite al servicio BigQ [README.md:L49-L52]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica para qué se usa el consumidor y qué recibe, así como el origen de cada mensaje [README.md:L49-L50]."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas del README respaldan las afirmaciones y no usan líneas no citables [README.md:L49-L52]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan cita [README.md:L49-L52]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni presenta afirmaciones contradictorias."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la llamada, la respuesta y las líneas del README entregadas [README.md:L49-L52]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre Jobs en order-workflow-api sin versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía dice que Jobs crea versiones automáticamente con un planificador tipo cron; la tabla muestra midday y nightly, sus reglas y endpoints, y test como no configurado [README.md:L54-L58; jobs.md:L5-L15]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la función del servicio y aporta las reglas de ejecución y el estado de test."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la función, los horarios, endpoints y el estado de test; no son líneas no citables [README.md:L54-L58; jobs.md:L5-L15]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas pertinentes [README.md:L54-L58; jobs.md:L5-L15]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No afirma que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles en ambas páginas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene los datos de la versión documentada y distingue producción de test."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la función, las dos filas de producción, el estado de test y las citas disponibles [README.md:L54-L58; jobs.md:L5-L15]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre preparar y ejecutar order-workflow-api sin versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los requisitos, comandos, preparación de la clave, pruebas y arranque coinciden con development.md [L3-L7; L9-L15; L19-L25; L29-L34]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Incluye requisitos y pasos para clonar, construir, probar y ejecutar la aplicación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de development.md respaldan cada paso y no usan líneas no citables [L3-L7; L9-L15; L19-L25; L29-L34]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas pertinentes en los rangos correspondientes [L3-L7; L9-L15; L19-L25; L29-L34]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la guía disponible y da los pasos solicitados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos no se contradicen ni mezclan versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los requisitos y procedimientos documentados [development.md:L3-L34]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta continúa el contexto de test y conserva software y versión del historial; la llamada los usa correctamente."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila de test indica el scope, topic, consumer y path mencionados [bigq.md:L10-L14]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da los tres datos pedidos para el scope de webhooks del collector en test."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita cubre la tabla de test con los valores afirmados [bigq.md:L10-L14]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todos los valores técnicos están citados [bigq.md:L10-L14]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con la fila de test disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Usa exclusivamente los valores de test, sin confundirlos con producción."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con el historial, la tabla de test y la respuesta [bigq.md:L10-L14]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-019",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la base de datos en test y producción; software y versión coinciden con el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Test usa MySQL, fulfillment2 y testenv02; producción usa MySQL, fulfillment y orderworkflowapi00 [database.md:L4-L12]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el esquema y clúster de test y compara correctamente el motor con producción."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las dos citas contienen los datos de test y producción [database.md:L4-L12]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está citada [database.md:L4-L12]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información ni afirma datos de conexión ausentes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambas partes usando las tablas disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente los esquemas y clústeres por entorno."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las filas de producción y test [database.md:L4-L12]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-021",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que continúa el contexto sobre desactivar el workflow; software y versión coinciden con el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama muestra obtener la configuración, desproteger las ramas estables, poner master como predeterminada y devolver OK a Configs API [use-cases.md:L87-L104]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica los pasos solicitados y el estado final de las ramas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita al diagrama respalda el flujo descrito [use-cases.md:L87-L104]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos técnicos tienen cita; la conclusión sobre el estado de las ramas se desprende del diagrama [use-cases.md:L93-L103]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa el diagrama para contestar la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción y el estado final son coherentes con la secuencia documentada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen pasos presentes en el diagrama y no exigen una formulación concreta [use-cases.md:L87-L104]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-024",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre Jobs en test y producción; software y versión coinciden con el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Test figura como no configurado; producción tiene scope production-cron y nightly usa la regla y el endpoint indicados [jobs.md:L5-L15]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde sobre test y da la regla de tiempo y endpoint de nightly en producción."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el estado de test, el scope y los valores de nightly [jobs.md:L5-L15]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas; la ausencia de zona horaria se limita a lo que la página no especifica [jobs.md:L5-L15]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara correctamente que la documentación no especifica la zona horaria, sin inferir una."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambas partes con la información disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue test de producción y no añade una zona horaria."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los datos de Jobs y la falta de una zona horaria especificada [jobs.md:L5-L15]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-026",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre respuestas HTTP de alta y actualización; software y versión coinciden con el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los diagramas indican alta: 201 si no existe y 409 si existe; actualización: 200 si existe y 400 si no [use-cases.md:L189-L236]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Cubre los dos resultados posibles para ambas operaciones y señala la búsqueda inicial."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el contexto Admin, las búsquedas y los códigos HTTP [use-cases.md:L171-L172; L189-L236]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha los dos diagramas para responder todas las condiciones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No intercambia los códigos ni las condiciones de existencia entre alta y actualización."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los códigos, condiciones y pasos descritos [use-cases.md:L189-L236]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-035",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre campos del Pipeline; software y versión coinciden con el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El JSON identifica head_branch/base_branch, merge_commit/head_commit/base_commit y fork; el texto describe la recuperación del Pipeline desde Orchestrator [bigq.md:L19-L20; L27-L35]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Nombra los campos de ramas, commits y el indicador de fork solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones; no cita la línea no citable 25 ni la línea 43, y no trata los valores ilustrativos como hechos fijos [bigq.md:L19-L20; L27-L35]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está citada en el texto o en el JSON correspondiente [bigq.md:L19-L20; L27-L35]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando los campos disponibles en el objeto Pipeline."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde los nombres de campos con los valores ilustrativos del JSON."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la descripción y el JSON del Pipeline, y no requieren presentar los valores de ejemplo como constantes [bigq.md:L19-L20; L27-L35]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés que nombra software y versión; la llamada coincide con ambos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las filas de test y producción contienen los scopes, topics, consumers y path indicados [bigq.md:L7-L13]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da todos los datos de test y compara con producción, incluida la igualdad del path."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a las filas pertinentes de las tablas y no incluyen líneas no citables [bigq.md:L7-L13]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada dato técnico de ambos entornos está citado [bigq.md:L7-L13]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia de ambas filas para resolver la comparación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente test y producción; señala que solo cambia el path."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con las dos filas citadas y con la comparación de entornos [bigq.md:L7-L13]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

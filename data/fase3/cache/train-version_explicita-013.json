@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-013",
+ "llamadas": [
+  {
+   "clave": "f18ef5a4dcf1108907dc35700b2b4bf9c2749f8ad07796b87da99ae744a52f44",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿cómo creo una task-image para probarla en staging en vez de en producción? ¿Qué etiqueta lleva cada entorno?",
+    "respuesta": "Primero añades la especificación de la task en `tasks.yml` y luego ejecutas `rda prepare` con el nombre de la task y una versión [demand-forecast-docs/latest/guide/overview.md:L152-L156]. Para que la imagen sea de staging (HML), le pones el tag `hml` en la versión, por ejemplo `rda prepare my_tasks_in_tasks_yml --version 0.0.1-hml` [demand-forecast-docs/latest/guide/overview.md:L165-L170]. Para producción se usa el sufijo `-prd` (`--version 0.0.1-prd`) [demand-forecast-docs/latest/guide/overview.md:L172-L177]. Si solo quieres un paquete para pruebas rápidas en local, basta con el comando sin tag o con el tag `dev` [demand-forecast-docs/latest/guide/overview.md:L158-L163].\n\nEstas son las etiquetas de cada entorno: `dev` para desarrollo y pruebas (DEV), `hml` para staging (HML) y `prd` para producción (PRD) [demand-forecast-docs/latest/guide/overview.md:L148-L148]. Gracias a estos tags puedes definir en `workflows.yml` workflows distintos que usen las imágenes de HML o las de PRD, y así llevar los cambios primero a HML y después a PRD [demand-forecast-docs/latest/guide/overview.md:L179-L179].",
+    "answer_checks": [
+     "Indica que la task se define en tasks.yml y se crea con `rda prepare` indicando la versión.",
+     "Indica que para staging (HML) se añade el tag hml a la versión (por ejemplo, --version 0.0.1-hml).",
+     "Relaciona los tags dev, hml y prd con los entornos DEV, HML y PRD, respectivamente.",
+     "Cita líneas de demand-forecast-docs/latest/guide/overview.md dentro de la sección de Retail Data Framework (L117-L233), sin citar las líneas 224 ni 228.",
+     "No inventa opciones ni comandos de rda que no aparezcan en la documentación."
+    ]
+   }
+  }
+ ]
+}

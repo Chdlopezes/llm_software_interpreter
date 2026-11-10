@@ -10,6 +10,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | 0 — Auditoría | Etiqueta toda la documentación: qué es usable, qué no y por qué, y qué falta | Hecha |
 | 1 — Catálogo y contrato | Catálogo de documentos, herramienta de consulta y criterios para construir los ejemplos | Hecha |
 | 2 — Separación | Reparte los software en entrenamiento, validación y prueba | Hecha |
+| 3 — Generación | Genera y verifica las conversaciones candidatas de los tres conjuntos | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -23,6 +24,7 @@ src/               Todo el código del flujo
   fase0/             Fase 0: auditoría de la documentación
   fase1/             Fase 1: catálogo, herramienta y contrato de los ejemplos
   fase2/             Fase 2: separación en conjuntos
+  fase3/             Fase 3: generación y verificación de los ejemplos
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
@@ -86,8 +88,8 @@ pip install -r requirements.txt
 
 | Paquete | Para qué se usa |
 |---|---|
-| `anthropic` | LLM A con el backend `anthropic_api` |
-| `openai` | LLM B con el backend `openai_api` |
+| `anthropic` | Los LLM configurados con el backend `anthropic_api` |
+| `openai` | Los LLM configurados con el backend `openai_api` |
 | `python-dotenv` | Leer la configuración de `.env` |
 | `pyyaml` | Validar los `swagger.yaml` de la documentación |
 | `pytest` | Ejecutar los tests |
@@ -98,14 +100,16 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Abre `.env` con cualquier editor y elige el backend de cada LLM:
+Abre `.env` con cualquier editor y elige el backend del LLM de cada tarea. Cada tarea tiene su propia configuración y ninguna toma la de otra:
 
 ```
-LLM_A_BACKEND=claude_code      # o anthropic_api
-LLM_B_BACKEND=codex            # o openai_api
+LLM_CLASIFICADOR_BACKEND=claude_code   # fase 0: clasifica cada sección
+LLM_VALIDADOR_BACKEND=codex            # fase 0: valida cada clasificación
+LLM_GENERADOR_BACKEND=claude_code      # fase 3: genera las conversaciones candidatas
+LLM_VERIFICADOR_BACKEND=codex          # fase 3: verifica cada candidato
 ```
 
-`LLM_A_MODEL` y `LLM_B_MODEL` pueden quedar vacíos para usar los modelos por defecto.
+Los backends posibles son `claude_code`, `codex`, `anthropic_api` y `openai_api`. Las variables `LLM_<TAREA>_MODEL` pueden quedar vacías para usar los modelos por defecto.
 
 **Si usas un backend de sesión** (`claude_code` o `codex`), instala la CLI e inicia sesión una vez. Requiere [Node.js](https://nodejs.org/) 18 o superior:
 
@@ -152,23 +156,27 @@ Si todo está bien, la salida termina así:
 [ok] python-dotenv instalado
 [ok] pyyaml instalado
 [ok] pytest instalado
-[ok] LLM A (análisis): claude_code:claude-opus-5-5
-[ok] LLM B (validación): codex:gpt-6.1-sol
+[ok] LLM clasificador (fase 0: clasifica cada sección): claude_code:claude-opus-5-5
+[ok] LLM validador (fase 0: valida cada clasificación): codex:gpt-6.1-sol
+[ok] LLM generador (fase 3: genera las conversaciones candidatas): claude_code:claude-opus-5-5
+[ok] LLM verificador (fase 3: verifica cada candidato): codex:gpt-6.1-sol
 [ok] docs_raw/ encontrada (107 archivos)
 [ok] data/ disponible para las salidas
 
 Entorno listo. Para probar una llamada real: python -m src.check_setup --ping
 ```
 
-Para confirmar que los dos LLM responden, haz una llamada mínima real a cada uno. Tarda unos segundos y consume muy pocos tokens:
+Para confirmar que todos los LLM responden, haz una llamada mínima real a cada uno. Tarda unos segundos y consume muy pocos tokens:
 
 ```bash
 python -m src.check_setup --ping
 ```
 
 ```
-[ok] ping LLM A (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.1s
-[ok] ping LLM B (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.2s
+[ok] ping LLM clasificador (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.1s
+[ok] ping LLM validador (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.2s
+[ok] ping LLM generador (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.0s
+[ok] ping LLM verificador (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.3s
 
 Entorno listo.
 ```
@@ -193,8 +201,8 @@ python -m src.fase0.run
 
 Ejecuta todos los pasos hasta generar el archivo de revisión humana:
 1. Inventario de archivos, partición en secciones y chequeos automáticos (sin LLM).
-2. El LLM A clasifica cada sección.
-3. El LLM B revisa cada clasificación de A.
+2. El LLM clasificador (A) clasifica cada sección.
+3. El LLM validador (B) revisa cada clasificación de A.
 4. Se escribe `data/fase0/human_review.csv` con las secciones en las que A y B dan estados distintos.
 
 Cada respuesta de los LLM se guarda en `data/cache/`, que está en el repositorio. Por eso, con los resultados entregados, este comando **no llama a ningún LLM**: reutiliza las respuestas guardadas y no necesita sesión ni API key.
@@ -321,6 +329,44 @@ python -m src.fase2.run
 
 El detalle está en **[docs/fase2.md](docs/fase2.md)**.
 
+## Fase 3 — Generación de los ejemplos
+
+Se generan las conversaciones **candidatas** de `train`, `validation` y `test`, cada una con su caso de evaluación: llamada esperada, documentos esperados, respuesta de referencia con citas y `answer_checks` para el juez.
+
+**Cuántos y de qué tipo.**
+- **Tamaño:** 2 casos por sección aprovechable, es decir 232, 100 y 80.
+- **Situaciones:** la misma mezcla en los tres conjuntos (responder 45%, versiones 15%, falta información 20%, contradicción 8%, sin llamada o sin documentos 12%).
+- **Idioma:** 20% en inglés.
+- **Semillas:** cada caso sale de una sección, un hueco o un conflicto real de un software de su conjunto.
+- **Argumentos:** los de la llamada los decide el programa según la situación, no el LLM.
+
+**Cómo se genera, por rondas (máximo 3):**
+1. **Generador** (`LLM_GENERADOR_*`): recibe la salida real de la herramienta y escribe la pregunta, la respuesta con citas y los `answer_checks`.
+2. **Código:** comprueba el contrato de la fase 1 y que la pregunta nombre (o no) el software y la versión según la situación. Si algo falla, el error vuelve al generador.
+3. **Verificador** (`LLM_VERIFICADOR_*`, otro proveedor): aplica la rúbrica de la evaluación a grupos de hasta 10 casos del mismo software, para enviar los documentos una sola vez por grupo.
+4. **Decisión:** la toma el programa. Un caso se aprueba solo si cumple todos los criterios. Si no, vuelve al generador con el motivo del rechazo.
+
+**Resultado.**
+- **407 candidatos de 412 tareas.** Los 5 omitidos tienen su motivo; en 4 de ellos, la semilla no permitía un caso válido.
+- **Llamadas:** 464 al generador y 56 al verificador.
+- **Rechazos del verificador:** 9%.
+
+```bash
+python -m src.fase3.run --piloto   # prueba: el primer caso de cada situación de train
+python -m src.fase3.run            # corrida completa (usa la caché; solo llama por lo que falte)
+```
+
+| Archivo | Contenido |
+|---|---|
+| `data/fase3/candidatos.jsonl` | Conversación, caso de evaluación y veredicto de cada candidato |
+| `data/fase3/generation_log.jsonl` | Cada llamada al generador y al verificador, incluidos los rechazos |
+| `data/fase3/coverage_report.json` | Cuotas y resultados por conjunto y situación, y uso de cada sección |
+| `reports/fase3/estadisticas.md` | Resultado por situación, idioma, tipo de evidencia y calidad del generador |
+
+Para ver ejemplos al azar, con las citas resueltas contra el documento: `python -m src.utils.show_example --conjunto test` (filtros por situación, idioma, software, tipo de evidencia, texto o casos rechazados; ver `--help`).
+
+Los candidatos todavía no son el dataset final. En la fase 4 se eliminan duplicados, se hace la revisión humana, se miden las longitudes en tokens y se exportan. El detalle está en **[docs/fase3.md](docs/fase3.md)**.
+
 ## Reproducir y verificar los resultados
 
 Todas las salidas están commiteadas en `data/` y `reports/`. Para comprobar que obtienes exactamente los mismos resultados:
@@ -330,15 +376,16 @@ python -m src.fase0.run
 python -m src.fase0.finalize
 python -m src.fase1.run
 python -m src.fase2.run
+python -m src.fase3.run --solo-cache
 git status --short data/ reports/
 ```
 
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
-- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final y las fases 1 y 2.
-- **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/`.
+- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1 y 2 y el plan de tareas de la fase 3.
+- **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/` (fase 0) y `data/fase3/cache/` (fase 3). Con `--solo-cache`, la fase 3 no llama a ningún LLM ni necesita API keys.
 
-Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md) y [docs/fase2.md](docs/fase2.md).
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md) y [docs/fase3.md](docs/fase3.md).
 
 Para ejecutar los tests:
 

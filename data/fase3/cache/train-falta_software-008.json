@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-008",
+ "llamadas": [
+  {
+   "clave": "b8c14391747e2f57b995482a010992833186c2b60fe5abed01ae0290faf19324",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Algunas variables exógenas futuras solo me llegan con valores mensuales. ¿Puedo meterlas tal cual en los modelos o primero hay que pasarlas a nivel diario?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pide al usuario que indique el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica sobre si las variables exógenas mensuales deben pasarse a nivel diario ni sobre cómo hacerlo."
+    ]
+   }
+  }
+ ]
+}

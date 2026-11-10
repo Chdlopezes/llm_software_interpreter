@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-014",
+ "llamadas": [
+  {
+   "clave": "b23ce9b185adc68143129fe450c6dc4e1a52291f98eb7f6ab12dc98560fe0fd5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api 0.0.10-stock-consumer, ¿qué método y qué ruta usa el endpoint Get Detail, y qué campos trae su respuesta?",
+    "respuesta": "Get Detail usa el método GET y la ruta `/fp/inventory/item/detail/{identifierRegister}` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L18-L18]. Ese dato sale de la tabla de servicios, y lo único que aparece ahí es la fila del endpoint. La guía tiene secciones con ejemplos para Restock Consumer, Feed Consumer y Operation Validation Consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L23-L23] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L37] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L51], pero no tiene ninguna para Get Detail. Por eso no puedo decirte qué campos trae su respuesta: no están documentados en esta versión.",
+    "answer_checks": [
+     "Indica que Get Detail usa el método GET.",
+     "Indica que la ruta es /fp/inventory/item/detail/{identifierRegister}, citando la fila de la tabla de servicios de api.md.",
+     "Declara que los campos de la respuesta de Get Detail no están documentados.",
+     "No inventa campos de respuesta, headers ni un ejemplo de petición para Get Detail.",
+     "No afirma que el endpoint no exista o no funcione solo porque falte su detalle."
+    ]
+   }
+  }
+ ]
+}

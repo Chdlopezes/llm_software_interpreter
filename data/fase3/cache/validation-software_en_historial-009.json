@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-009",
+ "llamadas": [
+  {
+   "clave": "3dfefe71453a216f0879ef94475ce6e22ce2926c975e1be92a05e54bba886ea4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy empezando a integrarme con catalog-portfolio-api en la versión 0.0.1-test-bench-v2a y quiero entender bien el servicio antes de empezar a escribir código.",
+    "historial_asistente": "Perfecto. Pregúntame lo que necesites sobre el servicio y lo busco en su documentación.",
+    "pregunta": "Para situarme: ¿de qué plataforma forma parte este servicio y qué cosas gestiona además de las marcas?",
+    "respuesta": "Es el servicio RetailFlow Catalog Portfolio API, una API REST para la plataforma de portafolio curado (curated portfolio platform). Además de las marcas (brands), gestiona logos, collectors y resources [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L1-L3]. En la referencia de la API, cada una de esas entidades tiene su propio grupo de endpoints bajo /catalog/brands/{brandId}: /logos para los logos, /collectors para los collectors y /resources para los resources [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L34-L55].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que es la RetailFlow Catalog Portfolio API, una API REST para la plataforma de portafolio curado.",
+     "Menciona que, además de las marcas, gestiona logos, collectors y resources.",
+     "Cita el README de la guía (líneas 1-3 o un rango que las contenga) para respaldar la descripción.",
+     "No inventa entidades ni funciones que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

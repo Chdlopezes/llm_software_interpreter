@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-002",
+ "llamadas": [
+  {
+   "clave": "9668ae4fb616b6a1cba844b993390e66d00468bfb20aa70f36e005723a6ff200",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest quiero consultar cuántas veces se ha bloqueado una IP con /v1/get-blocks-by-ip. ¿Qué campos lleva el body, qué rango de tiempo se usa si no mando fechas y qué devuelve si sale bien?",
+    "respuesta": "El endpoint es `POST /v1/get-blocks-by-ip` [traffic-gate-api/latest/specs/swagger.yaml:L24-L25]. El body es obligatorio y va en `application/json`. Es un objeto con tres campos de tipo string: `ip`, `begin_time` y `end_time` [traffic-gate-api/latest/specs/swagger.yaml:L31-L47].\n\nEl servicio busca cuántos bloqueos ha tenido esa dirección IP en un rango de tiempo. Si la solicitud no indica el tiempo, el rango por defecto es la última semana. Internamente, cuenta los registros de esa IP en la tabla blacklist de la base de datos [traffic-gate-api/latest/specs/swagger.yaml:L29].\n\nSi la operación sale bien, responde con un `200` y un array JSON de objetos `Block` [traffic-gate-api/latest/specs/swagger.yaml:L48-L56]. Si hay un error, devuelve un `400` (Bad request) o un `500` (Internal server error), los dos con un `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L57-L68].",
+    "answer_checks": [
+     "Indica que el body JSON lleva los campos ip, begin_time y end_time, de tipo string.",
+     "Indica que, si no se especifica el tiempo, el rango por defecto es una semana atrás.",
+     "Indica que la respuesta 200 es un array de objetos Block.",
+     "Cita el documento traffic-gate-api/latest/specs/swagger.yaml en el rango de las líneas 24-68.",
+     "No presenta los valores de ejemplo (como 192.168.0.1 o las fechas de ejemplo) como valores reales u obligatorios."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-014",
+ "llamadas": [
+  {
+   "clave": "7f11bc1250789e2c8257e39c2ce477f2f70a9b41b3cae6b1205f92bfb74ecbfd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando la arquitectura de order-workflow-api 5.6.2-hotfix-1. ¿Qué componentes y conexiones muestra el diagrama de arquitectura de producción, y en qué se diferencia del de test?",
+    "respuesta": "La documentación de la versión 5.6.2-hotfix-1 no me permite responder a esto. La guía de arquitectura solo hace referencia a las imágenes de los diagramas de producción y de test. No hay texto que describa qué componentes o conexiones aparecen en cada uno, así que no puedo decirte qué muestran ni en qué se diferencian.\n\nSí puedo darte algo relacionado. La guía general describe tres componentes del servicio:\n- una base de datos MySQL que guarda la configuración de workflows y la programación de versiones automáticas [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L38-L43];\n- un consumidor de BigQ que recibe tareas del Orchestrator y webhooks de EventCollector [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L47-L50];\n- un servicio de Jobs que crea versiones a partir de un planificador tipo cron [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L54-L56].\n\nEsto no sustituye al contenido de los diagramas.",
+    "answer_checks": [
+     "Indica que la documentación entregada no describe el contenido de los diagramas de arquitectura de producción ni de test.",
+     "No inventa componentes, conexiones ni diferencias entre los diagramas de producción y de test.",
+     "No afirma que los diagramas no existan ni que no haya diferencias entre entornos.",
+     "Si menciona información relacionada (por ejemplo, los componentes del README), la cita con rangos de líneas válidos y no la presenta como el contenido del diagrama.",
+     "No cita las líneas de architecture.md, que no son citables."
+    ]
+   }
+  }
+ ]
+}

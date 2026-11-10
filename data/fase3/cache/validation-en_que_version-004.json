@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-en_que_version-004",
+ "llamadas": [
+  {
+   "clave": "37e87c43b40aafaf1e5f6503caec1b480851d251cb7fd7e6832277494bc81919",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de catalog-portfolio-api aparece documentado el rate limiting por cliente de la API y qué cabeceras lo exponen?",
+    "respuesta": "Las dos versiones disponibles lo documentan, y con el mismo contenido: 0.0.1-test-bench-v2a y latest. En ambas, la sección Rate Limiting de la API Reference fija un límite de 1000 peticiones por minuto por cliente y nombra las cabeceras `X-RateLimit-Limit` y `X-RateLimit-Remaining` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L88-L91] [catalog-portfolio-api/latest/guide/api-reference/README.md:L88-L91]. No hay diferencias entre las dos versiones en este punto.",
+    "answer_checks": [
+     "Indica que tanto 0.0.1-test-bench-v2a como latest documentan el rate limiting.",
+     "Indica el límite de 1000 peticiones por minuto por cliente.",
+     "Menciona las cabeceras X-RateLimit-Limit y X-RateLimit-Remaining.",
+     "Cita el api-reference/README.md de ambas versiones (o al menos de una por cada versión mencionada).",
+     "No pide la versión al usuario ni afirma que alguna versión carezca del límite."
+    ]
+   }
+  }
+ ]
+}

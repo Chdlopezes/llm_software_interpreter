@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-008",
+ "llamadas": [
+  {
+   "clave": "83ec51b1702403c90c90360596ec62e07e8bf146d6a5ab7235c211c753b5b1c1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿cómo debo subir la versión de una dependencia, por ejemplo pandas a >=2.0? ¿Puedo editar directamente el pyproject.toml?",
+    "respuesta": "Para añadir o actualizar paquetes se usa `poetry add <paquete>` en la terminal. El argumento admite restricciones de versión como `pandas@latest`, `\"pandas>=2.0\"` o `pandas<2.0`. En tu caso sería `poetry add \"pandas>=2.0\"` [demand-forecast-docs/latest/guide/overview.md:L83-L91].\n\nCuando uses restricciones, pon la especificación del paquete entre comillas dobles, porque la terminal puede confundir algunos caracteres con caracteres especiales [demand-forecast-docs/latest/guide/overview.md:L93-L94].\n\nSobre editar el `pyproject.toml` a mano: la guía recomienda evitarlo, porque `poetry add` se encarga automáticamente de las interdependencias entre paquetes [demand-forecast-docs/latest/guide/overview.md:L97]. Poetry lee del `pyproject.toml` qué paquetes y versiones instalar, y guarda toda esa información en el archivo `poetry.lock` [demand-forecast-docs/latest/guide/overview.md:L65].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión latest.",
+     "Indica que las dependencias se añaden o actualizan con `poetry add` y que admite restricciones de versión como \"pandas>=2.0\".",
+     "Advierte que la especificación con restricciones debe ir entre comillas para que la terminal no confunda los caracteres especiales.",
+     "Indica que se desaconseja editar el pyproject.toml directamente porque `poetry add` gestiona las interdependencias.",
+     "Cita líneas de la sección Poetry de demand-forecast-docs/latest/guide/overview.md y no inventa comandos ni opciones que no estén en ella."
+    ]
+   }
+  }
+ ]
+}

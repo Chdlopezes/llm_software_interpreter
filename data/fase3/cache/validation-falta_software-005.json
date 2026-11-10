@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-falta_software-005",
+ "llamadas": [
+  {
+   "clave": "20077e9bf4bba69d214943dd47dfa5b8b77b2d8fb3b2ddf40100178b72a0f7bc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Cuando busco marcas con filtros, ¿cuántos resultados como máximo puedo pedir por página? ¿Y puedo filtrar por varias etiquetas en la misma petición?",
+    "respuesta": "¿De qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario a qué software se refiere.",
+     "No pregunta por la versión.",
+     "No da ninguna respuesta técnica, como un límite de paginación o cómo filtrar por etiquetas.",
+     "No incluye citas a documentos."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-020",
+ "llamadas": [
+  {
+   "clave": "f0280d48d97ff659da895e927eafcfbd7a891c62376f4c9a6d289e66feff34ce",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy usando la documentación de demand-forecast-docs latest para montar mi entorno local del proyecto de forecasting del marketplace.",
+    "historial_asistente": "Perfecto. Cuando quieras, pregúntame lo que necesites sobre la configuración del entorno o del proyecto y lo busco en esa documentación.",
+    "pregunta": "Necesito fijar pandas por debajo de la 2.0. ¿Cómo lo añado con una restricción de versión? ¿Puedo cambiar directamente la versión en el pyproject.toml?",
+    "respuesta": "Usa `poetry add` con la restricción en el argumento del paquete. Ese comando admite especificaciones como `pandas@latest`, `\"pandas>=2.0\"` o `pandas<2.0`, así que en tu caso sería `poetry add \"pandas<2.0\"` [demand-forecast-docs/latest/guide/overview.md:L83-L91]. Pon siempre la especificación entre comillas, porque la terminal puede confundir algunos caracteres con caracteres especiales [demand-forecast-docs/latest/guide/overview.md:L93-L94].\n\nLa documentación desaconseja cambiar la versión directamente en el `pyproject.toml`. Con `poetry add`, Poetry gestiona por sí mismo las dependencias entre paquetes [demand-forecast-docs/latest/guide/overview.md:L97]. Poetry lee del `pyproject.toml` qué paquetes y versiones tiene que instalar y guarda toda esa información en el archivo `poetry.lock` [demand-forecast-docs/latest/guide/overview.md:L65].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con demand-forecast-docs y la versión latest del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que la restricción se añade con `poetry add` y una especificación como \"pandas<2.0\".",
+     "Advierte que conviene poner la especificación entre comillas porque la terminal puede interpretar los caracteres especiales.",
+     "Indica que no se recomienda editar el pyproject.toml directamente, porque `poetry add` se encarga de las dependencias entre paquetes.",
+     "Cita líneas de demand-forecast-docs/latest/guide/overview.md dentro de la sección de Poetry y no cita la línea 108."
+    ]
+   }
+  }
+ ]
+}

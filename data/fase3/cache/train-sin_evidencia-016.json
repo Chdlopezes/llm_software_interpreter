@@ -1,0 +1,25 @@
+{
+ "task_id": "train-sin_evidencia-016",
+ "llamadas": [
+  {
+   "clave": "5290c32fd6677a09be979c0d70c16b0dacbe1134337f6bca65b10c4edcce22cd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando la base de datos de order-workflow-api 5.6.2-hotfix-1. ¿Qué campos tiene el objeto Cron History que se guarda en MySQL?",
+    "respuesta": "Con la documentación de la versión 5.6.2-hotfix-1 no puedo decirte qué campos tiene Cron History. La guía de base de datos incluye Cron History entre los objetos almacenados, pero solo aparece el encabezado [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L147-L147]. No se documenta su estructura ni sus campos. Lo único relacionado que aparece es el flujo del cron de mediodía, donde Workflow API guarda en la base de datos la versión creada por el cron («Save cron version») [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L295-L298]. Tampoco ahí se detalla qué datos se guardan.",
+    "answer_checks": [
+     "Indica que la documentación de 5.6.2-hotfix-1 no describe los campos del objeto Cron History.",
+     "No inventa campos ni una estructura JSON para Cron History.",
+     "No afirma que Cron History no exista o que no se almacene; reconoce que aparece entre los objetos almacenados.",
+     "Si menciona información relacionada (por ejemplo, el paso de guardar la versión del cron), la cita con un rango de líneas que la contiene."
+    ]
+   }
+  }
+ ]
+}

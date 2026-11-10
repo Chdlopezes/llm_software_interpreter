@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-011",
+ "llamadas": [
+  {
+   "clave": "d04a330d62a60f687be603cfaeed556bf20ad2b65902f7aa0878248dbcf258b1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de vendor-stockkeeper-api se explica por qué hay que verificar los ítems de prueba antes de tocar los flujos de inventario, por ejemplo el riesgo de que un movimiento incorrecto deje discrepancias en el inventario?",
+    "respuesta": "La versión que lo documenta es 0.0.10-stock-consumer, en su guía important.md, dentro de la sección «Importance of Verification» [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L16-L20]. Ahí se dan tres motivos:\n\n- Que falten ítems de prueba puede provocar errores de inventario [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L18].\n- Hay que asegurarse de que los datos que se envían a la API de ítems sean correctos para mantener la integridad del sistema [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L19].\n- Un movimiento incorrecto puede afectar directamente al estado del inventario y causar discrepancias y problemas operativos [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L20].\n\nEsa misma guía dice que la verificación es necesaria en los dos flujos principales, Restock y Feed [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L11-L14].\n\nNo puedo darte una cita de las otras versiones (0.0.3-paused-seller, 0.0.6-ep-restock-man y latest) para estos motivos. Esto no significa que esas versiones no los incluyan.",
+    "answer_checks": [
+     "Identifica 0.0.10-stock-consumer como versión que documenta la importancia de la verificación, citando su important.md (líneas 16-20 o un subrango).",
+     "Menciona el riesgo de que un movimiento incorrecto afecte al estado del inventario y cause discrepancias, con su cita.",
+     "No afirma que la explicación no exista en 0.0.3-paused-seller, 0.0.6-ep-restock-man o latest.",
+     "No pide al usuario que indique una versión.",
+     "No inventa motivos ni detalles que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

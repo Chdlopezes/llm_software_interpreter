@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-comparacion_versiones-004",
+ "llamadas": [
+  {
+   "clave": "9d95cd806bf2d5361a85b014fdd9477e392bda382d15deff20066f5fd0ddc8be",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cambia algo entre 0.0.1-test-bench-v2a y latest de catalog-portfolio-api en cómo la portada de la documentación describe el servicio y lo que gestiona?",
+    "respuesta": "No cambia. Las dos versiones describen el servicio con el mismo texto en la portada: es la documentación del servicio RetailFlow Catalog Portfolio API, una API REST para gestionar brands, logos, collectors y resources en la plataforma de portafolio curado [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L3-L3] [catalog-portfolio-api/latest/guide/README.md:L3-L3]. El título de la portada, «Catalog Portfolio API Documentation», también es el mismo en ambas [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L1-L1] [catalog-portfolio-api/latest/guide/README.md:L1-L1].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la descripción del servicio no cambia entre 0.0.1-test-bench-v2a y latest.",
+     "Menciona que el servicio se describe como una API REST para gestionar brands, logos, collectors y resources.",
+     "Cita el README.md de la guía de las dos versiones.",
+     "No se inventa diferencias entre las versiones ni añade funcionalidades que no aparecen en la portada."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-013",
+ "llamadas": [
+  {
+   "clave": "baecd5b6617c2df173e9122a202ecdd53c236f799782853342865349c4484df0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿cómo se llama el archivo yml donde se declaran los datasets del catálogo y qué estructura tiene cada entrada?",
+    "respuesta": "Con la documentación de latest no puedo decirte cómo se llama ese archivo ni qué estructura tiene. La guía solo cuenta que el catálogo recibe un diccionario de nombres de dataset y clases de dataset, que se encarga de guardarlos y cargarlos, y que en marketplace los datasets se definen en un archivo yml [demand-forecast-docs/latest/guide/overview.md:L925-L925]. No da el nombre del archivo, ni sus claves, ni un ejemplo de entrada.",
+    "answer_checks": [
+     "Indica que la documentación no da el nombre del archivo yml de los datasets ni describe su estructura.",
+     "Menciona lo que sí está documentado: los datasets se definen en un archivo yml y el catálogo relaciona nombres de dataset con clases de dataset, con una cita a overview.md.",
+     "No inventa un nombre de archivo (por ejemplo, catalog.yml) ni claves o campos de la estructura.",
+     "No presenta tasks.yml ni workflows.yml como el archivo de los datasets del catálogo.",
+     "No afirma que ese archivo no exista."
+    ]
+   }
+  }
+ ]
+}

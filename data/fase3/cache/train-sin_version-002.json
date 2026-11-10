@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-002",
+ "llamadas": [
+  {
+   "clave": "69d10cec142241ebef945b09b3f0ebe0a06887858f349ecaaf3f189e2e49e9d5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Voy a añadir un business object nuevo y un command en payment-promise-gateway. ¿En qué paquetes del proyecto van? ¿Y dónde está la configuración de WorkflowCloud?",
+    "respuesta": "Las dos versiones documentadas (0.0.10-test-crc-migration y latest) describen la misma estructura de proyecto. El código está bajo `src/main/java/com/greatmart/payments/selfservice/` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L51-L51] [payment-promise-gateway/latest/guide/README.md:L51-L51].\n\nDentro de ese paquete, `entities/` agrupa las entidades de dominio. Los business objects van en `entities/bo/`, los objetos command en `entities/commands/` y la configuración de WorkflowCloud en `entities/workflowconfig/` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L54-L57] [payment-promise-gateway/latest/guide/README.md:L54-L57].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que los business objects van en entities/bo/ y los commands en entities/commands/.",
+     "Indica que la configuración de WorkflowCloud está en entities/workflowconfig/.",
+     "Indica que la estructura es igual en 0.0.10-test-crc-migration y en latest, sin atribuirla a una sola versión.",
+     "Cita las líneas de la sección Project Structure (en torno a L51-L57) y no inventa paquetes que no aparecen."
+    ]
+   }
+  }
+ ]
+}

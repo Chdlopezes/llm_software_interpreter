@@ -1,0 +1,47 @@
+{
+ "task_id": "test-en_que_version-003",
+ "llamadas": [
+  {
+   "clave": "7d77b980f1a47193f9441fbad7a81f371b26b2328970c24055a5a3a542f5bab9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de 2p-revenue-optimizer-api aparece documentada la tabla rule_custom_field?",
+    "respuesta": "De las versiones devueltas, solo latest documenta la tabla rule_custom_field. Su diccionario de datos tiene las columnas id (bigint, Not null, clave primaria autoincremental), rule_row_id (bigint, Not null, clave foránea que referencia rule_row(id)), name (varchar(180), Not null) y value_info (varchar(180), Not null) [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L7-L12]. Los documentos de la versión 0.2.2 no tienen un diccionario para rule_custom_field. En esa versión, la tabla rule_row tiene una columna custom_fields de tipo json que admite nulos [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L16]. La documentación no dice si la tabla rule_custom_field existía en 0.2.2 sin estar documentada.",
+    "answer_checks": [
+     "Identifica latest como la versión que documenta la tabla rule_custom_field.",
+     "Cita el documento rule_custom_field.md de latest.",
+     "No afirma que la tabla no exista en la versión 0.2.2; como mucho dice que esa versión no la documenta.",
+     "Si describe las columnas de la tabla, solo menciona las documentadas (id, rule_row_id, name, value_info) y no inventa otras.",
+     "No cita la línea 3 de rule_custom_field.md (la descripción incompleta de la tabla) como respaldo."
+    ]
+   }
+  },
+  {
+   "clave": "d37fb6b1e135b45109807d5fb8b3e24c798e02d27ff413376a9c6245f5519199",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de 2p-revenue-optimizer-api viene documentada la tabla rule_custom_field?",
+    "respuesta": "De las versiones devueltas, la tabla rule_custom_field solo está documentada en latest, que tiene una página propia para ella en el diccionario de datos [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L1-L1]. Sus columnas son:\n\n- id: bigint, Not null, clave primaria autoincremental.\n- rule_row_id: bigint, Not null, clave foránea que referencia rule_row(id).\n- name: varchar(180), Not null.\n- value_info: varchar(180), Not null.\n\n[2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L7-L12]\n\nEn la versión 0.2.2, el diccionario de datos devuelto tiene solo dos páginas, y ninguna es de rule_custom_field:\n\n- la de rule_header [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L1-L1];\n- la de rule_row [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L1-L1].\n\nEn esa versión, rule_row tiene una columna custom_fields de tipo json que admite nulos [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L16-L16].\n\nLa documentación no aclara si la tabla rule_custom_field ya existía en 0.2.2 aunque no estuviera documentada.",
+    "answer_checks": [
+     "Identifica latest como la versión que documenta la tabla rule_custom_field y cita el rule_custom_field.md de latest.",
+     "No afirma que la tabla no exista en 0.2.2; como mucho dice que los documentos de esa versión no la documentan.",
+     "Si dice que 0.2.2 no la documenta, respalda esa afirmación con citas a lo que sí contiene el diccionario de 0.2.2 (rule_header y rule_row) o la limita de forma explícita a los documentos devueltos.",
+     "Si describe las columnas, solo menciona las documentadas (id, rule_row_id, name, value_info) y no inventa otras.",
+     "No cita la línea 3 de rule_custom_field.md (la descripción incompleta) como respaldo."
+    ]
+   }
+  }
+ ]
+}

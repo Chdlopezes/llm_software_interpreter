@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-005",
+ "llamadas": [
+  {
+   "clave": "32fa0b501572b57bada6b582ff5f11bbe67972fa6feaec800de1d6c08d0a3a10",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Cuando se mergea una rama hotfix a master, ¿a qué ramas se crea el backport automático y en cuáles solo se hace si hay pull requests activos?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario a qué software se refiere.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica sobre reglas de backport ni sobre ramas."
+    ]
+   }
+  }
+ ]
+}

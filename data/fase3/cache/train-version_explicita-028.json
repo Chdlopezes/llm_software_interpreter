@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-028",
+ "llamadas": [
+  {
+   "clave": "e69b2c6f31c4bd26a824b7f28f00788831e0f7c7d5ca97de72335129eae2ed1c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿por qué hace falta diarizar algunas variables exógenas antes de pasarlas a los modelos?",
+    "respuesta": "Porque el proyecto trabaja con datos diarios, pero de algunas variables exógenas futuras solo se tiene información a nivel mensual. Para poder usarlas en los modelos, hay que desagregarlas a nivel diario [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L29-L29]. La sección de diarización trata justamente de esa conversión de variables exógenas mensuales a diarias [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L3-L3].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión latest.",
+     "Indica que los modelos usan datos diarios, pero que de algunas variables exógenas futuras solo hay información mensual.",
+     "Explica que por eso hay que desagregar esas variables a nivel diario para poder usarlas en los modelos.",
+     "Cita la sección Motivation de diarizacion.md (alrededor de la línea 29).",
+     "No añade detalles inventados sobre el método de desagregación que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

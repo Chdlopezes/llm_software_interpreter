@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/c4722dcdf843fd70ec520c5d",
+ "llamadas": [
+  {
+   "clave": "c4722dcdf843fd70ec520c5d99861de72d7496c1359371c34c6d76f1df07f03c",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-sin_version-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta naturalmente por el proceso y no especifica versión; la llamada usa traffic-gate-api con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "La explicación de la purga está respaldada por processes.md L87-L91 y arch.md L24-L27, pero no se puede afirmar que solo esté documentada en latest ni que no haya diferencias entre versiones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la frecuencia de ejecución y el motivo y mecanismo de la concurrencia, según processes.md L87-L91 y arch.md L26-L27."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de processes.md L87-L91 y arch.md L24-L27 respaldan las afirmaciones del proceso."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones técnicas del proceso están citadas, pero la afirmación inicial sobre la documentación exclusiva de latest no tiene cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "Los documentos entregados solo muestran latest; eso no permite concluir que no haya documentación o diferencias en otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para contestar la frecuencia y la concurrencia."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación del proceso es internamente coherente con processes.md L87-L91."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto entre documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre frecuencia, concurrencia y citas son verificables; no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta agrega una conclusión no respaldada sobre que solo existe documentación de latest y que no hay diferencias entre versiones."
+     },
+     {
+      "case_id": "test-sin_version-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por los límites según el origen del tráfico y no especifica versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Los límites de RetailHub, USA y No-RetailHub son correctos según waf_config.md L9, L32 y L39; no está respaldada la afirmación de que la documentación solo aparece en latest."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara los límites solicitados y aclara que la documentación no da un número para países sospechosos, según waf_config.md L44."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de waf_config.md L5, L9, L32, L39 y L44 respaldan las afirmaciones técnicas sobre las reglas."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones técnicas sobre límites tienen citas, pero la aseveración inicial de que solo aparece documentación de latest no está citada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "La lista entregada no permite afirmar que no existan documentos de otras versiones; además, la respuesta presenta esa ausencia como un hecho."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los límites documentados y señala que el límite de países sospechosos no está indicado, según waf_config.md L9, L32, L39 y L44."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los valores y la comparación son coherentes con waf_config.md L9, L32 y L39."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental presentado."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check pide atribuir los datos a latest sin afirmar que no haya otras versiones; la respuesta afirma que la documentación solo aparece en latest."
+       }
+      },
+      "needs_review": false,
+      "motivo": "Los límites están bien respondidos, pero la respuesta afirma sin evidencia que solo existe documentación de latest, en contra del check correspondiente."
+     },
+     {
+      "case_id": "test-software_en_historial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica traffic-gate-api latest y la pregunta continúa sobre ese software y versión; la llamada coincide."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las columnas y el borrado lógico descritos coinciden con database.md L9 y L34-L41; la relación con IP aparece en L71-L73."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las columnas, identifica la relación con IP y explica cómo detectar registros retirados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de database.md L9, L34-L41 y L73 respaldan las afirmaciones y no usan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas a database.md L9, L34-L41 y L73."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para responder todas las partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación sobre deleted coincide con database.md L9 y no contradice el diagrama de L34-L41 y L71-L73."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre columnas, relación y borrado lógico son verificables en database.md L9, L34-L41 y L73."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial fija traffic-gate-api latest y la pregunta solicita las URLs de servidor de su especificación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las dos URLs enumeradas coinciden con swagger.yaml L9-L11."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica ambas URLs base declaradas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita de swagger.yaml L9-L11 contiene las dos URLs."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica está citada en swagger.yaml L9-L11."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La especificación entregada incluye las URLs solicitadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con los dos servidores declarados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla versiones ni agrega información incompatible con swagger.yaml L9-L11."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre las dos URLs y la cita del bloque servers son verificables en swagger.yaml L9-L11."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial ya identifica traffic-gate-api latest; la pregunta continúa sobre POST /whitelist y la llamada conserva esos argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El estado, el éxito lógico y el scope aparecen en processes.md L27; database.md L5 confirma qué ejecuciones se guardan."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica qué se registra y en qué tabla, y añade la limitación relevante sobre los jobs de purga."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de processes.md L27 y L42-L49 y database.md L5 respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas a processes.md L27, L42-L49 y database.md L5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados especifican el registro de ejecución y su alcance."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia para contestar la pregunta y añadir el alcance del registro."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La secuencia y la salvedad sobre /whitelist/purge concuerdan con processes.md L27, L42-L49 y database.md L5."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre registro, tabla y ausencia de campos inventados son verificables con processes.md L27 y database.md L5."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica traffic-gate-api latest y la pregunta en inglés continúa esa consulta."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Endpoint, rango predeterminado, códigos de respuesta y campos son correctos según swagger.yaml L24-L68 y L370-L393; el esquema no especifica que cloud, reverse_dns, creation_date y deletion_date sean strings."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el valor predeterminado, el formato general de éxito, los campos de solicitud y los errores."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan los campos de Block, pero swagger.yaml L370-L387 no asigna los tipos string afirmados para cloud, reverse_dns, creation_date y deletion_date."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en swagger.yaml L24-L68 y L370-L393, aunque parte de lo afirmado no queda sustentado por esas líneas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "La especificación entregada no declara los tipos de varios campos de Block, pero la respuesta los afirma como strings."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para explicar la operación, la petición y las respuestas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del endpoint y sus respuestas es coherente con swagger.yaml L24-L68 y L370-L393."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre el valor predeterminado, la respuesta 200, los campos de solicitud y los errores son verificables en swagger.yaml L24-L68."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta atribuye tipos string a varios campos del objeto Block que el esquema no tipa."
+     },
+     {
+      "case_id": "test-version_explicita-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, nombra traffic-gate-api latest y corresponde a la llamada con esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos descritos concuerdan con processes.md L7-L11, L27 y L42-L49."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la secuencia del job y que las IP bloqueadas se encolan para su análisis posterior."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de processes.md L7, L9, L11, L27 y L42-L49 respaldan los pasos y el destino de las IPs."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en processes.md L7-L11, L27 y L42-L49."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada describe los pasos solicitados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde todos los componentes de la pregunta con la evidencia entregada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El orden de lectura de reglas, consulta a Vegeta, encolamiento y registro coincide con processes.md L7-L11 y L27."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen pasos verificables en processes.md L7-L11, L27 y L42-L49."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español sobre traffic-gate-api latest, con versión y software acordes a la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint, los campos del body, la semana predeterminada y la respuesta 200 concuerdan con swagger.yaml L24-L56."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los campos del body, el rango predeterminado y el formato de respuesta exitosa."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de swagger.yaml L24-L68 respaldan el endpoint, los parámetros, el rango predeterminado y las respuestas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en swagger.yaml L24-L68."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La especificación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para responder lo solicitado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla comportamientos ni presenta los ejemplos como valores obligatorios."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre campos, rango predeterminado y respuesta 200 son verificables en swagger.yaml L24-L56."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español nombra traffic-gate-api latest y solicita el endpoint de historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Endpoint, método, body, respuestas y errores coinciden con swagger.yaml L69-L107; no se especifican como strings los tipos de cloud, reverse_dns, creation_date y deletion_date."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica método, body, historial completo, formato de éxito y respuestas de error."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan los campos del objeto Block, pero swagger.yaml L370-L387 no respalda los tipos string afirmados para cuatro campos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas a swagger.yaml L69-L107 y L370-L392."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_cumple",
+        "justificacion": "La especificación entregada omite los tipos de varios campos de Block, pero la respuesta los presenta como strings."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las partes documentadas sobre el endpoint y las respuestas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La información general es coherente con swagger.yaml L69-L107 y L370-L392."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre endpoint, body, respuestas y errores son verificables en swagger.yaml L69-L107 y L388-L392."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta afirma tipos string para campos de Block que el esquema entregado no tipa."
+     },
+     {
+      "case_id": "test-version_explicita-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta nombra traffic-gate-api latest y corresponde a la llamada con esos argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint, el campo address y la respuesta 200 coinciden con swagger.yaml L108-L140."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué enviar en el body y los campos de la respuesta exitosa; también indica los errores."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de swagger.yaml L108-L152 respaldan la descripción, la solicitud, la respuesta y los errores."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas en swagger.yaml L108-L152."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La especificación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando los campos documentados sin inventar otros."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con swagger.yaml L108-L152."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre el body, la respuesta 200 y los errores son verificables en swagger.yaml L108-L152."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

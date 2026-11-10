@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/0f3b518fb829a2991b360652",
+ "llamadas": [
+  {
+   "clave": "0f3b518fb829a2991b360652b2983b79a9446a2093a3d32c1cc5697b888223b5",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-contradiccion-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, en español, identifica software y versión concretos y pregunta por el valor de error."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Presenta correctamente los dos nombres documentados: `validation_error` en brands.md L308 y `validation_failed` en Brand Management L169 y Troubleshooting L105."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone el conflicto y explica que no puede confirmar cuál devuelve la API; también aclara el formato del campo `error` con brands.md L318-L325."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones; L308, L169 y L105 son líneas no citables, pero su uso para mostrar el conflicto está permitido en esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre códigos, descripciones y formato de respuesta tienen citas en brands.md L308, L318-L325, Brand Management L169 y Troubleshooting L105."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara correctamente que los documentos no permiten confirmar el valor real y no convierte esa falta de certeza en una afirmación sobre el comportamiento del servidor; el formato citado está en brands.md L318-L325."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible: presenta ambos códigos y sus descripciones en brands.md L308, Brand Management L169 y Troubleshooting L105."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los valores en conflicto y no afirma que uno sea el correcto; también mantiene separada la información del formato en brands.md L318-L325."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita ambas variantes: brands.md L308 frente a Brand Management L169 y Troubleshooting L105."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan que se citen ambas variantes y que no se resuelva el conflicto con información externa; son verificables en L308, L169, L105 y L318-L325."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, con software y versión concretos, coherente con la situación de conflicto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La descripción general menciona Spark en architecture/README.md L7 y la tabla de tecnología indica Javalin en L67."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Señala la discrepancia y no escoge arbitrariamente un framework."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan ambas afirmaciones; architecture/README.md L7 y L67 son líneas no citables, pero se permite citarlas para señalar el conflicto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las dos afirmaciones técnicas sobre frameworks están citadas en architecture/README.md L7 y L67."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Indica que la documentación no permite confirmar cuál se usa realmente y no afirma que alguno no se use; el conflicto está en L7 y L67."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Presenta las dos evidencias disponibles, Spark y Javalin, citadas en architecture/README.md L7 y L67."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene explícita la discrepancia entre L7 y L67 y no mezcla las dos afirmaciones como un solo hecho."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita las dos afirmaciones en conflicto de architecture/README.md L7 y L67 sin elegir una."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican citas y tratamiento neutral del conflicto en L7 y L67, sin exigir una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, con software y versión concretos, que pregunta directamente cuál de los dos frameworks aparece."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Spark aparece en architecture/README.md L7 y Javalin en L67, tal como indica la respuesta."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone ambas respuestas documentadas y concluye correctamente que no se puede confirmar una de ellas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el conflicto; L7 y L67 son no citables salvo para señalarlo, excepción aplicable a esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación sobre los frameworks está acompañada por la cita correspondiente a architecture/README.md L7 o L67."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara el límite de la evidencia sin afirmar que falte información en todos los documentos ni negar ninguno de los frameworks; véanse L7 y L67."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza las dos fuentes disponibles sobre Spark y Javalin, architecture/README.md L7 y L67."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta Spark ni Javalin como confirmado y mantiene explícita la diferencia entre L7 y L67."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas afirmaciones contradictorias de architecture/README.md L7 y L67 y no elige una."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las afirmaciones citables en L7 y L67 y verifican que no se resuelva el conflicto arbitrariamente."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural, en español, que identifica software y versión y solicita el nombre del error de validación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta atribuye correctamente `validation_failed` a Brand Management L169 y `validation_error` al HTTP 400 en brands.md L308."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone la discrepancia y deja claro que no se puede confirmar cuál es el identificador devuelto."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan ambos códigos; L169 y L308 son líneas no citables, pero se admite citarlas para mostrar el conflicto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los dos nombres y sus descripciones están citados en Brand Management L169 y brands.md L308."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede confirmar el nombre que devuelve la API y no afirma que uno de los códigos no exista; el conflicto consta en L169 y L308."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las dos evidencias disponibles y describe los códigos documentados en L169 y L308."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las variantes y no presenta ninguna como valor confirmado; véanse L169 y L308."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica y cita ambas fuentes discrepantes: Brand Management L169 y brands.md L308."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente a L169 y L308 y no exigen una formulación literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, con software y versión concretos, que pide el valor del campo `error`."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los documentos entregados indican `validation_error` en brands.md L308 y `validation_failed` en Troubleshooting L105; el formato con el campo `error` se muestra en brands.md L318-L325."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Presenta los dos valores documentados y explica que la documentación no confirma cuál llega en la respuesta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones; L308 y L105 se usan para mostrar el conflicto, excepción permitida, y L318-L325 respalda el formato."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos, descripciones y presencia del campo `error` tienen citas en brands.md L308, L318-L325 y Troubleshooting L105."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta reconoce que no puede confirmar el valor real y no afirma que la falta de claridad demuestre inexistencia; véanse brands.md L308 y Troubleshooting L105."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para enumerar ambos códigos y señalar el campo de respuesta, con citas en L105, L308 y L318-L325."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde los dos códigos ni resuelve la discrepancia; las afirmaciones se apoyan en brands.md L308 y Troubleshooting L105."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la discrepancia y cita ambas fuentes, brands.md L308 y Troubleshooting L105."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican ambas fuentes y la no resolución arbitraria del conflicto, con base en L105, L308 y L318-L325."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las versiones donde aparece el enlace; la llamada usa `version=null`, como corresponde a en_que_version."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambas versiones enlazan Brand Endpoints con la descripción indicada: api-reference/README.md L9-L11 en 0.0.1-test-bench-v2a y latest."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas versiones y explica que el contenido relevante coincide."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L5, L9 y L11 de ambos README son válidas y respaldan las afirmaciones; ninguna de esas líneas está marcada no citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre la sección y el enlace están citadas en ambos documentos, L5, L9 y L11."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que los documentos no informan sobre otras versiones sin afirmar que el enlace no exista en ellas; cita las versiones entregadas en L11."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las dos versiones y el enlace documentado en api-reference/README.md L11 de cada una."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y señala que el enlace y su descripción coinciden en ambas, como muestran L9-L11 de cada README."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las versiones entregadas; api-reference/README.md L11 coincide en ambas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden identificar versiones y enlace, aspectos verificables en api-reference/README.md L9-L11 de ambas versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las versiones documentadas; la llamada usa `version=null`, apropiado para en_que_version."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla indica Google Guice en L68 y OpenJDK 17 en L71, tanto en la versión 0.0.1-test-bench-v2a como en latest."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas versiones y responde sobre las dos tecnologías solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a architecture/README.md L68 y L71 en ambas versiones respaldan las afirmaciones; son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación de tecnología y versión está citada en las respectivas líneas L68 y L71."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se puede inferir qué ocurre en versiones no documentadas y no afirma ausencia o diferencia; las versiones recibidas muestran L68 y L71."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de ambas versiones para responder sobre Google Guice y OpenJDK 17, architecture/README.md L68 y L71."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados los datos por versión y no presenta como hecho el framework de la API; las citas corresponden a L68 y L71."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones entregadas: architecture/README.md L68 y L71 coincide en ambas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar directamente en L68 y L71 de las dos guías de arquitectura y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español que solicita versiones y URL por entorno; la llamada sin versión concreta usa `version=null` correctamente."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las URL de producción y desarrollo coinciden con brands.md L7-L10 en 0.0.1-test-bench-v2a y latest."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica ambas versiones y proporciona las dos URL solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a brands.md L7-L10 de ambas versiones respaldan las URL y son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las URL y la comparación entre versiones están respaldadas por las citas a L7-L10 de cada documento."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que sean todas las versiones existentes; identifica las versiones que las documentan, según brands.md L7-L10."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las URL disponibles para ambas versiones, citadas en brands.md L7-L10."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene las URL de producción y desarrollo diferenciadas por protocolo y señala correctamente que son iguales entre versiones; véanse L7-L10."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las URL coinciden en los documentos de ambas versiones, brands.md L7-L10."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan versiones, URL y citas, todos verificables en brands.md L7-L10 de ambas versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre versiones y cabeceras; la llamada con `version=null` es correcta para en_que_version."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La sección Rate Limiting da 1000 peticiones por minuto por cliente y las cabeceras citadas en api-reference/README.md L88-L91 de ambas versiones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos versiones, el límite y ambas cabeceras solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a api-reference/README.md L88-L91 de ambas versiones son válidas y respaldan los datos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "El límite, las cabeceras y la igualdad entre versiones están respaldados por las citas L88-L91."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que haya versiones sin ese límite ni extrapola más allá de los documentos; ambos documentos citados contienen la sección en L88-L91."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la documentación de ambas versiones para dar el límite y las cabeceras, api-reference/README.md L88-L91."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y describe el mismo contenido en ambas; las citas corresponden a L88-L91."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay discrepancia entre versiones en api-reference/README.md L88-L91."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas L88-L91 de ambas versiones y no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, contextualizada en el software, que solicita versiones y solución; la llamada sin versión concreta es adecuada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila documenta «Connection Pool Exhausted», timeouts y aumentar el pool o corregir fugas en Troubleshooting L75-L79 de ambas versiones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica las dos versiones, el síntoma y las dos soluciones; también aclara que no se especifican valores de configuración."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a Troubleshooting L75-L79 de ambas versiones respaldan las afirmaciones y son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "El problema, el síntoma y la solución tienen cita en ambas guías, L75-L79."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que otras versiones carezcan de la información y limita la respuesta a las versiones consultadas; L75-L79 documenta la fila y no da valores concretos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para identificar el síntoma y la solución en Troubleshooting L75-L79 de ambas versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene el mismo diagnóstico y solución para las dos versiones y no inventa parámetros del pool; véase L75-L79."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las guías de ambas versiones coinciden en Troubleshooting L75-L79."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en Troubleshooting L75-L79 de ambas versiones y no exigen valores no documentados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

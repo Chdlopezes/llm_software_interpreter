@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_evidencia-002",
+ "llamadas": [
+  {
+   "clave": "327df1f3a214c03493e24cf01053eb618916f9ebfd377dee5643fecbdbbba32d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy cargando reglas a mano en la base de 2p-revenue-optimizer-api 0.2.2. ¿Qué valores puedo poner en la columna type de rule_header y qué significa cada uno?",
+    "respuesta": "La documentación de la versión 0.2.2 no dice qué representa la columna type de rule_header ni qué valores admite, así que no puedo darte una lista de valores válidos ni explicarte qué significa cada uno. El diccionario de datos sí describe otras columnas de la tabla, como name (nombre de la regla) y description [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L13-L14]. También documenta que rule_row.rule_id hace referencia a rule_header(id) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10]. Ninguno de estos documentos detalla el contenido de type.",
+    "answer_checks": [
+     "Llama a la herramienta con software 2p-revenue-optimizer-api y versión 0.2.2.",
+     "Indica que la documentación entregada no describe el significado ni los valores posibles de la columna type de rule_header.",
+     "No inventa valores para type ni le atribuye un significado.",
+     "No afirma que type no admita valores ni que la columna no exista; lo presenta como algo no documentado.",
+     "Si menciona información relacionada, la cita con líneas citables (por ejemplo, otras columnas de rule_header o la referencia desde rule_row) y no cita la línea 10 de rule_header.md."
+    ]
+   }
+  }
+ ]
+}

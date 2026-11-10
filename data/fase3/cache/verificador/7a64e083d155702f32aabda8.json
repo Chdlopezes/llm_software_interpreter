@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/7a64e083d155702f32aabda8",
+ "llamadas": [
+  {
+   "clave": "7a64e083d155702f32aabda8ec06c141b14ceaad1e3bf6e8028e9c1b288d51f8",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-en_que_version-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por las versiones, sin fijar una; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambos README describen el modelo para Java/JDK 17 y remiten al mismo Issue Tracker (0.2.2: L3-L7; latest: L3-L7)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos versiones entregadas y responde también dónde enviar preguntas y comentarios."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambos README respaldan el modelo base y el enlace al Issue Tracker (0.2.2: L3-L7; latest: L3-L7)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en los README correspondientes (0.2.2: L3-L7; latest: L3-L7)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita el alcance a las versiones consultadas y no afirma que sean exhaustivas; los documentos entregados son de 0.2.2 y latest."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible de ambas versiones (README: L3-L7)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y distingue correctamente que los textos coinciden (0.2.2: L3-L7; latest: L3-L7)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los README: las líneas citadas coinciden."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con los README entregados y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-en_que_version-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por las versiones donde se documenta el cambio; version=null es adecuado."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambos README enumeran Tomcat, Jetty y Undertow y dicen que el proyecto usa Jetty y que el cambio se hace configurando dependencias en build.gradle (0.2.2 y latest: L22-L27)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas versiones y explica cómo cambiar el servidor, incluyendo el ejemplo planteado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L22-L27 de cada README respaldan las afirmaciones sobre servidores y configuración."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ambas versiones tienen citas a sus respectivos README (L22-L27)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que solo habla de las versiones entregadas y no afirma que sean las únicas; esas versiones sí contienen la sección."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre las opciones y el cambio de dependencias (L22-L27)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene la misma descripción para cada versión sin mezclarlas (0.2.2 y latest: L22-L27)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en los README entregados y no exigen una forma literal de respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por 2p-revenue-optimizer-api 0.2.2 y corresponde a la llamada con esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las columnas enumeradas y sus restricciones coinciden con rule_header L9 y L11-L16; la relación citada coincide con rule_row L10. No atribuye un propósito a la tabla."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las columnas respaldadas, identifica la nullable y señala que el propósito de la tabla no se puede precisar con la descripción incompleta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a rule_header L9, L11-L16 y rule_row L10 respaldan las afirmaciones acompañantes; no cita la línea no citable 10 de rule_header."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas; la falta de descripción se presenta como limitación documental."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La frase descriptiva de rule_header está incompleta en L3 y la respuesta no inventa el propósito de la tabla."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las columnas y restricciones documentadas en L9 y L11-L16, en vez de abstenerse por completo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta distingue los datos de columnas de lo que no puede inferirse sobre el propósito de la tabla."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes contradictorias entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con las filas citables de rule_header L9 y L11-L16 y no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por 2p-revenue-optimizer-api 0.2.2 y coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "La relación rule_row.rule_id → rule_header(id) y los datos de rule_header.id son correctos (rule_row L10; rule_header L9), y no se documentan valores o significado de type. Sin embargo, decir que la documentación no cubre la columna type es demasiado amplio: la fila sí registra su tipo y restricción en la línea no citable rule_header L10."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde el enlace entre tablas y declara que los valores y significado de type no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la relación y la clave primaria (rule_row L10; rule_header L9); no usa la línea no citable para respaldar una afirmación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas citables sobre la relación y rule_header.id tienen referencias; la falta de significado o valores de type no requiere una cita de respaldo."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Los documentos no proporcionan los valores posibles ni el significado de type; la respuesta no inventa ninguno."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el enlace documentado en rule_row L10 y rule_header L9."
+       },
+       "consistencia": {
+        "resultado": "parcial",
+        "justificacion": "La afirmación amplia de que no se cubre la columna type no encaja del todo con que la tabla sí contiene una fila para ella; luego precisa correctamente que faltan significado y valores."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las fuentes entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre el enlace y la falta de valores o significado están respaldados por rule_row L10, rule_header L9 y el hueco de type."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta acierta en que faltan el significado y los valores posibles de type, pero afirma de forma demasiado amplia que la documentación no cubre la columna: la fila existe, aunque su línea no sea citable."
+     },
+     {
+      "case_id": "test-evidencia_parcial-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por 2p-revenue-optimizer-api 0.2.2 y corresponde a la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_row L10 documenta la clave foránea; L11-L16 enumera las columnas JSON y rule_header L9 documenta su id."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica cómo se enlazan las tablas, enumera las columnas y declara que no se documenta el propósito de cada fila."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas rule_row L10-L16 y rule_header L9 respaldan las afirmaciones; la ausencia de descripción se refiere a la frase incompleta en rule_row L3."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre campos y relación llevan cita; la limitación sobre el propósito está identificada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de qué almacena rule_row está incompleta en L3; no se inventa un propósito ni un uso de sus campos JSON."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha los datos documentados sobre la clave foránea y las columnas (rule_row L10-L16)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la información estructural disponible de la finalidad no explicada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes contradictorias en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en rule_row L10-L16 y no obligan a atribuir un significado no documentado."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por la versión latest y la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_row L10 referencia rule_header(id); rule_header L9-L16 respalda las columnas y los datos descritos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el enlace y enumera información de las columnas, a la vez que aclara que falta una explicación del contenido o propósito de la tabla."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a rule_row L10 y rule_header L9-L16 respaldan las afirmaciones; no cita la línea no citable 3 como fuente del propósito."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas, incluidas las de los campos de rule_header."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de rule_header está incompleta en L3 y no hay en los documentos entregados una explicación adicional de su propósito."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde lo documentado sobre la relación y las columnas (rule_row L10; rule_header L9-L16)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde las columnas documentadas con una explicación del propósito que falta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las filas citables de rule_row y rule_header y a la descripción incompleta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por 2p-revenue-optimizer-api latest y la llamada coincide."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_header L10 registra type como varchar(180), Not null, y no incluye descripción."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el tipo y restricción solicitados, y señala que el significado y los valores admitidos no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a rule_header L10 respalda el tipo, la restricción y que la descripción de esa fila está vacía."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre type llevan cita a la fila correspondiente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La fila no aporta significado ni valores posibles; la respuesta no los inventa."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha los datos disponibles de tipo y nulabilidad en rule_header L10."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente las propiedades documentadas de la información ausente."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en rule_header L10 y no exigen una explicación inventada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-falta_software-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta omite el software, por lo que corresponde pedir esa aclaración antes de llamar a la herramienta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No ofrece afirmaciones técnicas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el dato necesario para identificar el software."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No debe incluir citas en una aclaración por falta de software."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se consultó documentación porque falta identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La falta de software justifica pedir aclaración, no responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a solicitar el software."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni hay fuentes en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan correctamente la aclaración necesaria y la ausencia de respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-falta_software-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Aunque la pregunta describe OpenAPI, no identifica el software; corresponde pedirlo sin preguntar la versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No ofrece afirmaciones técnicas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide el dato de software que falta antes de responder sobre la clase de configuración."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No debe incluir citas en una aclaración por falta de software."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se consultó documentación porque falta identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "Es necesaria una aclaración sobre el software antes de responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no da datos técnicos ni contradice la situación."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni hay fuentes en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen adecuadamente la aclaración requerida y excluyen una respuesta técnica prematura."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-falta_software-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no identifica el software; corresponde pedirlo sin solicitar la versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No ofrece afirmaciones técnicas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el dato necesario para identificar la documentación pertinente."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No debe incluir citas en una aclaración por falta de software."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se consultó documentación porque falta identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La falta de software justifica pedir una aclaración en lugar de responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Se limita a preguntar por el software, sin añadir una respuesta técnica."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni hay fuentes en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con la situación de falta de software y no requieren contenido técnico."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

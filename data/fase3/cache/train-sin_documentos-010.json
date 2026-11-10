@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-010",
+ "llamadas": [
+  {
+   "clave": "866dcd0f52224be1509e500413da7d242cfdfb768650e08ff01542418245f796",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway 2.0, ¿qué campos devuelve la respuesta de POST /forgiveness_proposal? Necesito saber si trae el monto de descuento y la lista de cuotas.",
+    "respuesta": "El catálogo no tiene documentación de payment-promise-gateway 2.0, así que no puedo decirte qué campos devuelve POST /forgiveness_proposal en esa versión, ni si incluye el monto de descuento o la lista de cuotas. Si quieres, puedo consultar la documentación de las versiones de payment-promise-gateway que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software payment-promise-gateway y versión 2.0, y recibe not_found.",
+     "Explica que no hay documentación de payment-promise-gateway 2.0 en el catálogo.",
+     "No dice qué campos devuelve POST /forgiveness_proposal (por ejemplo, no menciona discount_amount, remaining_amount ni installments como datos de la 2.0).",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no le pide la versión al usuario como requisito para seguir."
+    ]
+   }
+  }
+ ]
+}

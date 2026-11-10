@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-019",
+ "llamadas": [
+  {
+   "clave": "c94c9c099629d6dfd8ed20cb215deef3b936d71810f4c2b459d70b200a4112e0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint de zenith-keeper 1.1.6 que devuelve el stock de lotes por fecha de vencimiento filtrado por categoría (GET /api/v1/fresh-products/due-date/list{quantityOfDays}/{category}/{sort}). ¿Qué tipo tienen los parámetros category y sort, son obligatorios, y qué devuelve la API en 200 y en 404?",
+    "respuesta": "Este GET devuelve el stock de lotes ordenado por fecha de vencimiento y filtrado por categoría. Su operationId es searchAllBatchsByCategory [zenith-keeper/1.1.6/specs/swagger.yaml:L256-L261].\n\n- **category** y **sort**: los dos van en el path, son obligatorios (`required: true`) y son de tipo `string` [zenith-keeper/1.1.6/specs/swagger.yaml:L268-L277].\n- **200 (OK)**: devuelve un JSON con el esquema `BatchStockDTOResp` [zenith-keeper/1.1.6/specs/swagger.yaml:L279-L284].\n- **404 (Not Found)**: devuelve un JSON de tipo `object` genérico [zenith-keeper/1.1.6/specs/swagger.yaml:L285-L290].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.1.6.",
+     "Indica que category y sort son parámetros de path obligatorios de tipo string.",
+     "Indica que la respuesta 200 usa el esquema BatchStockDTOResp y que la 404 (Not Found) devuelve un object genérico.",
+     "Cita líneas del swagger.yaml de la versión 1.1.6 correspondientes a este endpoint, sin apoyarse en la línea 263.",
+     "No inventa parámetros, códigos de respuesta ni campos que no aparecen en la especificación."
+    ]
+   }
+  }
+ ]
+}

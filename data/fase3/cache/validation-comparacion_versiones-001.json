@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-comparacion_versiones-001",
+ "llamadas": [
+  {
+   "clave": "518038c18dd635f0610f506cc8d3f5b8a81acf57ae23f736fc87a94d75ac5967",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy migrando de 0.0.1-test-bench-v2a a latest en catalog-portfolio-api. ¿Cambia algo en los endpoints de logos y de collectors de la referencia rápida? Me interesa saber si hay rutas o métodos distintos.",
+    "respuesta": "No cambia nada: la referencia rápida de logos y collectors es la misma en las dos versiones.\n\nEndpoints de logos, iguales en 0.0.1-test-bench-v2a [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L36-L41] y en latest [catalog-portfolio-api/latest/guide/api-reference/README.md:L36-L41]:\n- `GET /catalog/brands/{brandId}/logos`: obtiene los logos de la marca.\n- `POST /catalog/brands/{brandId}/logos`: sube un logo.\n- `PUT /catalog/brands/{brandId}/logos/{logoId}`: actualiza un logo.\n- `DELETE /catalog/brands/{brandId}/logos/{logoId}`: elimina un logo.\n\nEndpoints de collectors, iguales en 0.0.1-test-bench-v2a [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L45-L49] y en latest [catalog-portfolio-api/latest/guide/api-reference/README.md:L45-L49]:\n- `GET /catalog/brands/{brandId}/collectors`: obtiene los collectors de la marca.\n- `POST /catalog/brands/{brandId}/collectors`: asocia la marca con collectors.\n- `DELETE /catalog/brands/{brandId}/collectors/{collectorId}`: quita la asociación entre la marca y el collector.\n\nEn ambas versiones coinciden las rutas, los métodos y las descripciones.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que los endpoints de logos y de collectors no cambian entre 0.0.1-test-bench-v2a y latest.",
+     "Menciona correctamente los métodos y rutas de logos (GET/POST en /logos, PUT/DELETE en /logos/{logoId}) y de collectors (GET/POST en /collectors, DELETE en /collectors/{collectorId}).",
+     "Cita el api-reference/README.md de ambas versiones.",
+     "No inventa diferencias ni endpoints que no aparecen en los documentos."
+    ]
+   }
+  }
+ ]
+}

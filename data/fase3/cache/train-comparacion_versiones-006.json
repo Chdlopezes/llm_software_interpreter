@@ -1,0 +1,25 @@
+{
+ "task_id": "train-comparacion_versiones-006",
+ "llamadas": [
+  {
+   "clave": "abdf94196f7a93d7ca9438abe30fb1cd21d35264aec6687ef7a604a60e3a0c38",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambia algo entre 0.0.10-stock-consumer y latest en la guía de cómo comprobar si los ítems de los flujos Restock y Feed son ítems de prueba?",
+    "respuesta": "El procedimiento técnico es el mismo en las dos versiones. Lo único que cambia es el formato de los bloques desplegables.\n\nFlujo Restock: en las dos versiones, antes de enviar un inbound hay que obtenerlo y consultar su conciliación para comprobar si los ítems tienen los tags que los identifican como ítems de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L37-L37] [vendor-stockkeeper-api/latest/guide/important.md:L37-L37]. Para eso se usa el endpoint `/inbounds/{id}/conciliations` de 1p-inbounds [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L40-L42] [vendor-stockkeeper-api/latest/guide/important.md:L40-L42]. Después se consulta la API de ítems y se revisan sus tags [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L128-L128] [vendor-stockkeeper-api/latest/guide/important.md:L128-L128].\n\nFlujo Feed: también es igual en las dos. Con el Operation id se consulta la base de datos de 1p-3pl-integrator llamada 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240] [vendor-stockkeeper-api/latest/guide/important.md:L239-L240]. Luego se busca en materials por sap sku o por material id para obtener el ítem, y se consultan sus tags en la API de ítems [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254] [vendor-stockkeeper-api/latest/guide/important.md:L252-L254]. La búsqueda se hace con la misma llamada a `materials/facade/search` en las dos versiones [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L256-L283] [vendor-stockkeeper-api/latest/guide/important.md:L256-L283].\n\nLa diferencia: en latest, los `<summary>` de los bloques desplegables con las respuestas de ejemplo («Response Inbound conciliation» y «Response item details.») llevan estilos CSS en línea [vendor-stockkeeper-api/latest/guide/important.md:L45-L45] [vendor-stockkeeper-api/latest/guide/important.md:L135-L135]. En 0.0.10-stock-consumer esos mismos `<summary>` no tienen estilos [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L45-L45] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L135-L135]. Es un cambio solo de presentación y no afecta a los pasos.",
+    "answer_checks": [
+     "Indica que los pasos de verificación de los flujos Restock y Feed son los mismos en 0.0.10-stock-consumer y en latest, y cita el important.md de las dos versiones.",
+     "Señala que la única diferencia es de presentación: los <summary> de los bloques desplegables llevan estilos en línea en latest y no en 0.0.10-stock-consumer.",
+     "No inventa diferencias funcionales (endpoints, campos o pasos distintos) entre las dos versiones.",
+     "No cita como respaldo líneas no citables (por ejemplo, la URL de la API de ítems en la línea 131 o las líneas de tags 231-232)."
+    ]
+   }
+  }
+ ]
+}

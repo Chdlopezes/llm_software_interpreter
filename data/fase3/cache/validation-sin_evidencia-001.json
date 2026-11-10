@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-sin_evidencia-001",
+ "llamadas": [
+  {
+   "clave": "e9494aa847ddd61dc1ea5f4cb71c56070ee874c9040978db4161e321305cd23f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy evaluando si integrar price-engine-api latest en nuestro flujo. ¿Qué responsabilidades asume el servicio y qué cosas quedan explícitamente fuera de su alcance?",
+    "respuesta": "La documentación de latest no permite responder eso: no hay una lista de las responsabilidades del servicio ni de lo que queda fuera de su alcance.\n\nLo único que se dice sobre su propósito es una descripción general: es una aplicación para gestionar y modelar los ajustes de configuraciones de ventas del seller [price-engine-api/latest/specs/swagger.yaml:L11-L11]. Con solo eso no puedo decirte qué exclusiones tiene. Habría que confirmarlo con el equipo responsable.",
+    "answer_checks": [
+     "Indica que la documentación de latest no detalla las responsabilidades ni las exclusiones del servicio.",
+     "No inventa responsabilidades ni exclusiones concretas del servicio.",
+     "No afirma que el servicio no tenga exclusiones ni que no asuma ninguna responsabilidad.",
+     "Si menciona el propósito general del servicio, lo cita del swagger (línea 11) y no cita las líneas marcadas como TO DO de general.md."
+    ]
+   }
+  }
+ ]
+}

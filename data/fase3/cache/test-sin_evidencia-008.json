@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_evidencia-008",
+ "llamadas": [
+  {
+   "clave": "abf22a305f247ff17ea55cb75e17d56e28a37e111bc4c998b9bb8bf50ac387cd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For traffic-gate-api latest, how do I get an API key to call it, and how long is the key valid before it expires?",
+    "respuesta": "The latest docs don't say how to get an API key or how long one stays valid, so I can't answer either part.\n\nHere's what they do say. The spec applies the `ApiKeyAuth` security scheme to the whole API [traffic-gate-api/latest/specs/swagger.yaml:L21-L22]. That scheme is an API key sent in the `X-Tiger-Token` request header [traffic-gate-api/latest/specs/swagger.yaml:L308-L311]. None of the provided documents explain how to request or issue that token, or whether it expires.",
+    "answer_checks": [
+     "States that the documentation does not explain how to obtain the API key or how long it is valid / whether it expires.",
+     "Does not invent a procedure for getting the key or an expiration period.",
+     "Mentions, with a citation to the swagger spec, that authentication uses an API key in the X-Tiger-Token header (ApiKeyAuth).",
+     "Does not claim that keys never expire or that there is no way to obtain one.",
+     "Responds in English."
+    ]
+   }
+  }
+ ]
+}

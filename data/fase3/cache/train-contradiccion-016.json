@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-016",
+ "llamadas": [
+  {
+   "clave": "5361e0a1796577ef52fa6a559bcd98d47d08d858f81c1a8b930c4266abc8a43d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm testing the Restock Consumer of vendor-stockkeeper-api 0.0.3-paused-seller from Postman against stage. Which host should I point the request at?",
+    "respuesta": "The documentation for 0.0.3-paused-seller contradicts itself on this point. The Domain section lists the base URLs as prod / stage pairs. For TechZone Platform they are `vendor-stockkeeper.techzonesystems.com` / `vendor-stockkeeper-stage.techzonesystems.com`, and for Postman they are `vendor-stockkeeper.techzoneoffice.com` / `vendor-stockkeeper-stage.techzoneoffice.com` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L7-L9]. Going by that list, the Postman stage host would be `vendor-stockkeeper-stage.techzoneoffice.com`.\n\nThe Restock Consumer curl example on the same page uses a different host, `https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/restock-new` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L25-L25]. That host isn't one of the documented base URLs. The same example also sends the header `x-api-scope: stage` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L26-L26].\n\nSo this documentation doesn't settle which host is correct for stage: the `-stage` host from the base URL list, or the `-test` host from the example.",
+    "answer_checks": [
+     "Cites the documented base URLs (prod/stage for TechZone Platform and Postman) from api.md lines 7-9.",
+     "Cites the Restock Consumer curl example that uses the vendor-stockkeeper-test.techzoneoffice.com host and points out that this host is not among the documented base URLs.",
+     "Explains the discrepancy without presenting either the -stage host or the -test host as the confirmed correct one.",
+     "Does not invent other hosts, environments or configuration details that are not in the documents."
+    ]
+   }
+  }
+ ]
+}

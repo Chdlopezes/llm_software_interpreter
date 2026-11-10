@@ -1,0 +1,46 @@
+{
+ "task_id": "train-contradiccion-019",
+ "llamadas": [
+  {
+   "clave": "208a8cdb0355025961e8d66e2730a4d8542c2bce5018b620fa44cd4eddc929ac",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy siguiendo la guía de verificación de ítems de prueba del flujo de Restock en vendor-stockkeeper-api 0.0.3-paused-seller. Cuando consulto la item API para revisar los tags, ¿la respuesta de ejemplo que trae la guía corresponde al mismo ítem que se consulta en el curl? Quiero usarla como referencia para comparar con lo que me devuelve a mí.",
+    "respuesta": "La documentación no es coherente en este punto. La guía indica que, para saber si los ítems son de prueba, hay que consultar la item API y revisar sus tags [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L128-L128]. El curl de ejemplo consulta el ítem `MLA1737779958` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L131-L131], pero la respuesta de ejemplo que se muestra a continuación devuelve `\"id\": \"MLA0000000000\"` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L139-L139]. Es decir, el identificador de la respuesta no coincide con el del ítem consultado, así que con esta documentación no puedo confirmar que esa respuesta corresponda a la llamada del curl. Lo que sí muestra el ejemplo es la estructura del campo `tags` dentro de la respuesta [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L199-L206]. Como referencia para comparar campos y estructura te puede servir, pero no para comparar valores concretos.",
+    "answer_checks": [
+     "Indica que el curl de ejemplo consulta un id de ítem y la respuesta de ejemplo muestra un id distinto, citando ambas líneas (L131 y L139 de important.md).",
+     "Explica la discrepancia sin afirmar cuál de los dos ids es el correcto ni inventar una explicación de la causa.",
+     "No presenta la respuesta de ejemplo como si fuera con certeza la del ítem consultado.",
+     "Cita únicamente documentos de la versión 0.0.3-paused-seller y no usa información externa."
+    ]
+   }
+  },
+  {
+   "clave": "d7087b013343b3989c819c443d1911997e895301c0a9cbf2cb50dd1a61a685ba",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy siguiendo la verificación de ítems de prueba del flujo de Restock en vendor-stockkeeper-api 0.0.3-paused-seller. La respuesta de ejemplo de la item API que aparece en la guía, ¿es la de alguno de los ítems que salen en la conciliación del inbound? La quiero usar de referencia para comparar con lo que me devuelve a mí.",
+    "respuesta": "La documentación no es coherente en este punto. En el flujo de Restock, la guía indica que primero hay que obtener el inbound y revisar su conciliación para comprobar si los ítems tienen los tags de ítem de prueba [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L37-L37], y después consultar la item API para revisar sus tags [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L128-L128]. La respuesta de ejemplo de la conciliación contiene los ítems `MLA1734160848` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L56-L56] y `MLA1734238432` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L74-L74]. Sin embargo, la respuesta de ejemplo de la item API devuelve `\"id\": \"MLA0000000000\"` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L139-L139], que no coincide con ninguno de los dos. Con esta documentación no puedo confirmar a qué ítem corresponde esa respuesta ni que sea la de los ítems del inbound. Lo que sí muestra el ejemplo es la forma del campo `tags`, con un valor como `test_item` en la lista [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L199-L206]. Sirve como referencia de estructura, pero no para comparar valores concretos de un ítem.",
+    "answer_checks": [
+     "Indica que el id de la respuesta de ejemplo de la item API (L139 de important.md) no coincide con los item_id de la conciliación del inbound (L56 y L74), citando esas líneas.",
+     "Explica la discrepancia sin afirmar cuál es el id correcto ni inventar una causa.",
+     "No presenta la respuesta de ejemplo como si con certeza fuera la de un ítem del inbound.",
+     "No cita líneas no citables de important.md salvo la L139 del conflicto (por ejemplo, no cita L131).",
+     "Usa solo documentos de la versión 0.0.3-paused-seller, sin información externa."
+    ]
+   }
+  }
+ ]
+}

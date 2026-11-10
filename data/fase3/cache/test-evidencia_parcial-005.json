@@ -1,0 +1,26 @@
+{
+ "task_id": "test-evidencia_parcial-005",
+ "llamadas": [
+  {
+   "clave": "168c6c9459b88711377df9c9b4c20ebae2b7bc6c4f9a359431532a06b8063b19",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api latest, ¿qué tipo de dato y qué restricciones tiene la columna type de la tabla rule_header, y qué representa ese campo exactamente?",
+    "respuesta": "En la tabla rule_header, la columna type es de tipo varchar(180) y tiene la restricción Not null [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L10-L10]. Lo que no puedo decirte es qué representa: en esa fila la columna de descripción está vacía [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L10-L10], así que la documentación no explica para qué sirve el campo ni qué valores admite.",
+    "answer_checks": [
+     "Indica que la columna type de rule_header es varchar(180) y Not null.",
+     "Cita la fila de la columna type de la tabla rule_header.",
+     "Declara que la documentación no describe qué representa la columna type.",
+     "No inventa un significado ni una lista de valores válidos para type.",
+     "No se abstiene en la parte que sí está documentada (tipo y restricción)."
+    ]
+   }
+  }
+ ]
+}

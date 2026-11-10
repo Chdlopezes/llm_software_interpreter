@@ -1,0 +1,45 @@
+{
+ "task_id": "validation-contradiccion-002",
+ "llamadas": [
+  {
+   "clave": "cf895014f938cace4fe7124e49325f5652c5f17ad8b7f94bb5e9799adacb3acb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy parseando la respuesta de la búsqueda de marcas en catalog-portfolio-api 0.0.1-test-bench-v2a. ¿La lista de marcas viene dentro de un campo \"data\" o en otra clave del JSON?",
+    "respuesta": "La documentación se contradice en este punto, así que no puedo confirmarte cuál es la clave correcta.\n\n- La referencia general de la API dice que todas las respuestas siguen un formato común, con el contenido dentro de un objeto `\"data\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L59-L65].\n- El ejemplo de respuesta de la búsqueda (`GET /`) pone la lista de marcas directamente en un array `\"results\"`, sin ningún `\"data\"` alrededor [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L44-L46].\n\nLas dos fuentes no se pueden cumplir a la vez y la documentación no aclara cuál vale. Te recomiendo comprobarlo con una respuesta real del servicio antes de fijar el parseo.",
+    "answer_checks": [
+     "Indica que la documentación es contradictoria sobre dónde va la lista de marcas en la respuesta.",
+     "Cita el formato general de respuesta con el envoltorio \"data\" (api-reference/README.md) y el ejemplo de búsqueda con \"results\" (brands.md).",
+     "No da por buena ninguna de las dos estructuras (\"data\" o \"results\") como si fuera un hecho confirmado.",
+     "No inventa información fuera de los documentos entregados para resolver el conflicto."
+    ]
+   }
+  },
+  {
+   "clave": "6c20238d65ec2ba9ce7c2b0dc9700483b80c0f954f9396a7cac5250824d966b9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy parseando la respuesta de la búsqueda de marcas en catalog-portfolio-api 0.0.1-test-bench-v2a. ¿La lista de marcas viene dentro de un campo \"data\" o en otra clave del JSON?",
+    "respuesta": "La documentación se contradice en este punto, así que no puedo confirmarte cuál es la clave correcta.\n\nLa referencia general de la API presenta un formato de respuesta común en el que el contenido va dentro de un objeto `\"data\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L63-L63]. En cambio, el ejemplo de respuesta de la búsqueda de marcas (`GET /`) pone la lista directamente en un array `\"results\"`, sin ningún `\"data\"` alrededor [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L44-L46].\n\nLa documentación no aclara cuál de los dos formatos es el bueno. Antes de fijar el parseo, conviene que lo compruebes con una respuesta real del servicio.",
+    "answer_checks": [
+     "Indica que la documentación es contradictoria sobre dónde va la lista de marcas en la respuesta de búsqueda.",
+     "Cita el formato general con el envoltorio \"data\" (api-reference/README.md) y el ejemplo de búsqueda con \"results\" (brands.md).",
+     "No da por buena ninguna de las dos estructuras (\"data\" o \"results\") como si fuera un hecho confirmado.",
+     "No inventa información de fuera de los documentos entregados para resolver el conflicto."
+    ]
+   }
+  }
+ ]
+}

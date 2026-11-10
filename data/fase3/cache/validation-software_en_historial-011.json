@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-011",
+ "llamadas": [
+  {
+   "clave": "a16c06277f3ce4f6efbce5610ddc3d4d7c678030c220fb2d00c9dcbc930b750f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando un cliente contra catalog-portfolio-api 0.0.1-test-bench-v2a y ahora me toca la parte del manejo de errores en el lado del consumidor.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber sobre el manejo de errores y lo reviso.",
+    "pregunta": "Cuando una llamada falla, ¿el cuerpo de la respuesta repite el código de estado HTTP o tengo que sacarlo solo de la respuesta HTTP? ¿Y viene algún campo con las causas del error?",
+    "respuesta": "Sí, el cuerpo lo repite. Según el formato de error documentado, las respuestas de error traen un campo `status` con el código dentro del propio JSON. Junto a él vienen `error`, con un identificador del error, `message`, con una descripción legible, y `cause`, que es un array. En el ejemplo, `brand_not_found` aparece con `status` 404 y `cause` vacío [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L75-L86]. La referencia de los endpoints de marcas muestra este mismo formato [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L316-L325].\n\nLa documentación no explica qué contiene `cause` cuando no está vacío, ni la estructura de sus elementos. Para eso no tengo datos.",
+    "answer_checks": [
+     "Consulta la documentación de catalog-portfolio-api versión 0.0.1-test-bench-v2a, tomadas del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que el cuerpo de error incluye un campo status con el código HTTP, además de error y message.",
+     "Menciona el campo cause como array (vacío en el ejemplo).",
+     "Cita la sección Error Format de api-reference/README.md (en torno a L75-L86) o el formato equivalente de brands.md.",
+     "No inventa el contenido ni la estructura de los elementos de cause; si lo menciona, lo declara no documentado."
+    ]
+   }
+  }
+ ]
+}

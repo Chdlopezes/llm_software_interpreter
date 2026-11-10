@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-017",
+ "llamadas": [
+  {
+   "clave": "e6fea5d31b50169dfb68a56b9137fcee3a04b3e14cf34c0831a35d2cb0d8aaf6",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, ¿qué método HTTP y qué ruta tengo que usar para dar de alta un workflow nuevo por la API REST?",
+    "respuesta": "La documentación de la 5.6.2-hotfix-1 no da el método HTTP ni la ruta de la API REST para dar de alta un workflow, así que no puedo decirte cuáles son. Lo único relacionado es el caso de uso «Insert a workflow». Describe el flujo, pero no el endpoint: el usuario envía los valores del workflow y Workflow lo busca en la base de datos [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L189-L201]. Si no existe, lo inserta y responde HTTP 201 CREATED; si ya existe, responde HTTP 409 CONFLICT [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L202-L210].",
+    "answer_checks": [
+     "Llama a la herramienta con software order-workflow-api y versión 5.6.2-hotfix-1.",
+     "Indica que la documentación entregada no recoge el método HTTP ni la ruta para dar de alta un workflow.",
+     "No inventa ningún método ni ruta (por ejemplo, POST /workflows).",
+     "No afirma que la operación no exista o no se soporte.",
+     "Si menciona el caso de uso «Insert a workflow» (201 CREATED / 409 CONFLICT), lo cita con líneas de use-cases.md y no cita las líneas no citables de usage.md."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-009",
+ "llamadas": [
+  {
+   "clave": "beba1d5be5bcc442960ada6dac7459193d8cd157989af2aa6b5a198c3902f2e5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, when the Configs API asks to change an app's configured workflow to a different one, what sequence of steps does the Workflow API go through with the branches and the default branch?",
+    "respuesta": "When the Workflow API gets an \"Edit workflow message\" from the Configs API, it first reads the FROM workflow settings from the Database and then reads the TO workflow settings [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L45-L54]. Next it goes through all the stable branches and asks the Github Proxy to unprotect each FROM workflow branch. After that it sets the default branch to master [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L55-L64].\n\nOnce that's done, it applies the TO workflow's specified context to the branches. It then loops over the stable branches again and protects each TO workflow branch through the Github Proxy [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L65-L71]. Finally, it sets the TO workflow's default branch and returns OK to the Configs API [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L72-L77].",
+    "answer_checks": [
+     "Indicates that the Workflow API retrieves both the FROM and the TO workflow settings from the Database before touching branches.",
+     "States that the FROM workflow branches are unprotected and the default branch is set to master before the TO workflow branches are protected.",
+     "Mentions that the TO workflow context is set on the branches, the TO branches are protected, and the TO workflow default branch is set at the end, followed by an OK to the Configs API.",
+     "Cites the 'Edit the configured workflow of an app' sequence diagram in use-cases.md for version 5.6.2-hotfix-1.",
+     "Does not invent steps or behaviors that are absent from the diagram (e.g., rollback handling or error codes)."
+    ]
+   }
+  }
+ ]
+}

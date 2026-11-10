@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-013",
+ "llamadas": [
+  {
+   "clave": "037628c37741068af511d1e9abc09dda39683d6226677bd2946a2e2bea993678",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy usando catalog-portfolio-api 0.0.1-test-bench-v2a. ¿Qué método HTTP y qué ruta tengo que usar para activar una marca, y qué parámetros me pide esa llamada?",
+    "respuesta": "Para activar una marca se usa `PUT /{brandId}/activate`. La documentación describe esta operación como la activación de una marca después de su validación [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L243-L247].\n\nSolo pide un parámetro de ruta, `brandId`. Es de tipo integer, es obligatorio y corresponde al ID de la marca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L249-L253].\n\nEsta ruta va sobre la URL base de los endpoints de marcas. En producción es `https://api.mp.internal.retailflow.com/catalog/brands` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L5-L8]. Un ejemplo de llamada sería:\n\n```bash\ncurl -X PUT \"https://api.mp.internal.retailflow.com/catalog/brands/123/activate\"\n```\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L255-L259]",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que el método es PUT y la ruta /{brandId}/activate (o /catalog/brands/{brandId}/activate).",
+     "Indica que el único parámetro documentado es brandId, un entero obligatorio que va en la ruta.",
+     "Cita la sección Activate Brand de brands.md (líneas 243-259 o un subrango).",
+     "No inventa parámetros, headers ni un cuerpo de petición que no estén documentados para esta operación."
+    ]
+   }
+  }
+ ]
+}

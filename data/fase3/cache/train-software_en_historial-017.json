@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-017",
+ "llamadas": [
+  {
+   "clave": "32611b07ed3f4c7c441842d4db07a0925634920f9f6552ecbfc21295efe9c856",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi! I'm working with demand-forecast-docs latest. I'm reviewing how we turn monthly exogenous variables into daily inputs for the marketplace models.",
+    "historial_asistente": "Sounds good. What would you like to know about it?",
+    "pregunta": "Why was forecast proportions picked over top-down for that disaggregation? I thought top-down would also keep the monthly total intact.",
+    "respuesta": "You're right that top-down also keeps the monthly total. The goal is not only to reconcile but to keep the month-level input exactly as given and treat it as correct. Two reconciliation strategies do that: top-down and forecast proportions. Top-down was ruled out because it isn't clear how to apply it to this temporal hierarchy, since months have different lengths. That leaves forecast proportions as the best option [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L57-L57].\n\nWith forecast proportions, each day's base forecast is multiplied by the ratio between the given monthly value and the base forecast total for that month [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L68-L72]. The result is then used as an input for the model [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L74-L74].",
+    "answer_checks": [
+     "Does not ask again for the software or the version: it uses demand-forecast-docs latest from the earlier turn.",
+     "Says that both top-down and forecast proportions keep the monthly total exactly as given.",
+     "Explains that top-down was ruled out because it isn't clear how to apply it to the temporal hierarchy when months have different lengths.",
+     "Cites lines from diarizacion.md in the Approach section (around L57) and does not cite line 65.",
+     "Does not add other reasons against top-down that the document doesn't give."
+    ]
+   }
+  }
+ ]
+}

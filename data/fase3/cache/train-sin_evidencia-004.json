@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-004",
+ "llamadas": [
+  {
+   "clave": "2859a3b594d0cce34e1f8541c3b6c405e60c18c439b721bb75f4f3f0460c64fd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For vendor-stockkeeper-api 0.0.6-ep-restock-man, what tables are in the inventory database and what columns do they have? I need the schema before I do a manual restock straight in the DB.",
+    "respuesta": "I can't answer this from the 0.0.6-ep-restock-man documentation. None of the documents for this version describe the inventory database's tables or columns.\n\nThe database guide only gives connection details for three environments: Test (inventtest), Stage (inventstg) and Prod (inventprd). All three use host proxysql.master.techzoneseginf.com and port 6612 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md:L2-L23]. It doesn't list any tables, columns or other parts of the schema.\n\nYou'll need to get the schema somewhere else, for example by checking the database directly or asking the team that owns it.",
+    "answer_checks": [
+     "States that the provided documentation for 0.0.6-ep-restock-man does not describe the inventory database's tables or columns.",
+     "Does not invent table names, column names or schema details for the inventory database.",
+     "May mention the documented connection details (inventtest/inventstg/inventprd, host proxysql.master.techzoneseginf.com, port 6612) citing database.md, without citing line 25.",
+     "Does not present the 1p_3pl_product_stock_mov table from the 1p-3pl-integrator database as part of the stockkeeper inventory database schema.",
+     "Does not claim the database has no tables or that a schema does not exist."
+    ]
+   }
+  }
+ ]
+}

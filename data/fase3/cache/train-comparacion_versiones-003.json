@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-003",
+ "llamadas": [
+  {
+   "clave": "e5a389cc8f15fda22441734ed82a0e5a87af9073fa0c9b41e3a908e5c8da0feb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambió algo de 0.0.6-ep-restock-man a latest en la tabla de alertas? Me refiero a qué alertas hay, cómo se describen y a qué monitor de Datadog apunta cada una.",
+    "respuesta": "No, la tabla de alertas es igual en las dos versiones. Tiene las mismas cuatro alertas, con la misma descripción y el mismo enlace a Datadog en cada una:\n\n- **Error restock in vendor-stockkeeper-api**: salta cuando algo falla al intentar hacer un restock. Monitor 116772629 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L9-L9] [vendor-stockkeeper-api/latest/guide/alerts.md:L9-L9].\n- **Stockkeeper-api - Error restocking item (negative quantity)**: salta cuando falla el restock de publicaciones y la publicación tiene cantidad negativa. Monitor 150073893 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L10-L10] [vendor-stockkeeper-api/latest/guide/alerts.md:L10-L10].\n- **Validation stock (publication has more stock than warehouse's stock**: salta cuando algo falla al intentar vender una publicación sin stock en instalaciones 3PL. Monitor 158654468 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L11-L11] [vendor-stockkeeper-api/latest/guide/alerts.md:L11-L11].\n- **Validation stock ERROR updating item**: salta cuando algo falla al actualizar la cantidad de stock de la publicación. Monitor 160761475 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L12-L12] [vendor-stockkeeper-api/latest/guide/alerts.md:L12-L12].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la tabla de alertas no cambia entre 0.0.6-ep-restock-man y latest: tiene las mismas cuatro alertas, con las mismas descripciones y los mismos enlaces a monitores.",
+     "Cita la tabla del alerts.md de las dos versiones (líneas 9-12 de cada documento).",
+     "No inventa diferencias en la tabla ni le atribuye alertas, descripciones o monitores que no aparecen en ella.",
+     "No cita las líneas no citables 1-4 de los alerts.md."
+    ]
+   }
+  }
+ ]
+}

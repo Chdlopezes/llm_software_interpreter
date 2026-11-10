@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-023",
+ "llamadas": [
+  {
+   "clave": "1c960a55d8317fd20c96fc3e260166e445581f6e39ec3913160be46839e00a59",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con demand-forecast-docs latest. Voy a añadir una página nueva a la documentación técnica del proyecto de forecasting del marketplace.",
+    "historial_asistente": "¡Perfecto! Dime qué necesitas saber sobre esa documentación y lo busco.",
+    "pregunta": "Ya me aprobaron el PR y lo mergeé. ¿Qué tengo que hacer ahora para sacar una nueva versión de la doc, y necesito tener alguna herramienta instalada para eso?",
+    "respuesta": "Cuando el PR esté aprobado y mergeado, tienes que ejecutar `retail create-version A.B.C`, donde `A.B.C` es la versión de tu documentación. La guía enlaza una página donde puedes ver cuál es la última versión publicada [demand-forecast-docs/latest/guide/README.md:L24-L25].\n\nSí, necesitas una herramienta: el Retail Data Framework CLI. La guía pide preparar tu máquina local siguiendo las instrucciones enlazadas y avisa de que hay que instalar ese CLI para poder crear versiones nuevas de la documentación [demand-forecast-docs/latest/guide/README.md:L20].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con demand-forecast-docs y la versión latest del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que hay que ejecutar `retail create-version A.B.C`, donde A.B.C es la versión de la documentación.",
+     "Indica que hace falta tener instalado el Retail Data Framework CLI para crear versiones nuevas de la documentación.",
+     "Cita líneas de demand-forecast-docs/latest/guide/README.md dentro de la sección de contribución (L16-L25) y no cita las líneas 1-10.",
+     "No mezcla este procedimiento con el flujo de ramas release/master ni con los comandos `rda` de overview.md, y no inventa pasos que no estén en la documentación."
+    ]
+   }
+  }
+ ]
+}

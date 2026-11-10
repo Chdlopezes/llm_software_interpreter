@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-002",
+ "llamadas": [
+  {
+   "clave": "954e231a021b3699498f297cfbac912b07c259abb72448d0cc6d71cdcd835108",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿dónde guarda el catálogo los datasets por defecto y cómo hago para que se guarden en BigQuery? Y otra cosa: ¿cómo se llama el yml donde se definen los datasets del catálogo y qué estructura tiene?",
+    "respuesta": "El catálogo recibe un diccionario de nombres de datasets y clases de dataset, y se ocupa de todo el guardado y la carga [demand-forecast-docs/latest/guide/overview.md:L925-L925]. Pasarle un catálogo al pipeline es opcional; si no se le pasa, los datasets se guardan en memoria [demand-forecast-docs/latest/guide/overview.md:L927-L927]. Para guardarlos en BigQuery, el ejemplo importa `catalog` desde `marketplace.pipes.main` y se lo pasa al primer pipe del pipeline compuesto, `IngestMarketplaceData(catalog=catalog)`, que luego se ejecuta dentro de un `Context` con sus parámetros [demand-forecast-docs/latest/guide/overview.md:L930-L958].\n\nSobre el yml: la documentación solo dice que, en marketplace, los datasets se definen en un archivo yml, y que puedes buscar los nombres de los datasets en el código para ver qué pipelines los generan [demand-forecast-docs/latest/guide/overview.md:L925-L925]. No dice cómo se llama ese archivo ni qué estructura tiene, así que no puedo indicarte ninguna de las dos cosas.",
+    "answer_checks": [
+     "Indica que, si no se pasa un catálogo (que es opcional), los datasets se guardan en memoria por defecto.",
+     "Explica que para guardar en BigQuery se importa el catálogo desde marketplace.pipes.main y se pasa al pipeline (p. ej. IngestMarketplaceData(catalog=catalog)).",
+     "Declara que la documentación no da el nombre del archivo yml donde se definen los datasets ni su estructura.",
+     "No inventa un nombre de archivo (por ejemplo, no presenta tasks.yml, workflows.yml ni catalog.yml como ese archivo) ni una estructura para él.",
+     "Cita las líneas del documento overview.md que respaldan lo que afirma."
+    ]
+   }
+  }
+ ]
+}

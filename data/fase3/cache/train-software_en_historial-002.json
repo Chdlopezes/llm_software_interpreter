@@ -1,0 +1,25 @@
+{
+ "task_id": "train-software_en_historial-002",
+ "llamadas": [
+  {
+   "clave": "9e375035fc2c70463632e005b12d30508a10dd242c66f4cb3911cfcd082fb985",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando un frontend de autoservicio con payment-promise-gateway latest y quiero entender bien qué cubre el servicio antes de empezar.",
+    "historial_asistente": "Perfecto. Dime qué parte quieres revisar y lo busco en la documentación.",
+    "pregunta": "¿Qué funcionalidades ofrece para gestionar los recargos por mora?",
+    "respuesta": "En el apartado de gestión de recargos por mora (Late Fee Management), el servicio ofrece tres funcionalidades: crear propuestas de condonación (forgiveness proposals), confirmarlas y consultar el estado de una condonación [payment-promise-gateway/latest/guide/README.md:L93-L96]. Además, dentro de las funcionalidades de promesas de pago aparece también la gestión de la condonación de recargos por mora [payment-promise-gateway/latest/guide/README.md:L87-L91].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con payment-promise-gateway y la versión latest del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que se pueden crear propuestas de condonación, confirmarlas y consultar el estado de la condonación.",
+     "Cita las líneas de la sección Late Fee Management del README de latest (en torno a L93-L96).",
+     "No inventa funcionalidades de gestión de recargos por mora que no aparezcan en la documentación."
+    ]
+   }
+  }
+ ]
+}

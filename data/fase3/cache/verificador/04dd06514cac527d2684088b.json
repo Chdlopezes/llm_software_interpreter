@@ -1,0 +1,109 @@
+{
+ "task_id": "verificador/04dd06514cac527d2684088b",
+ "llamadas": [
+  {
+   "clave": "04dd06514cac527d2684088b6ada1c89df8ac81273cd5a832166a299377b032c",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_evidencia-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, nombra demand-forecast-docs y latest, y consulta precisamente la sintaxis de ejecución del plan."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no inventa argumentos ni flags; describe el flujo documentado en overview.md, líneas 196 y 199."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que la sintaxis y los argumentos solicitados no están documentados, y aporta el contexto disponible sobre la ejecución del plan (líneas 196 y 199)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md:L196-L196 y L199-L199 respaldan el flujo y la mención de ejecutar un plan concreto; no cita líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre prepare, run y la falta de ejemplo están citadas en overview.md, líneas 196 y 199."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita la falta de información a la sintaxis, argumentos y flags de rda workflow run; el hueco se confirma en overview.md:L199-L199 y no afirma que el comando no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Además de señalar lo que falta, comunica el flujo que sí está documentado en overview.md, líneas 196 y 199."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la información del flujo de la sintaxis no especificada, sin contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la pregunta, el hueco y las líneas citadas, y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, consulta sobre demand-forecast-docs sin fijar versión y coincide con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La descripción coincide con overview.md:L5-L5: demanda de productos en el marketplace e información sobre TGMV y TSI para 9 categorías más un total por sitio."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde qué pronostica el proyecto y cuál es el alcance descrito en el documento (overview.md:L5-L5)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a overview.md:L5-L5 respalda las afirmaciones sobre el objetivo y el alcance."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas de la respuesta están cubiertas por la cita a overview.md:L5-L5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La pregunta se puede responder con la evidencia entregada y la respuesta no declara información faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la descripción disponible en overview.md:L5-L5 para responder directamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni presenta afirmaciones contradictorias; atribuye la descripción a latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con los argumentos de llamada y overview.md:L5-L5, y no imponen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-004",
+ "llamadas": [
+  {
+   "clave": "50a76df9c32684871fd370c44a91e3b19495de1880647c1f52ae93e187de5f4b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway 2.0, ¿en qué paquete van las clases de configuración de WorkflowCloud dentro de la estructura del proyecto?",
+    "respuesta": "El catálogo no tiene documentación de payment-promise-gateway 2.0, así que no puedo decirte en qué paquete van las clases de configuración de WorkflowCloud en esa versión. Si quieres, puedo buscarlo en las versiones de payment-promise-gateway que sí están documentadas.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software payment-promise-gateway y versión 2.0, y recibe not_found.",
+     "Explica que no hay documentación de payment-promise-gateway 2.0 en el catálogo.",
+     "No dice en qué paquete van las clases de configuración de WorkflowCloud ni describe la estructura del proyecto.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no le pide al usuario que confirme la versión."
+    ]
+   }
+  }
+ ]
+}

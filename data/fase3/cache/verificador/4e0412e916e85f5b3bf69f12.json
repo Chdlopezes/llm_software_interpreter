@@ -1,0 +1,297 @@
+{
+ "task_id": "verificador/4e0412e916e85f5b3bf69f12",
+ "llamadas": [
+  {
+   "clave": "4e0412e916e85f5b3bf69f12b038138dfdbaed0dca03e87bbb2caf5675b8aa18",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-comparacion_versiones-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por una comparación entre las dos versiones sin fijar una versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambas versiones asignan 404 a brand_not_found, 409 a brand_name_already_exists y 422 a logos_missing (brands.md:L311-L313); el ejemplo de cuerpo de error tiene los campos indicados (brands.md:L318-L325)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara los tres códigos solicitados y el formato del cuerpo de error en ambas versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan los códigos y el ejemplo de estructura del error (brands.md:L311-L313, L318-L325)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre códigos y cuerpo de error llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante; los documentos de ambas versiones contienen lo que se compara (brands.md:L311-L325)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la evidencia disponible para las dos versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni se contradice; afirma que coinciden y muestra los mismos datos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las versiones para los datos consultados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la pregunta, la respuesta y las líneas citadas; no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por la estructura de respuesta de creación y consulta por ID para la versión indicada; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta identifica correctamente que el ejemplo general muestra data (api-reference/README.md:L63) mientras que los ejemplos de creación y consulta por ID muestran campos de marca en la raíz (brands.md:L116-L123, L149-L168)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la discrepancia y no elige arbitrariamente un formato como el real."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita la línea del formato general y los ejemplos de marcas; la cita de la línea 63 está permitida para señalar el conflicto en esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre ambos formatos tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Reconoce que la documentación no permite confirmar cuál formato devuelve realmente el servicio, sin afirmar que uno no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone lo que sí documentan ambas fuentes y limita la conclusión a la discrepancia."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las dos representaciones documentadas y no presenta una como definitiva."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita la fuente general (api-reference/README.md:L63) y los ejemplos de brands.md (L116-L123, L149-L168), sin resolverlo por invención."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen la llamada, las citas y el manejo de la discrepancia sin exigir una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por autenticación y obtención de credenciales para el software y versión indicados; la llamada coincide."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las referencias citadas describen X-Client-Id para DELETE (brands.md:L213-L225; brand-management/README.md:L122-L123), un ejemplo de prueba con esa cabecera (troubleshooting/README.md:L146-L147) y recomendaciones para 401 (troubleshooting/README.md:L72; brands.md:L309). No se atribuye a ellas un esquema general."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan el esquema general ni la obtención de credenciales y presenta la información relacionada que sí está disponible."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las referencias a la cabecera, al ejemplo de autenticación y al error 401; no cita la línea no citable 7 de api-reference/README.md."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas específicas llevan citas; la falta de detalles se formula como una limitación documental."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que esos detalles no están explicados, sin concluir que la autenticación no exista; las líneas citadas dan ejemplos parciales, no un esquema general."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las referencias documentadas a X-Client-Id, API keys, permisos y 401 en vez de limitarse a abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la información parcial de DELETE y troubleshooting de lo que no queda especificado para todos los endpoints."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la limitación de evidencia y los datos relacionados que la respuesta cita, sin imponer una redacción."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial ya identifica catalog-portfolio-api y la versión; la pregunta en inglés corresponde a esa situación y la llamada usa esos datos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las consultas SQL para comprobar una marca, contar logos y listar marcas STAND_BY aparecen en troubleshooting/README.md:L124-L134; el comando de curl con -w aparece en L143-L144."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde cómo comprobar existencia, contar logos y medir el tiempo de la petición."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a las consultas SQL y al comando curl mostrados en el documento entregado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y los ejemplos de comandos llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala correctamente que la guía no muestra el contenido de curl-format.txt; no afirma que ese contenido no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa las consultas y el comando de medición disponibles en la guía."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Trata 123 como un ejemplo sustituible, no como un ID fijo, y no inventa el formato del archivo de curl."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la respuesta y en troubleshooting/README.md:L124-L144; no exigen texto literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por el endpoint y la respuesta en catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint es GET /{brandId} (brands.md:L126-L130), brandId es obligatorio e integer (L132-L136), y el ejemplo de logos contiene id, brand_id, type y picture_id (L156-L163)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el endpoint, el parámetro de ruta y los campos de los logos, además de la base y un ejemplo de petición."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a la sección Get Brand, la URL base y el ejemplo de respuesta (brands.md:L7-L10, L126-L163)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta queda respondida con el ejemplo documentado, sin presentar campos adicionales como hechos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible sobre la ruta, el parámetro y los logos."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni contradice el ejemplo de respuesta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta consulta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los detalles incluidos en la respuesta y a la sección Get Brand."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por la comprobación previa a la activación para el software y la versión indicados; la llamada coincide."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La sección documenta GET /{brandId}/activable y brandId como parámetro de ruta obligatorio de tipo integer (brands.md:L272-L282), además del curl de ejemplo (L284-L288)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el método y la ruta, el parámetro documentado y la llamada de ejemplo."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de brands.md y api-reference/README.md respaldan la ruta, el parámetro y el ejemplo (brands.md:L272-L288; api-reference/README.md:L31)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara faltantes; se limita a los parámetros y la llamada que documenta la sección."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con el endpoint y el curl disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La ruta completa se deriva coherentemente del endpoint bajo /catalog/brands, y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y corresponden a la ruta, el parámetro y el ejemplo documentados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

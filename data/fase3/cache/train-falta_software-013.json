@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-013",
+ "llamadas": [
+  {
+   "clave": "be7efe6b19e9918674b6948be0b60308df8b0b13313edd2b1488965832636852",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Quiero revisar el código de la transformación que desagrega las variables exógenas mensuales a nivel diario. ¿En qué archivo del repositorio está implementada?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pide al usuario que indique el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica: no menciona archivos, rutas ni enlaces de implementación."
+    ]
+   }
+  }
+ ]
+}

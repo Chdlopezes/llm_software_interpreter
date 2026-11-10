@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-012",
+ "llamadas": [
+  {
+   "clave": "a33437063bf0f30c9321a74560c5334e3f998c3ac313e16bf7686745ba6993e1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For catalog-portfolio-api, which Gradle tasks do I use to run just the integration tests or a single test class, and which static analysis checks can I run locally?",
+    "respuesta": "The two documented versions, 0.0.1-test-bench-v2a and latest, describe this workflow the same way.\n\n**Tests:**\n- Run all tests: `./gradlew test`\n- Run one test class: pass its name with `--tests`, e.g. `./gradlew test --tests BrandServiceTest`\n- Run integration tests: `./gradlew integrationTest`\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L71-L80] [catalog-portfolio-api/latest/guide/setup/local-development.md:L71-L80]\n\n**Static analysis checks:**\n- PMD: `./gradlew pmdMain`\n- Checkstyle: `./gradlew checkstyle`\n- SpotBugs: `./gradlew spotbugsMain`\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L84-L93] [catalog-portfolio-api/latest/guide/setup/local-development.md:L84-L93]",
+    "answer_checks": [
+     "Indicates that integration tests are run with `./gradlew integrationTest` and a single test class with `./gradlew test --tests <ClassName>`.",
+     "Lists the static analysis tasks pmdMain (PMD), checkstyle and spotbugsMain (SpotBugs).",
+     "States that this is the same in 0.0.1-test-bench-v2a and latest, or cites both versions, without attributing it to only one.",
+     "Does not ask the user for a version and does not invent extra Gradle tasks or options not in the documents.",
+     "Cites the local-development.md lines that hold the test and quality-check commands."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-011",
+ "llamadas": [
+  {
+   "clave": "1fafb7fbfee1e76365f2abf72d033f4859c07a640e2b4d9d559a290daafc4e80",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estamos desplegando catalog-portfolio-api en producción y nos pasan dos cosas: a veces la configuración no se carga y el servicio consume demasiada memoria. ¿Qué se recomienda revisar en cada caso?",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, dicen lo mismo para estos dos problemas de despliegue en producción:\n\n- Si la configuración no se carga, hay que revisar las variables de entorno y los permisos de los archivos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L199-L200] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L199-L200].\n- Si el uso de memoria es alto, hay que ajustar los parámetros de la JVM y la recolección de basura (garbage collection) [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L202-L203] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L202-L203].",
+    "answer_checks": [
+     "Indica que, si la configuración no se carga en producción, se deben revisar las variables de entorno y los permisos de los archivos.",
+     "Indica que, ante un uso alto de memoria, se deben ajustar los parámetros de la JVM y la recolección de basura.",
+     "Indica que la recomendación es la misma en 0.0.1-test-bench-v2a y en latest, o la respalda con ambas versiones sin atribuirla a una sola.",
+     "No pide la versión al usuario.",
+     "No inventa valores concretos de configuración de la JVM ni variables de entorno específicas que no aparecen en la documentación."
+    ]
+   }
+  }
+ ]
+}

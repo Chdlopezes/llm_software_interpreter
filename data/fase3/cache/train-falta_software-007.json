@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-007",
+ "llamadas": [
+  {
+   "clave": "5f47bfdbdd4ae32f5d6bc003fd6bf833e99fad4b120d7bb1a762c149e75375fb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "When I register a new user through the sign-up endpoint, what status code and body type do I get back if the request is rejected?",
+    "respuesta": "Which software are you asking about?",
+    "answer_checks": [
+     "Does not call the documentation tool.",
+     "Asks the user which software the question is about.",
+     "Does not ask for the version.",
+     "Does not give a technical answer (no status codes, response types or endpoint details)."
+    ]
+   }
+  }
+ ]
+}

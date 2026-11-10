@@ -1,0 +1,26 @@
+{
+ "task_id": "test-comparacion_versiones-003",
+ "llamadas": [
+  {
+   "clave": "63d918b79e5b7c85b1e10435a1aac65f00c4e805faaedb46069f254dce7131ab",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy migrando un esquema de 2p-revenue-optimizer-api de la 0.2.2 a latest. ¿Qué columnas de la tabla rule_header cambian entre esas dos versiones?",
+    "respuesta": "Hay tres diferencias en las columnas de rule_header.\n\n1. **Columna de fecha de creación con otro nombre.** En 0.2.2 se llama `created_date` (timestamp, Not null, \"Date timestamp when was created\", DEFAULT_GENERATED) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L11-L11]. En latest aparece como `date`, con el mismo tipo, la misma restricción, la misma descripción y DEFAULT_GENERATED [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L11-L11].\n\n2. **`productive_date` solo está en 0.2.2.** En 0.2.2 la tabla tiene `productive_date` (timestamp, null, \"productive date\") [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L16-L16]. La tabla de latest no la incluye [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L7-L16].\n\n3. **`version` solo está en latest.** En su lugar, latest añade `version` (int, Not null, \"Version\") [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L16-L16].\n\nEstas columnas no cambian:\n- `id`: bigint, Not null, clave primaria autoincremental [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L9-L9] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L9-L9].\n- `username`, `name` y `description`: varchar(180), Not null [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L12-L14] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L12-L14].\n- `productive`: boolean, Not null [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L15-L15] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L15-L15].\n\nLa documentación solo describe las columnas de cada versión. No explica cómo migrar los datos entre ellas.",
+    "answer_checks": [
+     "Indica que la columna de fecha de creación se llama created_date en 0.2.2 y date en latest, con el mismo tipo timestamp y DEFAULT_GENERATED.",
+     "Indica que productive_date (timestamp, null) aparece en 0.2.2 y no aparece en la tabla de latest, y que version (int, Not null) aparece solo en latest.",
+     "No atribuye a 0.2.2 la columna version ni a latest la columna productive_date.",
+     "Señala columnas que no cambian, como id, username, name, description o productive.",
+     "Cita el rule_header.md de las dos versiones y no cita la línea 10 del documento de 0.2.2 (columna type)."
+    ]
+   }
+  }
+ ]
+}

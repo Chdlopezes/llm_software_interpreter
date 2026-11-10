@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-006",
+ "llamadas": [
+  {
+   "clave": "e3ec9b5f57a7b177a3a1ab21c32e5740723945260e4f53ff5ebee034e0feeb53",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Quiero levantar rápido catalog-portfolio-api en mi máquina. ¿Qué comandos tengo que ejecutar, en orden, para clonarlo, compilarlo y arrancarlo?",
+    "respuesta": "El arranque rápido es igual en las dos versiones documentadas, 0.0.1-test-bench-v2a y latest. Los pasos, en orden, son:\n\n1. Clonar el repositorio con `retailflow get catalog-portfolio-api` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L22-L23] [catalog-portfolio-api/latest/guide/setup/README.md:L22-L23].\n2. Entrar en el proyecto con `cd catalog-portfolio-api` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L25-L26] [catalog-portfolio-api/latest/guide/setup/README.md:L25-L26].\n3. Instalar las dependencias y compilar con `./gradlew build` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L28-L29] [catalog-portfolio-api/latest/guide/setup/README.md:L28-L29].\n4. Configurar la base de datos. Es un paso del arranque rápido, pero ahí no se dice cómo hacerlo [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L31-L31] [catalog-portfolio-api/latest/guide/setup/README.md:L31-L31].\n5. Arrancar el servicio con `./gradlew run` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L34-L35] [catalog-portfolio-api/latest/guide/setup/README.md:L34-L35].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Da los comandos en este orden: `retailflow get catalog-portfolio-api`, `cd catalog-portfolio-api`, `./gradlew build` y `./gradlew run`.",
+     "Menciona el paso de configurar la base de datos entre la compilación y el arranque, sin inventar cómo se hace.",
+     "Indica que el arranque rápido no cambia entre 0.0.1-test-bench-v2a y latest, o cita ambas versiones, sin atribuirlo a una sola.",
+     "Cita las líneas del bloque de Quick Start del README de setup y no cita la línea 32."
+    ]
+   }
+  }
+ ]
+}

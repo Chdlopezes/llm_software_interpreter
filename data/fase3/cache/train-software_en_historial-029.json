@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-029",
+ "llamadas": [
+  {
+   "clave": "85c6c5a7ec88360ae201e225be0dd961d47a3984bd9caf2a826faced251a3f48",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, esta semana estoy de guardia con vendor-stockkeeper-api 0.0.10-stock-consumer y estoy revisando los monitores que tenemos configurados.",
+    "historial_asistente": "Perfecto, cuéntame qué necesitas saber de los monitores o de las alertas y lo consulto en la documentación.",
+    "pregunta": "¿Qué alerta salta cuando falla la actualización de la cantidad de stock de una publicación? ¿Dónde encuentro su monitor?",
+    "respuesta": "Es la alerta «Validation stock ERROR updating item». Se dispara cuando algo falla al intentar actualizar la cantidad de stock de la publicación, y su monitor está en Datadog: https://app.datadoghq.com/monitors/160761475 [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L12-L12].",
+    "answer_checks": [
+     "Consulta la documentación de vendor-stockkeeper-api 0.0.10-stock-consumer, la versión del historial, sin volver a preguntar por el software ni por la versión.",
+     "Identifica la alerta «Validation stock ERROR updating item» como la que salta cuando falla la actualización de la cantidad de stock de la publicación.",
+     "Da el enlace del monitor de Datadog https://app.datadoghq.com/monitors/160761475.",
+     "Cita la fila correspondiente de la tabla de alertas (alerts.md, línea 12).",
+     "No mezcla datos de otras versiones ni inventa umbrales o configuraciones del monitor."
+    ]
+   }
+  }
+ ]
+}

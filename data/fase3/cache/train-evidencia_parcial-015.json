@@ -1,0 +1,47 @@
+{
+ "task_id": "train-evidencia_parcial-015",
+ "llamadas": [
+  {
+   "clave": "0c1b5b7191cd80033bd3e296015869332f878a36bdff9ee32d2567234b86f919",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando vendor-stockkeeper-api 0.0.10-stock-consumer y necesito llamar al Internal Item Detail. ¿Qué método y qué ruta usa, y qué devuelve exactamente la respuesta (campos del JSON)?",
+    "respuesta": "Internal Item Detail es una operación `GET` sobre la ruta `/internal/stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L14-L19].\n\nNo puedo decirte qué devuelve. En la documentación de la versión 0.0.10-stock-consumer, este endpoint solo aparece como una fila de la tabla de servicios. No tiene sección propia con un ejemplo de llamada ni de respuesta, así que los campos del JSON de respuesta (y también los headers o los códigos de estado) no están documentados para este endpoint.",
+    "answer_checks": [
+     "Indica que Internal Item Detail usa el método GET y la ruta /internal/stock-operations/3pl/{identifierRegister}.",
+     "Cita la fila de la tabla de servicios de api.md (línea 19) como respaldo del método y la ruta.",
+     "Declara que la estructura o los campos de la respuesta de este endpoint no están documentados.",
+     "No inventa campos de respuesta, headers ni códigos de estado para Internal Item Detail, ni toma los de otros endpoints como si fueran suyos.",
+     "No afirma que el endpoint no devuelva nada o que no exista una respuesta; solo que no está documentada."
+    ]
+   }
+  },
+  {
+   "clave": "d59e88ac51d61031a503899d1f0577d138e79f91f60049c39fe1beec9f2e095c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando vendor-stockkeeper-api 0.0.10-stock-consumer y necesito llamar al Internal Item Detail. ¿Qué método y qué ruta usa, y qué campos trae el JSON de respuesta?",
+    "respuesta": "Internal Item Detail es una operación `GET` sobre la ruta `/internal/stock-operations/3pl/{identifierRegister}`. La tabla de servicios recoge el método, la operación y la ruta de cada endpoint [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L14-L15], y esta es la fila de Internal Item Detail [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L19-L19].\n\nNo puedo decirte qué campos trae la respuesta. En la documentación de la versión 0.0.10-stock-consumer, este endpoint solo aparece como una fila de esa tabla. No tiene una sección propia con un ejemplo de llamada o de respuesta, así que los campos del JSON no están documentados. Lo mismo pasa con los headers y los códigos de estado.",
+    "answer_checks": [
+     "Indica que Internal Item Detail usa el método GET y la ruta /internal/stock-operations/3pl/{identifierRegister}.",
+     "Cita la fila de la tabla de servicios de api.md (línea 19) como respaldo del método y la ruta.",
+     "Declara que los campos de la respuesta de este endpoint no están documentados.",
+     "No inventa campos de respuesta, headers ni códigos de estado para Internal Item Detail, ni toma como suyos los de otros endpoints.",
+     "No afirma que el endpoint no devuelva nada; solo que su respuesta no está documentada."
+    ]
+   }
+  }
+ ]
+}

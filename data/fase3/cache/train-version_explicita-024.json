@@ -1,0 +1,25 @@
+{
+ "task_id": "train-version_explicita-024",
+ "llamadas": [
+  {
+   "clave": "1a1fe9f4f38d20b794f19e08825d787287e46da8d95095814b7f2111ba405e81",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy leyendo la parte de diarización de demand-forecast-docs latest y me lío con la notación. ¿Qué diferencia hay entre la y con tilde y la y con sombrero? ¿Y qué representan N y M?",
+    "respuesta": "En la notación de la diarización, $\\tilde{y}(t)$ es el pronóstico de $y(t)$ antes de la reconciliación [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L15-L15], y $\\hat{y}(t)$ es el pronóstico de $y(t)$ después de la reconciliación [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L17-L17]. Los dos se refieren a $y(t)$, que son los valores reales de la serie temporal en el instante $t$ [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L11-L11].\n\n$N$ es el número de timestamps [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L7-L7] y $M$ es el número de variables exógenas (features) [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L9-L9].",
+    "answer_checks": [
+     "Indica que la tilde (ỹ(t)) es el pronóstico antes de la reconciliación y el sombrero (ŷ(t)) es el pronóstico después de la reconciliación.",
+     "Indica que N es el número de timestamps y M el número de variables exógenas.",
+     "Cita las líneas de notación del documento diarizacion.md de latest (L7-L17), sin citar la línea 13.",
+     "No inventa significados ni fórmulas que no aparezcan en la sección de notación."
+    ]
+   }
+  }
+ ]
+}

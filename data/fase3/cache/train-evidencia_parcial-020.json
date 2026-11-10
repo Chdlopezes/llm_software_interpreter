@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-020",
+ "llamadas": [
+  {
+   "clave": "bc08d7df2ec82602658d05007a4916fa589302a1ee546679ddafdf1ae022b3aa",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando vendor-stockkeeper-api 0.0.3-paused-seller. ¿Qué headers y qué cuerpo hay que mandar al Restock Consumer? Y del endpoint Internal Item Detail, ¿qué parámetros acepta y qué devuelve?",
+    "respuesta": "Según el ejemplo curl de Restock Consumer, la petición lleva dos headers: `x-api-scope: stage` y `Content-Type: application/json` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L26-L27]. El cuerpo es un JSON con un objeto `msg` que contiene el campo `inbound_shipment_id` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L28-L32]. La respuesta que documenta es `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L34].\n\nSobre Internal Item Detail, la documentación de esta versión solo incluye secciones de detalle para Restock Consumer y Feed Consumer [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L23] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L37]. Para Internal Item Detail no hay ninguna sección con sus parámetros, un ejemplo de petición ni el formato de su respuesta. Por eso no puedo decirte qué acepta ni qué devuelve.",
+    "answer_checks": [
+     "Indica que la petición a Restock Consumer lleva los headers x-api-scope y Content-Type: application/json.",
+     "Indica que el cuerpo contiene un objeto msg con el campo inbound_shipment_id y que la respuesta documentada es 200 OK.",
+     "Declara que los parámetros y la respuesta de Internal Item Detail no están documentados.",
+     "No inventa parámetros, campos de respuesta ni códigos para Internal Item Detail.",
+     "No presenta el valor de ejemplo de inbound_shipment_id como un dato fijo ni se abstiene en la parte documentada."
+    ]
+   }
+  }
+ ]
+}

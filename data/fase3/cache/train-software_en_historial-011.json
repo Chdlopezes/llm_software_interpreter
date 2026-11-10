@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-011",
+ "llamadas": [
+  {
+   "clave": "02ed7f41850f639b21f7265a91424215ef3c16e050620df179b71fd71442b37f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con vendor-stockkeeper-api latest. Esta semana me toca ejecutar unas operaciones sobre los flujos de inventario en stage y quiero hacerlo con cuidado.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber sobre esas operaciones y lo busco en la documentación.",
+    "pregunta": "Antes de lanzar cualquier acción sobre los flujos, ¿qué pasos de verificación tengo que seguir con los ítems de prueba?",
+    "respuesta": "El procedimiento de verificación tiene tres pasos. Primero, revisa el inbound del flujo de Restock y asegúrate de que estén todos los ítems de prueba [vendor-stockkeeper-api/latest/guide/important.md:L24-L24]. Segundo, comprueba el Operation Id del flujo de Feed y confirma que también contenga todos los ítems requeridos [vendor-stockkeeper-api/latest/guide/important.md:L25-L25]. Por último, antes de seguir con cualquier acción, haz una validación final de los dos flujos [vendor-stockkeeper-api/latest/guide/important.md:L26-L26].",
+    "answer_checks": [
+     "Llama a la herramienta con vendor-stockkeeper-api y la versión latest del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que hay que revisar el inbound del flujo de Restock para confirmar que estén todos los ítems de prueba.",
+     "Indica que hay que comprobar que el Operation Id del flujo de Feed contenga todos los ítems requeridos.",
+     "Menciona la validación final de ambos flujos antes de ejecutar cualquier acción.",
+     "Cita las líneas del procedimiento de verificación de important.md (L22-L27) y no cita líneas no citables como las de la sección 'Importance of Verification' o la conclusión."
+    ]
+   }
+  }
+ ]
+}

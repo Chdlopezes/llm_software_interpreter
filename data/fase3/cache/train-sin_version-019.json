@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-019",
+ "llamadas": [
+  {
+   "clave": "3d74770a2947c3666e746a881638a0f76f0bebe8d7d0201687fa7f580da4b04b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Para qué sirve payment-promise-gateway y dónde se sitúa respecto al frontend y a los servicios de pagos?",
+    "respuesta": "Las dos versiones documentadas, 0.0.10-test-crc-migration y latest, lo describen con el mismo texto. payment-promise-gateway es un servicio middleware que gestiona operaciones de autoservicio relacionadas con pagos para el sistema de pagos de GreatMart. Hace de capa intermedia entre las aplicaciones frontend y los servicios de pagos centrales (core payment services) [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L3-L3] [payment-promise-gateway/latest/guide/README.md:L3-L3].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que es un servicio middleware para operaciones de autoservicio relacionadas con pagos del sistema de pagos de GreatMart.",
+     "Indica que hace de capa intermedia entre las aplicaciones frontend y los servicios de pagos centrales.",
+     "Indica que la descripción es la misma en 0.0.10-test-crc-migration y en latest, sin atribuirla a una sola versión.",
+     "Cita las líneas de la descripción y no añade datos que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-022",
+ "llamadas": [
+  {
+   "clave": "4990dbb5b979a5239e12835073265746165903c26a0a6e205bdc7766ee223d5c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy con vendor-stockkeeper-api 0.0.3-paused-seller y necesito entrar a la base de datos de stage. ¿Qué host y qué puerto uso, y qué tablas tiene esa base?",
+    "respuesta": "La base de stage se llama inventstg. Se conecta al host proxysql.master.techzoneseginf.com por el puerto 6612 [vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md:L10-L13]. Las bases de test (inventtest) y de prod (inventprd) usan ese mismo host y ese mismo puerto [vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md:L2-L5] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md:L18-L21]. En cuanto a las tablas, la documentación de esta versión no las describe: ni el esquema ni la estructura de la base de inventstg aparecen, así que no puedo decirte qué tablas tiene.",
+    "answer_checks": [
+     "Indica que la base de stage (inventstg) usa el host proxysql.master.techzoneseginf.com y el puerto 6612, con cita a database.md.",
+     "Declara que las tablas o el esquema de la base no están documentados.",
+     "No inventa nombres de tablas ni de columnas para la base del servicio.",
+     "No presenta la tabla 1p_3pl_product_stock_mov (de la base de 1p-3pl-integrator) como una tabla de la base de vendor-stockkeeper-api.",
+     "No cita la línea 25 de database.md (la referencia a la imagen) como respaldo."
+    ]
+   }
+  }
+ ]
+}

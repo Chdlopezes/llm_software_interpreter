@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/a6cb9771327c6e788056efe3",
+ "llamadas": [
+  {
+   "clave": "a6cb9771327c6e788056efe38b4dd1c2abfd84131ad86ef9e80bb25211e02a46",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_version-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre payment-promise-gateway sin versión concreta; corresponde a version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Java 17, Gradle, ./gradlew build y ./gradlew bootRun coinciden con ambas versiones, líneas 501-513."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los requisitos, el comando de compilación y el de arranque, líneas 501-513."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan los requisitos y comandos, líneas 501-513."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con líneas pertinentes de ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara faltantes ni afirma que los ejemplos sean exhaustivos; la respuesta solicitada está documentada en líneas 501-513."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde utilizando las instrucciones de instalación disponibles, líneas 501-513."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones; señala correctamente que las instrucciones coinciden."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental: ambas versiones coinciden en líneas 501-513."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre llamada, requisitos, comandos y equivalencia entre versiones son verificables y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre cómo ejecutar las pruebas, sin versión concreta y con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "./gradlew test es el comando indicado en ambas versiones, líneas 515-520."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el comando solicitado e indica que la instrucción no difiere entre versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan el comando y su equivalencia, líneas 515-520."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre cómo correr las pruebas tiene citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma información faltante; el comando está documentado en ambas versiones, líneas 515-520."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con el comando que aporta la documentación, líneas 517-520."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y declara correctamente que las instrucciones coinciden."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental; ambas versiones muestran el mismo comando, líneas 515-520."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables con la llamada y las líneas 515-520, y no imponen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-017",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre carpetas del proyecto, con software correcto y sin versión específica."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las rutas entities/bo/, entities/commands/ y entities/workflowconfig/ aparecen en ambas estructuras, líneas 51-57."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde dónde ubicar los Business Objects, los commands y la configuración de WorkflowCloud."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a líneas 51 y 54-57 de ambos documentos sostienen la estructura indicada."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre las rutas y la equivalencia entre versiones están respaldadas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante; las tres rutas solicitadas están documentadas, líneas 54-57."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la estructura disponible para contestar cada parte de la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las rutas y la afirmación de que ambas versiones coinciden son consistentes con líneas 51-57."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las estructuras documentadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las rutas y citas presentes y no requieren una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-019",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre la función y posición del software, con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La descripción coincide con ambas versiones: middleware para operaciones de autoservicio y capa entre frontend y servicios centrales, línea 3."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica tanto para qué sirve como su posición respecto de frontend y servicios centrales."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La línea 3 de ambos documentos respalda la descripción."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en los dos documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No plantea faltantes; la función y ubicación solicitadas están descritas en línea 3."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta presenta la misma descripción documentada en ambas versiones, línea 3."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las versiones."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan afirmaciones verificables en línea 3 y la llamada indicada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-020",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el ejemplo curl de payment-promise-gateway, sin versión específica."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo confirma con PUT /forgiveness_proposal, usa los headers indicados y envía borrowerId, proposalId y siteId, líneas 368-377."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica método y ruta, headers y campos del cuerpo; aclara que los valores son ilustrativos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan URL base y token (313-315), así como método, headers y cuerpo (368-377)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada dato técnico de la llamada está citado en ambos documentos."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que los valores del ejemplo sean obligatorios; aclara su carácter ilustrativo, conforme al bloque de ejemplo, líneas 368-377."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha el ejemplo curl para contestar todos los detalles solicitados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción es consistente y señala que los ejemplos coinciden en ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay diferencias documentales en el ejemplo de ambas versiones."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre método, headers, campos y valores ilustrativos son verificables y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-022",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre ejecución local desde IntelliJ; no especifica versión y la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "SCOPE=dev o SCOPE=local y las VM options indicadas coinciden con ambas versiones, líneas 494-497."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Incluye la variable de entorno, las opciones de VM y la ruta indicada en IntelliJ."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambos documentos respaldan los valores y pasos, líneas 494-497."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está citada en las líneas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma faltantes ni añade requisitos; las instrucciones solicitadas aparecen en líneas 494-497."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando las instrucciones locales disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta coincide con ambas versiones y no mezcla comportamientos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las instrucciones de las dos versiones."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las instrucciones citadas y a la llamada; no exigen redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-023",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre la estructura y campos de la respuesta de GET /offers, sin versión concreta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los campos y valores de ejemplo coinciden con el JSON de ambas versiones, líneas 426-438."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los campos y describe la forma de available_offers; distingue los valores de ejemplo de los posibles valores."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas cubren el objeto de respuesta, el array, sus elementos de ejemplo y los demás campos, líneas 426-438."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre estructura y campos tienen citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que los valores son ejemplos y que la documentación no enumera todos los posibles valores; el bloque JSON de ambas versiones solo aporta un ejemplo, líneas 426-438."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Describe la estructura que sí está disponible, sin abstenerse por la falta de una especificación exhaustiva."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No convierte los valores de ejemplo en valores fijos y declara que ambos documentos coinciden."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las versiones."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en el JSON de ejemplo y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-025",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre la herramienta de métricas y las métricas seguidas, sin versión concreta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "DataDog y las cuatro métricas indicadas aparecen en ambas versiones, líneas 524-528."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica qué se usa para recopilar métricas y enumera las métricas clave."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan la herramienta y la lista, líneas 524-528."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas con citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que la lista sea exhaustiva; la presenta como métricas clave, tal como el documento, líneas 524-528."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible para contestar ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta coincide en ambas versiones y no mezcla datos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en líneas 524-528 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-026",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre manejo de errores y expectativas de un cliente frontend, sin versión concreta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cuatro aspectos mencionados corresponden a la descripción de ambas versiones, líneas 532-536."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Resume el enfoque documentado y aclara qué detalles concretos no proporciona la documentación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan los aspectos del manejo de errores, líneas 532-536."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación sobre el enfoque tiene citas; las limitaciones señaladas se verifican en los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Indica correctamente que no se especifican códigos concretos, formato del cuerpo ni nombres de excepciones en ninguno de los documentos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone lo documentado y limita la respuesta solo para los detalles no especificados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No contradice la descripción general ni inventa códigos, cuerpos o excepciones concretos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones; ambas describen el mismo enfoque."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con líneas 532-536 y no piden datos ausentes ni una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-027",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre componentes concretos del stack, sin versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Java 17, Spring Boot 3.2.4, Gradle, Google Guice y DataDog Metrics aparecen en ambas versiones, líneas 41-46; OpenAPI/Swagger también está documentado."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contesta sobre lenguaje, framework, build, inyección de dependencias y monitoreo; añade el sistema de documentación, también respaldado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones sostienen los componentes enumerados, líneas 41-46."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas, incluida la adicional sobre documentación, tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante ni atribuye al stack componentes ausentes de los documentos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información de la sección Technical Stack para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los componentes y la afirmación de equivalencia entre versiones coinciden con líneas 41-46."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las dos versiones entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en líneas 41-46 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "task_id": "train-en_que_version-016",
+ "llamadas": [
+  {
+   "clave": "247a16192b40d2a1aff85d275c242d46a3c4f9d81cbf5e39fca651b1b5fb3531",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api aparece documentado en qué flujos de inventario hay que verificar los ítems de prueba antes de ejecutar cualquier acción?",
+    "respuesta": "Las cuatro versiones que hay disponibles lo documentan, y en todas con el mismo contenido: la verificación hace falta en dos flujos principales, **Restock** y **Feed**.\n\n- **0.0.3-paused-seller** [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L9-L14]\n- **0.0.6-ep-restock-man** [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L9-L14]\n- **0.0.10-stock-consumer** [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L9-L14]\n- **latest** [vendor-stockkeeper-api/latest/guide/important.md:L9-L14]\n\nEn las cuatro, el procedimiento asociado también es el mismo:\n1. Revisar el inbound en el flujo de Restock para comprobar que están todos los ítems de prueba.\n2. Comprobar en el flujo de Feed que el operationId contiene todos los ítems necesarios.\n3. Hacer una validación final de ambos flujos antes de seguir.\n\nPor ejemplo, en latest [vendor-stockkeeper-api/latest/guide/important.md:L22-L26] y en 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L22-L26].",
+    "answer_checks": [
+     "Identifica 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest como las versiones que lo documentan.",
+     "Indica que los dos flujos son Restock y Feed.",
+     "Cita el important.md de al menos una de las versiones, en las líneas de la sección de flujos de inventario.",
+     "No afirma que alguna versión sea la primera o que no existan otras versiones fuera de las entregadas.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  },
+  {
+   "clave": "93c2f6480dc0f65cd50e37b98ba8d5fc464b6dbe0f315f991a7907bd5cc1cdfc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api viene documentado en qué flujos de inventario hay que comprobar los ítems de prueba?",
+    "respuesta": "Las cuatro versiones que devolvió la consulta lo documentan en su important.md, y todas indican los mismos dos flujos principales en los que hace falta esta verificación: Restock y Feed.\n\n- 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L9-L14]\n- 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L9-L14]\n- 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L9-L14]\n- latest [vendor-stockkeeper-api/latest/guide/important.md:L9-L14]\n\nEsto solo cubre las versiones que aparecen en la documentación consultada. No sé si existen otras.",
+    "answer_checks": [
+     "Identifica 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest como versiones que lo documentan.",
+     "Indica que los flujos son Restock y Feed.",
+     "Cita la sección de flujos de inventario (líneas 9-14) del important.md de cada versión que menciona.",
+     "No afirma que esas sean todas las versiones que existen del software ni que alguna sea la primera.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

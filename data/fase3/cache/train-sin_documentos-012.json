@@ -1,0 +1,25 @@
+{
+ "task_id": "train-sin_documentos-012",
+ "llamadas": [
+  {
+   "clave": "1decf2ba09ca62c23cff75a24ef80dfc2899788aeafc3d80e2c9e881dac2d243",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 9.4, ¿cómo llegan los webhooks del EventCollector al servicio? ¿Los recibe por el consumidor de BigQ o hay un endpoint HTTP aparte?",
+    "respuesta": "No encuentro documentación de order-workflow-api 9.4 en el catálogo, así que no puedo decirte cómo recibe esa versión los webhooks del EventCollector. Si quieres, puedo consultar la documentación de las versiones de order-workflow-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 9.4, y recibe not_found.",
+     "Explica que no hay documentación de order-workflow-api para la versión 9.4.",
+     "No inventa cómo se reciben los webhooks del EventCollector (ni por BigQ ni por un endpoint HTTP) y no incluye citas.",
+     "No presenta datos de otras versiones como si fueran de la 9.4; como mucho, ofrece consultar las versiones disponibles."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "task_id": "train-evidencia_parcial-019",
+ "llamadas": [
+  {
+   "clave": "7b34035003ece4b23801db90e119b464746931ccfc38f44be9777c1d4514617a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For vendor-stockkeeper-api 0.0.3-paused-seller, what headers and request body does the Restock Consumer call need? And for the Get Detail endpoint, what parameters does it accept and what does its response look like?",
+    "respuesta": "For the Restock Consumer, the example call sends two headers: `x-api-scope: stage` and `Content-Type: application/json` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L26-L27]. The JSON body has a `msg` object that holds an `inbound_shipment_id` field [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L28-L32]. The documented response is `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L34].\n\nI can't tell you about Get Detail's parameters or response. The documentation only has detailed sections and examples for Restock Consumer and Feed Consumer [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L48]. Nothing in it describes what Get Detail accepts or returns, and there's no example call for it.",
+    "answer_checks": [
+     "Indicates that the Restock Consumer call uses the x-api-scope and Content-Type: application/json headers.",
+     "Indicates that the request body contains a msg object with an inbound_shipment_id field, and that the documented response is 200 OK.",
+     "States that the parameters and response of Get Detail are not documented.",
+     "Does not invent parameters, response fields or an example for Get Detail.",
+     "Does not present the example value of inbound_shipment_id as a required or fixed value."
+    ]
+   }
+  },
+  {
+   "clave": "05f2d4d57058151a2520d180a950ae613c3d2952033d44260099fab64011dfd6",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For vendor-stockkeeper-api 0.0.3-paused-seller, what headers and request body does the Restock Consumer call need? And for the Get Detail endpoint, what parameters does it accept and what does its response look like?",
+    "respuesta": "In the Restock Consumer example, the call sends two headers: `x-api-scope` (set to `stage` in the example) and `Content-Type: application/json` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L26-L27]. The JSON body contains a `msg` object with an `inbound_shipment_id` field [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L28-L32]. The documented response is `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L34].\n\nI can't answer the Get Detail part. The docs only have detailed sections with examples for Restock Consumer [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L24] and Feed Consumer [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L48]. Nothing describes Get Detail's parameters or response, and there's no example call for it.",
+    "answer_checks": [
+     "Indicates that the Restock Consumer example uses the x-api-scope and Content-Type: application/json headers.",
+     "Indicates that the request body contains a msg object with an inbound_shipment_id field, and that the documented response is 200 OK.",
+     "States that the parameters and response of Get Detail are not documented.",
+     "Does not invent parameters, response fields or an example for Get Detail.",
+     "Does not present the example value of inbound_shipment_id as a required or fixed value."
+    ]
+   }
+  }
+ ]
+}

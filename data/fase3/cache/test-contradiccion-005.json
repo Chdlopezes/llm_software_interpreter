@@ -1,0 +1,20 @@
+{
+ "task_id": "test-contradiccion-005",
+ "llamadas": [
+  {
+   "clave": "05bb939146f8357292c1a64b22d2f6d23a0467ac51518b3ba0368b615a81c731",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": true,
+    "motivo_omision": "El conflicto de la semilla enfrenta la versión que declara la especificación («version: 1.7.0», swagger.yaml L8) con la versión publicada 1.65.0, que sale de traffic-gate-api/latest/documentationTypes.json#0. Ese documento no aparece en la salida real de la herramienta. Ninguno de los documentos entregados (README.md, coverpage.md, arch.md, database.md, processes.md, waf_config.md, swagger.yaml) menciona 1.65.0 ni otra versión de la API. La respuesta solo podría citar una de las dos fuentes. Para mostrar el conflicto tendría que usar un dato que la herramienta no devolvió, y eso incumple las reglas 8 y 14. No se puede escribir un caso de contradicción válido con esta semilla.",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "",
+    "respuesta": "",
+    "answer_checks": []
+   }
+  }
+ ]
+}

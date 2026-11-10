@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/a24a2545cef38ad5126f9f53",
+ "llamadas": [
+  {
+   "clave": "a24a2545cef38ad5126f9f53c3bbbcef4b1c30fc1c87f9b8502916963aff751f",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, nombra zenith-keeper sin versión y corresponde a la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "PUT, ruta, cuerpo obligatorio con InsertBatchRequestDTO y respuesta 201 con InsertBatchResponseDTO coinciden con swagger.yaml, líneas 32-49; los esquemas se detallan en 357-415 y 387-393."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica endpoint, estructura del cuerpo y respuesta exitosa; véanse las líneas 32-49, 357-415 y 387-393."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones y corresponden al swagger.yaml entregado; no cita líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre método, cuerpo y respuesta tienen citas a las líneas 32-49, 357-415 y 387-393."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite responder lo preguntado; no se declara información faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para describir el endpoint y sus esquemas, líneas 32-49 y 357-415."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene los datos de la versión documentada 1.1.6 y no presenta contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se identifica un conflicto documental en las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la llamada, la ruta, el cuerpo y la respuesta documentados en las líneas 32-49 y 357-393, sin exigir una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sin versión explícita, coherente con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint y sus respuestas corresponden a swagger.yaml, líneas 50-70; ProductDTO se define en 416-423."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone el endpoint, el resultado 200 y el 404 con sus cuerpos, como solicitan las líneas 50-70."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la ruta, las respuestas y los campos de ProductDTO; no usa líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre endpoint y respuestas están citadas en las líneas 50-70 y 416-423."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información solicitada está documentada en las líneas 50-70."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los detalles disponibles en la especificación, líneas 50-70."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La atribución a la documentación recibida de 1.1.6 no contradice los datos citados ni afirma que otras versiones no existan."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al endpoint y a las respuestas descritas en las líneas 50-70, y no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, no fija versión y corresponde a la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ruta, parámetro category y respuestas coinciden con swagger.yaml, líneas 71-97; las excepciones del diagrama aparecen en use-cases.md, líneas 114-119."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el parámetro requerido, el resultado exitoso y los casos de error documentados, en las líneas 77-97 y 114-119."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan cada afirmación y ninguna corresponde a líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas al swagger.yaml, líneas 71-97 y 416-423, y al diagrama, líneas 114-119."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información necesaria para responder."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha tanto la especificación como el diagrama para detallar los errores, líneas 92-97 y 114-119."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los datos se atribuyen a 1.1.6 y coinciden entre la especificación y el diagrama."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas 71-97 y 114-119 y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, identifica el software y no especifica versión, en concordancia con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "POST, cuerpo PurchaseDTO, estructura de sus objetos y respuesta 201 coinciden con swagger.yaml, líneas 98-116, 424-460."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica endpoint, cuerpo y respuesta exitosa, incluidos los campos anidados solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones en las líneas 98-116 y 424-460; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica sobre la petición y la respuesta lleva cita pertinente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite responder lo preguntado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Describe la estructura disponible en los esquemas de las líneas 424-460."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los campos y tipos descritos son coherentes con los esquemas citados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental que resolver."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan el endpoint, el esquema y la respuesta documentados en las líneas 98-116 y 424-460."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sin versión explícita, coherente con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ruta y parámetro están en swagger.yaml, líneas 123-135; el contenido de la respuesta se describe en 138-144 y el esquema ProductDTO en 416-423."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ruta, parámetro y contenido de la respuesta, tal como solicita la pregunta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones. No afirma un código de estado cuya línea correspondiente es no citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ruta, parámetro y cuerpo tienen citas pertinentes, líneas 123-144 y 416-423."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información solicitada está disponible en la especificación entregada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para describir el parámetro y la respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de la respuesta y del esquema ProductDTO es coherente con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican la ruta, el parámetro y el array ProductDTO respaldados en las líneas 123-144 y 416-423."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-018",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, sin versión explícita, coherente con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "PUT, parámetro, cuerpo y respuesta coinciden con swagger.yaml, líneas 145-169 y 424-460."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe lo que debe enviarse, incluidos los campos anidados, y qué devuelve la operación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los datos técnicos y pertenecen al documento entregado; no hay citas a líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre método, entrada y respuesta tienen citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La especificación entregada contiene la información necesaria."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha los esquemas disponibles para explicar la estructura del cuerpo y de la respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los datos y tipos descritos son coherentes con las definiciones de 1.1.6 citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se identifica un conflicto entre documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y no imponen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-021",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sin versión indicada, y coherente con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los parámetros y respuestas coinciden con swagger.yaml, líneas 176-205; el esquema se detalla en 483-493."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los dos parámetros requeridos y los resultados 200 y 404 con sus cuerpos documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los datos y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas a las líneas 176-205 y 483-493."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La evidencia entregada basta para responder la pregunta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la especificación para precisar parámetros y estructura de respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del endpoint y sus respuestas es consistente con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental que señalar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en las líneas 176-205 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-024",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, sin versión explícita, coherente con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Método, parámetro, respuestas y estructura de los objetos coinciden con swagger.yaml, líneas 206-230 y 494-509."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué parámetro pasar y qué contiene la respuesta, incluido el caso 404."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones sobre endpoint, parámetro y esquemas; no cita líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en las líneas 206-230 y 494-509."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La especificación entregada responde lo preguntado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia para detallar el contenido de cada entrada de warehouses."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del tipo de parámetro y de los objetos de respuesta es consistente con el documento."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas 212-230 y 494-509, y no requieren una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés y coherente con el software y la versión 1.1.6 indicados en el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "URL, descripción y contacto coinciden con swagger.yaml, líneas 5-11."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica tanto la URL del servidor como el nombre y correo del contacto."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las líneas 5-11 respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Ambos datos técnicos están citados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La especificación contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles en la sección info/servers."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la versión consultada y no presenta contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los datos de las líneas 5-11 y a la versión conocida por el historial."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-022",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español y coherente con zenith-keeper 1.1.6 indicado en el historial y en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La operación POST, el estado 201, el tipo de contenido y el esquema de respuesta aparecen en swagger.yaml, líneas 13-31 y 387-393."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el código de estado y describe el cuerpo de respuesta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint, la respuesta 201 y el esquema InsertBatchResponseDTO."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en las líneas 13-31 y 387-393."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información necesaria."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible sobre el cuerpo y el estado exitoso."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta y el contenido de batchStock son coherentes con los esquemas citados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se identifica conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se corresponden con la operación y el esquema documentados en las líneas 13-31 y 387-393."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

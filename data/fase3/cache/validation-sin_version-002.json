@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-002",
+ "llamadas": [
+  {
+   "clave": "597204085c36a8dcd18d2d5c75919af172605ce8ae52a05ecee5b3857fe1892e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api, ¿qué campos tiene el objeto de una marca y cómo se representan los logos y los recursos dentro de ese objeto?",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, describen el modelo de marca con el mismo contenido. Una marca representa a un comercio o empresa del portafolio curado [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L23-L23] [catalog-portfolio-api/latest/guide/brand-management/README.md:L23-L23].\n\nEl objeto tiene estos campos: `id`, `name`, `soft_descriptor`, `site`, `category`, `subcategories`, `type`, `tags`, `logos`, `resources`, `priority`, `status`, `date_created` y `date_last_updated` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L25-L66] [catalog-portfolio-api/latest/guide/brand-management/README.md:L25-L66].\n\n- **Logos:** `logos` es un array de objetos. Cada uno tiene `id`, `brand_id` (el id de la marca a la que pertenece), `type` y `picture_id`. En el ejemplo aparecen un logo de tipo `cover` y otro de tipo `main` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L38-L51] [catalog-portfolio-api/latest/guide/brand-management/README.md:L38-L51].\n- **Recursos:** `resources` también es un array de objetos, cada uno con `type` y `url`. El ejemplo incluye un recurso de tipo `card` y otro de tipo `pin`, los dos con URL a una imagen PNG [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L52-L61] [catalog-portfolio-api/latest/guide/brand-management/README.md:L52-L61].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Enumera los campos del objeto marca, entre ellos id, name, soft_descriptor, site, category, subcategories, type, tags, logos, resources, priority, status, date_created y date_last_updated.",
+     "Explica que cada logo tiene id, brand_id, type y picture_id, y que cada recurso tiene type y url.",
+     "Indica que el modelo no cambia entre 0.0.1-test-bench-v2a y latest, sin atribuirlo a una sola versión.",
+     "No presenta los valores del ejemplo (nombres, ids, URLs) como hechos fijos ni inventa campos que no están en el modelo."
+    ]
+   }
+  }
+ ]
+}

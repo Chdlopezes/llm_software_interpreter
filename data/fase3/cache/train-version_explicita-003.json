@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-003",
+ "llamadas": [
+  {
+   "clave": "2372a0aa81c4dffe8da897849163d9fca6b5dc6ce233abdca3da6c19119fe9e8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, quiero correr el forecasting desde un notebook. ¿Qué pipes tengo que encadenar y qué valores acepta el parámetro method que se pasa en el Context?",
+    "respuesta": "Para correr el forecasting necesitas combinar los pasos de ingesta con `PreprocessExogenous` y `PreprocessTarget`, que preparan los datos, y con el pipeline de forecasting `ProphetVerticalIniciativaPipeline` [demand-forecast-docs/latest/guide/overview.md:L881-L881]. En el ejemplo se encadenan con `+` en este orden: `IngestMarketplaceData() + HolidaysDatasetPipe() + PreprocessExogenous() + PreprocessTarget() + ProphetVerticalIniciativaPipeline()`. Luego se ejecuta `pipe.run()` dentro de un `Context` [demand-forecast-docs/latest/guide/overview.md:L894-L909] y las predicciones se cargan con `pipe.catalog.load(\"preds\")` [demand-forecast-docs/latest/guide/overview.md:L911-L911].\n\nEl parámetro `method` se usa en el forecasting y acepta estos valores [demand-forecast-docs/latest/guide/overview.md:L883-L883]:\n- `\"td_fcst\"`: reconciliación Forecast Proportions.\n- `\"bu\"`: Bottom Up.\n- `\"td_share\"`: un Topdown naive.\n\nEn el mismo `Context` también se pasan:\n- `fh`, el horizonte de pronóstico, que usan tanto el preprocesamiento como el forecasting.\n- `processing_date`, que usa el preprocesamiento.\n\nAmbos aparecen en [demand-forecast-docs/latest/guide/overview.md:L883-L883]. En el ejemplo, además, se pasan `site_id` y `target` [demand-forecast-docs/latest/guide/overview.md:L903-L908].",
+    "answer_checks": [
+     "Indica que hay que encadenar IngestMarketplaceData, HolidaysDatasetPipe, PreprocessExogenous, PreprocessTarget y ProphetVerticalIniciativaPipeline.",
+     "Enumera los valores de method: td_fcst (Forecast Proportions), bu (Bottom Up) y td_share (Topdown naive).",
+     "Menciona que fh se usa en el preprocesamiento y en el forecasting, o que processing_date se usa en el preprocesamiento.",
+     "Cita líneas de demand-forecast-docs/latest/guide/overview.md dentro de la sección «Using the pipelines from notebook».",
+     "No inventa otros valores de method que no estén en la documentación."
+    ]
+   }
+  }
+ ]
+}

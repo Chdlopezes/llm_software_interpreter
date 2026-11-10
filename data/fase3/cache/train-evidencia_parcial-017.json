@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-017",
+ "llamadas": [
+  {
+   "clave": "6ec59b5eb36a4b0cfcff885e1cba3c1b08cde60434ecedb08f2347b8e9b71a75",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy con vendor-stockkeeper-api 0.0.10-stock-consumer y necesito conectarme a la base de producción. ¿A qué host y puerto apunto, y qué tablas tiene el esquema de esa base?",
+    "respuesta": "La base de producción se llama inventprd y se conecta al host proxysql.master.techzoneseginf.com en el puerto 6612 [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L18-L21]. Las bases de test (inventtest) y de stage (inventstg) usan ese mismo host y ese mismo puerto [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L2-L5] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L10-L13]. El usuario y la contraseña aparecen solo como marcadores de posición que tienes que sustituir por tus credenciales [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L22-L23].\n\nEn cambio, la documentación no describe el esquema de la base. No da ninguna lista de tablas ni su estructura, así que no puedo decirte qué tablas contiene.",
+    "answer_checks": [
+     "Indica que la base de producción (inventprd) usa el host proxysql.master.techzoneseginf.com y el puerto 6612.",
+     "Declara que el esquema o las tablas de la base no están documentados.",
+     "No inventa nombres de tablas ni de columnas de la base.",
+     "No presenta los valores del usuario y la contraseña de ejemplo como credenciales reales.",
+     "Cita database.md sin apoyarse en la referencia a la imagen de la línea 25."
+    ]
+   }
+  }
+ ]
+}

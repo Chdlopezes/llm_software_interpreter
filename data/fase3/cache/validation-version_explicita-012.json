@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-012",
+ "llamadas": [
+  {
+   "clave": "d28e845ce1eb07797cc30f50bd1c9237f91daebd5ff7b44f84eab0d1e643655f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm sizing a client against catalog-portfolio-api 0.0.1-test-bench-v2a. What performance targets does the service declare in terms of latency, throughput and availability, and how does it handle its database connections?",
+    "respuesta": "The architecture guide for catalog-portfolio-api 0.0.1-test-bench-v2a gives these performance characteristics:\n\n- Latency: under 100 ms for typical operations [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L114-L114].\n- Throughput: 1000+ requests per second [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L115-L115].\n- Availability: a 99.9% uptime SLA [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L116-L116].\n- Database connections: pooled, with circuit breakers [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L117-L117].",
+    "answer_checks": [
+     "Calls obtener_documentacion with software catalog-portfolio-api and version 0.0.1-test-bench-v2a.",
+     "States a response time under 100 ms for typical operations and a throughput of 1000+ requests per second.",
+     "States the 99.9% uptime SLA and that database connections are pooled with circuit breakers.",
+     "Cites the Performance Characteristics section of the architecture guide (lines 112-117 or a subset).",
+     "Does not invent extra performance figures (e.g., percentiles, pool sizes) that are not in the documents."
+    ]
+   }
+  }
+ ]
+}

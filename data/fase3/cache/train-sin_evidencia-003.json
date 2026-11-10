@@ -1,0 +1,67 @@
+{
+ "task_id": "train-sin_evidencia-003",
+ "llamadas": [
+  {
+   "clave": "e6924870347ddb6388b6ff1a330cf5b401831132c9133c42050daefc18cae236",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy usando vendor-stockkeeper-api 0.0.6-ep-restock-man y quiero integrar el endpoint Get Detail Doma. ¿Qué estructura tiene su respuesta y qué códigos HTTP puede devolver?",
+    "respuesta": "En la versión 0.0.6-ep-restock-man, Get Detail Doma solo aparece en la tabla de servicios, como `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L20-L20]. Ninguno de los documentos de esta versión tiene una sección de detalle para este endpoint. No describen la estructura de la respuesta, sus campos ni los códigos HTTP que devuelve, así que con esta documentación no puedo decirte qué devuelve. Lo único que sí está documentado son las URL base de prod y stage del servicio [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L7-L9].",
+    "answer_checks": [
+     "Indica que Get Detail Doma figura en la tabla de servicios como GET /stock-operations/3pl/{identifierRegister}, citando api.md línea 20.",
+     "Dice que la documentación de 0.0.6-ep-restock-man no describe ni la estructura de la respuesta ni los códigos HTTP de este endpoint.",
+     "No inventa campos de respuesta ni códigos HTTP para Get Detail Doma (por ejemplo, no le atribuye el 200 OK documentado para Restock Consumer o Feed Consumer).",
+     "No afirma que el endpoint no exista o que no devuelva nada; solo dice que no está documentado.",
+     "No cita las líneas no citables de api.md (16-19 y 25)."
+    ]
+   }
+  },
+  {
+   "clave": "a733f2189101e0ebed0f7d67317b2296e67d9c1547cbf98d79ed383ac85e99bc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint Get Detail Doma de vendor-stockkeeper-api 0.0.6-ep-restock-man. ¿Qué campos trae su respuesta y qué códigos HTTP puede devolver?",
+    "respuesta": "En la versión 0.0.6-ep-restock-man, de Get Detail Doma solo están documentados el método y la ruta: figura en la tabla de servicios como `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L20-L20]. Ningún documento de esta versión tiene una sección de detalle para este endpoint. Tampoco describen los campos de su respuesta ni los códigos HTTP que devuelve, así que con esta documentación no puedo decirte qué campos trae ni qué códigos puede devolver.",
+    "answer_checks": [
+     "Indica que Get Detail Doma figura en la tabla de servicios como GET /stock-operations/3pl/{identifierRegister}, citando la línea 20 de api.md.",
+     "Dice que la documentación de 0.0.6-ep-restock-man no describe los campos de la respuesta ni los códigos HTTP de este endpoint.",
+     "No inventa campos de respuesta ni códigos HTTP para Get Detail Doma (por ejemplo, no le atribuye el 200 OK documentado para Restock Consumer o Feed Consumer).",
+     "No afirma que el endpoint no exista o que no devuelva nada; solo dice que no está documentado.",
+     "Es coherente: no dice que no haya nada documentado del endpoint después de haber citado su método y su ruta."
+    ]
+   }
+  },
+  {
+   "clave": "e5dbd5019f340e9453f35292d2e3270981f589f0f43b669434c4360377b162fd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando Get Detail Doma de vendor-stockkeeper-api 0.0.6-ep-restock-man. ¿Qué campos trae la respuesta de ese endpoint y qué códigos HTTP puede devolver?",
+    "respuesta": "Con la documentación de la versión 0.0.6-ep-restock-man no puedo responderte: ningún documento de esta versión describe los campos de respuesta ni los códigos HTTP de Get Detail Doma. En la guía de la API, las únicas operaciones con sección de detalle son Restock Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L22] y Feed Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L36]. Para cada una solo se documenta un `200 OK` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L34-L34] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L48-L48]. Ese código corresponde a esas dos operaciones y no se puede trasladar a Get Detail Doma.",
+    "answer_checks": [
+     "Indica que la documentación de 0.0.6-ep-restock-man no describe los campos de respuesta ni los códigos HTTP de Get Detail Doma.",
+     "No inventa campos de respuesta ni códigos HTTP para Get Detail Doma, y no le atribuye el 200 OK documentado para Restock Consumer o Feed Consumer.",
+     "No afirma que el endpoint no exista o que no devuelva nada; solo dice que no está documentado.",
+     "Si menciona información relacionada (por ejemplo, que solo Restock Consumer y Feed Consumer tienen sección de detalle), la respalda con citas a líneas citables de api.md."
+    ]
+   }
+  }
+ ]
+}

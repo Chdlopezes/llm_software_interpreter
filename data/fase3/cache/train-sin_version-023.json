@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-023",
+ "llamadas": [
+  {
+   "clave": "0b0d2a4d8974350a97aab02ab990a2efa9fede2733c530eee2d88a16e2d845d8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Voy a consumir el GET /offers de payment-promise-gateway. ¿Qué estructura tiene el JSON de respuesta? ¿Qué campos trae?",
+    "respuesta": "Las dos versiones documentadas, 0.0.10-test-crc-migration y latest, muestran la misma respuesta de ejemplo para GET /offers. Es un objeto JSON con estos campos [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L426-L438] [payment-promise-gateway/latest/guide/README.md:L426-L438]:\n\n- `available_offers`: un array de cadenas con las ofertas disponibles. En el ejemplo trae `payment_not_credited`, `create_agreement` y `create_debt_relief` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L428-L432] [payment-promise-gateway/latest/guide/README.md:L428-L432].\n- `promise_due_date`, `amount`, `promise_id` y `late_fee_forgiveness_id`: en el ejemplo los cuatro llegan a `null` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L433-L436] [payment-promise-gateway/latest/guide/README.md:L433-L436].\n- `proposal_creation_status`: en el ejemplo vale `\"allowed\"` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L437-L437] [payment-promise-gateway/latest/guide/README.md:L437-L437].\n\nLos valores son solo de ejemplo. La documentación no enumera todos los valores posibles de `available_offers` ni de `proposal_creation_status`.",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que la respuesta incluye available_offers (un array) y los campos promise_due_date, amount, promise_id, late_fee_forgiveness_id y proposal_creation_status.",
+     "Indica que la respuesta de ejemplo es la misma en 0.0.10-test-crc-migration y en latest, sin atribuirla a una sola versión.",
+     "No presenta los valores del ejemplo (null, \"allowed\", las ofertas concretas) como los únicos valores posibles ni como valores fijos.",
+     "Cita las líneas del bloque de respuesta de GET /offers (en torno a L426-L438) de los documentos entregados."
+    ]
+   }
+  }
+ ]
+}

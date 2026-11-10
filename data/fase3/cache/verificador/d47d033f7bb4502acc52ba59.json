@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/d47d033f7bb4502acc52ba59",
+ "llamadas": [
+  {
+   "clave": "d47d033f7bb4502acc52ba5974f665f33f4f86d3bdab9f4bac0ee767f27a9487",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-sin_version-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, nombra catalog-portfolio-api y no especifica versión, coherente con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los fixes para el puerto y Gradle coinciden con ambas guías: cambiar el puerto o terminar el proceso (L123-L127), y limpiar y reconstruir (L129-L135). Los comandos adicionales aparecen en L139-L148."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Resuelve ambos problemas y añade comandos pertinentes para diagnóstico (L123-L148)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas apuntan a los comandos e instrucciones afirmados y ambos documentos fueron entregados; los rangos citados son citables (L123-L148)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas a las instrucciones correspondientes (L123-L148)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite responder los dos problemas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa las instrucciones disponibles para ambos problemas (L123-L135)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y señala correctamente que las instrucciones coinciden en ambas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones citadas; ambas contienen las mismas instrucciones (L123-L135)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan las instrucciones, versiones y citas visibles en la respuesta y no exigen una formulación exacta (L123-L148)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, nombra catalog-portfolio-api y no fija versión, en línea con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los datos que recomienda incluir aparecen en L218-L223; el correo y Slack, en L227-L228; y el proceso de escalado, en L233-L236."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica qué información incluir, los canales de contacto y el proceso de escalado, que también aporta contexto útil (L218-L236)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan cada afirmación y los rangos citados son citables en ambos documentos (L218-L236)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas pertinentes (L218-L236)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre reporte y contacto (L218-L228)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene que ambas versiones contienen la misma guía y no mezcla información."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones entregadas; las indicaciones coinciden (L218-L236)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los datos, canales, versiones y limitaciones que aparecen en la respuesta y la documentación (L218-L236)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica catalog-portfolio-api sin versión concreta, y la pregunta continúa en inglés sin volver a pedir el software."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los comandos MySQL y las comprobaciones de configuración corresponden a la guía de diagnóstico (L30-L53)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Incluye pruebas de conectividad y existencia de base de datos, además de las comprobaciones de archivos y formato solicitadas (L30-L53)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas apuntan a los comandos y comprobaciones que describe la respuesta y son citables (L30-L53)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas que cubren los comandos respectivos (L30-L53)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La guía entregada contiene las comprobaciones solicitadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa las pruebas de conectividad y configuración disponibles (L30-L53)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el alcance de las comprobaciones y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los comandos, citas y datos del historial que aparecen en el caso (L30-L53)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la pregunta en inglés pide diagnóstico sin volver a solicitarlos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ubicación de log4j2.xml, los loggers citados y los comandos curl coinciden con la guía (L113-L118, L140-L147)."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Indica dónde habilitar el logging y cita los loggers de Hikari y Apache, pero no incluye el logger del propio servicio que figura en la configuración de la guía en L116. Sí da el curl verbose pedido (L113-L118, L140-L141)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones realizadas; no cita la línea no citable 116 ni la presenta como fuente."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas llevan citas a sus líneas de respaldo (L113, L117-L118, L140-L141, L146-L147)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no afirma que falte información; la configuración documentada incluye además la entrada de L116, que no puede citarse."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las instrucciones disponibles sobre logging y pruebas curl (L113-L118, L140-L147)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicción interna ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y corresponden a los logger citados y a los comandos de diagnóstico descritos (L113-L118, L140-L147)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cubre los dos logger citables, pero omite la entrada del logger del servicio que la guía incluye en la configuración (L116)."
+     },
+     {
+      "case_id": "validation-software_en_historial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica catalog-portfolio-api y la versión; la pregunta en español trata el diagnóstico de respuestas lentas."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos y comandos corresponden a los diagnósticos de base de datos, JVM y pool, y a las recomendaciones para problemas de memoria (L152-L185)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los tres pasos con sus comandos y añade correctamente las comprobaciones específicas de memoria (L152-L185)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen los comandos y diagnósticos afirmados, y los rangos son citables (L152-L185)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada grupo de afirmaciones técnicas tiene su cita correspondiente (L152-L185)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La guía proporciona los comandos de diagnóstico solicitados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando los pasos disponibles para rendimiento y memoria (L152-L185)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los tres pasos para respuestas lentas de las comprobaciones adicionales para problemas de memoria."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los pasos principales y sus comandos, con citas a las líneas correspondientes (L152-L170)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la pregunta en español pide los endpoints de collectors."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los tres métodos, rutas y descripciones corresponden a la tabla de Collector Endpoints (L43-L49)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da los endpoints para consultar, asociar y eliminar la asociación, y aclara el alcance de la tabla (L43-L49)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La tabla citada respalda los métodos, rutas y acciones; el rango es citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las rutas y sus acciones están citadas (L43-L49)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta limita la observación a lo que no incluye esa tabla: cuerpo del POST y formato de respuestas; no inventa esos detalles (L43-L49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la tabla para proporcionar los tres endpoints documentados (L43-L49)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las acciones atribuidas a GET, POST y DELETE concuerdan con la tabla."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks pueden verificarse contra las rutas y descripciones citadas y no imponen una redacción concreta (L43-L49)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la pregunta en español pide la carpeta, el comando y la dirección para abrir la guía."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La carpeta docs/guide, la instalación de docsify-cli, el comando serve y la URL coinciden con el documento (L80-L93)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica desde dónde arrancar el servidor y qué dirección abrir, además del requisito de instalación (L80-L93)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las citas sostienen las instrucciones y no incluyen líneas no citables (L83-L93)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con rangos pertinentes (L83-L93)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene todos los pasos solicitados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa las instrucciones disponibles para ejecutar y abrir la documentación (L80-L93)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos y la URL son coherentes entre sí."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las instrucciones y rangos citados, sin exigir una formulación exacta (L80-L93)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica el software y la versión; la pregunta en español consulta el diagrama de arquitectura."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama conecta Service con Pictures API, Regulations API y BigQuery Events, y API con Metrics Collection y DataDog (L31-L45)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto por los sistemas externos llamados por Service como por el flujo de métricas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas citadas respaldan los tres destinos de Service y el flujo API → Metrics Collection → DataDog (L40-L45)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones del diagrama llevan citas pertinentes (L40-L45)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El diagrama entregado contiene los flujos preguntados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los flujos mostrados en el diagrama (L40-L45)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la conexión de la capa Service del flujo de métricas que parte de API."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los participantes y flujos que aparecen en el diagrama citado (L40-L45)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica catalog-portfolio-api y la versión; la pregunta en español pide una descripción general del servicio."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía lo describe como RetailFlow Catalog Portfolio API, REST, para la plataforma de portafolio curado, que gestiona marcas, logos, collectors y resources (L1-L3). Los grupos de endpoints adicionales corresponden a la referencia rápida (L34-L55)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la plataforma y enumera qué gestiona además de marcas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la descripción del servicio y los grupos de endpoints mencionados; los rangos son citables (L1-L3, L34-L55)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas con citas a la guía y a la referencia de API (L1-L3, L34-L55)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados permiten responder la pregunta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la descripción general y la referencia de endpoints disponibles (L1-L3, L34-L55)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción general y las entidades enumeradas son coherentes con los endpoints citados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a afirmaciones verificables en la guía y la referencia citadas (L1-L3, L34-L55)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la pregunta en español especifica el caso de nombre duplicado en un site."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla indica 409 y brand_name_already_exists, y la regla de creación establece que name debe ser único dentro del site (L92-L93, L312-L312). El formato de error mostrado incluye los cuatro campos descritos (L316-L325)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el código HTTP, el nombre del error y los campos del cuerpo, sin confundirlos con los valores del ejemplo."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el error y la unicidad en el site, así como los campos del formato de respuesta (L92-L93, L312-L325)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica lleva una cita pertinente (L92-L93, L312-L325)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene el código de error y el formato general del cuerpo."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible sobre el error y su formato (L312-L325)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye al duplicado los valores del ejemplo brand_not_found/404."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente a la tabla, la regla de unicidad y el formato de error citados (L92-L93, L312-L325)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

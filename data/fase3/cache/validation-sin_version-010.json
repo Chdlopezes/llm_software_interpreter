@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-010",
+ "llamadas": [
+  {
+   "clave": "ebe52a3fb5449091e06c4c5346ea6c0fe2dffb7c88c8b154ec6fd41e24d48ec1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cómo compilo y levanto catalog-portfolio-api en local con el perfil de desarrollo? ¿Hay alguna alternativa a lanzarlo con Gradle?",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, explican este paso con las mismas instrucciones.\n\nPara compilar, ejecuta `./gradlew clean build` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L33-L34] [catalog-portfolio-api/latest/guide/setup/local-development.md:L33-L34]. La guía también recoge `./gradlew test` para pasar los tests y `./gradlew check` para revisar la calidad del código [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L36-L40] [catalog-portfolio-api/latest/guide/setup/local-development.md:L36-L40].\n\nPara arrancar el servicio con el perfil de desarrollo, usa `./gradlew run -Denvironment=development` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L46-L47] [catalog-portfolio-api/latest/guide/setup/local-development.md:L46-L47].\n\nSí hay una alternativa a Gradle: ejecutar directamente el JAR generado con `java -jar build/libs/catalog-portfolio-api-1.0.0.jar --environment=development` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L49-L50] [catalog-portfolio-api/latest/guide/setup/local-development.md:L49-L50].",
+    "answer_checks": [
+     "Indica que el proyecto se compila con `./gradlew clean build`.",
+     "Indica que el servicio se arranca con el perfil de desarrollo mediante `./gradlew run -Denvironment=development`.",
+     "Menciona como alternativa ejecutar el JAR con `java -jar build/libs/catalog-portfolio-api-1.0.0.jar --environment=development`.",
+     "Indica que las instrucciones no cambian entre 0.0.1-test-bench-v2a y latest, sin atribuirlas a una sola versión, y no pide la versión al usuario.",
+     "Cita las líneas de local-development.md que contienen los comandos y no inventa pasos adicionales (por ejemplo, configuración de base de datos o puertos) que no estén en esas líneas."
+    ]
+   }
+  }
+ ]
+}

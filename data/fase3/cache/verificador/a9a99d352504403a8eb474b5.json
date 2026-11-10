@@ -1,0 +1,297 @@
+{
+ "task_id": "verificador/a9a99d352504403a8eb474b5",
+ "llamadas": [
+  {
+   "clave": "a9a99d352504403a8eb474b5eaf50f5af123e7503d005d97c418683bb3354cd7",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-version_explicita-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y especifica traffic-gate-api latest, igual que los argumentos de la llamada. El endpoint consultado corresponde al alta manual: swagger.yaml líneas 153-158."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El método, la ruta, los campos del body y los códigos coinciden con swagger.yaml líneas 153-196; el alta manual y manually_added=true constan en la línea 158."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica endpoint, campos y tipos del body, además de las respuestas 201, 400 y 500, según swagger.yaml líneas 153-196."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan endpoint y propósito (líneas 153-158), estructura del body (160-175), obligatoriedad (181) y respuestas (182-196); no cita la línea no citable 180."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre endpoint, body, alta manual y respuestas llevan citas pertinentes a swagger.yaml líneas 153-196."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada en swagger.yaml líneas 153-196."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información disponible en swagger.yaml líneas 153-196."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene datos coherentes sobre el endpoint y sus respuestas, según swagger.yaml líneas 153-196."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en la sección pertinente de swagger.yaml, líneas 153-196."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan endpoint, campos, códigos, alta manual y citas; son verificables en swagger.yaml líneas 153-196 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y especifica traffic-gate-api latest, en concordancia con los argumentos. El endpoint descrito corresponde a swagger.yaml líneas 197-214."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Método, ruta, parámetro de query y respuestas coinciden con swagger.yaml líneas 197-229. Los valores mencionados aparecen entre los valores permitidos en líneas 209-212."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Resuelve método y ruta, explica cómo enviar scope y enumera las respuestas solicitadas, según swagger.yaml líneas 197-229."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan endpoint, descripción, parámetro, valores indicados y códigos; los rangos no incluyen las líneas no citables 213."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está citada con las líneas correspondientes de swagger.yaml, 197-229."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La sección entregada documenta endpoint, parámetro y respuestas en swagger.yaml líneas 197-229."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre el endpoint en swagger.yaml líneas 197-229."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla operaciones ni atribuye un body al endpoint; coincide con swagger.yaml líneas 197-229."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental presentado para esta operación en swagger.yaml líneas 197-229."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con la sección del endpoint en swagger.yaml líneas 197-229 y no requieren una formulación literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y nombra traffic-gate-api latest, conforme a los argumentos. El endpoint se documenta en swagger.yaml líneas 230-257."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El body con esquema BQNotification, sus campos y los códigos de respuesta coinciden con swagger.yaml líneas 230-257 y 314-350."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe el esquema del body y los códigos 200, 400 y 500, incluyendo ErrorResponse para 400 y 500, según swagger.yaml líneas 237-257 y 314-350."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint y su body (líneas 230-242), la estructura BQNotification y BQMessageContent (314-350), y las respuestas (243-257). No presenta valores de ejemplo como hechos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas pertinentes de swagger.yaml líneas 230-257 y 314-350."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados incluyen la definición del body y de las respuestas en swagger.yaml líneas 230-257 y 314-350."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información disponible sobre el endpoint y sus esquemas, swagger.yaml líneas 230-257 y 314-350."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del body y las respuestas es coherente con las definiciones de swagger.yaml líneas 230-257 y 314-350."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta conflicto entre las definiciones pertinentes de swagger.yaml líneas 230-257 y 314-350."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a datos verificables en swagger.yaml líneas 230-257 y 314-350, y excluyen correctamente tratar ejemplos como hechos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y especifica traffic-gate-api latest, como los argumentos. La descripción general corresponde a README.md línea 5."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La consulta periódica, el análisis de información, la decisión de whitelist y las operaciones de la API coinciden con README.md línea 5."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto cómo decide Traffic Gate como qué operaciones ofrece la API, según README.md línea 5."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita README.md línea 5 respalda las dos afirmaciones y no incluye líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Ambas afirmaciones técnicas tienen cita a README.md línea 5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La línea entregada contiene la información solicitada: README.md línea 5."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible de README.md línea 5 para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones son consistentes entre sí y con README.md línea 5."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta conflicto documental para esta descripción en README.md línea 5."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en README.md línea 5 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en inglés y especifica traffic-gate-api latest, conforme a los argumentos. El endpoint se define en swagger.yaml líneas 258-275."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Método, ruta, parámetro y respuestas coinciden con swagger.yaml líneas 258-290; los valores enumerados se presentan expresamente como algunos de los admitidos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica cómo llamar al endpoint, qué parámetro toma y qué respuestas debe manejar, según swagger.yaml líneas 258-290."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan endpoint, parámetro, propósito, respuestas y esquema ErrorResponse (líneas 258-290 y 388-392); no citan la línea no citable 274."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está citada en swagger.yaml líneas 258-290 o 388-392."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada en swagger.yaml líneas 258-290 y 388-392."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la definición disponible del endpoint y de ErrorResponse, swagger.yaml líneas 258-290 y 388-392."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no contradice la definición del endpoint ni atribuye un body de petición; coincide con swagger.yaml líneas 258-290."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta conflicto documental para esta operación en swagger.yaml líneas 258-290."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a datos comprobables en swagger.yaml líneas 258-290 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y especifica traffic-gate-api latest, de acuerdo con los argumentos. Los criterios por scope aparecen en README.md líneas 16-35."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los criterios enumerados para front y los dos adicionales para api coinciden con README.md líneas 16-35."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara los criterios de ambos scopes e identifica los adicionales de api, según README.md líneas 16-35."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los criterios de front y api en README.md líneas 16-22 y 28-35; no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por citas a README.md líneas 16-35."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada describe los criterios solicitados en README.md líneas 16-35."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los criterios disponibles para ambos scopes, README.md líneas 16-35."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La comparación y la afirmación de que basta un criterio concuerdan con README.md líneas 16-35."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta conflicto documental entre las reglas de front y api en README.md líneas 16-35."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en README.md líneas 16-35 y evalúan contenido, no una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

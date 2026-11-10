@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-022",
+ "llamadas": [
+  {
+   "clave": "cac028e193e1e046eca6e0e58fa6047c50df6a950f59ede6d916914d629bbaf2",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy montando una integración con zenith-keeper 1.1.6 para dar de alta en el almacén de fulfillment los lotes que nos llegan de los proveedores.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber de la integración y lo consulto en la documentación.",
+    "pregunta": "Cuando hago el POST para insertar un lote y sale bien, ¿qué código de estado me devuelve y qué viene en el cuerpo de la respuesta?",
+    "respuesta": "Si la inserción va bien, POST /api/v1/fresh-products/inboundorder responde con 201 (descripción CREATED) y un cuerpo application/json con el esquema InsertBatchResponseDTO [zenith-keeper/1.1.6/specs/swagger.yaml:L13-L31]. Ese esquema tiene una sola propiedad, batchStock, que es un array de objetos BatchDTO [zenith-keeper/1.1.6/specs/swagger.yaml:L387-L393].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con zenith-keeper y la versión 1.1.6 del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que, si todo va bien, el POST /api/v1/fresh-products/inboundorder devuelve 201 (CREATED).",
+     "Indica que el cuerpo de la respuesta sigue el esquema InsertBatchResponseDTO (application/json).",
+     "Cita las líneas del swagger.yaml de la versión 1.1.6 que definen la respuesta 201 de esa operación.",
+     "No inventa códigos de error ni campos de la respuesta que no estén en la especificación."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_evidencia-004",
+ "llamadas": [
+  {
+   "clave": "2c5434d1de60fd3a2373001357c6994f472b371eb072aa168a7f5e453e0e66ea",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api latest, ¿qué información guarda la tabla rule_header y para qué se usa?",
+    "respuesta": "La documentación de latest no dice qué información guarda la tabla rule_header ni para qué sirve, así que no puedo responder a eso. Lo único que documenta es su lista de columnas, por ejemplo name, description, productive y version [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L13-L16]. También consta que la tabla rule_row la referencia mediante su columna rule_id [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md:L10-L10].",
+    "answer_checks": [
+     "Indica que la documentación entregada no explica qué almacena la tabla rule_header ni cuál es su propósito.",
+     "No inventa una descripción del contenido o la función de rule_header (por ejemplo, no afirma que guarda reglas de precios ni que recibe datos de un sistema concreto).",
+     "Si menciona información relacionada, como las columnas de rule_header o la referencia desde rule_row.rule_id, la respalda con citas a las líneas correspondientes.",
+     "No cita la línea 3 de rule_header.md como respaldo.",
+     "No afirma que la tabla no exista ni que no tenga ninguna finalidad."
+    ]
+   }
+  }
+ ]
+}

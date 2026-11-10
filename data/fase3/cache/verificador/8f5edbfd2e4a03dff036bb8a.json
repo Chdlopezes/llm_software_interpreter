@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/8f5edbfd2e4a03dff036bb8a",
+ "llamadas": [
+  {
+   "clave": "8f5edbfd2e4a03dff036bb8a2be5c07e08ec033bb553fb62bc14b97d1cf7faaf",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_documentos-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por order-workflow-api 9.4, coincidente con el software y la versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a explicar el resultado not_found y no atribuye a 9.4 el comportamiento de otras versiones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder sobre los webhooks porque no hay documentación para el filtro solicitado."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la respuesta no incluye citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hace afirmaciones técnicas sobre el funcionamiento del servicio."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El estado de la herramienta es not_found; la respuesta limita la conclusión a la falta de documentación de la versión 9.4."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Con not_found no hay evidencia para responder la pregunta técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla datos de otras versiones con la versión consultada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan el estado not_found y verifican que no se invente ni se traslade información de otras versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre order-workflow-api 5.6.2-hotfix-1, concordante con la versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los componentes relacionados mencionados coinciden con README: MySQL y los datos almacenados (L38-L43), BigQ (L47-L50) y Jobs (L54-L56)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que los documentos no permiten describir los diagramas ni compararlos, y distingue de ello la información relacionada que sí ofrece."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas del README respaldan cada descripción de componentes; no cita las líneas no citables de architecture.md."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre componentes y datos almacenados llevan citas en README, líneas 38-43, 47-50 y 54-56."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que los diagramas no existan ni que los entornos carezcan de diferencias; dice que el texto entregado no permite describirlas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aunque no responde sobre el contenido visual, aporta la información relacionada que sí está documentada en README, líneas 38-56."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue explícitamente los componentes generales del contenido de los diagramas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto entre fuentes documentales."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y permiten citar información relacionada sin exigir una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el payload del mensaje de protección de ramas para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "BigQ documenta para producción el scope, topic, consumer y path de protección en L8; el JSON mostrado en L22-L40 es el de Pipeline, no el mensaje consultado."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan los campos del payload y ofrece los datos relacionados disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a bigq.md L8 respalda los datos de producción que menciona; no atribuye el JSON de Pipeline al mensaje de protección."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La información técnica relacionada lleva cita a bigq.md L8."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Indica que los campos no están documentados y no afirma que el mensaje carezca de payload."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el topic, consumer y path disponibles en bigq.md L8, a la vez que delimita lo que falta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Separa correctamente el mensaje de protección del ejemplo JSON de Pipeline de L22-L40."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental sobre el payload."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks comprueban la ausencia de campos documentados y el uso correcto de la información de bigq.md L8."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural por los campos de Cron History en order-workflow-api 5.6.2-hotfix-1."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía de base de datos muestra el encabezado Cron History en L147, pero no detalla campos; el flujo relacionado guarda una versión de cron en use-cases.md L295-L298."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede proporcionar los campos y aporta el paso relacionado de guardar una versión sin presentarlo como estructura de Cron History."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "database.md L147 respalda la mención del encabezado y use-cases.md L295-L298 respalda el paso de guardar la versión."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre Cron History y el flujo de cron están citadas en database.md L147 y use-cases.md L295-L298."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa campos ni niega que Cron History exista o se almacene; la documentación entregada no muestra su estructura."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Además de señalar el dato faltante, aporta el único paso relacionado documentado en use-cases.md L295-L298."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el guardado de una versión de cron con los campos de Cron History."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican contra database.md L147 y use-cases.md L295-L298, sin imponer una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-017",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural por el método y la ruta para crear un workflow, con software y versión coincidentes con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Use-cases.md L189-L210 describe el flujo de inserción y sus respuestas, pero no especifica el método HTTP ni la ruta."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que método y ruta no están documentados y aporta el flujo relacionado de inserción sin deducir un endpoint."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a use-cases.md L189-L201 y L202-L210 respaldan las descripciones del flujo y sus resultados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el flujo de inserción están citadas; no cita las líneas no citables de usage.md."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Trata método y ruta como no documentados, sin afirmar que la operación no exista o no esté soportada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde lo que puede establecerse sobre el flujo en use-cases.md L189-L210, aunque no pueda dar método ni ruta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta el flujo de inserción como evidencia de un endpoint específico."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No existe un conflicto entre documentos sobre el endpoint."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican la falta de método y ruta y el uso correcto de las líneas citadas del caso de uso."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-018",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural por el flujo de búsqueda de pipeline para la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Use-cases.md L107-L108 solo lista la búsqueda; el diagrama de validación aparece aparte en L109-L168."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se detallan componentes ni resultados de la búsqueda y distingue el flujo de validación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a use-cases.md L107-L108 y L109-L168 respaldan la lista de búsqueda y el diagrama de validación, respectivamente."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas sobre los casos de uso llevan citas a las líneas correspondientes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que la búsqueda no exista; indica que está listada pero no detallada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la evidencia disponible y explica por qué el diagrama de validación no permite deducir el flujo de búsqueda."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la búsqueda de pipeline con su validación."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks distinguen búsqueda y validación y son verificables con use-cases.md L107-L168."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-019",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre cómo abortar un pipeline y los pasos entre servicios, concordante con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Use-cases.md L109-L168 documenta el flujo de validación, y L119-L125 respalda las llamadas relacionadas que menciona; no documenta ahí un flujo de aborto."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no puede proporcionar el flujo de aborto y diferencia de este el flujo documentado de validación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a use-cases.md L109-L168 y L119-L125 respaldan las afirmaciones sobre validación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas relacionadas con el flujo de validación están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que abortar un pipeline no exista o no esté soportado; dice que el flujo no está descrito en los documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el flujo de validación disponible como contexto, sin usarlo para inventar el de aborto."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta el flujo de validación como si fuera el de aborto."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y aceptan información relacionada siempre que no se confunda con el flujo de aborto."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-020",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la secuencia para crear un backport en la versión especificada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Use-cases.md L238-L240 lista el caso de creación de backport sin detallar su secuencia; README.md L33 indica su propósito de mantener ramas sincronizadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede proporcionar componentes ni orden de llamadas y ofrece el propósito general documentado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a use-cases.md L238-L240 y README.md L33 respaldan la lista del caso de uso y el propósito de los backports."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el caso listado y el propósito de los backports tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que los backports no existan o no se soporten; limita la falta de evidencia a la secuencia y sus componentes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el propósito de los backports documentado en README.md L33, sin inventar el flujo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el propósito general documentado de la secuencia de llamadas no documentada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican la falta de detalle del flujo y la distinción entre el caso listado y el propósito general."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sin versión concreta; la llamada usa version=null como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "README.md L40-L43 respalda que se usa MySQL y que se almacenan la configuración de workflows y la planificación de versiones automáticas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el tipo de base de datos y ambos tipos de información almacenada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada dato sobre la base de datos y lo almacenado está respaldado por las citas correspondientes a README.md L40-L43; la referencia adicional a L45 es correcta."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en README.md L40-L45."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye la información a la documentación hallada de 5.6.2-hotfix-1 y no afirma que sea la única versión existente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder ambos aspectos de la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla información de versiones distintas ni afirma diferencias entre versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con README.md L40-L45 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sin versión explícita; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "README.md L40-L43 respalda que se usa MySQL y que se almacenan la configuración de workflows y el calendario de creación automática de versiones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde qué base de datos usa el servicio y qué guarda en ella."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a README.md L40-L43 y L45 respaldan los datos mencionados y la referencia a la guía de base de datos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en README.md L40-L45."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita los datos a la versión documentada, 5.6.2-hotfix-1, sin afirmar que sea la única versión existente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para contestar la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni atribuye diferencias entre versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre fuentes documentales."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con README.md L40-L45 y no requieren una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

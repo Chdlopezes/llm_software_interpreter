@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/74bb7ade6d50bfc2c8804f5c",
+ "llamadas": [
+  {
+   "clave": "74bb7ade6d50bfc2c8804f5c50a6c65454d8b276958f10d301eafc881b202925",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_documentos-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español sobre payment-promise-gateway 2.0, coincidente con el filtro de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La herramienta devolvió not_found; la respuesta limita correctamente lo que puede afirmar a la ausencia de documentación para esa versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede contestar el dato técnico por falta de documentación de la versión consultada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "En la situación sin_documentos no hay documentos entregados ni corresponde citar."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se hacen afirmaciones técnicas sobre el software ni hay documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye la limitación al catálogo y no afirma que la estructura o el paquete no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta técnica no es posible tras el estado not_found; ofrece consultar versiones disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente con la falta de resultados para la versión solicitada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con not_found, la limitación de la respuesta y la ausencia de citas técnicas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por payment-promise-gateway 0.0.1-rc, versión indicada también en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con el estado not_found, la respuesta no atribuye campos ni un ejemplo curl a esa versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede proporcionar los campos ni el ejemplo solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; en sin_documentos no corresponden citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre el endpoint que requieran citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que falta documentación del catálogo para la versión, sin afirmar que el endpoint o los campos no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención sobre los detalles técnicos está justificada por not_found y se ofrece consultar versiones disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla información de otras versiones con la versión solicitada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen el filtro, not_found y la respuesta sin exigir una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los campos de POST /forgiveness_proposal en payment-promise-gateway 2.0, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La herramienta devolvió not_found y la respuesta no presenta datos de otra versión como propios de 2.0."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no puede determinar los campos ni si aparecen el descuento y las cuotas."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados; la situación sin_documentos no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no hace afirmaciones técnicas sobre la forma de la respuesta."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Explica la falta de documentación del catálogo sin afirmar que esos campos no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención técnica está justificada por not_found y se ofrece consultar versiones disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No se contradice ni mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con not_found y comprueban que no se atribuyan campos de otras versiones a 2.0."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español sobre prerrequisitos y compilación de payment-promise-gateway 2.0; coincide con el filtro de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ante not_found, no atribuye a 2.0 prerrequisitos ni comandos de otra versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que la documentación no permite responder las dos partes solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no corresponden citas en sin_documentos."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No afirma datos técnicos sobre instalación o compilación."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye la limitación a la ausencia de documentación de 2.0, sin afirmar que no existan prerrequisitos o comandos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención está justificada por not_found; ofrece consultar versiones disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla información de otras versiones ni incurre en contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la llamada not_found y verifican que no se inventen datos de 2.0."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-021",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el manejo de un POST /payment_promise en la versión indicada en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta refleja que la validación se ejecuta antes de llamar al servicio (L197-L200) y que el manejo de errores se describe solo en general (L532-L536)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan ni el código HTTP concreto ni el cuerpo de error, que son los datos pedidos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L197-L199, L532-L536 y L114 respaldan las afirmaciones asociadas; ninguna es no citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre validación, manejo de errores y referencia a specs-hub llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que esos detalles no están especificados en el documento, sin afirmar que no existan errores o validación (L197-L199, L532-L536)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la evidencia disponible sobre la validación y el manejo genérico de errores, además de identificar lo que falta (L197-L199, L532-L536)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue claramente entre lo documentado y los datos concretos que no se especifican."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en las líneas citadas y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-022",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el código HTTP y el JSON de error de POST /payment_promise en latest, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta cita la validación de datos (L289), la descripción genérica de errores (L532-L536) y la remisión a specs-hub (L114), sin inventar detalles."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica explícitamente que el documento no permite conocer el código ni la forma del JSON solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L289, L532-L536 y L114 respaldan las afirmaciones a las que acompañan y son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala falta de especificación, sin convertirla en una afirmación de que el endpoint no devuelva errores."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible sobre validación, manejo genérico de errores y specs-hub (L289, L532-L536, L114)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicción entre reconocer la validación y señalar que no se documentan el código y el formato concretos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a lo que documenta el README y no imponen una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-023",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el formato de error y códigos HTTP de payment-promise-gateway latest, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La sección citada anuncia códigos HTTP, mensajes detallados, excepciones propias y formato consistente, pero no enumera códigos ni campos (L532-L536)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde que la estructura, los campos y los códigos concretos no están especificados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita L532-L536 respalda la descripción general y la falta de detalles; las líneas citadas son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre el contenido de la sección de errores está acompañada por una cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Distingue entre lo que la documentación anuncia y lo que no detalla; no afirma que el formato o los errores no existan (L532-L536)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone la información general disponible antes de señalar que faltan los detalles solicitados (L532-L536)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la mención de un formato consistente con la documentación de su estructura concreta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en el material entregado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en L532-L536 y no exigen campos ni códigos particulares."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por paquetes y estructura sin indicar versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ruta base y los directorios indicados aparecen en ambos documentos entregados (L51-L57)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica dónde van los business objects, los commands y la configuración de WorkflowCloud."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L51 y L54-L57 de cada documento respaldan la ruta y los directorios mencionados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas sobre la estructura tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara datos como faltantes; la estructura solicitada está documentada en ambos documentos (L51-L57)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la estructura disponible en vez de pedir una versión."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Presenta la estructura compartida por ambas versiones y no mezcla datos incompatibles (L51-L57)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados concuerdan sobre la estructura."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los directorios y la coincidencia entre versiones que muestran L51-L57."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por headers de las llamadas curl y la identificación del usuario; no fija versión y la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los ejemplos muestran Authorization y Content-Type (L319-L321) y, para active, x-caller-id y caller.id (L327-L331); el diagrama también señala x-caller-id (L153-L154)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los headers comunes de los ejemplos y cómo se identifica al usuario en GET /payment_promise/active."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a los ejemplos y al diagrama respaldan los headers y parámetros mencionados; son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en ambos documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta describe lo que muestran los ejemplos sin presentar los valores ilustrativos como requisitos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los ejemplos curl disponibles y no pide al usuario una versión."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Describe de forma compatible los headers comunes y el header adicional de la llamada active en ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los dos documentos entregados concuerdan en los ejemplos pertinentes."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los ejemplos de L319-L321 y L327-L331 y no convierten los valores de muestra en requisitos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los campos de la respuesta JSON de GET /offers sin indicar versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los campos presentes en el ejemplo de GET /offers y describe correctamente sus valores de muestra (L426-L438 en ambos documentos)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera todos los campos que aparecen en el JSON de ejemplo."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L426-L438 de ambas versiones contienen el ejemplo citado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La lista de campos y los valores ilustrativos están respaldados por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que los valores del JSON son de muestra y que no se documenta el significado o cuándo se rellenan ciertos campos (L426-L438)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los campos disponibles en el ejemplo, sin abstenerse pese a la evidencia."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los campos del ejemplo de un comportamiento garantizado y confirma que ambos documentos coinciden (L426-L438)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados muestran el mismo ejemplo y no hay conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican los campos y que los valores de ejemplo no se presenten como garantías; no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-014",
+ "llamadas": [
+  {
+   "clave": "c7111d7947a8b50fb9e96618ba7f40841d9562d3b73dc6ab362fb42e0015f689",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a tengo marcas creadas que siguen sin activarse. ¿Qué tiene que cumplir una marca para que se pueda activar?",
+    "respuesta": "En la versión 0.0.1-test-bench-v2a, para activar una marca se exigen tres requisitos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L117-L120]:\n\n- **Logo principal:** tiene que haber al menos un logo principal (main) subido [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L118].\n- **Validación:** la marca tiene que pasar la validación de todas las reglas de negocio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L119].\n- **Cumplimiento de categoría:** la categoría tiene que cumplir los requisitos del servicio de regulaciones [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L120].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que hace falta al menos un logo principal (main) subido.",
+     "Indica que la marca tiene que pasar la validación de todas las reglas de negocio.",
+     "Indica que tiene que cumplir los requisitos del servicio de regulaciones (cumplimiento de categoría).",
+     "Cita la sección de requisitos de activación de brand-management/README.md (en torno a las líneas 117-120) y no cita líneas no citables."
+    ]
+   }
+  }
+ ]
+}

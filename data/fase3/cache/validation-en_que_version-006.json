@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-en_que_version-006",
+ "llamadas": [
+  {
+   "clave": "31654791232e9d408726496133ef23b85288d8d4e5a078a49536c5348e3acc6a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de catalog-portfolio-api aparece documentada la búsqueda de marcas con filtro por owner_id? Y de paso, ¿cuántos resultados como máximo puedo pedir por página?",
+    "respuesta": "Dos de las versiones devueltas lo documentan, y las dos lo describen igual: 0.0.1-test-bench-v2a y latest.\n\n- **0.0.1-test-bench-v2a:** la búsqueda de marcas es `GET /` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L16-L20]. Admite el parámetro opcional `owner_id`, de tipo integer, que filtra por ID de propietario [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L30]. El parámetro `limit` vale 50 por defecto y como máximo 200 [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L34].\n- **latest:** documenta el mismo `GET /` [catalog-portfolio-api/latest/guide/api-reference/brands.md:L16-L20], con el mismo `owner_id` opcional de tipo integer [catalog-portfolio-api/latest/guide/api-reference/brands.md:L30] y el mismo `limit` (50 por defecto, 200 como máximo) [catalog-portfolio-api/latest/guide/api-reference/brands.md:L34].\n\nEn resumen, puedes pedir hasta 200 resultados por página en cualquiera de las dos versiones. Para paginar se usa `offset`, que indica cuántos elementos saltar y vale 0 por defecto [catalog-portfolio-api/latest/guide/api-reference/brands.md:L33].\n\nEstas son las únicas versiones que devolvió la consulta. A partir de ellas no puedo saber cómo está documentado en otras versiones.",
+    "answer_checks": [
+     "Identifica 0.0.1-test-bench-v2a y latest como las versiones que documentan la búsqueda de marcas con el filtro owner_id.",
+     "Indica que el máximo de limit es 200 (con valor por defecto 50) y que no cambia entre versiones.",
+     "Cita el brands.md de ambas versiones en la sección de búsqueda de marcas.",
+     "No afirma que el filtro no exista en otras versiones ni que esas sean todas las versiones del software.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

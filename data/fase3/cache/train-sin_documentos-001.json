@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-001",
+ "llamadas": [
+  {
+   "clave": "0962ad144303cc3c3b9132f72b429414ac1a785f7bca20d74a038aa370a6843b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.0.0-beta, si hago un PUT a /fresh-products/inboundorder con una orden que todavía no existe, ¿qué excepción salta y qué código HTTP me devuelve?",
+    "respuesta": "No encuentro documentación de zenith-keeper 1.0.0-beta en el catálogo, así que no puedo decirte qué excepción ni qué código HTTP devuelve ese PUT en esa versión. Si quieres, puedo buscarlo en la documentación de las versiones de zenith-keeper que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.0.0-beta y recibe not_found.",
+     "Explica que no hay documentación de zenith-keeper para la versión 1.0.0-beta.",
+     "No inventa la excepción ni el código HTTP del PUT /fresh-products/inboundorder.",
+     "No incluye citas ni datos de otras versiones presentados como si fueran de la 1.0.0-beta.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedir más datos técnicos al usuario."
+    ]
+   }
+  }
+ ]
+}

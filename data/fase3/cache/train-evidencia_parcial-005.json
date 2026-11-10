@@ -1,0 +1,67 @@
+{
+ "task_id": "train-evidencia_parcial-005",
+ "llamadas": [
+  {
+   "clave": "b87ba3b1bbd251a5596678d1ec95ecaafd216bfb153771b619a30af949ab1c68",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando la base de datos de order-workflow-api 5.6.2-hotfix-1 para los crons de versiones automáticas. ¿Qué campos lleva el bloque cron_branches del objeto Workflow y qué estructura tiene el objeto Cron History que se guarda en la base de datos?",
+    "respuesta": "En el objeto Workflow, el bloque `cron_branches` tiene tres campos: `version_branch`, `stable_branch` y `target_branch` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L139-L143]. Sobre Cron History, la guía de base de datos lo incluye como uno de los objetos almacenados [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L14] y le dedica un apartado propio [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L147], pero ese apartado no describe ni sus campos ni su estructura. Lo único relacionado que aparece es que, en el flujo del cron de mediodía, Workflow API guarda la versión del cron en la base de datos después de crear la rama de versión y abrir el pull request [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L285-L298]. No puedo decirte qué campos tiene Cron History, porque la documentación de esta versión no lo detalla.",
+    "answer_checks": [
+     "Indica que cron_branches contiene los campos version_branch, stable_branch y target_branch.",
+     "Declara que la estructura o los campos del objeto Cron History no están documentados.",
+     "No inventa campos ni un esquema JSON para Cron History.",
+     "No afirma que Cron History no exista ni que no se guarde; como mucho dice que su contenido no está documentado.",
+     "Cita el documento de base de datos de la versión 5.6.2-hotfix-1 para la parte que responde."
+    ]
+   }
+  },
+  {
+   "clave": "708c5ef814a3de77143a39be77b923bae6f4c6d9adb8ae4b2100ae17c943f1fe",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando cómo guarda order-workflow-api 5.6.2-hotfix-1 la información de los crons de versiones automáticas. ¿Qué campos tiene el bloque cron_branches del objeto Workflow y qué campos tiene el objeto Cron History que queda en la base de datos?",
+    "respuesta": "El bloque `cron_branches` del objeto Workflow tiene tres campos: `version_branch`, `stable_branch` y `target_branch`. En el ejemplo de gitflow valen `release`, `develop` y `master` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L139-L143].\n\nSobre Cron History, la documentación de esta versión no da sus campos ni su estructura, así que no te los puedo indicar. Lo relacionado que sí aparece:\n- La base de datos MySQL guarda, entre otras cosas, la planificación de la creación automática de versiones [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L40-L43].\n- En el flujo del cron de mediodía, Workflow API primero crea la rama de versión, después abre el pull request y por último guarda la versión del cron en la base de datos [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L285-L298].\n\nNo se explica qué datos se guardan en ese paso.",
+    "answer_checks": [
+     "Indica que cron_branches contiene los campos version_branch, stable_branch y target_branch.",
+     "Declara que los campos o la estructura del objeto Cron History no están documentados.",
+     "No inventa campos ni un esquema para Cron History.",
+     "No afirma que Cron History no exista ni que no se guarde; solo dice que su contenido no está documentado.",
+     "Cita el documento de base de datos de la versión 5.6.2-hotfix-1 para la parte sobre cron_branches."
+    ]
+   }
+  },
+  {
+   "clave": "1d1b53ed7c9cfea8a1b04a6eecbcaa6d0053ee9741089c828b0161ec621ed11d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando cómo guarda order-workflow-api 5.6.2-hotfix-1 lo relativo a los crons de versiones automáticas. ¿Qué campos tiene el bloque cron_branches del objeto Workflow y qué campos tiene el objeto Cron History que se guarda en la base de datos?",
+    "respuesta": "El bloque `cron_branches` del objeto Workflow tiene tres campos: `version_branch`, `stable_branch` y `target_branch`. En el ejemplo de gitflow valen `release`, `develop` y `master` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L139-L143].\n\nEn cuanto a Cron History, la documentación de base de datos de esta versión lo incluye como un apartado propio dentro de los objetos almacenados [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L147], pero no da sus campos ni su estructura, así que no te los puedo indicar. Lo único relacionado es que, en el flujo del cron de mediodía, Workflow API guarda la versión del cron en la base de datos después de crear la rama de versión y abrir el pull request [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L285-L298]. Tampoco se especifica qué datos se guardan en ese paso.",
+    "answer_checks": [
+     "Indica que cron_branches contiene los campos version_branch, stable_branch y target_branch, citando el documento de base de datos de 5.6.2-hotfix-1.",
+     "Declara que los campos o la estructura del objeto Cron History no están documentados, citando el apartado Cron History del documento de base de datos.",
+     "No inventa campos ni un esquema para Cron History.",
+     "No afirma que Cron History no exista ni que no se guarde; solo dice que su contenido no está documentado."
+    ]
+   }
+  }
+ ]
+}

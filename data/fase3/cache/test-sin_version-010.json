@@ -1,0 +1,47 @@
+{
+ "task_id": "test-sin_version-010",
+ "llamadas": [
+  {
+   "clave": "f776d5dd98c4adeddd2bbb1e4dbbfa65377a4b6625bf7ba947d2aa7b37593006",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api, ¿cuántas solicitudes permite cada regla de ratelimit del WAF según de dónde venga el tráfico? Me interesa sobre todo la diferencia entre países RetailHub, USA y el resto.",
+    "respuesta": "La documentación de traffic-gate-api solo aparece en la versión latest. Ahí se explica que las reglas de ratelimit de cada WEB_ACL limitan el número de solicitudes según el país de origen del tráfico [traffic-gate-api/latest/guide/sections/waf_config.md:L5-L5]. Estos son los límites por regla:\n\n- Países RetailHub (los países donde RetailHub tiene Market Place): 1000 solicitudes cada 5 minutos [traffic-gate-api/latest/guide/sections/waf_config.md:L9-L9].\n- USA: 1000 solicitudes cada 5 minutos. Estados Unidos no es un país RetailHub, pero tiene un trato especial en el WAF porque ahí está alojada la mayor parte de la infraestructura tecnológica de RetailHub y sus aliados [traffic-gate-api/latest/guide/sections/waf_config.md:L32-L32].\n- Países No-RetailHub (donde RetailHub no opera ni tiene infraestructura): 200 solicitudes cada 5 minutos [traffic-gate-api/latest/guide/sections/waf_config.md:L39-L39].\n\nTambién hay una cuarta regla, la de países sospechosos. Cubre los países sancionados por OFAC y los países No-RetailHub con los que ya hubo incidentes de seguridad [traffic-gate-api/latest/guide/sections/waf_config.md:L44-L44]. Para esa regla la documentación no indica cuántas solicitudes permite.\n\nEn resumen, los países RetailHub y USA tienen el mismo límite, y el resto de países No-RetailHub tiene uno cinco veces menor.",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que la regla de países RetailHub y la de USA permiten 1000 solicitudes cada 5 minutos.",
+     "Indica que la regla de países No-RetailHub permite 200 solicitudes cada 5 minutos.",
+     "No inventa un límite numérico para la regla de países sospechosos; si la menciona, dice que su límite no está documentado.",
+     "Atribuye los datos a la versión latest sin afirmar que no existan otras versiones."
+    ]
+   }
+  },
+  {
+   "clave": "f0cd4526cd27ea1e585aeaabf1d9b4908cb2b6411d3e40fe5644e6758776dfb5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api, ¿cuántas solicitudes permite cada regla de ratelimit del WAF según de dónde venga el tráfico? Me interesa sobre todo la diferencia entre países RetailHub, USA y el resto.",
+    "respuesta": "Según la documentación de la versión latest de traffic-gate-api, las reglas de ratelimit de cada WEB_ACL limitan el número de solicitudes según el país de origen del tráfico [traffic-gate-api/latest/guide/sections/waf_config.md:L5-L5]. Los límites por regla son estos:\n\n- Países RetailHub (donde RetailHub tiene Market Place): 1000 solicitudes cada 5 minutos [traffic-gate-api/latest/guide/sections/waf_config.md:L9-L9].\n- USA: también 1000 solicitudes cada 5 minutos. Aunque es un país No-RetailHub, el WAF le da un trato especial porque ahí RetailHub y sus aliados tienen alojada la mayor parte de su infraestructura tecnológica [traffic-gate-api/latest/guide/sections/waf_config.md:L32-L32].\n- Países No-RetailHub (donde RetailHub no opera ni tiene infraestructura): 200 solicitudes cada 5 minutos [traffic-gate-api/latest/guide/sections/waf_config.md:L39-L39].\n\nHay además una regla para países sospechosos, que cubre los países sancionados por OFAC y los países No-RetailHub con los que ya hubo incidentes de seguridad [traffic-gate-api/latest/guide/sections/waf_config.md:L44-L44]. La documentación no dice cuántas solicitudes permite esa regla.",
+    "answer_checks": [
+     "Indica que la regla de países RetailHub y la de USA permiten 1000 solicitudes cada 5 minutos, con citas a las líneas correspondientes.",
+     "Indica que la regla de países No-RetailHub permite 200 solicitudes cada 5 minutos.",
+     "No inventa un límite numérico para la regla de países sospechosos; si la menciona, dice que su límite no está documentado.",
+     "Atribuye los datos a la versión latest sin afirmar que sea la única versión existente o documentada.",
+     "No pide la versión al usuario."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-014",
+ "llamadas": [
+  {
+   "clave": "d0b663d44dc4e481e844bafd709f0ac4a427b809ffb1bef00cf013065bfe1526",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando la doc de la API de vendor-stockkeeper-api 0.0.3-paused-seller. En la tabla de servicios, ¿a qué sección lleva el enlace de Feed Consumer? Quiero ver el detalle de esa operación.",
+    "respuesta": "En este punto la documentación se contradice. En la tabla de servicios, la fila de Feed Consumer (POST en `/fp/inventory/operations/feed`) enlaza al ancla `#vendor-branch-search` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L16-L16]. Ese ancla corresponde al nombre de otra operación, \"vendor branch search\", y en la página no hay ninguna sección con ese nombre. Lo que sí hay es una sección titulada \"Feed Consumer\" con un ejemplo curl contra `/fp/inventory/operations/feed`, con cabecera `Content-Type: application/json` y un cuerpo con `msg`, que devuelve `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L48].\n\nO sea, el enlace de la tabla no apunta a la sección que lleva el nombre de la operación. Con esta documentación no puedo confirmar si el enlace está mal escrito y debería llevar a la sección \"Feed Consumer\", o si quería apuntar a otra sección que no aparece en la página.",
+    "answer_checks": [
+     "Indica que el enlace de Feed Consumer en la tabla de servicios apunta al ancla #vendor-branch-search, citando la línea 16 de api.md.",
+     "Señala que ese ancla nombra otra operación y que en la página no hay ninguna sección con ese nombre.",
+     "Menciona y cita la sección 'Feed Consumer' de la misma página (L36-L48) como el lugar donde se describe la operación.",
+     "Explica la discrepancia sin dar por confirmado a qué sección debería llevar el enlace.",
+     "No inventa el contenido de una sección 'vendor branch search'."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "task_id": "validation-sin_evidencia-003",
+ "llamadas": [
+  {
+   "clave": "fd44a117612fe9318f275d14480536ab4ca308110cd93e11df02a2c95452648f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando catalog-portfolio-api 0.0.1-test-bench-v2a y necesito saber qué devuelve exactamente el endpoint allstatus de una marca. ¿Qué campos trae la respuesta y en qué se diferencia de la de GET /catalog/brands/{brandId}?",
+    "respuesta": "En la 0.0.1-test-bench-v2a, el endpoint solo aparece en la tabla de referencia rápida: `GET /catalog/brands/{brandId}/allstatus`, descrito como «Get brand with all status information» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]. Ningún documento de esta versión describe sus parámetros, su respuesta ni sus campos. Por eso no puedo decirte qué campos devuelve ni en qué se diferencia de `GET /catalog/brands/{brandId}`.\n\nLo que sí está documentado es el ejemplo de respuesta de `GET /{brandId}`, con campos como `id`, `name`, `status`, `logos`, `resources`, `date_created` y `date_last_updated` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L144-L170]. Ese ejemplo es solo de ese endpoint. No sirve para saber qué devuelve `allstatus`.",
+    "answer_checks": [
+     "Llama a la herramienta con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que el endpoint allstatus solo aparece en la tabla de referencia y que la documentación no describe los campos de su respuesta.",
+     "No inventa campos de la respuesta de allstatus ni una diferencia concreta con GET /catalog/brands/{brandId}.",
+     "No afirma que el endpoint no exista, que no funcione o que no devuelva nada.",
+     "Si menciona la respuesta de GET /{brandId}, la cita sin presentarla como la respuesta de allstatus."
+    ]
+   }
+  },
+  {
+   "clave": "f3edb8649c0ee581b72282bdbbaeabde8a44589f1853ef309aa1cf00431d52ac",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando catalog-portfolio-api 0.0.1-test-bench-v2a y necesito saber qué devuelve exactamente el endpoint allstatus de una marca. ¿Qué campos trae la respuesta y en qué se diferencia de la de GET /catalog/brands/{brandId}?",
+    "respuesta": "En la 0.0.1-test-bench-v2a, el endpoint aparece solo en la tabla de referencia rápida, como `GET /catalog/brands/{brandId}/allstatus`, con la descripción «Get brand with all status information» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]. Ningún documento de esta versión describe su respuesta ni sus campos. Por eso no puedo decirte qué campos devuelve ni en qué se diferencia de `GET /catalog/brands/{brandId}`.\n\nLo que sí está documentado es un ejemplo de respuesta de `GET /{brandId}`. Incluye campos como `name`, `logos`, `resources`, `status` y `date_last_updated` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L149-L168]. Ese ejemplo corresponde solo a ese endpoint y no indica qué devuelve `allstatus`.",
+    "answer_checks": [
+     "Llama a la herramienta con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que el endpoint allstatus solo aparece en la tabla de referencia y que la documentación no describe los campos de su respuesta.",
+     "No inventa campos de la respuesta de allstatus ni una diferencia concreta con GET /catalog/brands/{brandId}.",
+     "No afirma que el endpoint no exista, que no funcione o que no devuelva nada.",
+     "Si menciona la respuesta de GET /{brandId}, la cita sin presentarla como la respuesta de allstatus."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-001",
+ "llamadas": [
+  {
+   "clave": "feb06cc2c07a0e4856988311f7b0bfe2b1701f1cf5f386622c45a60d5302451d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué cabecera tengo que mandar para borrar una marca? Y aparte, ¿cómo funciona la autenticación en el resto de endpoints? Me refiero a qué tipo de token se usa y cómo se consigue.",
+    "respuesta": "Para borrar una marca con `DELETE /{brandId}` hay que enviar la cabecera `X-Client-Id`. Es un string obligatorio, y el client ID tiene que estar en lista blanca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L221-L225]. Un ejemplo de llamada: `curl -X DELETE \".../catalog/brands/123\" -H \"X-Client-Id: your-client-id\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L229-L231]. Las reglas de negocio también dicen que borrar una marca exige un client ID en lista blanca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L122-L123].\n\nSobre la autenticación del resto de endpoints, la documentación no dice qué tipo de token se usa ni cómo se consigue, así que no puedo indicártelo. Lo único relacionado es esto: el código 401 `unauthorized` significa que falta la autenticación o que no es válida [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L309], y la guía de troubleshooting incluye un ejemplo para probar la autenticación con la cabecera `X-Client-Id` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L146-L147]. Ese ejemplo no explica el mecanismo general.",
+    "answer_checks": [
+     "Indica que para borrar una marca hace falta la cabecera X-Client-Id, obligatoria y con el client ID en lista blanca, y lo cita.",
+     "Declara que el tipo de token y la forma de obtener las credenciales para el resto de endpoints no están documentados.",
+     "No se inventa un esquema de autenticación (Bearer, OAuth, API key, etc.) ni un procedimiento para obtener credenciales.",
+     "No cita la línea que remite a la página de autenticación (api-reference/README.md L7), porque no es citable.",
+     "No se abstiene en la parte documentada sobre la cabecera del DELETE."
+    ]
+   }
+  }
+ ]
+}

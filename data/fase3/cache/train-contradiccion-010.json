@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-010",
+ "llamadas": [
+  {
+   "clave": "91e89370bfcc3d80a5421774a2e49b872c5ae5d92c3bf94ad11dce2d4b12d000",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando la llamada a Operation Validation Consumer en vendor-stockkeeper-api 0.0.10-stock-consumer. Si es un GET, ¿le tengo que mandar igualmente un cuerpo JSON o va sin body?",
+    "respuesta": "La documentación se contradice en este punto. La tabla de servicios declara Operation Validation Consumer como GET sobre /stock-operations/3pl/validation/restock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L21-L21]. Sin embargo, el ejemplo curl de la misma página llama a esa ruta con el header Content-Type: application/json y un cuerpo enviado con --data, sin indicar método explícito [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L53-L55]. Ese cuerpo es un objeto \"msg\" con campos como order_id, site, order_closed_date, material_id, item_id, sap_sku y message_id [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. Una cosa es una operación GET sin cuerpo y otra es lo que muestra el ejemplo, que envía un body JSON. Con esta documentación no puedo confirmar ni el método correcto ni si el cuerpo es obligatorio. Lo mejor es comprobarlo con el equipo responsable del servicio o probarlo en stage.",
+    "answer_checks": [
+     "Cita la fila de la tabla de servicios que declara la operación como GET.",
+     "Cita el ejemplo curl que envía un cuerpo JSON con --data a la misma ruta.",
+     "Explica que ambas fuentes son incoherentes entre sí y no elige un método ni afirma si el cuerpo es obligatorio.",
+     "No presenta como un hecho confirmado que la operación sea GET sin cuerpo ni que sea POST con cuerpo.",
+     "No inventa campos del cuerpo que no aparezcan en el ejemplo documentado."
+    ]
+   }
+  }
+ ]
+}

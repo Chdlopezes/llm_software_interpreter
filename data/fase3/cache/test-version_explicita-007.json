@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-007",
+ "llamadas": [
+  {
+   "clave": "dc5f13af405a93d2c92145be55bf9b8f5420fa42decd958fd3365d9230643bbd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿cómo llamo al endpoint que obtiene las IPs bloqueadas en el WAF y las encola para analizarlas? Necesito saber el método y la ruta, cómo le paso el scope y qué códigos de respuesta puede devolver.",
+    "respuesta": "Es `POST /whitelist`, de la etiqueta `job`. Obtiene las IPs que bloquean las reglas del WAF asociadas a un scope y las manda a una cola para analizarlas después [traffic-gate-api/latest/specs/swagger.yaml:L197-L202].\n\nEl scope no va en un body: se pasa como parámetro de query `scope`, de tipo string, descrito como \"The scope to check\" [traffic-gate-api/latest/specs/swagger.yaml:L204-L208] [traffic-gate-api/latest/specs/swagger.yaml:L214]. Entre sus valores admitidos están `api`, `front` y `pci` [traffic-gate-api/latest/specs/swagger.yaml:L209-L212].\n\nPuede responder con estos códigos [traffic-gate-api/latest/specs/swagger.yaml:L215-L229]:\n- `200`: la operación salió bien. Para este código no se define cuerpo de respuesta.\n- `400`: petición incorrecta, con cuerpo JSON `ErrorResponse`.\n- `500`: error interno del servidor, también con cuerpo JSON `ErrorResponse`.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión latest.",
+     "Indica que el endpoint es POST /whitelist.",
+     "Indica que el scope se envía como parámetro de query llamado scope, de tipo string.",
+     "Menciona los códigos de respuesta 200, 400 y 500, con ErrorResponse en 400 y 500.",
+     "Cita la sección de /whitelist del swagger.yaml (líneas 197-229) y no inventa un cuerpo de petición ni un cuerpo de respuesta para el 200."
+    ]
+   }
+  }
+ ]
+}

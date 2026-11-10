@@ -1,0 +1,46 @@
+{
+ "task_id": "train-contradiccion-013",
+ "llamadas": [
+  {
+   "clave": "b6d6f69654a981e73c5648ee0660709b5de12d4c9edf8ca0cf149712c7b2b98b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy siguiendo la verificación de items de prueba del flujo de Restock en vendor-stockkeeper-api 0.0.10-stock-consumer. Después de sacar la conciliación del inbound, ¿el curl de ejemplo a la API de items consulta uno de los items de esa conciliación? ¿Lo puedo copiar tal cual cambiando solo el id?",
+    "respuesta": "En este punto el ejemplo no es coherente, así que no conviene copiarlo tal cual.\n\nEl procedimiento es este: antes de enviar un inbound, se obtiene su conciliación para ver si los items tienen las tags que los identifican como items de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L37-L41]. Después se consulta la API de items para revisar esas tags [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L128-L128].\n\nEl problema está en que los pasos del ejemplo no encajan entre sí:\n\n- La conciliación de ejemplo devuelve los items `MLA1734160848` y `MLA1734238432` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L56-L56] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L74-L74].\n- Sin embargo, el curl a la API de items consulta `MLA1737779958`, que no es ninguno de los dos. Además, a la URL le falta la comilla de cierre [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L131-L131].\n- La respuesta de ejemplo tampoco corresponde a ese id: devuelve `\"id\": \"MLA0000000000\"` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L139-L139].\n\nAsí que el curl no consulta ningún item de la conciliación mostrada, y la documentación no aclara qué id habría que poner ni cuál es la forma correcta del comando. Lo que sí se puede ver en la respuesta de ejemplo es dónde están las tags: en el array `tags`, que incluye `test_item` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L199-L206].",
+    "answer_checks": [
+     "Indica que el item consultado en el curl de la API de items (línea 131) no coincide con los items de la conciliación del ejemplo, y cita ambos lugares.",
+     "Señala que la respuesta de ejemplo devuelve un id distinto del que se consulta, o que a la comilla del curl le falta el cierre.",
+     "No presenta el curl de la línea 131 como un comando correcto y verificado, ni inventa cuál es el id o la sintaxis correcta.",
+     "Explica el propósito documentado del paso (consultar la API de items para revisar las tags) con una cita a una línea citable."
+    ]
+   }
+  },
+  {
+   "clave": "e8f0174198d993604f5c7f75606b6cf2780c58116dbec1da2c6caf0e7d65c611",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api 0.0.10-stock-consumer, en la verificación de items de prueba del flujo de Restock: después de sacar la conciliación del inbound, ¿el curl de ejemplo a la API de items consulta uno de los items de esa conciliación? ¿Puedo copiar ese comando tal cual?",
+    "respuesta": "En este punto la documentación no es coherente, así que no conviene copiar el comando tal cual.\n\nEl procedimiento consiste en obtener la conciliación del inbound para ver si los items tienen las tags que los identifican como items de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L37-L41]. Después se consulta la API de items para revisar esas tags [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L128-L128].\n\nEl problema es que los dos pasos del ejemplo no encajan. La conciliación de ejemplo devuelve los items `MLA1734160848` y `MLA1734238432` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L56-L56] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L74-L74]. En cambio, el curl a la API de items consulta `MLA1737779958`, que no es ninguno de esos dos. Además, a la URL le falta la comilla de cierre [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L131-L131].\n\nEs decir, el curl no consulta ninguno de los items de la conciliación que se muestra, y está mal formado. La documentación no aclara qué id habría que usar ni cuál es la forma correcta del comando, así que no puedo confirmarlo.",
+    "answer_checks": [
+     "Indica que el item_id del curl a la API de items (MLA1737779958) no coincide con los items de la conciliación del ejemplo, y cita tanto la línea del curl como las de la conciliación.",
+     "Señala que al curl de ejemplo le falta la comilla de cierre o que no está bien formado.",
+     "No presenta el curl como un comando correcto y verificado, ni inventa cuál es el id o la sintaxis correcta.",
+     "Explica el propósito documentado del paso (consultar la API de items para revisar las tags) con una cita a una línea citable.",
+     "No cita líneas no citables distintas de la línea en conflicto (por ejemplo, la línea con el id de la respuesta de ejemplo)."
+    ]
+   }
+  }
+ ]
+}

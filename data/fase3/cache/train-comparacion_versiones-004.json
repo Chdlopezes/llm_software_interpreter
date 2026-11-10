@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-004",
+ "llamadas": [
+  {
+   "clave": "52bb36e7b89e9e669b4afd6dce7ce437fc643cea7f37b900e232f2602661aa28",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿la tabla de alertas cambia entre 0.0.6-ep-restock-man y latest? Me interesa saber si hay alertas nuevas o si cambiaron los monitores de Datadog a los que apunta cada una.",
+    "respuesta": "No, la tabla de alertas es igual en las dos versiones. Las dos tienen las mismas cuatro alertas, con la misma descripción y el mismo enlace al monitor de Datadog:\n\n- \"Error restock in vendor-stockkeeper-api\": se dispara cuando algo falla al intentar hacer un restock. Monitor 116772629 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L9-L9] [vendor-stockkeeper-api/latest/guide/alerts.md:L9-L9].\n- \"Stockkeeper-api - Error restocking item (negative quantity)\": se dispara cuando falla el restock de una publicación que tiene cantidad negativa. Monitor 150073893 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L10-L10] [vendor-stockkeeper-api/latest/guide/alerts.md:L10-L10].\n- \"Validation stock (publication has more stock than warehouse's stock\": se dispara cuando falla la venta de una publicación sin stock en instalaciones 3PL. Monitor 158654468 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L11-L11] [vendor-stockkeeper-api/latest/guide/alerts.md:L11-L11].\n- \"Validation stock ERROR updating item\": se dispara cuando falla la actualización de la cantidad de stock de la publicación. Monitor 160761475 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L12-L12] [vendor-stockkeeper-api/latest/guide/alerts.md:L12-L12].\n\nPor lo tanto, ninguna de las dos versiones añade alertas nuevas a la tabla ni cambia los monitores a los que apunta cada una.",
+    "answer_checks": [
+     "Indica que la tabla de alertas no cambia entre 0.0.6-ep-restock-man y latest.",
+     "Menciona que en ambas versiones aparecen las mismas cuatro alertas y que ninguna es nueva.",
+     "Indica que los enlaces a los monitores de Datadog son los mismos en ambas versiones (por ejemplo, 116772629, 150073893, 158654468 y 160761475).",
+     "Cita las filas de la tabla del alerts.md de ambas versiones.",
+     "No inventa diferencias en la tabla ni presenta como parte de la tabla diferencias que no están en ella."
+    ]
+   }
+  }
+ ]
+}

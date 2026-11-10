@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-006",
+ "llamadas": [
+  {
+   "clave": "4a5fd20de7694b4c193972f65c57d8a8ccd055069983a7d3aa232630a0bf7e55",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 2.0, ¿cómo se generan los backports automáticos para mantener develop sincronizada después de mergear un PR a master?",
+    "respuesta": "El catálogo no tiene documentación de order-workflow-api 2.0, así que no puedo explicarte cómo se generan los backports en esa versión. Si quieres, consulto la documentación de las versiones de order-workflow-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 2.0, y recibe not_found.",
+     "Explica que no hay documentación de order-workflow-api para la versión 2.0.",
+     "No inventa cómo se generan los backports ni da reglas, ramas o patrones de backport.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no pide al usuario más datos técnicos."
+    ]
+   }
+  }
+ ]
+}

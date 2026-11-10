@@ -1,0 +1,25 @@
+{
+ "task_id": "test-software_en_historial-002",
+ "llamadas": [
+  {
+   "clave": "d89fb0e1368f55ace240abfa26b1219b0f56603dd12f5b4bbab2d2bc02ac1691",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con unified-transaction-configs v0.0.2: tengo que cambiar la configuración de un flujo y quiero que el cambio llegue a mobile-flow-manager.",
+    "historial_asistente": "Perfecto, cuéntame qué necesitas saber sobre ese cambio y lo revisamos.",
+    "pregunta": "Ya tengo abierto el PR con la config nueva. ¿A qué rama lo tengo que mergear para que la actualización impacte en mobile-flow-manager?",
+    "respuesta": "Las configuraciones se cargan mediante un PR al propio repositorio unified-transaction-configs, respetando la estructura de directorios definida [unified-transaction-configs/v0.0.2/guide/howto.md:L1-L3]. Para que la actualización impacte en mobile-flow-manager, hay que hacer un merge a master en el repositorio de unified transaction configs [unified-transaction-configs/v0.0.2/guide/howto.md:L42-L46].",
+    "answer_checks": [
+     "Llama a la herramienta con unified-transaction-configs y la versión v0.0.2 del historial, sin volver a preguntarlos.",
+     "Indica que hay que mergear a master en el repositorio de unified transaction configs para que la actualización impacte en mobile-flow-manager.",
+     "Cita la sección «Actualizacion de configuraciones en mobile-flow-manager» de howto.md (líneas 42-46 o un subrango que las contenga).",
+     "No inventa nombres de ramas, comandos ni pasos que no aparecen en la documentación."
+    ]
+   }
+  }
+ ]
+}

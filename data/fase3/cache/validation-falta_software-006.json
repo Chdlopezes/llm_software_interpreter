@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-falta_software-006",
+ "llamadas": [
+  {
+   "clave": "1ff50c283110729cff23d3ab345f288d25587e3a1e5e5a2dd370524cfdb51e53",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Cuando consulto las zonas moderadas de un seller, ¿cada elemento del array que vuelve es un string o un objeto con más campos?",
+    "respuesta": "¿A qué software te refieres?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario a qué software se refiere.",
+     "No pide la versión.",
+     "No da una respuesta técnica sobre el formato de los elementos del array de zonas."
+    ]
+   }
+  }
+ ]
+}

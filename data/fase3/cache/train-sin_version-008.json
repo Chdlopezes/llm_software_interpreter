@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-008",
+ "llamadas": [
+  {
+   "clave": "32e0e5a7020ca14f6ef2c2194422f9e5e48e7f7354e090e8c5677e71e1dbfc64",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint GET /offers de payment-promise-gateway. ¿Qué campos trae la respuesta JSON?",
+    "respuesta": "Las dos versiones documentadas, 0.0.10-test-crc-migration y latest, muestran la misma respuesta de ejemplo para GET /offers. Trae estos campos [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L426-L438] [payment-promise-gateway/latest/guide/README.md:L426-L438]:\n\n- `available_offers`: una lista con las ofertas disponibles. En el ejemplo contiene `payment_not_credited`, `create_agreement` y `create_debt_relief`.\n- `promise_due_date`\n- `amount`\n- `promise_id`\n- `late_fee_forgiveness_id`\n- `proposal_creation_status`: en el ejemplo vale `\"allowed\"`.\n\nEn el ejemplo, `promise_due_date`, `amount`, `promise_id` y `late_fee_forgiveness_id` vienen a `null`. Son valores de muestra: la documentación no explica qué significa cada campo ni cuándo llegan rellenos.",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Enumera los campos de la respuesta de GET /offers: available_offers, promise_due_date, amount, promise_id, late_fee_forgiveness_id y proposal_creation_status.",
+     "Indica que la respuesta de ejemplo es igual en 0.0.10-test-crc-migration y en latest, sin atribuirla a una sola versión.",
+     "No presenta los valores del ejemplo (los null, \"allowed\" o la lista concreta de ofertas) como un comportamiento garantizado.",
+     "No inventa el significado de los campos ni otros campos que no estén en el ejemplo."
+    ]
+   }
+  }
+ ]
+}

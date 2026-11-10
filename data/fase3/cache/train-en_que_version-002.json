@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-002",
+ "llamadas": [
+  {
+   "clave": "1f873182642126ae5f16bd388695ac39adb18b2028d3e99c96f9160ac2ac8e27",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "When the \"Validation stock (publication has more stock than warehouse's stock\" alert fires in vendor-stockkeeper-api, which versions of the runbook tell you to check the item's status through the api core item endpoint using the item_id?",
+    "respuesta": "Three versions include that instruction: 0.0.3-paused-seller, 0.0.10-stock-consumer and latest. In all three, step 2 of resolving this alert says to confirm the item was paused by checking its status. You use the api core item endpoint with the item_id and look at \"status\". If the item was not paused, you raise a ticket in Shield to ask for the publication to be blocked [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L50-L50] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L50-L50] [vendor-stockkeeper-api/latest/guide/alerts.md:L50-L50]. These three versions also label the alert [LOW PRIORITY] and add a note that it only checks that the item was paused correctly, which may happen automatically [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L43-L53] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L43-L53] [vendor-stockkeeper-api/latest/guide/alerts.md:L43-L53].\n\n0.0.6-ep-restock-man is different. Its step 2 also says to confirm the pause by checking the item's status and to raise a Shield ticket if the item wasn't paused, but it doesn't name the api core item endpoint or the item_id [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L49-L49]. The documentation doesn't say why that version leaves this detail out. It doesn't say the check works differently there either.",
+    "answer_checks": [
+     "Identifies 0.0.3-paused-seller, 0.0.10-stock-consumer and latest as the versions whose runbook mentions using the api core item endpoint with item_id to check \"status\".",
+     "Cites the step 2 line of alerts.md in at least one of those versions (e.g. line 50).",
+     "Indicates that the 0.0.6-ep-restock-man runbook asks to check the item's status but does not mention the api core item endpoint.",
+     "Does not claim that the api core item endpoint cannot be used or does not exist in 0.0.6-ep-restock-man.",
+     "Does not ask the user for a version."
+    ]
+   }
+  }
+ ]
+}

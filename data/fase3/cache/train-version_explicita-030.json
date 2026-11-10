@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-030",
+ "llamadas": [
+  {
+   "clave": "e5b5208730f555eb64ba1bca4d27a85ffd6ae1af5900c70cabed84d4e4359c89",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway latest, cuando llamo a GET /forgiveness_proposal/{promiseId}, ¿qué hace el servicio por dentro para obtener la condonación? ¿Llama a algún endpoint específico de condonaciones o la saca de la promesa?",
+    "respuesta": "Según el diagrama de secuencia, el servicio no llama a ninguna operación específica de condonación: la saca de la promesa. El flujo es este. El controlador valida primero el formato de promiseId, que va como parámetro de ruta numérico. Después llama a getLateFeeForgiveness(promiseId) en PaymentPromiseService. El servicio pide la promesa a PromiseService con getPaymentPromiseById(promiseId) y recibe un PaymentPromiseDTO. De ahí extrae él mismo el lateFeeForgiveness (Service->>Service: Extract lateFeeForgiveness) y devuelve al controlador un LateFeeForgivenessDTO. El controlador responde al usuario con los detalles de la condonación en JSON [payment-promise-gateway/latest/guide/README.md:L258-L266]. El resumen de endpoints dice lo mismo: se valida que el ID de la promesa sea numérico y la información de la condonación se devuelve en formato DTO [payment-promise-gateway/latest/guide/README.md:L301-L304].",
+    "answer_checks": [
+     "Indica que el servicio obtiene la promesa con getPaymentPromiseById(promiseId) de PromiseService, que devuelve un PaymentPromiseDTO.",
+     "Explica que el propio servicio extrae el lateFeeForgiveness de la promesa y no llama a una operación específica de condonación.",
+     "Menciona que el controlador valida antes que promiseId sea numérico y que el resultado es un LateFeeForgivenessDTO devuelto en JSON.",
+     "Cita el diagrama de secuencia de GET /forgiveness_proposal/{promiseId} del documento de latest.",
+     "No inventa llamadas, parámetros ni códigos de respuesta que no aparezcan en el diagrama."
+    ]
+   }
+  }
+ ]
+}

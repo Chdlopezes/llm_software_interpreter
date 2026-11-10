@@ -1,0 +1,68 @@
+{
+ "task_id": "train-version_explicita-021",
+ "llamadas": [
+  {
+   "clave": "db47c27e20b88cf8e0f889d92c571c7dd4b574ff91ad79579807d40bacec36a9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, when a \"start work\" message comes in to validate a pipeline, which BigQ topic does it arrive on, what does the service do next, and which fields does the Pipeline object it gets back have?",
+    "respuesta": "The \"start work\" message arrives on the BigQ topic `batesting-orchestrator.order-orchestrator-api` and includes a Pipeline ID. When workflow-api receives it, it requests the full `Pipeline` information from the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L18-L20].\n\nThe guide shows the `Pipeline` object as JSON with these fields: `merged`, `head_branch`, `base_branch`, `application_name`, `repository_name`, `pull_request_link`, `merge_commit`, `fork`, `head_commit`, `base_commit`, `pull_request`, `command_line`, `pull_request_number` and `user` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L22-L41]. The values in that JSON are only illustrations, so they don't tell you what the real values will be.",
+    "answer_checks": [
+     "States that the message arrives on the topic batesting-orchestrator.order-orchestrator-api and contains a Pipeline ID.",
+     "Indicates that workflow-api then fetches the full Pipeline information from the Orchestrator.",
+     "Lists Pipeline fields that appear in the documented JSON (e.g., head_branch, base_branch, repository_name, pull_request_number, fork, user) without inventing fields not shown.",
+     "Does not present the example values of the JSON (branch names, commits, user) as factual data.",
+     "Cites the BigQ services document (bigq.md) for version 5.6.2-hotfix-1."
+    ]
+   }
+  },
+  {
+   "clave": "a3f0842cba31efa3553cbb79cc652fdb364a172bf1b722f4a8852f9f3747cd4f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, when a \"start work\" message comes in to validate a pipeline, which BigQ topic does it arrive on, what does the service do next, and which fields does the Pipeline object it gets back have?",
+    "respuesta": "The \"start work\" message comes in on the BigQ topic `batesting-orchestrator.order-orchestrator-api` and carries a Pipeline ID. When workflow-api gets it, it fetches the full `Pipeline` information from the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L18-L20].\n\nThe guide shows the `Pipeline` object as JSON [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L22-L24]. These fields appear in it: `merged`, `head_branch`, `base_branch`, `application_name`, `repository_name`, `pull_request_link`, `merge_commit`, `fork`, `head_commit`, `base_commit`, `pull_request`, `command_line`, `pull_request_number` and `user` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L26-L40]. The values in that JSON are only examples. They don't tell you what real values will look like.",
+    "answer_checks": [
+     "States that the message arrives on the topic batesting-orchestrator.order-orchestrator-api and contains a Pipeline ID.",
+     "Indicates that workflow-api then fetches the full Pipeline information from the Orchestrator.",
+     "Lists Pipeline fields that appear in the documented JSON (e.g., head_branch, base_branch, repository_name, pull_request_number, fork, user) without inventing fields not shown.",
+     "Does not present the example values of the JSON (branch names, commits, user) as factual data.",
+     "Cites the BigQ services document (bigq.md) for version 5.6.2-hotfix-1."
+    ]
+   }
+  },
+  {
+   "clave": "5ddb65075fad5c8a09196e98650115bcd195f2466a40efba874505267ff343f4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, when the service gets a \"start work\" message to validate a pipeline, which BigQ topic does that message come from and what does the service do with it? Also, in the Pipeline object it works with, which fields hold the branch and commit information?",
+    "respuesta": "The \"start work\" message comes from the BigQ topic `batesting-orchestrator.order-orchestrator-api` and contains a Pipeline ID. When workflow-api receives it, it fetches the full `Pipeline` information from the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L18-L20].\n\nThe guide shows the `Pipeline` object as JSON [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L22-L23]. Two fields hold the branches: `head_branch` and `base_branch` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L27-L28]. Three fields hold the commits: `merge_commit` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L32], plus `head_commit` and `base_commit` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L34-L35]. The values in that JSON are only examples, such as the branch names and commit hashes. They are not real data.",
+    "answer_checks": [
+     "States that the \"start work\" message arrives on the BigQ topic batesting-orchestrator.order-orchestrator-api and contains a Pipeline ID.",
+     "Indicates that workflow-api then fetches the full Pipeline information from the Orchestrator.",
+     "Identifies head_branch and base_branch as the branch fields, and head_commit, base_commit and merge_commit as the commit fields, without inventing other fields.",
+     "Does not present the example values from the JSON (branch names, commit hashes) as real or fixed values.",
+     "Cites the BigQ services document (bigq.md) for version 5.6.2-hotfix-1."
+    ]
+   }
+  }
+ ]
+}

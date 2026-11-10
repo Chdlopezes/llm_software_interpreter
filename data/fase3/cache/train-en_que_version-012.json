@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-012",
+ "llamadas": [
+  {
+   "clave": "cbffa5b47be535d44400fb04160d38b56aa35a090fcd9c0889cd9752b63fa1ae",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In which versions of vendor-stockkeeper-api is the pre-action check of the Operation Id for the feed flow documented? I want to know where that verification step shows up before I touch any inventory flow.",
+    "respuesta": "All four versions returned for vendor-stockkeeper-api document this step: 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer and latest. The wording is the same in each one.\n\nIn every version, the step appears in the \"Verification Procedure\" section of guide/important.md as step 2, \"Check the Operation Id (Feed flow)\", which says to confirm that the operationId contains all the required items:\n- 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L25-L25]\n- 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L25-L25]\n- 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L25-L25]\n- latest [vendor-stockkeeper-api/latest/guide/important.md:L25-L25]\n\nThe other two steps are also the same in all four versions. Step 1 is to review the inbound for the restock flow and make sure all test items are present. Step 3 is a final validation of both flows before you take any action [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L22-L26] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L22-L26] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L22-L26] [vendor-stockkeeper-api/latest/guide/important.md:L22-L26].",
+    "answer_checks": [
+     "Identifies 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer and latest as versions that document the Operation Id check for the feed flow.",
+     "Indicates that the step (confirm the operationId contains all required items) is worded the same across the versions, without inventing differences.",
+     "Cites the Verification Procedure lines of guide/important.md for each version it names, not the non-citable Importance or Conclusion sections.",
+     "Does not ask the user for a version and does not claim these are all versions that exist beyond the documentation retrieved.",
+     "Does not add steps or details not present in the documented three-step procedure."
+    ]
+   }
+  }
+ ]
+}

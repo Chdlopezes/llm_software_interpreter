@@ -1,0 +1,47 @@
+{
+ "task_id": "train-en_que_version-013",
+ "llamadas": [
+  {
+   "clave": "df88c20f6dda6d86973d2438cdcc316f870dda4ef754954694904263325796d8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En la guía de alertas de vendor-stockkeeper-api, para la alerta de Validation stock (publicación con más stock que el del warehouse), ¿en qué versiones se indica que hay que usar el endpoint de api core item con el item_id y revisar el campo \"status\" para confirmar que el ítem quedó pausado?",
+    "respuesta": "Esa instrucción aparece en tres versiones: 0.0.10-stock-consumer, 0.0.3-paused-seller y latest. En las tres, el paso 2 de la alerta pide confirmar que el ítem quedó pausado revisando su estado. Para hacerlo, hay que usar el endpoint de api core item con el item_id y mirar \"status\". Si el ítem no quedó pausado, se abre un ticket en Shield para pedir que se bloquee la publicación [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L50-L50] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L50-L50] [vendor-stockkeeper-api/latest/guide/alerts.md:L50-L50]. En esas tres versiones la alerta está marcada como [LOW PRIORITY]. Además, se aclara que sirve solo para comprobar que el ítem quedó pausado y que puede resolverse de forma automática [vendor-stockkeeper-api/latest/guide/alerts.md:L43-L45] [vendor-stockkeeper-api/latest/guide/alerts.md:L53-L53].\n\nEn 0.0.6-ep-restock-man, el paso 2 también pide confirmar que el ítem quedó pausado revisando su estado. Sin embargo, no menciona el endpoint de api core item, ni el item_id, ni el campo \"status\" [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L49-L49]. La documentación de esa versión no explica cómo hacer esa comprobación. Esto no significa que el endpoint no se pueda usar en esa versión.",
+    "answer_checks": [
+     "Identifica 0.0.10-stock-consumer, 0.0.3-paused-seller y latest como las versiones que documentan el uso del endpoint de api core item con item_id y la revisión de \"status\".",
+     "Cita la línea correspondiente del alerts.md de al menos una de esas versiones (idealmente de las tres).",
+     "Indica que en 0.0.6-ep-restock-man el paso solo pide revisar el estado del ítem, sin mencionar el endpoint de api core item.",
+     "No afirma que en 0.0.6-ep-restock-man ese endpoint no exista o no se pueda usar; lo presenta como no documentado.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  },
+  {
+   "clave": "3f4fda929267c0c525e6f2a85c79c4816bdf31f259fe08754a8ef5628dea49fa",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, para resolver la alerta de Validation stock (cuando la publicación tiene más stock que el warehouse), ¿en qué versiones se explica que la comprobación de que el ítem quedó pausado se hace con el endpoint de api core item usando el item_id?",
+    "respuesta": "Ese detalle aparece en tres versiones: 0.0.10-stock-consumer, 0.0.3-paused-seller y latest. En las tres, el paso 2 pide confirmar que el ítem quedó pausado revisando su estado. Para eso hay que usar el endpoint de api core item con el item_id y revisar \"status\". Si el ítem no quedó pausado, hay que abrir un ticket en Shield para pedir que se bloquee la publicación [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L50-L50] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L50-L50] [vendor-stockkeeper-api/latest/guide/alerts.md:L50-L50].\n\nEn 0.0.6-ep-restock-man, el paso 2 también pide confirmar que el ítem quedó pausado revisando su estado («checking the item's status») y abrir un ticket en Shield si no lo está. Pero no dice qué endpoint usar ni menciona el item_id [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L49-L49]. En esa versión, la documentación no explica cómo hacer la comprobación. Eso no quiere decir que el endpoint no se pueda usar ahí.",
+    "answer_checks": [
+     "Identifica 0.0.10-stock-consumer, 0.0.3-paused-seller y latest como las versiones que mencionan el endpoint de api core item con item_id para comprobar el status.",
+     "Cita la línea del paso 2 en el alerts.md de al menos una de esas versiones.",
+     "Indica que en 0.0.6-ep-restock-man el paso también pide revisar el estado del ítem, pero sin especificar el endpoint ni el item_id (no afirma que esa versión no mencione el status).",
+     "No afirma que en 0.0.6-ep-restock-man el endpoint no exista o no se pueda usar; lo presenta como no documentado.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

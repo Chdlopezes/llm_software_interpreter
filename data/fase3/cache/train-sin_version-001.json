@@ -1,0 +1,47 @@
+{
+ "task_id": "train-sin_version-001",
+ "llamadas": [
+  {
+   "clave": "db1d0ab9dbf978d6cb7f758cb75b97d5532993aa2b50cdc8827d271b59ca76dd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What is the demand-forecast-docs project actually about? What does it forecast, and for what scope?",
+    "respuesta": "The only version the documentation covers here is `latest`. There, the project is called marketplace forecasting. Its goal is to forecast product demand in the marketplace. It gives insights into TGMV and TSI for 9 product categories, plus a total for each site [demand-forecast-docs/latest/guide/overview.md:L5-L5]. The overview page also says that it explains how the project is organized and how to contribute to it, with a focus on developer experience [demand-forecast-docs/latest/guide/overview.md:L3-L3].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the project (marketplace forecasting) forecasts the demand of products in the marketplace.",
+     "Mentions that it provides insights into TGMV and TSI for 9 product categories plus a total for each site.",
+     "Attributes the information to the latest version without inventing differences across versions or claiming other versions do not exist.",
+     "Cites demand-forecast-docs/latest/guide/overview.md for the description."
+    ]
+   }
+  },
+  {
+   "clave": "f98feb0f441a3e9a875a0867d424bc1ac977eb87b3ae00b3d7f17116f5a8e1fe",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What is the demand-forecast-docs project actually about? What does it forecast, and for what scope?",
+    "respuesta": "The overview in the `latest` documentation calls the project \"Marketplace forecasting\". Its goal is to forecast product demand in the marketplace. It gives insights into TGMV and TSI for 9 product categories, plus a total for each site [demand-forecast-docs/latest/guide/overview.md:L5-L5].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the project (marketplace forecasting) forecasts the demand of products in the marketplace.",
+     "Mentions that it provides insights into TGMV and TSI for 9 product categories plus a total for each site.",
+     "Attributes the description to the latest version without claiming that latest is the only existing version or inventing differences across versions.",
+     "Cites demand-forecast-docs/latest/guide/overview.md for the description."
+    ]
+   }
+  }
+ ]
+}

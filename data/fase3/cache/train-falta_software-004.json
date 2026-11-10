@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-004",
+ "llamadas": [
+  {
+   "clave": "8feff9f8f90dd6f35c6537db76242537672f3026dc41df35417b25e947935e61",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "We just got paged with a \"Validation stock ERROR updating item\" alert. What situation triggers that one, and where's the monitor link for it?",
+    "respuesta": "Which software is this alert from?",
+    "answer_checks": [
+     "Does not call the documentation tool.",
+     "Asks the user which software the question is about.",
+     "Does not ask for the version.",
+     "Gives no technical answer: it does not explain what triggers the alert or give a monitor link."
+    ]
+   }
+  }
+ ]
+}

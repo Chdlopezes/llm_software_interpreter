@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-comparacion_versiones-006",
+ "llamadas": [
+  {
+   "clave": "c643a43c695959dae0166bb6bbbfede31094ccb74b63f68cbd1421684fbb50c8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api, ¿cambia el formato de las respuestas de error entre la versión 0.0.1-test-bench-v2a y latest? Quiero saber si tengo que adaptar el parseo de errores al migrar.",
+    "respuesta": "No, el formato de error es el mismo en las dos versiones. Por lo que dice la documentación, no hace falta adaptar el parseo al migrar.\n\nEn 0.0.1-test-bench-v2a, las respuestas de error traen información detallada [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L75-L77]. Es un objeto JSON con los campos `error`, `message`, `status` y `cause`, y `cause` es un array [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L79-L86].\n\nEn latest, la sección dice lo mismo [catalog-portfolio-api/latest/guide/api-reference/README.md:L75-L77]. El objeto tiene los mismos cuatro campos, con la misma estructura [catalog-portfolio-api/latest/guide/api-reference/README.md:L79-L86].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que el formato de error no cambia entre 0.0.1-test-bench-v2a y latest.",
+     "Menciona los campos error, message, status y cause (este último como array) como estructura del error.",
+     "Cita el api-reference/README.md de ambas versiones.",
+     "No inventa diferencias entre versiones ni presenta como hechos generales los valores de ejemplo (por ejemplo, el ID 123 del mensaje)."
+    ]
+   }
+  }
+ ]
+}

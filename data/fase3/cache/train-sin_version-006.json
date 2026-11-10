@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-006",
+ "llamadas": [
+  {
+   "clave": "56717d5eb265be00e2652295d046ee0357dd8e9696ee8ed6df5b6a5b65fb1c2b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper, ¿qué endpoint uso para sacar el listado completo de productos y qué me devuelve si va bien y si no encuentra nada?",
+    "respuesta": "La única versión de zenith-keeper que aparece en la documentación es la 1.1.6, así que no hay diferencias entre versiones que comparar. En esa versión, el listado completo de productos se pide con `GET /api/v1/fresh-products`. La operación tiene la etiqueta `Products`, el resumen «Get complete products list» y el `operationId` `productList` [zenith-keeper/1.1.6/specs/swagger.yaml:L50-L55].\n\nHay dos respuestas posibles:\n- **200 (OK)**: devuelve un array JSON de `ProductDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L56-L64]. Cada `ProductDTO` trae `name` (string) y `price` (formato Double) [zenith-keeper/1.1.6/specs/swagger.yaml:L416-L423].\n- **404 («List Not found»)**: devuelve un objeto JSON [zenith-keeper/1.1.6/specs/swagger.yaml:L65-L70].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que el endpoint es GET /api/v1/fresh-products y cita la especificación swagger.yaml de la versión 1.1.6.",
+     "Indica que la respuesta 200 devuelve un array de ProductDTO y que la 404 («List Not found») devuelve un objeto.",
+     "Atribuye la información a la versión 1.1.6 sin afirmar que no exista en otras versiones ni inventar diferencias entre versiones.",
+     "No inventa parámetros, filtros ni códigos de respuesta que no aparecen para este endpoint."
+    ]
+   }
+  }
+ ]
+}

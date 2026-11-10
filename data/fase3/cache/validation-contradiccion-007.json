@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-contradiccion-007",
+ "llamadas": [
+  {
+   "clave": "93c2afb137a560c21f35fdb3895bc8ba0e0a5bcfa4ba48f6dcea7b927dbe21a7",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué código de error devuelve la API cuando falla la validación? Quiero capturarlo en el cliente por su nombre.",
+    "respuesta": "La documentación de esta versión se contradice en este punto. La guía de Brand Management incluye `validation_failed` entre los errores comunes, con la descripción «Business rules validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]. En cambio, la tabla de códigos de error de la referencia de endpoints de marcas lo llama `validation_error`, asociado al HTTP 400, con la descripción «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]. Como las dos fuentes usan nombres distintos, no puedo confirmar cuál es el identificador que devuelve realmente la API. Tampoco queda claro si se trata del mismo error o de dos errores distintos: uno de validación de reglas de negocio y otro de validación de la petición. Antes de capturar el error por su nombre en el cliente, conviene comprobarlo con una respuesta real del servicio.",
+    "answer_checks": [
+     "Indica que la documentación es contradictoria sobre el nombre del error de validación.",
+     "Cita la guía de Brand Management, que usa `validation_failed`, y la referencia de endpoints de marcas, que usa `validation_error` (400).",
+     "No presenta `validation_failed` ni `validation_error` como el nombre confirmado ni elige uno de los dos.",
+     "No inventa otros códigos de error ni explicaciones que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

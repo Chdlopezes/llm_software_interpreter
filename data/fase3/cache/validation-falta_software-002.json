@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-falta_software-002",
+ "llamadas": [
+  {
+   "clave": "cf857d1aa462f304530802e830b4a4e7c8c77b52f223cb37ed88c0da05fe6165",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Cuando consulto los ajustes de cobertura de un seller y me devuelve un 400, ¿qué mensajes de error puedo recibir en el cuerpo de la respuesta?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica sobre los mensajes de error ni sobre los códigos de respuesta."
+    ]
+   }
+  }
+ ]
+}

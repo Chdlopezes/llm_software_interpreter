@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-002",
+ "llamadas": [
+  {
+   "clave": "30859e12cde0377b6faa5e9b2e06e9990e38757e24d9c987f655d2f5c3ea6b49",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambia algo en la tabla de alertas (nombres, descripciones o enlaces a los monitores de Datadog) entre la 0.0.3-paused-seller y la 0.0.6-ep-restock-man?",
+    "respuesta": "No, la tabla de alertas es igual en las dos versiones. Las dos listan las mismas cuatro alertas, con la misma descripción y el mismo enlace al monitor:\n\n- \"Error restock in vendor-stockkeeper-api\" (monitor 116772629)\n- \"Stockkeeper-api - Error restocking item (negative quantity)\" (monitor 150073893)\n- \"Validation stock (publication has more stock than warehouse's stock\" (monitor 158654468)\n- \"Validation stock ERROR updating item\" (monitor 160761475)\n\n[vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L9-L12] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L9-L12]\n\nLo que sí cambia está en \"How to resolve\", fuera de la tabla. Los encabezados de 0.0.3-paused-seller llevan etiquetas de prioridad: [IMPORTANT] en las dos alertas de restock y [LOW PRIORITY] en \"Validation stock\" [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L17-L17] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L29-L29] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L43-L43]. En 0.0.6-ep-restock-man esos mismos encabezados no tienen etiqueta [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L17-L17] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L29-L29] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L43-L43].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la tabla de alertas no cambia entre 0.0.3-paused-seller y 0.0.6-ep-restock-man: tiene las mismas cuatro alertas, descripciones y enlaces de monitor.",
+     "Cita las filas de la tabla en el alerts.md de las dos versiones.",
+     "No inventa diferencias en la tabla ni atribuye a 0.0.6-ep-restock-man las etiquetas de prioridad que solo aparecen en 0.0.3-paused-seller.",
+     "No cita las líneas no citables 1-4 de alerts.md."
+    ]
+   }
+  }
+ ]
+}

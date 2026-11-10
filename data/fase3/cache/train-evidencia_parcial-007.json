@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-007",
+ "llamadas": [
+  {
+   "clave": "7b20c77ea6a1514d41591b76292d6ea87b1ce72f01b46c40a2cf63c5e6c5b9ba",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando order-workflow-api 5.6.2-hotfix-1 con nuestro orquestador. ¿Cómo es el flujo cuando se valida un pipeline? Y para buscar un pipeline ya existente, ¿qué llamada hay que hacer y qué devuelve?",
+    "respuesta": "El flujo de validación empieza cuando el Orchestrator manda a BigQ el mensaje de inicio de validación y BigQ se lo pasa a Workflow API. Workflow API le pide al Orchestrator la información del pipeline y responde a BigQ con HTTP 200 OK [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L119-L128]. Después obtiene del Configs API la configuración de workflow del repositorio, crea en la base de datos una Pipeline Execution en estado de espera (Wait) y envía un ACK al Orchestrator a través de BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L129-L141].\n\nLuego vienen las validaciones. Si es un pull request desde un fork, primero se hacen las validaciones de fork. Las validaciones de ramas se hacen siempre. Si es una migración, Workflow API pide al GH Proxy la información de los archivos del diff, página a página, y valida la ruta de migración de los archivos [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L142-L154]. Al final fija el status check del pull request en el GH Proxy, guarda el resultado de la ejecución en la base de datos y envía otro ACK al Orchestrator por BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L155-L166].\n\nEn cuanto a buscar un pipeline, «Search for a pipeline» solo aparece en la lista de casos de uso de pipeline [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L108]. Esta documentación no dice qué llamada o endpoint usar para hacerlo ni qué devuelve, así que esa parte no te la puedo indicar.",
+    "answer_checks": [
+     "Describe el flujo de validación: el Orchestrator inicia la validación vía BigQ, Workflow API obtiene la información del pipeline y responde HTTP 200, y luego consulta la configuración en Configs API y crea la Pipeline Execution en la base de datos.",
+     "Menciona las validaciones de fork (si es un PR desde un fork), las de ramas y la de migración, y el cierre con el status check del PR, el guardado del resultado y el ACK al Orchestrator.",
+     "Declara que la búsqueda de un pipeline solo aparece listada como caso de uso y que no están documentados ni la llamada ni la respuesta.",
+     "No inventa un endpoint, unos parámetros ni un formato de respuesta para la búsqueda de pipelines.",
+     "Cita las líneas de use-cases.md de la versión 5.6.2-hotfix-1 y no cita líneas no citables (como la 169)."
+    ]
+   }
+  }
+ ]
+}

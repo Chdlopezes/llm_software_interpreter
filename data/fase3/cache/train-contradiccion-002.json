@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-002",
+ "llamadas": [
+  {
+   "clave": "00eb0d97c23e4c4c8438e4cc74abb4454b69933c71b9fca2252e6f4b04c1c052",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In demand-forecast-docs latest, I ran poetry install and now want to import the pipelines from the project's main module. What's the right import path: marketplace.pipes.main or app.pipes.main?",
+    "respuesta": "The documentation doesn't agree with itself here, so I can't tell you which path is correct. It says that after `poetry install` you can import the modules in the `src/` folder the same way you would import a normal package [demand-forecast-docs/latest/guide/overview.md:L101-L101]. The example for the marketplace project then imports `from marketplace.pipes.main import pipelines` [demand-forecast-docs/latest/guide/overview.md:L104-L106]. But the sentence right after that example says `app.pipes.main` is the module inside the project's `src/` [demand-forecast-docs/latest/guide/overview.md:L108-L108], which doesn't match the package name the code just used. With only this documentation I can't say whether the module is under `marketplace` or under `app`. Checking which package actually exists in your `src/` directory would settle it.",
+    "answer_checks": [
+     "Calls the tool with software demand-forecast-docs and version latest.",
+     "Cites the import example using marketplace.pipes.main (around line 105) and the note naming app.pipes.main (line 108).",
+     "Explains that the two package names conflict, without choosing one.",
+     "Does not present marketplace.pipes.main or app.pipes.main as the confirmed correct path.",
+     "Does not invent extra project structure details that the cited lines don't support."
+    ]
+   }
+  }
+ ]
+}

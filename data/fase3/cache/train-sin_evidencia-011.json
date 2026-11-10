@@ -1,0 +1,46 @@
+{
+ "task_id": "train-sin_evidencia-011",
+ "llamadas": [
+  {
+   "clave": "58f6073a1e3323b8a2355d4173b833d470b1aecbd45fe03af0ebfa0b548e7dee",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.1.6, para el endpoint que lista los lotes de un producto sin pasar el parámetro sort, ¿cuál es la ruta completa con el prefijo /api/v1 y de qué tipo es el parámetro productId?",
+    "respuesta": "La documentación de la 1.1.6 no me permite responder ninguna de las dos cosas. El endpoint sin sort solo aparece en el diagrama de secuencia de la guía de casos de uso. Ahí el Manager llama a `GET /fresh-products/list{productId}` y el controlador invoca `findBatchsOfProduct(productId)` [zenith-keeper/1.1.6/guide/use-cases.md:L217-L218]. Si todo va bien, devuelve HTTP 200 con un `ProductBatchsResponseDTO` [zenith-keeper/1.1.6/guide/use-cases.md:L224-L226].\n\nEn la especificación OpenAPI no hay ninguna definición de esa variante sin sort. Por eso no puedo darte su ruta completa con el prefijo `/api/v1` ni el tipo del parámetro `productId`. La guía no dice ninguna de las dos cosas, y no puedo suponer que sean iguales a las de otros endpoints.",
+    "answer_checks": [
+     "Indica que la documentación entregada no permite dar la ruta completa con /api/v1 ni el tipo de productId para la variante sin sort.",
+     "Cita el diagrama de la guía de casos de uso donde aparece GET /fresh-products/list{productId} como el único lugar donde se documenta el endpoint.",
+     "No inventa una ruta con prefijo /api/v1 ni un tipo para productId en este endpoint, ni los toma de otros endpoints.",
+     "No afirma que el endpoint no exista ni que no esté soportado."
+    ]
+   }
+  },
+  {
+   "clave": "b013f0bca40673d1f37fb78247c22f9ff8e9857b076861391e8adedd469f5e71",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.1.6 quiero listar los lotes de un producto sin pasarle el sort. ¿Cuál es la ruta completa de esa llamada con el prefijo /api/v1 y de qué tipo es el productId?",
+    "respuesta": "Con la documentación de la 1.1.6 no puedo responder a ninguna de las dos preguntas.\n\nLa variante sin sort solo aparece en el diagrama de secuencia de la guía de casos de uso. Ahí el Manager llama a `GET /fresh-products/list{productId}` y el controlador ejecuta `findBatchsOfProduct(productId)` [zenith-keeper/1.1.6/guide/use-cases.md:L217-L218]. Si todo va bien, la llamada responde HTTP 200 con un `ProductBatchsResponseDTO` [zenith-keeper/1.1.6/guide/use-cases.md:L224-L226]. El diagrama no indica la ruta con `/api/v1` ni el tipo de `productId`.\n\nEn la especificación OpenAPI, la operación que lista los lotes de un producto es `searchAllProductsBatch`. Pide dos parámetros de ruta obligatorios: `productId`, de tipo string, y `sort` [zenith-keeper/1.1.6/specs/swagger.yaml:L180-L192]. Es decir, la especificación solo describe la versión con sort. No encuentro en ella una definición de la llamada sin sort, así que no puedo darte su ruta con `/api/v1` ni confirmar el tipo de `productId` en esa variante. Tampoco puedo dar por hecho que coinciden con los de la versión con sort.",
+    "answer_checks": [
+     "Indica que la documentación entregada no permite dar la ruta completa con /api/v1 ni el tipo de productId para la variante sin sort.",
+     "Cita el diagrama de la guía de casos de uso donde aparece GET /fresh-products/list{productId}.",
+     "Respalda con una cita al swagger que la operación de listado de lotes documentada exige sort como parámetro de ruta obligatorio.",
+     "No inventa una ruta con /api/v1 ni un tipo para productId en la variante sin sort, y no los traslada desde la variante con sort como si fueran hechos.",
+     "No afirma que el endpoint sin sort no exista ni que no esté soportado."
+    ]
+   }
+  }
+ ]
+}

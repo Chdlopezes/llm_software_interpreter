@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-012",
+ "llamadas": [
+  {
+   "clave": "b78bb362b376462447f0c3046dfcae20d9932577f2841d8c1d01823ec207d79b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cómo se sube una configuración nueva a unified-transaction-configs? ¿Qué estructura de carpetas tengo que seguir?",
+    "respuesta": "La única versión que devolvió la documentación es la v0.0.2, así que esto corresponde a esa versión. Ahí se explica que una configuración se carga con un PR al mismo repositorio, respetando la estructura de directorios que se define [unified-transaction-configs/v0.0.2/guide/howto.md:L1-L3]. Los niveles de esa estructura son, en orden [unified-transaction-configs/v0.0.2/guide/howto.md:L5-L14]:\n\n1. Ambiente (`development|production`).\n2. Tipo de archivo (`flow|reader`).\n3. Sistema operativo (`android|ios|etc`).\n4. PoiType, solo para `smartpos|standalone`.\n5. Versión (por ejemplo `0.0.0` o `1.123.1.1`). Siempre tiene que haber una versión por defecto, `0.0.0` o `0.0.0.0` según el sistema operativo, y las versiones siguen semver con un máximo de 4 dígitos [unified-transaction-configs/v0.0.2/guide/howto.md:L11-L11].\n6. Site (`GPA|GPB|GPM|GPC`).\n7. Grupo de usuario. Siempre tiene que existir una carpeta default con una configuración default [unified-transaction-configs/v0.0.2/guide/howto.md:L13-L13].\n8. El archivo de configuración, que se llama `config.json` [unified-transaction-configs/v0.0.2/guide/howto.md:L14-L14].",
+    "answer_checks": [
+     "Indica que la configuración se carga mediante un PR al mismo repositorio, respetando la estructura de directorios.",
+     "Enumera los niveles en orden: ambiente, tipo de archivo, sistema operativo, PoiType (solo smartpos/standalone), versión, site, grupo de usuario y config.json.",
+     "Menciona que siempre debe haber una versión por defecto (0.0.0 o 0.0.0.0 según el SO) y una carpeta de grupo de usuario default con su configuración default.",
+     "Atribuye la información a la versión v0.0.2 sin afirmar que no exista o sea distinta en otras versiones.",
+     "No pide la versión al usuario y cita líneas de unified-transaction-configs/v0.0.2/guide/howto.md."
+    ]
+   }
+  }
+ ]
+}

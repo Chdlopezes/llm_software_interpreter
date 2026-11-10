@@ -1,0 +1,62 @@
+{
+ "task_id": "verificador/87e73b3f397ee95c4c9932c8",
+ "llamadas": [
+  {
+   "clave": "87e73b3f397ee95c4c9932c8db8eb2ef32d6bc2c37391c0c89e0ec3392da1cd6",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_evidencia-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, identifica software y versión, y corresponde a la llamada sin sort documentada en la guía (use-cases.md:L217-L218)."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta distingue la variante sin sort de la operación OpenAPI con sort: esta última exige ambos parámetros de ruta y declara productId como string (swagger.yaml:L176-L192)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se puede determinar la ruta completa con /api/v1 ni el tipo de productId para la variante sin sort, y aporta la ruta relativa que sí muestra la guía (use-cases.md:L217-L218)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la llamada de la guía, su respuesta y los parámetros de la operación OpenAPI con sort; no usa líneas no citables (use-cases.md:L217-L226; swagger.yaml:L180-L192)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están acompañadas por citas a los documentos entregados (use-cases.md:L217-L226; swagger.yaml:L180-L192)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que faltan la ruta completa y el tipo para la variante sin sort, sin afirmar que el endpoint no exista ni trasladar datos de la variante con sort (use-cases.md:L217-L218; swagger.yaml:L176-L192)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se limita a abstenerse: informa la ruta relativa y el método del diagrama, además de resumir lo que especifica la operación con sort (use-cases.md:L217-L218; swagger.yaml:L180-L192)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados el endpoint sin sort de la guía y el endpoint con sort de OpenAPI, sin presentar el tipo de este último como hecho de la variante consultada (use-cases.md:L217-L218; swagger.yaml:L176-L192)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos describen variantes distintas, pero no presentan afirmaciones incompatibles sobre una misma llamada."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coherentes: la guía muestra la variante sin sort y OpenAPI exige sort en la operación que documenta, sin exigir una redacción concreta (use-cases.md:L217-L218; swagger.yaml:L176-L192)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

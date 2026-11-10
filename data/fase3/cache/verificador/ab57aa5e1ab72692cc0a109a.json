@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/ab57aa5e1ab72692cc0a109a",
+ "llamadas": [
+  {
+   "clave": "ab57aa5e1ab72692cc0a109a0a0056ea89e3d86b73f4abf4224d11333895d716",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-sin_evidencia-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el mecanismo y la obtención de credenciales para la versión indicada, coherente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Es correcto que no se especifican el mecanismo ni cómo obtener credenciales; sin embargo, no es cierto que los ejemplos citados sean lo único relacionado: troubleshooting menciona verificar API keys y permisos ante errores de autenticación (L71-L73), y Brand Management menciona un client ID en lista blanca para borrar marcas (L122-L124)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que la documentación no permite determinar el esquema general ni cómo obtener credenciales; la cabecera específica del DELETE se cita en brands.md (L221-L225)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de brands.md respaldan la cabecera obligatoria del DELETE (L221-L225) y el error 401 de autenticación ausente o inválida (L309)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas concretas sobre la cabecera y el error 401 tienen citas válidas (brands.md, L221-L225 y L309)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "parcial",
+        "justificacion": "La falta de detalles sobre el esquema general y la obtención de credenciales es real, pero la respuesta presenta como únicos los datos citados y omite otras menciones relacionadas (troubleshooting, L71-L73; Brand Management, L122-L124)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "parcial",
+        "justificacion": "Aprovecha la información del DELETE y del 401, pero no recoge la referencia a API keys y permisos en troubleshooting (L71-L73)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No se contradice al distinguir la cabecera del DELETE de lo que falta sobre autenticación general."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen requisitos comprobables y compatibles con la documentación; no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta dice que la información citada es lo único relacionado, pero omite menciones a API keys, permisos y client ID en lista blanca."
+     },
+     {
+      "case_id": "validation-sin_evidencia-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el cuerpo de respuesta de allstatus y su comparación con GET de una marca, para el software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "allstatus figura en la tabla como GET /catalog/brands/{brandId}/allstatus (api-reference/README.md, L27); el ejemplo de GET /{brandId} incluye los campos indicados (brands.md, L149-L168)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Señala que los campos de allstatus y la diferencia no están descritos, y separa correctamente el ejemplo documentado de GET /{brandId} (brands.md, L149-L168)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita de la tabla respalda la referencia a allstatus (api-reference/README.md, L27); la cita de brands.md respalda el ejemplo del otro endpoint (L149-L168)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas concretas sobre la ubicación de allstatus y el ejemplo de GET /{brandId} llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "En los documentos entregados allstatus solo aparece listado en api-reference/README.md (L27), y no se describe su respuesta; la respuesta no afirma que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible sobre el endpoint listado y el ejemplo de GET /{brandId} (api-reference/README.md, L27; brands.md, L149-L168)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a allstatus los campos que se muestran para GET /{brandId}."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en los documentos y no exigen una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el cuerpo y la respuesta de una operación de subida de logos en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El POST de subida de logos aparece en api-reference/README.md (L39); el flujo de subida por controlador, servicio, Pictures API y base de datos coincide con architecture/README.md (L101-L102)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no están documentados el cuerpo ni la respuesta exitosa del endpoint, que es lo que se pregunta (api-reference/README.md, L39)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La tabla respalda el endpoint y la descripción, y el diagrama respalda el flujo citado (api-reference/README.md, L39; architecture/README.md, L102)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas concretas sobre el endpoint y el flujo de subida llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "En los documentos entregados no se detallan el cuerpo ni la respuesta exitosa de este endpoint; la respuesta no infiere que no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el endpoint listado y el flujo de arquitectura disponible (api-reference/README.md, L39; architecture/README.md, L102)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el flujo de arquitectura con un esquema de petición o respuesta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y no prescriben una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el cuerpo y los campos obligatorios para asociar collectors en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla identifica POST /catalog/brands/{brandId}/collectors como asociación con collectors (api-reference/README.md, L48); no atribuye un esquema inventado."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que el cuerpo y los campos obligatorios no están detallados en los documentos entregados (api-reference/README.md, L48)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita respalda el endpoint y su propósito (api-reference/README.md, L48)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica concreta sobre el endpoint está citada; la respuesta no inventa estructura de petición."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La operación está listada, pero los documentos entregados no detallan el cuerpo ni sus campos obligatorios (api-reference/README.md, L48)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Identifica lo que sí se documenta —el endpoint y su función— sin inventar los detalles ausentes (api-reference/README.md, L48)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que el endpoint carezca de cuerpo ni contradice la tabla."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con la tabla y con lo que falta en los documentos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el cuerpo y los códigos de respuesta del PUT de recursos en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El PUT de recursos aparece en la tabla con la descripción citada (api-reference/README.md, L55); el modelo de marca muestra resources como objetos con type y url (brand-management/README.md, L52-L61)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que el cuerpo y las respuestas específicas del endpoint no están descritos, y aclara que el modelo no prueba el esquema del PUT (api-reference/README.md, L55; brand-management/README.md, L52-L61)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint listado y la estructura de resources en el modelo, sin presentar esta última como el cuerpo del PUT (api-reference/README.md, L55; brand-management/README.md, L52-L61)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint y la estructura de recursos mencionados llevan citas; no se inventan códigos de respuesta."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La tabla lista la operación, pero los documentos no especifican su cuerpo ni sus códigos de respuesta concretos (api-reference/README.md, L55)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la referencia disponible y el ejemplo del modelo, delimitando expresamente que este no define el cuerpo del PUT (api-reference/README.md, L55; brand-management/README.md, L52-L61)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la estructura del modelo de marca de la petición del endpoint."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el procedimiento y el endpoint para pasar de ACTIVE a STAND_BY en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama muestra la transición ACTIVE→STAND_BY (brand-management/README.md, L87-L90) y la tabla lista la activación, no un endpoint de desactivación (api-reference/README.md, L30)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan el procedimiento ni el endpoint de desactivación y distingue la transición de estados del endpoint de activación (brand-management/README.md, L87-L90; api-reference/README.md, L30)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la transición, la descripción de STAND_BY y el endpoint de activación (brand-management/README.md, L87-L90 y L105; api-reference/README.md, L30)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre estados y endpoint de activación están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama confirma la transición, pero en los documentos entregados no se describe cómo ejecutarla ni un endpoint para ello (brand-management/README.md, L87-L90; api-reference/README.md, L21-L32)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone lo que sí se conoce sobre la transición y el endpoint de activación en lugar de abstenerse por completo (brand-management/README.md, L87-L90; api-reference/README.md, L30)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la transición del diagrama con una operación de API documentada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la evidencia disponible y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los parámetros y el fichero de configuración de MySQL para la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El Quick Start menciona configurar la base de datos (setup/README.md, L31) y los requisitos indican MySQL 8.0 o superior (L40-L43); no se inventan parámetros."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que los documentos entregados no especifican los datos de conexión ni el fichero donde configurarlos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la mención a configurar la base de datos y el requisito de MySQL (setup/README.md, L31 y L40-L43); no cita la línea no citable 32."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas concretas sobre el paso de configuración y el requisito de MySQL tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "En los documentos entregados no se detallan host, usuario, nombre de base ni fichero de configuración; la respuesta no afirma que la configuración no sea necesaria."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Incluye la información disponible sobre configuración y requisito de MySQL (setup/README.md, L31 y L40-L43)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No contradice el paso de configuración documentado ni convierte la falta de detalle en inexistencia."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y respetan las líneas citables."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por las validaciones previas a la activación, sin fijar versión, acorde con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro validaciones documentadas: logo principal subido y procesado, combinación categoría-sitio válida, cumplimiento regulatorio y campos requeridos completos (brand-management/README.md, L158-L162)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la lista de comprobaciones solicitada y distingue las dos versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan las validaciones enumeradas (brand-management/README.md, L158-L162 en cada versión)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La lista de validaciones y la afirmación de que el contenido es igual entre versiones tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La evidencia entregada permite responder la pregunta completa."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la lista explícita de validaciones en ambas versiones (brand-management/README.md, L158-L162)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni añade requisitos distintos de los enumerados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos versiones entregadas presentan el mismo contenido en esta sección."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan las validaciones y la comparación verificables, sin exigir redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los campos del modelo de marca y la representación de logos y recursos, sin especificar versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los campos enumerados y las estructuras de logos y resources corresponden al ejemplo de modelo en ambas versiones (brand-management/README.md, L23-L66)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los campos y explica la estructura de logos y recursos, incluidos sus campos internos (brand-management/README.md, L25-L61)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la descripción del modelo y sus campos en las dos versiones (brand-management/README.md, L23-L66; L25-L61)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre campos, logos, recursos y equivalencia entre versiones tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El ejemplo del modelo entregado permite responder lo preguntado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando los campos y estructuras disponibles en el modelo de ambas versiones (brand-management/README.md, L25-L66)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta los valores de ejemplo como valores fijos y mantiene la misma descripción para ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos versiones entregadas muestran el mismo modelo."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en el modelo y no fuerzan una redacción particular."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el significado de dos errores en catalog-portfolio-api, sin fijar versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "logos_missing y unauthorized tienen los significados indicados en Brand Management; el requisito de logo principal está en la sección de activación (brand-management/README.md, L118, L168 y L170)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica ambos errores y añade el requisito relacionado de logo principal (brand-management/README.md, L118, L168 y L170)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de las dos versiones respaldan cada significado y el requisito del logo principal (brand-management/README.md, L118, L168 y L170 en ambas)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica sobre los errores y el requisito de activación lleva citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos permiten definir ambos errores."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa las definiciones disponibles en ambas versiones (brand-management/README.md, L168 y L170)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla errores ni contradice las definiciones documentadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos versiones entregadas coinciden en las definiciones citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan las definiciones documentadas y no exigen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

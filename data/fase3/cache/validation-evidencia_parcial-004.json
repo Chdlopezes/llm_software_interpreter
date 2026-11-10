@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-004",
+ "llamadas": [
+  {
+   "clave": "2d7a2c9248c9dfcd71df61df58a237d4ee93b0b29666f0ec4778d78eece668b8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a necesito vincular una marca con varios collectors. ¿Qué endpoint tengo que llamar y qué JSON lleva el body de la petición?",
+    "respuesta": "Para asociar una marca con collectors se usa `POST /catalog/brands/{brandId}/collectors` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]. Si después necesitas quitar una asociación, el endpoint es `DELETE /catalog/brands/{brandId}/collectors/{collectorId}` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L49-L49].\n\nLo que no está documentado es el body. Estos endpoints solo aparecen en la tabla de referencia rápida, con método, ruta y descripción [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]. La única página con detalle por endpoint es la de los endpoints de marca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L9-L11]. Por eso no puedo decirte qué campos lleva el JSON ni en qué formato se envían los IDs de los collectors.",
+    "answer_checks": [
+     "Indica que para asociar una marca con collectors se usa POST /catalog/brands/{brandId}/collectors, citando la tabla de Collector Endpoints.",
+     "Declara que el cuerpo de la petición de ese endpoint no está documentado.",
+     "No inventa campos, una estructura JSON ni un formato para los IDs de collectors.",
+     "No afirma que el endpoint no admita body ni que la operación no esté soportada.",
+     "No se abstiene en la parte documentada: sí da el método y la ruta."
+    ]
+   }
+  }
+ ]
+}

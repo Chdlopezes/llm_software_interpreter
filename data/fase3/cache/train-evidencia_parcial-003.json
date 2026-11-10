@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-003",
+ "llamadas": [
+  {
+   "clave": "cc5359687215f9dba5560eeb04bd70eb06b0ecec7f3a100b8cc5429463df9c5d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando un entorno de pruebas para order-workflow-api 5.6.2-hotfix-1. ¿Qué base de datos (esquema y cluster) usa el entorno de test y cómo es la arquitectura de ese entorno, es decir, cómo se conectan sus componentes entre sí?",
+    "respuesta": "En test, la base de datos es MySQL, con el esquema `fulfillment2` en el cluster `testenv02` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L9-L12]. En producción se usa el esquema `fulfillment` en el cluster `orderworkflowapi00` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L4-L7].\n\nLa arquitectura del entorno de test no la puedo describir: la documentación que tengo no explica cómo se conectan los componentes en ese entorno, así que no puedo darte ese esquema.",
+    "answer_checks": [
+     "Indica que en test se usa MySQL con el esquema fulfillment2 en el cluster testenv02.",
+     "Cita la tabla de test de services/database.md para el dato de la base de datos.",
+     "Declara que la documentación no describe la arquitectura del entorno de test ni cómo se conectan sus componentes.",
+     "No inventa un diagrama ni una topología de componentes para el entorno de test.",
+     "No se abstiene en la parte de la base de datos, que sí está documentada."
+    ]
+   }
+  }
+ ]
+}

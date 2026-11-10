@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_documentos-001",
+ "llamadas": [
+  {
+   "clave": "abe7d448f1902082a6cf7a49e067dbb405fc6351537f162fc6ff1ebfa25a2523",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 9.4, ¿qué header de la respuesta me dice cuándo se reinicia la ventana del rate limit? Quiero esperar a que se reinicie antes de reintentar las búsquedas de marcas.",
+    "respuesta": "El catálogo no tiene documentación de catalog-portfolio-api 9.4, así que no puedo decirte qué header indica cuándo se reinicia la ventana del rate limit en esa versión. Si quieres, puedo buscar en la documentación de las versiones de catalog-portfolio-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 9.4, y recibe not_found.",
+     "Explica que no hay documentación de catalog-portfolio-api 9.4 en el catálogo.",
+     "No dice qué header indica el reinicio de la ventana del rate limit ni da otros detalles del rate limiting (límites, nombres de headers).",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedirle al usuario que indique la versión."
+    ]
+   }
+  }
+ ]
+}

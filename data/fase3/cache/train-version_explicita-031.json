@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-031",
+ "llamadas": [
+  {
+   "clave": "786686be4ccabec65468c95b85753b590e79b57943ed444ab31e041f23cc0eaa",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm setting up a liveness probe for zenith-keeper 1.1.6. Which endpoint should I hit for the healthcheck, and what does a successful response look like (status code, content type, body type)?",
+    "respuesta": "Use `GET /ping`. The spec tags it as Healthcheck, with the summary \"Ping healthcheck\" and operationId `ping` [zenith-keeper/1.1.6/specs/swagger.yaml:L341-L346]. Unlike the fresh-products endpoints, its path has no `/api/v1` prefix [zenith-keeper/1.1.6/specs/swagger.yaml:L341].\n\nOn success it returns `200` with the description `OK`. The content type is declared as `*/*` and the body schema is a plain `string` [zenith-keeper/1.1.6/specs/swagger.yaml:L347-L353]. The spec documents only this 200 response for `/ping`, so it doesn't say what comes back when the service is unhealthy [zenith-keeper/1.1.6/specs/swagger.yaml:L347-L353].",
+    "answer_checks": [
+     "Calls the tool with software zenith-keeper and version 1.1.6.",
+     "States that the healthcheck endpoint is GET /ping (path without the /api/v1 prefix).",
+     "Indicates that a successful response is HTTP 200 (OK) with content type */* and a string body schema.",
+     "Cites the /ping section of zenith-keeper/1.1.6/specs/swagger.yaml (around lines 341-353).",
+     "Does not invent error codes, response body contents, or other healthcheck behavior that the spec does not document."
+    ]
+   }
+  }
+ ]
+}

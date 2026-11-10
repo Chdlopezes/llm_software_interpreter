@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-002",
+ "llamadas": [
+  {
+   "clave": "48992153f2f9a93795af9860fa16a520f4cbcc51e27b7da5201070efc3e6e7e3",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy dando de alta usuarios en zenith-keeper 1.0.0-beta. ¿Qué campos lleva el cuerpo del registro de un usuario nuevo y cómo se indica su rol?",
+    "respuesta": "No puedo responder: el catálogo no tiene documentación de zenith-keeper 1.0.0-beta. Si quieres, consulto la documentación de las versiones de zenith-keeper que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.0.0-beta, y recibe not_found.",
+     "Explica que no hay documentación de zenith-keeper 1.0.0-beta en el catálogo.",
+     "No inventa los campos del cuerpo de registro ni cómo se indica el rol del usuario.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles de zenith-keeper, sin pedir obligatoriamente la versión al usuario."
+    ]
+   }
+  }
+ ]
+}

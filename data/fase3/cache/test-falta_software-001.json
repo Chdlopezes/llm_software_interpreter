@@ -1,0 +1,26 @@
+{
+ "task_id": "test-falta_software-001",
+ "llamadas": [
+  {
+   "clave": "076da6c65bc2eb0143b086311563863455f8b04b7da0a0fe2d15d22a34e2c199",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En la tabla rule_custom_field, ¿qué tipo de dato tiene la columna value_info y admite valores nulos?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica sobre el tipo de dato ni la nulabilidad de la columna value_info.",
+     "No incluye citas a documentos."
+    ]
+   }
+  }
+ ]
+}

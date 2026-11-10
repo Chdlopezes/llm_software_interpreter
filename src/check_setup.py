@@ -2,7 +2,7 @@
 
 Uso, desde la raíz del repositorio:
     python -m src.check_setup          # comprobaciones locales, sin llamar a ningún LLM
-    python -m src.check_setup --ping   # además, una llamada mínima real a los LLM A y B
+    python -m src.check_setup --ping   # además, una llamada mínima real a cada LLM
 """
 
 import argparse
@@ -27,20 +27,17 @@ PACKAGES = {
     "pytest": "pytest",
 }
 
-ROLES = {"A": "análisis", "B": "validación"}
-
-
-def check_backend(role: str, errors: list, warnings: list):
-    """Comprueba lo que necesita el backend configurado para un rol."""
-    from src.llm import LLMError, get_config
+def check_backend(tarea: str, errors: list, warnings: list):
+    """Comprueba lo que necesita el backend configurado para una tarea."""
+    from src.llm import TAREAS, LLMError, get_config
 
     try:
-        cfg = get_config(role)
+        cfg = get_config(tarea)
     except LLMError as e:
         errors.append(str(e))
         return None
 
-    name = f"LLM {role} ({ROLES[role]})"
+    name = f"LLM {tarea} ({TAREAS[tarea]})"
     if cfg.backend == "anthropic_api":
         if not os.getenv("ANTHROPIC_API_KEY", "").strip():
             errors.append(f"{name} usa anthropic_api pero ANTHROPIC_API_KEY está vacía en .env.")
@@ -88,15 +85,15 @@ def ping(cfg) -> bool:
     try:
         out = generate(cfg, "Responde de forma breve.", "Devuelve respuesta = \"ok\".", schema)
     except (LLMError, Exception) as e:  # noqa: BLE001 - queremos reportar cualquier fallo
-        print(f"[error] ping LLM {cfg.role} ({cfg.label}): {e}")
+        print(f"[error] ping LLM {cfg.tarea} ({cfg.label}): {e}")
         return False
-    print(f"[ok] ping LLM {cfg.role} ({cfg.label}) -> {out} en {time.monotonic() - start:.1f}s")
+    print(f"[ok] ping LLM {cfg.tarea} ({cfg.label}) -> {out} en {time.monotonic() - start:.1f}s")
     return True
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--ping", action="store_true", help="hace una llamada mínima real a los LLM A y B")
+    parser.add_argument("--ping", action="store_true", help="hace una llamada mínima real a cada LLM")
     args = parser.parse_args()
 
     errors = []
@@ -119,13 +116,14 @@ def main() -> int:
             missing = True
             errors.append(f"Falta {pip_name}: ejecuta `pip install -r requirements.txt`.")
 
-    # 3. .env y backends de cada rol
+    # 3. .env y backend de cada tarea
     configs = []
     if not (ROOT / ".env").exists():
         errors.append("No existe .env: ejecuta `cp .env.example .env` y complétalo.")
     elif not missing:
-        for role in ROLES:
-            cfg = check_backend(role, errors, warnings)
+        from src.llm import TAREAS
+        for tarea in TAREAS:
+            cfg = check_backend(tarea, errors, warnings)
             if cfg:
                 configs.append(cfg)
 
@@ -144,7 +142,7 @@ def main() -> int:
     if args.ping and not errors:
         for cfg in configs:
             if not ping(cfg):
-                errors.append(f"El LLM {cfg.role} no respondió correctamente (ver arriba).")
+                errors.append(f"El LLM {cfg.tarea} no respondió correctamente (ver arriba).")
 
     for w in warnings:
         print(f"[aviso] {w}")

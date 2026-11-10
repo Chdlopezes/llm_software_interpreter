@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-005",
+ "llamadas": [
+  {
+   "clave": "520e2835c131e60096c55f762199db996975e69541b119b2bff2e616318a3132",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In catalog-portfolio-api 0.0.1-test-bench-v2a, which method and path do I call to create or update a brand's resources, and what does the request body for that call have to contain (required fields, schema)?",
+    "respuesta": "To create or update a brand's resources, send `PUT /catalog/brands/{brandId}/resources`. The quick reference describes it as \"Create or update brand resources\" [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L51-L55].\n\nThe documentation doesn't say what goes in the request body for this endpoint. It lists no required fields, no schema, no example request and no example response. The endpoint shows up only as a row in the quick-reference table. The closest related information is the brand model, which includes a `resources` array whose entries have a `type` and a `url` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L52-L61]. The documentation doesn't say that this structure is the payload the PUT call expects, so I can't confirm the body format or which fields are required.",
+    "answer_checks": [
+     "States that the endpoint is PUT /catalog/brands/{brandId}/resources, citing the API reference quick-reference table.",
+     "Declares that the request body, its schema and its required fields are not documented for this endpoint.",
+     "Does not invent a request body, required fields, or response codes for the resources endpoint.",
+     "If it mentions the brand model's resources entries (type, url), it does not present them as the confirmed request schema of the PUT call.",
+     "Does not abstain on the documented part (method and path)."
+    ]
+   }
+  }
+ ]
+}

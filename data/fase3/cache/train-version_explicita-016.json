@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-016",
+ "llamadas": [
+  {
+   "clave": "03c415dfcaa6114b93e245872d5e4180dbc22847a8c3edef907f716fcece30fe",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿qué objetivo tiene la parte de explicabilidad del proyecto? Quiero saber qué se le pronostica y se le explica al equipo de marketplace.",
+    "respuesta": "Según la guía de Explicabilidad, el proyecto busca pronosticar el TGMV esperado a futuro y explicárselo al equipo de marketplace, junto con el impacto que tendrán en él las acciones planificadas [demand-forecast-docs/latest/guide/explicabilidad/README.md:L4-L4]. La explicación de cada parte del proyecto está en las páginas de la barra lateral [demand-forecast-docs/latest/guide/explicabilidad/README.md:L6-L6].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión latest.",
+     "Indica que el objetivo es pronosticar el TGMV esperado a futuro y explicárselo al equipo de marketplace.",
+     "Menciona que también se explica cómo impactarán en el TGMV las acciones planificadas.",
+     "Cita la línea 4 de demand-forecast-docs/latest/guide/explicabilidad/README.md.",
+     "No añade objetivos ni métricas que no aparecen en esa sección (por ejemplo, no presenta TSI como objetivo de explicabilidad)."
+    ]
+   }
+  }
+ ]
+}

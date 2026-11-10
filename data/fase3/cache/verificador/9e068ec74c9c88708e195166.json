@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/9e068ec74c9c88708e195166",
+ "llamadas": [
+  {
+   "clave": "9e068ec74c9c88708e195166ecd7e17a9eaa0b41a1dbd24263d737ecffaaff9a",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_evidencia-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, nombra vendor-stockkeeper-api y la versión indicada, y pide un esquema de base de datos, no un valor de ejemplo."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación enumera las bases de Test, Stage y Prod y sus datos de conexión, pero no el esquema; la guía de base de datos cubre L2-L23."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan tablas ni columnas y aporta los datos de conexión disponibles; database.md L2-L23."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita database.md L2-L23 es válida y respalda los entornos y datos de conexión mencionados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre los entornos y la conexión llevan cita a database.md L2-L23."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que el esquema no está descrito, sin afirmar que la base carezca de tablas; database.md L2-L23 solo da datos de conexión."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles de Test, Stage y Prod en database.md L2-L23, además de señalar lo que falta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla información de versiones ni contradice los datos de conexión de database.md L2-L23."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la ausencia de esquema y los datos de conexión de database.md L2-L23, sin exigir una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los tags de prueba en el contexto del flujo Restock y la versión indicada; no trata un valor de ejemplo como hecho."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no ofrece una lista no respaldada y describe el procedimiento indicado en important.md L37 y L128."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que la lista completa no está documentada y aporta lo que sí se indica sobre la conciliación y la revisión de tags; important.md L37 y L128."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a important.md L37 y L128 son citables y respaldan el procedimiento descrito."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas del procedimiento están citadas en important.md L37 y L128."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que falta la lista completa, sin afirmar que no existan otros tags; important.md L37 y L128 solo documenta el procedimiento."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aunque no da una lista completa, sí aporta el procedimiento documentado en important.md L37 y L128."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta los tags del ejemplo ni otros valores como una lista oficial; important.md L128."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan que no hay una lista completa respaldada y admiten las citas válidas a important.md L37 o L128."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por una consulta SQL y una columna en el contexto de Feed, para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación relaciona Operation id con la consulta a la tabla, pero no especifica SQL ni identifica explícitamente la columna de filtro; important.md L239-L240 y L245."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Indica correctamente que no hay una consulta exacta documentada; el ejemplo de registro incluye un campo id en important.md L247, aunque no lo vincula explícitamente con Operation id."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a important.md L239-L240 y L245 son válidas y respaldan la relación entre el flujo, la tabla y la verificación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas llevan citas a important.md L239-L240 y L245."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa una consulta ni afirma que la columna no exista; distingue la ausencia de una asignación explícita en important.md L239-L247."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "parcial",
+        "justificacion": "Aprovecha la información sobre la tabla en important.md L239-L245, pero podría mencionar que el ejemplo de registro contiene un campo id en L247, sin afirmar que sea el filtro requerido."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la tabla del integrador con otra base ni contradice important.md L239-L247."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks distinguen la relación documentada con la tabla de la consulta y columna que no se especifican; important.md L239-L247."
+       }
+      },
+      "needs_review": false,
+      "motivo": "El ejemplo de registro muestra un campo id (important.md L247), pero no lo identifica explícitamente como la columna del Operation id; la respuesta podría haber señalado esa evidencia con cautela."
+     },
+     {
+      "case_id": "train-sin_evidencia-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por la estructura y los códigos de respuesta de Get Detail en vendor-stockkeeper-api latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a Get Detail el 200 OK documentado para otras operaciones; api.md L22-L24 y L36-L48."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que la estructura y códigos de Get Detail no están descritos; los ejemplos de otras operaciones solo documentan 200 OK en api.md L34 y L48."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a api.md L22-L24, L36-L37, L34 y L48 son válidas y se usan para distinguir las operaciones documentadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las secciones de Restock Consumer y Feed Consumer y sus respuestas están citadas en api.md L22-L24, L34, L36-L37 y L48."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Presenta como falta de documentación la estructura y los códigos de Get Detail, sin afirmar que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta los únicos códigos de respuesta documentados como contraste, sin trasladarlos a Get Detail; api.md L34 y L48."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue explícitamente los datos de Restock Consumer y Feed Consumer de los de Get Detail; api.md L22-L24 y L36-L48."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden distinguir la falta de detalles de Get Detail y no atribuirle datos de otras operaciones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por la respuesta y los headers de Internal Item Detail en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a Internal Item Detail los ejemplos o headers de otras operaciones; api.md L22-L28 y L36-L40."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Señala que no se documentan la respuesta ni los headers de Internal Item Detail, sin inventarlos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a api.md L22 y L36 identifican las secciones de las otras operaciones mencionadas y no citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "La afirmación de que no hay sección propia para Internal Item Detail se apoya en la inspección del documento, pero las citas L22 y L36 solo muestran los encabezados de otras operaciones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Explica que los datos no están documentados y aclara que eso no implica que el endpoint no exista ni que carezca de headers."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Evita inventar datos y explica la limitación documental para ambas partes de la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla los headers ni el comportamiento de Restock Consumer o Feed Consumer con Internal Item Detail."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks requieren no trasladar datos de otros endpoints y aceptan la falta de información como tal."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La ausencia de detalles se describe correctamente, aunque las citas a api.md L22 y L36 no bastan por sí solas para sostener que no hay una sección equivalente para Internal Item Detail."
+     },
+     {
+      "case_id": "train-sin_evidencia-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por headers y códigos de respuesta de Get Detail Doma en vendor-stockkeeper-api latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "La ruta y el método que presenta coinciden con la fila de api.md L20, pero esa línea está marcada como no citable."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que los headers y códigos de respuesta no están documentados y no inventa valores."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Cita api.md L20, que está marcada como no citable para latest."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas que incluye llevan cita, aunque la cita de la ruta apunta a una línea no citable."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Explica la falta de documentación de headers y códigos sin afirmar que el endpoint no exista ni que no requiera headers."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la limitación documental y no se abstiene de aportar el contexto sobre lo que no se especifica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No traslada headers ni códigos de otros endpoints a Get Detail Doma."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check exige citar api.md L20, pero esa línea está marcada como no citable."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cita la línea no citable api.md L20 y los answer_checks exigen esa misma cita."
+     },
+     {
+      "case_id": "train-sin_evidencia-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los tags de prueba en el contexto de Restock y la versión latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No presenta tags del ejemplo como lista oficial y describe el procedimiento de important.md L37 y L128."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documenta una lista completa y ofrece el procedimiento sí documentado en important.md L37 y L128."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a important.md L37 y L128 son válidas y respaldan las afirmaciones sobre la conciliación y la consulta de tags."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el procedimiento están citadas en important.md L37 y L128."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que falta la lista completa sin afirmar que no existan otros tags; important.md L37 y L128 no enumera valores."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el procedimiento disponible en important.md L37 y L128 aunque no haya una lista completa."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a latest una lista de tags obtenida de un ejemplo."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen la falta de una lista completa y permiten respaldar el procedimiento con important.md L37 o L128."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la pregunta solicita el nombre, host y puerto de Stage."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Los datos de Stage coinciden con database.md L10-L13. La afirmación sobre credenciales usa el valor de L15, línea no citable."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica inventstg, el host y el puerto pedidos, respaldados por database.md L10-L13."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita database.md L14-L15 incluye L15, marcada como no citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas llevan cita, aunque la parte sobre credenciales cita una línea no citable."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "parcial",
+        "justificacion": "La respuesta declara qué credenciales no están indicadas, pero usa para ello database.md L15, que no es citable."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde los datos de conexión disponibles en database.md L10-L13."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los datos de Stage no se mezclan con otros entornos ni versiones; database.md L10-L13."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la pregunta y a los datos de Stage en database.md L10-L13, sin exigir una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta resuelve correctamente la pregunta, pero añade una afirmación sobre credenciales citando database.md L15, que es no citable."
+     },
+     {
+      "case_id": "train-software_en_historial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión, y la pregunta solicita una explicación introductoria coherente con ese contexto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de la aplicación y de los dos tipos de reabastecimiento coincide con introduction.md L3-L5."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contesta de qué se encarga la aplicación y distingue movimientos 3PL e inbound; introduction.md L3-L5."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a introduction.md L5 respalda la descripción y los dos tipos de movimiento."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están cubiertas por introduction.md L5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No hay una parte de la pregunta que quede sin respaldo en la sección About, introduction.md L3-L5."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible en introduction.md L5 para responder ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las cantidades pequeñas de 3PL y las cantidades mayores de inbound; introduction.md L5."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la descripción de introduction.md L5 y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica software y versión; la pregunta solicita el nombre y los datos de conexión de Stage."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Los datos de Stage y las comparaciones de host/puerto coinciden con database.md L2-L5, L10-L13 y L18-L21; la afirmación sobre credenciales se apoya en L15, no citable."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el nombre de Stage, host y puerto respaldados por database.md L10-L13."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita database.md L14-L15 incluye L15, marcada como no citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan cita, aunque la cita de credenciales incluye una línea no citable."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "parcial",
+        "justificacion": "La respuesta afirma que no se dan credenciales reales, pero la contraseña genérica aparece en database.md L15, que no es citable."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde los datos disponibles para Stage en database.md L10-L13."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue Stage de Test y Prod y no mezcla versiones; database.md L2-L5, L10-L13 y L18-L21."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los datos de Stage en database.md L10-L13 y a la cautela sobre credenciales."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta da correctamente los datos solicitados, pero añade una afirmación sobre credenciales con una cita que incluye database.md L15, línea no citable."
+     }
+    ]
+   }
+  }
+ ]
+}

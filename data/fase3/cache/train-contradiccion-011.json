@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-011",
+ "llamadas": [
+  {
+   "clave": "6368493d5c59579892ef331e3bf1f7fe65052fc7f0448f1cd3edff4c84638f84",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando un inbound antes de mandar un restock en vendor-stockkeeper-api 0.0.10-stock-consumer. ¿Qué valor exacto tengo que buscar en los tags del item para saber que es un item de prueba?",
+    "respuesta": "La documentación no es coherente en este punto. Para saber si un item es de prueba hay que consultar la API de items y revisar sus tags [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L128-L128]. El problema está en el nombre del tag. El texto de la guía dice que hay que comprobar que el item tenga **test_items** o alguno de los tags que identifican un item de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L231-L231]. En cambio, la respuesta de ejemplo de la API de items que aparece en la misma página trae en `tags` el valor `test_item`, en singular [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L199-L206]. Con esta documentación no puedo confirmar cuál de las dos formas es la correcta. Tampoco aparece la lista de los otros tags que también identifican un item de prueba.",
+    "answer_checks": [
+     "Indica que la identificación se hace consultando la API de items y revisando los tags del item, con cita.",
+     "Cita el texto que menciona «test_items» (important.md L231) y el ejemplo JSON cuyo array de tags contiene «test_item» (important.md, en torno a L199-L206).",
+     "Explica la discrepancia entre «test_items» y «test_item» sin elegir uno de los dos como el valor correcto.",
+     "No inventa una lista de los otros tags que identifican un item de prueba."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-001",
+ "llamadas": [
+  {
+   "clave": "b6ed8d7c0d1af93854668381027b69a73955899dad388f04d869bf4077cd5154",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In traffic-gate-api latest, what steps does POST /whitelist go through when a job calls it, and where do the blocked IPs end up?",
+    "respuesta": "When a job calls POST /whitelist, the service runs these steps in order:\n\n1. It reads the rules for the requested scope from the database. It only takes rules that are enabled (enable = true) and linked to a Web_ACL in the WAF. The scope comes in as a query param, depending on which job made the call [traffic-gate-api/latest/guide/sections/processes.md:L7-L7].\n2. For each of those rules, it asks Vegeta for the IPs that rule has blocked. It calls the rates/blocked?rate_id endpoint and passes the rule ID. Vegeta gets this data from GetRateBasedStatementManagedKeys in the AWS WAFv2 API [traffic-gate-api/latest/guide/sections/processes.md:L9-L9]. The sequence diagram shows this loop as GET vegeta/v1/rates/blocked?rate_id=rule-id, run once per rule [traffic-gate-api/latest/guide/sections/processes.md:L42-L45].\n3. Each blocked IP is sent to a message queue, a Big-Queue configured in RetailHub, on the topic process-blocks.traffic-gate-api [traffic-gate-api/latest/guide/sections/processes.md:L11-L11]. The message carries the IP, the rule information and the scope [traffic-gate-api/latest/guide/sections/processes.md:L46-L47].\n4. Last, it saves the status of the run in the execution table. This includes a boolean saying whether the operation succeeded, plus the scope it received [traffic-gate-api/latest/guide/sections/processes.md:L27-L27] [traffic-gate-api/latest/guide/sections/processes.md:L49-L49].\n\nSo the blocked IPs end up as messages on the process-blocks.traffic-gate-api topic, waiting to be analyzed later.",
+    "answer_checks": [
+     "Indicates that the service first reads from the database the enabled rules linked to a Web_ACL for the scope passed as a query param.",
+     "Explains that, for each rule, it asks Vegeta (rates/blocked?rate_id with the rule ID) for the blocked IPs.",
+     "States that each blocked IP is queued on the Big-Queue topic process-blocks.traffic-gate-api.",
+     "Mentions that the execution status (success and scope) is saved in the execution table at the end.",
+     "Cites lines from traffic-gate-api/latest/guide/sections/processes.md and does not cite line 19 or invent steps not in the document."
+    ]
+   }
+  }
+ ]
+}

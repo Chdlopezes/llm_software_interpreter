@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-008",
+ "llamadas": [
+  {
+   "clave": "64e7ef5f69946af1a33633c95e93101bb77ac7ae94bfce7d708e0a28e7b7fc72",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando un servicio nuestro con price-engine-api en su versión latest para leer los ajustes de configuración de ventas de los sellers.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber de la integración y lo consulto en la documentación.",
+    "pregunta": "¿Contra qué URL tengo que apuntar en producción? Y si algo se rompe, ¿a qué escalamiento de OpsGenie lo derivo?",
+    "respuesta": "El servidor de producción está declarado como http://price-engine.commerce-hub.com, con la descripción PRODUCCION [price-engine-api/latest/specs/swagger.yaml:L15-L17]. Para escalar incidencias, la especificación indica el escalamiento de OpsGenie escalation_operations_central [price-engine-api/latest/specs/swagger.yaml:L9-L9].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software price-engine-api y versión latest, tomados del historial, sin volver a preguntarlos.",
+     "Indica que la URL de producción es http://price-engine.commerce-hub.com.",
+     "Indica que el escalamiento de OpsGenie es escalation_operations_central.",
+     "Cita las líneas de servers y de la descripción de info en price-engine-api/latest/specs/swagger.yaml.",
+     "No cita las líneas no citables de contacto.md ni inventa otros canales o URLs."
+    ]
+   }
+  }
+ ]
+}

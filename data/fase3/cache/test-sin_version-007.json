@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-007",
+ "llamadas": [
+  {
+   "clave": "c446b895f9bdf768ce9e325eefa2f705dcbaa285118e37c03b275421434bcf9d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api, ¿qué información queda registrada en la tabla Execution? ¿Ahí también se guardan las ejecuciones del job de purga?",
+    "respuesta": "La documentación entregada corresponde solo a la versión latest. Según esa versión, la tabla Execution guarda el estado de los jobs que llaman a los endpoints de la API de traffic-gate: el nombre del job, la fecha y el estado de la ejecución [traffic-gate-api/latest/guide/sections/database.md:L5-L5]. En el diagrama entidad-relación aparece con las columnas id (PK), job_name, date y finished [traffic-gate-api/latest/guide/sections/database.md:L20-L25].\n\nSobre la purga: no se guardan. Por ahora solo se registra el estado de los jobs que llaman a /whitelist; las ejecuciones del job de /whitelist/purge no se están guardando [traffic-gate-api/latest/guide/sections/database.md:L5-L5].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que la tabla Execution guarda el nombre del job, la fecha y el estado de la ejecución de los jobs que llaman a la API.",
+     "Indica que solo se registran las ejecuciones de los jobs de /whitelist y que las del job de /whitelist/purge no se guardan.",
+     "Atribuye la información a la versión latest, que es la única documentada, sin inventar otras versiones.",
+     "Cita database.md con rangos que contienen lo que afirma, sin citar la línea 11 (tabla Rules)."
+    ]
+   }
+  }
+ ]
+}

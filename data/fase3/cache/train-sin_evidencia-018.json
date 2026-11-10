@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-018",
+ "llamadas": [
+  {
+   "clave": "3ced9aa7714b53a315d547a3e862de6c9e31fba977f765d36d361a84d1ccb322",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, ¿cómo funciona la búsqueda de un pipeline? Me interesa saber qué componentes intervienen y qué devuelve.",
+    "respuesta": "La documentación de la versión 5.6.2-hotfix-1 no explica cómo funciona la búsqueda de un pipeline. Solo la nombra, «Search for a pipeline», como uno de los casos de uso de la sección Pipeline [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L107-L108]. No trae diagrama ni descripción. Por eso no puedo decirte qué componentes intervienen ni qué devuelve.\n\nEl caso de uso que viene justo después, la validación de un pipeline, sí tiene diagrama de secuencia [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L109-L168]. Pero describe otro flujo y no sirve para deducir cómo funciona la búsqueda.",
+    "answer_checks": [
+     "Llama a la herramienta con software order-workflow-api y versión 5.6.2-hotfix-1.",
+     "Indica que la documentación solo lista el caso de uso de búsqueda de pipeline, sin detallar su flujo ni lo que devuelve, citando use-cases.md en torno a la línea 108.",
+     "No inventa componentes, endpoints, parámetros ni campos de respuesta para la búsqueda de pipeline.",
+     "No trata el diagrama de validación de pipeline como si describiera la búsqueda.",
+     "No afirma que la búsqueda de pipeline no exista o no se soporte."
+    ]
+   }
+  }
+ ]
+}

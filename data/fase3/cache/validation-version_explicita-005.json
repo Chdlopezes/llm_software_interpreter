@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-005",
+ "llamadas": [
+  {
+   "clave": "76230ce344e3613f851effc9d9588c5546a72d8222b3b1a39f87500aa4142d46",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy creando marcas con POST en catalog-portfolio-api 0.0.1-test-bench-v2a. ¿Qué campos del body son obligatorios y qué restricción tiene el nombre de la marca?",
+    "respuesta": "Al crear una marca con `POST /` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L70-L74], la documentación marca cuatro campos como obligatorios: `name`, el nombre de la marca, que debe ser único dentro del site; `site`, el código de site de RetailFlow; `category`, el ID de la categoría principal; y `type`, el tipo de marca, que puede ser `lighthouse` o `standard` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L96].\n\nLa petición de ejemplo envía solo esos cuatro campos en JSON, con la cabecera `Content-Type: application/json` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L100-L109].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que los campos obligatorios son name, site, category y type.",
+     "Indica que el nombre debe ser único dentro del site.",
+     "Cita la sección Create Brand de brands.md, en concreto la lista de Required Fields.",
+     "No inventa otros campos obligatorios ni reglas de validación que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

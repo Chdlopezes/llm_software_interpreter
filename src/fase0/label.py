@@ -335,6 +335,8 @@ def ask(role: str, unit: str, messages: list[str], schema: dict, validate, cfg) 
 
 
 PROMPT_FILES = {"A": "clasificador_a.md", "B": "validador_b.md"}
+# Configuración de .env de cada rol: LLM_CLASIFICADOR_* y LLM_VALIDADOR_*.
+TAREA = {"A": "clasificador", "B": "validador"}
 
 
 def label_unit_a(unit: dict, sections: list[dict], files: list[dict], cfg) -> tuple[list[dict], list[dict]]:
@@ -444,7 +446,7 @@ def run(role: str, unit_name: str | None = None) -> int:
         all_gaps_a = read_jsonl(FASE0 / f"gaps_a{suffix}.jsonl")
 
     try:
-        cfg = get_config(role)
+        cfg = get_config(TAREA[role])
     except LLMError as e:
         print(f"[error] {e}")
         return 1

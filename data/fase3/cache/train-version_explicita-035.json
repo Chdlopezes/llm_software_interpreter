@@ -1,0 +1,25 @@
+{
+ "task_id": "train-version_explicita-035",
+ "llamadas": [
+  {
+   "clave": "dc4cc1c74d9ce8ce5c6b4c2e8389f5a0cdb0a41b676b99fe94e24f763b6c0630",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.1.6, ¿qué campos trae el esquema ProductQuantityDTOResp y cómo viene desglosado el stock por almacén?",
+    "respuesta": "ProductQuantityDTOResp es un objeto con dos propiedades: `productId`, de tipo string, y `warehouses`, un array de elementos WarehouseDTOResp [zenith-keeper/1.1.6/specs/swagger.yaml:L501-L509].\n\nEl stock por almacén va en cada WarehouseDTOResp, que es un objeto con `warehouseCode` (string) y `totalQuantity` (integer) [zenith-keeper/1.1.6/specs/swagger.yaml:L494-L500]. Así, la respuesta indica el producto una vez y, para cada almacén, su código y la cantidad total.\n\nEste es el esquema que devuelve la respuesta 200 del endpoint de stock del producto por almacén [zenith-keeper/1.1.6/specs/swagger.yaml:L219-L224].",
+    "answer_checks": [
+     "Indica que ProductQuantityDTOResp tiene los campos productId (string) y warehouses (array de WarehouseDTOResp).",
+     "Indica que cada WarehouseDTOResp tiene warehouseCode (string) y totalQuantity (integer).",
+     "Cita las líneas de los esquemas ProductQuantityDTOResp y WarehouseDTOResp en zenith-keeper/1.1.6/specs/swagger.yaml.",
+     "No inventa campos adicionales que no figuran en esos esquemas."
+    ]
+   }
+  }
+ ]
+}

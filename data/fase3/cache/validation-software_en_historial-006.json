@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-006",
+ "llamadas": [
+  {
+   "clave": "6580af7b3213117ad0957c0ca71d156688a80f7a5182c44515c7f7b5e27c10fd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con catalog-portfolio-api 0.0.1-test-bench-v2a y quiero revisar la guía de documentación del servicio en mi máquina antes de proponer cambios.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber y lo consulto en la documentación.",
+    "pregunta": "¿Desde qué carpeta tengo que arrancar el servidor de la documentación y en qué dirección la abro luego en el navegador?",
+    "respuesta": "Tienes que situarte en el directorio `docs/guide` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L86-L87] y arrancar ahí el servidor de desarrollo con `docsify serve --port 3000` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L89-L90]. Para eso necesitas tener docsify-cli instalado de forma global con `npm install -g docsify-cli` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L83-L84]. Después abre `http://localhost:3000` en el navegador para ver la documentación [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L93].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que el servidor se arranca desde el directorio docs/guide.",
+     "Indica que se arranca con docsify serve en el puerto 3000 y que la documentación se ve en http://localhost:3000.",
+     "Cita líneas de la sección Local Development (L78-L94) de catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md y no cita las líneas no citables 95-107.",
+     "No inventa pasos ni opciones de configuración que no aparecen en la documentación."
+    ]
+   }
+  }
+ ]
+}

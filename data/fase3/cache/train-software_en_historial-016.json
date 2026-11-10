@@ -1,0 +1,25 @@
+{
+ "task_id": "train-software_en_historial-016",
+ "llamadas": [
+  {
+   "clave": "bcd48a4ec42d1ac4ba3fd870392ac333db1f52b8fe0ccf0a65f752561f8da3cc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi, I'm setting up a local client against zenith-keeper 1.1.6 and wiring it into our team's tooling.",
+    "historial_asistente": "Sounds good. What would you like to know about it?",
+    "pregunta": "What server URL does the OpenAPI spec point to, and who's listed as the contact if I run into problems with the API?",
+    "respuesta": "The spec's `servers` section lists `http://localhost:8080`, with the description \"Scope local\" [zenith-keeper/1.1.6/specs/swagger.yaml:L9-L11]. The listed contact is \"Fresh Products Documentation\", at freshproducts@vendorsync.com [zenith-keeper/1.1.6/specs/swagger.yaml:L5-L7].",
+    "answer_checks": [
+     "Calls the tool with software zenith-keeper and version 1.1.6 from the earlier turn, without asking for them again.",
+     "States that the spec's server URL is http://localhost:8080, described as \"Scope local\".",
+     "Gives the contact as Fresh Products Documentation with the email freshproducts@vendorsync.com.",
+     "Cites the swagger.yaml info/servers lines (about L5-L11) and does not make up other servers or environments."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-004",
+ "llamadas": [
+  {
+   "clave": "8f24a7add656e4ee51ac93b10a29d9275458abfb1e4b3901be2b2486946e9035",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Para qué sirve traffic-gate-api, en pocas palabras? Y ya que estamos, ¿dónde está su repositorio?",
+    "respuesta": "La documentación que encontré es de la versión latest. En su portada, traffic-gate-api aparece como el nombre de servicio en RetailHub de Traffic Gate [traffic-gate-api/latest/guide/coverpage.md:L5-L7]. Se describe como una API para agregar o quitar direcciones IP afectadas por reglas de ratelimit en el WAF [traffic-gate-api/latest/guide/coverpage.md:L9-L9].\n\nEl repositorio está en GitHub: https://github.com/retailhub/traffic-gate-api [traffic-gate-api/latest/guide/coverpage.md:L11-L11].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que es una API para agregar o remover direcciones IP alcanzadas por reglas de ratelimit en el WAF, citando la portada (coverpage.md).",
+     "Da el enlace al repositorio de GitHub https://github.com/retailhub/traffic-gate-api con su cita.",
+     "Atribuye la información a la versión latest, la única de la que hay documentación, sin afirmar que no existan otras versiones.",
+     "No cita las líneas no citables (1-4) de coverpage.md ni inventa datos que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

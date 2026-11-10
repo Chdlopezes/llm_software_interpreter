@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-011",
+ "llamadas": [
+  {
+   "clave": "28429f817f2440a6259acd98053489c02922655aae1800395ba2f3a71adcd1ca",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, quiero aportar cambios a la documentación. ¿Qué pasos hay que seguir desde la rama hasta publicar una nueva versión del doc, y qué herramienta necesito tener instalada para eso?",
+    "respuesta": "Antes de empezar, se recomienda leer la Retail Data Framework Documentation Service Guide para entender cómo se construye la documentación y cómo se contribuye [demand-forecast-docs/latest/guide/README.md:L18-L18]. Los pasos son estos:\n\n1. Configura tu máquina local siguiendo las instrucciones enlazadas. Es importante instalar la Retail Data Framework CLI, porque la necesitas para crear nuevas versiones del doc [demand-forecast-docs/latest/guide/README.md:L20-L20].\n2. Clona el repositorio `retail_demand-forecast-docs` [demand-forecast-docs/latest/guide/README.md:L21-L21].\n3. Crea una rama nueva a partir de `main` y ponle el nombre de la funcionalidad en la que trabajas [demand-forecast-docs/latest/guide/README.md:L22-L22].\n4. Haz tus cambios, haz commit y abre un Pull Request hacia `main` [demand-forecast-docs/latest/guide/README.md:L23-L23].\n5. Pide la revisión de un miembro del equipo y haz merge cuando esté aprobado [demand-forecast-docs/latest/guide/README.md:L24-L24].\n6. Ejecuta `retail create-version A.B.C`, donde `A.B.C` es la versión de tu doc. La última versión publicada se puede consultar en la página de versiones enlazada [demand-forecast-docs/latest/guide/README.md:L25-L25].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión latest.",
+     "Indica que hay que crear una rama desde main y abrir un Pull Request hacia main, y que se hace merge tras la aprobación de un revisor.",
+     "Señala que la versión se crea con `retail create-version A.B.C`, donde A.B.C es la versión del doc.",
+     "Menciona que hay que tener instalada la Retail Data Framework CLI para poder crear versiones nuevas.",
+     "Cita la sección «How to contribute to this documentation» de demand-forecast-docs/latest/guide/README.md (líneas 16-25) y no se apoya en el flujo gitflow de overview.md (develop/release)."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-023",
+ "llamadas": [
+  {
+   "clave": "6cb935389c918687d3c4b718a0c72170788dc9e298aecf93c133ae199178839e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway latest, ¿qué estructura tiene el JSON de error que devuelve el servicio cuando falla una petición? Necesito saber qué campos trae y qué códigos HTTP usa para poder mapearlos en el frontend.",
+    "respuesta": "Con la documentación de latest no puedo decirte qué campos trae el JSON de error ni qué códigos HTTP usa. La sección de manejo de errores dice solo que el servicio sigue un enfoque estandarizado: usa códigos de estado HTTP en las respuestas, mensajes de error detallados, excepciones propias para la lógica de negocio y un formato de error consistente en las respuestas [payment-promise-gateway/latest/guide/README.md:L532-L536]. No describe ese formato, no enumera los códigos HTTP ni dice qué excepción corresponde a cada código, y los ejemplos de respuesta de la guía solo muestran casos con éxito.",
+    "answer_checks": [
+     "Indica que la documentación de latest no describe los campos ni la estructura del JSON de error.",
+     "Indica que no están documentados los códigos HTTP concretos que usa el servicio.",
+     "Puede mencionar que la documentación anuncia un formato de error consistente, códigos HTTP y excepciones propias, citando la sección de manejo de errores.",
+     "No inventa campos de error (como code, message o status) ni códigos HTTP concretos.",
+     "No afirma que el servicio no devuelva errores estructurados ni que ese formato no exista."
+    ]
+   }
+  }
+ ]
+}

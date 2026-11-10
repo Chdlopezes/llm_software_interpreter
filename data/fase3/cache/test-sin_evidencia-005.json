@@ -1,0 +1,25 @@
+{
+ "task_id": "test-sin_evidencia-005",
+ "llamadas": [
+  {
+   "clave": "710a6d2da20294b862977ec45c6adf0f167eff36f20f18023f3f8add439a734d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In 2p-revenue-optimizer-api latest, what does the type column in the rule_header table actually hold? What do its values mean?",
+    "respuesta": "I can't tell you what `type` holds or what its values mean, because the latest documentation doesn't say. The rule_header data dictionary lists the `type` column as `varchar(180)` and `Not null`, but its Description cell is empty [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L10-L10]. None of the documents for this version list allowed values for it or explain what it means.",
+    "answer_checks": [
+     "States that the documentation does not describe the meaning or possible values of the type column.",
+     "Mentions that type is documented as varchar(180) and Not null, citing the rule_header table row.",
+     "Does not invent a meaning or a list of values for type.",
+     "Does not claim that the column is unused or has no meaning; it only says this is not documented."
+    ]
+   }
+  }
+ ]
+}

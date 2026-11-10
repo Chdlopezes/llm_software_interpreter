@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_documentos-004",
+ "llamadas": [
+  {
+   "clave": "92deb83ef855f8cedad39e817cec9a719d542698a6599cbbca147586c54a7edb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api 3.1.0, cuando meto IPs a mano en la whitelist con el PUT, ¿qué código HTTP me devuelve si todo sale bien? ¿Y queda alguna marca en la base de datos de que la IP se agregó manualmente?",
+    "respuesta": "El catálogo no tiene documentación de traffic-gate-api 3.1.0, así que no puedo decirte qué código devuelve el PUT de whitelist en esa versión ni si deja alguna marca en la base de datos. Si quieres, consulto las versiones de traffic-gate-api que sí están documentadas.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión 3.1.0, y recibe not_found.",
+     "Explica que no hay documentación de traffic-gate-api 3.1.0 en el catálogo.",
+     "No inventa el código de respuesta del PUT de whitelist (por ejemplo, no dice que es 201) ni cómo se marcan en la base de datos las IPs agregadas manualmente.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles de traffic-gate-api, sin pedirle la versión al usuario como requisito."
+    ]
+   }
+  }
+ ]
+}

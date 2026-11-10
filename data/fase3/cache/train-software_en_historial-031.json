@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-031",
+ "llamadas": [
+  {
+   "clave": "d20264205f24b75a7ee24831a3ba208876478c72650ca2554dddb67b8629ded1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy revisando la arquitectura de payment-promise-gateway en la versión 0.0.10-test-crc-migration porque tengo que documentar sus dependencias para el equipo de plataforma.",
+    "historial_asistente": "Perfecto. Cuando quieras, dime qué parte de la arquitectura o de sus dependencias necesitas revisar y lo consulto.",
+    "pregunta": "¿Con qué servicios externos se comunica la capa de servicios? Y dentro del propio gateway, ¿qué otros componentes usa esa capa?",
+    "respuesta": "Según el diagrama de arquitectura, hay tres servicios externos: Core Payment Services, Promise Service y Metrics Service [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L22-L26]. La capa de servicios (Services) llama directamente a los tres [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L34-L36].\n\nDentro del gateway, la capa de servicios usa Commands, Business Objects y Utils [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L31-L33]. A la capa de servicios se llega desde los controladores (Controllers), y a estos desde la capa REST API, que es la que reciben las aplicaciones frontend [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L28-L30].",
+    "answer_checks": [
+     "Llama a la herramienta con payment-promise-gateway y la versión 0.0.10-test-crc-migration del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que los servicios externos son Core Payment Services, Promise Service y Metrics Service, y que la capa de servicios llama a los tres.",
+     "Indica que, dentro del gateway, la capa de servicios usa Commands, Business Objects y Utils.",
+     "Cita el diagrama de arquitectura (líneas 5-38) de payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md.",
+     "No inventa dependencias ni protocolos de comunicación que el diagrama no muestra."
+    ]
+   }
+  }
+ ]
+}

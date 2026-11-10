@@ -1,0 +1,20 @@
+{
+ "task_id": "validation-software_en_historial-002",
+ "llamadas": [
+  {
+   "clave": "6c38c9821c478558181c961c7219f0223477c7853803b019844ec6b173db97ba",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": true,
+    "motivo_omision": "The seed section (price-engine-api/latest/guide/general.md, lines 1-4) has nothing to ask about. Line 1 is only the heading '# General' and lines 2-4 are blank. Everything else in that document (lines 5-13: Introducción and Responsabilidades) is marked non-citable, and those lines only say 'TO DO.' anyway. No technical question can come from this seed and be answered with citable lines. A question about the swagger would be on-topic for the software but would not come from the given seed.",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "",
+    "respuesta": "",
+    "answer_checks": []
+   }
+  }
+ ]
+}

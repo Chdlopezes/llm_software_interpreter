@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-001",
+ "llamadas": [
+  {
+   "clave": "5fa7817f561807f747fa7fbe75696b596643ca6d8368f48f6090c3b574219a84",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambió algo entre 0.0.6-ep-restock-man y 0.0.10-stock-consumer en la tabla de alertas, es decir, en qué alertas hay, su descripción y el monitor de Datadog al que enlaza cada una?",
+    "respuesta": "No, en la tabla de alertas no cambia nada entre las dos versiones. Las dos listan las mismas cuatro alertas, con la misma descripción y el mismo enlace al monitor [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L7-L12] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L7-L12]:\n\n- \"Error restock in vendor-stockkeeper-api\": salta cuando algo falla al intentar el restock. Enlaza al monitor 116772629 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L9-L9] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L9-L9].\n- \"Stockkeeper-api - Error restocking item (negative quantity)\": salta cuando falla el restock de una publicación que tiene cantidad negativa. Enlaza al monitor 150073893 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L10-L10] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L10-L10].\n- \"Validation stock (publication has more stock than warehouse's stock\": salta cuando falla la venta de una publicación sin stock en las instalaciones 3PL. Enlaza al monitor 158654468 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L11-L11] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L11-L11].\n- \"Validation stock ERROR updating item\": salta cuando falla la actualización de la cantidad de stock en la publicación. Enlaza al monitor 160761475 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md:L12-L12] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md:L12-L12].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la tabla de alertas no cambia entre 0.0.6-ep-restock-man y 0.0.10-stock-consumer.",
+     "Menciona las cuatro alertas de la tabla con sus descripciones o sus enlaces a monitores de Datadog, sin inventar alertas ni monitores.",
+     "Cita la tabla del alerts.md de las dos versiones (líneas 7-12 o filas concretas) y no cita las líneas 1-4.",
+     "No presenta como cambios de la tabla diferencias que no están en ella ni atribuye datos de una versión a la otra."
+    ]
+   }
+  }
+ ]
+}

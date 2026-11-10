@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-sin_version-007",
+ "llamadas": [
+  {
+   "clave": "e93648899a349b51148de03833573ce69668037130f8a5ac1353256e394fa28a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Voy a montar catalog-portfolio-api en mi máquina para desarrollar. ¿Qué tengo que tener instalado antes de empezar y con qué versiones mínimas?",
+    "respuesta": "Los requisitos previos son los mismos en las dos versiones documentadas, 0.0.1-test-bench-v2a y latest. Antes de empezar necesitas tener instalado lo siguiente:\n\n- Java JDK 17 o superior.\n- Gradle 7.3 o superior. También puedes usar el wrapper del proyecto.\n- MySQL 8.0 o superior.\n- RetailFlow CLI, en su última versión.\n- Git, para el control de versiones.\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L9-L13] [catalog-portfolio-api/latest/guide/setup/local-development.md:L9-L13]",
+    "answer_checks": [
+     "Enumera los requisitos: Java JDK 17 o superior, Gradle 7.3 o superior, MySQL 8.0 o superior, RetailFlow CLI (última versión) y Git.",
+     "Menciona que en lugar de instalar Gradle se puede usar el wrapper.",
+     "Indica que los requisitos no cambian entre 0.0.1-test-bench-v2a y latest, sin atribuirlos a una sola versión, y no pide la versión al usuario.",
+     "Cita las líneas de prerrequisitos de local-development.md (L9-L13) de al menos una versión y no inventa requisitos adicionales."
+    ]
+   }
+  }
+ ]
+}

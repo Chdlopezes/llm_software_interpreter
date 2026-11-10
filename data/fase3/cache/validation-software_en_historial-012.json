@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-012",
+ "llamadas": [
+  {
+   "clave": "c2db426cb9087d32f3d58a88084425d13429a1585afe7a61057a78b02aeb1010",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con catalog-portfolio-api 0.0.1-test-bench-v2a. Estoy montando un panel interno que muestra el estado de cada marca y las acciones disponibles según ese estado.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber y lo busco en la documentación de esa versión.",
+    "pregunta": "¿Desde qué estados se puede llegar a DELETED? ¿Y una marca que ya está activa puede volver a STAND_BY?",
+    "respuesta": "Según el diagrama de estados, una marca puede pasar a DELETED desde STAND_BY y también desde ACTIVE. El mismo diagrama incluye una transición de ACTIVE de vuelta a STAND_BY [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L92]. Esto coincide con la descripción de STAND_BY, que dice que puede tratarse de una marca que todavía no tiene los logos obligatorios o que está desactivada temporalmente [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]. Ten en cuenta que DELETED significa que la marca se ha eliminado de forma permanente y que la acción no se puede revertir [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L107-L107].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a del historial, sin volver a pedir el software ni la versión.",
+     "Indica que se puede llegar a DELETED tanto desde STAND_BY como desde ACTIVE.",
+     "Indica que una marca ACTIVE puede volver a STAND_BY (por ejemplo, porque se desactiva temporalmente).",
+     "Menciona que DELETED es una eliminación permanente e irreversible.",
+     "Cita el diagrama de estados o las descripciones de los estados de brand-management/README.md, sin citar líneas no citables (1-16, 169)."
+    ]
+   }
+  }
+ ]
+}

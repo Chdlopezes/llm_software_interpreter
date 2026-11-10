@@ -1,0 +1,26 @@
+{
+ "task_id": "test-comparacion_versiones-001",
+ "llamadas": [
+  {
+   "clave": "26f28a729ee0c9171652c3cecb78a09b3f52d08e5db690a383db4d0451eb01c9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api, ¿qué columnas de la tabla rule_header cambian entre la versión 0.2.2 y latest?",
+    "respuesta": "Hay dos cambios en las columnas de rule_header.\n\nPrimero, la columna de fecha de creación se llama distinto. En 0.2.2 es `created_date` [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L11-L11] y en latest es `date` [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L11-L11]. En las dos es un `timestamp` Not null, con la descripción «Date timestamp when was created» y el extra `DEFAULT_GENERATED`.\n\nSegundo, cambia la última columna de la tabla. 0.2.2 tiene `productive_date`, un `timestamp` que admite null [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L16-L16]. La tabla de latest no la incluye y en su lugar trae `version`, un `int` Not null con la descripción «Version» [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L16-L16].\n\nLas columnas `id` (bigint, clave primaria autoincremental), `username`, `name`, `description` y `productive` tienen el mismo tipo, la misma restricción y la misma descripción en las dos versiones [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L9-L9] [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L12-L15] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L9-L9] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L12-L15].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la columna created_date de 0.2.2 aparece como date en latest, con el mismo tipo timestamp.",
+     "Atribuye productive_date (timestamp, admite null) a 0.2.2 y la columna version (int, Not null) a latest, sin mezclar versiones.",
+     "Señala que id, username, name, description y productive no cambian.",
+     "Cita el rule_header.md de ambas versiones y no cita la línea 10 de 0.2.2 ni la línea 3 de ninguna versión."
+    ]
+   }
+  }
+ ]
+}

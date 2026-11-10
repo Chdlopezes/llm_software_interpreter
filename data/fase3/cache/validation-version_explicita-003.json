@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-003",
+ "llamadas": [
+  {
+   "clave": "e9acfdbcb66227b28aa32c63fdf34d9ca1c316c9d38621e72e239f052cf9988b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En price-engine-api latest, ¿qué valores acepta el parámetro site_id y qué header tengo que mandar para indicar la versión del endpoint?",
+    "respuesta": "`site_id` es un parámetro de path obligatorio, de tipo string, y solo admite estos valores: MLA, MLB, MLC, MCO, MLU, MPE, MLM y MEC [price-engine-api/latest/specs/swagger.yaml:L51-L58]. Para indicar la versión del endpoint hay que enviar el header `Accept-Version`. Es obligatorio y de tipo string [price-engine-api/latest/specs/swagger.yaml:L76-L82].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software price-engine-api y versión latest.",
+     "Enumera los valores permitidos de site_id: MLA, MLB, MLC, MCO, MLU, MPE, MLM y MEC.",
+     "Indica que el header de versión es Accept-Version y que es obligatorio.",
+     "Cita las definiciones de parámetros de swagger.yaml (SiteID y Version) en components.parameters.",
+     "No usa como respaldo las definiciones de SellerID o ServiceID (líneas 60-62 y 70) ni presenta el valor de ejemplo como regla."
+    ]
+   }
+  }
+ ]
+}

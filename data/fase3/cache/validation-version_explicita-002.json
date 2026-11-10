@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-version_explicita-002",
+ "llamadas": [
+  {
+   "clave": "0f18453e7945626cf01c93f735a253e8207a688a88505d28f80b65d214fac7c1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint de cobertura de price-engine-api latest (GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1). ¿Qué me devuelve si el seller no tiene ajustes de cobertura activos? ¿Y qué códigos de respuesta tengo que manejar?",
+    "respuesta": "En la versión latest, el endpoint devuelve un array con las zonas del seller moderadas por cobertura. Si el seller no tiene ajustes de configuración de cobertura activos, devuelve un array vacío [price-engine-api/latest/specs/swagger.yaml:L28-L34].\n\nTiene definidos tres códigos de respuesta: 200, que remite a StatusOKCfgAdjustmentsGET; 400, que remite a BadRequestCfgAdjustmentsGET; y 500, que remite a InternalServerError [price-engine-api/latest/specs/swagger.yaml:L41-L47]. El 200 significa que las zonas moderadas se devolvieron bien y responde con el modelo Zones [price-engine-api/latest/specs/swagger.yaml:L86-L91], que es un array de strings [price-engine-api/latest/specs/swagger.yaml:L132-L136]. El 400 corresponde a un parámetro inválido y conviene revisar el mensaje que vuelve [price-engine-api/latest/specs/swagger.yaml:L92-L93]. El 500 indica un error no controlado del lado del servidor [price-engine-api/latest/specs/swagger.yaml:L111-L112].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software price-engine-api y versión latest.",
+     "Indica que, sin ajustes de cobertura activos, el endpoint devuelve un array vacío, y cita las líneas de la descripción del endpoint (alrededor de L33-L34).",
+     "Enumera los códigos de respuesta 200, 400 y 500 del endpoint, citando el bloque de responses (L41-L47).",
+     "No se apoya en las definiciones de los parámetros SellerID/ServiceID (líneas 60-62 y 70) ni inventa códigos de respuesta o campos que no están documentados."
+    ]
+   }
+  }
+ ]
+}

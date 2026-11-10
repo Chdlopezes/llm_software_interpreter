@@ -1,0 +1,26 @@
+{
+ "task_id": "test-software_en_historial-001",
+ "llamadas": [
+  {
+   "clave": "d20a3329a95fb0574a4b803ba7aec664e5bb9cb67275ee8a24ab31dc082aa53c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy preparando un PR con nuevas configuraciones de flujo para unified-transaction-configs v0.0.2 y quiero asegurarme de no romper nada.",
+    "historial_asistente": "Perfecto, cuéntame qué necesitas revisar del PR y lo consulto.",
+    "pregunta": "Antes de abrir el PR, ¿qué tengo que comprobar en los JSON y en las carpetas para que la configuración sea aceptada? ¿Hay algún límite de tamaño?",
+    "respuesta": "Sí, hay un límite: el JSON no puede pesar más de 50 kb, por una limitación de KVS [unified-transaction-configs/v0.0.2/guide/howto.md:L36-L36]. Además, antes de abrir el PR tienes que comprobar que el JSON sea válido, que las versiones sigan semver con un máximo de 4 dígitos y que exista siempre una versión default 0.0.0 o 0.0.0.0 con un grupo de usuario default y una configuración default. También tienes que respetar la estructura de directorios propuesta [unified-transaction-configs/v0.0.2/guide/howto.md:L37-L40]. Esa estructura va por ambiente, tipo de archivo, sistema operativo, PoiType (solo para smartpos|standalone), versión, site y grupo de usuario, y termina en un archivo `config.json` [unified-transaction-configs/v0.0.2/guide/howto.md:L5-L14].",
+    "answer_checks": [
+     "Llama a la herramienta con unified-transaction-configs y la versión v0.0.2 del historial, sin volver a preguntarlos.",
+     "Indica que el JSON no debe superar los 50 kb y que el límite se debe a KVS.",
+     "Menciona que el JSON debe ser válido, que las versiones respetan semver de máximo 4 dígitos y que debe existir una versión default 0.0.0 o 0.0.0.0 con grupo de usuario y configuración default.",
+     "Indica que hay que respetar la estructura de directorios propuesta.",
+     "Cita las líneas de la sección de consideraciones de howto.md (L36-L40) y no cita la línea 47."
+    ]
+   }
+  }
+ ]
+}

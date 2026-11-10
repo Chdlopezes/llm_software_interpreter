@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-006",
+ "llamadas": [
+  {
+   "clave": "0fcddb65540dcd45ed0eb03ae90383f04dfd8bcb85dd9c2928ab41112fea5fdb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest necesito meter a mano un par de IPs en la whitelist. ¿Qué endpoint uso, qué tengo que mandar en el body y qué códigos de respuesta puedo recibir?",
+    "respuesta": "Tienes que usar `PUT /v1/whitelist`, que sirve para añadir direcciones IP a la whitelist [traffic-gate-api/latest/specs/swagger.yaml:L153-L157]. Este servicio permite enviar a mano una o más IPs a la whitelist de las reglas de un scope concreto. Esas direcciones se guardan en la tabla 'ip' con información por defecto y con la columna 'manually_added' a true [traffic-gate-api/latest/specs/swagger.yaml:L158-L158].\n\nEl body es obligatorio [traffic-gate-api/latest/specs/swagger.yaml:L181-L181]. Es un objeto JSON con estos campos: `ips`, un array de strings con las direcciones; `description`, un string; y `scope`, también un string [traffic-gate-api/latest/specs/swagger.yaml:L160-L175].\n\nPuedes recibir estas respuestas:\n- `201`: la operación salió bien [traffic-gate-api/latest/specs/swagger.yaml:L182-L184].\n- `400` (Bad request) o `500` (Internal server error): en los dos casos el cuerpo sigue el esquema `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L185-L196].",
+    "answer_checks": [
+     "Indica que el endpoint es PUT /v1/whitelist.",
+     "Menciona los campos del body ips (array de strings), description y scope.",
+     "Indica que la respuesta exitosa es 201 y que 400 y 500 devuelven ErrorResponse.",
+     "Menciona que las IPs se guardan en la tabla ip con manually_added en true, o al menos que el alta es manual para un scope.",
+     "Cita líneas de traffic-gate-api/latest/specs/swagger.yaml entre 153 y 196 sin citar la línea 180."
+    ]
+   }
+  }
+ ]
+}

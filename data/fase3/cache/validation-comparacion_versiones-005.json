@@ -1,0 +1,47 @@
+{
+ "task_id": "validation-comparacion_versiones-005",
+ "llamadas": [
+  {
+   "clave": "469fc6584ea8f8801e4b2e1d53cd3256b122e0032da742e84cead170ddc59c08",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy actualizando el manejo de errores de nuestro cliente de catalog-portfolio-api. ¿Cambia algo en los códigos de error de los endpoints de brands o en el formato de la respuesta de error entre 0.0.1-test-bench-v2a y latest?",
+    "respuesta": "No. En las dos versiones la sección de errores de los endpoints de brands es idéntica, así que puedes mantener el mismo manejo de errores.\n\n**Códigos de error comunes.** Las dos tablas tienen las mismas filas [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L309-L314] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L309-L314]:\n- 401 `unauthorized`: falta la autenticación o no es válida.\n- 403 `forbidden`: permisos insuficientes.\n- 404 `brand_not_found`: el ID de brand no existe.\n- 409 `brand_name_already_exists`: ese nombre de brand ya existe en el site.\n- 422 `logos_missing`: no se subieron los logos requeridos.\n- 500 `internal_server_error`: error interno del servidor.\n\n**Formato de la respuesta de error.** En ambas versiones es un objeto JSON con los campos `error`, `message`, `status` y `cause`; en el ejemplo, `cause` es un array [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325].",
+    "answer_checks": [
+     "Indica que no hay diferencias entre 0.0.1-test-bench-v2a y latest en los códigos de error ni en el formato de la respuesta de error.",
+     "Menciona códigos de la tabla como 404 brand_not_found, 409 brand_name_already_exists o 422 logos_missing sin atribuirlos a una sola versión.",
+     "Describe el formato de error con los campos error, message, status y cause.",
+     "Cita el brands.md de ambas versiones (0.0.1-test-bench-v2a y latest).",
+     "No inventa diferencias entre versiones ni códigos de error que no están en la tabla."
+    ]
+   }
+  },
+  {
+   "clave": "f1d2e86db9afcebb96a47d42bc9c204f24838c7a3d9b9b86e40967cd40415dd4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy adaptando el manejo de errores de nuestro cliente de catalog-portfolio-api para los endpoints de brands. Entre 0.0.1-test-bench-v2a y latest, ¿cambia algo en los errores 404, 409 y 422 o en la estructura del cuerpo de error que devuelve la API?",
+    "respuesta": "No, en lo que preguntas no hay cambios. Las dos versiones documentan exactamente lo mismo para esos tres códigos y para el formato del cuerpo de error.\n\nLos códigos son estos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L311-L313] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L311-L313]:\n- 404 `brand_not_found`: el ID de brand no existe.\n- 409 `brand_name_already_exists`: ya existe una brand con ese nombre en el site.\n- 422 `logos_missing`: no se han subido los logos requeridos.\n\nEn las dos versiones, el cuerpo de error es un objeto JSON con los campos `error`, `message`, `status` y `cause`. En el ejemplo, `cause` aparece como un array [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325] [catalog-portfolio-api/latest/guide/api-reference/brands.md:L318-L325].\n\nAsí que, para estos casos, el mismo manejo de errores sirve para las dos versiones.",
+    "answer_checks": [
+     "Indica que no hay diferencias entre 0.0.1-test-bench-v2a y latest para los errores 404, 409 y 422 ni para el formato del cuerpo de error.",
+     "Asocia correctamente 404 con brand_not_found, 409 con brand_name_already_exists y 422 con logos_missing.",
+     "Describe el cuerpo de error con los campos error, message, status y cause.",
+     "Cita el brands.md de ambas versiones (0.0.1-test-bench-v2a y latest).",
+     "No inventa diferencias entre versiones ni afirma nada sobre códigos de error que no se citan."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-015",
+ "llamadas": [
+  {
+   "clave": "92b169b6c001c10cf539466ef488c78df9fcc72caa2ca14390b371750bb7293e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, ¿qué campos trae el JSON del mensaje de BigQ que dispara la protección de una rama? Necesito saber qué payload recibe el consumer.",
+    "respuesta": "La documentación de la versión 5.6.2-hotfix-1 no describe el payload de ese mensaje, así que no puedo decirte qué campos trae. Lo único que documenta es por dónde llega: en producción, el scope `order-workflow-collector-webhooks` lee del topic `gh-webhooks.workflow-collector-proxy` con el consumer `workflow-collector-webhooks` y apunta al path `/branches/protect` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L8-L8]. La guía de BigQ solo trae un ejemplo de JSON para otro mensaje, el de validación de pipeline (el objeto `Pipeline`). No hay ninguno para la protección de ramas, así que no lo uses como referencia.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 5.6.2-hotfix-1.",
+     "Indica que la documentación entregada no describe los campos ni la estructura del mensaje de protección de rama.",
+     "No inventa campos del payload ni presenta los campos del objeto Pipeline como si fueran los del mensaje de protección de rama.",
+     "No afirma que el mensaje no exista o no tenga payload; trata el dato como no documentado.",
+     "Si menciona información relacionada (topic, consumer o path /branches/protect), la cita con bigq.md línea 8 (o 14 para test)."
+    ]
+   }
+  }
+ ]
+}

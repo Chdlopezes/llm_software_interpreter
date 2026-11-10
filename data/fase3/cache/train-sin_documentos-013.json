@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-013",
+ "llamadas": [
+  {
+   "clave": "ff8b19fc0e855eb1f8e253b6870dc61c861dc0a2e88584347259efa0f1955c10",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Voy a montar payment-promise-gateway 2.0 en una máquina nueva. ¿Qué tengo que tener instalado antes de compilarlo y con qué comando lo construyo?",
+    "respuesta": "No encuentro documentación de payment-promise-gateway 2.0 en el catálogo. Por eso no puedo decirte qué prerrequisitos pide esa versión ni con qué comando se compila. Si quieres, puedo consultar la documentación de las versiones de payment-promise-gateway que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software payment-promise-gateway y versión 2.0, y recibe not_found.",
+     "Explica que el catálogo no tiene documentación de payment-promise-gateway 2.0.",
+     "No inventa prerrequisitos (como la versión de Java o Gradle) ni comandos de compilación para esa versión.",
+     "No presenta datos de otras versiones como si fueran de la 2.0 y no incluye citas.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedirle al usuario que indique otra versión como condición para ayudar."
+    ]
+   }
+  }
+ ]
+}

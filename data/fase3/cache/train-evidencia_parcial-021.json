@@ -1,0 +1,47 @@
+{
+ "task_id": "train-evidencia_parcial-021",
+ "llamadas": [
+  {
+   "clave": "68f059c8b63806a31c8aa397c27fd65e28dd276caea3cae15c0ae7eccf593438",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint Get Detail Doma de vendor-stockkeeper-api 0.0.3-paused-seller. ¿Qué método HTTP y qué ruta usa, y qué estructura tiene el JSON de su respuesta?",
+    "respuesta": "Get Detail Doma es una operación GET sobre la ruta `/stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L20-L20]. Las URL base son `vendor-stockkeeper.techzonesystems.com` (prod) y `vendor-stockkeeper-stage.techzonesystems.com` (stage) en TechZone Platform, y `vendor-stockkeeper.techzoneoffice.com` / `vendor-stockkeeper-stage.techzoneoffice.com` en Postman [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L7-L9].\n\nEn cambio, la documentación de esta versión no describe la respuesta de este endpoint. Solo aparece en la tabla de servicios, y no hay ninguna sección que detalle su respuesta, sus campos ni sus códigos de estado. Las únicas operaciones con detalle son Restock Consumer y Feed Consumer [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L48]. Por eso no puedo decirte qué estructura tiene ese JSON.",
+    "answer_checks": [
+     "Indica que Get Detail Doma usa el método GET y la ruta /stock-operations/3pl/{identifierRegister}.",
+     "Declara que la estructura de la respuesta de Get Detail Doma no está documentada.",
+     "No inventa campos de respuesta, códigos de estado ni un ejemplo JSON para este endpoint.",
+     "No presenta como respuesta de Get Detail Doma el JSON de otros endpoints o servicios (por ejemplo, el de la API de items o el de la conciliación de inbound).",
+     "Cita el documento api.md de la versión 0.0.3-paused-seller para el método y la ruta."
+    ]
+   }
+  },
+  {
+   "clave": "b877fac88009313beeb13ce46524d0c33489bcc9201fd9043ca99f169d4fa4f2",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint Get Detail Doma de vendor-stockkeeper-api 0.0.3-paused-seller. ¿Qué método HTTP y qué ruta usa, y qué estructura tiene el JSON de su respuesta?",
+    "respuesta": "Get Detail Doma es una operación GET sobre la ruta `/stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L20-L20]. Las URL base son `vendor-stockkeeper.techzonesystems.com` (prod) y `vendor-stockkeeper-stage.techzonesystems.com` (stage) en TechZone Platform, y `vendor-stockkeeper.techzoneoffice.com` / `vendor-stockkeeper-stage.techzoneoffice.com` en Postman [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L7-L9].\n\nLa estructura de la respuesta no está documentada en esta versión. El endpoint solo aparece en la tabla de servicios, y las únicas operaciones que tienen sección propia son Restock Consumer y Feed Consumer [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L22] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L36]. No hay nada sobre los campos, los códigos de estado ni un ejemplo de la respuesta de Get Detail Doma, así que no puedo decirte qué estructura tiene ese JSON.",
+    "answer_checks": [
+     "Indica que Get Detail Doma usa el método GET y la ruta /stock-operations/3pl/{identifierRegister}.",
+     "Declara que la estructura de la respuesta de Get Detail Doma no está documentada.",
+     "No inventa campos de respuesta, códigos de estado ni un ejemplo JSON para este endpoint.",
+     "No presenta como respuesta de Get Detail Doma el JSON de otros endpoints o servicios (por ejemplo, el de la API de items o el de la conciliación de inbound).",
+     "Cita el documento api.md de la versión 0.0.3-paused-seller para el método y la ruta."
+    ]
+   }
+  }
+ ]
+}

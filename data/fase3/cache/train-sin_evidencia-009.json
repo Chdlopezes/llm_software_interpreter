@@ -1,0 +1,45 @@
+{
+ "task_id": "train-sin_evidencia-009",
+ "llamadas": [
+  {
+   "clave": "4b86b466ab1f2672f449ad94a5921632e024b774a8d7bdd75405723fbda1f449",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint Get Detail Doma de vendor-stockkeeper-api en la versión latest. ¿Qué headers tengo que mandar y qué códigos de respuesta puede devolver?",
+    "respuesta": "En la versión latest, Get Detail Doma solo aparece en la tabla de servicios, como GET `/stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/latest/guide/api.md:L20-L20]. Ninguno de los documentos entregados tiene una sección propia sobre este endpoint ni un ejemplo de llamada. Por eso no puedo decirte qué headers necesita ni qué códigos de respuesta puede devolver: la documentación no lo indica. Eso no quiere decir que no haya headers obligatorios ni que solo devuelva un código, sino que no está documentado.",
+    "answer_checks": [
+     "Indica que Get Detail Doma figura como GET /stock-operations/3pl/{identifierRegister} y cita la línea 20 de api.md.",
+     "Dice que la documentación entregada no describe los headers ni los códigos de respuesta de este endpoint.",
+     "No inventa headers (por ejemplo, no traslada x-api-scope o Content-Type desde los ejemplos de otros endpoints) ni códigos de respuesta.",
+     "No afirma que el endpoint no requiera headers o que no exista; presenta la falta de datos como ausencia de documentación."
+    ]
+   }
+  },
+  {
+   "clave": "9c2c9e2ef80a4389cfbef9714c9c29df95c642dbecd45fcea24d314c163ca6f4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api latest, ¿qué campos trae la respuesta de Get Detail Doma cuando le paso un identifierRegister?",
+    "respuesta": "La documentación de latest no describe la respuesta de Get Detail Doma, así que no puedo decirte qué campos devuelve. En la guía de la API, las únicas operaciones con sección propia son Restock Consumer [vendor-stockkeeper-api/latest/guide/api.md:L22-L22] y Feed Consumer [vendor-stockkeeper-api/latest/guide/api.md:L36-L36], y Get Detail Doma no tiene ninguna. Que no esté documentado no significa que el endpoint no devuelva nada; simplemente la documentación entregada no recoge su estructura de respuesta.",
+    "answer_checks": [
+     "Dice que la documentación de latest no describe los campos de la respuesta de Get Detail Doma.",
+     "No inventa campos de respuesta (por ejemplo, no traslada campos de los JSON de ejemplo de la API de items o de la conciliación de inbounds).",
+     "No afirma que el endpoint no exista ni que no devuelva nada; presenta la falta de datos como ausencia de documentación.",
+     "Si cita algo relacionado, lo apoya en líneas citables (por ejemplo, las secciones Restock Consumer o Feed Consumer de api.md) y no en la fila de la tabla de servicios."
+    ]
+   }
+  }
+ ]
+}

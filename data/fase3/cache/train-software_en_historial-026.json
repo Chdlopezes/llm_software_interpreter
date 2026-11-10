@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-026",
+ "llamadas": [
+  {
+   "clave": "ddabaecbd4c1ab0ab43f2adb2011cbbda8ea99ad986a96d7a939c09e0c7e1585",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con order-workflow-api 5.6.2-hotfix-1. Tengo que montar una herramienta interna de administración para gestionar los workflows por defecto.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber de esa versión y lo consulto en la documentación.",
+    "pregunta": "¿Qué respuesta HTTP debería esperar al dar de alta un workflow y al actualizarlo, según ya exista o no?",
+    "respuesta": "Ambas operaciones forman parte de la gestión de los workflows por defecto (Admin) [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L171-L172], y en las dos el servicio busca primero el workflow en la base de datos:\n\n- Alta (Insert a workflow): si el workflow no existe, lo inserta y devuelve HTTP 201 CREATED. Si ya existe, devuelve HTTP 409 CONFLICT [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L189-L212].\n- Actualización (Update a workflow): si el workflow existe, lo actualiza y devuelve HTTP 200 OK. Si no existe, devuelve HTTP 400 BAD REQUEST [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L213-L236].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con order-workflow-api y la versión 5.6.2-hotfix-1 del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que el alta devuelve 201 CREATED si el workflow no existe y 409 CONFLICT si ya existe.",
+     "Indica que la actualización devuelve 200 OK si el workflow existe y 400 BAD REQUEST si no existe.",
+     "Menciona que en ambos casos el servicio busca primero el workflow en la base de datos.",
+     "Cita los diagramas de use-cases.md (líneas 189-236 o un rango dentro de ellas) y no inventa otros códigos ni endpoints."
+    ]
+   }
+  }
+ ]
+}

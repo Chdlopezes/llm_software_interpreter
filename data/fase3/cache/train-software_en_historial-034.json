@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-034",
+ "llamadas": [
+  {
+   "clave": "1cfe1e9a30de6d7a2e39de4d66f305a99f1b9e1b90667bc0f29b331ff45e8da0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy de guardia esta semana con vendor-stockkeeper-api en la versión 0.0.3-paused-seller y me toca revisar los monitores que van saltando.",
+    "historial_asistente": "Perfecto. Cuéntame qué alerta te ha saltado o qué necesitas revisar y lo buscamos en la documentación.",
+    "pregunta": "Me ha saltado una de validación de stock que dice que la publicación tiene más stock que el almacén. ¿En qué caso se dispara y dónde encuentro ese monitor?",
+    "respuesta": "La alerta «Validation stock (publication has more stock than warehouse's stock» salta cuando algo falla al intentar vender una publicación sin stock en las instalaciones 3PL. Su monitor de Datadog es https://app.datadoghq.com/monitors/158654468 [vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md:L11-L11].",
+    "answer_checks": [
+     "Responde para vendor-stockkeeper-api 0.0.3-paused-seller, el software y la versión del historial, sin volver a preguntarlos.",
+     "Indica que la alerta se dispara cuando algo falla al intentar vender una publicación sin stock en las instalaciones 3PL.",
+     "Da el enlace del monitor de Datadog 158654468.",
+     "Cita la fila correspondiente de la tabla de alertas de alerts.md (línea 11).",
+     "No atribuye a esta alerta la descripción ni el monitor de otra fila de la tabla."
+    ]
+   }
+  }
+ ]
+}

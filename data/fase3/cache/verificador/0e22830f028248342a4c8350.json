@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/0e22830f028248342a4c8350",
+ "llamadas": [
+  {
+   "clave": "0e22830f028248342a4c83506378cf0082cd1a81de3aa6c360b0c06d89ebf7ba",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-evidencia_parcial-019",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés y especifica software, versión y ambas operaciones, de acuerdo con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los headers, el cuerpo y el 200 OK coinciden con api.md, líneas 26-34; no atribuye un valor fijo al identificador."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada de Restock Consumer y señala que no se detallan los parámetros ni la respuesta de Get Detail."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a api.md, líneas 22-24 y 36-48, apoyan qué secciones están desarrolladas; las citas de líneas 26-34 respaldan headers, cuerpo y estado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la llamada están citadas; la falta de detalle de Get Detail se acota a la documentación entregada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la información de Get Detail falta en los documentos entregados, sin afirmar que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre Restock Consumer y solo se abstiene respecto de Get Detail."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la información documentada de Restock Consumer de la que falta para Get Detail."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la respuesta y a api.md, líneas 26-34; no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-020",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, identifica software y versión y consulta las dos operaciones coherentes con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Headers, estructura del cuerpo y estado 200 OK coinciden con api.md, líneas 26-34."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde lo documentado sobre Restock Consumer e indica que faltan los datos solicitados de Internal Item Detail."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de api.md, líneas 26-34, respaldan la llamada; las líneas 22-23 y 36-37 identifican las secciones detalladas mencionadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la petición y el estado están citadas; la respuesta acota la información faltante."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que los parámetros y la respuesta de Internal Item Detail no están documentados, sin afirmar que no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada y se abstiene únicamente de la información ausente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla datos de Internal Item Detail con los de Restock Consumer."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente a api.md, líneas 26-34, y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-021",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por método, ruta y respuesta de Get Detail Doma para el software y versión indicados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla de servicios indica GET y la ruta solicitada en api.md, línea 20; no inventa la estructura de respuesta."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Proporciona método y ruta, y aclara que la estructura de respuesta no está documentada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "api.md, línea 20, respalda método y ruta; líneas 7-9 respaldan las URL base, y las líneas 22 y 36 señalan secciones desarrolladas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables llevan citas; la ausencia de detalle se limita a la documentación entregada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que faltan campos, códigos y ejemplo de respuesta, sin afirmar que el endpoint no los tenga."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el método y la ruta disponibles en lugar de abstenerse de toda la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla datos de otros endpoints ni versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a api.md, línea 20, y a la ausencia de detalle de respuesta; no exigen redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-022",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por host, puerto y tablas de la base stage para el software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La base inventstg, el host y el puerto coinciden con database.md, líneas 10-13; no atribuye a esa base tablas ajenas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da los datos de conexión y señala que el esquema o las tablas de inventstg no están descritos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "database.md, líneas 10-13, respalda la conexión; las líneas 2-5 y 18-21 respaldan la comparación con test y prod."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las conexiones tienen citas y la respuesta no inventa un esquema."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Acota la falta de información al esquema de inventstg; no afirma que la base carezca de tablas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde host y puerto, y solo indica como faltante el esquema solicitado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue inventstg de las bases test y prod y no presenta la tabla de otro sistema como propia."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente a database.md, líneas 2-5, 10-13 y 18-21, y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-023",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el procedimiento del flujo Feed y por columnas y definiciones de una tabla para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "important.md, líneas 239-245 y 252-254, respalda la consulta de la tabla y el paso por materials y la API de items."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el procedimiento respaldado y aclara que no se documentan la lista completa de columnas ni sus definiciones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a important.md, líneas 239-245, 252-254 y 257-283, respaldan el flujo descrito; líneas 245-248 sustentan que se muestra un registro de ejemplo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas del procedimiento y del ejemplo tienen citas; no presenta el JSON como esquema completo."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La falta declarada es real: el ejemplo de líneas 247-248 no define el conjunto completo de columnas ni cada campo."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el procedimiento disponible y se abstiene solo sobre el esquema y las definiciones ausentes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el ejemplo de registro de una definición completa de la tabla."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con important.md, líneas 239-254 y 245-248, sin exigir una redacción particular."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no identifica software ni hay software en el historial; corresponde pedir esa aclaración antes de consultar."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se ofrece una respuesta técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide el dato que falta para poder responder."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay respuesta técnica ni citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se consultó documentación ni se hizo una afirmación sobre evidencia documental."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el software faltante en lugar de abstenerse o inventar una respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La aclaración es consistente con que la pregunta no especifica software."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto que evaluar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la situación: no llamar, pedir software y no dar información técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no nombra el software y no hay uno en el historial; corresponde pedir esa aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se ofrece una respuesta técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por el software necesario para identificar la documentación pertinente."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay respuesta técnica ni citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se consultó documentación ni se hizo una afirmación sobre evidencia documental."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Pide el software faltante en vez de abstenerse o responder con datos no verificados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La aclaración es consistente con la falta de software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto que evaluar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan correctamente que no debe llamarse a la herramienta ni darse una respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por la respuesta de Get Detail para el software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye campos a Get Detail; api.md, líneas 34 y 48, documenta solo estados para otras operaciones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que los campos de respuesta de Get Detail no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan las secciones y estados mencionados, pero api.md, líneas 22-24, no muestra el ejemplo de llamada de Restock Consumer que la respuesta afirma que existe."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "La afirmación de que la sección de Restock Consumer contiene un ejemplo de llamada no queda respaldada por la cita L22-L24; la línea 25, que contiene la llamada, es no citable."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que los campos de Get Detail no se encuentran en los documentos, sin afirmar que el endpoint no exista o no devuelva nada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde correctamente que la documentación entregada no permite identificar los campos solicitados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue Get Detail de Restock Consumer y Feed Consumer, sin mezclar sus estados con la respuesta del endpoint preguntado."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente a los documentos entregados y no exigen una frase concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La cita a api.md, líneas 22-24, no respalda que Restock Consumer tenga un ejemplo de llamada; la línea que contiene la llamada es no citable."
+     },
+     {
+      "case_id": "train-sin_evidencia-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por los campos y códigos de respuesta de Internal Item Detail para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No inventa campos ni estados para Internal Item Detail; las líneas 34 y 48 corresponden a otras operaciones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no están documentados los campos ni los códigos de Internal Item Detail."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas identifican las secciones mencionadas y los estados, pero L22-L23 y L36-L37 no contienen los ejemplos de llamada que la respuesta dice que hay."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "La afirmación de que ambas secciones contienen ejemplos de llamada está citada con rangos que solo muestran encabezados y apertura de bloque; la llamada de Restock en L25 es no citable."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que faltan campos y códigos en la documentación, sin afirmar que el endpoint no exista o no devuelva nada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Se abstiene únicamente de los datos que no están documentados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a Internal Item Detail los estados de Restock Consumer o Feed Consumer."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental planteado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables frente a api.md y no exigen una formulación determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": "Las citas de los ejemplos de Restock Consumer y Feed Consumer no muestran las llamadas; la llamada de Restock en L25 es no citable."
+     },
+     {
+      "case_id": "train-sin_evidencia-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por respuesta y códigos HTTP del endpoint para el software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Método y ruta coinciden con api.md, línea 20, y la falta de respuesta está bien señalada; sin embargo, afirmar que lo único documentado son las URL base contradice que el método y la ruta sí aparecen."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no se documentan la estructura de respuesta ni los códigos HTTP."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "api.md, línea 20, respalda el método y la ruta; las líneas 7-9 respaldan las URL base."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas; la contradicción sobre qué está documentado no es una falta de cobertura."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala correctamente que faltan datos de respuesta y códigos, sin afirmar que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Indica el método y la ruta disponibles antes de señalar la información ausente."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "Tras citar el método y la ruta de la línea 20, afirma que lo único documentado son las URL base."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto entre fuentes; el problema es una contradicción interna."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente a api.md, línea 20, y a la falta de detalle de respuesta; no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta se contradice al decir que lo único documentado son las URL base, aunque antes indica correctamente que el endpoint tiene método y ruta documentados."
+     }
+    ]
+   }
+  }
+ ]
+}

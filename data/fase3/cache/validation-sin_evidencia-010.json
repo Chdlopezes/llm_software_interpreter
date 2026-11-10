@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_evidencia-010",
+ "llamadas": [
+  {
+   "clave": "f77f14fcd36f6086bd8f2fe6854632dab4a48382bf92b6ecaff7f64551d4293d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En price-engine-api latest, ¿cómo es el flujo interno del endpoint de cobertura? Necesito saber qué servicios o fuentes consulta, y en qué orden, para armar las zonas moderadas del seller.",
+    "respuesta": "La documentación de latest no permite responder esto: no describe qué servicios o fuentes consulta el endpoint de cobertura ni en qué orden lo hace. Lo único documentado es que se trata de `GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1` [price-engine-api/latest/specs/swagger.yaml:L24-L25], cuya responsabilidad es devolver un array con las zonas del seller moderado por cobertura [price-engine-api/latest/specs/swagger.yaml:L30-L31]. No puedo indicarte cómo funciona por dentro.",
+    "answer_checks": [
+     "Llama a la herramienta con software price-engine-api y versión latest.",
+     "Indica que la documentación entregada no describe el flujo interno del endpoint de cobertura (qué servicios o fuentes consulta ni en qué orden).",
+     "No inventa servicios, llamadas internas ni pasos del flujo.",
+     "Si menciona datos relacionados (ruta GET de cobertura o que devuelve un array de zonas), los cita del swagger.yaml y no cita las líneas de plantilla de flujos.md.",
+     "No afirma que el endpoint no tenga dependencias o que el flujo no exista."
+    ]
+   }
+  }
+ ]
+}

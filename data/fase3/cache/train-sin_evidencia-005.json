@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-005",
+ "llamadas": [
+  {
+   "clave": "58436a599cfaece694162183f1c53240a402ac55f9c50cacbb2bda3ad7d07dd4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando un inbound antes de mandarlo a restock en vendor-stockkeeper-api 0.0.6-ep-restock-man. ¿Cuál es la lista completa de tags que hacen que un ítem cuente como ítem de prueba?",
+    "respuesta": "La documentación de 0.0.6-ep-restock-man no trae la lista completa de tags que identifican un ítem como ítem de prueba, así que no te la puedo dar. Lo que sí documenta es el procedimiento. En el flujo de Restock, antes de enviar un inbound hay que obtenerlo y revisar su conciliación para comprobar si los ítems tienen los tags que los marcan como ítems de prueba [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L37-L37]. Para saber si un ítem es de prueba, hay que consultar la API de ítems y revisar sus tags [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L128-L128]. Pero ninguno de los documentos de esta versión enumera qué tags concretos cuentan como marca de ítem de prueba.",
+    "answer_checks": [
+     "Indica que la documentación de la versión 0.0.6-ep-restock-man no incluye la lista completa de tags que identifican a un ítem de prueba.",
+     "No inventa una lista de tags ni presenta los tags de la respuesta de ejemplo como la lista oficial.",
+     "Puede citar que hay que consultar la API de ítems y revisar los tags del ítem (important.md L128) o el paso de la conciliación del inbound (L37).",
+     "No afirma que no existan otros tags ni que el sistema no los soporte; solo dice que no están documentados.",
+     "No cita las líneas no citables 231 ni 234 de important.md."
+    ]
+   }
+  }
+ ]
+}

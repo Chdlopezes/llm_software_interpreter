@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-en_que_version-001",
+ "llamadas": [
+  {
+   "clave": "5bd0044d10283e8083fc91565361919d557331da753b84f17adee0f69caaaea5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de catalog-portfolio-api aparece, dentro de la referencia de la API, el enlace a la página de endpoints de marcas con las operaciones CRUD y de búsqueda?",
+    "respuesta": "Aparece en las dos versiones que devolvió la documentación, 0.0.1-test-bench-v2a y latest, y en ambas dice lo mismo. En 0.0.1-test-bench-v2a, el README de la referencia de la API tiene una sección Authentication [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L5-L5]. Bajo «Available Items» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L9-L9] enlaza a «Brand Endpoints» (brands.md), con la descripción «Brand CRUD operations and search functionality» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L11-L11]. En latest está la misma sección [catalog-portfolio-api/latest/guide/api-reference/README.md:L5-L5], con la misma lista [catalog-portfolio-api/latest/guide/api-reference/README.md:L9-L9] y el mismo enlace a brands.md con la misma descripción [catalog-portfolio-api/latest/guide/api-reference/README.md:L11-L11]. Entre estas dos versiones no cambia nada. Sobre otras versiones, los documentos que tengo no dicen nada.",
+    "answer_checks": [
+     "Identifica tanto 0.0.1-test-bench-v2a como latest como versiones que documentan el enlace a Brand Endpoints (brands.md).",
+     "Indica que el contenido es igual en ambas versiones.",
+     "Cita el api-reference/README.md de cada una de las dos versiones.",
+     "No pide al usuario que indique una versión.",
+     "No afirma que estas sean las únicas versiones existentes ni que el enlace no exista en otras versiones."
+    ]
+   }
+  }
+ ]
+}

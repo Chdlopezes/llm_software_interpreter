@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/58fbe872f350e30fb38bc6a4",
+ "llamadas": [
+  {
+   "clave": "58fbe872f350e30fb38bc6a4f404688731c04e8d4edf9c810f35473a2ad1bb39",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-contradiccion-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, identifica software y versión y se ajusta a la llamada con esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los IDs de la conciliación son MLA1734160848 y MLA1734238432 (important.md:L56, L74); el curl usa otro ID (L131)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que el curl no consulta los items de la conciliación y que no conviene copiarlo tal cual (L56, L74, L131)."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita a L139 es no citable y esa línea no está identificada como parte del conflicto de la semilla; la excepción permite citar L131, no L139."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por referencias a important.md:L37-L41, L56, L74, L128, L131 y L199-L206."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Describe la inconsistencia y no inventa el ID ni la sintaxis correcta; la documentación muestra el procedimiento en L37-L41, L128 y el ejemplo de curl en L131."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone lo que sí se puede concluir del procedimiento y de los ejemplos (L37-L41, L128, L131)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los IDs de la conciliación del usado en el curl y explica la discrepancia (L56, L74, L131)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Señala y cita la discrepancia entre los IDs de la conciliación y el curl (L56, L74, L131)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cita L139, que es no citable y no forma parte de las líneas de conflicto de la semilla."
+     },
+     {
+      "case_id": "train-contradiccion-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el enlace de Feed Consumer en la versión indicada, acorde con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila vincula Feed Consumer al ancla #vendor-branch-search (api.md:L16); la página sí contiene la sección Feed Consumer (L36-L48)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la discrepancia del enlace e indica dónde está el ejemplo de la operación (api.md:L16, L36-L48)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita no citable L16 se usa únicamente para señalar el conflicto; las demás citas respaldan la descripción de la sección (L36-L48)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en api.md:L16 y L36-L48."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma cuál era el destino previsto; describe lo observado en el enlace y en la sección Feed Consumer (L16, L36-L48)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la sección existente y su contenido en vez de abstenerse (api.md:L36-L48)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el ancla de la tabla de la sección presente en la página (api.md:L16, L36-L48)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica y cita el conflicto entre el ancla del enlace y la sección Feed Consumer (api.md:L16, L36-L48)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en la tabla y las secciones de api.md; no imponen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre Restock Consumer en la versión indicada, acorde con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila muestra el ancla #get-branches-by-vendor-id (api.md:L17) y la página incluye Restock Consumer con headers, cuerpo y 200 OK (L22-L34)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica dónde está la sección y resume lo que muestra, sin resolver arbitrariamente el destino del enlace (api.md:L17, L22-L34)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La línea no citable L17 se usa solo para mostrar el conflicto; las citas L22-L34 respaldan la sección y su ejemplo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas por api.md:L17, L22-L23 y L26-L34."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa el destino previsto ni el contenido de otra operación; se limita a la discrepancia visible (api.md:L17, L22-L34)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la sección Restock Consumer y el contenido documentado (api.md:L22-L34)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas la referencia errónea y la sección presente (api.md:L17, L22-L34)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el ancla y contrasta con la sección disponible, sin decidir qué destino se pretendía (api.md:L17, L22-L34)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al enlace y al ejemplo de la página y admiten formulaciones equivalentes."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre Postman y stage para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación lista el host stage de Postman y el ejemplo usa el host -test (api.md:L7-L9, L25-L26)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone ambos hosts y explica que la documentación no confirma cuál es el correcto para stage (api.md:L7-L9, L25-L26)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a L25 muestra el host del ejemplo, línea del conflicto; las citas L7-L9 y L26 respaldan el resto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los hosts y la cabecera mencionados tienen citas a api.md:L7-L9 y L25-L26."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la documentación no resuelve la discrepancia sin afirmar que alguno de los hosts no funcione (api.md:L7-L9, L25-L26)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Presenta la evidencia disponible de las URL base y del ejemplo (api.md:L7-L9, L25-L26)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el host stage listado del host -test usado en el ejemplo (api.md:L7-L9, L25)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas fuentes contradictorias y no elige arbitrariamente un host (api.md:L7-L9, L25)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican con las líneas citadas y no requieren una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-017",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el host de Postman para Restock Consumer en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las URL base de Postman incluyen el host stage; el ejemplo de Restock usa el host -test y el Feed también usa -test (api.md:L7-L9, L25-L26, L38)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué la documentación no permite confirmar cuál host debe usarse (api.md:L7-L9, L25-L26)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a L25 muestra el dato en conflicto; las demás citas respaldan las URL y el uso de -test (api.md:L7-L9, L26, L38)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los hosts y la cabecera mencionados tienen referencias a api.md:L7-L9, L25-L26 y L38."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que la documentación no confirma la validez de -test, sin afirmar que no funcione (api.md:L7-L9, L25-L26)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Resume las URL base y los hosts que muestran los ejemplos (api.md:L7-L9, L25-L26, L38)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el host -test del ejemplo con el host -stage de la lista base (api.md:L7-L9, L25)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la discrepancia entre la lista base y el ejemplo, sin resolverla por invención (api.md:L7-L9, L25-L26)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan las URL y la discrepancia documentadas; no exigen una forma de respuesta específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-018",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre el valor exacto de la tag en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El texto menciona test_items y el ejemplo muestra test_item en el array tags (important.md:L231, L199-L206)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone las dos grafías y advierte que la documentación no confirma cuál devuelve la API (important.md:L231, L199-L206)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita no citable L231 se usa únicamente para señalar el conflicto; L199-L206 respalda el ejemplo de la respuesta."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el procedimiento y las dos grafías están citadas en important.md:L128, L231 y L199-L206."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No elige una grafía como definitiva y distingue el texto de la guía del valor que muestra el ejemplo (L128, L199-L206, L231)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta los dos valores observables en la documentación en lugar de abstenerse (important.md:L199-L206, L231)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene explícita la diferencia entre la forma plural del texto y la singular del ejemplo (L199-L206, L231)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica y cita ambas grafías sin seleccionar una arbitrariamente (important.md:L199-L206, L231)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas indicadas y no exigen una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-019",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre la correspondencia entre la respuesta de ejemplo y los items de la conciliación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La conciliación muestra los IDs MLA1734160848 y MLA1734238432, mientras que la respuesta de ejemplo muestra MLA0000000000 (important.md:L56, L74, L139)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Concluye correctamente que la respuesta no coincide con los IDs de los items de la conciliación y limita el uso de referencia a la estructura de tags (L56, L74, L139, L199-L206)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L139 es una línea no citable, pero está marcada como línea del conflicto y se cita solo para mostrarlo; las otras citas son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas por important.md:L37, L56, L74, L128, L139 y L199-L206."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye la respuesta a un item concreto ni inventa la causa de la discrepancia (L56, L74, L139)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los IDs de la conciliación y el campo tags del ejemplo para responder lo que sí se puede determinar (L56, L74, L139, L199-L206)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los IDs de la conciliación del ID mostrado en la respuesta de ejemplo (L56, L74, L139)."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Explica y cita la discrepancia entre la conciliación y la respuesta de ejemplo sin inventar una explicación (L56, L74, L139)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y reflejan las restricciones de citación y versión."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sin versión concreta, que solicita identificar las versiones documentadas."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro versiones indicadas contienen los tres pasos en important.md:L22-L26."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las cuatro versiones y describe los tres pasos solicitados con referencias de cada versión (important.md:L22-L26)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las referencias corresponden a los documentos entregados y a líneas citables de cada versión."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada versión y los pasos descritos están respaldados por citas a important.md:L22-L26."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita la respuesta a las cuatro versiones entregadas y no afirma que sean todas las versiones existentes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la documentación de las cuatro versiones para responder sin pedir una versión."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La lista de versiones y la descripción de los pasos son compatibles con los cuatro documentos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "El caso compara procedimientos entre versiones y no presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen hechos verificables en las cuatro secciones y no imponen redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, sin versión concreta, que pide las versiones que documentan una instrucción específica."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las versiones 0.0.3, 0.0.10 y latest mencionan explícitamente el endpoint y item_id en L50; 0.0.6 pide comprobar el estado en L49."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las tres versiones que nombran el endpoint y distingue correctamente el detalle omitido en 0.0.6 (alerts.md:L49-L50)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de cada versión respaldan las instrucciones descritas; la cita de 0.0.6 muestra su indicación más general (alerts.md:L49)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre las versiones y sus diferencias están citadas en alerts.md:L49-L50 de las versiones correspondientes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Indica que 0.0.6 no menciona el endpoint, sin afirmar que no pueda utilizarse allí (alerts.md:L49)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la comparación entre versiones usando las instrucciones disponibles (alerts.md:L49-L50)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Separa la instrucción explícita de las tres versiones de la formulación más general de 0.0.6."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Las diferencias entre versiones no constituyen una contradicción documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en las líneas citadas y no convierten la omisión documental en una afirmación de incompatibilidad."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sin versión concreta, que solicita identificar en qué versiones figura una URL base."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro versiones listan vendor-stockkeeper-stage.techzoneoffice.com como base de Postman para stage (api.md:L7-L9)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro versiones y da el valor solicitado (api.md:L7-L9 en cada versión)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a los api.md de las cuatro versiones entregadas y respaldan las URL mencionadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada versión listada tiene cita; las URL de producción y de TechZone Platform también están respaldadas por las líneas citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Restringe la conclusión a las cuatro versiones consultadas, sin afirmar exhaustividad fuera de los documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las URL base disponibles y no pide al usuario que especifique una versión."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las URL de Postman de las de TechZone Platform y mantiene los valores separados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las URL base documentadas en las versiones comparadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las cuatro secciones Base URL y no exigen una formulación literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

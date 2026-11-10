@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/096f4d8fd1380b3e37343f04",
+ "llamadas": [
+  {
+   "clave": "096f4d8fd1380b3e37343f04060679aef25b0466ba78b4977e04aa4fff68170c",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-comparacion_versiones-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés compara explícitamente 0.0.10-stock-consumer y latest, y la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "0.0.10 incluye Operation Validation Consumer en L51-L68 y el diagrama en L82-L89; latest muestra Restock y Feed en L22-L48. La respuesta distingue que falta el ejemplo en latest, sin afirmar que el endpoint haya sido eliminado."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué ejemplo se añadió o dejó de aparecer y compara los ejemplos de Restock y Feed y la fila de Get Detail Doma."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las rutas, campos, respuestas y pasos descritos; las líneas citadas son citables en los documentos entregados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas comparativas llevan citas a los api.md de las versiones correspondientes, incluidas L20, L22-L23, L28-L48 y L51-L89."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Expresa que el ejemplo no está documentado en latest y aclara que eso no demuestra que el endpoint se haya eliminado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza los ejemplos y el diagrama disponibles en ambas versiones para realizar la comparación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue coherentemente el ejemplo adicional de 0.0.10 de los ejemplos comunes; las citas a 0.0.10 L51-L68 y latest L22-L48 concuerdan con ello."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental que la respuesta deba resolver."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables contra los dos api.md y no exigen una formulación exacta ni contradicen la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por la coherencia del ejemplo de Restock de vendor-stockkeeper-api 0.0.10-stock-consumer, coincidente con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La conciliación muestra los IDs MLA1734160848 y MLA1734238432 (L56, L74), mientras que el curl usa MLA1737779958 y su URL queda sin comilla de cierre (L131)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde que el comando no consulta ninguno de los IDs de la conciliación y que no conviene copiarlo tal cual; también explica el propósito del paso con L37-L41 y L128."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L56, L74 y L128 son citables; L131 se cita únicamente para señalar el conflicto documentado, excepción permitida para esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas por citas a L37-L41, L56, L74, L128 y L131."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que la documentación no aclara qué ID usar ni la sintaxis correcta, sin inventarlos; el conflicto se ve en L56, L74 y L131."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para comparar los IDs y detectar el problema de formato, en vez de abstenerse de toda respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de que los ejemplos no encajan concuerda con los IDs de L56 y L74 frente al curl de L131."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el desacuerdo entre la conciliación (L56, L74) y el curl (L131), y no inventa el ID ni la forma correcta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y permiten señalar L131 como conflicto sin exigir una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español en qué versiones se documenta un detalle, sin fijar una versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "0.0.10, 0.0.3 y latest mencionan api core item, item_id y status en L50; 0.0.6 pide revisar el estado, pero no especifica endpoint ni item_id en L49."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las versiones que documentan el endpoint y diferencia correctamente la indicación más general de 0.0.6."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L50 de las tres versiones y L49 de 0.0.6 respaldan las afirmaciones correspondientes."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre las versiones y el procedimiento llevan citas a sus respectivos alerts.md, en L49-L50."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Describe como no especificados en 0.0.6 el endpoint y el item_id, sin afirmar que no existan o no puedan usarse."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha y compara la evidencia disponible de las cuatro versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La distinción entre las instrucciones detalladas de L50 y la comprobación general de L49 se mantiene coherente."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en las instrucciones comparadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a lo indicado en L49-L50 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español en qué versiones están documentadas las URLs base, sin indicar una versión concreta; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cuatro api.md documentan las mismas URLs de TechZone Platform: prod y stage aparecen en L7-L8 de cada versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro versiones entregadas y da las URLs de prod y stage, sin presentar la lista como exhaustiva de todas las versiones existentes."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada versión mencionada tiene su propia cita a api.md L7-L8, que respalda las URLs."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre las versiones y las URLs están citadas en cada api.md correspondiente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita la respuesta a las versiones consultadas y no afirma que no existan otras."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las URLs documentadas en las cuatro versiones disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las URLs indicadas coinciden con L7-L8 de los cuatro documentos y no se confunden con las de Postman."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay diferencias ni conflicto entre las URLs citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en L7-L8 de cada versión y no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español en qué versiones aparece una indicación común, sin pedir una versión específica; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro versiones dicen en L5-L6 de important.md que hay que verificar los movimientos inbound y outbound y evitar afectar la API de ítems y el inventario."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro versiones consultadas y resume correctamente la indicación y su motivo."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada versión se respalda con L5-L6 de su important.md; no se cita la línea no citable 7."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre presencia en las versiones y el contenido del procedimiento llevan citas a L5-L6."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que se refiere a la documentación consultada y no afirma que falte en otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la introducción disponible en las cuatro versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El resumen coincide con el contenido equivalente de L5-L6 en cada versión."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las versiones sobre esta indicación."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con L5-L6 de cada important.md y excluyen correctamente la línea 7."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español qué flujos requieren comprobar los ítems de prueba y en qué versiones, sin fijar una versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro versiones identifican Restock y Feed como los dos flujos principales en important.md L9-L14."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro versiones y nombra los dos flujos solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada versión está citada en L9-L14 de su important.md, líneas que respaldan los nombres de los flujos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre versiones y flujos están respaldadas por citas a los documentos correspondientes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita lo dicho a las versiones consultadas y no sostiene que sean todas las versiones existentes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia de las cuatro versiones para responder directamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La lista de versiones y los flujos coinciden con L9-L14 de los cuatro documentos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental sobre los flujos indicados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican directamente en L9-L14 de cada important.md y no exigen una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por el cuerpo y sus campos para una versión concreta; la llamada usa ese software y esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía API de 0.0.6 muestra apartados de Restock y Feed en L22 y L36, pero no describe el cuerpo de respuesta de Get Detail; ningún otro documento entregado aporta esos campos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que la documentación no permite determinar el cuerpo ni sus campos, que es lo que se pregunta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a L22 y L36 respaldan que esos apartados son de otras operaciones; no se usan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones concretas sobre los apartados disponibles están citadas; la falta de especificación se informa sin inventar una cita de ausencia."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que esos datos no están documentados en los documentos entregados y no afirma que el endpoint no exista ni que no devuelva nada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de que la guía contiene secciones para otras operaciones, aunque no hay contrato de respuesta de Get Detail."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue entre la documentación de Restock y Feed y la información ausente sobre Get Detail."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la falta de cuerpo documentado en el conjunto entregado y no exigen una respuesta inventada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por campos de respuesta y códigos de estado de una operación en una versión concreta; la llamada coincide."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía API presenta apartados de Restock y Feed en L22 y L36, pero no documenta respuesta ni códigos para Internal Item Detail; los demás documentos entregados tampoco lo hacen."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se pueden obtener los campos ni los códigos de estado solicitados de la documentación disponible."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L22 y L36 respaldan los apartados mencionados y son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las referencias a las operaciones documentadas están citadas; la ausencia del contrato se comunica sin atribuirle una cita inexistente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que la respuesta y los códigos no están descritos, sin afirmar que el endpoint no exista o no devuelva nada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la información disponible sobre las otras secciones de la guía y se abstiene solo sobre los datos que faltan."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde los apartados de Restock y Feed con Internal Item Detail."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay contradicción documental que resolver."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con lo que se puede verificar en los documentos de 0.0.6 y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los campos de respuesta y códigos HTTP de Get Detail Doma en una versión concreta; la llamada coincide."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila de servicios sí indica método y ruta para Get Detail Doma en api.md L20; la documentación entregada no describe sus campos de respuesta ni sus códigos HTTP."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara qué información falta sobre el endpoint y responde que no puede determinar los campos ni los códigos solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Cita api.md L20, que está marcada como no citable en este documento."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La afirmación sobre el método y la ruta se respalda únicamente con la cita no citable api.md L20."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa campos ni códigos y limita la ausencia a lo que no describe la documentación, sin afirmar que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde sobre la información que falta y usa la fila de servicio para identificar el método y la ruta, aunque esa cita no sea admisible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Es coherente al señalar que hay método y ruta documentados, pero que faltan campos y códigos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check exige citar api.md L20, pero esa línea está marcada como no citable."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cita la línea 20 de api.md, marcada como no citable, y el answer_check exige esa misma cita."
+     },
+     {
+      "case_id": "train-sin_evidencia-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por tipos de columnas y clave primaria de una tabla usada en el flujo Feed; la llamada identifica el software y la versión correctos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "important.md L239-L240 dice que se consulta la tabla 1p_3pl_product_stock_mov; L245-L248 explica el uso y muestra un registro de ejemplo, no un esquema."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no están documentados los tipos de datos ni la clave primaria y no los inventa."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a L239-L240 y L245-L248 respaldan el uso de la tabla y la presencia del registro de ejemplo; son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el uso de la tabla y el registro están citadas; la falta de esquema se declara sin atribuir tipos o clave."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala correctamente que el registro de ejemplo no establece el esquema ni la clave primaria; no concluye que la tabla carezca de ella."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible sobre el flujo y el registro de ejemplo, absteniéndose solo de inferir datos de esquema ausentes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el campo id del registro de ejemplo de una clave primaria y del Operation id."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental sobre el esquema."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con L239-L248 y no dan por sentado tipos ni una clave primaria."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

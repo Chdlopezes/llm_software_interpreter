@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-falta_software-004",
+ "llamadas": [
+  {
+   "clave": "7c682367794bf78ef52d3709d7232ef57d01e9a60f4193dcbf50fa42aa7ec2ab",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "We keep getting lock timeouts and deadlock errors from the database under load. What's the recommended way to deal with that?",
+    "respuesta": "Which software are you asking about?",
+    "answer_checks": [
+     "Does not call the documentation tool.",
+     "Asks the user which software the question is about.",
+     "Does not ask for the version.",
+     "Does not give a technical answer or recommendation about lock timeouts or deadlocks.",
+     "Includes no citations."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-012",
+ "llamadas": [
+  {
+   "clave": "33eeb610ecd0e0cf9b9c046f2db855d43a284843a8f01c00a7a7d975e1548c30",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambia algo entre 0.0.10-stock-consumer y latest en cómo se comprueba, en el flujo de Restock, que los ítems de un inbound son de prueba antes de enviarlo?",
+    "respuesta": "No, el procedimiento es el mismo en las dos versiones.\n\n**Paso 1: obtener el inbound y revisar su conciliación.** Antes de enviar un inbound, hay que obtenerlo y consultar la conciliación del inbound para ver si los ítems tienen los tags que los identifican como ítems de prueba. Esto aparece igual en 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L37-L37] y en latest [vendor-stockkeeper-api/latest/guide/important.md:L37-L37]. Las dos versiones muestran la misma llamada curl al endpoint `/inbounds/{id}/conciliations` de 1p-inbounds con `scope=stage` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L40-L42] [vendor-stockkeeper-api/latest/guide/important.md:L40-L42].\n\n**Paso 2: revisar los tags en la API de ítems.** Para confirmar que son ítems de prueba, las dos versiones indican consultar la API de ítems y revisar sus tags [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L128-L128] [vendor-stockkeeper-api/latest/guide/important.md:L128-L128].\n\nLa única diferencia es de formato. En latest, los bloques desplegables con las respuestas de ejemplo tienen estilos en línea en la etiqueta `<summary>` [vendor-stockkeeper-api/latest/guide/important.md:L45-L45] [vendor-stockkeeper-api/latest/guide/important.md:L135-L135]. En 0.0.10-stock-consumer, esa etiqueta no tiene estilos [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L45-L45] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L135-L135]. Esto no cambia el procedimiento.",
+    "answer_checks": [
+     "Indica que el procedimiento de verificación del flujo Restock no cambia en lo sustancial entre 0.0.10-stock-consumer y latest.",
+     "Describe los pasos del procedimiento: consultar la conciliación del inbound y luego revisar los tags del ítem en la API de ítems.",
+     "Cita el important.md de ambas versiones (0.0.10-stock-consumer y latest).",
+     "No inventa diferencias funcionales entre las versiones; como mucho, señala diferencias de formato o presentación.",
+     "No cita como respaldo líneas no citables, como la línea 231 o la URL de la línea 131."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "task_id": "test-software_en_historial-007",
+ "llamadas": [
+  {
+   "clave": "ed846dee770f1cf5ec15ce4e6b778988803a8b15051e5b8274ed858bfc64ae83",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con 2p-revenue-optimizer-api en la versión 0.2.2 y estoy revisando cómo está montado el proyecto antes de empezar a hacer cambios.",
+    "historial_asistente": "Perfecto. Cuando quieras, dime qué necesitas saber del proyecto y lo busco en la documentación.",
+    "pregunta": "Si tengo dudas o comentarios sobre el modelo base de la aplicación en el que se apoya el proyecto, ¿a dónde los mando?",
+    "respuesta": "El proyecto parte de un modelo básico de aplicación web con Spring Boot para JDK 17 [2p-revenue-optimizer-api/0.2.2/guide/README.md:L3-L5]. Las preguntas y los comentarios sobre ese modelo se envían al VendorFlow Issue Tracker (https://github.com/vendorflow/vendorflow/issues) [2p-revenue-optimizer-api/0.2.2/guide/README.md:L7-L7].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con 2p-revenue-optimizer-api y la versión 0.2.2 del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que las dudas y los comentarios se dirigen al VendorFlow Issue Tracker (repositorio vendorflow/vendorflow en GitHub, sección issues).",
+     "Cita la línea 7 del README de la versión 0.2.2 (o un rango ajustado que la incluya) como respaldo.",
+     "No presenta el Release Process Issue Tracker como el canal para dudas sobre el modelo base, ni inventa otros canales de soporte."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-025",
+ "llamadas": [
+  {
+   "clave": "537b61fef3b8455941c78e9a35b2a2f15c7bebeae662c9a965a23049125c9582",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What does payment-promise-gateway use for metrics, and which metrics does it track?",
+    "respuesta": "Both documented versions, 0.0.10-test-crc-migration and latest, describe this in the same words. payment-promise-gateway collects metrics with DataDog. The key metrics are promise creation success/failure rates, forgiveness proposal statistics, API response times and error rates [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L524-L528] [payment-promise-gateway/latest/guide/README.md:L524-L528].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the application uses DataDog for metrics collection.",
+     "Lists the key metrics: promise creation success/failure rates, forgiveness proposal statistics, API response times and error rates.",
+     "Indicates that the information is the same in 0.0.10-test-crc-migration and latest, and does not attribute it to only one version.",
+     "Does not invent additional metrics, metric names or DataDog configuration details that are not in the documents."
+    ]
+   }
+  }
+ ]
+}

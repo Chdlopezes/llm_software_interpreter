@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-018",
+ "llamadas": [
+  {
+   "clave": "7cf3c2f0b468f13fade3337bd1e47bfbc5c27c9ac2e1567532eecfee4067fc43",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy con vendor-stockkeeper-api 0.0.10-stock-consumer y tengo que comprobar si un movimiento del flujo Feed trae ítems de prueba. Con el operation id, ¿dónde consulto y qué hago luego con lo que saco de ahí? Y otra cosa: ¿cuál es exactamente la consulta SQL que hay que lanzar sobre esa tabla?",
+    "respuesta": "Con el operation id del flujo Feed se consulta la base de datos de 1p-3pl-integrator llamada 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240]. De esa tabla se obtienen los datos clave para averiguar si los ítems son de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L245-L245].\n\nCon esos datos se consulta el servicio de materials, por sap sku o por material id. Así se obtiene el ítem, y con él se consulta la API de items para revisar sus tags y comprobar si es un ítem de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254]. La guía trae como ejemplo una llamada POST a `https://1p-materials.techzoneoffice.com/materials/facade/search`. En el cuerpo lleva una `query` que filtra por `sap_sku` y `site_id`, y unas `projections` con `id`, `sap_sku`, `site_id` e `items` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L256-L283].\n\nLa consulta SQL concreta que hay que lanzar sobre 1p_3pl_product_stock_mov no está documentada en el texto, así que no te la puedo dar. La guía no la incluye ni explica cómo filtrar por operation id.",
+    "answer_checks": [
+     "Indica que con el operation id se consulta 1p_3pl_product_stock_mov, de 1p-3pl-integrator, y cita important.md.",
+     "Explica que con los datos obtenidos se consulta materials (por sap sku o material id) para obtener el ítem y luego la API de items para revisar sus tags.",
+     "Declara que la consulta SQL concreta sobre la tabla no está documentada.",
+     "No inventa una sentencia SQL ni nombres de columnas para filtrar por operation id.",
+     "No se abstiene en la parte que sí está documentada."
+    ]
+   }
+  }
+ ]
+}

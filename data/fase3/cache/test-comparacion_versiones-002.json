@@ -1,0 +1,26 @@
+{
+ "task_id": "test-comparacion_versiones-002",
+ "llamadas": [
+  {
+   "clave": "25972f93a67cb8bef108a142ee5cc6f0a6d19509f423ce69d99d030dc216269d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué cambió en las columnas de la tabla rule_row de 2p-revenue-optimizer-api entre la 0.2.2 y latest?",
+    "respuesta": "Solo cambia una columna. En la 0.2.2, rule_row tiene una columna custom_fields de tipo json, que admite Null y se describe como «Custom Fields» [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L16-L16]. En latest esa columna no aparece en la tabla rule_row, que termina en la columna item [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md:L9-L15]. Además, latest documenta una tabla aparte, rule_custom_field. Esta tabla tiene una columna rule_row_id que referencia rule_row(id) [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L10-L10] y guarda pares name y value_info [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L11-L12].\n\nLas demás columnas son iguales en las dos versiones:\n- id: bigint, Not null, clave primaria autoincremental.\n- rule_id: bigint, Not null, con REFERENCES rule_header(id).\n- site_id, seller_id, domain, brand e item: todas de tipo json y admiten Null.\n\nFuentes: [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L9-L15] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md:L9-L15].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la columna custom_fields (json, Null) figura en rule_row de la 0.2.2 y no aparece en rule_row de latest.",
+     "Señala que las columnas id, rule_id, site_id, seller_id, domain, brand e item no cambian entre las dos versiones.",
+     "No atribuye a la 0.2.2 la tabla rule_custom_field, que solo está documentada en latest, ni inventa otras diferencias.",
+     "Cita los rule_row.md de ambas versiones sin citar la línea 3 (no citable)."
+    ]
+   }
+  }
+ ]
+}

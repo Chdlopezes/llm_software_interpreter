@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-019",
+ "llamadas": [
+  {
+   "clave": "9789c4bec5e48a37e4e0cbb7fc9efc0b8ebb05f42fac33ba537ed67278fba83e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy montando el entorno de pruebas de order-workflow-api 5.6.2-hotfix-1 y necesito apuntar bien la conexión a la base de datos.",
+    "historial_asistente": "Perfecto, te ayudo con eso. ¿Qué necesitas saber?",
+    "pregunta": "¿Qué esquema y qué clúster se usan en el entorno de test? ¿Y es el mismo motor que en producción?",
+    "respuesta": "En el entorno de test, la base de datos es MySQL, con el esquema fulfillment2 en el clúster testenv02 [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L9-L12]. Sí, el motor es el mismo: producción también usa MySQL, aunque con otro esquema (fulfillment) y otro clúster (orderworkflowapi00) [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L4-L7].",
+    "answer_checks": [
+     "Llama a la herramienta con order-workflow-api y la versión 5.6.2-hotfix-1 del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que en test se usa el esquema fulfillment2 en el clúster testenv02.",
+     "Indica que tanto test como producción usan MySQL, y que producción usa el esquema fulfillment y el clúster orderworkflowapi00.",
+     "Cita la tabla de scopes de services/database.md con rangos de líneas que contienen esos datos.",
+     "No inventa datos de conexión que no están documentados (host, puerto, credenciales)."
+    ]
+   }
+  }
+ ]
+}

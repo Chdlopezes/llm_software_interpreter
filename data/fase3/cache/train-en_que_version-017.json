@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-017",
+ "llamadas": [
+  {
+   "clave": "1448c6599d2189e271b8cc4666ab738f93e67d3cea132a0d6da34e60c33d6e5f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In which version of vendor-stockkeeper-api can I find the explanation of why checking for test items matters before touching the inventory flows? I mean the part about the risks you run if you skip that check.",
+    "respuesta": "That explanation is in the important.md guide for version 0.0.10-stock-consumer, under the section on why verification matters [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L16-L21]. It gives three reasons:\n\n- If test items are missing, you can end up with inventory errors [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L18-L18].\n- The data sent to the item API has to be correct to keep the system's integrity intact [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L19-L19].\n- A wrong movement can change the inventory status directly, which causes discrepancies and operational problems [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L20-L20].\n\nI can only back this up for 0.0.10-stock-consumer. The documentation I retrieved doesn't let me confirm the same content for 0.0.3-paused-seller, 0.0.6-ep-restock-man or latest. That doesn't mean those versions lack it.",
+    "answer_checks": [
+     "Identifies 0.0.10-stock-consumer as a version that documents the importance of verifying test items, citing its important.md (lines 16-21 or a subrange).",
+     "Mentions at least one of the documented reasons (inventory errors, item API/system integrity, unwanted alterations of inventory status causing discrepancies).",
+     "Does not claim that the section does not exist in 0.0.3-paused-seller, 0.0.6-ep-restock-man or latest.",
+     "Does not cite lines 16-21 of the important.md of 0.0.3-paused-seller, 0.0.6-ep-restock-man or latest as support.",
+     "Does not ask the user for a version."
+    ]
+   }
+  }
+ ]
+}

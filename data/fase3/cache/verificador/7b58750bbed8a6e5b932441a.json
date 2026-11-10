@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/7b58750bbed8a6e5b932441a",
+ "llamadas": [
+  {
+   "clave": "7b58750bbed8a6e5b932441acff6f9d70f72bafc2a6b14556d649ebc40f906ef",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-contradiccion-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre traffic-gate-api latest y el scope de PCI Global; coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Describe las variantes documentadas y no confirma arbitrariamente cuál acepta el parámetro: database.md L11, arch.md L26, processes.md L7, swagger.yaml L202, L338-L344 y README.md L52."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone la discrepancia relevante y explica que la documentación no permite confirmar el valor exacto."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las variantes descritas; database.md L11 es una línea de conflicto y se cita para señalarlo, permitido en esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las variantes y su uso llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la incertidumbre sobre el valor aceptado sin afirmar que alguno no exista; la discrepancia aparece en database.md L11, arch.md L26 y swagger.yaml L202, L338-L344."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las menciones disponibles para identificar las variantes, aunque no elige una sin respaldo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las tres grafías y no las presenta como equivalentes."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la discrepancia y cita la fuente con global_pci y fuentes con pci_global y pci-global: database.md L11, arch.md L26, processes.md L7, swagger.yaml L202, L338-L344 y README.md L52."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen la discrepancia y exigen no elegir un valor; son verificables en las citas y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-contradiccion-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el formato del mensaje de traffic-gate-api latest; coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo muestra WafID y un ID numérico en processes.md L17-L19; el esquema define WafId y el tipo string en swagger.yaml L355-L364."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambos puntos —nombre del campo y tipo del ID— señalando la discrepancia sin decidirla."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas apoyan el flujo y los dos formatos contrastados; processes.md L19 y swagger.yaml L363 son líneas del conflicto, citadas para mostrarlo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas pertinentes a processes.md L11, L17-L19 y swagger.yaml L237-L242, L333-L350, L355-L364."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la documentación no aclara cuál representación se envía realmente, sin afirmar que falte toda información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa el ejemplo y el esquema disponibles para identificar con precisión las diferencias."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el ejemplo de la guía del esquema OpenAPI y no mezcla sus representaciones."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita ambas fuentes para la diferencia WafID/WafId y para número/string: processes.md L17-L19 y swagger.yaml L355-L364."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan discrepancias y citas verificables, y no exigen una formulación literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-contradiccion-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el origen de los mensajes para traffic-gate-api latest; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "MegaQueue aparece en processes.md L56 y Big-Queue/BigQ en processes.md L11 y swagger.yaml L238, L319-L320."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la discrepancia en el nombre del sistema de colas y no concluye cuál es, ni si son el mismo sistema."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las denominaciones y el tópico; processes.md L56 es la línea de conflicto citada para señalarlo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el sistema y el tópico tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no se puede confirmar la relación entre los nombres sin afirmar que la documentación no mencione el origen."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las fuentes disponibles y reporta tanto las denominaciones como el tópico común."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el nombre del tópico del nombre del sistema de colas y mantiene la incertidumbre."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Contrasta MegaQueue con Big-Queue/BigQ y cita ambas menciones: processes.md L56, L11 y swagger.yaml L238, L319-L320."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las citas, no resuelven el conflicto por invención y no exigen redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-contradiccion-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el método del proceso de purga en traffic-gate-api latest; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "La afirmación «DETELE no es un método HTTP válido» no queda establecida por los documentos entregados; processes.md L93 solo muestra esa cadena y no documenta su validez."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone que no puede confirmar el método de borrado a partir de la documentación y evita dar DELETE como confirmado."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "processes.md L93 respalda que el texto documenta «DETELE», pero no respalda que ese método sea inválido."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el método escrito y el llamado de agregado llevan citas en processes.md L93 y L82."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la documentación no permite asegurar el método correcto; no afirma que el borrado no se soporte."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la mención disponible en processes.md L93 y limita la conclusión a la incertidumbre documental."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el llamado de agregado POST /v1/whitelist de processes.md L82 con el de borrado."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay dos fuentes documentales enfrentadas sobre el método; processes.md L93 contiene una sola grafía para el borrado."
+       },
+       "answer_checks_validos": {
+        "resultado": "no_cumple",
+        "justificacion": "El check que exige afirmar que DETELE no es un método HTTP válido no es verificable con los documentos entregados; processes.md L93 solo registra la grafía."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta califica «DETELE» como método HTTP inválido sin respaldo documental; el texto entregado solo muestra esa grafía en processes.md L93."
+     },
+     {
+      "case_id": "test-contradiccion-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y específica sobre el query param scope de POST /whitelist en traffic-gate-api latest; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El enum muestra pci-global en swagger.yaml L204-L213, mientras que la descripción y la guía usan pci_global en swagger.yaml L202, processes.md L7 y arch.md L26."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos formas documentadas y no elige una como valor confirmado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las dos grafías; swagger.yaml L213 se cita para mostrar el conflicto, permitido en esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el parámetro y las grafías incluyen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no se puede confirmar qué forma acepta el endpoint y no niega que ninguna de ellas se use."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la especificación y la guía para delimitar la discrepancia."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene diferenciadas las formas con guion y con guion bajo."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita el enum y fuentes con la forma alternativa: swagger.yaml L204-L213 y L202, processes.md L7 y arch.md L26."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la discrepancia documentada y no exigen una redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que combina los módulos principales con el diagrama general de traffic-gate-api latest; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las descripciones de Job, Blacklist y Whitelist coinciden con arch.md L5-L11; la respuesta distingue el diagrama de secuencia de procesos del diagrama general."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada sobre módulos y explica que no puede describir el contenido del diagrama general."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las descripciones de módulos y los participantes del diagrama de secuencia: arch.md L5-L11 y processes.md L32-L36."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas de la respuesta están citadas; arch.md L31 muestra la referencia al diagrama general y processes.md L32-L36 los participantes del diagrama de secuencia."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El contenido del diagrama general no está disponible en el material textual entregado; arch.md L31 solo contiene el enlace a la imagen, mientras que processes.md L32-L36 describe otro diagrama."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte sobre los módulos, que está documentada en arch.md L5-L11."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que los participantes citados pertenecen al diagrama de secuencia de un proceso y no los atribuye a la arquitectura general."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre fuentes; la limitación es la falta del contenido del diagrama general."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los módulos documentados y la limitación del diagrama, sin exigir una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el esquema de WHITELIST, su relación con IP y los índices o unicidad de address; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las columnas y la FK se ajustan a database.md L34-L41 y L36; la relación IP-WHITELIST figura en L73. La documentación no declara índices o unicidad para address, que aparece como varchar en L51-L53."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las columnas, explica la relación mediante fk_ip y contesta que índices o unicidad no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "database.md L34-L41 y L36, L73 respaldan columnas y relación; L51-L53 respalda que address es varchar, pero no basta por sí solo para sostener la afirmación de que en todo el diagrama las únicas marcas son PK y FK."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "La afirmación sobre las únicas marcas de clave en todo el diagrama y la ausencia de índices se apoya solo con database.md L51-L53, que muestra únicamente la declaración de IP.address."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Dice que índices o unicidad no están documentados, sin afirmar que no existan; address aparece en database.md L51-L53."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las columnas y la relación usando database.md L34-L41 y L71-L73."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente con las columnas de WHITELIST, la FK fk_ip y la relación descrita en el diagrama."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental sobre estos datos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en el esquema de database.md L34-L41 y L51-L73 y no requieren una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La conclusión sobre índices y unicidad es prudente, pero la cita database.md L51-L53 no respalda por sí sola la afirmación sobre todas las marcas del diagrama."
+     },
+     {
+      "case_id": "test-falta_software-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no identifica software ni versión, de acuerdo con la situación y la ausencia de argumentos de llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no da información técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide únicamente el dato necesario que falta: el software."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni se proporciona una respuesta técnica."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se llamó a la herramienta ni se hizo una afirmación sobre documentación faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el software faltante, sin abstenerse de una respuesta que aún no puede atribuirse a un producto."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La aclaración es coherente con la falta de software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la aclaración requerida y son verificables con la pregunta y la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_documentos-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que especifica traffic-gate-api 3.1.0, igual que los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El estado de herramienta es not_found y la respuesta no atribuye a 3.1.0 datos de otra versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder la parte técnica por falta de documentación para el filtro solicitado."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni la respuesta incluye citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas documentales que requieran cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Explica la limitación de documentación para 3.1.0 tras not_found y no afirma que el endpoint o sus campos no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención está justificada por el resultado not_found; no usa datos de otra versión para contestar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla la versión solicitada con la documentación latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con el estado not_found y con la respuesta, y no requieren una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_documentos-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que especifica traffic-gate-api 3.1.0 y coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El estado de herramienta es not_found y la respuesta no presenta como datos de 3.1.0 hechos de otra versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede responder el código de éxito ni la marca de base de datos para esa versión."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni se incluyen citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas respaldadas por documentos que requieran cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Comunica la limitación tras not_found y no afirma que el PUT o la marca no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención está justificada por la falta de documentación para la versión solicitada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a 3.1.0 y no importa datos de latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no hay conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con el estado not_found y con la respuesta; no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

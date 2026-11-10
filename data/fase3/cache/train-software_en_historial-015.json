@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-015",
+ "llamadas": [
+  {
+   "clave": "1963af1288b2cf857612daf78146d23ba7cd24c111f2d8fb3ef443fa6b684fbe",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy usando la documentación de demand-forecast-docs en su versión latest. Estoy montando un notebook para lanzar el pipeline de forecasting de marketplace en local y probar distintas configuraciones.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas configurar o qué parte del pipeline quieres ejecutar y lo reviso en la documentación.",
+    "pregunta": "Cuando ejecuto el forecasting desde el notebook, ¿qué valores puedo pasarle al parámetro method en el contexto y qué hace cada uno? ¿Y para qué se usan fh y processing_date?",
+    "respuesta": "Los parámetros se pasan en el `Context` junto con `site_id` y `target`. `fh` es el horizonte de forecast y se usa tanto en el preprocesamiento como en el forecasting. `processing_date` se usa en el preprocesamiento. `method` se usa en el forecasting y admite tres valores: \"td_fcst\" para la reconciliación Forecast Proportions, \"bu\" para Bottom Up y \"td_share\" para un Topdown ingenuo [demand-forecast-docs/latest/guide/overview.md:L883-L883].\n\nPara lanzar el forecasting se combinan los pasos de ingesta con `PreprocessExogenous` y `PreprocessTarget`, que preparan los datos, y con el pipeline de forecasting `ProphetVerticalIniciativaPipeline` [demand-forecast-docs/latest/guide/overview.md:L881-L881]. En el ejemplo de la documentación se suman `IngestMarketplaceData`, `HolidaysDatasetPipe`, `PreprocessExogenous`, `PreprocessTarget` y `ProphetVerticalIniciativaPipeline`, y se ejecutan con `pipe.run()` dentro de un `Context` con `site_id`, `target`, `processing_date`, `fh` y `method`. Después las predicciones se cargan con `pipe.catalog.load(\"preds\")` [demand-forecast-docs/latest/guide/overview.md:L885-L913].",
+    "answer_checks": [
+     "Llama a la herramienta con demand-forecast-docs y la versión latest del historial, sin volver a preguntar por el software ni la versión.",
+     "Indica que method admite \"td_fcst\" (Forecast Proportions), \"bu\" (Bottom Up) y \"td_share\" (Topdown ingenuo).",
+     "Explica que fh es el horizonte de forecast y se usa en el preprocesamiento y en el forecasting, y que processing_date se usa en el preprocesamiento.",
+     "Cita las líneas de overview.md que describen estos parámetros (en torno a L883) o el ejemplo con Context.",
+     "No inventa otros valores de method ni comportamientos que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/9445b3c0269b68e72dee11d3",
+ "llamadas": [
+  {
+   "clave": "9445b3c0269b68e72dee11d3a63c5eb0b5922bacb744fcf121902316f84cf26b",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-sin_evidencia-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés pide el contenido del diagrama de arquitectura, coherente con la llamada para traffic-gate-api latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación muestra los tres módulos en arch.md:L5-L11 y un diagrama de secuencia distinto para el flujo de encolamiento en processes.md:L29-L51; la respuesta no los confunde con el diagrama general."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede determinar los componentes ni sus conexiones a partir de los documentos y distingue información relacionada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas arch.md:L5-L11 y processes.md:L29-L51 respaldan los módulos y el diagrama de secuencia descritos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre los módulos y el flujo de encolamiento llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "arch.md:L29-L31 solo anuncia una imagen y no describe su contenido; la respuesta limita su afirmación a lo que describen los documentos, sin negar que el diagrama exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aunque no inventa el contenido faltante, aporta los módulos y el diagrama de secuencia documentados en arch.md:L5-L11 y processes.md:L29-L51."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Diferencia claramente el diagrama general del diagrama de secuencia del proceso de encolamiento, citado en processes.md:L29-L51."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables contra arch.md:L5-L11 y processes.md:L29-L51 y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés consulta cómo obtener una API key y su vigencia para traffic-gate-api latest, acorde con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La especificación documenta ApiKeyAuth en swagger.yaml:L21-L22 y el encabezado X-Tiger-Token en L308-L311; la respuesta no inventa procedimiento ni expiración."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan la obtención ni la vigencia y añade la información disponible sobre el encabezado de autenticación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas swagger.yaml:L21-L22 y L308-L311 respaldan la autenticación y el encabezado mencionados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La información técnica positiva va citada; las afirmaciones de ausencia se refieren a la revisión de los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que no exista forma de obtener la key ni que nunca expire; solo señala que esos datos no están explicados en los documentos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre ApiKeyAuth y X-Tiger-Token en swagger.yaml:L21-L22 y L308-L311."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue lo documentado sobre el encabezado de los datos de obtención y expiración que faltan."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la información de swagger.yaml:L21-L22 y L308-L311 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés no especifica versión y corresponde a una llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "swagger.yaml:L291-L304 documenta GET /ping, respuesta 200 con descripción pong y un string JSON de ejemplo pong."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde el endpoint, método, respuesta y ausencia de cuerpo o parámetros documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas swagger.yaml:L291-L304 y L19-L20 respaldan el endpoint y su propósito."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye los datos a latest y limita la incertidumbre sobre otras versiones; no convierte la falta de documentación en una negación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los detalles disponibles del endpoint en swagger.yaml:L291-L304."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene coherencia entre método, endpoint y respuesta documentados en swagger.yaml:L291-L304."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en swagger.yaml:L19-L20 y L291-L304 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español consulta monitores y dashboards sin fijar versión, coherente con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "README.md:L63-L64 enumera el dashboard Traffic Gate General y el monitor Traffic Gate errors in 5 minutes con sus enlaces."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambos recursos y señala qué detalles de configuración no especifica la documentación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "README.md:L61-L64 respalda la existencia y los nombres de los dos recursos citados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada recurso y sus datos verificables están citados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta dice que no se documentan métricas, umbrales ni canales, sin afirmar que no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta ambos enlaces disponibles en README.md:L63-L64."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el dashboard del monitor y atribuye los datos a latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en README.md:L61-L64 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés consulta autenticación y cuerpo de error para traffic-gate-api sin fijar versión, por lo que version=null es coherente."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "swagger.yaml:L21-L22 y L308-L311 documenta ApiKeyAuth con X-Tiger-Token; L57-L68 referencia ErrorResponse para 400/500 y L388-L393 define un objeto con el campo string error."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el mecanismo de autenticación y la estructura documentada del cuerpo de error."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el esquema de autenticación, las respuestas 400/500 referenciadas y la estructura de ErrorResponse."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre autenticación y errores llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No presenta bad_input como único valor posible ni inventa otros mecanismos o códigos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la información de autenticación y el esquema ErrorResponse disponible en swagger.yaml:L21-L22, L308-L311 y L388-L393."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta diferencia el ejemplo bad_input de la estructura general del campo error."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a swagger.yaml:L21-L22, L57-L68, L308-L311 y L388-L393, sin imponer una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español pide un resumen del propósito y el repositorio, sin indicar versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "coverpage.md:L5-L11 identifica el servicio, describe la API y enlaza el repositorio de GitHub."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica para qué sirve el servicio y proporciona el enlace al repositorio."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas coverpage.md:L5-L7, L9 y L11 respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica o enlace está citado."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye propiedades adicionales ni afirma que la versión latest sea la única existente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambas partes con la información de coverpage.md:L5-L11."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El propósito y el enlace al repositorio son compatibles con coverpage.md:L5-L11."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en coverpage.md:L5-L11 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español pide los módulos y sus funciones, sin mencionar una versión; corresponde a version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "arch.md:L5-L11 describe los tres módulos, sus responsabilidades y su organización como paquetes de Go."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera Job, Blacklist y Whitelist y explica la función de cada uno."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada descripción está respaldada por arch.md:L5, L7, L9 o L11, según corresponda."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a lo que describe la documentación y no presenta como exhaustiva la información sobre otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la descripción de módulos disponible en arch.md:L5-L11."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las responsabilidades atribuidas a cada módulo coinciden con arch.md:L7-L11."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en arch.md:L5-L11 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español consulta número, frecuencia y forma de llamada de los jobs sin fijar versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "arch.md:L16 y L20-L27 respalda POST, ausencia de body, query params, los ocho jobs y sus frecuencias."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde cuántos jobs hay, cada cuánto corren, qué endpoints llaman y cómo pasan parámetros."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas arch.md:L16, L20-L24, L26 y L27 respaldan las afirmaciones correspondientes."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no afirma diferencias entre versiones ni añade datos que falten."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa toda la información pertinente sobre ejecución y configuración en arch.md:L16-L27."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los cuatro jobs de whitelist, que corren cada minuto, de los cuatro de purga, que corren cada hora."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a arch.md:L16-L27 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español consulta los datos de Execution y el registro del job de purga sin fijar versión; corresponde a version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "database.md:L5 describe nombre, fecha y estado, y aclara que solo se guardan ejecuciones de /whitelist, no de /whitelist/purge; L20-L25 muestra los campos del diagrama."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica qué información registra la tabla y responde que las ejecuciones de purga no se guardan."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "database.md:L5 y L20-L25 respaldan lo afirmado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre campos y ejecuciones de purga están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación de que no se guardan ejecuciones de purga está expresamente documentada en database.md:L5."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambas partes usando database.md:L5 y L20-L25."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción textual y los campos del diagrama son compatibles; no se atribuye al diagrama información distinta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en database.md:L5 y L20-L25 y no requieren una formulación determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español pide el orden de análisis de una IP sin datos y qué se guarda al terminar, acorde con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "processes.md:L58-L78 describe el análisis, las consultas en el orden dado y el almacenamiento del contexto con estado en ejecución."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone el orden de los pasos y qué se guarda, incluida la detección de duplicados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas processes.md:L58, L60, L64-L76 y L78 respaldan los pasos y el almacenamiento."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada paso y afirmación técnica sobre el registro de datos lleva cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita al flujo documentado en processes.md:L58-L78 y no afirma que existan otros pasos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la secuencia completa descrita en processes.md:L60-L78."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El orden y las condiciones para usuarios aplicativos y nominales coinciden con processes.md:L64-L76."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en processes.md:L60-L78 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

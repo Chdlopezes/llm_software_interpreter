@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-009",
+ "llamadas": [
+  {
+   "clave": "0be4ea8f0fd8c253c93d363a960df742cb37fae035fcd7d1b7f5cb1d8e83020c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper, ¿cómo saco la lista de productos de una categoría concreta? Necesito saber qué parámetro hay que pasar y qué devuelve si va bien o si falla.",
+    "respuesta": "La documentación encontrada es solo de la versión 1.1.6, así que no puedo comparar con otras versiones.\n\nEn la 1.1.6 se hace con `GET /api/v1/fresh-products/list-category{category}` [zenith-keeper/1.1.6/specs/swagger.yaml:L71-L72]. Su resumen es «Get products list sorted by category» y su operationId es `productListForCategory` [zenith-keeper/1.1.6/specs/swagger.yaml:L75-L76].\n\n**Parámetro:** `category`. Va en la ruta, es obligatorio y es de tipo string [zenith-keeper/1.1.6/specs/swagger.yaml:L77-L82].\n\n**Si va bien:** devuelve `200` (OK) con un array de `ProductDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L84-L91]. Cada `ProductDTO` trae `name` (string) y `price` (object con formato Double) [zenith-keeper/1.1.6/specs/swagger.yaml:L416-L423].\n\n**Si falla:** devuelve `404` con la descripción «List Not found» y un cuerpo de tipo object [zenith-keeper/1.1.6/specs/swagger.yaml:L92-L97]. El diagrama de secuencia de este endpoint muestra dos casos que dan 404: `ProductTypeNotFoundException` y `ProductListEmptyException` [zenith-keeper/1.1.6/guide/use-cases.md:L114-L119].",
+    "answer_checks": [
+     "Indica el endpoint GET /api/v1/fresh-products/list-category{category} y lo cita en el swagger de la 1.1.6.",
+     "Señala que `category` es un parámetro de ruta obligatorio de tipo string.",
+     "Indica que la respuesta 200 es un array de ProductDTO y que el error es un 404 «List Not found».",
+     "Atribuye la información a la versión 1.1.6 sin pedir la versión al usuario y sin afirmar que no existe en otras versiones.",
+     "No inventa parámetros adicionales (paginación, filtros, autenticación) ni otros códigos de respuesta que no aparecen en la documentación."
+    ]
+   }
+  }
+ ]
+}

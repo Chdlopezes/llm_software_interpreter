@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-011",
+ "llamadas": [
+  {
+   "clave": "a20544f55e9179f44581478052af65a2fb55e75ba12eb8572ecab3e9b6612bc8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In traffic-gate-api latest, how do I call the purge endpoint? What parameter does it take, and what responses should my job handle?",
+    "respuesta": "The purge endpoint is `POST /whitelist/purge`, under the `job` tag [traffic-gate-api/latest/specs/swagger.yaml:L258-L261]. It updates the metadata of the IP addresses that are currently whitelisted and decides which ones to remove and which ones to keep [traffic-gate-api/latest/specs/swagger.yaml:L262-L264].\n\nIt takes one query parameter, `scope`. It's a string, and the spec lists `api`, `front` and `pci` among its enum values [traffic-gate-api/latest/specs/swagger.yaml:L265-L273]. The parameter is described as \"The scope to check\" [traffic-gate-api/latest/specs/swagger.yaml:L275].\n\nYour job should handle three responses:\n- `200`: successful operation, with no response body defined [traffic-gate-api/latest/specs/swagger.yaml:L276-L278].\n- `400`: bad request, returns an `ErrorResponse` JSON [traffic-gate-api/latest/specs/swagger.yaml:L279-L284].\n- `500`: internal server error, also returns an `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L285-L290].\n\nThe `ErrorResponse` schema has a single string field, `error` [traffic-gate-api/latest/specs/swagger.yaml:L388-L392].",
+    "answer_checks": [
+     "Calls obtener_documentacion with software traffic-gate-api and version latest.",
+     "States that the endpoint is POST /whitelist/purge and that it takes a `scope` query parameter of type string.",
+     "Lists the 200, 400 and 500 responses and says that 400 and 500 return an ErrorResponse.",
+     "Cites the /whitelist/purge section of traffic-gate-api/latest/specs/swagger.yaml.",
+     "Doesn't invent a request body, extra parameters or other response codes for this endpoint."
+    ]
+   }
+  }
+ ]
+}

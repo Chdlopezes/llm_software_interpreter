@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-012",
+ "llamadas": [
+  {
+   "clave": "7ede82eb72cf677914cb7bc886f27493e83c1cedf7cb7807be9ba4f2ba0e1170",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi, I'm getting onboarded to vendor-stockkeeper-api latest. I'll be on the team that maintains it, and I'm trying to get the big picture before I start digging into the code.",
+    "historial_asistente": "Sounds good. Ask me whatever you want to know about it and I'll look it up in the documentation.",
+    "pregunta": "What is this service actually responsible for? And I keep hearing there are two different ways it does restocking. What's the difference between them?",
+    "respuesta": "Stockkeeper-api updates the stock of items from the Standard area that are offered on TechZone. It has two main endpoints for restocking:\n\n- One handles 3PL stock movements, which involve smaller quantities.\n- The other handles inbound movements, which can involve larger quantities to update.\n\n[vendor-stockkeeper-api/latest/guide/introduction.md:L5-L5]",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version latest taken from the earlier message, without asking the user for the software or version again.",
+     "Says the service updates the stock of Standard-area items offered on TechZone.",
+     "Describes the two main restocking endpoints: one for 3PL stock movements with smaller quantities and one for inbound movements that can contain larger quantities.",
+     "Cites the introduction document (vendor-stockkeeper-api/latest/guide/introduction.md, line 5).",
+     "Does not make up any details about the two restocking paths that the cited text doesn't support."
+    ]
+   }
+  }
+ ]
+}

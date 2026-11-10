@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-en_que_version-007",
+ "llamadas": [
+  {
+   "clave": "05f2ae51ec2657bd95e0f8cc2a054b175940c3217971cd8923586724f85c7c02",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de catalog-portfolio-api aparece documentado el header X-RateLimit-Reset en la referencia de endpoints de brands?",
+    "respuesta": "El header `X-RateLimit-Reset` está documentado en las dos versiones que devolvió la consulta, 0.0.1-test-bench-v2a y latest, y en las dos dice lo mismo.\n\n- **0.0.1-test-bench-v2a:** la sección Rate Limiting de brands.md fija un límite de 1000 peticiones por minuto. Lista tres headers: `X-RateLimit-Limit` (máximo de peticiones por ventana), `X-RateLimit-Remaining` (peticiones restantes en la ventana actual) y `X-RateLimit-Reset` (momento en que se reinicia la ventana) [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L327-L333].\n- **latest:** la sección es idéntica, con el mismo límite y los mismos tres headers, incluido `X-RateLimit-Reset` [catalog-portfolio-api/latest/guide/api-reference/brands.md:L327-L333].\n\nLa documentación no indica el formato del valor de `X-RateLimit-Reset`.",
+    "answer_checks": [
+     "Identifica que X-RateLimit-Reset está documentado tanto en 0.0.1-test-bench-v2a como en latest, sin cambios entre ambas.",
+     "Cita el brands.md de cada versión (sección Rate Limiting, en torno a las líneas 327-333).",
+     "Indica que X-RateLimit-Reset corresponde al momento de reinicio de la ventana, sin inventar su formato ni su unidad.",
+     "No afirma que no exista en otras versiones ni que estas sean todas las versiones del software.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "task_id": "train-sin_evidencia-010",
+ "llamadas": [
+  {
+   "clave": "1fab2ec1945d39f39c5da7a2d547bdfdef36d46c0b2e05d92f979c9f35533b44",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api latest, antes de mandar un inbound en el flujo de Restock, ¿cuál es la lista completa de tags que marcan un ítem como ítem de prueba?",
+    "respuesta": "La documentación de latest no trae la lista completa de tags que identifican un ítem de prueba, así que no puedo dártela. Lo que sí explica es el procedimiento. Antes de enviar un inbound hay que obtenerlo e ir a la conciliación del inbound para comprobar si los ítems tienen los tags que los marcan como ítems de prueba [vendor-stockkeeper-api/latest/guide/important.md:L37-L37]. Para saber si son ítems de prueba, se consulta la API de ítems y se revisan sus tags [vendor-stockkeeper-api/latest/guide/important.md:L128-L128]. Ningún documento de esa versión enumera qué valores de tag cuentan como ítem de prueba.",
+    "answer_checks": [
+     "Indica que la documentación entregada no incluye la lista completa de tags que identifican un ítem de prueba.",
+     "Explica, con cita, que se revisan los tags del ítem consultando la API de ítems o la conciliación del inbound.",
+     "No inventa una lista de tags ni presenta los tags de la respuesta de ejemplo como la lista oficial.",
+     "No afirma que no existan otros tags de prueba ni que la funcionalidad no esté soportada."
+    ]
+   }
+  }
+ ]
+}

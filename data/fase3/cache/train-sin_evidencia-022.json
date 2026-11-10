@@ -1,0 +1,25 @@
+{
+ "task_id": "train-sin_evidencia-022",
+ "llamadas": [
+  {
+   "clave": "13dcdc0faf5e6bde24256dcb7928ecd80916248949235c2d9b13dacc28a6d41d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway latest, si mando un POST /payment_promise con un body inválido, ¿qué código HTTP me devuelve y cómo es el JSON del error?",
+    "respuesta": "La documentación de latest no responde a eso. Solo dice que POST /payment_promise valida los datos antes de crear la promesa [payment-promise-gateway/latest/guide/README.md:L289-L289]. Sobre los errores, se limita a una descripción general: menciona códigos de estado HTTP, mensajes de error detallados y un formato de error consistente, pero no da ningún código ni ninguna estructura concreta [payment-promise-gateway/latest/guide/README.md:L532-L536]. La documentación detallada de la API está en specs-hub [payment-promise-gateway/latest/guide/README.md:L114-L114], que no forma parte de los documentos que tengo. Por eso no puedo decirte qué código HTTP devuelve un body inválido ni qué forma tiene el JSON de error.",
+    "answer_checks": [
+     "Indica que la documentación entregada no especifica el código HTTP ni el formato del error para un body inválido en POST /payment_promise.",
+     "No inventa códigos de estado (como 400 o 422) ni campos del JSON de error.",
+     "Menciona, con cita, que la documentación detallada de la API está en specs-hub, que no está incluida.",
+     "No afirma que el endpoint no devuelva errores ni que no valide el body."
+    ]
+   }
+  }
+ ]
+}

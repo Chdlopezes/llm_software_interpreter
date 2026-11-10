@@ -1,0 +1,47 @@
+{
+ "task_id": "test-software_en_historial-011",
+ "llamadas": [
+  {
+   "clave": "fd194583dd2fb25615609308441462c77ef6d9589bd784717f490ff200e788b0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi! I'm building an internal dashboard on top of traffic-gate-api latest that shows how often specific IP addresses get hit by ratelimit blocks.",
+    "historial_asistente": "Sounds good. What do you need to know to get the dashboard working?",
+    "pregunta": "For the endpoint that counts blocks on a single IP, what happens if I don't send a time range? And what does a successful response look like? I'd also like to know which errors I should handle.",
+    "respuesta": "That endpoint is POST /v1/get-blocks-by-ip. It counts how many blocks have been recorded for one IP address within a time range. If you don't send a time range, it defaults to the past week. Internally, it counts the IP's records in the blacklist table [traffic-gate-api/latest/specs/swagger.yaml:L24-L29].\n\nThe request body is required. It's a JSON object with three string fields: `ip`, `begin_time` and `end_time` [traffic-gate-api/latest/specs/swagger.yaml:L31-L47].\n\nA successful call returns status 200 with a JSON array of `Block` objects [traffic-gate-api/latest/specs/swagger.yaml:L48-L56]. Each `Block` has these fields: `ip`, `cloud`, `reverse_dns`, `creation_date`, `deletion_date` (all strings) and `whitelisted` (boolean) [traffic-gate-api/latest/specs/swagger.yaml:L370-L387].\n\nThere are two error responses to handle: 400 (Bad request) and 500 (Internal server error). Both return an `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L57-L68], which is an object with a single string field, `error` [traffic-gate-api/latest/specs/swagger.yaml:L388-L393].",
+    "answer_checks": [
+     "Calls the tool with traffic-gate-api and version latest from the history, without asking for the software or version again.",
+     "States that POST /v1/get-blocks-by-ip defaults to one week back when no time range is given, and cites the swagger description.",
+     "Indicates that a 200 response returns an array of Block objects and mentions request fields such as ip, begin_time and end_time.",
+     "Mentions the 400 and 500 error responses using the ErrorResponse schema.",
+     "Does not invent behavior that isn't documented (e.g., date format validation rules, pagination or rate limits)."
+    ]
+   }
+  },
+  {
+   "clave": "da71996c77b6d5af20fb8405fe0ab1d70caae2f78b7c80f9c23e1a9e28925976",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi! I'm building an internal dashboard on top of traffic-gate-api latest that shows how often specific IP addresses get hit by ratelimit blocks.",
+    "historial_asistente": "Sounds good. What do you need to know to get the dashboard working?",
+    "pregunta": "I'm wiring up the call that counts blocks for a single IP within a time window. What goes in the request body, and is the body mandatory? Also, which status codes do I need to handle, and what comes back in each case?",
+    "respuesta": "That's POST /v1/get-blocks-by-ip, which returns the number of blocks recorded for one IP address within a time range [traffic-gate-api/latest/specs/swagger.yaml:L24-L29].\n\nThe request body is required. It's a JSON object with three string properties: `ip` (the IP address to analyze), `begin_time` and `end_time` [traffic-gate-api/latest/specs/swagger.yaml:L31-L47]. If you leave out the time range, the service looks back one week by default [traffic-gate-api/latest/specs/swagger.yaml:L29].\n\nThe spec defines three responses:\n- 200 (Successful operation): a JSON array of `Block` objects [traffic-gate-api/latest/specs/swagger.yaml:L48-L56].\n- 400 (Bad request): an `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L57-L62].\n- 500 (Internal server error): also an `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L63-L68].\n\n`ErrorResponse` is an object with a single string field, `error` [traffic-gate-api/latest/specs/swagger.yaml:L388-L393].",
+    "answer_checks": [
+     "Calls the tool with traffic-gate-api and version latest from the history, without asking for the software or version again.",
+     "Identifies POST /v1/get-blocks-by-ip and states that the request body is required, with the fields ip, begin_time and end_time.",
+     "Lists the 200, 400 and 500 responses, saying 200 returns an array of Block objects and 400/500 return ErrorResponse.",
+     "Cites the swagger.yaml lines covering the requestBody and responses of /v1/get-blocks-by-ip.",
+     "Does not invent undocumented details such as date-format validation rules, pagination or other status codes."
+    ]
+   }
+  }
+ ]
+}

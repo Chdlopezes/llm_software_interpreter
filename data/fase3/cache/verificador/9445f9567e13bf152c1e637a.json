@@ -1,0 +1,391 @@
+{
+ "task_id": "verificador/9445f9567e13bf152c1e637a",
+ "llamadas": [
+  {
+   "clave": "9445f9567e13bf152c1e637a9b920507b965224acb9a286661ebf980be6e26db",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-software_en_historial-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y el historial fija software y versión; pregunta por la responsabilidad y las vías de restock documentadas en la situación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La aplicación actualiza el stock de ítems del área Standard ofrecidos en TechZone y distingue movimientos 3PL e inbound por cantidades; introduction.md L4-L5."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto de qué se encarga la aplicación como en qué se diferencian las dos vías de restock; introduction.md L4-L5."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a introduction.md L5-L5 respalda las afirmaciones y usa una línea citable del documento entregado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están cubiertas por la cita a introduction.md L5-L5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No queda información relevante sin documentar para lo preguntado; introduction.md L4-L5."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible y responde ambas partes; introduction.md L4-L5."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones; las afirmaciones se refieren a la versión indicada y coinciden con introduction.md L4-L5."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la llamada del historial y los hechos respaldados por introduction.md L4-L5; no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y corresponde al software y versión del historial; solicita el nombre y los datos de conexión de stage y la comparación con prod."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Stage es inventstg y prod inventprd; ambos muestran host proxysql.master.techzoneseginf.com y puerto 6612. Los valores de usuario y contraseña aparecen como marcadores; database.md L10-L15 y L18-L23."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los datos de conexión de stage, los de prod y aclara el carácter de marcador de las credenciales mostradas; database.md L10-L15 y L18-L23."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas señalan las líneas de stage y prod que respaldan los nombres, host, puerto y marcadores; database.md L10-L15 y L18-L23."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica tiene cita a las líneas pertinentes de database.md L10-L15 y L18-L21."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara ausencias indebidas; la documentación muestra literalmente marcadores de usuario y contraseña en database.md L14-L15."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para contestar la conexión y la comparación; database.md L10-L15 y L18-L23."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los datos de ambos entornos se presentan de forma compatible con las líneas citadas de database.md L10-L15 y L18-L23."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la llamada del historial y a los datos de database.md L10-L15 y L18-L23, sin imponer una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y corresponde al software y versión identificados en el historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de la aplicación y la diferencia entre movimientos 3PL e inbound coinciden con introduction.md L4-L5."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la función del servicio y las dos clases de movimientos de restock; introduction.md L4-L5."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a introduction.md L5-L5 respalda las afirmaciones y no usa líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están cubiertas por la cita a introduction.md L5-L5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La evidencia entregada permite responder lo preguntado; introduction.md L4-L5."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la evidencia disponible, sin abstenerse; introduction.md L4-L5."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni contiene contradicciones; las afirmaciones coinciden con introduction.md L4-L5."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los hechos de introduction.md L4-L5 y la versión indicada en el historial."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y la versión latest aparece en el historial; solicita stage y su comparación con prod."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Stage figura como inventstg y prod como inventprd, con el mismo host y puerto 6612; database.md L10-L15 y L18-L23."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da los datos solicitados de stage y prod, y aclara que los valores de usuario y contraseña son marcadores; database.md L10-L15 y L18-L23."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a database.md L10-L15 y L18-L21 respaldan los nombres de base, host y puerto; L14-L15 respalda los marcadores."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en database.md L10-L15 y L18-L21."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No convierte la ausencia de credenciales reales en una afirmación de inexistencia; la documentación presenta your_user y your_password como valores mostrados en L14-L15."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para responder la comparación de entornos; database.md L10-L15 y L18-L23."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay datos contradictorios: las líneas de stage y prod muestran el mismo host y puerto y distintos nombres de base; database.md L10-L13 y L18-L21."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los datos expuestos en database.md L10-L15 y L18-L23 y no exigen una redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y corresponde al software y versión del historial; pregunta por un procedimiento de verificación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos descritos coinciden con el procedimiento de important.md L24-L26."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Incluye la revisión del inbound de Restock, la comprobación del Operation Id de Feed y la validación final de ambos flujos; important.md L24-L26."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a important.md L24-L26 respaldan cada paso y evitan las líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada paso técnico tiene una cita a important.md L24-L26."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación cubre los pasos solicitados; important.md L22-L26."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con el procedimiento disponible sin abstenerse; important.md L24-L26."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos están presentados en el mismo orden y con el mismo alcance que important.md L24-L26."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en important.md L22-L27 y no requieren una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y está en inglés, como corresponde al idioma del caso; el historial identifica vendor-stockkeeper-api latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta refleja correctamente la responsabilidad del servicio y la diferencia entre los movimientos 3PL e inbound; introduction.md L4-L5."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde qué hace el servicio y explica las dos vías de restock y sus cantidades relativas; introduction.md L4-L5."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a introduction.md L5-L5 respalda las afirmaciones y corresponde al documento entregado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están cubiertas por la cita a introduction.md L5-L5."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La evidencia basta para responder lo preguntado; introduction.md L4-L5."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible y responde ambas partes; introduction.md L4-L5."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones; las afirmaciones coinciden con introduction.md L4-L5."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en introduction.md L4-L5 y no imponen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-029",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y corresponde al software y versión del historial; pide identificar una alerta y su monitor."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La alerta y el monitor coinciden con la fila de alerts.md L12."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la alerta, describe cuándo ocurre y da el enlace del monitor; alerts.md L12."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a alerts.md L12 respalda el nombre, la descripción y el enlace."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen cita a alerts.md L12."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La fila documenta los datos solicitados; alerts.md L12."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de la tabla y contesta ambas partes; alerts.md L12."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción y el monitor se refieren a la misma alerta de alerts.md L12."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en alerts.md L12 y no imponen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-034",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y corresponde al software y versión del historial; identifica la alerta por su descripción."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila identifica la alerta y el monitor, y describe que ocurre al fallar la venta sin stock en instalaciones 3PL; alerts.md L11."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el caso en que se dispara la alerta y proporciona el enlace de su monitor; alerts.md L11."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a alerts.md L11 respalda el nombre, la descripción y el monitor."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas en alerts.md L11."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La fila entregada contiene la información solicitada; alerts.md L11."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambas partes con la información disponible; alerts.md L11."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La alerta, el desencadenante y el enlace corresponden a la misma fila de alerts.md L11."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en alerts.md L11 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

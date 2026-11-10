@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_evidencia-003",
+ "llamadas": [
+  {
+   "clave": "bc0732baab41b6830f37f97c0b161d18e8c9772480c19a3e14999d89d17cac9c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api 0.2.2, ¿para qué sirve la tabla rule_row? ¿Qué información guarda?",
+    "respuesta": "La documentación de la versión 0.2.2 no explica qué información guarda la tabla rule_row ni para qué sirve. Lo único que trae es el listado de columnas. Por ejemplo, tiene una columna rule_id de tipo bigint que referencia a rule_header(id) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10]. Además tiene columnas JSON opcionales para sites, sellers, dominios, marcas, ítems y campos personalizados [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L11-L16]. Pero no hay ninguna descripción de su propósito, así que no puedo decirte qué representa cada fila sin inventármelo.",
+    "answer_checks": [
+     "Indica que la documentación de 0.2.2 no describe qué datos guarda la tabla rule_row ni para qué sirve.",
+     "No inventa un propósito ni una descripción funcional de la tabla rule_row.",
+     "Si menciona columnas relacionadas (por ejemplo rule_id que referencia rule_header(id)), las cita con líneas del documento rule_row.md.",
+     "No cita la línea 3 de rule_row.md como respaldo.",
+     "No afirma que la tabla no exista o no se use."
+    ]
+   }
+  }
+ ]
+}

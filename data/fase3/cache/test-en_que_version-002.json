@@ -1,0 +1,26 @@
+{
+ "task_id": "test-en_que_version-002",
+ "llamadas": [
+  {
+   "clave": "e60e2b90da1ae8af4c8e40dc8def29a25ff8f918f323028e562221185fba7afc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de 2p-revenue-optimizer-api viene explicado cómo se decide qué archivo de propiedades se carga a partir del SCOPE y cuál gana si una propiedad está repetida?",
+    "respuesta": "Lo documentan las dos versiones que devolvió la consulta, 0.2.2 y latest. La sección Usage de su README.md es idéntica en ambas.\n\n- **Cómo se elige el archivo:** se usa el sufijo del SCOPE, que se toma a partir del último '-' del nombre del scope [2p-revenue-optimizer-api/0.2.2/guide/README.md:L12-L12] [2p-revenue-optimizer-api/latest/guide/README.md:L12-L12].\n- **Qué se carga:** `application.yml` se carga siempre y se complementa con `application-<SCOPE_SUFFIX>.yml` [2p-revenue-optimizer-api/0.2.2/guide/README.md:L16-L16] [2p-revenue-optimizer-api/latest/guide/README.md:L16-L16].\n- **Cuál gana si una propiedad está repetida:** si está en los dos archivos, tiene preferencia el valor de `application-<SCOPE_SUFFIX>.yml` [2p-revenue-optimizer-api/0.2.2/guide/README.md:L16-L16] [2p-revenue-optimizer-api/latest/guide/README.md:L16-L16].\n\nAmbas versiones ponen el mismo ejemplo: para el scope 'items-loader-test', el sufijo sería 'test' y se cargarían `application.yml` y `application-test.yml` [2p-revenue-optimizer-api/0.2.2/guide/README.md:L18-L18] [2p-revenue-optimizer-api/latest/guide/README.md:L18-L18].\n\nSi quieres ejecutar la aplicación desde el IDE, las dos versiones indican que hay que configurar la variable de entorno `SCOPE=local` en el lanzador [2p-revenue-optimizer-api/0.2.2/guide/README.md:L14-L14] [2p-revenue-optimizer-api/latest/guide/README.md:L14-L14].",
+    "answer_checks": [
+     "Identifica que tanto 0.2.2 como latest documentan cómo se elige el archivo de propiedades según el SCOPE, y que el contenido es el mismo en ambas.",
+     "Indica que el sufijo se toma a partir del último '-' del nombre del scope y que application.yml siempre se carga, complementado con application-<SCOPE_SUFFIX>.yml.",
+     "Indica que, ante una propiedad repetida, prevalece la de application-<SCOPE_SUFFIX>.yml.",
+     "Cita el README.md de ambas versiones (0.2.2 y latest) en las líneas de la sección Usage.",
+     "No afirma que sea la primera versión que lo documenta ni que no exista en otras versiones, y no pide la versión al usuario."
+    ]
+   }
+  }
+ ]
+}

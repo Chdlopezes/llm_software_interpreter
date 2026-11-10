@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-010",
+ "llamadas": [
+  {
+   "clave": "b7abeae79f8a96566643fe7019fa005669d9e4f4ae90714c4eee84f1227cf4af",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.1.6, para dar de alta un lote con POST /api/v1/fresh-products/inboundorder, ¿qué tengo que mandar en el cuerpo y qué me devuelve si sale bien?",
+    "respuesta": "En la versión 1.1.6, POST /api/v1/fresh-products/inboundorder sirve para insertar un lote en el almacén de fulfillment. Su operationId es addBachOfProductsToStock [zenith-keeper/1.1.6/specs/swagger.yaml:L13-L18].\n\nEl cuerpo es obligatorio. Va en application/json y sigue el esquema InsertBatchRequestDTO [zenith-keeper/1.1.6/specs/swagger.yaml:L19-L24]. Ese esquema contiene un único campo, inboundOrder, de tipo InboundOrderDTO [zenith-keeper/1.1.6/specs/swagger.yaml:L357-L361].\n\nSi todo va bien, responde 201 CREATED con un cuerpo application/json de tipo InsertBatchResponseDTO [zenith-keeper/1.1.6/specs/swagger.yaml:L25-L31]. Ese objeto trae batchStock, que es un array de BatchDTO [zenith-keeper/1.1.6/specs/swagger.yaml:L387-L393].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.1.6.",
+     "Indica que el cuerpo es obligatorio, va en application/json y usa el esquema InsertBatchRequestDTO.",
+     "Indica que la respuesta de éxito es 201 (CREATED) con un InsertBatchResponseDTO.",
+     "Cita las líneas de la operación POST /api/v1/fresh-products/inboundorder en zenith-keeper/1.1.6/specs/swagger.yaml.",
+     "No inventa otros códigos de respuesta para esta operación en el swagger ni campos que no aparezcan en los documentos."
+    ]
+   }
+  }
+ ]
+}

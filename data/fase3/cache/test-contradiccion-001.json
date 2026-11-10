@@ -1,0 +1,25 @@
+{
+ "task_id": "test-contradiccion-001",
+ "llamadas": [
+  {
+   "clave": "c29fb5859e342d37a986a3f83f2efc2f205f9316196b85fbc636a77eb146a6a9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy configurando el job de whitelist para PCI Global en traffic-gate-api latest. ¿Cuál es exactamente el valor del scope que tengo que usar para ese caso?",
+    "respuesta": "La documentación no es coherente en este punto. Hay tres formas distintas de escribir el nombre de ese scope:\n\n- La descripción de la tabla Rules dice que se consultan las reglas asociadas a un scope de entre «front, api, pci, global_pci» [traffic-gate-api/latest/guide/sections/database.md:L11-L11].\n- La guía de arquitectura habla de jobs para los scopes «front, api, pci y pci_global» [traffic-gate-api/latest/guide/sections/arch.md:L26-L26]. El proceso de encolamiento usa la misma forma [traffic-gate-api/latest/guide/sections/processes.md:L7-L7], y también la descripción del endpoint POST /whitelist en el swagger [traffic-gate-api/latest/specs/swagger.yaml:L202-L202].\n- En cambio, el enum de `scope` del esquema del mensaje de la cola (BQMessageContent) usa `pci-global`, con guion [traffic-gate-api/latest/specs/swagger.yaml:L338-L344]. Los criterios de whitelist del README también hablan del scope «pci-global» [traffic-gate-api/latest/guide/README.md:L52-L52].\n\nCon esta documentación no puedo confirmar cuál de los tres valores (`global_pci`, `pci_global` o `pci-global`) es el que acepta realmente el parámetro `scope`.",
+    "answer_checks": [
+     "Indica que la documentación es inconsistente sobre el nombre del scope de PCI Global.",
+     "Cita database.md, que usa 'global_pci', y al menos otra fuente con 'pci_global' o 'pci-global' (arch.md, processes.md, swagger.yaml o README.md).",
+     "No presenta ninguno de los valores (global_pci, pci_global, pci-global) como el correcto o el confirmado.",
+     "No inventa información externa (por ejemplo, cómo valida realmente el código el parámetro) para resolver el conflicto."
+    ]
+   }
+  }
+ ]
+}

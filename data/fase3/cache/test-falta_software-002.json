@@ -1,0 +1,25 @@
+{
+ "task_id": "test-falta_software-002",
+ "llamadas": [
+  {
+   "clave": "60e7c0d5f5ccaf197a617bcd0e763620a02db58e583edcdd8ffb30b7c8ac1e66",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy dando de alta un grupo de usuarios nuevo. ¿Qué formato tiene que tener el users.json que va dentro de la carpeta del grupo?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario a qué software se refiere.",
+     "No pregunta por la versión.",
+     "No describe el formato ni el contenido de users.json ni da ninguna otra respuesta técnica."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-003",
+ "llamadas": [
+  {
+   "clave": "2e78222bcbc57f225a0065527e032207ebbe92e70ad5902e9ca82681f05ce502",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In demand-forecast-docs latest, when do I pass the value for the `ENV` parameter of a workflow: when I run `rda workflow run`, or earlier, at `rda workflow prepare`?",
+    "respuesta": "The documentation contradicts itself on this point. The workflow lifecycle has two separate commands: `rda workflow prepare` turns the workflow definition into a plan, and `rda workflow run` executes that plan [demand-forecast-docs/latest/guide/overview.md:L196-L196]. The first sentence of the explanation says `ENV` is defined \"when we run the workflow\", but the very next sentence says a value has to be provided \"at preparation time\" [demand-forecast-docs/latest/guide/overview.md:L224-L224]. The example that follows passes it during preparation: `rda workflow prepare monitoring_workflow --version 0.0.1 --user-param ENV:DEV` [demand-forecast-docs/latest/guide/overview.md:L228-L228]. The page doesn't settle which one is right, and it never shows `rda workflow run` taking an `ENV` value. So this documentation doesn't let me confirm whether `ENV` goes in at prepare time, at run time, or at both.",
+    "answer_checks": [
+     "Cites line 224, where the text says ENV is defined when the workflow is run and also that the value is provided at preparation time.",
+     "Cites the example on line 228, where ENV:DEV is passed with `rda workflow prepare --user-param`.",
+     "Explains that the two statements conflict, because prepare (which creates the plan) and run (which executes it) are separate steps.",
+     "Does not state as a confirmed fact that ENV is supplied only at prepare time or only at run time.",
+     "Does not make up an `rda workflow run` option for passing ENV."
+    ]
+   }
+  }
+ ]
+}

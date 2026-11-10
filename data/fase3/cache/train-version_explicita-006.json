@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-006",
+ "llamadas": [
+  {
+   "clave": "983d9f56b26d8f9e5c028cce0169da77b013879f8405782fba652b4bc618390e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿para quién está pensada esta documentación y qué tipo de contenido recoge? Soy PM y no sé si me toca leerla.",
+    "respuesta": "Recoge explicaciones de las metodologías que se usan en el proyecto de marketplace forecasting. Está dirigida sobre todo al equipo de data scientists que trabaja en el proyecto. Aun así, invita expresamente a leerla y a hacer preguntas a cualquier PL, PM u otro rol interesado en el proyecto, así que como PM puedes consultarla [demand-forecast-docs/latest/guide/README.md:L13-L13].",
+    "answer_checks": [
+     "Indica que el público principal es el equipo de data scientists que trabaja en el proyecto.",
+     "Indica que los PL, los PM u otros roles interesados también pueden leerla y hacer preguntas.",
+     "Explica que la documentación recoge explicaciones de las metodologías del proyecto de marketplace forecasting.",
+     "Cita la línea 13 de demand-forecast-docs/latest/guide/README.md y no cita las líneas 1-10.",
+     "No añade detalles sobre el contenido o el público que no aparezcan en los documentos."
+    ]
+   }
+  }
+ ]
+}

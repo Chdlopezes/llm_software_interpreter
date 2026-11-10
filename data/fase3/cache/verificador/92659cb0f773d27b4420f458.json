@@ -1,0 +1,391 @@
+{
+ "task_id": "verificador/92659cb0f773d27b4420f458",
+ "llamadas": [
+  {
+   "clave": "92659cb0f773d27b4420f458682feca3a37f11125f441110907c1a2ad312e168",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-version_explicita-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre demand-forecast-docs latest, en coherencia con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos, la CLI y `retail create-version A.B.C` coinciden con README.md, líneas 18-25."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica los pasos desde la preparación y creación de rama hasta crear la versión, e identifica la herramienta necesaria (líneas 18-25)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas del README.md, líneas 18-25, respaldan las afirmaciones asociadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas con líneas pertinentes del README.md (18-25)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La información solicitada está documentada en README.md, líneas 18-25; no presenta faltantes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder todos los pasos solicitados (README.md, líneas 18-25)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es internamente consistente y sigue el proceso documentado en README.md, líneas 18-25."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con README.md, líneas 16-25, y exigen contenido, no una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre demand-forecast-docs latest y sus etiquetas de entorno; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La creación con `rda prepare`, los tags HML/PRD y las etiquetas de entorno concuerdan con overview.md, líneas 148 y 152-179."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica cómo crear la task-image para staging, contrasta con producción y relaciona dev, hml y prd con sus entornos (líneas 148-179)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de overview.md, líneas 148, 152-170 y 172-179, respaldan los datos citados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por citas de overview.md (líneas 148-179)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación entregada cubre los tags y comandos solicitados (overview.md, líneas 148-179); no se afirma que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre creación y etiquetas de entornos (overview.md, líneas 148-179)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente staging/HML, producción/PRD y desarrollo/DEV según overview.md, líneas 148-179."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en overview.md, líneas 117-233; excluyen las líneas no citables indicadas y no imponen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre demand-forecast-docs latest, concordante con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El objetivo y el impacto de las acciones planificadas coinciden con explicabilidad/README.md, línea 4."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica qué se pronostica, a quién se explica y qué impacto se explica; añade dónde consultar las demás partes (líneas 4 y 6)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a explicabilidad/README.md, líneas 4 y 6, respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con las líneas pertinentes (4 y 6)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La sección documenta la información solicitada en la línea 4; no declara faltantes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible de explicabilidad/README.md, líneas 4 y 6."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No añade métricas u objetivos incompatibles; se ajusta a las líneas 4 y 6."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables con explicabilidad/README.md, líneas 4 y 6, y no requieren una redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-017",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre demand-forecast-docs latest y dos aspectos descritos en overview.md."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La explicación de entrypoint, `orchestrate`, `pipeline_name` y catálogo coincide con overview.md, líneas 921-927 y 930-959."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica cómo se selecciona el pipeline, el almacenamiento por defecto y cómo configurar el guardado en BigQuery (líneas 921-959)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md, líneas 921, 923, 925, 927 y 930-959, respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas; el rango 930-959 no incluye la línea no citable 918."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación entregada contiene la información solicitada (overview.md, líneas 921-959); no se afirma que algo falte."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las tres partes usando la evidencia disponible en overview.md, líneas 921-959."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta distingue el almacenamiento en memoria del uso del catálogo para BigQuery, de acuerdo con overview.md, líneas 925-959."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con overview.md, líneas 916-959, excluyen la línea 918 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-020",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre la sección de diarización de demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La dailyization de variables exógenas mensuales y su motivación coinciden con diarizacion.md, líneas 3 y 29."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el tipo de variables tratadas y explica por qué se desagregan (líneas 3 y 29)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a diarizacion.md, líneas 3 y 29, respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está citada con las líneas pertinentes de diarizacion.md."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación indica qué variables se tratan y por qué en las líneas 3 y 29; no declara faltantes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder qué se diariza y por qué (diarizacion.md, líneas 3 y 29)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de las variables exógenas mensuales concuerda con diarizacion.md, líneas 3 y 29."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en diarizacion.md, líneas 1-3, y no exigen detalles o nombres no documentados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-024",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la notación de diarizacion.md en demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las definiciones de las variables con tilde y sombrero, N y M coinciden con diarizacion.md, líneas 7-17."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica ambas notaciones y los significados de N y M (líneas 7-17)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las líneas 7, 9, 11, 15 y 17 respaldan las definiciones; no cita la línea 13."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las definiciones técnicas están citadas en diarizacion.md, líneas 7-17."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La sección de notación contiene las definiciones solicitadas (líneas 7-17); no hay faltantes declarados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde todas las partes a partir de la notación documentada (líneas 7-17)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las definiciones son coherentes con diarizacion.md, líneas 7-17."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican con diarizacion.md, líneas 7-17, y permiten formulaciones equivalentes."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-028",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y específica sobre la necesidad de diarizar en demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La motivación coincide con diarizacion.md, líneas 3 y 29."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la diferencia entre datos diarios y disponibilidad mensual de algunas variables futuras, y la necesidad de desagregarlas (línea 29)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a diarizacion.md, líneas 29 y 3, respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con las líneas pertinentes de diarizacion.md."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La motivación está documentada en la línea 29; no se afirma que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para explicar la necesidad de desagregación (diarizacion.md, líneas 3 y 29)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la motivación descrita en diarizacion.md, línea 29."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en diarizacion.md, líneas 3 y 29, y no piden detalles del método que no estén documentados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-032",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre dónde está implementada la diarización en demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El nombre del archivo, la ruta y el repositorio corresponden al enlace de diarizacion.md, línea 80."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el archivo y aporta la ruta y referencia del repositorio (líneas 78-80)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a diarizacion.md, líneas 78-80, respalda el archivo, la ruta y el enlace."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas y de ubicación están citadas con líneas 78-80."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación enlaza la implementación en la línea 80; no se declara que la información falte."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa el enlace de implementación disponible para responder la pregunta (diarizacion.md, líneas 78-80)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El nombre y la ruta del archivo coinciden con el enlace de la línea 80."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente a la pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican con diarizacion.md, líneas 78-80, y no exigen detalles internos del código."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

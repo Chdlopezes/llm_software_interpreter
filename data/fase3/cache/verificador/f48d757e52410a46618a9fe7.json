@@ -1,0 +1,62 @@
+{
+ "task_id": "verificador/f48d757e52410a46618a9fe7",
+ "llamadas": [
+  {
+   "clave": "f48d757e52410a46618a9fe7df8f8fabb71edc8dd334ac328bfa126c7a02924e",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-evidencia_parcial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre order-workflow-api 5.6.2-hotfix-1, coincidente con los argumentos de la llamada; no trata valores ilustrativos como hechos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El objeto de ejemplo muestra `cron_branches` con `version_branch`, `stable_branch` y `target_branch` (database.md, líneas 139-143). La respuesta no inventa campos de Cron History."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los campos conocidos de `cron_branches` y señala que la estructura de Cron History no está especificada; además, aporta el paso documentado de guardar la versión del cron (use-cases.md, líneas 285-298)."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan los campos y el paso de guardar la versión. La cita a database.md, línea 147, localiza el apartado Cron History, pero por sí sola no demuestra que falten sus campos o estructura."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones técnicas están citadas, pero la cita de database.md, línea 147, no respalda directamente la afirmación de que no se documentan campos ni estructura. El flujo citado sí respalda el guardado de la versión (use-cases.md, líneas 285-298)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara como no documentada la estructura de Cron History sin afirmar que no exista o no se guarde; el apartado aparece en database.md, línea 147, y la semilla confirma que está pendiente de documentación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre `cron_branches` y el paso de guardado de la versión, sin abstenerse de responder lo documentado (database.md, líneas 139-143; use-cases.md, líneas 285-298)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los valores del ejemplo de gitflow de los campos de Cron History y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en este caso."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a afirmaciones verificables en la respuesta y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es técnicamente correcta, pero la cita a la línea 147 solo identifica el apartado Cron History; no respalda por sí misma que falten sus campos o estructura."
+     }
+    ]
+   }
+  }
+ ]
+}

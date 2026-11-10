@@ -1,0 +1,20 @@
+{
+ "task_id": "train-comparacion_versiones-017",
+ "llamadas": [
+  {
+   "clave": "db0aecbf39adf527343875c6b2cc579998b013cc3c97a0754d73b9e4b3339def",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": true,
+    "motivo_omision": "La semilla es la sección «Importance of Verification» (líneas 16-21) de important.md. Solo se puede citar en 0.0.10-stock-consumer. En 0.0.3-paused-seller, 0.0.6-ep-restock-man y latest, esas mismas líneas 16-21 están marcadas como no citables, así que no hay evidencia citable de las otras versiones con la que comparar. Además, el texto visible de la sección es idéntico en las cuatro versiones, aunque la semilla diga que difiere (igual: false). No se puede afirmar ni una diferencia ni una igualdad con citas válidas sin citar líneas no citables, cosa que está prohibida fuera de la situación contradiccion. Por eso no se puede construir un caso comparacion_versiones válido con esta semilla.",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "",
+    "respuesta": "",
+    "answer_checks": []
+   }
+  }
+ ]
+}

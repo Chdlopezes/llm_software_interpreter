@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_documentos-002",
+ "llamadas": [
+  {
+   "clave": "8382faa82b38d8b066cb81070011e5828b2e6818a476d1228ae011628c921c45",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy usando 2p-revenue-optimizer-api 1.0.0-beta y tengo dudas con el modelo base de la app. ¿Dónde tengo que mandar preguntas o comentarios sobre ese modelo?",
+    "respuesta": "El catálogo no tiene documentación de 2p-revenue-optimizer-api 1.0.0-beta, así que no puedo decirte a dónde enviar preguntas o comentarios en esa versión. Si quieres, puedo consultar la documentación de las versiones de 2p-revenue-optimizer-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software 2p-revenue-optimizer-api y versión 1.0.0-beta, y recibe not_found.",
+     "Explica que no hay documentación para la versión 1.0.0-beta de 2p-revenue-optimizer-api.",
+     "No inventa ni da por buena una vía de contacto (por ejemplo, un issue tracker o una URL) para enviar preguntas o comentarios.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no pide al usuario que confirme el software."
+    ]
+   }
+  }
+ ]
+}

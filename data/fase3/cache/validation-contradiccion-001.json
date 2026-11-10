@@ -1,0 +1,68 @@
+{
+ "task_id": "validation-contradiccion-001",
+ "llamadas": [
+  {
+   "clave": "a77bf5a2beef26746e4e9b84d638d0e7a008633bb96e3e301d089cd110a09d6a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy escribiendo el cliente para catalog-portfolio-api 0.0.1-test-bench-v2a. Cuando busco marcas o creo una, ¿la respuesta viene envuelta en un objeto `data` con `status`, o tengo que leer los campos directamente?",
+    "respuesta": "En este punto la documentación se contradice. La referencia general de la API dice que todas las respuestas siguen el mismo formato: el contenido va dentro de `data`, acompañado de `paging` y `status` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L59-L72]. Los ejemplos de la página de endpoints de marcas no siguen ese formato. La búsqueda devuelve la lista de marcas en `results`, junto a `paging`, y no incluye ni `data` ni `status` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L44-L67]. La creación de una marca devuelve directamente el objeto de la marca (`id`, `name`, `status`: \"STAND_BY\", etc.), sin ningún envoltorio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L113-L124]. Con esta documentación no puedo confirmar cuál de los dos formatos devuelve realmente el servicio.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Cita el formato general de respuesta de api-reference/README.md, que envuelve el contenido en `data`, `paging` y `status`.",
+     "Cita al menos un ejemplo de brands.md (la búsqueda con `results` o la creación con un objeto sin envoltorio) que contradice ese formato.",
+     "Explica la discrepancia sin elegir uno de los formatos como el correcto.",
+     "No inventa un formato de respuesta que no aparezca en los documentos."
+    ]
+   }
+  },
+  {
+   "clave": "6b074c403f0b85ade1d0897e0dc3fb00accc17b3f25c8d4443af3ae9fbde13b5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy escribiendo el cliente para catalog-portfolio-api 0.0.1-test-bench-v2a. Cuando busco marcas o creo una, ¿la respuesta viene dentro de un objeto `data` o leo los campos directamente en la raíz del JSON?",
+    "respuesta": "La documentación se contradice en este punto. La referencia general de la API muestra el formato de respuesta con el contenido metido dentro de un objeto `data` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L63-L63]. Pero los ejemplos de la página de endpoints de marcas no usan ese envoltorio. El ejemplo de búsqueda devuelve las marcas en `results` y, a su lado, `paging`, sin ningún `data` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L44-L67]. El ejemplo de creación devuelve los campos de la marca, como `name`, `site`, `type` o `status`, directamente en la raíz del objeto [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L116-L124]. Con esta documentación no puedo confirmar cuál de los dos formatos devuelve de verdad el servicio.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Cita el formato general de respuesta de api-reference/README.md, que pone el contenido dentro de `data`.",
+     "Cita al menos un ejemplo de brands.md (la búsqueda con `results` o la creación con campos en la raíz) que contradice ese formato.",
+     "Explica la discrepancia sin presentar ninguno de los dos formatos como el correcto.",
+     "No inventa un formato de respuesta que no aparezca en los documentos."
+    ]
+   }
+  },
+  {
+   "clave": "fb4a48186bb81e9f8a470b6c7e5dfe1bd63f29799424832668e7677139dbbb2b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy escribiendo el cliente para catalog-portfolio-api 0.0.1-test-bench-v2a. Cuando creo una marca o la consulto por ID, ¿los campos de la marca vienen dentro de un objeto `data` o los leo directamente en la raíz del JSON?",
+    "respuesta": "La documentación se contradice en este punto. La referencia general de la API, en su formato de respuesta, pone el contenido dentro de un objeto `data` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L63-L63]. Pero los ejemplos de la página de endpoints de marcas no usan ese envoltorio. En el ejemplo de respuesta de creación, los campos de la marca, como `name`, `site`, `type` o `status`, están directamente en la raíz del objeto [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L116-L123]. En el ejemplo de consulta por ID pasa lo mismo: `name`, `logos`, `resources` o `status` aparecen en la raíz, sin ningún `data` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L149-L168]. Con esta documentación no puedo confirmar cuál de los dos formatos devuelve de verdad el servicio. Conviene que tu cliente lo compruebe con una respuesta real.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Cita el formato general de respuesta de api-reference/README.md, que envuelve el contenido en `data`.",
+     "Cita al menos un ejemplo de brands.md (creación o consulta por ID) en el que los campos de la marca aparecen en la raíz, sin `data`.",
+     "Explica la discrepancia sin presentar ninguno de los dos formatos como el correcto.",
+     "No inventa un formato de respuesta que no aparezca en los documentos."
+    ]
+   }
+  }
+ ]
+}

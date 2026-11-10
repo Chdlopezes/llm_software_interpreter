@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_evidencia-008",
+ "llamadas": [
+  {
+   "clave": "a5fa6419fda25f0480eb7d2481954a7a125f22000dd1cfeac0ac48a00a31f166",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando catalog-portfolio-api 0.0.1-test-bench-v2a en local. Antes de lanzar el servicio, ¿qué datos de conexión a MySQL tengo que configurar (host, usuario, nombre de la base) y en qué fichero los pongo?",
+    "respuesta": "No puedo decírtelo con la documentación de la versión 0.0.1-test-bench-v2a. El Quick Start pone un paso de configurar la base de datos antes de arrancar el servicio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L31-L31], pero ningún documento de esta versión explica qué parámetros de conexión hay que indicar (host, usuario, nombre de la base) ni en qué fichero van. Lo único que se documenta sobre la base de datos en la instalación es que hace falta MySQL 8.0 o superior [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L42-L42].",
+    "answer_checks": [
+     "Llama a la herramienta con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que la documentación no describe los parámetros de conexión a la base de datos ni el fichero donde se configuran.",
+     "No inventa propiedades de conexión, nombres de base de datos ni rutas de fichero de configuración.",
+     "No afirma que la configuración de la base de datos no exista o no sea necesaria.",
+     "Si menciona datos relacionados (p. ej., el requisito de MySQL 8.0 o superior), los cita con rangos válidos y sin citar la línea 32 del README de setup."
+    ]
+   }
+  }
+ ]
+}

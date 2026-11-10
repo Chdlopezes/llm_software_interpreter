@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/30f0f4e2de22d288f2678649",
+ "llamadas": [
+  {
+   "clave": "30f0f4e2de22d288f2678649dbb8e05b9b7d63c6c0343d9c524d0bd6d3b09cf8",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-falta_software-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, pero no identifica el software; por la situación, no corresponde llamar a la herramienta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solo pide aclarar el software y no hace afirmaciones técnicas; no hay documentos ni líneas entregadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el dato de software que falta, sin pedir versión ni adelantar una respuesta técnica."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados y la respuesta de aclaración no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas verificables que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No presenta como hecho técnico algo que no está documentado; pide correctamente el dato faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Sin identificar el software no se puede consultar documentación; pedir aclaración es lo adecuado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta concuerda con la situación de falta_software y con que no se llame a la herramienta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen de forma verificable la aclaración requerida y la ausencia de llamada y respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-falta_software-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, pero no identifica el software; por la situación, no corresponde llamar a la herramienta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solo pide aclarar el software y no hace afirmaciones técnicas; no hay documentos ni líneas entregadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el dato de software que falta, sin pedir versión ni adelantar una respuesta técnica."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados y la respuesta de aclaración no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas verificables que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No presenta como hecho técnico algo que no está documentado; pide correctamente el dato faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Sin identificar el software no se puede consultar documentación; pedir aclaración es lo adecuado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta concuerda con la situación de falta_software y con que no se llame a la herramienta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen de forma verificable la aclaración requerida y la ausencia de llamada y respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-falta_software-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, pero no identifica el software; por la situación, no corresponde llamar a la herramienta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solo pregunta por el software y no hace afirmaciones técnicas; no hay documentos ni líneas entregadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide la aclaración necesaria sin dar recomendaciones sobre bloqueos o deadlocks."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados y la respuesta de aclaración no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas verificables que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma nada sobre causas o soluciones y solicita correctamente el dato faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Sin identificar el software no corresponde consultar documentación ni responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta concuerda con la situación de falta_software y con que no se llame a la herramienta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la aclaración requerida y verifican que no se dé una recomendación técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-falta_software-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y está en español, pero no identifica el software; corresponde pedir aclaración antes de llamar."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solo pregunta por el software y no hace afirmaciones técnicas; no hay documentos ni líneas entregadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el dato de software faltante, sin pedir versión ni responder sobre filtros."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados y la respuesta de aclaración no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas verificables que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma datos técnicos ausentes y pide correctamente la aclaración necesaria."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Sin saber de qué software se trata, la aclaración es necesaria para consultar la documentación pertinente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta concuerda con la falta de software y con la ausencia de llamada a la herramienta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con la pregunta de aclaración y con la ausencia de respuesta técnica y citas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_documentos-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica catalog-portfolio-api 9.4, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y ningún documento entregado, la respuesta informa correctamente que no hay documentación para esa versión y no inventa un header."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede responder qué header indica el reinicio y ofrece consultar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; la respuesta de not_found no requiere cita documental."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre rate limiting que deban respaldarse con documentos."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la falta de documentación para el filtro consultado, sin afirmar que el header no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El estado not_found justifica no responder la parte técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la versión 9.4 solicitada y con el resultado not_found."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales entregadas que puedan entrar en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con not_found y no exigen una respuesta técnica ni una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_documentos-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica catalog-portfolio-api 9.4, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y ningún documento entregado, la respuesta informa que no hay documentación para esa versión y no atribuye causas ni soluciones al error."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede determinar la causa ni la solución para la versión solicitada y ofrece consultar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; la respuesta sobre not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas sobre el error que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la limitación de la documentación para 9.4 sin afirmar que el error carezca de causas o soluciones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El resultado not_found justifica no dar una causa ni una solución técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el alcance en la versión 9.4 y concuerda con not_found."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la ausencia de documentación y prohíben apropiadamente inventar causas o soluciones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_documentos-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en inglés e identifica catalog-portfolio-api 9.4, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y ningún documento entregado, la respuesta informa correctamente que no hay documentación para esa versión y no aporta datos de otra versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede determinar el estado de una marca nueva ni los campos obligatorios para la versión solicitada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; la respuesta sobre not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre la creación de marcas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala la falta de documentación de 9.4, sin convertirla en una afirmación sobre el comportamiento de esa versión."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El estado not_found impide responder con evidencia del catálogo, por lo que la abstención técnica es adecuada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a la versión 9.4 y concuerda con la llamada y el estado de la herramienta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni fuentes en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con not_found y verifican que no se inventen estado ni campos obligatorios."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_documentos-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica catalog-portfolio-api 0.0.1-rc, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y ningún documento entregado, la respuesta dice que no hay documentación para esa versión y no describe su arquitectura."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder sobre disponibilidad y escalabilidad para la versión consultada y ofrece revisar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; la respuesta de not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene detalles técnicos de arquitectura que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la falta de documentación para el filtro consultado, sin afirmar que el servicio carezca de mecanismos de disponibilidad o escalabilidad."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El estado not_found justifica no ofrecer detalles arquitectónicos."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el alcance en 0.0.1-rc y concuerda con not_found."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la respuesta y verifican adecuadamente que no se inventen datos arquitectónicos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_documentos-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en inglés e identifica catalog-portfolio-api 3.1.0, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y ningún documento entregado, la respuesta informa que no hay documentación de 3.1.0 y no atribuye contenido a esa versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede determinar qué incluye la respuesta ni si hacen falta llamadas separadas, y ofrece consultar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; la respuesta sobre not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre el contenido de la respuesta que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala la falta de documentación para 3.1.0 sin afirmar que los logos o recursos estén ausentes del comportamiento del producto."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El resultado not_found justifica no responder sobre campos ni llamadas adicionales."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a 3.1.0 y concuerda con el estado de la herramienta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni fuentes en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con not_found y no exigen contenido técnico ni una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_documentos-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica catalog-portfolio-api 3.1.0, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y ningún documento entregado, la respuesta informa correctamente que no hay documentación para 3.1.0 y no afirma si usa circuit breakers."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede determinar los mecanismos de fiabilidad ni la presencia de circuit breakers en la versión solicitada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; la respuesta sobre not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas sobre fiabilidad que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la falta de documentación de 3.1.0 sin afirmar que los mecanismos o circuit breakers no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El estado not_found justifica abstenerse de responder la parte técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el alcance en la versión 3.1.0 y concuerda con la llamada y el resultado."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con not_found y comprueban que no se inventen mecanismos ni datos de otras versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

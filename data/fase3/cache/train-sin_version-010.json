@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-010",
+ "llamadas": [
+  {
+   "clave": "1fa2395cc2c29d5474f326825c8691d6a08a5f9492dd4f34c96c3675c007942d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api, ¿para qué se usa el consumidor de BigQ? ¿Qué le llega por ahí y desde qué sistemas?",
+    "respuesta": "La documentación que encontré es de la versión 5.6.2-hotfix-1. Según ella, order-workflow-api usa un consumidor de BigQ para recibir dos cosas: tareas que vienen del Orchestrator y webhooks que vienen de EventCollector [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L49-L50]. Para más detalle, el README remite a la página de servicios de BigQ [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L52-L52].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que el consumidor de BigQ recibe tareas del Orchestrator.",
+     "Indica que también recibe webhooks de EventCollector.",
+     "Atribuye la información a la versión 5.6.2-hotfix-1 sin afirmar que sea la única versión existente del software.",
+     "Cita las líneas del README de 5.6.2-hotfix-1 que describen el componente BigQ y no inventa datos que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

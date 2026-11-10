@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-007",
+ "llamadas": [
+  {
+   "clave": "211cb4a02d8088b1638dca9a63d9c1d094ac20f519d16621bb58b503b283b4e6",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando el endpoint Get Detail de vendor-stockkeeper-api latest. ¿Qué estructura tiene la respuesta y qué códigos de estado puede devolver?",
+    "respuesta": "La documentación de latest no describe la respuesta de Get Detail. No dice qué estructura tiene ni qué códigos de estado devuelve, así que no puedo darte esos datos. En la guía de la API, las únicas operaciones con una sección de detalle son Restock Consumer [vendor-stockkeeper-api/latest/guide/api.md:L22-L24] y Feed Consumer [vendor-stockkeeper-api/latest/guide/api.md:L36-L37]. En ambas se documenta solo una respuesta `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L34-L34] [vendor-stockkeeper-api/latest/guide/api.md:L48-L48]. Ese dato es de esas dos operaciones y no sirve para Get Detail.",
+    "answer_checks": [
+     "Indica que la documentación de latest no describe la estructura de la respuesta ni los códigos de estado de Get Detail.",
+     "No inventa campos de respuesta ni códigos de estado para Get Detail.",
+     "No afirma que el endpoint Get Detail no exista o que no devuelva nada.",
+     "No atribuye a Get Detail el `200 OK` documentado para Restock Consumer o Feed Consumer.",
+     "Las citas que incluye apuntan a líneas citables del documento api.md de latest."
+    ]
+   }
+  }
+ ]
+}

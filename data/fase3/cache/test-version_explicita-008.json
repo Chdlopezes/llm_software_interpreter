@@ -1,0 +1,25 @@
+{
+ "task_id": "test-version_explicita-008",
+ "llamadas": [
+  {
+   "clave": "afccbb1bf48f18c52369e21af8970c9a263ff8676765e3fbccae2ed25513e5a5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api latest, ¿en qué clase se ajusta la configuración de OpenAPI y qué pasos hay que seguir para llevar la especificación de la API a VendorFlow Specs Hub?",
+    "respuesta": "En 2p-revenue-optimizer-api latest, la configuración de OpenAPI se cambia en la clase SpringDocConfig [2p-revenue-optimizer-api/latest/guide/README.md:L41-L41]. El proyecto usa OpenAPI para generar automáticamente las especificaciones de sus APIs JSON. Para eso examina la aplicación en tiempo de ejecución y deduce la semántica de la API a partir de la configuración de Spring, la estructura de clases y las anotaciones Java [2p-revenue-optimizer-api/latest/guide/README.md:L39-L39].\n\nPara llevar la especificación a VendorFlow Specs Hub, la guía rápida indica estos pasos, en orden [2p-revenue-optimizer-api/latest/guide/README.md:L55-L61]:\n\n1. Instalar el plugin de Specs Hub para VendorFlow CLI.\n2. Instalar el plugin de OpenAPI e inicializar una configuración básica.\n3. Generar la primera especificación de la API.\n4. Validar la especificación.\n5. Subir la especificación.\n6. Verla en VendorFlow web.\n7. Gestionarla en VendorFlow web.\n\nLa documentación de uso completa está en \"VendorFlow Specs Hub - Getting started\" [2p-revenue-optimizer-api/latest/guide/README.md:L51-L51].",
+    "answer_checks": [
+     "Indica que la configuración de OpenAPI se cambia en la clase SpringDocConfig.",
+     "Enumera los pasos de la guía rápida de Specs Hub en orden: instalar el plugin de Specs Hub para la CLI, instalar el plugin de OpenAPI y configurarlo, generar, validar, subir, ver y gestionar la especificación.",
+     "Cita líneas de la sección API Documentation del README de la versión latest (aprox. L37-L62).",
+     "No inventa comandos concretos de la CLI ni detalles de configuración de SpringDocConfig que no aparecen en el documento."
+    ]
+   }
+  }
+ ]
+}

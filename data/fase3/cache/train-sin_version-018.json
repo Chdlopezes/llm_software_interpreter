@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-018",
+ "llamadas": [
+  {
+   "clave": "8125c9f46b5f5004d37ba06c0797d8050e20d21efdc5168bd1a210e4d92e77ce",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "How do I update an existing purchase order in zenith-keeper? What do I need to send in the request, and what do I get back if it works?",
+    "respuesta": "The documentation I found is for zenith-keeper 1.1.6 only, so everything below comes from that version.\n\nYou update an order with a `PUT` on `/api/v1/fresh-products/orders{idOrder}` [zenith-keeper/1.1.6/specs/swagger.yaml:L123-L123] [zenith-keeper/1.1.6/specs/swagger.yaml:L145-L145]. The operation is tagged `Products`, its summary is \"Update order with products list\", and its operationId is `updateExistProductListOrder` [zenith-keeper/1.1.6/specs/swagger.yaml:L146-L149].\n\nThe request needs two things:\n- **Path parameter `idOrder`**: required, declared as type `object` with format `Long` [zenith-keeper/1.1.6/specs/swagger.yaml:L156-L162].\n- **JSON body**: required, using the `PurchaseDTO` schema [zenith-keeper/1.1.6/specs/swagger.yaml:L150-L155]. `PurchaseDTO` wraps a `purchaseOrder` (`PurchaseOrderDTO`) [zenith-keeper/1.1.6/specs/swagger.yaml:L450-L454]. That object has `date` (LocalDate), `buyerId` (string), `orderStatus` (`OrderStatusDTO`, which has a `statusCode` string) and `products`, an array of `ProductsDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L436-L449] [zenith-keeper/1.1.6/specs/swagger.yaml:L424-L428]. Each `ProductsDTO` has a `productId` (string) and a `quantity` (integer) [zenith-keeper/1.1.6/specs/swagger.yaml:L429-L435].\n\nIf the update works, the API returns `201 CREATED` with a JSON `PricePurchaseOrderDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L163-L169]. That object holds a single field, `totalPrice`, declared as type `object` with format `Long` [zenith-keeper/1.1.6/specs/swagger.yaml:L455-L460].",
+    "answer_checks": [
+     "Calls the tool with software zenith-keeper and version=null, without asking the user for a version.",
+     "Says the order is updated with PUT on /api/v1/fresh-products/orders{idOrder}, with a required idOrder path parameter.",
+     "Says the body is required and uses PurchaseDTO (purchaseOrder with date, buyerId, orderStatus and a products list of productId/quantity).",
+     "Says the success response is 201 CREATED and returns a PricePurchaseOrderDTO with totalPrice.",
+     "Gives the data as documented for 1.1.6 without claiming it is the only version that exists, and invents no error codes or fields that aren't in the cited lines."
+    ]
+   }
+  }
+ ]
+}

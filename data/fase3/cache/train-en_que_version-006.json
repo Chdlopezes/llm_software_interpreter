@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-006",
+ "llamadas": [
+  {
+   "clave": "51e1ffc0f746928a9ade945d7f8b16f48d1d4b9e6c5cf261780b276548351f54",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Before I trigger anything on the restock or feed flows, I want to follow the step-by-step check for test items in vendor-stockkeeper-api. Which versions of the docs actually include that verification procedure?",
+    "respuesta": "All four versions returned include the verification procedure, each in its guide/important.md: 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L22-L26], 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L22-L26], 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L22-L26] and latest [vendor-stockkeeper-api/latest/guide/important.md:L22-L26].\n\nThe three steps are worded the same way in all of them:\n1. Review the inbound (Restock flow) and make sure all test items are present.\n2. Check the operation id (Feed flow) and confirm it also contains all the required items.\n3. Before taking any action, do a final validation of both flows.\n\n[vendor-stockkeeper-api/latest/guide/important.md:L24-L26]\n\nSo for this procedure, it doesn't matter which of these versions you use.",
+    "answer_checks": [
+     "Identifies 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer and latest as versions that document the verification procedure.",
+     "Describes the three steps (review the inbound for the Restock flow, check the operation id for the Feed flow, final validation of both flows) without adding steps that are not in the documents.",
+     "States that the procedure has the same content in all those versions rather than claiming it changes between them.",
+     "Cites the important.md document of the versions it mentions, with line ranges within the verification procedure section.",
+     "Does not ask the user for a version and does not claim these are the only versions that will ever exist."
+    ]
+   }
+  }
+ ]
+}

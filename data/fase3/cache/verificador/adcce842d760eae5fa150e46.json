@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/adcce842d760eae5fa150e46",
+ "llamadas": [
+  {
+   "clave": "adcce842d760eae5fa150e468be90f147d17999ecade9fc214dfae606a271824",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-en_que_version-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las versiones, con software correcto y sin versión concreta; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro guías describen la recomendación en las líneas 5-6; el contenido citado es coincidente."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro versiones entregadas y explica la recomendación consultada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las líneas 5-6 de cada important.md respaldan la afirmación y son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la comparación entre versiones llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite contestar la pregunta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible y responde directamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni contradice la evidencia de las líneas 5-6."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas 5-6 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre versiones y flujos, con software correcto y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro guías enumeran Restock y Feed como flujos principales en las líneas 11-14."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica las versiones y los dos flujos consultados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L11-L14 respaldan los flujos; la cita L1 respalda el título de la guía."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las versiones y los flujos están acompañados por citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite contestar la pregunta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla versiones ni entra en contradicción con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las líneas 11-14 y no imponen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre versiones y procedimiento; el software coincide y la llamada lleva version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 22-26 de las cuatro guías contienen los tres pasos descritos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las cuatro versiones y resume el procedimiento solicitado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las referencias L22-L26 son citables y respaldan los pasos; la referencia adicional L24-L26 también."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La lista de versiones y los pasos del procedimiento cuentan con citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Hay evidencia suficiente en las cuatro versiones entregadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible y responde sin abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones; la afirmación de que el procedimiento coincide está respaldada por las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental para el procedimiento."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas 22-26 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las versiones que detallan una instrucción; software correcto y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 50 de 0.0.3-paused-seller, 0.0.10-stock-consumer y latest mencionan el endpoint de api core, item_id y status. La línea 49 de 0.0.6 solo indica revisar el status."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las versiones que especifican endpoint e item_id de la que solo indica revisar el estado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L50 y L43 respaldan las instrucciones y prioridad; la cita L49 respalda la descripción de 0.0.6."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la comparación de versiones están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta limita la afirmación sobre 0.0.6 a lo que falta en su documentación y no infiere que el endpoint no pueda usarse; véase L49."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las diferencias que sí muestran las líneas 49-50."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente entre revisar el status y especificar el endpoint y el item_id."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay contradicción entre las fuentes para esta comparación."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican con las líneas 49-50 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre URL base de Postman; coincide con el software y no especifica versión, por lo que version=null es adecuado."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 7-9 de los cuatro api.md contienen las URL de TechZone Platform y Postman indicadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da las URL solicitadas y enumera las versiones donde aparecen."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L7-L9 de cada versión sostienen los valores y la sección señalada."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las URL y la comparación entre versiones están respaldadas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene las URL solicitadas en las cuatro versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para resolver la consulta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los mismos valores se atribuyen correctamente a las cuatro versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en las URL citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas 7-9 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre versiones, con software correcto y sin una versión concreta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 5-6 de las cuatro guías respaldan la recomendación y las citas corresponden a cada versión entregada."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las versiones y explica la comprobación. La salvedad final se limita al conjunto documental consultado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro citas L5-L6 respaldan las afirmaciones asociadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La recomendación y su atribución por versión están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que la recomendación falte en otras versiones: aclara que solo se basa en las cuatro versiones consultadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada en vez de abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente con las líneas 5-6 y con su salvedad sobre el alcance de la consulta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan las líneas citadas y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre versiones y flujos; la llamada usa el software correcto y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 11-14 de las cuatro guías presentan Restock y Feed como los dos flujos principales."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica las cuatro versiones y nombra los flujos solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L11-L14 de cada important.md respaldan la respuesta."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre versiones y flujos están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La evidencia entregada basta para responder."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con los datos disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni atribuye flujos diferentes."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks pueden verificarse con las líneas 11-14 y son independientes de la redacción."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre dónde se explican los motivos de la verificación; coincide con software y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La versión 0.0.10-stock-consumer contiene los motivos citados en las líneas 18-20; las líneas 11-14 respaldan los flujos mencionados."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da la versión que puede respaldar con secciones citables y cubre el ejemplo del riesgo de discrepancias."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L16-L20 y L11-L14 pertenecen a la versión entregada y respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada motivo y la mención de los flujos tienen cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No concluye que los otros documentos carezcan de esos motivos; aclara que no puede proporcionar citas de ellos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia citable de 0.0.10-stock-consumer."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La cautela sobre las otras versiones evita convertir la falta de citas utilizables en una afirmación de ausencia."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y no exigen palabras exactas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre la comprobación del Operation Id; software correcto y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La línea 25 de cada versión describe comprobar que el operationId contiene los elementos requeridos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las cuatro versiones y describe el paso solicitado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L25 y L22-L26 son citables y respaldan el paso y los otros pasos mencionados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las versiones y cada parte técnica de la explicación están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Las cuatro versiones entregadas contienen el paso solicitado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la evidencia de las cuatro guías."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del paso y de los pasos adicionales concuerda con las líneas 22-26."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en las líneas 22-26 y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-en_que_version-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre versiones y una instrucción concreta de la alerta; software correcto y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "La distinción principal es correcta: L50 de 0.0.10, 0.0.3 y latest especifica endpoint e item_id; L49 de 0.0.6 pide revisar el status, aunque no detalla endpoint ni item_id. Decir que 0.0.6 no menciona status puede resultar engañoso, pues L49 sí dice «checking the item's status»."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica correctamente las tres versiones que documentan el endpoint y el item_id, y caracteriza la documentación de 0.0.6."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas L50 y L49 respaldan la comparación principal, pero L49 contradice la afirmación de que 0.0.6 no menciona status; L43-L45 y L53 respaldan los detalles adicionales de latest."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas de referencias pertinentes, aunque una afirmación sobre el contenido de L49 es imprecisa."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que el endpoint no pueda usarse en 0.0.6 y limita la diferencia a lo que su guía detalla."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para identificar las versiones."
+       },
+       "consistencia": {
+        "resultado": "parcial",
+        "justificacion": "En 0.0.6 primero dice que se revisa el estado, pero luego afirma que no se menciona el status; L49 sí prescribe comprobar el status del ítem."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos; el problema es la caracterización de L49."
+       },
+       "answer_checks_validos": {
+        "resultado": "parcial",
+        "justificacion": "Los checks describen correctamente que 0.0.6 pide revisar el estado, pero la respuesta añade la afirmación imprecisa de que no menciona status (L49)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta identifica las versiones correctas, pero describe de forma imprecisa 0.0.6: su línea 49 sí indica revisar el status, aunque no especifica el endpoint ni el item_id."
+     }
+    ]
+   }
+  }
+ ]
+}

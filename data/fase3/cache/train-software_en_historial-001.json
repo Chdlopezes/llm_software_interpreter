@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-001",
+ "llamadas": [
+  {
+   "clave": "fcca6988ec859ca534c85d5793a399e135748b337e48214aba1ef820b2b3dfe2",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi! I'm getting familiar with the payment-promise-gateway codebase, version latest, because I'll be adding a new endpoint next sprint.",
+    "historial_asistente": "Sounds good. What would you like to know about it?",
+    "pregunta": "Before I write anything, which design patterns should my code follow? I'm especially interested in how dependency injection is handled and where the Builder pattern is used.",
+    "respuesta": "The codebase documents five design patterns.\n\nDependency injection uses Google Guice for dependency management, together with Spring's `@Autowired` and Guice's `@Inject` [payment-promise-gateway/latest/guide/README.md:L74-L76]. The Builder pattern is used to build Business Objects, and the example given is `ActivePromiseBO.Builder` [payment-promise-gateway/latest/guide/README.md:L70-L72].\n\nThe other three patterns are:\n- Command: wraps request parameters, as in `PromiseCommand` and `LateFeeForgivenessCommand` [payment-promise-gateway/latest/guide/README.md:L66-L68].\n- Factory: used for creating and configuring services [payment-promise-gateway/latest/guide/README.md:L78-L79].\n- DTO: moves data between layers, as in `LateFeeForgivenessDTO` and `UserDebtDTO` [payment-promise-gateway/latest/guide/README.md:L81-L83].",
+    "answer_checks": [
+     "Calls the tool with software payment-promise-gateway and version latest taken from the history, without asking for them again.",
+     "States that dependency injection uses Google Guice, with Spring's @Autowired and Guice's @Inject.",
+     "States that the Builder pattern is used to build Business Objects, with ActivePromiseBO.Builder as the example.",
+     "Mentions the other documented patterns (Command, Factory, DTO) without inventing patterns or examples that are not in the document.",
+     "Cites lines from the Design Patterns section (L64-L84) of payment-promise-gateway/latest/guide/README.md."
+    ]
+   }
+  }
+ ]
+}

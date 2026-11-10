@@ -1,0 +1,47 @@
+{
+ "task_id": "train-sin_evidencia-012",
+ "llamadas": [
+  {
+   "clave": "d2116a1dbe0b1ee9a3e3f7a991bc58074b262f2e712b98998668f3c8ec85274c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ya tengo el plan del workflow creado. ¿Cómo lo ejecuto con rda workflow run? ¿Qué argumentos o flags hay que pasarle para indicar qué plan se ejecuta?",
+    "respuesta": "La documentación de latest no explica cómo usar `rda workflow run`, así que no puedo decirte qué argumentos o flags lleva ni cómo se indica el plan que se ejecuta. Lo único que aparece es el diagrama del flujo: `rda workflow prepare` convierte la definición del workflow en un plan, y `rda workflow run` lleva ese plan a la ejecución [demand-forecast-docs/latest/guide/overview.md:L196-L196]. En la lista de pasos, el tercero se limita a decir que se ejecuta un plan concreto, sin ejemplo ni sintaxis [demand-forecast-docs/latest/guide/overview.md:L199-L199].",
+    "answer_checks": [
+     "Indica que la documentación de latest no describe la sintaxis, los argumentos ni los flags de `rda workflow run`.",
+     "No inventa flags, argumentos ni ejemplos de comando para `rda workflow run`.",
+     "Puede mencionar, con cita a overview.md, que `rda workflow run` lleva el plan a la ejecución según el diagrama, o que el paso 3 solo dice que se ejecuta un plan concreto.",
+     "No afirma que el comando no exista o que no admita argumentos.",
+     "No cita como respaldo las líneas no citables 224 ni 228 de overview.md."
+    ]
+   }
+  },
+  {
+   "clave": "df1591cdcab7fa460ae66b23a11723cb5e49c37f77085e9eafb35e7e48b8af9f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ya generé el plan del workflow con rda workflow prepare. ¿Qué argumentos o flags lleva rda workflow run para indicarle qué plan tiene que ejecutar?",
+    "respuesta": "La documentación de latest no da la sintaxis de `rda workflow run`, así que no puedo decirte qué argumentos o flags lleva ni cómo se le indica qué plan ejecutar. Lo que sí documenta es dónde encaja en el flujo: `rda workflow prepare` crea el plan a partir de la definición del workflow, y `rda workflow run` pasa ese plan a ejecución [demand-forecast-docs/latest/guide/overview.md:L196-L196]. En la lista de pasos, el tercero solo dice que se ejecuta un plan concreto, sin ejemplo de comando [demand-forecast-docs/latest/guide/overview.md:L199-L199].",
+    "answer_checks": [
+     "Indica que la documentación de latest no describe los argumentos, los flags ni la sintaxis de `rda workflow run` para elegir el plan.",
+     "No inventa flags, argumentos ni ejemplos de comando para `rda workflow run`.",
+     "Menciona, citando overview.md, que según el flujo `rda workflow run` pasa el plan creado con `rda workflow prepare` a ejecución, o que el paso 3 solo dice que se ejecuta un plan concreto.",
+     "No afirma en general que la documentación no explique nada del comando, ni que el comando no exista o no admita argumentos.",
+     "No cita como respaldo las líneas no citables 224 ni 228 de overview.md."
+    ]
+   }
+  }
+ ]
+}

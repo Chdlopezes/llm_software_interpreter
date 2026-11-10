@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-014",
+ "llamadas": [
+  {
+   "clave": "24a9fcdef927f2033f7f8751c9de100d3f381653efe36cb68d8eeb9999e69eca",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy migrando la configuración de 0.0.10-stock-consumer a latest en vendor-stockkeeper-api. ¿Cambian las URLs base de prod y stage, tanto las de TechZone Platform como las de Postman?",
+    "respuesta": "No, entre 0.0.10-stock-consumer y latest no cambia nada en este punto. Las dos versiones documentan el mismo nombre de dominio y las mismas URLs base.\n\nEn 0.0.10-stock-consumer, el dominio se llama `vendor-stockkeeper-api`. Para TechZone Platform, la URL de prod es `vendor-stockkeeper.techzonesystems.com` y la de stage es `vendor-stockkeeper-stage.techzonesystems.com`. Para Postman, prod es `vendor-stockkeeper.techzoneoffice.com` y stage es `vendor-stockkeeper-stage.techzoneoffice.com` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L5-L9].\n\nEn latest aparecen exactamente el mismo nombre y las mismas cuatro URLs, con la misma separación entre TechZone Platform y Postman [vendor-stockkeeper-api/latest/guide/api.md:L5-L9].\n\nAsí que puedes mantener las URLs base que ya tienes configuradas.",
+    "answer_checks": [
+     "Llama a la herramienta con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que las URLs base de prod y stage (TechZone Platform y Postman) son las mismas en 0.0.10-stock-consumer y en latest.",
+     "Menciona correctamente las URLs (vendor-stockkeeper.techzonesystems.com / vendor-stockkeeper-stage.techzonesystems.com y vendor-stockkeeper.techzoneoffice.com / vendor-stockkeeper-stage.techzoneoffice.com).",
+     "Cita el api.md de ambas versiones (0.0.10-stock-consumer y latest).",
+     "No inventa diferencias entre versiones en las URLs base ni añade datos que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-comparacion_versiones-002",
+ "llamadas": [
+  {
+   "clave": "a0b5781e31aea368807bdc190b5b45f286c1dbbb14394b4befa17b6b50e4f20b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Hay alguna diferencia entre la 0.0.1-test-bench-v2a y latest de catalog-portfolio-api en los pasos para servir la documentación en local?",
+    "respuesta": "No, los pasos son iguales en las dos versiones. En ambas hay que instalar docsify de forma global con `npm install -g docsify-cli` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L83-L84] [catalog-portfolio-api/latest/guide/README.md:L83-L84]. Luego hay que entrar en el directorio `docs/guide` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L86-L87] [catalog-portfolio-api/latest/guide/README.md:L86-L87] y arrancar el servidor de desarrollo con `docsify serve --port 3000` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L89-L90] [catalog-portfolio-api/latest/guide/README.md:L89-L90]. En las dos versiones la documentación se abre en `http://localhost:3000` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md:L93-L93] [catalog-portfolio-api/latest/guide/README.md:L93-L93].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que los pasos para servir la documentación en local no cambian entre 0.0.1-test-bench-v2a y latest.",
+     "Menciona la instalación de docsify-cli con npm, el cambio al directorio docs/guide y el comando docsify serve en el puerto 3000.",
+     "Cita el guide/README.md de las dos versiones.",
+     "No inventa diferencias ni pasos adicionales que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

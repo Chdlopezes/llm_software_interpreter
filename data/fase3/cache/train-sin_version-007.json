@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-007",
+ "llamadas": [
+  {
+   "clave": "1973effd2a03cea186b359739c090c1991cb81984b24d539365a2a1870518b85",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What kind of database does order-workflow-api rely on, and what does it keep in it?",
+    "respuesta": "I only found documentation for one version of order-workflow-api, 5.6.2-hotfix-1, so there are no other versions to compare against. In that version, the service uses a MySQL database [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L40-L40]. It stores two things:\n\n- The workflow configuration, such as protected branches and releasable branches [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L42-L42].\n- The schedule for creating versions automatically [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L43-L43].\n\nThe README points to the Database page for more detail [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L45-L45].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the database is MySQL.",
+     "Indicates it stores the workflow configuration (e.g., protected/releasable branches) and the automatic version creation schedule.",
+     "Attributes the information to version 5.6.2-hotfix-1 without claiming it differs across versions or inventing other versions.",
+     "Cites the README lines of the Components/Database section and adds no uncited extra claims."
+    ]
+   }
+  }
+ ]
+}

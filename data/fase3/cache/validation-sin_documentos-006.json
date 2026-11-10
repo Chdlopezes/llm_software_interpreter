@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_documentos-006",
+ "llamadas": [
+  {
+   "clave": "169a9d649a005bd40787273ac00e784cf40a7f7b89f0645bd4e82510ce275d5f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 3.1.0, ¿qué mecanismos de fiabilidad se usan para las llamadas a servicios externos? Me interesa saber si hay circuit breakers.",
+    "respuesta": "El catálogo no tiene documentación de catalog-portfolio-api 3.1.0, así que no puedo decirte qué mecanismos de fiabilidad usa esa versión para llamar a servicios externos ni si incluye circuit breakers. Si quieres, puedo consultar las versiones de catalog-portfolio-api que sí están documentadas.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 3.1.0, y recibe not_found.",
+     "Explica que el catálogo no tiene documentación de catalog-portfolio-api 3.1.0.",
+     "No describe mecanismos de fiabilidad ni afirma que la versión 3.1.0 use o no use circuit breakers.",
+     "No incluye citas ni datos técnicos tomados de otras versiones como si fueran de la 3.1.0.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedir al usuario que confirme el software."
+    ]
+   }
+  }
+ ]
+}

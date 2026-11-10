@@ -1,0 +1,26 @@
+{
+ "task_id": "test-en_que_version-006",
+ "llamadas": [
+  {
+   "clave": "c7c0849a3a9499bad53b7cc54f3f42607746493470623d2ba3ae9d3659e2b188",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de 2p-revenue-optimizer-api está documentado cómo cambiar el servidor web embebido, por ejemplo pasar de Jetty a Tomcat o Undertow?",
+    "respuesta": "Las dos versiones que devolvió la herramienta lo documentan: 0.2.2 y latest. El contenido es el mismo en ambas.\n\nEn la 0.2.2, el README dice que cada aplicación web Spring Boot trae un servidor web embebido. Para aplicaciones de stack servlet admite tres: Tomcat (`spring-boot-starter-tomcat`), Jetty (`spring-boot-starter-jetty`) y Undertow (`spring-boot-starter-undertow`) [2p-revenue-optimizer-api/0.2.2/guide/README.md:L22-L25]. El proyecto viene configurado con Jetty. Para cambiar de servidor basta con configurar esas dependencias en el archivo build.gradle [2p-revenue-optimizer-api/0.2.2/guide/README.md:L27].\n\nEl README de latest repite lo mismo: los tres servidores con sus starters [2p-revenue-optimizer-api/latest/guide/README.md:L22-L25] y Jetty como configuración por defecto, que se cambia mediante las dependencias de build.gradle [2p-revenue-optimizer-api/latest/guide/README.md:L27].\n\nLos documentos no dicen si esta sección está en otras versiones distintas de las que se entregaron.",
+    "answer_checks": [
+     "Identifica tanto 0.2.2 como latest como versiones que documentan el cambio de servidor web embebido.",
+     "Indica que el contenido es el mismo en ambas versiones (Jetty por defecto; se cambia configurando las dependencias en build.gradle).",
+     "Cita el README.md de 0.2.2 y el de latest en las líneas sobre el servidor web (aprox. L22-L27).",
+     "No afirma que solo existan esas versiones ni que la sección falte en otras versiones.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

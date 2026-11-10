@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-005",
+ "llamadas": [
+  {
+   "clave": "94cde3f6d9ebccb2c2b15ab76dbf3b5cc003981668f6d9024497bb88c938a57f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando catalog-portfolio-api 0.0.1-test-bench-v2a en un servicio interno que sincroniza marcas con sus collectors.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber de esa integración y lo busco en la documentación.",
+    "pregunta": "¿Qué endpoints tengo para ver, asociar y quitar los collectors de una marca?",
+    "respuesta": "Para los collectors de una marca, la referencia rápida documenta tres endpoints [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L43-L49]:\n\n- `GET /catalog/brands/{brandId}/collectors` devuelve los collectors de la marca.\n- `POST /catalog/brands/{brandId}/collectors` asocia la marca con collectors.\n- `DELETE /catalog/brands/{brandId}/collectors/{collectorId}` elimina la asociación entre la marca y un collector concreto.\n\nEn esa tabla solo aparecen el método, la ruta y una descripción breve de cada endpoint. No incluye el cuerpo de la petición del POST ni el formato de las respuestas.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a tomados del historial, sin volver a preguntarlos.",
+     "Indica GET /catalog/brands/{brandId}/collectors para obtener los collectors de la marca.",
+     "Indica POST /catalog/brands/{brandId}/collectors para asociar y DELETE /catalog/brands/{brandId}/collectors/{collectorId} para eliminar la asociación.",
+     "Cita la tabla de Collector Endpoints de guide/api-reference/README.md.",
+     "No inventa el cuerpo de la petición del POST ni campos de respuesta que no están documentados."
+    ]
+   }
+  }
+ ]
+}

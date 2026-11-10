@@ -1,0 +1,109 @@
+{
+ "task_id": "verificador/8ebe8660eb0c6527e3814c7a",
+ "llamadas": [
+  {
+   "clave": "8ebe8660eb0c6527e3814c7a30e08790d11819d5b3a8a433221590c62007c954",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-en_que_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, nombra el software y pregunta en qué versión está documentada la tabla; la llamada usa version=null, como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La página de latest documenta rule_custom_field y sus columnas (latest rule_custom_field.md, líneas 7-12). Los documentos entregados de 0.2.2 incluyen las páginas rule_header y rule_row, no una página de esa tabla (líneas 1 de cada página citada); la respuesta limita su afirmación a las versiones y documentos devueltos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica latest y distingue correctamente la falta de documentación entregada para 0.2.2 de la afirmación de que la tabla no existía."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los campos de rule_custom_field y los nombres de las páginas de 0.2.2; no cita la línea no citable 3 de rule_custom_field.md."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las columnas y sobre rule_row.custom_fields llevan citas a las líneas correspondientes; la descripción de los documentos de 0.2.2 se limita a los documentos devueltos y cita sus páginas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que la documentación no permite determinar si la tabla ya existía en 0.2.2 y no convierte la falta de documentación en una afirmación de inexistencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información disponible sobre latest y sobre los documentos de 0.2.2."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las versiones y no atribuye a 0.2.2 campos documentados en latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados no presentan afirmaciones contradictorias sobre esta tabla."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen información comprobable en los documentos entregados y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-evidencia_parcial-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés, nombra el software y la versión 0.2.2, y la llamada usa esos mismos argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_row.rule_id es bigint no nulo y referencia rule_header(id) (rule_row.md, línea 10); la documentación no aporta significado ni valores para type, conforme al hueco indicado en rule_header.md, línea 10."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde cómo se relacionan las tablas y señala la información no documentada sobre type."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita de rule_row.md, línea 10, respalda la relación; no cita la línea no citable 10 de rule_header.md para respaldar el dato faltante."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre la relación lleva cita. La respuesta presenta el significado y los valores de type como información que falta en la documentación, no como hechos del sistema."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no se documentan el significado ni los valores de type, sin afirmar que la columna no exista ni inventar valores."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para explicar la clave foránea y limita la abstención a la parte no documentada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan el vínculo documentado y el hueco confirmado sobre type, sin imponer una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

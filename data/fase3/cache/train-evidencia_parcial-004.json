@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-004",
+ "llamadas": [
+  {
+   "clave": "71b0c5f7857e106a5a9d1523ce49a7301db91bdeb8ef95e7dfba36a93afcd57d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, ¿de qué topic de BigQ llegan en producción los mensajes que acaban en /branches/protect y qué campos trae ese mensaje de protección de rama?",
+    "respuesta": "En producción, el path /branches/protect corresponde al scope de BigQ `order-workflow-collector-webhooks`. Los mensajes llegan del topic `gh-webhooks.workflow-collector-proxy` y los procesa el consumer `workflow-collector-webhooks` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L8-L8]. Según la guía, el consumer de BigQ recibe webhooks de EventCollector [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L49-L50].\n\nLa documentación no describe qué campos lleva el mensaje de protección de rama, así que no puedo indicarlos. El único mensaje que la guía detalla es el de validación de pipeline, que llega del topic `batesting-orchestrator.order-orchestrator-api` con un Pipeline ID [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L18-L20]. Es otro mensaje y no sirve como referencia para este.",
+    "answer_checks": [
+     "Indica que en producción el topic es gh-webhooks.workflow-collector-proxy (scope order-workflow-collector-webhooks, consumer workflow-collector-webhooks) para el path /branches/protect.",
+     "Declara que los campos o el contenido del mensaje de protección de rama no están documentados.",
+     "No inventa campos para el mensaje de protección de rama ni presenta como suyos los campos del JSON de Pipeline.",
+     "Cita la tabla de scopes de bigq.md para la parte que sí está documentada.",
+     "No confunde el topic de producción con el de test (gh-webhooks-test.workflow-collector-proxy)."
+    ]
+   }
+  }
+ ]
+}

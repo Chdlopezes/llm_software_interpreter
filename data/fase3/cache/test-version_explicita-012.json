@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-012",
+ "llamadas": [
+  {
+   "clave": "84b9be57542af1980507e5bfae407065b3045283f6a6aec273f7e880b82dba01",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿qué criterios adicionales tiene una IP bloqueada en el scope api para ir a whitelist frente a una del scope front?",
+    "respuesta": "En el scope front, una IP bloqueada por ratelimit va a whitelist si cumple alguno de estos criterios: tuvo más de un usuario detrás en la última hora, tiene asociado un BigSeller, tiene asociado un CBT, pertenece a infraestructura RetailHub o pertenece a un bot bueno [traffic-gate-api/latest/guide/README.md:L16-L22].\n\nEn el scope api también basta con cumplir uno de los criterios. Se mantienen los cinco de front y se añaden dos [traffic-gate-api/latest/guide/README.md:L28-L35]:\n\n- que el usuario detrás de la IP sea un usuario que User Reputation considera confiable [traffic-gate-api/latest/guide/README.md:L30-L30];\n- que la IP tenga detrás una aplicación certificada o privada [traffic-gate-api/latest/guide/README.md:L34-L34].",
+    "answer_checks": [
+     "Indica que el scope api añade el criterio del usuario considerado confiable por User Reputation.",
+     "Indica que el scope api añade el criterio de tener detrás una aplicación certificada o privada.",
+     "Señala que los criterios de front (más de un usuario en la última hora, BigSeller, CBT, infraestructura RetailHub, bot bueno) también se aplican en api, y que basta con cumplir uno.",
+     "Cita las secciones SCOPE FRONT y SCOPE API de traffic-gate-api/latest/guide/README.md.",
+     "No cita las líneas no citables (L10, L56) ni inventa criterios que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

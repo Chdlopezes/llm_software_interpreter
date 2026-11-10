@@ -1,0 +1,26 @@
+{
+ "task_id": "test-software_en_historial-003",
+ "llamadas": [
+  {
+   "clave": "f350d88ceab3b324f47661eb65181d68ac7a266501c7e6e156336c2cd2769f8f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con 2p-revenue-optimizer-api 0.2.2 y tengo que montar unas consultas de auditoría sobre las tablas de reglas.",
+    "historial_asistente": "Perfecto, cuéntame qué necesitas saber de esas tablas y lo revisamos.",
+    "pregunta": "En rule_header, ¿cómo están definidas las dos columnas de fecha? Necesito saber cuál puede venir a null y si alguna se rellena sola al insertar.",
+    "respuesta": "Las dos columnas de fecha de rule_header son de tipo timestamp, pero se definen de forma distinta:\n\n- `created_date` es `timestamp`, `Not null`, guarda la fecha y hora de creación y tiene `DEFAULT_GENERATED` en la columna Extra, así que es la que tiene un valor generado por defecto [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L11-L11].\n- `productive_date` es `timestamp`, admite `null` y se describe como la fecha productiva. No tiene ningún valor en Extra [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L16-L16].\n\nRelacionado con esto, la tabla tiene también una columna `productive` de tipo `boolean`, `Not null`, que indica si la regla es productiva [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L15-L15].\n\nPor lo tanto, en tus consultas de auditoría la que puede venir a null es `productive_date`.",
+    "answer_checks": [
+     "Llama a la herramienta con el software 2p-revenue-optimizer-api y la versión 0.2.2 del historial, sin volver a preguntarlos.",
+     "Indica que created_date es timestamp, Not null y con DEFAULT_GENERATED (valor generado por defecto).",
+     "Indica que productive_date es timestamp y admite null.",
+     "Cita las filas correspondientes del documento rule_header.md de la versión 0.2.2.",
+     "No se apoya en la descripción de la tabla (línea 3) ni en la fila de la columna type, y no inventa valores por defecto ni triggers que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

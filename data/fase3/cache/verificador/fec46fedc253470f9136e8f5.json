@@ -1,0 +1,250 @@
+{
+ "task_id": "verificador/fec46fedc253470f9136e8f5",
+ "llamadas": [
+  {
+   "clave": "fec46fedc253470f9136e8f53f3e1efcbbb9178632c4233ba60444205ae92837",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-software_en_historial-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español y concuerda con el software y la versión 0.2.2 indicados en el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El README describe un modelo básico de aplicación web para JDK 17/Spring (L3-L5) y dirige preguntas y comentarios al VendorFlow Issue Tracker (L7)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica directamente el canal al que enviar dudas o comentarios."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L3-L5 y L7 respaldan las afirmaciones asociadas y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas con citas del README entregado."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La información solicitada sí está documentada y la respuesta no afirma que falte."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para contestar la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no contiene contradicciones ni mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados relevante para la respuesta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con la llamada, la respuesta y la evidencia de L7; no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español corresponde a las columnas de rule_row y al software y versión 0.2.2 del historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla indica que seller_id, brand y custom_fields son json y Null (L12, L14, L16); los demás campos mencionados tienen el mismo tipo y restricción (L11-L15). id y rule_id son bigint y Not null (L9-L10)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde por los campos preguntados y aclara el tipo y la posibilidad de valores nulos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L9-L10 y L11-L16 corresponden a las columnas y propiedades descritas; no se usan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones sobre campos y restricciones llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La tabla documenta los tipos y restricciones solicitados; la respuesta no hace afirmaciones sobre formatos JSON o valores predeterminados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información de la tabla para contestar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni presenta afirmaciones contradictorias."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental pertinente en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la tabla 0.2.2 y no imponen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, nombra el software y la versión latest del historial y corresponde a la consulta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El README indica elegir el tag según el runtime deseado (L67), muestra la imagen java:17-runtime-mini para Dockerfile.runtime (L76-L79) y enlaza los tags de ese archivo (L81)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica tanto la imagen base de ejemplo como dónde consultar otros tags."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L67, L76-L79 y L81 respaldan las afirmaciones que acompañan."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y el enlace de los tags están citados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El documento sí proporciona el ejemplo y el enlace solicitado; la respuesta no afirma que falte información."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde utilizando la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde los tags del Dockerfile con los del Dockerfile.runtime ni mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al contenido y a las citas del README latest, sin exigir texto exacto."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español y corresponde al proyecto y versión 0.2.2 indicados en el historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El proyecto está configurado con Jetty y se puede cambiar configurando las dependencias mencionadas en build.gradle (L27); se enumeran Tomcat, Jetty y Undertow con sus starters (L22-L25)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el servidor configurado y explica cómo cambiarlo, además de mencionar las alternativas documentadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L22-L27 respaldan las afirmaciones y pertenecen al README entregado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están cubiertas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación aporta el servidor y el procedimiento de cambio; la respuesta no agrega pasos no documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para resolver la consulta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente y se refiere a una sola versión."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No existe un conflicto documental pertinente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en L22-L27 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, identifica 2p-revenue-optimizer-api latest y solicita información cubierta por el README de esa versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "SpringDocConfig es la clase donde se cambia la configuración (L41); la guía rápida enumera los siete pasos señalados (L55-L61). La generación automática de especificaciones se describe en L39."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la clase solicitada y presenta en orden los pasos para generar, validar, subir, ver y gestionar la especificación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L39, L41, L51 y L55-L61 respaldan las afirmaciones; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la lista de pasos tienen citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El README contiene la clase y los pasos de la guía rápida; la respuesta no asegura detalles adicionales que no estén documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para contestar ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a latest y no mezcla comportamientos de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto entre documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la clase, el orden de la guía y las citas disponibles, sin exigir una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

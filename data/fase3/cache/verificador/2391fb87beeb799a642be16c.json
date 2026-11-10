@@ -1,0 +1,203 @@
+{
+ "task_id": "verificador/2391fb87beeb799a642be16c",
+ "llamadas": [
+  {
+   "clave": "2391fb87beeb799a642be16c0b2807f326935b199bd3977485b7c7f1d4bafb22",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-version_explicita-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, identifica catalog-portfolio-api 0.0.1-test-bench-v2a y corresponde a la llamada con esos argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cifras y el manejo de conexiones coinciden con las líneas 114-117 de architecture/README.md."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Cubre latencia, throughput, disponibilidad y conexiones a la base de datos, tal como se pregunta (líneas 114-117)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de las líneas 114-117 respaldan respectivamente las afirmaciones; son líneas citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica lleva cita a las líneas correspondientes, 114-117."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene evidencia para todos los aspectos preguntados (líneas 114-117)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible y responde cada aspecto (líneas 114-117)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones; las afirmaciones se refieren a la versión indicada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan datos verificables en las líneas 114-117 y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el método, la ruta y los parámetros de activación para la versión indicada, de acuerdo con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La operación es PUT /{brandId}/activate y el parámetro de ruta brandId es integer y obligatorio (líneas 247, 249-253). La URL base y el ejemplo también coinciden (líneas 5-8, 255-259)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica método, ruta y parámetro requerido, y añade la URL base y un ejemplo pertinentes (líneas 247-259)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la operación, el parámetro, la URL base y el ejemplo; las líneas citadas son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por citas a las líneas 5-8 y 243-259."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación describe el endpoint y su parámetro (líneas 243-259)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información disponible en la sección Activate Brand (líneas 243-259)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el mismo método y ruta y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental sobre esta operación."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas 243-259 y no requieren una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los requisitos de activación de marcas en la versión que también figura en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los tres requisitos descritos coinciden con el logo principal, la validación de reglas de negocio y el cumplimiento de categoría (líneas 117-120)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los tres requisitos de activación documentados (líneas 117-120)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de las líneas 117-120 respaldan cada requisito y son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas en las líneas 117-120."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene los requisitos preguntados (líneas 117-120)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para contestar la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los requisitos se presentan coherentemente y corresponden a la versión indicada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los requisitos de las líneas 117-120 y no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el endpoint, su parámetro y el contenido de la respuesta para la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint, el parámetro y validationDetails con los motivos de validación coinciden con las líneas 272-299. La respuesta no reproduce el campo valid:false del ejemplo de la línea 294."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Describe validationDetails y sus motivos, pero omite que el ejemplo de respuesta también indica valid:false (líneas 294-298)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint, el parámetro y el array con sus ejemplos; las líneas citadas son citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica incluida tiene cita a las líneas 31, 272-288 o 295-298."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta de ejemplo y sus campos están documentados en las líneas 290-299."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible y explica los motivos de validación (líneas 295-298)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta contradicciones ni mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental sobre el endpoint o su respuesta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen datos verificables en las líneas 272-299, son coherentes con la respuesta y no exigen redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta omite el campo valid:false que aparece en el ejemplo; sí indica validationDetails y los motivos."
+     }
+    ]
+   }
+  }
+ ]
+}

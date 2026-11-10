@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-013",
+ "llamadas": [
+  {
+   "clave": "7fe1555f54efe2fa2130089f843fca535fa27d23930c1d260461292ccad5eb63",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi, I'm integrating our seller dashboard with price-engine-api latest so we can show sellers how their coverage settings are being adjusted.",
+    "historial_asistente": "Sounds good. What do you want to know about the integration?",
+    "pregunta": "When I call the coverage adjustments endpoint, what comes back if the seller has no active coverage adjustments? And besides 200, which response codes should my client handle?",
+    "respuesta": "If the seller has no active coverage adjustments, GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1 returns an empty array. Normally it returns an array of the seller's zones that are moderated by coverage [price-engine-api/latest/specs/swagger.yaml:L24-L34]. On success the response is the 200 StatusOKCfgAdjustmentsGET, which holds those zones [price-engine-api/latest/specs/swagger.yaml:L41-L43] as an array of strings [price-engine-api/latest/specs/swagger.yaml:L132-L136].\n\nBesides 200, the endpoint documents two other codes: 400 (BadRequestCfgAdjustmentsGET) and 500 (InternalServerError) [price-engine-api/latest/specs/swagger.yaml:L44-L47]. A 400 means an invalid parameter, and you should check the message it returns. The documented examples are \"invalid seller_id\", \"invalid site_id\" and \"invalid body\", all with code \"bad_request\" [price-engine-api/latest/specs/swagger.yaml:L92-L110]. A 500 is an unhandled server-side error, for example with code \"internal_server_error\" and message \"can't get config adjustment\" [price-engine-api/latest/specs/swagger.yaml:L111-L119].",
+    "answer_checks": [
+     "Calls the tool with price-engine-api and version latest from the history, without asking for the software or version again.",
+     "States that the endpoint returns an empty array when the seller has no active coverage adjustments, citing lines 33-34 of the swagger or a range that contains them.",
+     "Lists 400 and 500 as the response codes besides 200, citing the responses block of the endpoint.",
+     "Does not invent response codes or error messages that are not in swagger.yaml.",
+     "Does not cite the non-citable lines 60-62 or 70 of swagger.yaml."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-falta_software-011",
+ "llamadas": [
+  {
+   "clave": "7a323cff2f204b5ac767352566c601c1b1d326510fe7a34abcd7bbbbbc6c2c11",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Cuando se confirma una propuesta de condonación de intereses por mora, ¿qué método invoca la capa de servicio hacia el servicio externo y qué identificadores le pasa?",
+    "respuesta": "¿De qué software me hablas? Dime cuál es y busco la documentación.",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da ninguna respuesta técnica (no menciona métodos, parámetros ni flujos de confirmación).",
+     "No incluye citas a documentos."
+    ]
+   }
+  }
+ ]
+}

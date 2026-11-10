@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-017",
+ "llamadas": [
+  {
+   "clave": "1066d29d5312a2608e0dbd856e5b8af3df1455197dec1023726b1652166c8b7a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿cómo se decide qué pipeline corre una task de Retail Data Framework sin crear un entrypoint por cada task? Y si no le paso catálogo al pipeline, ¿dónde se guardan los datasets? ¿Qué hago para que se guarden en BigQuery?",
+    "respuesta": "En `tasks.yml` cada task indica un archivo de entrypoint. En la nube, Retail Data Framework hace algo como `python <entrypoint file>`, y los parámetros de la task se leen con la librería `retailtk.rda2` [demand-forecast-docs/latest/guide/overview.md:L921-L921]. Para no tener que crear un archivo por cada task, hay una función \"orchestrate\" que ejecuta un pipeline u otro según el parámetro `pipeline_name` que se pasa en `tasks.yml`. Así todas las tasks usan un solo archivo, y en algunos casos la misma task-image [demand-forecast-docs/latest/guide/overview.md:L923-L923].\n\nEl guardado y la carga de los datasets los hace el catálogo. Recibe un diccionario que asocia nombres de dataset con clases de dataset. En marketplace, los datasets están definidos en un archivo yml [demand-forecast-docs/latest/guide/overview.md:L925-L925]. Pasarle un catálogo al pipeline es opcional: si no lo pasas, los datasets se guardan en memoria [demand-forecast-docs/latest/guide/overview.md:L927-L927].\n\nPara guardarlos en BigQuery, importa `catalog` de `marketplace.pipes.main` y pásalo al pipeline. En el ejemplo se pasa como `IngestMarketplaceData(catalog=catalog)` dentro de la composición `IngestMarketplaceData + HolidaysDatasetPipe + PreprocessExogenous + PreprocessTarget + ProphetVerticalIniciativaPipeline`, y después se ejecuta `pipe.run()` dentro de un `Context` con los parámetros [demand-forecast-docs/latest/guide/overview.md:L930-L959].",
+    "answer_checks": [
+     "Indica que una función orchestrate elige qué pipeline ejecutar según el parámetro pipeline_name de tasks.yml, de modo que basta un solo archivo de entrypoint para todas las tasks.",
+     "Indica que el catálogo es opcional y que, si no se pasa, los datasets se guardan en memoria.",
+     "Explica que para guardar en BigQuery hay que importar catalog de marketplace.pipes.main y pasarlo al pipeline (por ejemplo, IngestMarketplaceData(catalog=catalog)).",
+     "Cita líneas de demand-forecast-docs/latest/guide/overview.md dentro de la sección L916-L959, sin citar la línea 918.",
+     "No inventa detalles que no estén en el documento, como el código interno de orchestrate o la configuración de BigQueryTable."
+    ]
+   }
+  }
+ ]
+}

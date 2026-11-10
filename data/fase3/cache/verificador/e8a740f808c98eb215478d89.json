@@ -1,0 +1,297 @@
+{
+ "task_id": "verificador/e8a740f808c98eb215478d89",
+ "llamadas": [
+  {
+   "clave": "e8a740f808c98eb215478d8919b85d7609c42240db849012e24a29825a8b88b3",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-version_explicita-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por producción y test para el software y versión indicados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los valores de MySQL, schema y cluster coinciden con la tabla: producción en L4-L7 y test en L9-L12 de database.md."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el tipo de base de datos, schema y cluster de ambos entornos (L4-L12)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de database.md abarcan las filas de producción (L4-L7) y test (L9-L12)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada dato técnico sobre los entornos lleva cita a las filas correspondientes (L4-L12)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene los datos solicitados para ambos entornos (L4-L12)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando los datos disponibles en ambas filas (L4-L12)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados los valores de producción y test (L4-L12)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental sobre estos valores."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen valores, separación de entornos y citas verificables en L4-L12, además de la llamada indicada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por el flujo de edición de workflow para el software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La secuencia descrita coincide con el diagrama: leer FROM y TO (L45-L54), desproteger y fijar master (L55-L64), configurar/proteger TO y finalizar (L65-L77)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la secuencia solicitada, incluyendo las ramas y el cambio de default branch (L45-L77)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a los pasos descritos en el diagrama de edición (L45-L77)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en los rangos que documentan cada paso (L45-L77)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El diagrama contiene la secuencia solicitada (L45-L77)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha el diagrama para responder los pasos de edición (L45-L77)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El orden de pasos es coherente con el diagrama (L45-L77)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a pasos y orden verificables en L45-L77 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los crons de producción y test para el software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Nombre del scope, reglas y endpoints coinciden con la tabla de producción (L5-L12); test aparece como «Not configured» (L14-L15)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera ambos crons de producción y su regla y endpoint, e informa que test no está configurado (L5-L15)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el scope y los dos crons (L5-L12), así como la configuración de test (L14-L15)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los datos técnicos y la afirmación sobre test llevan citas pertinentes (L5-L15)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La tabla informa los crons de producción y el estado de test (L5-L15)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con todos los datos de producción y test disponibles (L5-L15)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla la configuración de producción con la de test (L5-L15)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan el contenido comprobable de jobs.md (L5-L15) y la llamada declarada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por los pasos y su momento en el flujo de validación de un pipeline de migración, para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama sitúa la validación de ramas antes del bloque de migración (L145-L154), y luego status check, guardado del resultado y ACK (L155-L166)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe el bucle paginado y la validación de ruta, además de situarlos antes del status check (L145-L158)."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas respaldan la secuencia principal (L145-L166), pero L163-L166 no identifica por sí sola a B como BigQ; esa identificación aparece en L113."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Los pasos están citados, aunque la afirmación de que el ACK se envía a través de BigQ necesitaría incluir también la identificación del participante B en L113."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El diagrama documenta el flujo de migración y los pasos posteriores (L145-L166)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza el flujo documentado para responder qué ocurre y cuándo (L145-L166)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El orden indicado coincide con el diagrama (L145-L166)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden pasos y orden verificables en el diagrama (L145-L158) y excluyen correctamente líneas no citables."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es técnicamente correcta, pero la cita del ACK no incluye la línea que identifica a B como BigQ."
+     },
+     {
+      "case_id": "train-version_explicita-021",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por el mensaje, la acción posterior y los campos del Pipeline para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El topic y la obtención del Pipeline coinciden con L18-L20; los campos enumerados aparecen en el JSON de L26-L40."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Explica el topic y qué hace el servicio, pero omite el campo pipeline_id, que aparece en el objeto en L25."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el topic y la recuperación (L18-L20), así como los campos enumerados (L22-L40)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas están acompañadas de citas pertinentes (L18-L40)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El JSON documenta el objeto y sus campos (L22-L40)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información documentada sobre el mensaje y el objeto (L18-L40)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta los valores concretos del JSON como hechos sobre mensajes reales; los identifica como valores de ejemplo (L22-L40)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican topic, recuperación y campos existentes en L18-L40, y evitan tratar los valores del JSON como hechos."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta no enumera pipeline_id, aunque el objeto lo incluye en L25."
+     },
+     {
+      "case_id": "train-version_explicita-025",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés por los destinos y la condición de backport de un hotfix integrado en master, para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La regla de hotfix hacia master y los destinos y flags coinciden con L92-L106."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los destinos develop y release/* y si cada uno está restringido a pull requests activos (L92-L106)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de database.md respaldan la regla de activación, los destinos y sus flags (L92-L106); también la regla adicional de L107-L134."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas a los bloques correspondientes (L92-L134)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El JSON documenta la regla y sus destinos y condiciones (L92-L106)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde a partir de la regla documentada para hotfix (L92-L106)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente los valores false para develop y true para release/* (L97-L104)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los destinos y flags verificables en L92-L106, sin exigir una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

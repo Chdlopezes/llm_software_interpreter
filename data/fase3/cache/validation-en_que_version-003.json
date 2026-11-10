@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-en_que_version-003",
+ "llamadas": [
+  {
+   "clave": "8a98c9b4674e38c51a83a6a7a1c378e6951c2261464da1aac8a03f3084bdf905",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de catalog-portfolio-api aparece documentada la URL base de los endpoints de brands, y cuál es para producción y para desarrollo?",
+    "respuesta": "La URL base de los endpoints de brands aparece en dos versiones, 0.0.1-test-bench-v2a y latest, y es la misma en las dos.\n\n- **Producción:** `https://api.mp.internal.retailflow.com/catalog/brands`\n- **Desarrollo:** `http://api.mp.internal.retailflow.com/catalog/brands`\n\nFuentes: [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L7-L10] y [catalog-portfolio-api/latest/guide/api-reference/brands.md:L7-L10].\n\nLa única diferencia entre los dos entornos es el protocolo. Producción usa `https` y desarrollo usa `http`.",
+    "answer_checks": [
+     "Identifica 0.0.1-test-bench-v2a y latest como las versiones que documentan la URL base de los endpoints de brands.",
+     "Indica que la URL de producción es https://api.mp.internal.retailflow.com/catalog/brands y la de desarrollo http://api.mp.internal.retailflow.com/catalog/brands.",
+     "Señala que el contenido es el mismo en ambas versiones, sin atribuir diferencias inexistentes.",
+     "Cita el brands.md de ambas versiones (líneas 7-10 o un rango equivalente).",
+     "No pide la versión al usuario ni afirma que esas sean todas las versiones existentes del software."
+    ]
+   }
+  }
+ ]
+}

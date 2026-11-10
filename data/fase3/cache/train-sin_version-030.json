@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-030",
+ "llamadas": [
+  {
+   "clave": "89b2618ea1f909f8d1af6cc17c62fada1dae004d2fbb2bcdeda39f1a801bc928",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué endpoints principales expone payment-promise-gateway y dónde puedo encontrar la documentación detallada de su API?",
+    "respuesta": "Las dos versiones documentadas, 0.0.10-test-crc-migration y latest, dicen lo mismo sobre esto. La API está documentada con OpenAPI/Swagger [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L104-L104] [payment-promise-gateway/latest/guide/README.md:L104-L104].\n\nLos endpoints principales son siete [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L106-L112] [payment-promise-gateway/latest/guide/README.md:L106-L112]:\n\n1. `GET /payment_promise/form`\n2. `GET /payment_promise/active`\n3. `GET /offers`\n4. `POST /payment_promise`\n5. `POST /forgiveness_proposal`\n6. `PUT /forgiveness_proposal`\n7. `GET /forgiveness_proposal/{promiseId}`\n\nLa documentación detallada de la API está en specs-hub (https://web.workflowcloud.io/payment-promise-gateway/specs-hub) [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L114-L114] [payment-promise-gateway/latest/guide/README.md:L114-L114].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Enumera los siete endpoints principales, cada uno con su método y su ruta: GET /payment_promise/form, GET /payment_promise/active, GET /offers, POST /payment_promise, POST /forgiveness_proposal, PUT /forgiveness_proposal y GET /forgiveness_proposal/{promiseId}.",
+     "Indica que la documentación detallada está en specs-hub y que la API está documentada con OpenAPI/Swagger.",
+     "Indica que la información no cambia entre 0.0.10-test-crc-migration y latest, sin atribuirla a una sola versión.",
+     "No inventa endpoints ni detalles de la documentación que no aparezcan en los documentos."
+    ]
+   }
+  }
+ ]
+}

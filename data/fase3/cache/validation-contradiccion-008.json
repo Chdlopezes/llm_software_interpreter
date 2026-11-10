@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-contradiccion-008",
+ "llamadas": [
+  {
+   "clave": "0b6969392ed7281217c45e3d7d70d7a1ac4645a652a581544c86497a5ad11ef9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando el manejo de errores contra catalog-portfolio-api 0.0.1-test-bench-v2a. Cuando falla la validación de una marca, ¿qué valor llega en el campo `error` de la respuesta? Necesito el string exacto para hacer el match.",
+    "respuesta": "En esta versión la documentación da dos códigos distintos para el error de validación, así que no puedo confirmarte el string exacto.\n\n- La referencia de endpoints de marcas lo lista como `validation_error`, con código HTTP 400 y la descripción «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308].\n- La guía de troubleshooting, en su tabla de códigos de error de la aplicación, lo llama `validation_failed`, con la descripción «Business rules failed» y como causas habituales problemas de categoría o datos inválidos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105].\n\nLas dos fuentes son de la misma versión y la documentación no aclara cuál de los dos valores devuelve el servicio en realidad. Sí está documentado que el código de error llega en el campo `error` del cuerpo de la respuesta [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]. Para saber cuál de los dos strings llega, tendrías que comprobarlo con una respuesta real del servicio o preguntar al equipo que lo mantiene.",
+    "answer_checks": [
+     "Cita la tabla de errores de brands.md, que da `validation_error` (400), y la tabla de troubleshooting, que da `validation_failed`.",
+     "Explica que las dos fuentes de la misma versión no coinciden en el código de error de validación.",
+     "No presenta `validation_error` ni `validation_failed` como el valor confirmado.",
+     "No inventa ninguna explicación de la discrepancia, como por ejemplo que cada código corresponda a un tipo de validación distinto."
+    ]
+   }
+  }
+ ]
+}

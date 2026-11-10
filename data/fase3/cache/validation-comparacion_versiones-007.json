@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-comparacion_versiones-007",
+ "llamadas": [
+  {
+   "clave": "c12934855b86d4ca94c64b5b283738d0be14517e218fd3ec516def9470473313",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cambian los estados de una marca o las transiciones entre ellos de la versión 0.0.1-test-bench-v2a a latest en catalog-portfolio-api? Quiero saber si tengo que ajustar mi lógica de estados al migrar.",
+    "respuesta": "No, entre 0.0.1-test-bench-v2a y latest no cambia nada en los estados de marca: la sección es igual en las dos versiones, así que no tendrías que ajustar esa lógica por este motivo.\n\nLas dos versiones describen los mismos tres estados:\n- STAND_BY: la marca está creada pero todavía no está activa; puede faltarle algún logo obligatorio o estar desactivada temporalmente.\n- ACTIVE: la marca funciona por completo, es visible en el sistema y cumple todos los requisitos.\n- DELETED: la marca se eliminó de forma permanente y no se puede deshacer.\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L107] [catalog-portfolio-api/latest/guide/brand-management/README.md:L105-L107]\n\nEl diagrama de transiciones también coincide [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L88-L92] [catalog-portfolio-api/latest/guide/brand-management/README.md:L88-L92]:\n- Una marca nueva entra en STAND_BY.\n- Se puede pasar de STAND_BY a ACTIVE y volver de ACTIVE a STAND_BY.\n- Se puede llegar a DELETED tanto desde STAND_BY como desde ACTIVE.",
+    "answer_checks": [
+     "Indica que los estados de marca y sus transiciones no cambian entre 0.0.1-test-bench-v2a y latest.",
+     "Menciona los estados STAND_BY, ACTIVE y DELETED con su significado, sin atribuirlos a una sola versión.",
+     "Describe las transiciones: marca nueva a STAND_BY, STAND_BY↔ACTIVE y paso a DELETED desde STAND_BY o ACTIVE.",
+     "Cita el brand-management/README.md de ambas versiones.",
+     "No inventa diferencias entre versiones ni estados adicionales fuera de la documentación."
+    ]
+   }
+  }
+ ]
+}

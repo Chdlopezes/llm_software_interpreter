@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-013",
+ "llamadas": [
+  {
+   "clave": "9e5bfe17ff8e4a8514bc7b26e92f83e63f71d97c510f3580f40f1a932ef0f91c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy configurando el entorno de pruebas de order-workflow-api 5.6.2-hotfix-1 y tengo que revisar cómo le llegan los mensajes por BigQ.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber de esa configuración y lo revisamos.",
+    "pregunta": "En test, ¿qué topic y qué consumer usa el scope de los webhooks del collector, y a qué path se mandan esos mensajes?",
+    "respuesta": "En el entorno de test, el scope order-workflow-collector-webhooks usa el topic gh-webhooks-test.workflow-collector-proxy y el consumer workflow-collector-webhooks-test, y el path es /branches/protect [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L10-L14].",
+    "answer_checks": [
+     "Llama a la herramienta con order-workflow-api y la versión 5.6.2-hotfix-1 del historial, sin volver a preguntarlas.",
+     "Indica el topic gh-webhooks-test.workflow-collector-proxy y el consumer workflow-collector-webhooks-test para el scope order-workflow-collector-webhooks en test.",
+     "Indica que el path es /branches/protect.",
+     "No presenta los valores de producción (gh-webhooks.workflow-collector-proxy, workflow-collector-webhooks) como si fueran los de test.",
+     "Cita la tabla de scopes de test de services/bigq.md."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-002",
+ "llamadas": [
+  {
+   "clave": "b74b4decbe1c2200f76812480cc7e7752a1edca0aaddd34799abe758f00fac5c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, si mi cambio corrige algo en lugar de añadir una funcionalidad nueva, ¿cómo nombro la rama, desde cuál la saco y qué pasos sigo después para que el código llegue a master?",
+    "respuesta": "La rama se crea desde `develop`. Para una corrección se usa el prefijo `fix/` en vez de `feature/`, seguido de un nombre que tenga relación con los cambios [demand-forecast-docs/latest/guide/overview.md:L15-L15]. Primero te cambias a `develop` y lo actualizas con `git checkout develop` y `git pull` [demand-forecast-docs/latest/guide/overview.md:L15-L20]. Después creas la rama con `git checkout -b` [demand-forecast-docs/latest/guide/overview.md:L22-L26]. Añades los cambios, haces commit y los subes con `git push` [demand-forecast-docs/latest/guide/overview.md:L28-L32]. Luego abres un pull request en el proyecto, añades a tu equipo y a tu tech lead como revisores y haces el merge [demand-forecast-docs/latest/guide/overview.md:L34-L34].\n\nPara llevar el código a master, cuando el pull request esté aprobado vuelves a `develop` y haces `git pull` [demand-forecast-docs/latest/guide/overview.md:L36-L43]. Después creas una rama `release/X.Y.Z` con una versión superior a la de la release anterior. Puedes preguntar a tu equipo cuál toca o consultar la lista de ramas `release/` en GitHub. La subes con `git push --set-upstream release/X.Y.Z` [demand-forecast-docs/latest/guide/overview.md:L45-L51]. Por último abres un PR desde la interfaz de GitHub. Como el merge sale de una rama release, el proceso de release de RetailCorp lo aprueba automáticamente [demand-forecast-docs/latest/guide/overview.md:L53-L53].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión latest.",
+     "Indica que la rama se crea desde develop y lleva el prefijo fix/ (en lugar de feature/).",
+     "Describe que después de push se abre un pull request con el equipo y el tech lead como revisores.",
+     "Explica que para llegar a master se crea una rama release/X.Y.Z con la versión incrementada y se hace un PR cuya aprobación es automática.",
+     "Cita líneas de la sección Git de overview.md (aprox. L11-L53) y no inventa pasos o comandos que no aparecen ahí."
+    ]
+   }
+  }
+ ]
+}

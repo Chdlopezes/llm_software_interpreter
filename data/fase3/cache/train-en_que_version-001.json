@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-001",
+ "llamadas": [
+  {
+   "clave": "cad2b6ee9d215c7e3de234434ca68d2d56e92ef6eed509927e4bbceea1c248b9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api aparece el procedimiento de verificación que pide revisar el inbound del restock, comprobar el operation id del feed y hacer una validación final antes de tocar los flujos de inventario?",
+    "respuesta": "Aparece en las cuatro versiones entregadas: 0.0.10-stock-consumer, 0.0.3-paused-seller, 0.0.6-ep-restock-man y latest. En todas, el `important.md` incluye la sección \"Verification Procedure\" con los mismos tres pasos.\n\n- **0.0.10-stock-consumer** [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L22-L26]\n- **0.0.3-paused-seller** [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L22-L26]\n- **0.0.6-ep-restock-man** [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L22-L26]\n- **latest** [vendor-stockkeeper-api/latest/guide/important.md:L22-L26]\n\nLos pasos son:\n1. Revisar el inbound del flujo de restock para confirmar que están todos los ítems de prueba.\n2. Comprobar que el operationId del flujo de feed también contiene todos los ítems necesarios.\n3. Hacer una validación final de ambos flujos antes de cualquier acción.\n\n[vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L24-L26]\n\nEn ninguna de las cuatro versiones veo diferencias en el texto de estos pasos.",
+    "answer_checks": [
+     "Identifica que el procedimiento de verificación está documentado en 0.0.10-stock-consumer, 0.0.3-paused-seller, 0.0.6-ep-restock-man y latest.",
+     "Cita la sección 'Verification Procedure' del important.md de cada versión que menciona (líneas 22-26).",
+     "Describe los tres pasos (revisar el inbound del restock, comprobar el operationId del feed, validación final de ambos flujos) sin añadir pasos que no estén en los documentos.",
+     "No pide al usuario que indique una versión y no afirma que estas sean todas las versiones existentes del software fuera de las entregadas.",
+     "No cita líneas no citables como la sección 'Importance of Verification' de 0.0.3-paused-seller, 0.0.6-ep-restock-man o latest, ni la 'Conclusion'."
+    ]
+   }
+  }
+ ]
+}

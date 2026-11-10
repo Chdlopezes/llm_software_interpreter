@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/5bab6489cd0efc3061643fb2",
+ "llamadas": [
+  {
+   "clave": "5bab6489cd0efc3061643fb23751a245b1798bab7d33fe4631e285afa9c79b90",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_version-028",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, nombra payment-promise-gateway y no especifica versión, de acuerdo con la llamada version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cinco patrones, sus usos y ejemplos coinciden con las dos versiones, cuyas líneas 64-84 presentan el mismo contenido."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los patrones y las clases o anotaciones de ejemplo pertinentes; aclara que Factory no incluye clase de ejemplo (L66-L83)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan las afirmaciones y corresponden a líneas citables (L64-L84)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre patrones y ejemplos tienen citas (L64-L84)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma datos ausentes; señala correctamente que Factory no tiene clase de ejemplo documentada (L78-L79)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para describir los cinco patrones (L66-L83)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones y señala que ambas describen el mismo contenido, consistente con L64-L84 de cada documento."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la pregunta, la respuesta y las líneas documentadas; no imponen una redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-029",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el software indicado, sin versión, como refleja version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las funcionalidades enumeradas coinciden con las secciones Main Features de ambas versiones (L87-L100)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Cubre promesas, gestión de recargos por mora y ofertas, tal como pide la pregunta (L87-L100)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan cada área descrita y apuntan a líneas citables (L87-L100)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por citas a las secciones pertinentes (L87-L100)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante ni hace afirmaciones de ausencia; resume lo documentado (L87-L100)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de las tres áreas funcionales disponibles (L87-L100)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta atribuye el mismo contenido a ambas versiones, concordante con sus líneas 87-100."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-030",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, nombra el software y no indica versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La lista de siete endpoints, el uso de OpenAPI/Swagger y la referencia a specs-hub coinciden con ambas versiones (L104-L114)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera todos los endpoints principales y responde dónde está la documentación detallada (L104-L114)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones sostienen las afirmaciones y señalan líneas citables (L104-L114)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los endpoints, el formato de documentación y el enlace tienen citas (L104-L114)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a la documentación detalles adicionales ni afirma faltantes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con todos los endpoints y la ubicación documentados (L104-L114)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta señala que ambas versiones coinciden, como muestran sus líneas 104-114."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con la pregunta, la respuesta y las líneas 104-114; son verificables."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-031",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el software indicado, sin versión; coincide con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del middleware y su posición entre frontend y servicios de pago coincide con ambas versiones (L3)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica para qué sirve el servicio y dónde encaja en el sistema (L3)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan directamente la descripción (L3)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica está citada en ambas versiones (L3)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No presenta información como faltante ni afirma más de lo documentado (L3)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la descripción disponible en los documentos (L3)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Indica que las versiones coinciden, lo cual concuerda con sus líneas 3."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en L3 y no prescriben una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-032",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés, nombra el software y no fija versión; coincide con la llamada version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las instrucciones de SCOPE, la ubicación de las VM options y sus valores coinciden con ambas versiones (L494-L497)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica la variable de entorno, cómo configurar las VM options en IntelliJ y cuáles usar (L494-L497)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan las instrucciones descritas (L494-L497)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada instrucción técnica lleva citas a las líneas correspondientes (L494-L497)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa configuraciones ni presenta información como ausente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa toda la información pertinente de las instrucciones locales (L494-L497)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye las mismas instrucciones a ambas versiones, concordante con L494-L497 de cada documento."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la pregunta y las instrucciones documentadas; no exigen una redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-033",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el software indicado, sin versión; coincide con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "DataDog y las cuatro métricas descritas aparecen en ambas versiones (L524-L528)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la herramienta y enumera las métricas principales solicitadas (L524-L528)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan la herramienta y las métricas (L524-L528)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas están citadas en el apartado de métricas (L524-L528)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma datos no documentados ni presenta información como faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información disponible sobre DataDog y las métricas (L524-L528)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta indica que ambas versiones coinciden, en consonancia con L524-L528 de cada documento."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en L524-L528 y no requieren una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-034",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés, nombra el software y no especifica versión; corresponde a version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cuatro aspectos del manejo de errores corresponden a L532-L536. Los documentos entregados no especifican códigos ni estructura de campos del cuerpo de error; la referencia a specs-hub aparece en L114."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Resume el enfoque general y aclara que no se detallan códigos ni campos específicos, orientando a la documentación enlazada (L532-L536, L114)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sustentan el manejo general y el enlace; no presenta líneas no citables (L532-L536, L114)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la referencia a la documentación están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Califica correctamente como no documentados los códigos y campos específicos al revisar ambos documentos; no concluye que no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone el manejo general documentado en lugar de abstenerse (L532-L536)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el manejo general documentado de los detalles específicos no incluidos y señala que las versiones coinciden."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la evidencia y comprueban que no se inventen detalles específicos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-035",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español; nombra el software y no indica versión, de acuerdo con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Java 17, Spring Boot 3.2.4, Gradle, Google Guice, OpenAPI/Swagger y DataDog Metrics figuran en ambas versiones (L41-L46)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Incluye lenguaje, framework, build, inyección y monitoreo solicitados; añade el componente documentado de OpenAPI/Swagger (L41-L46)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita de cada versión respalda los componentes listados (L41-L46)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas de la lista tienen cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara faltantes ni atribuye componentes no documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los datos de stack disponibles en ambas versiones (L41-L46)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Afirma que el stack es igual en ambas versiones, como confirman sus líneas 41-46."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en L41-L46 y no obligan a una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial establece payment-promise-gateway y latest; la pregunta en inglés es coherente y no vuelve a pedir esos datos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los patrones y sus usos y ejemplos coinciden con el documento latest (L66-L83)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Desarrolla Dependency Injection y Builder como pide la pregunta, y menciona los otros patrones documentados (L66-L83)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden al documento entregado y respaldan cada afirmación (L66-L83)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica sobre patrones, usos y ejemplos tiene cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma detalles no documentados ni se apoya en otro documento."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de los cinco patrones que ofrece el README (L66-L83)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a la versión latest que aporta la herramienta y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Solo se entregó un documento y no hay conflicto que resolver."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la pregunta, el historial y el documento latest, y son verificables."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica el software y latest; la pregunta en español se centra coherentemente en la gestión de recargos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Crear propuestas, confirmarlas y consultar el estado están en Late Fee Management; la referencia adicional a promesas de pago también consta en el documento (L87-L96)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica las tres funciones específicas de gestión de recargos solicitadas (L93-L96)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de latest respaldan la lista de funciones descrita (L87-L96)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante ni hace afirmaciones de ausencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con las funcionalidades documentadas en Late Fee Management (L93-L96)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente y usa únicamente la versión latest entregada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Solo se entregó un documento y no hay conflicto que resolver."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la pregunta y a las líneas documentadas; son verificables sin exigir una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "test-evidencia_parcial-007",
+ "llamadas": [
+  {
+   "clave": "ba80dae6dbb1d9c40f9d00b1b72ef7c26e6a64cb5caf95cf3efd3a953c83c347",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En unified-transaction-configs v0.0.2 ya tengo el cambio de configuración listo. ¿Qué tengo que hacer para que la actualización llegue a mobile-flow-manager, y a qué endpoint llamo y con qué cuerpo para aplicarla?",
+    "respuesta": "Para que una actualización tenga efecto en mobile-flow-manager, la documentación de v0.0.2 pide hacer un merge a master en el repositorio de unified transaction configs [unified-transaction-configs/v0.0.2/guide/howto.md:L42-L46].\n\nEn cambio, la documentación que tengo no describe el endpoint al que hay que llamar para aplicar la actualización, ni sus parámetros, ni el cuerpo de la petición, así que no puedo darte esos datos.",
+    "answer_checks": [
+     "Indica que hay que hacer un merge a master en el repositorio de unified transaction configs para que la actualización tenga efecto en mobile-flow-manager.",
+     "Declara que el endpoint, los parámetros o el cuerpo de la llamada para aplicar la actualización no están documentados.",
+     "No inventa una ruta, un método con parámetros ni un cuerpo JSON para esa llamada.",
+     "No cita la línea 47 de howto.md como respaldo.",
+     "No se abstiene en la parte que sí está documentada."
+    ]
+   }
+  }
+ ]
+}

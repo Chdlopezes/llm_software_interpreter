@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/ffcd6809e3b5adc5701dbb2e",
+ "llamadas": [
+  {
+   "clave": "ffcd6809e3b5adc5701dbb2e4e7c7e8065b992b5edd28fc9f42012ec05347eb8",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-comparacion_versiones-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español; compara las dos versiones indicadas y la llamada usa version=null, como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro alertas, sus descripciones y sus monitores coinciden en las filas 9-12 de ambas versiones."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no hay cambios y detalla los nombres, las descripciones y los monitores solicitados (líneas 9-12 de ambos documentos)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las filas 7-12 y a las filas 9-12 de ambos alerts.md respaldan las afirmaciones y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre la comparación y cada alerta están citadas con ambas versiones (líneas 7-12)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información sobre la tabla está disponible en los dos documentos y no se declara información faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las tablas entregadas para responder la comparación y enumerar las cuatro alertas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de que las tablas son iguales concuerda con las filas 7-12 de ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental sobre la tabla comparada."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la comparación y las filas 7-12 de ambas tablas; no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las dos versiones nombradas; version=null es el argumento correcto para compararlas."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro filas de alertas coinciden entre versiones (líneas 9-12); los encabezados de resolución sí muestran las etiquetas de prioridad en 0.0.3 y no en 0.0.6 (líneas 17, 29 y 43)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde que la tabla no cambia, especifica alertas y monitores, y distingue correctamente el cambio de formato en encabezados fuera de la tabla (líneas 9-12, 17, 29 y 43)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambas tablas sostienen la comparación; las citas a los encabezados de 0.0.3 y 0.0.6 respaldan la diferencia de etiquetas (líneas 17, 29 y 43)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la tabla y las etiquetas de prioridad tienen citas a las líneas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara información faltante; ambas versiones entregan la tabla y los encabezados pertinentes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia de ambas versiones para resolver la comparación y señalar el cambio fuera de la tabla."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde las etiquetas: las atribuye a 0.0.3 y señala que no aparecen en los encabezados equivalentes de 0.0.6 (líneas 17, 29 y 43)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No existe conflicto documental entre las fuentes."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las filas 9-12 y los encabezados de las líneas 17, 29 y 43, y coinciden con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta clara en español y compara las versiones indicadas; la llamada usa version=null correctamente."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las filas 9-12 presentan las mismas alertas, descripciones y monitores en 0.0.6 y latest."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde que no hay cambios y detalla los cuatro elementos solicitados (líneas 9-12 de ambas versiones)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las filas correspondientes de ambos alerts.md respaldan cada comparación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada alerta y monitor está citado en ambas versiones (líneas 9-12)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información pedida está documentada en ambas tablas y no se declara ninguna carencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde a partir de la evidencia comparativa disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión y el detalle de las cuatro filas concuerdan con ambas tablas (líneas 9-12)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las filas comparadas y no imponen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español que compara 0.0.6 con latest; la llamada con version=null es adecuada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro alertas y sus monitores coinciden entre versiones en las líneas 9-12."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se añaden alertas ni cambian monitores y enumera las cuatro filas solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a cada fila de ambos alerts.md respaldan las afirmaciones y no citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión y cada alerta/monitor están respaldados por citas a ambas versiones (líneas 9-12)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No falta información para la comparación y la respuesta no declara carencias."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las dos tablas para responder en lugar de abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de igualdad es consistente con las cuatro filas de ambas versiones (líneas 9-12)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se observa conflicto entre las tablas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las filas 9-12 de ambas tablas y no exigen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés, coherente con el idioma del caso, el software y las versiones; version=null es correcto para compararlas."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "0.0.10 documenta la operación y su ejemplo (líneas 51-68), además del flujo (82-89); latest no la incluye en su documentación API. El ejemplo Feed coincide en líneas 37-49 y 36-48, respectivamente."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone la diferencia documentada, matiza que la ausencia en latest no prueba falta de soporte y señala elementos que permanecen iguales."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a 0.0.10 respaldan la operación y el diagrama; las citas de ambas versiones sostienen la comparación del Feed y Get Detail Doma (líneas 20, 36-49)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables tienen citas a las líneas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Describe la ausencia de documentación en latest sin afirmar que la operación no esté soportada; la documentación API de latest entregada no la incluye."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los detalles disponibles de 0.0.10 y la comparación con latest para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el comportamiento documentado en 0.0.10 de lo que no se documenta en latest, sin mezclar versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay dos afirmaciones documentales incompatibles; la diferencia es de cobertura."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y distinguen correctamente ausencia de documentación de ausencia de soporte."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, identifica las dos versiones y corresponde a la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos descritos coinciden en ambas guías: Restock en líneas 37, 41 y 128; Feed en 239-240 y 252-254. Los summary de 0.10 (45, 135) son sin estilo y los de latest sí llevan estilos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara los pasos de Restock y Feed y señala la diferencia de presentación documentada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan cada paso y la diferencia de formato; ninguna usa líneas marcadas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y de presentación están citadas en ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara información faltante; los procedimientos comparados están documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los pasos disponibles en ambas guías."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación de igualdad funcional y la diferencia de estilo en los summary son compatibles con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre versiones."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los pasos y el formato observables en las líneas citadas, sin exigir una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el software y las versiones señaladas; version=null es correcto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La operación de validación está documentada en 0.0.10 (líneas 51-68), mientras que 0.3 enumera servicios en 14-21 sin esa operación. Restock y Feed coinciden en las líneas citadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la operación añadida en la documentación, explica su flujo y señala servicios que se mantienen."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a 0.0.10 y a ambas versiones respaldan las afirmaciones; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la operación, su flujo y los servicios sin cambios tienen citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita la comparación a lo documentado y no afirma que la operación no exista o no pueda usarse en 0.3."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia de las dos versiones para contestar la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye la operación de validación a 0.10 y no mezcla sus detalles con 0.3."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones incompatibles entre las fuentes."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la ruta, el flujo y los ejemplos citados, y no convierten la falta de documentación en una afirmación de falta de soporte."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta clara en español sobre el flujo Feed y las versiones indicadas; la llamada con version=null es adecuada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambas guías describen la tabla 1p_3pl_product_stock_mov (líneas 239-245), la consulta de materials y la revisión de tags (252-254), y el mismo ejemplo de búsqueda (257-282)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Concluye que el procedimiento no cambia y detalla sus etapas y el ejemplo de búsqueda."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambas versiones respaldan los pasos y el ejemplo curl."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas en ambos important.md."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información solicitada está documentada en ambas versiones y no se declara que falte."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando los pasos y el ejemplo disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de que el flujo es igual coincide con el contenido paralelo de ambas guías."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en las líneas citadas y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las versiones y el software indicados; version=null es el argumento correcto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "0.10 documenta Operation Validation Consumer (líneas 51-68) y el diagrama (82-89); 0.6 documenta Restock y Feed (22-48), sin esa operación."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Detalla el endpoint nuevo documentado, su cuerpo y flujo, y compara servicios que permanecen iguales."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambas API respaldan la comparación y los detalles; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica tiene cita a las líneas pertinentes de las versiones correspondientes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Dice que la documentación de 0.6 no recoge el servicio ni el diagrama, sin afirmar que no existan o no se puedan usar."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la información sobre la operación y los servicios comunes para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye los detalles nuevos a 0.10 y mantiene separados los datos de 0.6."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental; las versiones difieren en lo que documentan."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y respetan la distinción entre documentación y soporte."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta clara en español que compara las dos versiones y pregunta por un posible ajuste; version=null es correcto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos de Restock y Feed coinciden en ambas guías (líneas 37, 41, 128, 239-240 y 252-257). Los summary de 0.6 llevan estilo en líneas 45 y 135; los de 0.10 no."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde si hace falta ajustar el procedimiento, detalla los pasos comunes y especifica el cambio de presentación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambas versiones respaldan los procedimientos y la diferencia de formato; no usan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ambos flujos y los summary tienen citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No declara información faltante; los procedimientos comparados están documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de ambas guías para responder de forma concreta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La dirección de la diferencia de estilo y la conclusión de que los pasos no cambian coinciden con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre versiones."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen los pasos y el cambio de presentación comprobables en las líneas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

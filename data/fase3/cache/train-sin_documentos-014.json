@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-014",
+ "llamadas": [
+  {
+   "clave": "2184d3ec5b4af88b955a7028aaef47500daba16d01f0d3d1750d057291abf1bb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.0.0-beta, ¿qué esquema lleva el cuerpo de la petición para crear un pedido con lista de productos en /api/v1/fresh-products/orders? ¿Es obligatorio mandarlo?",
+    "respuesta": "El catálogo no tiene documentación de zenith-keeper 1.0.0-beta, así que no puedo decirte qué esquema lleva el cuerpo de la petición de /api/v1/fresh-products/orders en esa versión ni si es obligatorio. Si quieres, consulto la documentación de las versiones de zenith-keeper que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.0.0-beta, y recibe not_found.",
+     "Explica que no hay documentación de zenith-keeper 1.0.0-beta en el catálogo.",
+     "No inventa el esquema del cuerpo ni dice si es obligatorio (por ejemplo, no menciona PurchaseDTO como dato de esa versión).",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no le pide al usuario que elija otra versión como condición para responder."
+    ]
+   }
+  }
+ ]
+}

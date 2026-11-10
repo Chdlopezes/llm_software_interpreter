@@ -1,0 +1,26 @@
+{
+ "task_id": "test-evidencia_parcial-004",
+ "llamadas": [
+  {
+   "clave": "6d44de5d5320c777bddac16b817917ba9e32d7f4be6e989d81b9e3bc0c6c6944",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api latest, ¿qué información guarda en concreto la tabla rule_header y cómo se enlaza con rule_row?",
+    "respuesta": "El enlace sí está documentado. La tabla `rule_row` tiene una columna `rule_id` (bigint, no nula) que es clave foránea y referencia a `rule_header(id)` [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md:L10]. El `id` de `rule_header` es una clave primaria bigint autoincremental [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L9].\n\nEn cuanto a qué guarda `rule_header`, la documentación solo da sus columnas: `type`, `date` (fecha de creación, con DEFAULT_GENERATED), `username` (usuario que creó la regla), `name` (nombre de la regla), `description`, `productive` (booleano, indica si es productiva) y `version` (int) [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L10-L16]. La columna `type` no tiene descripción [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md:L10]. Pero falta la explicación de qué representa la tabla en sí: la frase que debería describir qué almacena está incompleta en la documentación. Por eso no puedo decirte cuál es su propósito ni qué tipos de regla contiene.",
+    "answer_checks": [
+     "Indica que rule_row.rule_id es una clave foránea que referencia rule_header(id), con cita al documento de rule_row.",
+     "Declara que la documentación no explica qué almacena o representa la tabla rule_header.",
+     "No inventa un propósito para rule_header ni valores posibles para la columna type.",
+     "No cita la línea 3 de rule_header.md como respaldo de lo que guarda la tabla.",
+     "No se abstiene en la parte documentada (relación entre tablas o columnas de rule_header)."
+    ]
+   }
+  }
+ ]
+}

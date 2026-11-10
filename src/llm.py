@@ -1,9 +1,10 @@
 """Capa única para llamar a los LLM del flujo, con cuatro backends intercambiables.
 
-Cada rol (A = análisis, B = validación) se configura en .env:
+Cada tarea que usa un LLM tiene su propia configuración en .env (ver TAREAS).
+Ninguna tarea toma la de otra, aunque usen el mismo modelo:
 
-    LLM_A_BACKEND=claude_code | anthropic_api | codex | openai_api
-    LLM_A_MODEL=            # opcional; vacío = DEFAULT_MODELS
+    LLM_<TAREA>_BACKEND=claude_code | anthropic_api | codex | openai_api
+    LLM_<TAREA>_MODEL=      # opcional; vacío = DEFAULT_MODELS
 
 Todos los backends reciben lo mismo (system, prompt, esquema JSON) y devuelven
 un dict que cumple el esquema. Los esquemas deben ser "estrictos": todas las
@@ -42,13 +43,23 @@ CLI_TIMEOUT_S = 900
 FALLBACK_MODELS = {"claude-fable-5-1", "claude-opus-5-5", "claude-opus-5", "claude-sonnet-5-5"}
 
 
+# Tareas que usan un LLM. La clave forma el nombre de las variables de .env
+# (LLM_CLASIFICADOR_BACKEND, ...).
+TAREAS = {
+    "clasificador": "fase 0: clasifica cada sección",
+    "validador": "fase 0: valida cada clasificación",
+    "generador": "fase 3: genera las conversaciones candidatas",
+    "verificador": "fase 3: verifica cada candidato",
+}
+
+
 class LLMError(RuntimeError):
     pass
 
 
 @dataclass(frozen=True)
 class LLMConfig:
-    role: str
+    tarea: str
     backend: str
     model: str | None
 
@@ -62,17 +73,19 @@ def load_env() -> None:
     load_dotenv(ROOT / ".env", override=False)
 
 
-def get_config(role: str) -> LLMConfig:
-    """Lee backend y modelo del rol ('A' o 'B') desde el entorno."""
+def get_config(tarea: str) -> LLMConfig:
+    """Lee backend y modelo de una tarea de TAREAS desde el entorno."""
+    if tarea not in TAREAS:
+        raise LLMError(f"Tarea '{tarea}' desconocida. Usa una de: {', '.join(TAREAS)}.")
     load_env()
-    role = role.upper()
-    backend = os.getenv(f"LLM_{role}_BACKEND", "").strip()
+    var = f"LLM_{tarea.upper()}"
+    backend = os.getenv(f"{var}_BACKEND", "").strip()
     if backend not in BACKENDS:
         raise LLMError(
-            f"LLM_{role}_BACKEND='{backend}' no es válido. Usa uno de: {', '.join(BACKENDS)}."
+            f"{var}_BACKEND='{backend}' no es válido. Usa uno de: {', '.join(BACKENDS)}."
         )
-    model = os.getenv(f"LLM_{role}_MODEL", "").strip() or DEFAULT_MODELS[backend]
-    return LLMConfig(role=role, backend=backend, model=model)
+    model = os.getenv(f"{var}_MODEL", "").strip() or DEFAULT_MODELS[backend]
+    return LLMConfig(tarea=tarea, backend=backend, model=model)
 
 
 def generate(config: LLMConfig, system: str, prompt: str, schema: dict) -> dict:

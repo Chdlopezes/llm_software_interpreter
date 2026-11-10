@@ -1,0 +1,203 @@
+{
+ "task_id": "verificador/aabd7af04724f63bdaadf8be",
+ "llamadas": [
+  {
+   "clave": "aabd7af04724f63bdaadf8be8a247efe1b000463c556e58bf6ae3a71edbc9a7f",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_evidencia-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español sobre vendor-stockkeeper-api en latest, en concordancia con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía no describe la respuesta de Internal Item Detail; el ejemplo citado corresponde a Feed Consumer, no a ese endpoint (api.md, líneas 36-48)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se puede determinar la estructura solicitada con la documentación entregada y no confunde la respuesta de otra operación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita api.md:L36-L48 respalda que Feed Consumer tiene un ejemplo de llamada y una respuesta 200 OK; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación positiva sobre Feed Consumer está citada; la falta de estructura de Internal Item Detail se declara como ausencia en la documentación entregada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La estructura de Internal Item Detail no está descrita en los documentos entregados; la respuesta expresa esa limitación sin afirmar que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Se abstiene solo de inferir una respuesta que no está documentada y aporta el ejemplo disponible de otra operación (api.md, líneas 36-48)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue Internal Item Detail de Feed Consumer y no atribuye a uno la respuesta del otro."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la falta de documentación y exigen no inventar ni confundir respuestas; no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español sobre vendor-stockkeeper-api en latest, en concordancia con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía de latest no documenta los campos de respuesta de Get Detail Doma; las secciones citadas son de otras operaciones (api.md, líneas 22 y 36)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no puede determinar los campos de respuesta con la documentación entregada y no inventa una estructura."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas api.md:L22-L22 y api.md:L36-L36 señalan las secciones de Restock Consumer y Feed Consumer, sin citar la fila no citable de Get Detail Doma."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre las otras secciones de la guía están citadas; la falta de campos se presenta como ausencia documental."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No se documentan campos para Get Detail Doma en los documentos entregados; la respuesta limita correctamente su afirmación a esa falta de documentación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No hay evidencia entregada que permita identificar los campos de esa respuesta, por lo que no inventarlos es apropiado."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las operaciones citadas y Get Detail Doma, y no atribuye a este los datos de otras respuestas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son compatibles con los documentos y con la respuesta, y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica el software y la versión 0.0.10-stock-consumer; la pregunta corresponde a esos datos y a la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La base prod es inventprd y la de test inventtest; ambas muestran el mismo host y puerto (database.md, líneas 2-5 y 18-21)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde el nombre de la base de producción, su host y puerto, y compara correctamente con test."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas database.md:L18-L21 y database.md:L2-L5 respaldan los datos de producción y test; no abarcan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas sobre nombre, host y puerto están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene los datos necesarios para responder."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para contestar ambas partes de la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla entornos ni versiones; distingue las bases y compara host y puerto."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los datos documentados y a la situación del historial, sin imponer una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica vendor-stockkeeper-api y la versión 0.0.3-paused-seller; la pregunta sobre stage y producción concuerda con esos datos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Stage figura como inventstg con host proxysql.master.techzoneseginf.com y puerto 6612; producción figura como inventprd con el mismo host y puerto (database.md, líneas 10-13 y 18-21)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el nombre de la base stage, sus datos de conexión y la comparación con producción."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas database.md:L10-L13 y database.md:L18-L21 respaldan los datos de stage y producción, sin incluir líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre nombres, host y puerto están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene los datos necesarios para la comparación solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de stage y producción para responder la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde los entornos: señala que comparten host y puerto y que sus nombres de base son diferentes."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-029",
+ "llamadas": [
+  {
+   "clave": "cce465b55a9bd475e4f380610810cd88440b30cc0ce6729a8d89df20e6e36967",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando el entorno para payment-promise-gateway 0.0.10-test-crc-migration. ¿Qué necesito tener instalado y con qué comandos compilo y arranco la aplicación?",
+    "respuesta": "Para la versión 0.0.10-test-crc-migration necesitas tener instalados Java 17 y Gradle [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L501-L503].\n\nCompilas el proyecto con `./gradlew build` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L505-L508] y arrancas la aplicación con `./gradlew bootRun` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L510-L513].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software payment-promise-gateway y versión 0.0.10-test-crc-migration.",
+     "Indica que los requisitos previos son Java 17 y Gradle.",
+     "Indica que el proyecto se compila con ./gradlew build y la aplicación se ejecuta con ./gradlew bootRun.",
+     "Cita las líneas de la sección Setup and Installation (L499-L514) del README de la versión 0.0.10-test-crc-migration.",
+     "No inventa pasos ni requisitos adicionales que no aparezcan en la documentación."
+    ]
+   }
+  }
+ ]
+}

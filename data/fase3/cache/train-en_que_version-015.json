@@ -1,0 +1,47 @@
+{
+ "task_id": "train-en_que_version-015",
+ "llamadas": [
+  {
+   "clave": "5449b2810666637f2817b652a7fad2ac1857c190e82668ff892013b0be46661c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api se documenta que antes de tocar los flujos de inventario hay que comprobar que los movimientos de entrada y salida traen todos sus ítems de prueba?",
+    "respuesta": "Las cuatro versiones que devuelve la documentación lo recogen, con el mismo texto, en la introducción de guide/important.md: 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L5-L6], 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L5-L6], 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L5-L6] y latest [vendor-stockkeeper-api/latest/guide/important.md:L5-L6].\n\nEn todas ellas se dice que, antes de ejecutar cualquier acción sobre los flujos de inventario, hay que asegurarse de que tanto el movimiento de inbound como el de outbound contienen todos sus ítems de prueba. Esta comprobación sirve para no afectar a la API de ítems y, por tanto, al inventario [vendor-stockkeeper-api/latest/guide/important.md:L5-L6].\n\nEn las cuatro versiones se indica también que esta verificación hace falta en dos flujos: Restock y Feed [vendor-stockkeeper-api/latest/guide/important.md:L11-L14] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L11-L14].",
+    "answer_checks": [
+     "Identifica que lo documentan las versiones 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest, en guide/important.md.",
+     "Explica que hay que verificar que los movimientos de inbound y outbound contienen todos sus ítems de prueba para no afectar a la API de ítems ni al inventario.",
+     "Cita las líneas de introducción de important.md (L5-L6) de al menos una versión y no cita la línea 7, que no es citable.",
+     "No pide al usuario que indique una versión.",
+     "No afirma que esas sean todas las versiones que existen del software ni que la indicación no exista en otras."
+    ]
+   }
+  },
+  {
+   "clave": "eb445214d0236519f5901627307bf7a03522c4d8dfe70d5cb0d8a737ad53c764",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión o versiones de vendor-stockkeeper-api se explica que, antes de hacer nada sobre los flujos de inventario, hay que comprobar que los movimientos de entrada y de salida incluyen todos sus ítems de prueba?",
+    "respuesta": "Esa indicación aparece en la introducción de guide/important.md de cada una de las versiones incluidas en la documentación que he consultado: 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L5-L6], 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L5-L6], 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L5-L6] y latest [vendor-stockkeeper-api/latest/guide/important.md:L5-L6].\n\nEn las cuatro el texto es el mismo. Dice que, antes de ejecutar cualquier acción sobre los flujos de inventario, hay que asegurarse de que tanto el movimiento de inbound como el de outbound contienen todos sus ítems de prueba. El motivo que da es no afectar a la API de ítems y, por tanto, al inventario.\n\nEsto es solo lo que muestra la documentación consultada. No sé si hay otras versiones del software aparte de estas, ni qué dirían sobre este punto.",
+    "answer_checks": [
+     "Indica que la indicación aparece en guide/important.md de las versiones 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest.",
+     "Respalda la presencia en cada versión con una cita a las líneas de introducción (L5-L6) del important.md de esa misma versión, sin citar la línea 7.",
+     "Explica que hay que verificar que los movimientos de inbound y outbound contienen todos sus ítems de prueba para no afectar a la API de ítems ni al inventario.",
+     "No presenta la lista de versiones como exhaustiva del software ni afirma que la indicación falte en otras versiones.",
+     "No pide al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

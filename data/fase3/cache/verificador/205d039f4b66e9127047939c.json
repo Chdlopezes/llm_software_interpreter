@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/205d039f4b66e9127047939c",
+ "llamadas": [
+  {
+   "clave": "205d039f4b66e9127047939cf4b238014efddc0a59e7f7f211fd1e797cd8275d",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-software_en_historial-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y coincide con el software y la versión del historial, también usados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El formato de error muestra `error`, `message`, `status` y `cause`, con `status` 404 y `cause` vacío; las líneas citadas respaldan esos datos (api-reference/README.md:L75-L86; brands.md:L316-L325)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que el cuerpo repite el estado y menciona el campo de causas; también responde que no se documenta el contenido de `cause` cuando no está vacío."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las dos citas son de documentos entregados y respaldan el formato de error; sus líneas son citables (api-reference/README.md:L75-L86; brands.md:L316-L325)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas a los formatos de error (api-reference/README.md:L75-L86; brands.md:L316-L325)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo solo muestra `cause` vacío y la respuesta limita su declaración a que no se explica el contenido cuando no está vacío (api-reference/README.md:L79-L85; brands.md:L318-L324)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia sobre los campos del cuerpo en vez de abstenerse (api-reference/README.md:L77-L85)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones; ambas fuentes muestran el formato de error (api-reference/README.md:L77-L85; brands.md:L318-L324)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos citados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen hechos verificables en el historial y en los formatos de error de las líneas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, coincide con el software y la versión del historial y corresponde a la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama muestra transiciones a `DELETED` desde `STAND_BY` y `ACTIVE`, y de `ACTIVE` a `STAND_BY`; la descripción identifica `DELETED` como permanente e irreversible (brand-management/README.md:L87-L92, L105-L107)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde desde qué estados se llega a `DELETED` y si `ACTIVE` puede volver a `STAND_BY`."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las transiciones y la descripción de los estados; las líneas son citables (brand-management/README.md:L87-L92, L105, L107)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica tiene cita a las líneas pertinentes (brand-management/README.md:L87-L92, L105, L107)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite responder las partes preguntadas (brand-management/README.md:L87-L92, L105-L107)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder ambas partes (brand-management/README.md:L87-L92)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene coherencia con el diagrama y las descripciones de estado (brand-management/README.md:L87-L92, L105-L107)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en el diagrama y las descripciones citadas (brand-management/README.md:L87-L92, L105-L107)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, es natural y corresponde al software y versión del historial y de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La lista incluye Brand Endpoints (`brands.md`) y la describe como operaciones CRUD de marcas y búsqueda (api-reference/README.md:L9-L11)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la página y explica qué cubre, como se pregunta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita de L9-L11 respalda la página y su descripción; L5 solo identifica el encabezado y es citable."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el encabezado y el elemento de la lista llevan citas (api-reference/README.md:L5, L9-L11)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La lista entregada permite responder la pregunta (api-reference/README.md:L9-L11)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información explícita de la lista (api-reference/README.md:L9-L11)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla información de otras páginas ni versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la lista de elementos y a la descripción de las líneas 9-11."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y coincide con el software y la versión del historial y la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla indica MySQL 8.0 como almacenamiento principal y Gradle 7.3 como herramienta de build (architecture/README.md:L69-L70)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas tecnologías y sus versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita incluye las dos filas pertinentes y es citable (architecture/README.md:L69-L70)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los datos técnicos están citados en la tabla de stack (architecture/README.md:L69-L70)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La tabla proporciona los datos solicitados (architecture/README.md:L69-L70)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible para responder ambas partes (architecture/README.md:L69-L70)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla tecnologías ni versiones; coincide con la tabla citada (architecture/README.md:L69-L70)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la tabla de Technology Stack (architecture/README.md:L69-L70)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e indica el software y la versión que se usaron en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La lista de Required Fields enumera `name`, `site`, `category` y `type`; además, especifica que el nombre debe ser único dentro del site (brands.md:L92-L96). El ejemplo envía esos cuatro campos (L103-L108)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde cuáles son los campos obligatorios y la restricción del nombre."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los campos, la unicidad del nombre y el contenido del ejemplo; las líneas citadas son citables (brands.md:L70-L74, L92-L96, L100-L109)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas a la sección Create Brand y al ejemplo (brands.md:L92-L96, L100-L109)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La lista de campos obligatorios responde lo solicitado (brands.md:L92-L96)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la lista explícita de campos obligatorios (brands.md:L92-L96)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La lista coincide con los cuatro campos del ejemplo de petición (brands.md:L92-L96, L103-L108)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los campos y la restricción documentados en L92-L96, sin exigir una redacción particular."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica software y versión como requiere la situación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint, el parámetro obligatorio integer, y los campos enumerados —incluido `logos` con los datos indicados— coinciden con el ejemplo Get Brand (brands.md:L130-L136, L149-L168)."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Explica el endpoint, el tipo del parámetro y los logos, y enumera varios campos, pero la respuesta de ejemplo también incluye `id` (brands.md:L148), que no menciona al describir los campos devueltos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas son de líneas citables y respaldan las afirmaciones hechas; no cita la línea no citable 148 (brands.md:L126-L142, L149-L168)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas están citadas en la sección Get Brand (brands.md:L126-L168)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación contiene el endpoint y un ejemplo de respuesta con los campos solicitados (brands.md:L130-L168)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible, especialmente sobre el array `logos` y sus campos (brands.md:L156-L163)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los datos mencionados concuerdan con el ejemplo de respuesta (brands.md:L149-L168)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los datos verificables del endpoint y del ejemplo de respuesta (brands.md:L130-L168)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta omite `id` al describir los campos que trae la respuesta de ejemplo (brands.md:L148)."
+     },
+     {
+      "case_id": "validation-version_explicita-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica el software y la versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los apartados de escalabilidad y fiabilidad describen los mecanismos indicados en la respuesta (architecture/README.md:L88-L96)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica los principios para escalabilidad y fiabilidad y aporta el contexto de los otros principios."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan cada principio y son citables (architecture/README.md:L75-L96)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada de una cita pertinente (architecture/README.md:L75-L96)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La sección entregada enumera los principios solicitados (architecture/README.md:L88-L96)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información de la sección Key Architectural Principles para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta separa correctamente escalabilidad y fiabilidad y no mezcla versiones (architecture/README.md:L88-L96)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los principios documentados y no requieren detalles ausentes (architecture/README.md:L88-L96)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e identifica software y versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Coinciden el método y la ruta, el parámetro integer obligatorio y los campos del cuerpo de ejemplo (brands.md:L176-L196)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica cómo actualizar, qué parámetro lleva el path y qué campos aparecen en el cuerpo de ejemplo; aclara que no se especifican obligatoriedades."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan endpoint, parámetro, cuerpo y petición de ejemplo; las líneas son citables (brands.md:L172-L207)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en la sección Update Brand (brands.md:L172-L207)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara de forma acotada que en esa sección no se indican campos obligatorios; no transforma esa falta de información en una regla de la API (brands.md:L184-L196)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los campos que sí muestra el ejemplo y no se abstiene (brands.md:L184-L207)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los campos enumerados coinciden con el cuerpo de ejemplo y no se les atribuye obligatoriedad (brands.md:L186-L195)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la sección Update Brand y evitan exigir campos obligatorios no documentados (brands.md:L176-L196)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e indica el software y la versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El flujo y la función de Pictures API coinciden con el diagrama y la lista de integraciones (architecture/README.md:L102, L106-L107)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el recorrido de subida de logo y explica para qué sirve la integración externa."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el flujo y la función de Pictures API; las líneas son citables (architecture/README.md:L102, L106-L107)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Ambas afirmaciones técnicas están citadas (architecture/README.md:L102, L106-L107)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "El documento proporciona tanto el flujo como la función de la integración externa (architecture/README.md:L102, L106-L107)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia explícita sobre el recorrido y el servicio externo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No añade pasos al flujo de subida de logo y mantiene la función indicada para Pictures API (architecture/README.md:L102, L106-L107)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no añaden pasos ausentes del flujo."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español e indica el software y la versión usados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint es `DELETE /{brandId}`, `brandId` es integer obligatorio y se requiere `X-Client-Id` con un ID en whitelist; la operación se describe como permanente (brands.md:L209-L225)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué ruta y parámetro usar y qué header enviar."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la operación, el parámetro, el header y el ejemplo; no usa la línea no citable 238 (brands.md:L209-L232)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en la sección Delete Brand (brands.md:L209-L232)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada especifica los datos de petición solicitados (brands.md:L213-L232)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los requisitos de ruta y header documentados (brands.md:L213-L225)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo de petición concuerda con el método, la ruta y el header indicados (brands.md:L227-L232)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la sección Delete Brand y evitan exigir datos no documentados (brands.md:L213-L232)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

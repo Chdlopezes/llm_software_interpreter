@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-009",
+ "llamadas": [
+  {
+   "clave": "cc235b213b5db7a389352e4f3e22691af19c51f07a396ebcb2fcab9a96c1a73e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿qué cuerpo recibe el endpoint POST /whitelist/process y qué códigos de respuesta puede devolver?",
+    "respuesta": "POST /whitelist/process recibe las IP que el endpoint /whitelist dejó en la cola, las analiza y decide si van a whitelist o no. Su operationId es whitelistProcess [traffic-gate-api/latest/specs/swagger.yaml:L230-L236].\n\nEl cuerpo es el mensaje que entrega la BigQ, con la IP que hay que analizar y el ratelimit asociado. Se envía como `application/json` con el esquema `BQNotification` [traffic-gate-api/latest/specs/swagger.yaml:L237-L242]. Ese esquema tiene estos campos: `topic` (tópico de la BigQ), `cluster` (cluster de la BigQ), `consumer` (endpoint que consume la cola), `id` (uuid que la BigQ asigna al mensaje) y `msg`, que remite a `BQMessageContent` [traffic-gate-api/latest/specs/swagger.yaml:L314-L334]. A su vez, `BQMessageContent` lleva `scope` (api, front, pci o pci-global), `ip` (la dirección que se analiza) y `rule`, que remite a `RatelimitBlockingIp` [traffic-gate-api/latest/specs/swagger.yaml:L335-L350].\n\nPuede devolver tres códigos [traffic-gate-api/latest/specs/swagger.yaml:L243-L257]:\n- `200`: operación correcta.\n- `400`: petición incorrecta, con cuerpo `ErrorResponse`.\n- `500`: error interno, también con `ErrorResponse`.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión latest.",
+     "Indica que el cuerpo es el mensaje de la BigQ con el esquema BQNotification (o enumera sus campos topic, cluster, consumer, id y msg).",
+     "Indica los códigos de respuesta 200, 400 y 500, y que 400 y 500 devuelven ErrorResponse.",
+     "Cita líneas de traffic-gate-api/latest/specs/swagger.yaml dentro de la definición de /whitelist/process (L230-L257) o del esquema BQNotification.",
+     "No presenta como hechos los valores de ejemplo (como el tópico, el cluster o el uuid de ejemplo) ni inventa campos o códigos que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

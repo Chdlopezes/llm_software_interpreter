@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-002",
+ "llamadas": [
+  {
+   "clave": "ec22fb5d973a2644b4c66e9e9563d72ea3e569b0bb5ccdef0efb3d5d58abcab0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a necesito obtener una marca junto con toda su información de estado. ¿Qué endpoint tengo que llamar y qué campos trae la respuesta?",
+    "respuesta": "Para obtener una marca con toda su información de estado se usa `GET /catalog/brands/{brandId}/allstatus`, que la tabla de referencia rápida describe como «Get brand with all status information» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L27-L27]. Sin embargo, la referencia de endpoints de marcas no detalla este endpoint: no aparece ni su esquema de respuesta ni un ejemplo, así que no sé decirte qué campos devuelve ni en qué se diferencia de la consulta normal por ID.",
+    "answer_checks": [
+     "Indica que el endpoint es GET /catalog/brands/{brandId}/allstatus.",
+     "Cita la tabla de referencia rápida del README de api-reference como fuente del endpoint.",
+     "Declara que los campos de la respuesta de allstatus no están documentados.",
+     "No inventa campos de respuesta para allstatus ni presenta como suya la respuesta de ejemplo de GET /{brandId}.",
+     "No se abstiene en la parte documentada (el endpoint)."
+    ]
+   }
+  }
+ ]
+}

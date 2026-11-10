@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-032",
+ "llamadas": [
+  {
+   "clave": "f2e509feb0667749f3196af47d49880dc0a957926154d219ca32b0e75a9f8060",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿en qué archivo del código está implementada la diarización de las variables exógenas mensuales?",
+    "respuesta": "Según la sección de implementación de la guía de diarización, el código está en el archivo `temporal_forecast_proportions.py`. El enlace de la documentación apunta a la ruta `src/marketplace/sktime/transformations/temporal_forecast_proportions.py` del repositorio `retail_demand-forecast` en GitHub (retailcorpsrc), fijada en el commit `6a6612004f7a329935f791777bf9b428cd307eac` [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L78-L80].",
+    "answer_checks": [
+     "Llama a la herramienta con software demand-forecast-docs y versión latest.",
+     "Indica que la implementación está en el archivo temporal_forecast_proportions.py.",
+     "Menciona la ruta src/marketplace/sktime/transformations o el repositorio retail_demand-forecast.",
+     "Cita la sección de implementación de diarizacion.md (líneas 78-80).",
+     "No inventa detalles del código (clases, funciones o parámetros) que no estén en la documentación."
+    ]
+   }
+  }
+ ]
+}

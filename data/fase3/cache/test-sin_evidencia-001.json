@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_evidencia-001",
+ "llamadas": [
+  {
+   "clave": "96035c985df7fafa7c096ae381ebba89c049f3fe5d34ac5aaa7738be7c7cd0ee",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In 2p-revenue-optimizer-api 0.2.2, what kind of data is the rule_header table meant to hold? I'm trying to understand its purpose before I query it.",
+    "respuesta": "I can't tell you the purpose of `rule_header` from the 0.2.2 documentation. The page for that table doesn't explain what data it holds. What it does show is the column list, which includes fields such as `name` (name of the rule), `username` (the user who created the rule) and `productive` (whether it is productive) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L12-L15]. The `rule_row` table also has a `rule_id` column that references `rule_header(id)` [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10]. Neither page says what business data these rules represent.",
+    "answer_checks": [
+     "Says that the 0.2.2 documentation does not explain what data or purpose the rule_header table has.",
+     "Does not invent a purpose or a type of data for rule_header (for example, pricing rules) that the documents don't state.",
+     "Does not claim the table is unused, empty or nonexistent.",
+     "Any related facts it mentions (columns, or the rule_row foreign key to rule_header) come with citations to the rule_header.md or rule_row.md documents.",
+     "Does not cite the truncated description line (line 3) or the type column row (line 10) of rule_header.md as support."
+    ]
+   }
+  }
+ ]
+}

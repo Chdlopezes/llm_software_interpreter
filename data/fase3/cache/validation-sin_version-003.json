@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-003",
+ "llamadas": [
+  {
+   "clave": "67d855ff0ec12f26b895ce0782e5a5b7966c4d241dfda8d9dc2a9d9d7ee9d115",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando catalog-portfolio-api y en algunas operaciones sobre marcas me llegan los errores `logos_missing` y `unauthorized`. ¿Qué significa cada uno?",
+    "respuesta": "En las dos versiones documentadas (0.0.1-test-bench-v2a y latest), la sección de manejo de errores de Brand Management dice lo mismo sobre estos dos errores:\n\n- `logos_missing` significa que no se han subido los logos requeridos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L168-L168] [catalog-portfolio-api/latest/guide/brand-management/README.md:L168-L168]. Para activar una marca hace falta subir al menos un logo principal (main logo) [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L118-L118] [catalog-portfolio-api/latest/guide/brand-management/README.md:L118-L118].\n- `unauthorized` significa que faltan permisos para la operación [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L170-L170] [catalog-portfolio-api/latest/guide/brand-management/README.md:L170-L170].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que logos_missing significa que no se han subido los logos requeridos.",
+     "Indica que unauthorized significa que faltan permisos para la operación.",
+     "Dice que estas descripciones no cambian entre 0.0.1-test-bench-v2a y latest, sin atribuirlas a una sola versión.",
+     "No usa como respaldo la descripción de validation_failed ni inventa códigos HTTP o causas que no estén en los documentos citados."
+    ]
+   }
+  }
+ ]
+}

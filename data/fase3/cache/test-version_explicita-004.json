@@ -1,0 +1,47 @@
+{
+ "task_id": "test-version_explicita-004",
+ "llamadas": [
+  {
+   "clave": "6f3855e47f9dce0763d3965ad8f565d3dca45130d95617bd5535d8d61d9e7d8c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest necesito sacar todo el historial de bloqueos de una IP, sin limitarlo a un rango de fechas. ¿Qué endpoint uso, con qué método, qué le mando en el body y qué me devuelve?",
+    "respuesta": "Para eso está `/v1/get-historic-blocks-by-ip`, y se llama con POST [traffic-gate-api/latest/specs/swagger.yaml:L69-L70]. Al contrario que `/get-blocks-by-ip`, no filtra por rango de tiempo: devuelve el historial completo de bloqueos de la IP [traffic-gate-api/latest/specs/swagger.yaml:L74].\n\nEl body es obligatorio. Es un objeto JSON (`application/json`) con un único campo, `ip`, de tipo string [traffic-gate-api/latest/specs/swagger.yaml:L76-L86].\n\nSi todo va bien, responde 200 con un array de objetos `Block` [traffic-gate-api/latest/specs/swagger.yaml:L87-L95]. Cada `Block` trae `ip`, `cloud`, `reverse_dns`, `creation_date` y `deletion_date` como strings, y `whitelisted` como booleano [traffic-gate-api/latest/specs/swagger.yaml:L370-L387]. Si falla, devuelve 400 (Bad request) o 500 (Internal server error), los dos con un `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L96-L107], que tiene un campo `error` de tipo string [traffic-gate-api/latest/specs/swagger.yaml:L388-L392].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión latest.",
+     "Indica que el endpoint es POST /v1/get-historic-blocks-by-ip y que no filtra por rango de tiempo, sino que devuelve el historial completo de bloqueos.",
+     "Indica que el body obligatorio es un objeto JSON con el campo ip de tipo string, y no inventa campos como begin_time o end_time para este endpoint.",
+     "Indica que la respuesta 200 es un array de Block y que los errores 400/500 devuelven ErrorResponse.",
+     "Cita líneas de la sección de /v1/get-historic-blocks-by-ip en traffic-gate-api/latest/specs/swagger.yaml."
+    ]
+   }
+  },
+  {
+   "clave": "5770fe4582ee34abc5f63f08771a9a2ebd15cae6638605f8ac641311a8e1253b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest quiero sacar todo el historial de bloqueos de una IP, sin acotarlo a un rango de fechas. ¿Qué endpoint llamo, con qué método, qué va en el body y qué códigos de respuesta puedo recibir?",
+    "respuesta": "Usa `/v1/get-historic-blocks-by-ip` con POST [traffic-gate-api/latest/specs/swagger.yaml:L69-L70]. A diferencia de `/get-blocks-by-ip`, no filtra por rango de tiempo y devuelve el historial completo de bloqueos de la IP [traffic-gate-api/latest/specs/swagger.yaml:L74].\n\nEl body es obligatorio. Es un objeto JSON (`application/json`) con un solo campo, `ip`, de tipo string [traffic-gate-api/latest/specs/swagger.yaml:L76-L86].\n\nLas respuestas posibles son tres. 200 (Successful operation) devuelve un array de objetos `Block` [traffic-gate-api/latest/specs/swagger.yaml:L88-L95]. 400 (Bad request) y 500 (Internal server error) devuelven un `ErrorResponse` [traffic-gate-api/latest/specs/swagger.yaml:L96-L107].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión latest.",
+     "Indica que el endpoint es POST /v1/get-historic-blocks-by-ip y que devuelve el historial completo de bloqueos, sin filtrar por rango de tiempo.",
+     "Indica que el body obligatorio es un objeto JSON con el campo ip de tipo string, y no le atribuye campos como begin_time o end_time a este endpoint.",
+     "Indica que 200 devuelve un array de Block y que 400 y 500 devuelven ErrorResponse.",
+     "Cita líneas de la sección de /v1/get-historic-blocks-by-ip (L69-L107) de traffic-gate-api/latest/specs/swagger.yaml."
+    ]
+   }
+  }
+ ]
+}

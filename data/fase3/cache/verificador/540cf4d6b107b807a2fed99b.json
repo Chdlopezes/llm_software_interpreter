@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/540cf4d6b107b807a2fed99b",
+ "llamadas": [
+  {
+   "clave": "540cf4d6b107b807a2fed99bf9151a614fb521add12ead659bae2ca415232070",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-sin_documentos-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre 2p-revenue-optimizer-api 1.0.0-beta, coincidente con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Como la herramienta devolvió not_found y no entregó documentos, la respuesta no afirma hechos técnicos sobre esa versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder la consulta para esa versión y ofrece consultar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la respuesta no incluye citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre documentación entregada que requieran cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la falta de documentación para la versión indicada, sin afirmar que no exista una vía de contacto."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención técnica está justificada por el estado not_found."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con que no se encontraron documentos para la versión solicitada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados que puedan estar en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con not_found y con la respuesta; no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_documentos-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre 2p-revenue-optimizer-api 2.0, que coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a la versión 2.0 datos de otros documentos; la herramienta devolvió not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder sobre tipo y nulabilidad en la versión solicitada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no hay citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hace afirmaciones técnicas respaldadas en documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita la afirmación a que no hay documentación en el catálogo para la versión 2.0."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención está justificada por el resultado not_found."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla datos de otras versiones con la versión preguntada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al resultado not_found y a la respuesta sin datos técnicos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_documentos-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el servidor embebido y su cambio en 2p-revenue-optimizer-api 1.0.0-beta, igual que en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No afirma datos técnicos de la versión; la herramienta devolvió not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder ninguna de las dos partes para esa versión y ofrece consultar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la respuesta no cita."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No presenta afirmaciones técnicas sobre documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la falta de documentación de la versión solicitada y no infiere cómo se configura el servidor."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La abstención está justificada por not_found."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no contradice ni mezcla información de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con el estado de la herramienta y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre el propósito de rule_header en 2p-revenue-optimizer-api 0.2.2, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las columnas mencionadas se describen en las líneas 12-15 y la referencia rule_id a rule_header(id) aparece en rule_row, línea 10."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que los documentos no permiten determinar el propósito y aporta datos relacionados disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a rule_header:L12-L15 y rule_row:L10 respaldan los datos mencionados; no cita las líneas no citables 3 ni 10 de rule_header."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre columnas y clave foránea están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de rule_header no explica qué datos guarda (línea 3), y los documentos entregados no completan esa información; no afirma que la tabla no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aunque no inventa el propósito faltante, informa columnas y relación respaldadas por rule_header:L12-L15 y rule_row:L10."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue lo no documentado de los datos concretos disponibles, sin contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la falta de propósito documentado y las citas y límites de la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el significado y los valores de type en rule_header de la versión 0.2.2."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye significado ni valores a type; las columnas name y description están descritas en rule_header:L13-L14, y rule_row:L10 establece la referencia."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no se documentan el significado ni los valores posibles y aporta contexto relacionado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas rule_header:L13-L14 y rule_row:L10 respaldan las afirmaciones relacionadas; no cita la línea no citable 10 de rule_header."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los datos técnicos adicionales están respaldados por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La fila de type no describe su significado ni valores posibles y no hay tal información en los demás documentos entregados; la respuesta lo presenta como no documentado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Además de señalar la información faltante, incluye datos relacionados que sí constan en las líneas citadas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la falta de significado documentado con la inexistencia de la columna."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con los documentos y no requieren una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el propósito de rule_row en 2p-revenue-optimizer-api 0.2.2."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_id referencia rule_header(id) y las columnas indicadas como JSON y nulas constan en rule_row:L10-L16."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que el propósito funcional no está explicado y proporciona la estructura de columnas que sí documenta la página."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "rule_row:L10-L16 respalda la referencia y las columnas mencionadas; no cita la línea no citable 3."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre columnas, tipos y nulabilidad llevan cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de rule_row está truncada en la línea 3 y los documentos entregados no explican su propósito; no afirma que la tabla no exista ni que no se use."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Ofrece los datos estructurales disponibles en vez de abstenerse de toda la respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Separa el propósito no documentado de las columnas que sí aparecen en la documentación."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes entregadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con la descripción truncada y las filas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre rule_header en 2p-revenue-optimizer-api latest, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las columnas name, description, productive y version constan en rule_header:L13-L16; rule_row:L10 muestra la referencia a rule_header(id)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que el propósito no está documentado y aporta las columnas y relación disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a rule_header:L13-L16 y rule_row:L10 respaldan las afirmaciones; no cita la línea no citable 3."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La línea 3 de rule_header no explica su contenido y los demás documentos entregados tampoco aportan su propósito; la respuesta no afirma que la tabla carezca de finalidad."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Incluye información estructural relacionada que sí está documentada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la referencia desde rule_row con una explicación del propósito de rule_header."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con las líneas citadas y con la ausencia de una descripción funcional."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre type en rule_header de 2p-revenue-optimizer-api latest, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_header:L10 presenta type como varchar(180), Not null y sin descripción en la celda correspondiente."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que no se documentan el significado ni los valores posibles y da los atributos que sí constan."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita rule_header:L10 respalda el tipo, la nulabilidad y la celda de descripción vacía."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre la definición de la columna está citada; la falta de valores posibles se comprueba en los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Ninguno de los documentos latest entregados explica el significado ni los valores de type; la respuesta solo indica que no están documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Comunica los atributos conocidos de la columna en vez de limitarse a abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No infiere que la columna carezca de significado o que no se use."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y corresponden a la cita y a la información faltante."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica 2p-revenue-optimizer-api 0.2.2 y la pregunta posterior se refiere coherentemente a rule_header; la llamada usa esos datos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "created_date es timestamp, Not null y DEFAULT_GENERATED (rule_header:L11); productive_date es timestamp y null (L16); productive es boolean y Not null (L15)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica cuál fecha admite null y cuál tiene DEFAULT_GENERATED, respondiendo ambas partes."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a rule_header:L11, L15 y L16 respaldan cada dato y no usan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas sobre las columnas están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No presenta como documentados triggers u otros mecanismos; limita la afirmación de valor por defecto a DEFAULT_GENERATED en L11."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para contestar la nulabilidad y el valor generado por defecto."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados los atributos de created_date y productive_date, sin mezclar versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con los datos de rule_header:L11, L15-L16 y no imponen una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica el software y la versión 0.2.2; la pregunta sobre Dockerfile.runtime no necesita repetirlos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo de imagen runtime está en README:L76-L79 y el enlace a tags disponibles para Dockerfile.runtime en L81; L67 indica que el tag depende del runtime deseado."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da la imagen del ejemplo y dónde consultar otros tags."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas README:L67, L76-L79 y L81 respaldan las afirmaciones correspondientes."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica verificable está acompañada por su cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No se necesita información adicional para responder y no inventa tags."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles en el README."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el Dockerfile.runtime del Dockerfile y no confunde sus repositorios."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con README:L67, L76-L79 y L81, y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

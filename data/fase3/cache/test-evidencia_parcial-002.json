@@ -1,0 +1,47 @@
+{
+ "task_id": "test-evidencia_parcial-002",
+ "llamadas": [
+  {
+   "clave": "adc7fc83dc08ff505c6a7bf2f858392352527b308d97cee84ad34964957dc0cf",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In 2p-revenue-optimizer-api 0.2.2, how are rule_row records tied back to their rule_header? And what values can the type column of rule_header take, and what does each one mean?",
+    "respuesta": "Each rule_row record points to its rule through the `rule_id` column. It is a `bigint`, it is Not null, and it is a foreign key that `REFERENCES rule_header(id)` [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10]. On the rule_header side, `id` is a `bigint`, Not null, auto-increment primary key [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L9-L9]. The documentation for 0.2.2 doesn't cover the `type` column of rule_header. It doesn't describe what the column means, it doesn't list the values it can take, and it doesn't explain what any value means. I can't tell you those values.",
+    "answer_checks": [
+     "States that rule_row.rule_id is a foreign key referencing rule_header(id).",
+     "Mentions that rule_header.id is a bigint auto-increment primary key, or that rule_id is a non-null bigint.",
+     "Says that the possible values and meaning of the rule_header type column are not documented.",
+     "Does not make up values or a meaning for the type column.",
+     "Does not refuse to answer the documented part about how the two tables are linked."
+    ]
+   }
+  },
+  {
+   "clave": "5fc42cf34d9a8ac48efef90bbac631e3a60b6382255f4362d5f2e3854edcecc5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In 2p-revenue-optimizer-api 0.2.2, how is a rule_row linked to its rule_header? Also, what values can the type column of rule_header take, and what does each one mean?",
+    "respuesta": "A rule_row points to its rule through the `rule_id` column. It's a non-null `bigint` and a foreign key that `REFERENCES rule_header(id)` [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10]. On the rule_header side, `id` is a non-null `bigint` and the auto-increment primary key [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L9-L9].\n\nI can't answer the second part. The 0.2.2 data dictionary doesn't explain what rule_header's `type` column means. It also doesn't list the values it can take or say what any of them means, so I can't give you those values.",
+    "answer_checks": [
+     "States that rule_row.rule_id is a foreign key referencing rule_header(id).",
+     "Says that the documentation does not give the meaning or the possible values of rule_header's type column.",
+     "Does not make up values or a meaning for the type column.",
+     "Does not claim that the type column is missing from the documentation or that the column doesn't exist; it only says its meaning and values are not documented.",
+     "Does not refuse to answer the documented part about how the two tables are linked."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "task_id": "test-sin_version-009",
+ "llamadas": [
+  {
+   "clave": "c75f8e9158f62b31f5ee7fbeb3ed0ccbee7f06168d8717be58b39ed40e1c9073",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cómo funciona el proceso de purga de whitelist en traffic-gate-api? Quiero saber cada cuánto se ejecuta y por qué trabaja con concurrencia.",
+    "respuesta": "La purga solo aparece documentada en la versión latest, así que no hay diferencias entre versiones que comparar.\n\n**Cada cuánto se ejecuta:** un job configurado en RetailHub llama cada hora al endpoint POST /whitelist/purge [traffic-gate-api/latest/guide/sections/processes.md:L87-L87]. El endpoint recibe el scope como query param (POST /whitelist/purge?scope=x). Consulta las IPs que se agregaron a la whitelist de ese scope y evalúa si se sigue autorizando su tráfico o si se eliminan de la whitelist [traffic-gate-api/latest/guide/sections/arch.md:L24-L24]. Hay un job de purga por cada uno de los 4 scopes, y los 4 se ejecutan cada hora [traffic-gate-api/latest/guide/sections/arch.md:L26-L27].\n\n**Qué hace:** actualiza la metadata de las IPs que están en la whitelist para decidir cuáles deberían salir de ella [traffic-gate-api/latest/guide/sections/processes.md:L87-L87]. Esta revisión continua hace falta porque las IPs son dinámicas y los usuarios que hay detrás de ellas van cambiando [traffic-gate-api/latest/guide/sections/processes.md:L89-L89].\n\n**Por qué usa concurrencia:** a diferencia del flujo de procesamiento, la purga trabaja con concurrencia porque tiene que procesar una gran cantidad de IPs. Para eso crea una serie de workers (goroutines que se ejecutan a la vez) y un semáforo. El semáforo bloquea el resto del flujo hasta que se hayan procesado todas las IPs [traffic-gate-api/latest/guide/sections/processes.md:L91-L91].",
+    "answer_checks": [
+     "Indica que la purga se dispara cada hora desde un job de RetailHub que llama a POST /whitelist/purge, y cita processes.md o arch.md.",
+     "Explica que el proceso actualiza la metadata de las IPs en whitelist para decidir cuáles deben salir, porque las IPs son dinámicas y los usuarios detrás de ellas cambian.",
+     "Explica que usa concurrencia por la gran cantidad de IPs a procesar, con workers (goroutines) y un semáforo que bloquea el flujo hasta que se procesan todas.",
+     "Atribuye la información a la versión latest y no inventa diferencias con otras versiones.",
+     "No cita la línea 93 de processes.md (la eliminación vía Vegeta API) como respaldo."
+    ]
+   }
+  },
+  {
+   "clave": "7c6818021e7f5239ba229f0d305e6c1f1f3aa4f46387e16440d06db9322e2fed",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cómo funciona el proceso de purga de whitelist en traffic-gate-api? Quiero saber cada cuánto se ejecuta y por qué trabaja con concurrencia.",
+    "respuesta": "La documentación que obtuve de traffic-gate-api corresponde a la versión latest, y lo que sigue sale de ella.\n\n**Cada cuánto se ejecuta:** un job configurado en RetailHub llama cada hora al endpoint POST /whitelist/purge [traffic-gate-api/latest/guide/sections/processes.md:L87-L87]. El endpoint recibe el scope como query param (POST /whitelist/purge?scope=x). Consulta las IPs que se agregaron a la whitelist de ese scope y evalúa si se sigue autorizando su tráfico o si se quitan de la whitelist [traffic-gate-api/latest/guide/sections/arch.md:L24-L24]. Hay un job de purga por cada uno de los 4 scopes, y los 4 se ejecutan cada hora [traffic-gate-api/latest/guide/sections/arch.md:L26-L27].\n\n**Qué hace:** actualiza la metadata de las IPs que están en la whitelist para decidir cuáles deberían salir de ella [traffic-gate-api/latest/guide/sections/processes.md:L87-L87]. Esta revisión continua hace falta porque las IPs son dinámicas y los usuarios que hay detrás de ellas van cambiando [traffic-gate-api/latest/guide/sections/processes.md:L89-L89].\n\n**Por qué usa concurrencia:** a diferencia del flujo de procesamiento, la purga trabaja con concurrencia porque tiene que procesar una gran cantidad de IPs. Para eso crea una serie de workers (goroutines que se ejecutan a la vez) y un semáforo. El semáforo bloquea el resto del flujo hasta que se hayan procesado todas las IPs [traffic-gate-api/latest/guide/sections/processes.md:L91-L91].",
+    "answer_checks": [
+     "Indica que la purga se ejecuta cada hora desde un job de RetailHub que llama a POST /whitelist/purge, y cita processes.md o arch.md.",
+     "Explica que el proceso actualiza la metadata de las IPs en whitelist para decidir cuáles deben salir, porque las IPs son dinámicas y los usuarios detrás de ellas cambian.",
+     "Explica que usa concurrencia por la gran cantidad de IPs a procesar, con workers (goroutines) y un semáforo que bloquea el flujo hasta que se procesan todas.",
+     "Atribuye la información a la versión latest sin afirmar que no existan otras versiones ni que no haya diferencias con ellas.",
+     "No cita la línea 93 de processes.md (la eliminación vía Vegeta API) como respaldo."
+    ]
+   }
+  }
+ ]
+}

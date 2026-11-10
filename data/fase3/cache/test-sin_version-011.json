@@ -1,0 +1,25 @@
+{
+ "task_id": "test-sin_version-011",
+ "llamadas": [
+  {
+   "clave": "b3604fc404d897b99ee43d3785cd755b89a38dd04a8d9971c35a443cc2a2337c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What's the purpose of the unified-transaction-configs project?",
+    "respuesta": "The documentation I got back covers only version v0.0.2 of unified-transaction-configs. That version describes the project's purpose as loading the configurations for the different flows [unified-transaction-configs/v0.0.2/guide/README.md:L1-L3]. No other version showed up in the results, so I can't compare this description across versions.",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the project's purpose is loading the configurations of the different flows.",
+     "Attributes the description to v0.0.2, the version present in the delivered documentation, and does not claim it is the only version that exists.",
+     "Cites the README of v0.0.2 to support the purpose, and doesn't add unsupported claims from outside the docs."
+    ]
+   }
+  }
+ ]
+}

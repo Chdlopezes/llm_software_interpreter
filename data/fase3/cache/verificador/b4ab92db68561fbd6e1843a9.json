@@ -1,0 +1,62 @@
+{
+ "task_id": "verificador/b4ab92db68561fbd6e1843a9",
+ "llamadas": [
+  {
+   "clave": "b4ab92db68561fbd6e1843a9d8689443bb5cb567444e45ea13c89f4a83c9a61f",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-sin_evidencia-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por campos y códigos HTTP de Get Detail Doma para el software y versión indicados; no toma un valor de ejemplo como hecho."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación lista Get Detail Doma en la tabla de servicios, pero no describe su respuesta; los 200 OK citados corresponden a Feed y Restock Consumer (api.md, líneas 20, 22-48)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica correctamente que los documentos entregados no permiten determinar los campos ni los códigos HTTP de Get Detail Doma."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas remiten a los encabezados de detalle de Restock y Feed Consumer y a sus respectivos 200 OK; no atribuyen esos códigos a Get Detail Doma (api.md, líneas 22, 34, 36, 48)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las secciones documentadas y sus códigos HTTP llevan citas pertinentes (api.md, líneas 22, 34, 36, 48)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la información no está documentada, sin inferir que el endpoint no exista o no devuelva datos; la tabla sí lo lista (api.md, línea 20)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se abstiene solo respecto de los campos y códigos no documentados y aporta los datos relacionados que sí aparecen (api.md, líneas 22-48)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los 200 OK de Restock y Feed Consumer y no los presenta como respuesta de Get Detail Doma (api.md, líneas 34, 48)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados no presentan fuentes contradictorias sobre Get Detail Doma."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican contra los documentos y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

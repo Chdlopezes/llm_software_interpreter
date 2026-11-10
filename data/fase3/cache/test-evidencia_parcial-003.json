@@ -1,0 +1,26 @@
+{
+ "task_id": "test-evidencia_parcial-003",
+ "llamadas": [
+  {
+   "clave": "b918656e92262b0b9f1fa2aeac161a8c9f109a982f6bad3eb621b812f1d3f95e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api 0.2.2, ¿cómo se enlaza la tabla rule_row con rule_header? ¿Y qué representa cada fila de rule_row? No me queda claro para qué sirve la tabla.",
+    "respuesta": "El enlace es la columna `rule_id`. Es de tipo `bigint`, no admite nulos y es una clave foránea que referencia `rule_header(id)` [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10]. A su vez, `id` en `rule_header` es la clave primaria autoincremental [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L9-L9].\n\nAparte de `id` y `rule_id`, cada fila de `rule_row` tiene estas columnas, todas de tipo `json` y que admiten nulos: `site_id` (Sites Ids), `seller_id` (Sellers Ids), `domain` (Domains), `brand` (Brands) e `item` (Items) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L11-L15], además de `custom_fields` (Custom Fields) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L16-L16].\n\nLo que no puedo decirte es qué representa una fila de `rule_row` ni para qué sirve la tabla: la frase que debería describir lo que guarda está incompleta en la documentación. Tampoco se explica cómo se usan esas columnas `json`.",
+    "answer_checks": [
+     "Indica que rule_row se relaciona con rule_header a través de la columna rule_id, clave foránea que referencia rule_header(id).",
+     "Menciona al menos algunas de las columnas json de rule_row (site_id, seller_id, domain, brand, item, custom_fields).",
+     "Declara que la documentación no explica qué representa cada fila de rule_row ni el propósito de la tabla.",
+     "No inventa un propósito ni un significado de negocio para la tabla rule_row ni para sus filas.",
+     "No se abstiene en la parte documentada (la relación y las columnas)."
+    ]
+   }
+  }
+ ]
+}

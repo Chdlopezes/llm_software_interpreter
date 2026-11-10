@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_documentos-005",
+ "llamadas": [
+  {
+   "clave": "e6f0222ed080f263b5e1f5f4addfcddadbfa025a6035032ead1278834965f470",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando 2p-revenue-optimizer-api 1.0.0-beta en local. ¿Qué servidor web embebido trae configurado por defecto y qué tengo que tocar para cambiarlo por Undertow?",
+    "respuesta": "El catálogo no tiene documentación de 2p-revenue-optimizer-api 1.0.0-beta, así que no puedo decirte qué servidor web embebido trae esa versión ni cómo cambiarlo por Undertow. Si quieres, puedo consultar la documentación de las versiones de 2p-revenue-optimizer-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software 2p-revenue-optimizer-api y versión 1.0.0-beta, y recibe not_found.",
+     "Explica que no hay documentación para 2p-revenue-optimizer-api 1.0.0-beta.",
+     "No afirma qué servidor web embebido viene configurado ni cómo cambiarlo por Undertow (por ejemplo, no menciona Jetty, build.gradle ni spring-boot-starter-undertow).",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedirle al usuario que elija una versión como condición para responder."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-003",
+ "llamadas": [
+  {
+   "clave": "070d2b1835c0ba2dbf748cfe949cbcae0db6a1e81441b80f97fe064943de9c44",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper, ¿cómo actualizo un lote que ya está en el almacén de fulfillment? Necesito saber qué endpoint llamar, qué cuerpo le mando y qué me devuelve si todo va bien.",
+    "respuesta": "La documentación que recibí corresponde a la versión 1.1.6 de zenith-keeper.\n\nPara actualizar un lote en el almacén de fulfillment se usa `PUT` sobre la ruta `/api/v1/fresh-products/inboundorder` [zenith-keeper/1.1.6/specs/swagger.yaml:L13-L13] [zenith-keeper/1.1.6/specs/swagger.yaml:L32-L35]. La operación tiene la etiqueta `InboundOrder` y su operationId es `updateBachOfProductsToStock` [zenith-keeper/1.1.6/specs/swagger.yaml:L33-L36].\n\nEl cuerpo es obligatorio. Se envía en `application/json` con el esquema `InsertBatchRequestDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L37-L42]. Ese esquema contiene un único campo, `inboundOrder`, de tipo `InboundOrderDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L357-L361]. A su vez, `InboundOrderDTO` lleva `orderNumber`, `orderDate`, `section` (un `SectionDTO`) y `batchStock`, que es un array de `BatchDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L401-L415].\n\nSi la operación sale bien, responde `201` (`CREATED`) con un cuerpo `application/json` del esquema `InsertBatchResponseDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L43-L49]. Ese cuerpo contiene `batchStock`, un array de `BatchDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L387-L393].",
+    "answer_checks": [
+     "Llama a la herramienta con software zenith-keeper y version=null, sin pedir la versión al usuario.",
+     "Indica que la operación es PUT sobre /api/v1/fresh-products/inboundorder.",
+     "Indica que el cuerpo es obligatorio, en application/json, con el esquema InsertBatchRequestDTO.",
+     "Indica que la respuesta exitosa es 201 (CREATED) con InsertBatchResponseDTO.",
+     "Atribuye los datos a la versión 1.1.6 sin afirmar que es la única versión que existe y sin inventar códigos de error que la especificación no documenta para esta operación."
+    ]
+   }
+  }
+ ]
+}

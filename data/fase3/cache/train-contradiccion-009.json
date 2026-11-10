@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-009",
+ "llamadas": [
+  {
+   "clave": "636c10daa8f7de52fdc0063898c29c4de5601a8050e5cb7b125da2d0243fde36",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api 0.0.10-stock-consumer, en la tabla de servicios de la guía de API, ¿a qué apartado lleva el enlace de Feed Consumer? Quiero llegar al ejemplo de llamada de ese endpoint.",
+    "respuesta": "En este punto la documentación no es coherente. En la tabla de servicios, el enlace de Feed Consumer apunta al ancla `#vendor-branch-search` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L16-L16]. Ese nombre no coincide con el título del apartado que sí tiene el ejemplo: la misma página incluye una sección «Feed Consumer» con un curl a `/fp/inventory/operations/feed` que manda un cuerpo JSON con `msg` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L47], y para ella se documenta `200 OK` como respuesta [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L49-L49]. En la página no hay ningún apartado llamado `vendor-branch-search`, así que no puedo confirmar a qué destino quería apuntar el enlace. Lo que sí está en la página es ese apartado «Feed Consumer», que puedes consultar directamente.",
+    "answer_checks": [
+     "Cita la fila de la tabla de servicios con el enlace de Feed Consumer al ancla #vendor-branch-search (L16) para señalar el conflicto.",
+     "Cita la sección «Feed Consumer» con su ejemplo curl a /fp/inventory/operations/feed (L37-L47).",
+     "Explica que el ancla del enlace no coincide con el título de la sección que existe en la página, sin dar por hecho cuál era el destino que se quería enlazar.",
+     "No inventa apartados ni contenido de otro servicio (vendor-branch) que no estén en los documentos entregados."
+    ]
+   }
+  }
+ ]
+}

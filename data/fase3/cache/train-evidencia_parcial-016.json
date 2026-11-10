@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-016",
+ "llamadas": [
+  {
+   "clave": "ddf243bfcce2f944b82e9ea72180f34e5c0ff969a52656224b0c2bbb70b73f9a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api 0.0.10-stock-consumer, ¿qué método y qué ruta usa la operación Get Detail Doma? ¿Y qué devuelve en la respuesta? Necesito saber qué campos trae.",
+    "respuesta": "Get Detail Doma es una operación `GET` sobre la ruta `/stock-operations/3pl/{identifierRegister}`, así que recibe el identificador como parámetro de ruta [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].\n\nEn cambio, no puedo decirte qué devuelve. La operación solo aparece en la tabla de servicios. A diferencia de Restock Consumer, Feed Consumer u Operation Validation Consumer, no tiene una sección propia con un ejemplo de llamada o de respuesta. La documentación de esta versión no describe su respuesta, ni sus campos, ni los códigos de estado, ni los headers que necesita.",
+    "answer_checks": [
+     "Indica que Get Detail Doma usa el método GET y la ruta /stock-operations/3pl/{identifierRegister}, citando la tabla de servicios de api.md.",
+     "Declara que la respuesta y sus campos no están documentados para esta versión.",
+     "No inventa campos de respuesta, códigos de estado ni headers para Get Detail Doma.",
+     "No presenta como respuesta de Get Detail Doma los JSON de otros endpoints o de otros documentos (por ejemplo, la respuesta de la API de items de important.md).",
+     "No se abstiene en la parte documentada (método y ruta)."
+    ]
+   }
+  }
+ ]
+}

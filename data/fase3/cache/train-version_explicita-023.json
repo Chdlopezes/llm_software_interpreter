@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-023",
+ "llamadas": [
+  {
+   "clave": "9e744dfe6dc7245bb0a75125117961cdea7b9b6f81a3e008009dc3f95f77abcd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In zenith-keeper 1.1.6, what does the sign-in endpoint expect in the request body, and what does it return on success or failure?",
+    "respuesta": "The sign-in endpoint is `POST /auth/sign-in`, tagged `Auth` and described as user and password validation (operationId `sign_in`) [zenith-keeper/1.1.6/specs/swagger.yaml:L291-L296]. It takes a required `application/json` request body using the `SignInRequestDTO` schema [zenith-keeper/1.1.6/specs/swagger.yaml:L297-L302]. That schema is an object with two string fields, `username` and `password` [zenith-keeper/1.1.6/specs/swagger.yaml:L534-L540].\n\nIf the call succeeds, it returns `200 OK` with an `application/json` body whose schema is a plain `string` [zenith-keeper/1.1.6/specs/swagger.yaml:L304-L309]. If it fails, it returns `400 BAD REQUEST` with an `application/json` body typed only as a generic `object` [zenith-keeper/1.1.6/specs/swagger.yaml:L310-L315]. The spec doesn't say what the success string contains.",
+    "answer_checks": [
+     "Calls obtener_documentacion with software zenith-keeper and version 1.1.6.",
+     "States that the endpoint is POST /auth/sign-in with a required JSON body of type SignInRequestDTO containing username and password strings.",
+     "States that a successful response is 200 OK returning a string, and that failure is 400 BAD REQUEST returning an object.",
+     "Does not invent what the returned string contains (e.g., does not assert it is a JWT or token) without stating it is undocumented.",
+     "Cites the /auth/sign-in section of zenith-keeper/1.1.6/specs/swagger.yaml."
+    ]
+   }
+  }
+ ]
+}

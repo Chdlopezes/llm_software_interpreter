@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-026",
+ "llamadas": [
+  {
+   "clave": "88bd413394be3c691d551dd66510b11e818d4d077630fa1231af4ada93d7229b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando la arquitectura de payment-promise-gateway latest. ¿Qué capa del gateway habla con los servicios externos, cuáles son esos servicios y por qué capas pasa una petición del frontend antes de llegar ahí?",
+    "respuesta": "La capa que se comunica con los servicios externos es la de Services: en el diagrama de arquitectura, Services llama a Core Payment Services, a Promise Service y a Metrics Service [payment-promise-gateway/latest/guide/README.md:L34-L36]. Esos tres son los servicios que aparecen en el grupo External Services [payment-promise-gateway/latest/guide/README.md:L22-L26].\n\nUna petición de las aplicaciones frontend entra por la REST API Layer, pasa a los Controllers y de ahí llega a Services [payment-promise-gateway/latest/guide/README.md:L28-L30]. Dentro del gateway, Services también usa Commands, Business Objects y Utils [payment-promise-gateway/latest/guide/README.md:L31-L33].",
+    "answer_checks": [
+     "Indica que la capa Services es la que se comunica con los servicios externos.",
+     "Nombra los tres servicios externos: Core Payment Services, Promise Service y Metrics Service.",
+     "Describe el recorrido Frontend → REST API Layer → Controllers → Services.",
+     "Cita el diagrama de arquitectura (líneas 5-38) de payment-promise-gateway/latest/guide/README.md.",
+     "No inventa servicios ni capas adicionales que no aparezcan en el diagrama."
+    ]
+   }
+  }
+ ]
+}

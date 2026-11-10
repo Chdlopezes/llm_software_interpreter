@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-016",
+ "llamadas": [
+  {
+   "clave": "3b2ac0175ad2267ab1473b81357af172d1d5dbf689094230aa60e3ee5e2a0158",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I need to set up order-workflow-api on my machine. What do I need installed, and what are the steps to build it, run the tests and start the app locally?",
+    "respuesta": "The only version with a development guide in the documentation I found is 5.6.2-hotfix-1, so these steps come from that version.\n\nYou need Docker, Java (Spring Boot) and MySQL installed [order-workflow-api/5.6.2-hotfix-1/guide/development.md:L3-L7]. Then:\n\n1. Clone the project with `retailcorp get order-workflow-api` [order-workflow-api/5.6.2-hotfix-1/guide/development.md:L9-L11].\n2. Build it with `mvn package` [order-workflow-api/5.6.2-hotfix-1/guide/development.md:L13-L15].\n3. Before you run the tests, add the private key used to talk to gh-proxy. Create the file `src/main/resources/workflow-gh-proxy.key` and paste the full private key into it [order-workflow-api/5.6.2-hotfix-1/guide/development.md:L19-L21]. Then run the unit and integration tests locally with `mvn test` [order-workflow-api/5.6.2-hotfix-1/guide/development.md:L23-L25].\n4. To run the app, copy `application-local.yml.dist` from the `resources` directory and rename the copy to `application-local.yml`. Edit its parameters to match your environment, then start the app with `mvn spring-boot:run` [order-workflow-api/5.6.2-hotfix-1/guide/development.md:L29-L34].",
+    "answer_checks": [
+     "Lists the requirements Docker, Java (Spring Boot) and MySQL, citing development.md.",
+     "Gives the clone command `retailcorp get order-workflow-api` and the build command `mvn package`.",
+     "Explains that before running `mvn test`, the gh-proxy private key must go in `src/main/resources/workflow-gh-proxy.key`.",
+     "Describes copying `application-local.yml.dist` to `application-local.yml`, editing it, and running `mvn spring-boot:run`.",
+     "Does not ask the user for a version, and attributes the steps to 5.6.2-hotfix-1 without claiming it is the only version that exists."
+    ]
+   }
+  }
+ ]
+}

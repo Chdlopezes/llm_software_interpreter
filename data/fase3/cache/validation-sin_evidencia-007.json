@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_evidencia-007",
+ "llamadas": [
+  {
+   "clave": "bc0e52d3f73eb67031a907aeabffea67145b614d83d11570e8c2b4ad5e70bdc2",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿cómo desactivo una marca que está en ACTIVE para devolverla a STAND_BY? ¿Qué endpoint tengo que llamar?",
+    "respuesta": "Con la documentación de 0.0.1-test-bench-v2a no puedo decirte cómo hacerlo. El diagrama de estados sí muestra que una marca puede pasar de ACTIVE a STAND_BY [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L87-L90]. Además, STAND_BY se describe como el estado de una marca que todavía no está activa o que se desactivó temporalmente [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105]. Para la operación contraria sí hay endpoint: la activación se hace con `PUT /catalog/brands/{brandId}/activate` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30].\n\nNingún documento de esta versión explica el procedimiento ni el endpoint para desactivar una marca. Que no esté documentado no quiere decir que la operación no exista.",
+    "answer_checks": [
+     "Llama a la herramienta con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Dice que la documentación entregada no describe ningún endpoint ni procedimiento para desactivar una marca (pasar de ACTIVE a STAND_BY).",
+     "No inventa un endpoint, método HTTP o cuerpo de petición para la desactivación.",
+     "No afirma que la desactivación no exista o no esté soportada.",
+     "Si menciona información relacionada (la transición ACTIVE→STAND_BY del diagrama o el endpoint de activación), la acompaña de una cita a las líneas que la contienen."
+    ]
+   }
+  }
+ ]
+}

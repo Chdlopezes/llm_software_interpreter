@@ -1,0 +1,47 @@
+{
+ "task_id": "train-comparacion_versiones-009",
+ "llamadas": [
+  {
+   "clave": "647ee0bff29fbfee85ea0e3f0aeeac3f4c9ca01c85bb8d3f8fb93533a43eab3a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿qué cambia en los servicios de la API entre la 0.0.6-ep-restock-man y la 0.0.10-stock-consumer? Me interesa sobre todo si hay algún endpoint nuevo y cómo se llama.",
+    "respuesta": "La diferencia principal es que en 0.0.10-stock-consumer aparece una sección nueva, Operation Validation Consumer. Su ejemplo curl llama a `/stock-operations/3pl/validation/restock-consumer` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L53]. El cuerpo va dentro de `msg` y lleva los campos `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` y `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. La respuesta documentada es `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68].\n\nEsa versión también trae un diagrama del flujo. ValidationRestockOrderNews obtiene el ítem con ItemAdapter y el producto con GetStockBySkuAdapter a partir de siteId y sapSku. Después evalúa `stockBelowTolerance` y actualiza el estado del ítem a \"paused\" con `PUT /items/{itemId}` contra API Items, que responde 200 ok [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L81-L89]. En la documentación de 0.0.6-ep-restock-man no aparecen ni este servicio ni el diagrama. La sección de servicios de esa versión termina con Restock Consumer y Feed Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L48].\n\nHay cosas que se mantienen igual. Feed Consumer tiene el mismo ejemplo en las dos versiones: llama a `/fp/inventory/operations/feed` con `Content-Type: application/json` y un `msg` con `id`, y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49]. La fila Get Detail Doma, `GET /stock-operations/3pl/{identifierRegister}`, también está en las dos tablas [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Atribuye a 0.0.10-stock-consumer el nuevo servicio Operation Validation Consumer con la ruta /stock-operations/3pl/validation/restock-consumer, citando el api.md de esa versión.",
+     "No atribuye a 0.0.6-ep-restock-man el servicio de validación ni su diagrama, y no afirma que en esa versión no exista: solo que no está documentado.",
+     "Señala algo que no cambia entre ambas versiones (por ejemplo, el Feed Consumer con /fp/inventory/operations/feed), citando los api.md de las dos.",
+     "No inventa campos del cuerpo ni pasos del flujo que no estén en el ejemplo curl o en el diagrama de 0.0.10-stock-consumer."
+    ]
+   }
+  },
+  {
+   "clave": "7303fb73fc4b35376e9813e75ec7c7b205240424b61213d561f62ad7a6186993",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿qué cambia en los servicios de la API entre la 0.0.6-ep-restock-man y la 0.0.10-stock-consumer? Me interesa sobre todo si hay algún endpoint nuevo y cómo se llama.",
+    "respuesta": "La diferencia principal es que en 0.0.10-stock-consumer aparece una sección nueva, Operation Validation Consumer. Su ejemplo curl llama a `/stock-operations/3pl/validation/restock-consumer` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L53]. El cuerpo va dentro de `msg` y lleva los campos `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` y `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. La respuesta documentada es `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68].\n\nEsa versión también incluye un diagrama del flujo. ValidationRestockOrderNews obtiene el ítem con ItemAdapter y el producto con GetStockBySkuAdapter a partir de siteId y sapSku. Después evalúa `stockBelowTolerance` y cambia el estado del ítem a \"paused\" con `PUT /items/{itemId}` contra API Items, que responde 200 ok [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L81-L89]. La documentación de 0.0.6-ep-restock-man no recoge ni este servicio ni el diagrama. En esa versión, la sección de servicios solo trae los ejemplos de Restock Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L24] y Feed Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L48].\n\nAlgunas cosas no cambian. Feed Consumer tiene el mismo ejemplo en las dos versiones: llama a `/fp/inventory/operations/feed` con `Content-Type: application/json` y un `msg` con `id`, y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49]. La fila Get Detail Doma, `GET /stock-operations/3pl/{identifierRegister}`, también aparece en las dos tablas [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Atribuye a 0.0.10-stock-consumer el nuevo servicio Operation Validation Consumer con la ruta /stock-operations/3pl/validation/restock-consumer, citando el api.md de esa versión.",
+     "No atribuye a 0.0.6-ep-restock-man el servicio de validación ni su diagrama, y no afirma que en esa versión no exista: solo que no está documentado.",
+     "Señala algo que no cambia entre ambas versiones (por ejemplo, el Feed Consumer con /fp/inventory/operations/feed), citando los api.md de las dos.",
+     "No inventa campos del cuerpo ni pasos del flujo que no estén en el ejemplo curl o en el diagrama de 0.0.10-stock-consumer."
+    ]
+   }
+  }
+ ]
+}

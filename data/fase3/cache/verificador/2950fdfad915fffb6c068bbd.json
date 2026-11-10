@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/2950fdfad915fffb6c068bbd",
+ "llamadas": [
+  {
+   "clave": "2950fdfad915fffb6c068bbd7ad66d792485c454800716407e822b59f3908a55",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-comparacion_versiones-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español y compara ambas versiones sin fijar una versión en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cambios de created_date a date y de productive_date a version coinciden con las líneas 11 y 16 de ambos rule_header.md; las columnas comunes citadas también coinciden en las líneas 9 y 12-15."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las columnas que cambian y señala varias que se mantienen."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las líneas 9, 11 y 12-16 de ambos documentos respaldan las afirmaciones y evitan las líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre nombres, tipos y columnas comunes están citadas con las líneas pertinentes de ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara ausencias no respaldadas; la comparación se limita a lo que muestran las tablas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia de ambas versiones para responder la comparación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados los datos de 0.2.2 y latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las fuentes."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en las líneas citadas y no exigen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-comparacion_versiones-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español y compara rule_row entre 0.2.2 y latest; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "custom_fields consta en 0.2.2 línea 16 y no en la tabla latest, líneas 9-15; rule_custom_field y sus columnas aparecen en latest, líneas 10-12."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el cambio de custom_fields, las columnas comunes y la tabla separada documentada en latest."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a rule_row y rule_custom_field respaldan los datos y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las columnas de ambas tablas tienen citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que la tabla separada reemplazó la columna antigua ni hace otras inferencias no documentadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible de ambas versiones y de rule_custom_field."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente la columna de rule_row en 0.2.2 de la tabla separada en latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en los documentos entregados y no prescriben una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-comparacion_versiones-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español y compara las dos versiones indicadas; la llamada lleva version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los cambios de fecha y las columnas productive_date y version coinciden con las líneas 11 y 16 de cada rule_header.md."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe los cambios, menciona columnas que no cambian y aclara que la documentación no explica la migración."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las líneas 9, 11-16 de ambos documentos respaldan las columnas descritas y evitan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las columnas están citadas con líneas de ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La falta de instrucciones de migración se presenta como una limitación de la documentación, no como una afirmación sobre el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la comparación con la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla los datos de las dos versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-comparacion_versiones-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés y compara las versiones nombradas; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "custom_fields figura en 0.2.2 línea 16 y no aparece en rule_row de latest, que termina en item en la línea 15; la tabla separada latest está descrita en las líneas 9-12."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la diferencia, las columnas comunes y la tabla adicional, sin afirmar que reemplaza la columna."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambos rule_row.md y al rule_custom_field.md de latest respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los datos de columnas y la tabla adicional llevan citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que la documentación no dice si la tabla nueva reemplaza la columna antigua, sin convertir esa ausencia en una afirmación de hecho."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para comparar las versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las columnas de rule_row de la tabla rule_custom_field."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y aceptan una respuesta equivalente sin imponer formulación."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-comparacion_versiones-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, compara 0.2.2 con latest y solicita información concreta del Release Process."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos, imágenes base, enlaces, segundo paso y tracker coinciden con las líneas 67-87 de ambos README.md."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde que no hay cambios y detalla las imágenes base solicitadas, además de resumir el resto del proceso."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambos README.md respaldan las afirmaciones y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el proceso y las imágenes tienen citas a ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No hace afirmaciones de ausencia que excedan la comparación documental."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los ejemplos de imágenes y pasos disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La comparación mantiene el mismo contenido para cada versión."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en las líneas citadas y no exigen texto literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-comparacion_versiones-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español y compara la introducción de ambas versiones; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Java 17 / Spring y el VendorFlow Issue Tracker constan en las líneas 3-7 de ambos README.md."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que la introducción no cambia y responde sobre Java y el destino de las dudas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las líneas 3-7 de los dos README.md respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas para ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara faltantes ni atribuye diferencias no documentadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para responder todas las partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene que ambas versiones presentan el mismo contenido."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al contenido de las líneas citadas y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-en_que_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés qué versiones documentan las imágenes; la llamada usa version=null, como corresponde a en_que_version."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambos README.md dan los tags java:17-mini y java:17-runtime-mini en las líneas 67-79 y los enlaces de tags en 74-81."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica 0.2.2 y latest y detalla las imágenes base y enlaces pertinentes."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a las secciones Release Process de ambos README.md respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las imágenes, enlaces y referencias al tracker están citados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita el alcance a las versiones recuperadas y no afirma que sean todas las versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible sin pedir una versión."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni presenta tags distintos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y no exigen una redacción determinada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-en_que_version-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por las versiones donde se documenta el comportamiento de SCOPE; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 12, 14, 16 y 18 de ambos README.md respaldan la selección de sufijo, precedencia, ejemplo y variable para el IDE."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas versiones y explica cómo se elige y carga el archivo y cuál prevalece."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a ambos README.md respaldan los datos y el ejemplo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas, incluido el dato adicional sobre SCOPE=local, tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que la información falte ni que las versiones sean exhaustivas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de ambas versiones para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene el mismo comportamiento documentado para ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en las líneas citadas y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-en_que_version-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español en qué versión se documenta la tabla; la llamada consulta sin versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "rule_custom_field y sus columnas están documentadas en latest, líneas 7-12; la columna custom_fields de rule_row en 0.2.2 está en la línea 16."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica latest como la versión entregada que documenta la tabla y distingue documentación de existencia."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las columnas de latest y la columna de rule_row en 0.2.2; no cita la línea 3 no citable."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones sobre columnas están citadas, pero la afirmación de que 0.2.2 no tiene un diccionario de rule_custom_field no cuenta con una cita directa."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Acota el resultado a las versiones devueltas y dice expresamente que no puede concluir si la tabla existía sin documentarse en 0.2.2."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible y no se abstiene."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la tabla documentada en latest de la columna custom_fields en 0.2.2."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con los documentos entregados y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La afirmación de que 0.2.2 no documenta rule_custom_field no tiene una cita directa, aunque está acotada a los documentos recuperados."
+     },
+     {
+      "case_id": "test-en_que_version-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español qué versiones documentan dos aspectos; la llamada consulta sin versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas 39-41 y 53-61 de ambos README.md respaldan OpenAPI, SpringDocConfig y los siete pasos de Specs Hub."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas versiones y cubre tanto la configuración como la guía rápida."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a los dos README.md sostienen las afirmaciones y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre OpenAPI y Specs Hub llevan citas para ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que las dos versiones disponibles contienen la información, sin afirmar que no exista en otras."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia recuperada para responder ambas partes."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Presenta el mismo contenido para 0.2.2 y latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no exigen una formulación literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-009",
+ "llamadas": [
+  {
+   "clave": "6997bcf0eed19ecc7e447e42dbdc5117e512e4a52addf013561253d161fddeb9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy empezando a trabajar con vendor-stockkeeper-api en la versión 0.0.6-ep-restock-man. Me toca dar soporte al equipo de inventario y todavía no conozco bien el servicio.",
+    "historial_asistente": "Perfecto, puedo ayudarte con eso. ¿Qué quieres saber del servicio?",
+    "pregunta": "Para ubicarme: ¿de qué se encarga esta aplicación y qué tipos de movimientos usa para hacer el restock?",
+    "respuesta": "Stockkeeper-api se encarga de actualizar el stock de los ítems del área Standard que se ofrecen en TechZone. Para el restock hay dos endpoints principales: uno para los movimientos de stock de 3PL, que suelen ser cantidades más pequeñas, y otro para los movimientos de inbound, que pueden traer cantidades más grandes [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/introduction.md:L5-L5].",
+    "answer_checks": [
+     "Llama a la herramienta con vendor-stockkeeper-api y la versión 0.0.6-ep-restock-man del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que la aplicación actualiza el stock de los ítems del área Standard que se ofrecen en TechZone.",
+     "Explica que hay dos endpoints principales de restock: uno para movimientos de 3PL (cantidades menores) y otro para movimientos de inbound (cantidades mayores).",
+     "Cita la introducción de la versión 0.0.6-ep-restock-man.",
+     "No inventa rutas, parámetros ni detalles que no estén en las líneas citadas."
+    ]
+   }
+  }
+ ]
+}

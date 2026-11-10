@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-005",
+ "llamadas": [
+  {
+   "clave": "0b0455f4e8f97077a4f5f96b54726d57291a19aa2352edc80a654af791cfa24b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api aparece documentado en qué flujos de inventario hay que verificar los ítems de prueba antes de ejecutar acciones?",
+    "respuesta": "Las cuatro versiones que devolvió la consulta lo documentan, y todas dicen lo mismo: son dos flujos principales, **Restock** y **Feed**.\n\n- 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L11-L14]\n- 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L11-L14]\n- 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L11-L14]\n- latest [vendor-stockkeeper-api/latest/guide/important.md:L11-L14]\n\nEn las cuatro, la sección forma parte de la guía «Verification of Items in Inventory Flows» [vendor-stockkeeper-api/latest/guide/important.md:L1-L1].",
+    "answer_checks": [
+     "Indica que 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest documentan los flujos que requieren verificación.",
+     "Dice que los dos flujos son Restock y Feed.",
+     "Cita el important.md de al menos una de las versiones (lo ideal es de cada una) en las líneas de la sección Inventory Flows.",
+     "No pide la versión al usuario y no afirma que estas sean todas las versiones que existen del software.",
+     "No inventa más flujos aparte de Restock y Feed."
+    ]
+   }
+  }
+ ]
+}

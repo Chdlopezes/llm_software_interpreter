@@ -1,0 +1,26 @@
+{
+ "task_id": "test-version_explicita-010",
+ "llamadas": [
+  {
+   "clave": "5a6c68fc65f5353eceeef18a6d8d9e4317d3f6169e09a81708c71d9b27364cf1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿cómo decide Traffic Gate qué IPs bloqueadas por ratelimit en el WAF pasan a whitelist, y qué operaciones pueden hacer los usuarios a través de su API?",
+    "respuesta": "Traffic Gate consulta periódicamente las direcciones IP que alguna regla de ratelimit del WAF ha bloqueado. De cada una reúne toda la información relacionada que pueda obtener y, con ella, aplica ciertas reglas de negocio para decidir si levanta el bloqueo (la agrega a la whitelist) o lo mantiene [traffic-gate-api/latest/guide/README.md:L5-L5].\n\nAdemás, la aplicación ofrece una API con la que los usuarios pueden consultar las IP bloqueadas, obtener históricos y agregar manualmente una dirección IP a una whitelist [traffic-gate-api/latest/guide/README.md:L5-L5].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión latest.",
+     "Indica que Traffic Gate consulta periódicamente las IP bloqueadas por reglas de ratelimit, recopila información sobre ellas y aplica reglas de negocio para decidir si las agrega a la whitelist.",
+     "Menciona que la API permite consultar IP bloqueadas, obtener históricos y agregar manualmente una IP a una whitelist.",
+     "Cita traffic-gate-api/latest/guide/README.md con un rango que incluye la línea 5.",
+     "No cita líneas no citables (por ejemplo, la línea 10 del README) ni inventa criterios o endpoints que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

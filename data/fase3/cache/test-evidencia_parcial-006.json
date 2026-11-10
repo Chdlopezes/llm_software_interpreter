@@ -1,0 +1,26 @@
+{
+ "task_id": "test-evidencia_parcial-006",
+ "llamadas": [
+  {
+   "clave": "7b7f5ad0db21e8ea8528dd9608ab22c31aa8eb60d0ccb4960afcf5690f5c5ce9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿cuáles son los módulos principales de la aplicación y qué componentes aparecen en el diagrama de arquitectura general del servicio?",
+    "respuesta": "Traffic Gate tiene 3 módulos principales. Están definidos como paquetes de GOlang, que agrupan las funciones y la lógica de negocio de cada uno [traffic-gate-api/latest/guide/sections/arch.md:L5-L5]:\n\n- **Job:** define los servicios web que procesan las IPs bloqueadas y deciden si se mantiene el bloqueo o se autoriza el tráfico con whitelists [traffic-gate-api/latest/guide/sections/arch.md:L7-L7].\n- **Blacklist:** expone servicios web para consultar el historial de bloqueos de una dirección IP [traffic-gate-api/latest/guide/sections/arch.md:L9-L9].\n- **Whitelist:** expone un servicio web para quitar el bloqueo a una o más IPs (agregarlas a whitelist) en un scope concreto [traffic-gate-api/latest/guide/sections/arch.md:L11-L11].\n\nNo puedo decirte qué componentes muestra el diagrama de arquitectura general: la documentación no lo describe en texto. Lo más parecido que sí está documentado es el diagrama de secuencia del encolamiento de IPs bloqueadas. Sus participantes son RetailHub-Job, Traffic-Gate, MySQL-DB, Vegeta-API y RetailHub-BigQ [traffic-gate-api/latest/guide/sections/processes.md:L32-L36]. Pero ese diagrama cubre solo ese proceso, no la arquitectura completa.",
+    "answer_checks": [
+     "Indica que la aplicación tiene tres módulos principales: Job, Blacklist y Whitelist, con una descripción breve de cada uno.",
+     "Declara que el contenido del diagrama de arquitectura general no está documentado o no se puede consultar en la documentación entregada.",
+     "No inventa componentes, conexiones ni infraestructura como si vinieran del diagrama de arquitectura.",
+     "No se abstiene en la parte de los módulos, que sí está documentada.",
+     "Si menciona el diagrama de secuencia de procesos, aclara que es de un proceso concreto y no del diagrama de arquitectura general."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-027",
+ "llamadas": [
+  {
+   "clave": "d9f30d2495fa8cb3ec46015634c9d1261f016dcd6e348de9a3c13906755f2b85",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando nuestro panel de almacén con zenith-keeper 1.1.6 y ahora me toca la parte de lotes próximos a vencer.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber de esa integración y lo busco en la documentación.",
+    "pregunta": "En la operación que devuelve el stock de lotes ordenado por fecha de vencimiento, ¿cómo va el parámetro quantityOfDays, de qué tipo es y qué responde si no encuentra nada?",
+    "respuesta": "Esa operación es searchAllBatchsByDueDate, que la especificación resume como «Get batch stock sorted by due date» [zenith-keeper/1.1.6/specs/swagger.yaml:L235-L236]. El parámetro quantityOfDays va en la ruta (in: path), es obligatorio (required: true) y es de tipo integer [zenith-keeper/1.1.6/specs/swagger.yaml:L237-L242]. Si todo va bien, responde 200 OK con un BatchStockDTOResp en application/json [zenith-keeper/1.1.6/specs/swagger.yaml:L244-L249]. Si no encuentra nada, responde 404 «Not Found», y en ese caso el cuerpo application/json es un object genérico, sin un esquema definido [zenith-keeper/1.1.6/specs/swagger.yaml:L250-L255].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.1.6, tomados del historial, sin volver a preguntarlos.",
+     "Indica que quantityOfDays es un parámetro de ruta (path), obligatorio y de tipo integer.",
+     "Indica que la respuesta 404 (Not Found) devuelve un object genérico en application/json, y opcionalmente que la 200 devuelve BatchStockDTOResp.",
+     "Cita líneas de zenith-keeper/1.1.6/specs/swagger.yaml dentro del rango 232-255, sin apoyarse en la línea 231 ni en la línea 292 de use-cases.md.",
+     "No inventa otros parámetros, códigos de respuesta ni campos que no aparezcan en la especificación."
+    ]
+   }
+  }
+ ]
+}

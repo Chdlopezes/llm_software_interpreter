@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-007",
+ "llamadas": [
+  {
+   "clave": "ca229fe5deefd9557d6e09da8804c88a3ddf37a35a9c70b1cccae327d9eb2597",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, ¿qué tipo de base de datos usa y en qué schema y cluster está, tanto en producción como en test?",
+    "respuesta": "En los dos entornos la base de datos es MySQL. En producción usa el schema `fulfillment` en el cluster `orderworkflowapi00` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L4-L7]. En test usa el schema `fulfillment2` en el cluster `testenv02` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L9-L12].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 5.6.2-hotfix-1.",
+     "Indica que en producción la base de datos es MySQL, con schema fulfillment y cluster orderworkflowapi00.",
+     "Indica que en test la base de datos es MySQL, con schema fulfillment2 y cluster testenv02.",
+     "No mezcla los valores de producción y de test.",
+     "Cita las tablas de Scopes de guide/services/database.md."
+    ]
+   }
+  }
+ ]
+}

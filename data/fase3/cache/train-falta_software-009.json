@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-009",
+ "llamadas": [
+  {
+   "clave": "7421d758cbdd69434c85930e4c55a80c5b1e1a7087702983bee1d6fa54906a50",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué alerta se dispara cuando falla la actualización de la cantidad de stock de una publicación, y dónde encuentro el monitor de esa alerta?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pide la versión.",
+     "No da una respuesta técnica: no nombra alertas ni enlaces a monitores."
+    ]
+   }
+  }
+ ]
+}

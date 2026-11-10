@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/8479a4762373b0f26c6ff17e",
+ "llamadas": [
+  {
+   "clave": "8479a4762373b0f26c6ff17e740fb032b55604243a3c271a991fc6fadfb57ec8",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-sin_version-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre catalog-portfolio-api, sin fijar versión; coincide con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo de alta usa POST, Content-Type y esos campos; el de activación usa PUT. Las instrucciones coinciden en ambas versiones (Brand Management, L129-L139 y L151-L154)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe las dos llamadas curl solicitadas y aclara que el ejemplo de activación no incluye cuerpo ni cabeceras (L129-L139, L151-L154)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a los ejemplos de creación y activación en documentos entregados; las líneas citadas son citables (L129-L139, L151-L154)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ambas llamadas y la igualdad entre versiones tienen citas a sus ejemplos (L129-L139, L151-L154 en ambas versiones)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante; limita correctamente lo dicho sobre cabeceras y cuerpo al ejemplo citado (L151-L154)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha los ejemplos disponibles y responde ambas partes (L129-L139, L151-L154)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación es coherente y trata ambas versiones como iguales, tal como muestran sus ejemplos (L129-L139, L151-L154)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen las llamadas y comparaciones respaldadas por los ejemplos; no requieren una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sin versión concreta y sobre los prerrequisitos de catalog-portfolio-api; concuerda con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "JDK 17+, Gradle 7.3+, MySQL 8.0+, RetailFlow CLI latest y Git figuran en ambas guías (setup README, L40-L44)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da las versiones mínimas solicitadas y también menciona los otros dos prerrequisitos documentados (L40-L44)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita respalda todos los prerrequisitos y sus versiones en ambos documentos; las líneas son citables (L40-L44)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están cubiertas por citas a los prerrequisitos de ambas versiones (L40-L44)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara ausencias ni añade requisitos no documentados; la lista está en ambas guías (L40-L44)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para enumerar los prerrequisitos (L40-L44)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La lista y la afirmación de igualdad entre versiones coinciden con ambas fuentes (L40-L44)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables frente a las líneas citadas y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el arranque rápido, sin versión concreta; coincide con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El Quick Start indica retailflow get, cd, ./gradlew build, configurar la base de datos y ./gradlew run, en ese orden (setup README, L22-L35)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los comandos solicitados y señala el paso de base de datos sin inventar cómo configurarla (L22-L35)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen los pasos del Quick Start en ambas versiones; no se cita la línea 32 ni líneas no citables (L22-L35)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los comandos, su orden y el paso de configuración tienen citas a las líneas pertinentes de ambas guías (L22-L35)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que el Quick Start no detalla la configuración de base de datos; las líneas 31-35 indican el paso y no dan instrucciones de configuración (L31-L35)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con todos los pasos disponibles y señala únicamente el detalle que el Quick Start no especifica (L22-L35)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El orden de pasos y la afirmación de que coinciden entre versiones se ajustan a ambas fuentes (L22-L35)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks comprueban comandos, orden, citas y ausencia de detalles inventados; no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre instalación local de catalog-portfolio-api, sin versión concreta; concuerda con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía lista JDK 17+, Gradle 7.3+ o wrapper, MySQL 8.0+, RetailFlow CLI latest y Git (local-development, L9-L13)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los requisitos previos y las versiones mínimas preguntadas (L9-L13)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita respalda cada requisito y el uso del wrapper; las líneas citadas son citables (L9-L13)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los requisitos técnicos y su igualdad entre versiones están cubiertos por la cita a ambas guías (L9-L13)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara ausencias ni agrega requisitos; todos los enumerados aparecen en la lista citada (L9-L13)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la lista de prerrequisitos disponible (L9-L13)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La lista es coherente con ambas versiones, cuyas líneas correspondientes coinciden (L9-L13)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas de prerrequisitos y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre cómo obtener el repositorio, sin versión concreta; coincide con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El método recomendado es RetailFlow CLI con retailflow get catalog-portfolio-api y luego cd catalog-portfolio-api (local-development, L22-L26)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica cómo clonar y entrar al directorio, y la dependencia de la CLI (L19-L26, L12-L13)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen el comando, que sea recomendado, el cambio de directorio y el prerrequisito de la CLI (L12-L13, L19-L26)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas tienen citas a ambas versiones (L12-L13, L19-L26)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que no haya otros métodos; se limita a describir el método recomendado documentado (L22-L26)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la instrucción de clonado y los prerrequisitos disponibles (L12-L13, L22-L26)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los comandos y la comparación entre versiones son consistentes con las dos guías (L12-L13, L19-L26)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan el método, los comandos y la comparación documentados sin imponer una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre configuración de IDE para catalog-portfolio-api, sin versión concreta; concuerda con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "IntelliJ: proyecto Gradle, Java 17 y ajustes de estilo; VS Code: las tres extensiones enumeradas (local-development, L97-L111)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto la configuración de IntelliJ como las extensiones recomendadas para VS Code (L97-L111)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los ajustes y extensiones en ambas versiones; las líneas son citables (L97-L111)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada detalle técnico y la afirmación de igualdad entre versiones están respaldados (L97-L111)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante ni añade ajustes o extensiones ajenos a la lista (L97-L111)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para contestar las dos partes de la pregunta (L97-L111)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta coincide con las instrucciones de ambas versiones (L97-L111)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la configuración y extensiones documentadas, sin exigir redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre compilar, ejecutar con perfil de desarrollo y alternativa de lanzamiento; no fija versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los comandos de compilación, pruebas, checks, ejecución con perfil y ejecución del JAR aparecen en la guía (local-development, L33-L50)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica cómo compilar y arrancar con el perfil solicitado, y ofrece la alternativa de ejecutar el JAR (L33-L50)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a los comandos descritos en ambas versiones y son citables (L33-L50)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todos los comandos técnicos y la igualdad entre versiones están respaldados por citas (L33-L50)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara ausencias; la alternativa y los comandos adicionales mencionados están documentados (L33-L50)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Resuelve las partes de la pregunta con las instrucciones disponibles (L33-L50)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los comandos de pruebas y calidad no contradicen el flujo de compilación y ejecución; las instrucciones coinciden en ambas versiones (L33-L50)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no requieren una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre dos problemas concretos de producción; corresponde a catalog-portfolio-api y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Para configuración se recomiendan revisar variables de entorno y permisos; para memoria, ajustar parámetros JVM y garbage collection (troubleshooting, L199-L203)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Ofrece una recomendación para cada problema planteado (L199-L203)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen ambas recomendaciones en los documentos entregados; las líneas son citables (L199-L203)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada recomendación tiene citas a ambas versiones (L199-L203)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte información ni inventa variables o valores concretos (L199-L203)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza las dos recomendaciones documentadas para responder (L199-L203)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Las recomendaciones atribuidas a cada problema son coherentes con ambas fuentes (L199-L203)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan recomendaciones verificables y evitan exigir una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre tareas Gradle para pruebas y análisis estático; el software coincide y no se especifica versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las tareas para pruebas y los comandos PMD, Checkstyle y SpotBugs coinciden con la guía (local-development, L71-L93)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el comando de integración, el de una clase concreta y los tres análisis estáticos solicitados (L71-L93)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los comandos enumerados en ambas versiones; las líneas son citables (L71-L93)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la igualdad entre versiones tienen citas a las secciones correspondientes (L71-L93)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante ni añade tareas ajenas a la documentación (L71-L93)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con los comandos de pruebas y análisis disponibles (L71-L93)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación de las tareas y la comparación entre versiones concuerdan con ambas guías (L71-L93)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_version-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre métricas y umbrales para catalog-portfolio-api; no fija versión y coincide con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro métricas y sus umbrales corresponden a la sección de monitorización (troubleshooting, L205-L212)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las cuatro métricas clave y todos sus umbrales (L209-L212)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas corresponden a la sección de monitorización en ambas versiones; las líneas son citables (L205-L213, L209-L212)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada métrica y umbral está respaldado por citas a ambas versiones (L209-L212)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información faltante ni atribuye métricas adicionales al documento (L205-L212)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para contestar con las cuatro métricas (L209-L212)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los umbrales y la igualdad afirmada entre versiones coinciden con ambas fuentes (L205-L212)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks evalúan las métricas y umbrales documentados, sin exigir una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

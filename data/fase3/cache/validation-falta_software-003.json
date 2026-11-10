@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-falta_software-003",
+ "llamadas": [
+  {
+   "clave": "a1b2552eaae01e0eac0d70d75a6d36f9a78956ea4aac5684d15f28cc0129d43d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Which response headers should my client read to know how many calls it has left in the current rate-limit window?",
+    "respuesta": "Which software or API are you asking about?",
+    "answer_checks": [
+     "Does not call the documentation tool.",
+     "Asks the user which software or API the question is about.",
+     "Does not ask for the version.",
+     "Does not give a technical answer (for example, it does not name rate-limit headers or request limits)."
+    ]
+   }
+  }
+ ]
+}

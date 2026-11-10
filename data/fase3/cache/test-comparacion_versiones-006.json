@@ -1,0 +1,26 @@
+{
+ "task_id": "test-comparacion_versiones-006",
+ "llamadas": [
+  {
+   "clave": "ee08cc7aaa5063845f3485217fbdcb80b36006c78af2906b2614cd44be6853f2",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api, ¿cambia algo entre la 0.2.2 y latest en la introducción del README? Me interesa sobre todo para qué versión de Java es el modelo base y a dónde hay que mandar las dudas y comentarios.",
+    "respuesta": "No, esa parte es igual en las dos versiones. En 0.2.2 el README se presenta como un modelo de app Spring Boot para Java 17, es decir, un modelo básico para aplicaciones web basadas en JDK 17 / Spring, y pide enviar las preguntas y comentarios al VendorFlow Issue Tracker (https://github.com/vendorflow/vendorflow/issues) [2p-revenue-optimizer-api/0.2.2/guide/README.md:L3-L7]. En latest el texto es el mismo: también es un modelo para JDK 17 / Spring y remite al mismo VendorFlow Issue Tracker [2p-revenue-optimizer-api/latest/guide/README.md:L3-L7].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con version=null aunque la pregunta nombre dos versiones.",
+     "Indica que la introducción no cambia entre 0.2.2 y latest.",
+     "Indica que en ambas versiones el modelo base es para JDK 17 / Spring Boot y que las dudas van al VendorFlow Issue Tracker.",
+     "Cita el README.md de las dos versiones, 0.2.2 y latest.",
+     "No se inventa diferencias entre versiones ni añade datos que no están en los documentos."
+    ]
+   }
+  }
+ ]
+}

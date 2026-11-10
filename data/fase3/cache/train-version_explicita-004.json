@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-004",
+ "llamadas": [
+  {
+   "clave": "0d5554e27b3258122bfbdea37ba317761931ec558abff4cdf3460b7373f1efd5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy configurando un cliente contra zenith-keeper 1.1.6. ¿Qué servidor base declara su especificación OpenAPI y qué versión de la API figura en el bloque info?",
+    "respuesta": "La especificación declara un único servidor, `http://localhost:8080`, con la descripción «Scope local» [zenith-keeper/1.1.6/specs/swagger.yaml:L9-L11]. En el bloque `info`, la API se llama `fresh-products-api` y declara la versión `0.0.1` [zenith-keeper/1.1.6/specs/swagger.yaml:L2-L8]. El documento usa OpenAPI 3.0.1 [zenith-keeper/1.1.6/specs/swagger.yaml:L1].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.1.6.",
+     "Indica que el servidor declarado es http://localhost:8080 (descrito como «Scope local»).",
+     "Indica que la versión de la API en info es 0.0.1, sin confundirla con la versión 1.1.6 del software.",
+     "Cita líneas de zenith-keeper/1.1.6/specs/swagger.yaml dentro del rango 1-12.",
+     "No inventa otros servidores ni entornos (por ejemplo, de producción) que no aparecen en la especificación."
+    ]
+   }
+  }
+ ]
+}

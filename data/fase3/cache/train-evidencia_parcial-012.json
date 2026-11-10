@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-012",
+ "llamadas": [
+  {
+   "clave": "c7ca3add2f221a15d0d64c428198a4acffcdb22d91caaaf7f59dc48d21f2fbf3",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway latest, ¿en qué paquete del proyecto están las excepciones propias del servicio? Y cuando una petición falla, ¿qué código HTTP y qué estructura de JSON de error devuelve?",
+    "respuesta": "Las excepciones propias están en el directorio `exceptions/`, dentro de `src/main/java/com/greatmart/payments/selfservice/` [payment-promise-gateway/latest/guide/README.md:L51-L58].\n\nSobre la respuesta cuando algo falla, la documentación solo describe el enfoque general: el servicio usa códigos de estado HTTP en las respuestas de la API, mensajes de error detallados, excepciones propias para la lógica de negocio y un formato de error consistente en las respuestas [payment-promise-gateway/latest/guide/README.md:L530-L536]. No indica qué código HTTP se devuelve en cada caso ni cómo es el JSON de error (sus campos y su estructura). Con esta documentación no puedo darte esos datos.",
+    "answer_checks": [
+     "Indica que las excepciones propias están en el directorio/paquete `exceptions/` bajo `src/main/java/com/greatmart/payments/selfservice/`, con cita.",
+     "Menciona, con cita, que el servicio declara usar códigos HTTP, mensajes de error detallados, excepciones propias y un formato de error consistente.",
+     "Declara que no están documentados ni los códigos HTTP concretos ni la estructura del JSON de error.",
+     "No inventa códigos HTTP, campos del cuerpo de error ni nombres de excepciones.",
+     "No se abstiene de responder la parte sobre la ubicación de las excepciones, que sí está documentada."
+    ]
+   }
+  }
+ ]
+}

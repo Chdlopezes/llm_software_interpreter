@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-015",
+ "llamadas": [
+  {
+   "clave": "db95eda2a3208a728437618d568ff054eab14f1373cf74d19a2e15c1a1d63b4e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.1.6, la operación que devuelve el stock de lotes ordenado por fecha de vencimiento (la que no filtra por categoría), ¿qué parámetro recibe, de qué tipo es y qué respuestas puede devolver?",
+    "respuesta": "Es una operación GET con la etiqueta DueDate y el operationId searchAllBatchsByDueDate, descrita como «Get batch stock sorted by due date» [zenith-keeper/1.1.6/specs/swagger.yaml:L232-L236]. Recibe un único parámetro, quantityOfDays. Va en la ruta (path), es obligatorio y es de tipo integer [zenith-keeper/1.1.6/specs/swagger.yaml:L237-L242].\n\nPuede devolver dos respuestas:\n- 200 (OK), con un cuerpo application/json que sigue el esquema BatchStockDTOResp [zenith-keeper/1.1.6/specs/swagger.yaml:L244-L249].\n- 404 (Not Found), con un cuerpo application/json de tipo object [zenith-keeper/1.1.6/specs/swagger.yaml:L250-L255].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 1.1.6.",
+     "Indica que el parámetro es quantityOfDays: va en la ruta, es obligatorio y es de tipo integer.",
+     "Indica que la respuesta 200 devuelve un BatchStockDTOResp y que también hay una respuesta 404 Not Found.",
+     "Cita las líneas de la operación searchAllBatchsByDueDate en zenith-keeper/1.1.6/specs/swagger.yaml.",
+     "No inventa otros parámetros (por ejemplo, category o sort) ni otros códigos de respuesta para esta operación."
+    ]
+   }
+  }
+ ]
+}

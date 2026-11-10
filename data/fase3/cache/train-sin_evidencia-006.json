@@ -1,0 +1,47 @@
+{
+ "task_id": "train-sin_evidencia-006",
+ "llamadas": [
+  {
+   "clave": "eaa54a4750fbbdab6dfb7aa21afaea5bf20bce7a44bc795e255c03a0d4bea9da",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, for the Feed flow check, what exact SQL query do I run against 1p_3pl_product_stock_mov, and which column do I filter on with the Operation id?",
+    "respuesta": "I can't answer that from the documentation for 0.0.6-ep-restock-man. It only says that the Feed flow has an Operation id and that you use it to query the 1p-3pl-integrator database table called 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L239-L240]. The docs also say this table gives you the key data for checking whether the items are test items [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L245-L245]. But the text never gives the SQL query, and it doesn't name the column that holds the Operation id. Where that detail would be, the guide only has an image, and its contents aren't available as text. So I can't tell you the query or the column to filter on.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not provide the SQL query or the column used to filter by Operation id.",
+     "Does not invent a query, a column name (e.g. operation_id), or a WHERE clause.",
+     "May mention, with a citation, that the Operation id is used to query the 1p_3pl_product_stock_mov table of the 1p-3pl-integrator database.",
+     "Does not claim the table lacks such a column or that the query is impossible."
+    ]
+   }
+  },
+  {
+   "clave": "3f29e7d39edd60cac7a4ff4b1a493964d86c66c927cd4fa09757d7e9fc6dfa21",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, I need the schema of the 1p_3pl_product_stock_mov table that the Feed flow check uses. What are its column data types, and which column is the primary key?",
+    "respuesta": "The documentation for 0.0.6-ep-restock-man doesn't answer this. In the Feed flow, you take the Operation id and use it to query the 1p-3pl-integrator database table called 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L239-L240]. The guide says this table gives you key data for checking whether items are test items, and it shows one sample record as JSON. That record has fields such as id, location_id, process_name, seller_product_id, site_id, seller_id, sap_sku, date_created, a nested quantities object and a nested external_references object [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L245-L248].\n\nThe guide never describes the table schema itself. It doesn't list column data types, and it doesn't name a primary key. The sample record has an id field, but the docs don't say whether that field is the primary key or the column that holds the Operation id. So I can't give you the column types or the key.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not give the column data types or the primary key of 1p_3pl_product_stock_mov.",
+     "Does not invent data types, a primary key, or indexes for the table, and does not claim the id field in the sample record is the primary key or the Operation id column.",
+     "May mention, citing important.md, that the Operation id is used to query this table and that a sample JSON record is shown (e.g., with an id field).",
+     "Does not claim that the table has no primary key or that the schema doesn't exist."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-015",
+ "llamadas": [
+  {
+   "clave": "a1465403be1a47a56de177abd4542face1b14d04a80c72ffc89d83c943662f46",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿la comprobación que hay que hacer antes de ejecutar cualquier acción sobre los flujos de inventario cambia de una versión a otra? Me refiero a la introducción de la guía de verificación de ítems.",
+    "respuesta": "No, en esa introducción no hay cambios: las cuatro versiones dicen lo mismo. Antes de ejecutar cualquier acción sobre los flujos de inventario hay que asegurarse de que tanto el movimiento de entrada (inbound) como el de salida (outbound) incluyan todos sus ítems de prueba. La guía lo presenta como una comprobación fundamental para no afectar la API de ítems y, por tanto, el inventario. El texto es idéntico en latest [vendor-stockkeeper-api/latest/guide/important.md:L5-L6], en 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L5-L6], en 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L5-L6] y en 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L5-L6].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null.",
+     "Indica que la introducción no cambia entre las versiones documentadas.",
+     "Explica que antes de actuar sobre los flujos de inventario hay que comprobar que los movimientos de entrada y de salida contienen todos sus ítems de prueba, para no afectar la API de ítems ni el inventario.",
+     "Cita el important.md de al menos dos versiones distintas para respaldar que el contenido es el mismo.",
+     "No se inventa diferencias entre versiones en esta sección ni cita líneas no citables (por ejemplo, la línea 7)."
+    ]
+   }
+  }
+ ]
+}

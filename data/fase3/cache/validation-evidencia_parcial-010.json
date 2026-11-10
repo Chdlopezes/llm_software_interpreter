@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-010",
+ "llamadas": [
+  {
+   "clave": "3f4f7e7b753a1d355fbd3a9b67f82f96b9fe7f218bac8c64c24d1930469c5f64",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm getting started with price-engine-api latest. What is the service actually meant to do, and can you give me the functional overview of how a seller's config adjustments get created and applied in the first place?",
+    "respuesta": "Price Engine API is described as an application for managing and modeling the adjustments to a seller's sales configurations [price-engine-api/latest/specs/swagger.yaml:L11]. The only operation documented is a GET on `/sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1`, which returns the status of the seller's coverage configuration adjustment as an array of the seller's zones moderated by coverage [price-engine-api/latest/specs/swagger.yaml:L24-L31]. If the seller has no active coverage adjustments, it returns an empty array [price-engine-api/latest/specs/swagger.yaml:L33-L34].\n\nThe spec sends you to the Guide section for functional information [price-engine-api/latest/specs/swagger.yaml:L13]. But none of the documents I have give a functional overview of the service, and they don't explain how config adjustments get created or applied. So I can't describe that part of the flow.",
+    "answer_checks": [
+     "States that the service manages and models adjustments to the seller's sales configurations, citing the swagger spec.",
+     "Mentions that the documented endpoint returns the seller's zones moderated by coverage (or an empty array if no adjustments are active).",
+     "Says that the functional overview and how config adjustments are created or applied are not documented.",
+     "Does not make up a creation or application flow for the adjustments, and does not cite the placeholder lines of general.md as evidence.",
+     "Does not refuse to answer the part about the service's purpose, which is documented."
+    ]
+   }
+  }
+ ]
+}

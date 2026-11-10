@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-005",
+ "llamadas": [
+  {
+   "clave": "b40cec71b38d777783afb64e0480ec6da80da786b937fb5b9141928531090216",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api, what's different in the API services section between 0.0.10-stock-consumer and latest? I'm trying to figure out whether any endpoints or flows were added.",
+    "respuesta": "The main difference is that 0.0.10-stock-consumer documents an Operation Validation Consumer, and the latest api.md does not include it.\n\n**Only in 0.0.10-stock-consumer**\n- **Operation Validation Consumer:** an example curl sends a request to `/stock-operations/3pl/validation/restock-consumer` with a `Content-Type: application/json` header [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L54]. The body is a `msg` object with `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` and `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. The documented response is `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68].\n- **A sequence diagram for this validation flow:**\n  1. `ValidationRestockOrderNews` gets the item through `ItemAdapter` with `get(itemId)` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L83].\n  2. It gets the product stock through `GetStockBySkuAdapter` with `apply(siteId, sapSku)` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L84-L85].\n  3. It runs a `stockBelowTolerance` check [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L86-L86].\n  4. It calls `updateItemStatusAsSystem(\"paused\")` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L87-L87].\n  5. `ItemAdapter` then sends `PUT /items/{itemId}` to API Items, with the `X-Seller-No-Intent` header and `{status: \"paused\"}`, and gets back `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L88-L89].\n\nThe latest api.md doesn't describe this endpoint or this flow at all. That only means it isn't documented there; the docs don't say whether latest supports it.\n\n**The same in both versions**\n- **Feed Consumer:** both have the same example. It's a request to `/fp/inventory/operations/feed` with a `msg.id` body and a `200 OK` response [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49] [vendor-stockkeeper-api/latest/guide/api.md:L36-L48].\n- **Get Detail Doma:** both list it as `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20] [vendor-stockkeeper-api/latest/guide/api.md:L20-L20].",
+    "answer_checks": [
+     "Attributes the Operation Validation Consumer (path /stock-operations/3pl/validation/restock-consumer and its msg body fields such as order_id, item_id, sap_sku) to 0.0.10-stock-consumer, citing that version's api.md.",
+     "Does not claim that the Operation Validation Consumer or its pause flow is documented in latest, and does not state that latest does not support it (only that it is not documented there).",
+     "Describes at least part of the 0.0.10-stock-consumer sequence diagram (e.g., stock check by SKU, stockBelowTolerance, updating the item status to paused via PUT /items/{itemId}) with citations to that document.",
+     "Points out something that stays the same between both versions (e.g., the Feed Consumer example or the Get Detail Doma path), citing the api.md of both versions.",
+     "Does not present example values (like specific order_id or item_id values) as fixed facts of the API."
+    ]
+   }
+  }
+ ]
+}

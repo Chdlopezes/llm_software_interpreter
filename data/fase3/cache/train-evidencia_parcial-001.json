@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-001",
+ "llamadas": [
+  {
+   "clave": "7d812eee742747c709c0b745634a4d3a4d9fea9328fd24331066926ad7690dcb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For demand-forecast-docs latest: what does `rda workflow prepare` actually give me, and once I have that, what's the exact command and which flags do I pass to execute a specific plan?",
+    "respuesta": "`rda workflow prepare` creates a **workflow plan**. When you run it, you also give some other parameters, such as the name and the version. The plan is a frozen version of the workflow, the workflow equivalent of a task-image [demand-forecast-docs/latest/guide/overview.md:L199-L199]. The workflow flowchart shows that the plan becomes an execution through `rda workflow run` [demand-forecast-docs/latest/guide/overview.md:L196-L196].\n\nThe documentation doesn't tell you how to run it, though. The step for this only says \"We run a specific plan\" [demand-forecast-docs/latest/guide/overview.md:L199-L199]. It gives no syntax for `rda workflow run`, no arguments or flags, and no example of how to pick the plan. So I can't give you the exact command or its flags from this documentation.",
+    "answer_checks": [
+     "Explains that `rda workflow prepare` creates a workflow plan, a frozen version of the workflow similar to a task-image, citing overview.md.",
+     "Mentions that the plan is executed via `rda workflow run`, as shown in the workflow flowchart.",
+     "States that the exact syntax, arguments or flags for running a specific plan are not documented.",
+     "Does not invent flags, arguments or an example command for `rda workflow run`.",
+     "Does not cite the non-citable lines (e.g. L224 or L228) as support."
+    ]
+   }
+  }
+ ]
+}

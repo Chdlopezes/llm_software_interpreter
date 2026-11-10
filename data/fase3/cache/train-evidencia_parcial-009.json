@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-009",
+ "llamadas": [
+  {
+   "clave": "d739e1a13374da4591c46419bd3c3c382916af71e28e5631899011b24db845be",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando los backports automáticos en order-workflow-api 5.6.2-hotfix-1. ¿Qué campos tiene una regla de backport en la configuración del workflow y qué secuencia de llamadas sigue el servicio contra el GitHub Proxy para crear el backport?",
+    "respuesta": "En order-workflow-api 5.6.2-hotfix-1, crear backports es una de las tareas del servicio y sirve para mantener las ramas sincronizadas, por ejemplo de master a develop después de mergear un PR [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L33-L33].\n\n**Campos de una regla de backport.** Las reglas van dentro del objeto Workflow, en la lista `backport_rules` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L92-L135]. Cada regla tiene:\n- `base_trigger_pattern`: el patrón de la rama base que dispara la regla.\n- `head_trigger_pattern`: el patrón de la rama head que la dispara.\n- `backport_to`: una lista de destinos. Cada destino tiene `base_branch_pattern` y `only_active_pull_requests` [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L93-L106].\n\nLa configuración del workflow se guarda en la base de datos MySQL del servicio [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L40-L42].\n\n**Secuencia de llamadas.** Esta parte no está documentada. En los casos de uso de ramas, «Create a branch backport» solo aparece como título, sin diagrama ni descripción del flujo [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L238-L240]. A diferencia de otros casos de uso, como la activación de un workflow o el cron de mediodía, no hay un diagrama de secuencia. Por eso no puedo decirte qué llamadas hace el servicio al GitHub Proxy para crear el backport ni en qué orden.",
+    "answer_checks": [
+     "Indica que una regla de backport tiene los campos base_trigger_pattern, head_trigger_pattern y backport_to, y que cada destino de backport_to tiene base_branch_pattern y only_active_pull_requests, citando database.md.",
+     "Declara que la secuencia de llamadas para crear un backport no está documentada, porque el caso de uso solo aparece listado sin detalle.",
+     "No inventa pasos ni llamadas al GitHub Proxy para crear el backport.",
+     "No afirma que la creación de backports no esté soportada; solo dice que su flujo no está documentado.",
+     "No se abstiene en la parte documentada (los campos de la regla)."
+    ]
+   }
+  }
+ ]
+}

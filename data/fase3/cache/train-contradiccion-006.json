@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-006",
+ "llamadas": [
+  {
+   "clave": "4fff81300551ad4bfb84a7d5019767275182c5d071c69bfcbe592e723106f58e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿desde qué módulo tengo que importar el catálogo y el diccionario de pipelines? ¿Es app.pipes.main o marketplace.pipes.main?",
+    "respuesta": "La documentación se contradice en este punto. La sección sobre cómo se usa retailpipes con Retail Data Framework dice que el diccionario de pipelines y la creación del catálogo están en `src/app/pipes/main.py` [demand-forecast-docs/latest/guide/overview.md:L918-L918]. En cambio, el ejemplo de código de esa misma sección importa el catálogo con `from marketplace.pipes.main import catalog` [demand-forecast-docs/latest/guide/overview.md:L933-L933]. La sección de Poetry también importa los pipelines desde `marketplace.pipes.main` [demand-forecast-docs/latest/guide/overview.md:L105-L105].\n\nAsí que el texto apunta a `app` y los ejemplos usan `marketplace`. Con esta documentación no puedo confirmar cuál de los dos módulos es el correcto. Lo más seguro es revisar la estructura real de `src/` en tu repositorio.",
+    "answer_checks": [
+     "Cita la línea que ubica el diccionario de pipelines y el catálogo en src/app/pipes/main.py.",
+     "Cita el ejemplo de código que importa el catálogo desde marketplace.pipes.main.",
+     "Explica que el texto y el código no coinciden y no elige uno de los dos módulos como correcto.",
+     "No presenta app.pipes.main ni marketplace.pipes.main como un hecho confirmado ni inventa una explicación de la discrepancia."
+    ]
+   }
+  }
+ ]
+}

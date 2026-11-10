@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-002",
+ "llamadas": [
+  {
+   "clave": "4892e8f0242283c10ff5c1440c9559b3777e39ec572bdebf70b4ce428b13f2a8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Dónde puedo ver los monitores y alertas de traffic-gate-api? Necesito saber qué dashboards hay configurados para seguir su funcionamiento.",
+    "respuesta": "La documentación que he encontrado es la de la versión latest. En su apartado de monitores y alertas hay dos recursos de Datadog [traffic-gate-api/latest/guide/README.md:L61-L64]:\n\n- El dashboard «Traffic Gate General», en https://app.datadoghq.com/dashboard/u6e-jhc-hi4/traffic-gate-general [traffic-gate-api/latest/guide/README.md:L63-L63].\n- El monitor «Traffic Gate errors in 5 minutes», en https://app.datadoghq.com/monitors/20766846 [traffic-gate-api/latest/guide/README.md:L64-L64].\n\nLa documentación no dice qué métricas muestra el dashboard, ni qué umbrales o canales de notificación tiene el monitor.",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Menciona el dashboard de Datadog «Traffic Gate General».",
+     "Menciona el monitor «Traffic Gate errors in 5 minutes».",
+     "Atribuye la información a la versión latest y cita el README de esa versión.",
+     "No inventa métricas, umbrales ni canales de notificación de los monitores."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-008",
+ "llamadas": [
+  {
+   "clave": "b6061cd543d468a24513319b0ee68d8b901f95a7b549a85a33c691c6c9f125d7",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, what are the steps when a pipeline gets validated? And if I abort a pipeline partway through, what does the service do? Does it roll back the status check or notify the Orchestrator?",
+    "respuesta": "Here is the validation flow in 5.6.2-hotfix-1:\n\n1. The Orchestrator sends a workflow validation start message through BigQ, and BigQ starts the validation in Workflow API [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L119-L122]. The message comes from the topic `batesting-orchestrator.order-orchestrator-api` and carries a Pipeline ID. Workflow API uses it to fetch the full `Pipeline` from the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L19-L20].\n2. Workflow API gets the pipeline information from the Orchestrator and returns HTTP 200 OK to BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L123-L128].\n3. It gets the workflow config for the repo from Configs API [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L130-L133].\n4. It creates a Pipeline Execution in the database in a \"Wait\" state and sends an ACK to the Orchestrator through BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L134-L141].\n5. If the pull request comes from a fork, it runs fork validations. It then runs branch validations [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L142-L145].\n6. For a migration, it gets the diff files from GH Proxy page by page and validates the migration path of the files [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L146-L154].\n7. It sets the pull request status check through GH Proxy, saves the pipeline execution result in the database and sends a final ACK to the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L155-L166].\n\nI can't answer the abort part. The documentation for this version has no flow, diagram or steps for aborting a pipeline. It doesn't say whether the status check is rolled back, whether the Orchestrator is notified, or what happens to the stored execution. That doesn't mean the service lacks this behavior. It just isn't documented here.",
+    "answer_checks": [
+     "Describes the validation flow, including fetching the pipeline from the Orchestrator, getting the workflow config from Configs API, creating the Pipeline Execution, running the validations, setting the pull request status check and saving the result, with citations to use-cases.md.",
+     "States that the documentation doesn't describe what happens when a pipeline is aborted (status check rollback, notifying the Orchestrator).",
+     "Does not invent abort behavior such as rolling back the status check, sending an ACK or changing the execution state.",
+     "Does not say that aborting is unsupported or doesn't exist; it only says it isn't documented.",
+     "Does not refuse to answer the validation part, which is documented."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-022",
+ "llamadas": [
+  {
+   "clave": "35f9ec789992c4cd537f6023730b7c029bde4c0e6c81cd43b2c050d3a4116700",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In payment-promise-gateway 0.0.10-test-crc-migration, when I call GET /forgiveness_proposal/{promiseId}, what does the service call downstream, and how does it get the forgiveness data it returns?",
+    "respuesta": "When the request comes in, the PaymentPromiseController first checks the format of promiseId, which is a numeric path parameter. It then calls getLateFeeForgiveness(promiseId) on PaymentPromiseService [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L258-L261]. Next, the service calls getPaymentPromiseById(promiseId) on PromiseService and gets back a PaymentPromiseDTO [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L262-L263].\n\nThe service has no separate call for forgiveness data. It takes the lateFeeForgiveness out of that PaymentPromiseDTO itself and returns a LateFeeForgivenessDTO to the controller. The controller then sends the forgiveness details back to the user as JSON [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L264-L266].",
+    "answer_checks": [
+     "Indicates that the service calls getPaymentPromiseById(promiseId) on PromiseService and receives a PaymentPromiseDTO.",
+     "Explains that the service extracts lateFeeForgiveness from the PaymentPromiseDTO and returns a LateFeeForgivenessDTO.",
+     "Mentions that the controller validates the promiseId format (numeric) before calling the service's getLateFeeForgiveness.",
+     "Cites the sequence diagram for GET /forgiveness_proposal/{promiseId} in the 0.0.10-test-crc-migration README.",
+     "Does not invent additional downstream calls or fields not shown in the diagram."
+    ]
+   }
+  }
+ ]
+}

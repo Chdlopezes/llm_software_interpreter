@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-013",
+ "llamadas": [
+  {
+   "clave": "f793868490d21ebc3a4ce3a2e2d3e75a6cf3c21ce390f457b1f9cb5fc088dade",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api, ¿para qué sirve el componente de Jobs? ¿Cada cuánto se ejecuta?",
+    "respuesta": "Toda la documentación que devolvió la consulta es de la versión 5.6.2-hotfix-1, así que estos datos son de esa versión.\n\nPara qué sirve: el servicio de Jobs crea versiones de forma automática a partir de un planificador tipo cron [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L54-L56]. La guía remite a la página de Jobs para ampliar la información [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L58-L58].\n\nCada cuánto se ejecuta: esa página dice que en producción el scope se llama production-cron y tiene dos tareas [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L5-L12]:\n- midday, con la regla `0 12 * * *`, que llama al endpoint `/cron/midday` [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L9-L11]\n- nightly, con la regla `0 20 * * *`, que llama a `/cron/nightly` [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L9-L12]\n\nEn el entorno de test no está configurado [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L14-L15].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que el servicio de Jobs crea versiones automáticamente a partir de un planificador tipo cron, y cita la sección Jobs del README.",
+     "Si da horarios, menciona los jobs de producción midday (0 12 * * *, /cron/midday) y nightly (0 20 * * *, /cron/nightly), y que en test no está configurado, con citas a jobs.md.",
+     "Atribuye los datos a la versión 5.6.2-hotfix-1 y no afirma que no existan otras versiones.",
+     "No inventa detalles que no estén documentados, como la zona horaria del cron o los reintentos."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "test-contradiccion-002",
+ "llamadas": [
+  {
+   "clave": "8913994d9e9890c9ee53f4aa72949d0a3940589ab845215735b590063f42b3df",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy armando un consumidor para los mensajes que traffic-gate-api latest deja en la cola de whitelist. Dentro del objeto \"rule\", ¿cómo se llama exactamente el campo del identificador de la regla en el WAF (WafID o WafId)? ¿Y el ID de la regla llega como número o como string?",
+    "respuesta": "En la versión latest la documentación se contradice en los dos puntos, así que no puedo decirte cuál es el formato correcto.\n\nDónde está el mensaje: en el proceso de encolamiento, cada IP bloqueada se envía al tópico process-blocks.traffic-gate-api [traffic-gate-api/latest/guide/sections/processes.md:L11-L11]. El endpoint POST /whitelist/process recibe ese mensaje como un BQNotification [traffic-gate-api/latest/specs/swagger.yaml:L237-L242]. Dentro, `msg` es un BQMessageContent [traffic-gate-api/latest/specs/swagger.yaml:L333-L334], y su campo `rule` usa el esquema RatelimitBlockingIp [traffic-gate-api/latest/specs/swagger.yaml:L349-L350].\n\nLas dos fuentes no coinciden:\n\n- **Nombre del campo:** en la guía de procesos, el JSON de ejemplo del mensaje lo escribe `WafID` [traffic-gate-api/latest/guide/sections/processes.md:L19-L19]. En el esquema del swagger aparece como `WafId`, de tipo string [traffic-gate-api/latest/specs/swagger.yaml:L363-L364].\n- **Tipo del ID:** el ejemplo de la guía pone `\"ID\": 25`, un número sin comillas [traffic-gate-api/latest/guide/sections/processes.md:L17-L17]. El swagger define `ID` como string [traffic-gate-api/latest/specs/swagger.yaml:L355-L357].\n\nLa documentación no aclara cuál de las dos representaciones refleja lo que se envía realmente.",
+    "answer_checks": [
+     "Llama a la herramienta con software traffic-gate-api y versión latest.",
+     "Cita el ejemplo de mensaje de processes.md (campo WafID y ID numérico) y el esquema RatelimitBlockingIp del swagger (WafId e ID de tipo string).",
+     "Explica que hay una discrepancia tanto en el nombre del campo (WafID frente a WafId) como en el tipo del ID (número frente a string).",
+     "No presenta como un hecho confirmado ninguno de los dos nombres ni ninguno de los dos tipos.",
+     "No inventa información adicional sobre cuál de los dos formatos se envía realmente."
+    ]
+   }
+  }
+ ]
+}

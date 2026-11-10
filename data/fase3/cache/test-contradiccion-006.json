@@ -1,0 +1,26 @@
+{
+ "task_id": "test-contradiccion-006",
+ "llamadas": [
+  {
+   "clave": "7a20cd331032fb6873c02fa413e280e272d11e849380e421cf5565aa7bcee562",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy configurando el job que llama a POST /whitelist de traffic-gate-api latest para el scope de PCI Global. ¿Qué valor exacto tengo que mandar en el query param scope?",
+    "respuesta": "En este punto la documentación se contradice. En la especificación de POST /whitelist, el parámetro `scope` va como query param y su enum termina en `pci-global`, con guion [traffic-gate-api/latest/specs/swagger.yaml:L204-L213]. Pero la descripción de esa misma operación nombra los scopes como (front, api, pci, pci_global), con guion bajo [traffic-gate-api/latest/specs/swagger.yaml:L202-L202]. La guía también usa `pci_global` en dos sitios: cuando explica que el scope llega como query param según el job que hace la llamada [traffic-gate-api/latest/guide/sections/processes.md:L7-L7] y cuando enumera los scopes de los jobs configurados (front, api, pci y pci_global) [traffic-gate-api/latest/guide/sections/arch.md:L26-L26].\n\nCon esta documentación no puedo confirmar cuál de las dos formas, `pci-global` o `pci_global`, acepta realmente el endpoint.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software traffic-gate-api y versión latest.",
+     "Cita el enum de la especificación de POST /whitelist, que usa 'pci-global' con guion.",
+     "Cita al menos una fuente que usa 'pci_global' con guion bajo (la descripción de la operación en swagger.yaml o la guía en processes.md/arch.md).",
+     "Explica que hay una discrepancia entre las dos formas y no elige ninguna.",
+     "No presenta 'pci-global' ni 'pci_global' como el valor confirmado."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-sin_version-013",
+ "llamadas": [
+  {
+   "clave": "710c2b5701f71227a13b8a6d25914c25189ef8d9968a7972a29f4e1d8704126d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando alertas para catalog-portfolio-api. ¿Qué métricas clave recomiendan vigilar y con qué umbrales?",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, recomiendan las mismas cuatro métricas clave con los mismos umbrales [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L205-L213] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L205-L213]:\n\n1. Tiempo de respuesta: una media por debajo de 100 ms.\n2. Tasa de errores: menos del 1 % de errores 4xx/5xx.\n3. Conexiones a base de datos: uso del pool por debajo del 80 %.\n4. Memoria: uso del heap por debajo del 85 %.\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L209-L212] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L209-L212]",
+    "answer_checks": [
+     "Indica las cuatro métricas: tiempo de respuesta (media < 100 ms), tasa de errores (< 1 % de 4xx/5xx), uso del pool de conexiones a base de datos (< 80 %) y uso del heap (< 85 %).",
+     "Indica que estas recomendaciones no cambian entre 0.0.1-test-bench-v2a y latest, o cita ambas versiones, sin atribuirlas a una sola.",
+     "Cita las líneas de la sección de monitorización del documento de troubleshooting (alrededor de L205-L213).",
+     "No inventa más métricas, umbrales ni herramientas de alertado que no estén en esa sección."
+    ]
+   }
+  }
+ ]
+}

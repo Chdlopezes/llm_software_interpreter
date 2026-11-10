@@ -1,0 +1,25 @@
+{
+ "task_id": "train-sin_evidencia-020",
+ "llamadas": [
+  {
+   "clave": "d8a68fc37bcaee525a2874bdc1481a5faaa5ef52cc19e923f1437fdcd9091ac5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, ¿qué secuencia de llamadas sigue el servicio para crear un backport de rama? Quiero saber qué componentes intervienen y en qué orden.",
+    "respuesta": "En la versión 5.6.2-hotfix-1, la guía de casos de uso nombra «Create a branch backport» dentro de la sección de ramas [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L238-L240], pero no trae diagrama ni descripción del flujo. Otros casos de uso sí tienen diagrama. Así que con esta documentación no puedo decirte qué componentes intervienen ni en qué orden se hacen las llamadas.\n\nLo que sí documenta es para qué sirven los backports: mantener las ramas sincronizadas, por ejemplo de master a develop después de mergear un PR [order-workflow-api/5.6.2-hotfix-1/guide/README.md:L33-L33].",
+    "answer_checks": [
+     "Indica que la documentación de 5.6.2-hotfix-1 no describe la secuencia de llamadas ni los componentes del caso de uso de creación de backports.",
+     "Menciona que el caso de uso «Create a branch backport» aparece solo listado, citando use-cases.md en torno a la línea 240.",
+     "No inventa participantes, llamadas ni orden de pasos para el flujo de backport.",
+     "No afirma que la funcionalidad de backport no exista o no esté soportada."
+    ]
+   }
+  }
+ ]
+}

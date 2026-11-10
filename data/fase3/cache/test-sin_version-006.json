@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-006",
+ "llamadas": [
+  {
+   "clave": "db99e37cf8d7b0a9c60110f2486673968deb93d65b8a2e091269982eb337e77c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Cuántos jobs tiene configurados traffic-gate-api y cada cuánto se ejecutan? Además, ¿cómo llaman esos jobs a la API? ¿Les puedo pasar un body?",
+    "respuesta": "La documentación que hay de traffic-gate-api es de la versión latest. Esto es lo que dice:\n\nTraffic Gate tiene dos servicios web que deben ejecutarse de forma periódica. `POST /whitelist?scope=x` consulta las IPs bloqueadas por reglas de ratelimit del scope x y las envía a una cola de mensajes para analizarlas después. `POST /whitelist/purge?scope=x` revisa las IPs que ya están en whitelist para ese scope y evalúa si siguen autorizadas o si hay que sacarlas de la whitelist [traffic-gate-api/latest/guide/sections/arch.md:L20-L24].\n\nComo estos dos servicios tienen que ejecutarse para cada scope, la aplicación tiene configurados 8 jobs en RetailHub: dos por cada uno de los 4 scopes (front, api, pci y pci_global) [traffic-gate-api/latest/guide/sections/arch.md:L26-L26]. Los 4 jobs de whitelist se ejecutan cada minuto y los 4 de purga, cada hora. Es decir, en todos los scopes se evalúa cada minuto qué IPs bloqueadas hay que pasar a whitelist, y cada hora qué IPs de la whitelist ya se pueden quitar [traffic-gate-api/latest/guide/sections/arch.md:L27-L27].\n\nSobre cómo se hacen las llamadas: el servicio de Jobs de RetailHub se configura con una expresión cron y solo hace solicitudes HTTP POST. No admite enviar un body, así que cualquier dato o parámetro que necesite el servicio web va en query params [traffic-gate-api/latest/guide/sections/arch.md:L16-L16]. Por eso el scope se indica como query param (`?scope=x`).",
+    "answer_checks": [
+     "Indica que hay 8 jobs, dos por cada uno de los 4 scopes (front, api, pci, pci_global), uno para whitelist y otro para purga.",
+     "Indica que los jobs de whitelist se ejecutan cada minuto y los de purga cada hora.",
+     "Explica que los jobs llaman solo con POST, que no se puede enviar body y que los parámetros van en query params, como el scope.",
+     "Atribuye la información a la versión latest o dice que es la versión documentada, sin pedir la versión al usuario ni afirmar diferencias con otras versiones.",
+     "Cita líneas de traffic-gate-api/latest/guide/sections/arch.md dentro del rango 16-27 y no se apoya en la línea 18."
+    ]
+   }
+  }
+ ]
+}

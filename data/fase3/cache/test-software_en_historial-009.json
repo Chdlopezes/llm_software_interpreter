@@ -1,0 +1,26 @@
+{
+ "task_id": "test-software_en_historial-009",
+ "llamadas": [
+  {
+   "clave": "fb5b939c2e0c1e743834cee0ed996b4fe2f578a5b63c3b766f04179e91695b2e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con 2p-revenue-optimizer-api en su versión latest y estoy preparando los Dockerfiles para el despliegue del servicio.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas resolver sobre los Dockerfiles o el despliegue y lo reviso en la documentación.",
+    "pregunta": "¿Qué imagen base pongo en el Dockerfile.runtime y dónde puedo ver qué otros tags hay disponibles para ese archivo?",
+    "respuesta": "Dentro del proceso de release, el primer paso es poner en el `Dockerfile` y en el `Dockerfile.runtime` el tag que corresponda a la versión del runtime de Java que quieras usar [2p-revenue-optimizer-api/latest/guide/README.md:L67-L67]. El ejemplo de la documentación para el `Dockerfile.runtime` usa `FROM hub.vendorflow-cloud.io/vendorflow/java:17-runtime-mini` [2p-revenue-optimizer-api/latest/guide/README.md:L76-L79]. Los demás tags disponibles para el `Dockerfile.runtime` están listados en el repositorio `vendorflow_java-mini-runtime`, en la sección de tags soportados (https://github.com/vendorflow/vendorflow_java-mini-runtime#supported-tags) [2p-revenue-optimizer-api/latest/guide/README.md:L81-L81].",
+    "answer_checks": [
+     "Llama a la herramienta con el software 2p-revenue-optimizer-api y la versión latest del historial, sin volver a preguntarlos.",
+     "Indica que el ejemplo de Dockerfile.runtime usa FROM hub.vendorflow-cloud.io/vendorflow/java:17-runtime-mini.",
+     "Señala que los tags disponibles para el Dockerfile.runtime están en el repositorio vendorflow_java-mini-runtime (sección de tags soportados), y no los confunde con los del Dockerfile (vendorflow_java-mini).",
+     "Menciona que el tag se elige según la versión del runtime de Java deseada.",
+     "Cita líneas del README de latest dentro de la sección Release Process (63-87) y no inventa tags que no aparecen en el documento."
+    ]
+   }
+  }
+ ]
+}

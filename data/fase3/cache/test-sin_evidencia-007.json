@@ -1,0 +1,25 @@
+{
+ "task_id": "test-sin_evidencia-007",
+ "llamadas": [
+  {
+   "clave": "d9b7dea9ff9f9e70523462a1ecf43a2b533bd3631ebf3604ae1c3d02b4d07285",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy actualizando una config en unified-transaction-configs v0.0.2 y quiero que el cambio llegue a mobile-flow-manager. ¿Qué endpoint tengo que llamar con el PUT y qué cuerpo y parámetros lleva?",
+    "respuesta": "La documentación de unified-transaction-configs v0.0.2 no me permite decirte qué endpoint usar en el PUT ni qué cuerpo o parámetros lleva. Ninguno de los documentos de esta versión describe esa llamada.\n\nLo único documentado sobre cómo hacer que una actualización llegue a mobile-flow-manager es que hace falta hacer un merge a master en el repositorio de unified transaction configs [unified-transaction-configs/v0.0.2/guide/howto.md:L42-L46]. Para los detalles del PUT tendrás que consultar otra fuente.",
+    "answer_checks": [
+     "Indica que la documentación entregada de v0.0.2 no describe el endpoint, el cuerpo ni los parámetros del PUT.",
+     "No inventa una ruta, un método, cabeceras ni campos para el PUT.",
+     "No afirma que el PUT no exista ni que la actualización no se pueda hacer.",
+     "Si menciona algún requisito documentado, como el merge a master, lo cita en las líneas 42-46 de howto.md y no cita la línea 47."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-032",
+ "llamadas": [
+  {
+   "clave": "366c1d0375ead65ab383a4c83cc4d773268d3dc0dcef8c8f63d0367845e20b7c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm trying to run payment-promise-gateway locally from IntelliJ. What environment variable do I need to set, and what VM options should go in the run configuration?",
+    "respuesta": "Both documented versions, 0.0.10-test-crc-migration and latest, give the same instructions for running the project locally.\n\n- **Environment variable:** set `SCOPE=dev` or `SCOPE=local`. The docs say you need one of these to run the project locally [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L494-L494] [payment-promise-gateway/latest/guide/README.md:L494-L494].\n- **Where to add the VM options:** in IntelliJ, right-click `Main.java`, then go to Modify Run Configuration... / Modify options / Add VM options, and fill in the VM OPTIONS field [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L495-L495] [payment-promise-gateway/latest/guide/README.md:L495-L495].\n- **VM options to use:** `-DconfigFileName=src/test/resources/application.properties -DchecksumEnabled=false -Djava.rmi.server.hostname=localhost` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L497-L497] [payment-promise-gateway/latest/guide/README.md:L497-L497].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the SCOPE environment variable must be set to dev or local to run locally.",
+     "Gives the VM options -DconfigFileName=src/test/resources/application.properties, -DchecksumEnabled=false and -Djava.rmi.server.hostname=localhost, added through IntelliJ's run configuration for Main.java.",
+     "Indicates that the instructions are the same in 0.0.10-test-crc-migration and latest, without attributing them to only one version.",
+     "Does not add undocumented steps or settings (e.g., other env vars or profiles) not present in the documents."
+    ]
+   }
+  }
+ ]
+}

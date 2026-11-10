@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-017",
+ "llamadas": [
+  {
+   "clave": "ee8af7975d39ade401ce94a54e8411a60504997c16fff0621dea79e28fca138d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy probando el Restock Consumer de vendor-stockkeeper-api 0.0.3-paused-seller desde Postman. ¿A qué host tengo que apuntar la llamada?",
+    "respuesta": "La documentación de esta versión se contradice en este punto, así que no puedo darte un host confirmado.\n\nLas URL base documentadas para Postman son solo dos: `vendor-stockkeeper.techzoneoffice.com` para prod y `vendor-stockkeeper-stage.techzoneoffice.com` para stage [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L7-L9]. Sin embargo, el ejemplo curl del Restock Consumer usa otro host, `vendor-stockkeeper-test.techzoneoffice.com`, que no está entre esas URL base [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L25-L25]. Ese mismo ejemplo envía la cabecera `x-api-scope: stage` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L26-L26]. El ejemplo del Feed Consumer usa también el host `-test` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L38-L38].\n\nCon esta documentación no se puede saber si el host `-test` es válido o si tienes que usar el host de stage de Postman. Te recomiendo confirmarlo con el equipo responsable del servicio.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software vendor-stockkeeper-api y versión 0.0.3-paused-seller.",
+     "Cita las URL base documentadas para Postman (prod/stage en techzoneoffice.com) y el host vendor-stockkeeper-test.techzoneoffice.com del ejemplo curl del Restock Consumer.",
+     "Explica que el host del ejemplo no aparece entre las URL base documentadas.",
+     "No elige un host como el correcto ni presenta ninguno como confirmado.",
+     "No inventa otras URL ni entornos que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

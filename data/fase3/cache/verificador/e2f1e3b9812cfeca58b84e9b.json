@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/e2f1e3b9812cfeca58b84e9b",
+ "llamadas": [
+  {
+   "clave": "e2f1e3b9812cfeca58b84e9b39d57bb408ffac2b9e48a045e8ba2d1f159846c7",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-en_que_version-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, identifica software y solicita versiones con versión=null, como corresponde."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambas versiones documentan owner_id opcional y limit máximo 200; las líneas 30 y 34 coinciden en ambas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos versiones y responde el máximo por página; también aclara el valor por defecto."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan el endpoint y sus parámetros (brands.md:16-20, 30, 33-34)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre endpoint, owner_id, limit y offset tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita el alcance a los documentos devueltos y no extrapola sobre otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles en ambas referencias de brands.md."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las dos versiones y señala correctamente que los datos coinciden."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las fuentes citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la evidencia y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por las versiones que documentan el header, con software indicado y version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las dos referencias listan X-RateLimit-Reset como hora de reinicio de la ventana y el límite de 1000 solicitudes por minuto (brands.md:327-333)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica ambas versiones y contesta qué describe el header, sin inventar formato ni unidad."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a brands.md:327-333 de ambas versiones sostienen las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que el formato del valor no está indicado y no afirma que el header falte en otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia para informar versiones, límite y significado del header."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene que ambas versiones tienen contenido coincidente."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coherentes con las fuentes y la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-en_que_version-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por versiones y causas comunes, con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambas tablas describen database_error como fallo de operación de base de datos, con problemas de conexión y restricciones como causas (troubleshooting/README.md:98-107)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Nombra las dos versiones e indica descripción y causas comunes."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de cada troubleshooting/README.md:98-100 y 107 respaldan lo indicado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas tienen citas en las dos versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Acota la respuesta a los documentos recibidos y no afirma exhaustividad sobre el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información disponible en las tablas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta refleja correctamente que las dos versiones tienen contenido idéntico."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables, coherentes y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre catalog-portfolio-api 0.0.1-test-bench-v2a, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "DELETE requiere X-Client-Id string y un client ID en lista blanca (brands.md:221-225); las fuentes citadas sobre 401 y prueba de autenticación son correctas (brands.md:309; troubleshooting/README.md:146-147)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la cabecera para borrar y señala que no están documentados el tipo de token ni cómo obtenerlo."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas usadas son citables y respaldan las afirmaciones; no cita api-reference/README.md:7."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas llevan citas; la falta de detalle de autenticación se limita correctamente a lo no especificado."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El tipo y obtención del token no se especifican en los documentos entregados; la respuesta no convierte esa ausencia en una negación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Da la información disponible sobre la cabecera de DELETE en lugar de abstenerse."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la cabecera requerida para DELETE de la falta de detalle sobre el mecanismo general de autenticación."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la evidencia entregada y no requieren una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre una versión concreta y coherente con los argumentos de llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La referencia rápida lista GET /catalog/brands/{brandId}/allstatus con esa descripción (api-reference/README.md:27); no hay esquema de respuesta de ese endpoint en los documentos entregados."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Proporciona el endpoint documentado y señala que no puede determinar los campos de su respuesta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a api-reference/README.md:27 respalda el endpoint; no atribuye al allstatus el ejemplo de GET /{brandId}."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre el endpoint está citada; la ausencia de esquema se expresa como límite documental."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El esquema de allstatus falta en todos los documentos entregados y la respuesta no inventa campos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada sobre el endpoint y solo se abstiene respecto a los campos."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde allstatus con el endpoint GET /{brandId}."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan el alcance de la documentación y no exigen redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, concreta para la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "POST /catalog/brands/{brandId}/logos está en la tabla (api-reference/README.md:39); la secuencia de subida de logo aparece en architecture/README.md:102."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde el endpoint y aclara que los campos y formato del cuerpo no están descritos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan el endpoint y el flujo de arquitectura; no se usan como esquema del body."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas están citadas; la falta de esquema se expresa como límite de la documentación."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Los documentos entregados no especifican el body del POST de logos; no se inventa un formato."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Da el método y la ruta documentados antes de señalar lo que falta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el flujo de arquitectura con los campos del payload."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican con las fuentes y no exigen una estructura de respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre versión, endpoint y cuerpo JSON."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "POST para asociar y DELETE para quitar collectors figuran en api-reference/README.md:48-49; los documentos no detallan el body."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Proporciona la ruta de asociación y responde que el JSON esperado no está documentado."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a api-reference/README.md:48-49 y 43-49 respaldan las rutas y su aparición en la tabla resumen."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas tienen citas; no se ofrece un body sin respaldo."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No hay esquema de petición para collectors en los documentos entregados y la respuesta no afirma que el endpoint no admita body."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el método y la ruta que sí están documentados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La mención del DELETE se mantiene separada de la pregunta sobre el body del POST."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y compatibles con la respuesta y las fuentes."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés, con software y versión que coinciden con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "PUT /catalog/brands/{brandId}/resources aparece en api-reference/README.md:51-55; el modelo de marca muestra resources con type y url (brand-management/README.md:52-61)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da método y ruta, y explica que el esquema y los campos obligatorios del body no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita del endpoint es pertinente; los campos type y url se presentan solo como parte del modelo, no como esquema confirmado de la petición."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas y la ausencia del schema se describe sin atribuirlo al endpoint."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El body del endpoint no está especificado en los documentos; la respuesta distingue esa carencia del objeto resources del modelo."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde método y ruta con la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla el modelo de marca con el payload del PUT."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks permiten mencionar el modelo con la salvedad expresada y no imponen formato literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre la versión indicada y coherente con los argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los estados y transiciones se muestran en brand-management/README.md:71, 88-92, 105-107; la ruta de activación y la de borrado están en api-reference/README.md:29-30."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera estados y transiciones, y aclara que no se documenta una ruta para ACTIVE → STAND_BY."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas son a líneas citables que respaldan estados, transiciones y endpoints mencionados."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas están citadas; el endpoint faltante se plantea como ausencia documental."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No se encuentra en los documentos un endpoint para ACTIVE → STAND_BY y la respuesta no afirma que la transición sea imposible."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta los estados y transiciones disponibles antes de señalar el límite sobre el endpoint."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente la transición mostrada en el diagrama de las rutas documentadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables y coherentes con las líneas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre software y versión coincidentes con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "MySQL 8.0 o superior figura en setup/README.md:42 y local-development.md:11; la prueba de conectividad está en troubleshooting/README.md:34-40."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el requisito de MySQL y separa lo conocido de lo no especificado sobre configuración."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen la versión requerida, el paso de configuración y el comando de comprobación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas; la respuesta no presenta una URL ni propiedades inventadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No se documentan URL, credenciales ni configuración de conexión de base de datos en los documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el requisito de MySQL y el paso del quick start en vez de abstenerse por completo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La comprobación posterior de conectividad se distingue correctamente de la configuración previa."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la evidencia y no requieren valores de configuración específicos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

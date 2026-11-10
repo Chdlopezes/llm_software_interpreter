@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-010",
+ "llamadas": [
+  {
+   "clave": "302cdf7630112c32d3fb37f8e141c99f3799abd68093ceadb99c5a100d3d1d80",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con vendor-stockkeeper-api latest. Tengo que revisar unos movimientos de stock directamente en la base de datos de los distintos entornos.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber y lo busco en la documentación.",
+    "pregunta": "¿Cómo se llama la base de stage y a qué host y puerto me tengo que conectar? ¿Cambia respecto a la de prod?",
+    "respuesta": "La base de stage se llama inventstg y se conecta al host proxysql.master.techzoneseginf.com por el puerto 6612 [vendor-stockkeeper-api/latest/guide/database.md:L10-L13]. La de producción es inventprd y usa el mismo host, proxysql.master.techzoneseginf.com, y el mismo puerto, 6612 [vendor-stockkeeper-api/latest/guide/database.md:L18-L21]. Lo único que cambia entre los dos entornos es el nombre de la base. La documentación no da el usuario ni la contraseña reales. En su lugar pone los marcadores your_user y your_password [vendor-stockkeeper-api/latest/guide/database.md:L14-L15].",
+    "answer_checks": [
+     "Llama a la herramienta con vendor-stockkeeper-api y la versión latest del historial, sin volver a preguntar por el software ni la versión.",
+     "Indica que la base de stage es inventstg, con host proxysql.master.techzoneseginf.com y puerto 6612.",
+     "Indica que prod (inventprd) usa el mismo host y puerto, y que solo cambia el nombre de la base.",
+     "No presenta your_user ni your_password como credenciales reales.",
+     "Cita las líneas de database.md que corresponden a las secciones de Stage y Prod."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-025",
+ "llamadas": [
+  {
+   "clave": "9aaa0b91fcb819f086a043d1b414547c5a046dab69f1b8412440ae26add8010f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con demand-forecast-docs latest. Tengo que montar un workflow nuevo para el proyecto de marketplace forecasting y quiero entender bien cómo se prepara y se ejecuta.",
+    "historial_asistente": "Perfecto. Dime qué parte del workflow quieres revisar y lo consulto en la documentación.",
+    "pregunta": "¿Qué hace exactamente el paso de prepare antes del run? Y si uso WORKFLOW.TODAY_DATE en los inputs, ¿cuándo se sustituye por la fecha y con qué formato?",
+    "respuesta": "Un workflow se usa en tres pasos: se define en workflows.yml, se pasa a un plan con `rda workflow prepare` y ese plan se ejecuta con `rda workflow run` [demand-forecast-docs/latest/guide/overview.md:L189-L198]. Al ejecutar `rda workflow prepare` (indicando también otros parámetros, como el nombre y la versión) se crea un **workflow plan**, que es una versión congelada del workflow: el equivalente a una task-image, pero para workflows. Después se ejecuta un plan concreto [demand-forecast-docs/latest/guide/overview.md:L199-L199].\n\n`WORKFLOW.TODAY_DATE` es un parámetro especial que Retail Data Framework proporciona de forma automática. Se sustituye por el valor de la fecha, con formato YYYY.M.D, en el momento en que se crea el workflow plan, no cuando se ejecuta [demand-forecast-docs/latest/guide/overview.md:L222-L222]. En el ejemplo de la documentación se usa como `processing_date: \"{{ WORKFLOW.TODAY_DATE }}\"` y también con aritmética, en `ref_date: \"{{ WORKFLOW.TODAY_DATE - 7 }}\"` [demand-forecast-docs/latest/guide/overview.md:L216-L219].",
+    "answer_checks": [
+     "Llama a la herramienta con demand-forecast-docs y la versión latest del historial, sin volver a preguntar por el software ni por la versión.",
+     "Explica que rda workflow prepare crea un workflow plan, una versión congelada del workflow equivalente a una task-image, que luego se ejecuta con rda workflow run.",
+     "Indica que WORKFLOW.TODAY_DATE lo proporciona Retail Data Framework de forma automática y se sustituye por la fecha con formato YYYY.M.D al crear el workflow plan.",
+     "Cita líneas de demand-forecast-docs/latest/guide/overview.md dentro de la sección de Retail Data Framework (por ejemplo L196-L199 y L222).",
+     "No inventa opciones de comando ni formatos de fecha que no estén en la documentación."
+    ]
+   }
+  }
+ ]
+}

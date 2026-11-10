@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-008",
+ "llamadas": [
+  {
+   "clave": "e2421ef4c31c13ae85f67a5dcb353cde8ed11977496c935ecddd0b803cea39c6",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api, cuando le llega a procesar una IP de la que no tiene información en la base de datos, ¿qué consultas hace para analizarla y en qué orden? ¿Y qué guarda al terminar ese análisis?",
+    "respuesta": "Este flujo solo aparece en la documentación de la versión latest, así que todo lo que sigue corresponde a esa versión.\n\nSi la base de datos no tiene información sobre la IP, Traffic Gate la analiza para reunir más contexto y decidir si la envía a whitelist o no [traffic-gate-api/latest/guide/sections/processes.md:L58-L58]. El orden documentado es este:\n\n1. Hace un reverse DNS para saber de dónde viene la IP y usa la librería de Go geoip2 para obtener la ciudad y el país [traffic-gate-api/latest/guide/sections/processes.md:L60-L60].\n2. Consulta IsRetailHub API para saber si la IP pertenece a infraestructura RetailHub [traffic-gate-api/latest/guide/sections/processes.md:L64-L64].\n3. Busca los usuarios que hay detrás de la IP con Users Behind API [traffic-gate-api/latest/guide/sections/processes.md:L66-L66].\n4. Con esos datos determina si se trata de un usuario nominal o de un usuario aplicativo. Si es aplicativo, consulta Application API para saber, por ejemplo, si la aplicación es privada o certificada [traffic-gate-api/latest/guide/sections/processes.md:L68-L68].\n5. Si hay usuarios nominales, revisa con User Reputation API (User Analysis) si son Big Seller o CBT (cross border trader) [traffic-gate-api/latest/guide/sections/processes.md:L70-L70].\n6. Consulta en User Reputation API la reputación del usuario, que puede ser sospechoso o confiable [traffic-gate-api/latest/guide/sections/processes.md:L72-L72].\n7. Consulta IsBot API para saber si detrás de la IP hay un bot que RetailHub considera bueno [traffic-gate-api/latest/guide/sections/processes.md:L74-L74].\n8. Por último, verifica con IsCloud API si la IP pertenece a algún cloud provider [traffic-gate-api/latest/guide/sections/processes.md:L76-L76].\n\nAl terminar estas validaciones, guarda en la base de datos toda la información de contexto y marca que el procesamiento de esa IP está en ejecución. Ese estado cambia cuando acaba el proceso de whitelist. Mientras tanto, si llega la misma IP, se identifica como duplicado que ya está en proceso [traffic-gate-api/latest/guide/sections/processes.md:L78-L78].",
+    "answer_checks": [
+     "Indica que el análisis empieza con un reverse DNS y la librería geoip2 para obtener ciudad y país, y luego consulta IsRetailHub API, Users Behind API, Application API (si el usuario es aplicativo), User Reputation API (Big Seller/CBT y reputación), IsBot API y, por último, IsCloud API.",
+     "Explica que se guarda la información de contexto en la base de datos marcando el procesamiento como en ejecución, para detectar duplicados de la misma IP.",
+     "Atribuye la información a la versión latest, sin pedir la versión al usuario y sin inventar diferencias con otras versiones.",
+     "Cita líneas del documento processes.md de latest y no apoya ninguna afirmación en la línea 56 (no citable).",
+     "No inventa consultas, servicios ni pasos que no aparezcan en la documentación."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "test-en_que_version-005",
+ "llamadas": [
+  {
+   "clave": "dcef450d6edc7851a217b0d826e1f6d6be35be6d67c08fb2c6a6782762f5851f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de 2p-revenue-optimizer-api aparece que el proyecto parte de un modelo base de Spring Boot para Java 17? ¿Y a dónde dicen que hay que mandar las preguntas o comentarios?",
+    "respuesta": "Las dos versiones que se consultaron, 0.2.2 y latest, lo dicen en el README y con el mismo texto.\n\nEn 0.2.2, el README se presenta como «Spring Boot App model for Java 17» y dice que ofrece un modelo básico para aplicaciones web basadas en JDK 17 y Spring [2p-revenue-optimizer-api/0.2.2/guide/README.md:L3-L5]. Las preguntas y comentarios se envían al VendorFlow Issue Tracker (https://github.com/vendorflow/vendorflow/issues) [2p-revenue-optimizer-api/0.2.2/guide/README.md:L7].\n\nEn latest, el README repite el mismo título y la misma descripción del modelo básico para JDK 17 y Spring [2p-revenue-optimizer-api/latest/guide/README.md:L3-L5]. También remite al mismo VendorFlow Issue Tracker [2p-revenue-optimizer-api/latest/guide/README.md:L7].\n\nEste dato no cambia de una versión a otra. Solo puedo hablar de estas dos versiones, que son las que se consultaron. De ninguna otra versión puedo decir si lo incluye o no.",
+    "answer_checks": [
+     "Identifica tanto 0.2.2 como latest como versiones que documentan que el proyecto es un modelo básico de Spring Boot para Java/JDK 17.",
+     "Indica que las preguntas y comentarios se dirigen al VendorFlow Issue Tracker.",
+     "Señala que el contenido es el mismo en ambas versiones, sin atribuir diferencias inventadas.",
+     "Cita el README de ambas versiones (0.2.2 y latest) con rangos que contengan lo afirmado.",
+     "No afirma que otras versiones no lo documenten ni que la lista de versiones sea exhaustiva, y no pide la versión al usuario."
+    ]
+   }
+  }
+ ]
+}

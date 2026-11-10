@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-010",
+ "llamadas": [
+  {
+   "clave": "7ba2d082f4a60afc0ac16b45ca730b64f87827a2dd8cd655a26e4b1b2424e663",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando el alta de marcas de nuestro backoffice con catalog-portfolio-api 0.0.1-test-bench-v2a y quiero gestionar bien los errores que devuelve el servicio.",
+    "historial_asistente": "Perfecto, cuéntame qué parte del manejo de errores quieres resolver y lo consulto.",
+    "pregunta": "Si intento crear una marca con un nombre que ya está usado en ese site, ¿qué código HTTP y qué error me llegan? ¿Y qué campos trae el cuerpo de la respuesta de error?",
+    "respuesta": "Recibes un 409 con el error `brand_name_already_exists`, que indica que el nombre de la marca ya existe en el site [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L312-L312]. Esto encaja con la regla de que, al crear una marca, `name` debe ser único dentro del site [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L92-L93].\n\nEl cuerpo del error tiene cuatro campos: `error` (el código del error), `message` (un texto descriptivo), `status` (el código HTTP) y `cause` (un array). El ejemplo de la documentación lo muestra con `brand_not_found` y 404 [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L316-L325].",
+    "answer_checks": [
+     "Llama a la herramienta con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que el nombre duplicado en el site devuelve 409 con el error brand_name_already_exists.",
+     "Describe el formato del error con los campos error, message, status y cause.",
+     "No presenta los valores del ejemplo (brand_not_found, 404, Brand with ID 123) como la respuesta concreta al caso de nombre duplicado.",
+     "Cita las líneas de la tabla de códigos de error y del bloque Error Response Format de brands.md."
+    ]
+   }
+  }
+ ]
+}

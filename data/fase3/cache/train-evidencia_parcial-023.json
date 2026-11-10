@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-023",
+ "llamadas": [
+  {
+   "clave": "145ddb4675a2fe9c926b42345b294a885b6f28e41b2fe6d7d0b615604dad5b15",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy con vendor-stockkeeper-api 0.0.3-paused-seller y tengo que revisar un movimiento del flujo Feed antes de lanzarlo. Con el operation id, ¿qué tengo que consultar para saber si los ítems son de prueba? Y aparte, ¿qué columnas tiene exactamente la tabla 1p_3pl_product_stock_mov y cómo se define cada una?",
+    "respuesta": "En el flujo Feed, el operation id sirve para consultar la base de datos de 1p-3pl-integrator, en concreto la tabla 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L239-L240]. De esa tabla salen los datos clave para comprobar si los ítems son de prueba [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L245]. Con esos datos se consulta **materials**, por sap sku o por material id. Así se obtiene el ítem, y con él se consulta la API de items para revisar sus tags y validar si es un ítem de prueba [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L252-L254]. La guía incluye un ejemplo de llamada a la búsqueda de materials (`/materials/facade/search`), que filtra por `sap_sku` y `site_id` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L257-L283].\n\nLa segunda parte no la puedo responder: la documentación no recoge la lista de columnas de 1p_3pl_product_stock_mov ni define cada una. Solo trae un registro JSON de ejemplo de lo que se obtiene de la tabla [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L245-L248], pero no dice si ese registro refleja la estructura completa ni explica sus campos.",
+    "answer_checks": [
+     "Indica que con el operation id se consulta la tabla 1p_3pl_product_stock_mov de la base de datos de 1p-3pl-integrator.",
+     "Explica que después se consulta materials (por sap sku o material id) para obtener el ítem y luego se revisan sus tags en la API de items.",
+     "Declara que la estructura completa de columnas de 1p_3pl_product_stock_mov y su definición no están documentadas.",
+     "No inventa columnas, tipos ni definiciones de la tabla, y no presenta el JSON de ejemplo como el esquema completo.",
+     "Cita con rangos de important.md la parte respondida y no se abstiene en ella."
+    ]
+   }
+  }
+ ]
+}

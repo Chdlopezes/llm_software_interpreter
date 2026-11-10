@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-contradiccion-004",
+ "llamadas": [
+  {
+   "clave": "c979ed23eaea4d9114f029375c9486b25d2cd12c3b0175ff60c80c39ed7dbf60",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy manejando errores contra catalog-portfolio-api 0.0.1-test-bench-v2a. Cuando falla la validación de una petición, ¿qué valor llega en el campo \"error\" de la respuesta? Necesito el código exacto para hacer el match en el cliente.",
+    "respuesta": "En este punto la documentación de esta versión no es coherente. La tabla de códigos de error comunes de la referencia de endpoints de marcas indica, para el 400, el error `validation_error` con la descripción «Request validation failed» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L308-L308]. Sin embargo, la guía de Brand Management da como error de validación `validation_failed` («Business rules validation failed») [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L169-L169]. La tabla de códigos de aplicación de Troubleshooting también usa `validation_failed` («Business rules failed») [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L105-L105].\n\nCon esta documentación no puedo confirmar cuál de los dos valores devuelve realmente la API. Tampoco aclara si se trata del mismo error con dos nombres distintos o de dos errores diferentes (validación de la petición frente a validación de reglas de negocio). Lo que sí está documentado es que el campo `error` forma parte del formato de respuesta de error, junto con `message`, `status` y `cause` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L318-L325]. Mientras no se confirme el valor, conviene que el cliente no dependa de uno solo de los dos.",
+    "answer_checks": [
+     "Cita la tabla de errores de brands.md, donde el error de validación del 400 es `validation_error`.",
+     "Cita al menos una de las otras fuentes (Brand Management o Troubleshooting), donde el código es `validation_failed`.",
+     "Explica que las fuentes se contradicen y no presenta ninguno de los dos códigos como el correcto confirmado.",
+     "No inventa información externa para resolver el conflicto (por ejemplo, no afirma cuál es el comportamiento real del servidor)."
+    ]
+   }
+  }
+ ]
+}

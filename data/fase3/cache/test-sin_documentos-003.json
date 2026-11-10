@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_documentos-003",
+ "llamadas": [
+  {
+   "clave": "a419baa854419b383165d77ed9be922b4e8772f00eb4b5460d48823944111e4b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api 2.0, ¿de qué tipo es la columna seller_id de la tabla rule_row y admite valores nulos?",
+    "respuesta": "No hay documentación de 2p-revenue-optimizer-api 2.0 en el catálogo, así que no puedo decirte qué tipo tiene la columna seller_id de rule_row ni si admite nulos en esa versión. Si quieres, puedo consultar la documentación de las versiones de 2p-revenue-optimizer-api que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software 2p-revenue-optimizer-api y versión 2.0, y recibe not_found.",
+     "Explica que no hay documentación de 2p-revenue-optimizer-api 2.0 en el catálogo.",
+     "No inventa el tipo de la columna seller_id ni si admite nulos.",
+     "No incluye citas a documentos ni presenta datos de otras versiones como si fueran de la 2.0.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedir al usuario que repita el nombre del software."
+    ]
+   }
+  }
+ ]
+}

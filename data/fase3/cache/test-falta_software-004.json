@@ -1,0 +1,25 @@
+{
+ "task_id": "test-falta_software-004",
+ "llamadas": [
+  {
+   "clave": "e5c7bf850ad52fb832ed5fdfad53b5db651f2016ce2f3edc1839c312f790107b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Quiero ajustar cómo se genera la especificación OpenAPI del proyecto. ¿En qué clase se cambia esa configuración?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica (por ejemplo, no menciona ninguna clase de configuración ni pasos de OpenAPI)."
+    ]
+   }
+  }
+ ]
+}

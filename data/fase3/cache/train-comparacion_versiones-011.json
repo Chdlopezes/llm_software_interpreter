@@ -1,0 +1,89 @@
+{
+ "task_id": "train-comparacion_versiones-011",
+ "llamadas": [
+  {
+   "clave": "b083bb2511444f068b356d826bbf6c37843961b48cd4cb02f47984d9777a28c5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What's different in the Services section of the vendor-stockkeeper-api API guide between 0.0.10-stock-consumer and latest? I want to know if any endpoint examples were added or dropped.",
+    "respuesta": "The main difference is that 0.0.10-stock-consumer documents an Operation Validation Consumer, and the latest api.md doesn't document it.\n\n**Only in 0.0.10-stock-consumer**\n- **Operation Validation Consumer example:** a curl call to `/stock-operations/3pl/validation/restock-consumer` with a `Content-Type: application/json` header [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L54]. The body is a `msg` object with `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` and `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. The example returns `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68].\n- **Sequence diagram:** `ValidationRestockOrderNews` gets the item through `ItemAdapter` and the product stock through `GetStockBySkuAdapter`, then checks `stockBelowTolerance` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L86]. After that it sets the item status to \"paused\" with `PUT /items/{itemId}` to API Items, which answers `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L87-L89].\n\n**Only in latest**\n- The latest Services section has just two examples, Restock Consumer and Feed Consumer [vendor-stockkeeper-api/latest/guide/api.md:L22-L48].\n\n**Same in both versions**\n- **Get Detail Doma row:** `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/latest/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].\n- **Restock Consumer:** the body sends `msg.inbound_shipment_id` and the response is `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L28-L34] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L29-L35].\n- **Feed Consumer:** a call to `/fp/inventory/operations/feed` with a `msg.id` body, returning `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49].\n\nNote that \"not documented in latest\" only describes what that version's guide includes. It doesn't confirm that the endpoint was removed from the service.",
+    "answer_checks": [
+     "Indicates that 0.0.10-stock-consumer documents an Operation Validation Consumer example (path /stock-operations/3pl/validation/restock-consumer) that is not documented in latest's api.md, citing the 0.0.10 document.",
+     "Attributes the Operation Validation Consumer body fields (e.g., order_id, item_id, sap_sku) and/or the sequence diagram that pauses the item via PUT /items/{itemId} only to 0.0.10-stock-consumer, not to latest.",
+     "States that Restock Consumer and Feed Consumer examples are the same in both versions, citing both api.md documents.",
+     "Does not claim the endpoint was removed or is unsupported in latest; frames it as not documented there.",
+     "Does not cite non-citable lines such as line 21 of the 0.0.10 table or lines 16-19/25 of latest's api.md."
+    ]
+   }
+  },
+  {
+   "clave": "f007b0d579250e82d85df776ae2abb3d3dc9b5e378ee02a970adb1c5fc7b667c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What changed in the Services section of the vendor-stockkeeper-api API guide between 0.0.10-stock-consumer and latest? Were any endpoint examples added or dropped?",
+    "respuesta": "The main difference is the Operation Validation Consumer example. The 0.0.10-stock-consumer guide documents it, and the latest api.md doesn't.\n\n**Only in 0.0.10-stock-consumer**\n- **Operation Validation Consumer example:** a curl call to `/stock-operations/3pl/validation/restock-consumer` with a `Content-Type: application/json` header [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L54]. The body is a `msg` object with these fields: `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` and `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. The example returns `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68].\n- **Sequence diagram:**\n  1. `ValidationRestockOrderNews` gets the item through `ItemAdapter`.\n  2. It gets the product through `GetStockBySkuAdapter`.\n  3. It checks `stockBelowTolerance` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L86].\n  4. It sets the item status to \"paused\" with `PUT /items/{itemId}` to API Items, which returns `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L87-L89].\n\n**In latest**\nThe Services section has two example subsections: Restock Consumer [vendor-stockkeeper-api/latest/guide/api.md:L22-L23] and Feed Consumer [vendor-stockkeeper-api/latest/guide/api.md:L36-L37]. Neither guide adds an example that isn't in the other version.\n\n**Same in both versions**\n- **Get Detail Doma row:** `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/latest/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].\n- **Restock Consumer:** the body sends `msg.inbound_shipment_id` and the response is `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L28-L34] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L29-L35].\n- **Feed Consumer:** a call to `/fp/inventory/operations/feed` with a `msg.id` body that returns `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49].\n\nThe latest guide just doesn't document the Operation Validation Consumer. That doesn't confirm the endpoint was removed from the service.",
+    "answer_checks": [
+     "Indicates that 0.0.10-stock-consumer documents an Operation Validation Consumer example (path /stock-operations/3pl/validation/restock-consumer) that is not documented in latest's api.md, citing the 0.0.10 document.",
+     "Attributes the Operation Validation Consumer body fields (e.g., order_id, item_id, sap_sku) and/or the sequence diagram that pauses the item via PUT /items/{itemId} only to 0.0.10-stock-consumer, not to latest.",
+     "States that the Restock Consumer and Feed Consumer examples are the same in both versions, citing both api.md documents.",
+     "Does not claim the endpoint was removed or is unsupported in latest; frames it as not documented there.",
+     "Does not cite non-citable lines such as lines 21 or 27 of the 0.0.10 api.md or lines 16-19/25 of latest's api.md."
+    ]
+   }
+  },
+  {
+   "clave": "8708f9b08d49c4084ee91d1d9e6ab344c0d78b57884af9ebf1887b1ce44688bf",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What changed in the Services section of the vendor-stockkeeper-api API guide between 0.0.10-stock-consumer and latest? Were any endpoint examples added or dropped?",
+    "respuesta": "The one difference is the Operation Validation Consumer example. The 0.0.10-stock-consumer guide includes it, and the latest guide doesn't.\n\n**Only in 0.0.10-stock-consumer:** an Operation Validation Consumer example. It's a curl call to `/stock-operations/3pl/validation/restock-consumer` with a `Content-Type: application/json` header [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L54]. The body is a `msg` object with `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` and `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65], and the call returns `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68]. A sequence diagram comes with it:\n1. `ValidationRestockOrderNews` gets the item through `ItemAdapter`.\n2. It gets the product through `GetStockBySkuAdapter`.\n3. It checks `stockBelowTolerance` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L86].\n4. It sets the item to \"paused\" with `PUT /items/{itemId}` to API Items, which returns `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L87-L89].\n\n**In latest:** the Services section shows only the Restock Consumer and Feed Consumer examples [vendor-stockkeeper-api/latest/guide/api.md:L22-L48]. Latest has no example that 0.0.10-stock-consumer lacks. The only change is that the Operation Validation Consumer example is gone.\n\n**Same in both versions:**\n- **Restock Consumer:** the body sends `msg.inbound_shipment_id` and the call returns `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L28-L34] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L29-L35].\n- **Feed Consumer:** a call to `/fp/inventory/operations/feed` with a `msg.id` body that returns `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49].\n- **Get Detail Doma table row:** `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/latest/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].\n\nThe latest guide just doesn't document the Operation Validation Consumer. That doesn't confirm the endpoint was removed from the service.",
+    "answer_checks": [
+     "Indicates that 0.0.10-stock-consumer documents an Operation Validation Consumer example (path /stock-operations/3pl/validation/restock-consumer) that does not appear in latest's api.md, citing the 0.0.10 document.",
+     "Attributes the Operation Validation Consumer body fields (e.g., order_id, item_id, sap_sku) and/or the sequence diagram that pauses the item via PUT /items/{itemId} only to 0.0.10-stock-consumer, not to latest.",
+     "States that the Restock Consumer and Feed Consumer examples are the same in both versions, citing both api.md documents, and does not contradict itself by claiming neither version has an example the other lacks.",
+     "Does not claim the endpoint was removed or is unsupported in latest; frames it as not documented there.",
+     "Does not cite non-citable lines such as lines 21 or 27 of the 0.0.10 api.md or lines 16-19/25 of latest's api.md."
+    ]
+   }
+  },
+  {
+   "clave": "4e25807c13adf03da4063a1b497a19f992cfafa5e70eb589f504bace68afc78f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What changed in the Services section of the vendor-stockkeeper-api API guide between 0.0.10-stock-consumer and latest? Were any endpoint examples added or dropped?",
+    "respuesta": "The main change is the Operation Validation Consumer example. The 0.0.10-stock-consumer guide has it, and the latest guide doesn't.\n\n**Only in 0.0.10-stock-consumer:** an Operation Validation Consumer example. It's a curl call to `/stock-operations/3pl/validation/restock-consumer` with a `Content-Type: application/json` header [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L54]. The body is a `msg` object with `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` and `message_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L55-L65]. The call returns `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L68-L68]. The example also has a sequence diagram:\n1. `ValidationRestockOrderNews` gets the item through `ItemAdapter`.\n2. It gets the product through `GetStockBySkuAdapter`.\n3. It checks `stockBelowTolerance` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L86].\n4. It sets the item to \"paused\" with `PUT /items/{itemId}` to API Items, which returns `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L87-L89].\n\n**In latest:** there are only two example subsections, Restock Consumer [vendor-stockkeeper-api/latest/guide/api.md:L22-L23] and Feed Consumer [vendor-stockkeeper-api/latest/guide/api.md:L36-L37]. 0.0.10-stock-consumer has both of these too [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L23-L23] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L37]. So latest adds no new example. It just drops the Operation Validation Consumer one.\n\n**Same in both versions:**\n- **Restock Consumer:** the body sends `msg.inbound_shipment_id` and the call returns `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L28-L34] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L29-L35].\n- **Feed Consumer:** a call to `/fp/inventory/operations/feed` with a `msg.id` body that returns `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49].\n- **Get Detail Doma table row:** `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/latest/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].\n\nThe latest guide doesn't document the Operation Validation Consumer. That alone doesn't show the endpoint was removed from the service.",
+    "answer_checks": [
+     "Indicates that 0.0.10-stock-consumer documents an Operation Validation Consumer example (path /stock-operations/3pl/validation/restock-consumer) that does not appear in latest's api.md, citing the 0.0.10 document.",
+     "Attributes the Operation Validation Consumer body fields (e.g., order_id, item_id, sap_sku) and/or the sequence diagram that pauses the item via PUT /items/{itemId} only to 0.0.10-stock-consumer, not to latest.",
+     "States that the Restock Consumer and Feed Consumer examples are present and equivalent in both versions, citing both api.md documents, without contradicting itself about which version has an extra example.",
+     "Does not claim the endpoint was removed or is unsupported in latest; frames it as not documented there.",
+     "Does not cite non-citable lines such as lines 21 or 27 of the 0.0.10 api.md or lines 16-19/25 of latest's api.md."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "task_id": "train-falta_software-001",
+ "llamadas": [
+  {
+   "clave": "f812c0dfb0f36dc3b08230706f521ac0ea6c5b1ab945cd6d41a3178ffb70f117",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Cuando confirmo una propuesta de condonación de intereses por mora, ¿a qué método del servicio interno se termina llamando y con qué datos?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario a qué software se refiere.",
+     "No pide la versión del software.",
+     "No da una respuesta técnica sobre la confirmación de la propuesta (por ejemplo, no menciona métodos, endpoints ni parámetros)."
+    ]
+   }
+  }
+ ]
+}

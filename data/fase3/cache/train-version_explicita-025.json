@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-025",
+ "llamadas": [
+  {
+   "clave": "793b2bd040eb37970c727dd7388ae96ec4c8da73a2f70071515f18bae2df4332",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In order-workflow-api 5.6.2-hotfix-1, when a hotfix branch gets merged into master under the gitflow workflow, which branches does it get backported to, and is the backport restricted to branches with active pull requests?",
+    "respuesta": "In the gitflow Workflow object, a backport rule fires when the base branch matches `^master$` and the head branch matches `^hotfix/.*$`. That rule backports to two targets [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L92-L106]:\n\n- `^develop$`, with `only_active_pull_requests: false`, so the backport to develop is not limited to active pull requests [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L97-L100].\n- `^release/.*`, with `only_active_pull_requests: true`, so release branches get the backport only when they have active pull requests [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L101-L104].\n\nMerges of `^release/.*$` and `^migration/.*$` branches into master follow the same backport targets with the same flags [order-workflow-api/5.6.2-hotfix-1/guide/services/database.md:L107-L134].",
+    "answer_checks": [
+     "Calls the tool with software order-workflow-api and version 5.6.2-hotfix-1.",
+     "States that a hotfix merged into master is backported to develop and to release/* branches.",
+     "Indicates that only_active_pull_requests is false for develop and true for release/* branches.",
+     "Cites the backport_rules block of the database.md Workflow JSON (around lines 92-106).",
+     "Does not invent backport behavior or targets that aren't in the JSON."
+    ]
+   }
+  }
+ ]
+}

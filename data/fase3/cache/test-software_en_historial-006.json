@@ -1,0 +1,26 @@
+{
+ "task_id": "test-software_en_historial-006",
+ "llamadas": [
+  {
+   "clave": "0a9b850e0da5827cf2ff239eec1246ee00db6cf5f3cca3db434720e204cdc64e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy montando un cliente interno que va a consumir traffic-gate-api en su versión latest para consultar IPs bloqueadas desde nuestro panel de soporte.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber de la API para el cliente y lo revisamos en la documentación.",
+    "pregunta": "Para configurar el cliente, ¿qué URLs base de servidor tiene declaradas la especificación?",
+    "respuesta": "La especificación OpenAPI declara dos servidores: https://prod_traffic-gate-api.retailhubapps.io y https://internal-api.retailhub.com/traffic-gate/prod [traffic-gate-api/latest/specs/swagger.yaml:L9-L11].",
+    "answer_checks": [
+     "Llama a la herramienta con traffic-gate-api y la versión latest del turno anterior, sin volver a preguntar por el software ni la versión.",
+     "Indica la URL https://prod_traffic-gate-api.retailhubapps.io.",
+     "Indica la URL https://internal-api.retailhub.com/traffic-gate/prod.",
+     "Cita el bloque servers de traffic-gate-api/latest/specs/swagger.yaml.",
+     "No inventa otras URLs ni entornos que no aparezcan en la especificación."
+    ]
+   }
+  }
+ ]
+}

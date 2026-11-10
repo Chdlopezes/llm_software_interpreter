@@ -1,0 +1,26 @@
+{
+ "task_id": "train-version_explicita-027",
+ "llamadas": [
+  {
+   "clave": "63fad7072d14fcee8c736863d8eaf1b37dd6f1f3497ee1e81bbe7ea62fbdd052",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 1.1.6, ¿qué tengo que mandar para registrar un usuario nuevo con /auth/sign-up y qué respuestas puede devolver?",
+    "respuesta": "El endpoint es `POST /auth/sign-up`, de la etiqueta Auth, y su función es validar el usuario y la contraseña de un usuario nuevo (operationId `sign_up`) [zenith-keeper/1.1.6/specs/swagger.yaml:L316-L321]. El cuerpo de la petición es obligatorio. Se envía en `application/json` con el esquema `SignUpRequestDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L322-L327]. Ese esquema tiene los campos `name`, `lastName`, `username` y `password` (todos de tipo string), `role` (que referencia a `UserRole`) y `warehouseId` (string) [zenith-keeper/1.1.6/specs/swagger.yaml:L546-L560]. `UserRole` contiene un único campo, `role`, de tipo string [zenith-keeper/1.1.6/specs/swagger.yaml:L541-L545].\n\nHay dos respuestas documentadas. La primera es `200` (OK), con un cuerpo `application/json` de tipo string. La segunda es `400` (BAD REQUEST), con un cuerpo `application/json` de tipo object [zenith-keeper/1.1.6/specs/swagger.yaml:L328-L340].",
+    "answer_checks": [
+     "Indica que es una petición POST a /auth/sign-up con cuerpo JSON obligatorio según el esquema SignUpRequestDTO.",
+     "Menciona las respuestas 200 (OK, de tipo string) y 400 (BAD REQUEST, de tipo object).",
+     "Si enumera los campos de SignUpRequestDTO, solo incluye los documentados (name, lastName, username, password, role, warehouseId).",
+     "Cita la sección de /auth/sign-up del swagger.yaml de la versión 1.1.6.",
+     "No inventa otros códigos de respuesta ni requisitos de autenticación que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

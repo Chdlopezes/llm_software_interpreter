@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-014",
+ "llamadas": [
+  {
+   "clave": "22bb2d7a9640060a586c05cb5d88f158c33a1aa735f31e418e23f681034be51b",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "How do I run the test suite for payment-promise-gateway?",
+    "respuesta": "Both documented versions (0.0.10-test-crc-migration and latest) give the same instruction: you run the tests with the Gradle command `./gradlew test` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L515-L520] [payment-promise-gateway/latest/guide/README.md:L515-L520]. This does not differ between the two versions.",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that tests are run with `./gradlew test`.",
+     "Indicates that the instruction is the same in 0.0.10-test-crc-migration and latest, without attributing it to only one version.",
+     "Cites the Testing section (lines 515-520) of the README.",
+     "Does not add test frameworks, flags or setup steps that are not in the documents."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-015",
+ "llamadas": [
+  {
+   "clave": "2e1c6eec9574c07667cc69be5983bceb15739828ea5e242fdf55dd58e2ff91f6",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Tengo un error raro con catalog-portfolio-api que no consigo resolver. Si lo reporto al equipo, ¿qué datos tengo que incluir y por dónde los contacto?",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, dicen lo mismo sobre esto.\n\nAl reportar un problema, incluye cuatro cosas:\n1. Los mensajes de error de los logs de la aplicación.\n2. Ejemplos de la petición y de la respuesta.\n3. Datos del entorno: versión de Java y versión de MySQL.\n4. La configuración, sanitizada y sin contraseñas.\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L218-L223] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L218-L223]\n\nPuedes contactar al equipo por correo en instore_devs@retailflow.com o por Slack en el canal #instore-dev [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L227-L228] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L227-L228].\n\nLa guía también define un proceso de escalado en cuatro niveles. Primero revisas la guía de troubleshooting y luego buscas en la documentación y los logs. Si no se resuelve, contactas al equipo de desarrollo con información detallada. El último nivel es la escalada de emergencia para problemas en producción [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L233-L236] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L233-L236].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que hay que incluir los mensajes de error de los logs, ejemplos de petición/respuesta, datos del entorno (versión de Java y de MySQL) y la configuración sanitizada sin contraseñas.",
+     "Menciona como canales de contacto el correo instore_devs@retailflow.com y el canal de Slack #instore-dev.",
+     "Indica que la información no cambia entre 0.0.1-test-bench-v2a y latest, sin atribuirla a una sola versión.",
+     "No inventa canales, plazos ni requisitos que no aparezcan en la sección de ayuda de la guía de troubleshooting."
+    ]
+   }
+  }
+ ]
+}

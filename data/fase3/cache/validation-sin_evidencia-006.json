@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_evidencia-006",
+ "llamadas": [
+  {
+   "clave": "f60ce93b7fe654d1b17517b5751a166e8c2213b21a5670e638c4f3459f3c3224",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué cuerpo tengo que mandar en el PUT de recursos de una marca y qué códigos de respuesta puede devolver?",
+    "respuesta": "Con la documentación de la versión 0.0.1-test-bench-v2a no puedo responder a eso. El endpoint solo aparece en la tabla de referencia rápida: `PUT /catalog/brands/{brandId}/resources`, con la descripción «Create or update brand resources» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L55-L55]. Ningún documento de esa versión detalla su cuerpo de petición, sus parámetros ni sus respuestas o códigos específicos.\n\nLo único relacionado es el modelo de marca. Ahí el campo `resources` es una lista de objetos con `type` (por ejemplo `card` o `pin`) y `url` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L52-L61]. Pero la documentación no dice que esa sea la estructura que espera el PUT, así que no lo tomes como el cuerpo de la petición.",
+    "answer_checks": [
+     "Indica que la documentación de 0.0.1-test-bench-v2a no describe el cuerpo de la petición ni los códigos de respuesta del PUT /catalog/brands/{brandId}/resources.",
+     "Cita la fila de la tabla de referencia donde aparece el endpoint (api-reference/README.md, línea 55).",
+     "No inventa campos del cuerpo ni códigos de respuesta específicos para este endpoint.",
+     "Si menciona el campo resources del modelo de marca, no lo presenta como el cuerpo documentado del PUT.",
+     "No afirma que el endpoint no exista ni que no acepte cuerpo."
+    ]
+   }
+  }
+ ]
+}

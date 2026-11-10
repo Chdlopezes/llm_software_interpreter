@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-en_que_version-005",
+ "llamadas": [
+  {
+   "clave": "907bd9e4e29971bef80146d6a2c8ff332c66d2678e4e8e97cb3c970ef11a8303",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy viendo timeouts contra la base de datos en catalog-portfolio-api y sospecho que se está agotando el pool de conexiones. ¿En qué versión o versiones viene documentado ese problema en la guía de troubleshooting, y qué solución proponen?",
+    "respuesta": "Lo documentan las dos versiones que devolvió la consulta, 0.0.1-test-bench-v2a y latest, y el contenido es el mismo en ambas.\n\nEn las dos guías de troubleshooting, la tabla de problemas de base de datos tiene una fila «Connection Pool Exhausted». Su síntoma son los errores de timeout y la solución que dan es aumentar el tamaño del pool o corregir las fugas de conexiones [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L75-L79] [catalog-portfolio-api/latest/guide/troubleshooting/README.md:L75-L79]. En esa fila no hay más detalles, como valores concretos de tamaño del pool.\n\nLa consulta solo devolvió esas dos versiones. A partir de estos documentos no se puede saber si alguna otra versión también lo describe.",
+    "answer_checks": [
+     "Identifica que el problema de pool de conexiones agotado está documentado tanto en 0.0.1-test-bench-v2a como en latest, sin diferencias entre ambas.",
+     "Indica que el síntoma son errores de timeout y que la solución es aumentar el tamaño del pool o corregir fugas de conexiones.",
+     "Cita la fila correspondiente de la guía de troubleshooting de ambas versiones.",
+     "No afirma que esas sean todas las versiones existentes ni que en otras versiones no esté documentado.",
+     "No inventa valores concretos de configuración del pool (tamaños, propiedades) que no aparecen en los documentos."
+    ]
+   }
+  }
+ ]
+}

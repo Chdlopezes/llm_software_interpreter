@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-004",
+ "llamadas": [
+  {
+   "clave": "95b728ee24c8f276e2baff9ef6459786330ba71aaf7705c3ad93630d27631705",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy manejando los errores de price-engine-api latest en mi cliente. ¿Qué forma tiene el cuerpo de error que devuelve la API y qué valores puede traer el campo code?",
+    "respuesta": "Los errores se devuelven con el modelo RequestError. Es un objeto con dos propiedades de tipo string: `code`, descrito como código de respuesta, y `message`, descrito como mensaje de respuesta [price-engine-api/latest/specs/swagger.yaml:L122-L131]. El campo `code` está restringido a un enum con dos valores: `bad_request` e `internal_server_error` [price-engine-api/latest/specs/swagger.yaml:L125-L128].\n\nEste modelo lo usan tanto la respuesta 400 por parámetro inválido [price-engine-api/latest/specs/swagger.yaml:L92-L97] como la 500 por error no controlado del servidor [price-engine-api/latest/specs/swagger.yaml:L111-L116].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software price-engine-api y versión latest.",
+     "Indica que el cuerpo de error (RequestError) es un objeto con los campos code y message, ambos de tipo string.",
+     "Indica que code solo admite los valores bad_request e internal_server_error.",
+     "Cita las líneas del modelo RequestError en price-engine-api/latest/specs/swagger.yaml.",
+     "No inventa otros campos ni otros valores de code que no estén en el documento."
+    ]
+   }
+  }
+ ]
+}

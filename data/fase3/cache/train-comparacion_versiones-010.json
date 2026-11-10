@@ -1,0 +1,25 @@
+{
+ "task_id": "train-comparacion_versiones-010",
+ "llamadas": [
+  {
+   "clave": "94828b3343f65f00fb95936ab9afa6676e89acef81636533f2078b44a2828349",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambió algo entre 0.0.6-ep-restock-man y 0.0.10-stock-consumer en cómo se comprueba si los ítems son de prueba en los flujos Restock y Feed? Quiero saber si tengo que ajustar el procedimiento al pasar a la 0.0.10.",
+    "respuesta": "No hace falta que ajustes el procedimiento. Comparé la guía de las dos versiones y los pasos son los mismos. La única diferencia es de formato y no afecta a lo que tienes que hacer.\n\n**Flujo Restock (igual en las dos versiones)**\nAntes de enviar un inbound, se obtiene ese inbound y se va a su conciliación para comprobar si los ítems tienen los tags que los identifican como ítems de prueba [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L37-L37] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L37-L37]. La conciliación se consulta en el endpoint `/inbounds/{id}/conciliations` del servicio 1p-inbounds [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L41-L41] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L41-L41]. Después se consulta la API de ítems para revisar sus tags [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L128-L128] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L128-L128].\n\n**Flujo Feed (igual en las dos versiones)**\nCon el Operation id se consulta la tabla 1p_3pl_product_stock_mov de la base de datos de 1p-3pl-integrator [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L239-L240] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240]. De esa tabla se sacan los datos para comprobar si los ítems son de prueba [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L245-L245] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L245-L245]. Con ellos se busca en materials, por sap sku o por material id, para obtener el ítem. Luego se consulta la API de ítems y se validan sus tags [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L252-L254] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254]. Esa búsqueda se hace en el endpoint `materials/facade/search` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L257-L257] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L257-L257].\n\n**Lo único que cambia**\nSon las etiquetas `<summary>` de los bloques desplegables con las respuestas de ejemplo. En 0.0.6-ep-restock-man llevan estilos en línea (borde, padding, color de fondo) [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L45-L45] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L135-L135]. En 0.0.10-stock-consumer son etiquetas sin estilo [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L45-L45] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L135-L135].",
+    "answer_checks": [
+     "Indica que el procedimiento para comprobar los ítems de prueba en Restock y Feed no cambia entre 0.0.6-ep-restock-man y 0.0.10-stock-consumer.",
+     "Describe los pasos comunes (conciliación del inbound y consulta de tags en la API de ítems para Restock; Operation id → tabla 1p_3pl_product_stock_mov → materials → API de ítems para Feed) citando el important.md de ambas versiones.",
+     "Si menciona diferencias, se limita a la presentación de los bloques <summary> (estilos en línea en 0.0.6 frente a etiqueta sin estilo en 0.0.10) y no inventa cambios funcionales.",
+     "No atribuye a una versión contenido que solo aparece en otra ni se apoya en líneas no citables, como la lista de campos de la línea 250 o la frase sobre el tag test_items de la línea 231."
+    ]
+   }
+  }
+ ]
+}

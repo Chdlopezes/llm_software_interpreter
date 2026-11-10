@@ -1,0 +1,26 @@
+{
+ "task_id": "test-software_en_historial-012",
+ "llamadas": [
+  {
+   "clave": "c1c6c4ef32cc0dbe90ce1e0ad98e0a8d4e41acd2b32ec99bbced06554d5a9d91",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy preparando el despliegue de 2p-revenue-optimizer-api 0.2.2 y revisando la configuración base del proyecto antes de tocar dependencias.",
+    "historial_asistente": "Perfecto. Dime qué parte de la configuración quieres revisar y la consulto en la documentación.",
+    "pregunta": "¿Qué servidor web embebido trae configurado y qué tendría que hacer para cambiarlo por otro?",
+    "respuesta": "El proyecto viene configurado con Jetty. Para usar otro servidor web basta con configurar en el archivo build.gradle la dependencia del que quieras usar [2p-revenue-optimizer-api/0.2.2/guide/README.md:L27-L27]. Para aplicaciones del stack servlet, la documentación menciona tres servidores compatibles, cada uno con su starter: Tomcat (`spring-boot-starter-tomcat`), Jetty (`spring-boot-starter-jetty`) y Undertow (`spring-boot-starter-undertow`) [2p-revenue-optimizer-api/0.2.2/guide/README.md:L22-L25].",
+    "answer_checks": [
+     "Llama a la herramienta con 2p-revenue-optimizer-api y la versión 0.2.2 del historial, sin volver a preguntar por el software ni la versión.",
+     "Indica que el proyecto viene configurado con Jetty.",
+     "Explica que para cambiar de servidor basta con configurar la dependencia correspondiente en build.gradle.",
+     "Menciona las alternativas Tomcat y Undertow (y/o sus starters spring-boot-starter-tomcat y spring-boot-starter-undertow).",
+     "Cita líneas del README de la versión 0.2.2 y no inventa pasos adicionales (como exclusiones de dependencias) que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

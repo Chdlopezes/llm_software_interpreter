@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-033",
+ "llamadas": [
+  {
+   "clave": "2941c4fad8450ce3675f5f5891f15ec3790188123fc77b966a6411e1a99f5702",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Con qué herramienta recoge métricas payment-promise-gateway y qué métricas principales mide?",
+    "respuesta": "Las dos versiones documentadas, 0.0.10-test-crc-migration y latest, lo describen con el mismo texto. La aplicación recoge sus métricas con DataDog. Las métricas principales que se indican son las tasas de éxito y fallo en la creación de promesas, las estadísticas de propuestas de condonación, los tiempos de respuesta de la API y las tasas de error [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L524-L528] [payment-promise-gateway/latest/guide/README.md:L524-L528].",
+    "answer_checks": [
+     "Llama con version=null; no pide la versión al usuario.",
+     "Indica que las métricas se recogen con DataDog.",
+     "Enumera las métricas clave: tasas de éxito/fallo en la creación de promesas, estadísticas de propuestas de condonación, tiempos de respuesta de la API y tasas de error.",
+     "Indica que el contenido no cambia entre 0.0.10-test-crc-migration y latest, sin atribuirlo a una sola versión.",
+     "No inventa métricas, nombres de métricas ni configuración de DataDog que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

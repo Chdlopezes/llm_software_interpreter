@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-001",
+ "llamadas": [
+  {
+   "clave": "548fb1baef77530f17b79d1c8b8f3466da9c8a9bd9451a1441f7e45ed6110c30",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando price-engine-api latest. ¿Contra qué URL de servidor tengo que apuntar en producción y bajo qué tag están agrupados los endpoints?",
+    "respuesta": "En producción, el servidor declarado es http://price-engine.commerce-hub.com, con la descripción PRODUCCION [price-engine-api/latest/specs/swagger.yaml:L15-L17]. Los endpoints están agrupados bajo el tag \"config adjustments\", que se describe como los endpoints disponibles para trabajar con los ajustes de configuración de ventas del seller [price-engine-api/latest/specs/swagger.yaml:L19-L21]. Eso coincide con el propósito de la API: gestionar y modelar esos ajustes de configuración de ventas del seller [price-engine-api/latest/specs/swagger.yaml:L11].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software price-engine-api y versión latest.",
+     "Indica que la URL del servidor de producción es http://price-engine.commerce-hub.com.",
+     "Indica que los endpoints se agrupan bajo el tag \"config adjustments\", relacionado con los ajustes de configuración de ventas del seller.",
+     "Cita el swagger.yaml de latest en las líneas de servers y tags (dentro de L15-L21).",
+     "No inventa otros servidores o entornos (por ejemplo, de staging o testing) que no están documentados."
+    ]
+   }
+  }
+ ]
+}

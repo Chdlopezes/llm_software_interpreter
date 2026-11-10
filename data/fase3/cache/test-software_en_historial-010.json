@@ -1,0 +1,25 @@
+{
+ "task_id": "test-software_en_historial-010",
+ "llamadas": [
+  {
+   "clave": "e6d69dc4882beec42567d345f57a88c8594bebd69343e18a6fe51bb307360268",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Estoy revisando cómo funcionan los jobs de whitelist en traffic-gate-api latest, porque tenemos que montar un monitoreo de las ejecuciones.",
+    "historial_asistente": "Perfecto. Dime qué parte del proceso quieres revisar y la busco en la documentación.",
+    "pregunta": "Cuando el job llama a POST /whitelist y termina de encolar las IPs bloqueadas, ¿qué deja registrado el servicio y en qué tabla?",
+    "respuesta": "El último paso del proceso guarda el estado de la ejecución en la tabla execution: un valor lógico que indica si la operación fue exitosa y el scope recibido [traffic-gate-api/latest/guide/sections/processes.md:L27-L27]. En el diagrama de secuencia, Traffic-Gate hace ese guardado en MySQL-DB después de recorrer todas las reglas y encolar sus IPs en la BigQ [traffic-gate-api/latest/guide/sections/processes.md:L42-L49]. Para tu monitoreo, ten en cuenta que en la tabla Execution, por ahora, solo queda el estado de los jobs que llaman a /whitelist; las ejecuciones del job de /whitelist/purge no se guardan [traffic-gate-api/latest/guide/sections/database.md:L5-L5].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con traffic-gate-api y la versión latest del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que, al terminar, se guarda el estado de la ejecución en la tabla execution, con un valor lógico de éxito y el scope recibido.",
+     "Cita processes.md en las líneas del paso 4 (L27) o del diagrama de secuencia.",
+     "No inventa columnas ni campos de la tabla execution que no aparezcan en las líneas citadas, ni cita líneas no citables (p. ej., L19 de processes.md)."
+    ]
+   }
+  }
+ ]
+}

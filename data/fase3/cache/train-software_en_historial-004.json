@@ -1,0 +1,47 @@
+{
+ "task_id": "train-software_en_historial-004",
+ "llamadas": [
+  {
+   "clave": "6783d9a7d9c7ceace7437f6a24df549bf7331a28f84ef57339f2132f4ff66b34",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con vendor-stockkeeper-api en la versión 0.0.10-stock-consumer. Tengo que revisar unos datos de inventario directamente en la base de datos del entorno de pruebas previo a producción.",
+    "historial_asistente": "Perfecto, cuéntame qué necesitas saber y lo busco en la documentación de esa versión.",
+    "pregunta": "¿Cómo se llama la base de stage y a qué host y puerto me tengo que conectar?",
+    "respuesta": "La base de stage se llama inventstg. Para conectarte usa el host proxysql.master.techzoneseginf.com y el puerto 6612 [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L10-L13]. En cuanto al usuario y la contraseña, la documentación solo pone valores genéricos (your_user / your_password), así que no indica qué credenciales reales usar [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L14-L15].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con vendor-stockkeeper-api y la versión 0.0.10-stock-consumer del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que la base de stage se llama inventstg.",
+     "Indica el host proxysql.master.techzoneseginf.com y el puerto 6612.",
+     "No presenta los valores genéricos de usuario y contraseña como si fueran credenciales reales, ni se inventa otras.",
+     "Cita las líneas de la sección de stage de database.md."
+    ]
+   }
+  },
+  {
+   "clave": "56d243b7d4189c9e84ff7dc549a0a1f4d556665cf60c6ffb90f3e57ba7d0ce88",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy con vendor-stockkeeper-api en la versión 0.0.10-stock-consumer. Tengo que comprobar unos movimientos de inventario directamente en la base de datos de producción.",
+    "historial_asistente": "Perfecto, dime qué necesitas y lo busco en la documentación de esa versión.",
+    "pregunta": "¿Cómo se llama la base de producción y a qué host y puerto me conecto? ¿Es el mismo servidor que usa la base de test?",
+    "respuesta": "La base de producción se llama inventprd y se accede con el host proxysql.master.techzoneseginf.com por el puerto 6612 [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L18-L21]. Sí, es el mismo host y el mismo puerto que usa la base de test, que se llama inventtest [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md:L2-L5].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con vendor-stockkeeper-api y la versión 0.0.10-stock-consumer del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que la base de producción se llama inventprd, con host proxysql.master.techzoneseginf.com y puerto 6612.",
+     "Indica que la base de test (inventtest) usa el mismo host y el mismo puerto.",
+     "No se inventa credenciales ni presenta valores genéricos como credenciales reales.",
+     "Cita las secciones de producción y de test de database.md sin citar líneas no citables."
+    ]
+   }
+  }
+ ]
+}

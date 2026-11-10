@@ -1,0 +1,26 @@
+{
+ "task_id": "train-comparacion_versiones-016",
+ "llamadas": [
+  {
+   "clave": "3dc6188faf833ec506c77bcf544d75630d3357a62fa60d790f67990daca21f03",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambia entre 0.0.3-paused-seller y 0.0.10-stock-consumer la lista de flujos de inventario en los que hay que hacer la verificación de ítems antes de actuar? ¿Y en las otras versiones?",
+    "respuesta": "No, ese punto no cambia. En 0.0.3-paused-seller y en 0.0.10-stock-consumer la guía indica los mismos dos flujos principales que requieren la verificación: Restock y Feed [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L11-L14] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L11-L14]. Las otras dos versiones documentadas, 0.0.6-ep-restock-man y latest, tienen exactamente la misma lista [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L11-L14] [vendor-stockkeeper-api/latest/guide/important.md:L11-L14]. En todas, la verificación consiste en comprobar, antes de ejecutar cualquier acción sobre los flujos, que el movimiento de entrada y el de salida contengan todos sus ítems de prueba [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L5-L6] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L5-L6] [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L5-L6] [vendor-stockkeeper-api/latest/guide/important.md:L5-L6].",
+    "answer_checks": [
+     "Indica que la lista de flujos (Restock y Feed) es la misma en 0.0.3-paused-seller y en 0.0.10-stock-consumer, sin inventar diferencias.",
+     "Nombra los dos flujos, Restock y Feed.",
+     "Cita el important.md de las dos versiones comparadas, con rangos que contengan la lista de flujos.",
+     "Si habla de 0.0.6-ep-restock-man o latest, cita sus documentos y no afirma diferencias en esta sección.",
+     "No cita líneas no citables (por ejemplo, la línea 7 o la sección Conclusion) como respaldo."
+    ]
+   }
+  }
+ ]
+}

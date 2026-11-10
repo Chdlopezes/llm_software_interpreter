@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-006",
+ "llamadas": [
+  {
+   "clave": "1699b4559a458972d7b416bd6f9e38fe4cd33b6d3d792a781f9ac3b6b5ac6b66",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In catalog-portfolio-api 0.0.1-test-bench-v2a, what states can a brand go through, and which endpoint do I call to take an ACTIVE brand back to STAND_BY?",
+    "respuesta": "The brand management guide lists three states [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L71-L71]:\n\n- **STAND_BY**: the brand exists but isn't active yet. It may be missing required logos, or it may have been temporarily deactivated [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L105-L105].\n- **ACTIVE**: the brand is fully functional and visible, and all requirements are met [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L106-L106].\n- **DELETED**: the brand has been permanently removed, and this can't be undone [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L107-L107].\n\nAccording to the state diagram, a new brand starts in STAND_BY. From STAND_BY it can go to ACTIVE, and from ACTIVE it can go back to STAND_BY. A brand in either state can move to DELETED [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L88-L92].\n\nThe docs only name an endpoint for the STAND_BY → ACTIVE step: `PUT /catalog/brands/{brandId}/activate` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L30-L30]. Deletion uses `DELETE /catalog/brands/{brandId}` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L29-L29].\n\nI can't say which endpoint takes an ACTIVE brand back to STAND_BY. The diagram shows that transition, but none of the documentation I have names an endpoint or operation for it. That doesn't mean no such operation exists. It just isn't described here.",
+    "answer_checks": [
+     "Lists the three brand states STAND_BY, ACTIVE and DELETED, with citations to the brand management guide.",
+     "Describes the documented transitions, including that a new brand starts in STAND_BY and that ACTIVE can go back to STAND_BY.",
+     "States that no endpoint or operation for the ACTIVE → STAND_BY transition is documented.",
+     "Does not make up a deactivation endpoint (e.g. a /deactivate route) or say that deactivating through PUT update is supported.",
+     "Does not claim that deactivation is unsupported or impossible; it only says it is undocumented."
+    ]
+   }
+  }
+ ]
+}

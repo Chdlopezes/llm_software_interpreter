@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-009",
+ "llamadas": [
+  {
+   "clave": "72a4a928306703337fb0f4d4cb7b2b25511487813019bb7e84d0a8703228a654",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿cómo actualizo una marca que ya existe? Necesito saber el método y la ruta, qué parámetro va en el path y qué campos puedo mandar en el cuerpo.",
+    "respuesta": "Para actualizar una marca se usa `PUT /{brandId}` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L172-L176]. El parámetro de path es `brandId`, de tipo integer y obligatorio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L178-L182].\n\nEl cuerpo de ejemplo incluye estos campos: `name`, `soft_descriptor`, `category`, `subcategories`, `tags`, `priority` y `business_description` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L184-L196]. En esta sección no se indica cuáles son obligatorios.\n\nLa petición de ejemplo envía el JSON con la cabecera `Content-Type: application/json` a `https://api.mp.internal.retailflow.com/catalog/brands/123`, y en el cuerpo solo manda `name` y `priority`. Es decir, en el ejemplo se manda solo una parte de los campos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L198-L207].",
+    "answer_checks": [
+     "Indica que la actualización se hace con PUT /{brandId} (o PUT /catalog/brands/{brandId}).",
+     "Señala que brandId es un parámetro de path de tipo integer y obligatorio.",
+     "Enumera los campos del cuerpo de ejemplo (name, soft_descriptor, category, subcategories, tags, priority, business_description) sin añadir campos que no aparecen, como site o type.",
+     "No inventa qué campos son obligatorios en la actualización ni afirma que otros campos estén prohibidos.",
+     "Cita la sección Update Brand de brands.md de la versión 0.0.1-test-bench-v2a."
+    ]
+   }
+  }
+ ]
+}

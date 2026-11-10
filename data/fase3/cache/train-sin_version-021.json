@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-021",
+ "llamadas": [
+  {
+   "clave": "f3cee89fb44f5f6dd67413c5e5e831a3978a90bdf96099a8b65ca4798c7da74c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper, ¿qué parámetros recibe la operación searchAllProductsBatch, la que devuelve los lotes en los que aparece un producto con ordenación, y qué respuestas puede devolver?",
+    "respuesta": "La documentación encontrada es la de la versión 1.1.6. Ahí searchAllProductsBatch es una operación GET con la etiqueta ProductsList, y se describe como la que obtiene la lista de productos con todos los lotes en los que aparecen [zenith-keeper/1.1.6/specs/swagger.yaml:L177-L181].\n\nRecibe dos parámetros de ruta, los dos obligatorios y de tipo string: `productId` y `sort` [zenith-keeper/1.1.6/specs/swagger.yaml:L182-L192].\n\nPuede devolver dos respuestas:\n- `200 OK`, con un cuerpo `ProductBatchsResponseDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L193-L199]. Ese esquema trae `section` (de tipo `SectionDTOResp`), `productId` y `batchDTORespList`, que es un array de `BatchDTOResp` [zenith-keeper/1.1.6/specs/swagger.yaml:L483-L493].\n- `404 NOT FOUND`, con un cuerpo de tipo object [zenith-keeper/1.1.6/specs/swagger.yaml:L200-L205].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que los parámetros son productId y sort, de ruta, obligatorios y de tipo string, con cita al swagger de la 1.1.6.",
+     "Indica que la respuesta 200 devuelve ProductBatchsResponseDTO y que también existe una respuesta 404 NOT FOUND.",
+     "Atribuye la información a la versión 1.1.6 sin afirmar que no exista en otras versiones.",
+     "No inventa parámetros, códigos de respuesta ni campos que no estén en el documento."
+    ]
+   }
+  }
+ ]
+}

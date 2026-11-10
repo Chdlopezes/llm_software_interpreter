@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-024",
+ "llamadas": [
+  {
+   "clave": "68e75e2bc4c5b1db3444b15e2edc3833078685cc562d659299a263c192b53916",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con order-workflow-api 5.6.2-hotfix-1. Estoy revisando cómo se generan automáticamente las versiones en nuestros entornos.",
+    "historial_asistente": "Perfecto. Pregúntame lo que necesites de esa versión y lo busco en la documentación.",
+    "pregunta": "¿El job nightly también está montado en el entorno de test? Y en producción, ¿con qué regla de tiempo y a qué endpoint se dispara?",
+    "respuesta": "En test no: la documentación del servicio de Jobs marca el scope de test como «Not configured» [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L14-L15].\n\nEn producción, el scope se llama production-cron [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L5-L7]. Ahí el job nightly tiene el timerule `0 20 * * *` y apunta al endpoint `/cron/nightly` [order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md:L9-L12].\n\nLa documentación no dice en qué zona horaria se interpreta ese timerule.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con order-workflow-api y la versión 5.6.2-hotfix-1 del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que en el entorno de test los jobs figuran como no configurados.",
+     "Indica que en producción (scope production-cron) el job nightly usa el timerule 0 20 * * * y el endpoint /cron/nightly.",
+     "Cita el documento order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md con rangos que contengan esos datos.",
+     "No inventa una zona horaria ni detalles de ejecución del job que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

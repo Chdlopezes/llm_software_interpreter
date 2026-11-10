@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-009",
+ "llamadas": [
+  {
+   "clave": "488d30b4c4a7efd2a2efcd12f91d5cfc281cc74330979be1a6c7d2f1e02f1ee5",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 2.0, ¿el calendario de creación automática de versiones se guarda en la base de datos MySQL junto con la configuración del workflow, o va en otro sitio?",
+    "respuesta": "No hay documentación de order-workflow-api 2.0 en el catálogo, así que no puedo decirte dónde se guarda el calendario de creación automática de versiones en esa versión. Si quieres, puedo consultar la documentación de las versiones disponibles de order-workflow-api.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 2.0, y recibe not_found.",
+     "Explica que no hay documentación de order-workflow-api 2.0 en el catálogo.",
+     "No inventa dónde se almacena el calendario de creación automática de versiones ni qué guarda la base de datos MySQL.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, sin presentar datos de otras versiones como si fueran de la 2.0."
+    ]
+   }
+  }
+ ]
+}

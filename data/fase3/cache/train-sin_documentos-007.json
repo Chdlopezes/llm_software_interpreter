@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-007",
+ "llamadas": [
+  {
+   "clave": "8e97d096883ca724d3bd110bb11524d716aca0781ad02f301d57f9e671687d02",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway 0.0.1-rc, ¿qué campos tengo que mandar en el body del PUT a /forgiveness_proposal para confirmar una propuesta de condonación? Tienes un ejemplo con curl?",
+    "respuesta": "No encuentro documentación de payment-promise-gateway 0.0.1-rc en el catálogo: la consulta para esa versión no devolvió resultados. Por eso no puedo decirte qué campos lleva el body del PUT a /forgiveness_proposal ni darte un ejemplo con curl para esa versión. Si quieres, puedo buscar en las versiones de payment-promise-gateway que sí están en el catálogo.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software payment-promise-gateway y versión 0.0.1-rc, y recibe not_found.",
+     "Explica que no hay documentación de payment-promise-gateway 0.0.1-rc en el catálogo.",
+     "No inventa los campos del body del PUT /forgiveness_proposal ni escribe un ejemplo de curl.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no pide al usuario que confirme la versión."
+    ]
+   }
+  }
+ ]
+}

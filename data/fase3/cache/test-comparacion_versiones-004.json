@@ -1,0 +1,26 @@
+{
+ "task_id": "test-comparacion_versiones-004",
+ "llamadas": [
+  {
+   "clave": "36b811b67fcc8e1ed111bfeee5ea55abc5d01f66da5058a409b16416664019c1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "What changed in the rule_row table columns between 0.2.2 and latest of 2p-revenue-optimizer-api?",
+    "respuesta": "The only difference is the `custom_fields` column. In 0.2.2, the rule_row table lists `custom_fields` as type json, Null, with the description \"Custom Fields\" [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L16-L16]. The latest rule_row table doesn't list that column. Its last column is `item` [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md:L15-L16].\n\nAll the other columns are the same in both versions:\n- `id`: bigint, Not null, auto-increment primary key\n- `rule_id`: bigint, Not null, foreign key that REFERENCES rule_header(id)\n- `site_id`, `seller_id`, `domain`, `brand` and `item`: json, Null\n\n[2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L9-L15] [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md:L9-L15]\n\nLatest also documents a separate `rule_custom_field` table [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L1-L1]. It has a `rule_row_id` column (bigint, Not null) that REFERENCES rule_row(id), plus `name` and `value_info` columns (both varchar(180), Not null) [2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md:L9-L12]. The documentation doesn't say whether this table replaces the old `custom_fields` column.",
+    "answer_checks": [
+     "Calls the tool with version=null even though the question names two versions.",
+     "Attributes the custom_fields column (json, Null) only to 0.2.2 and does not present it as part of the latest rule_row table.",
+     "States that the columns id, rule_id, site_id, seller_id, domain, brand and item are unchanged between both versions.",
+     "Cites the rule_row.md documents of both 0.2.2 and latest.",
+     "Does not claim, without support, that custom_fields was removed or replaced by another table in latest; at most it notes that this is not documented."
+    ]
+   }
+  }
+ ]
+}

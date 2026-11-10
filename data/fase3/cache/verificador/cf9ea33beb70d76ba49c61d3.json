@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/cf9ea33beb70d76ba49c61d3",
+ "llamadas": [
+  {
+   "clave": "cf9ea33beb70d76ba49c61d32e757b344f6e9df82a5e16e4e89f76a0bde3c110",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-contradiccion-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, nombra demand-forecast-docs y latest, y pregunta por la discrepancia de notación documentada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L7 define N como número de timestamps y L13 lo usa como límite superior de j; la respuesta describe correctamente esa discrepancia."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone ambos usos y señala que el documento no permite determinar cuál es correcto."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L7 respalda la primera definición; L13 respalda el uso en el índice j. La línea 13 no citable se cita únicamente para señalar el conflicto, excepción permitida."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ambos usos de N llevan citas a L7 y L13."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte una definición en general: identifica el conflicto y limita la conclusión a lo que permiten confirmar los documentos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta los dos usos documentados en vez de abstenerse por completo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados los dos usos de N y no propone una resolución inventada."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita ambas fuentes, incluidas L7 y L13, sin elegir una arbitrariamente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen los dos usos y la respuesta esperada, verificables en L7 y L13, sin exigir una redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, identifica demand-forecast-docs y latest, y corresponde a la discrepancia entre las rutas de importación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L105 muestra el import desde marketplace.pipes.main; L108 nombra app.pipes.main. La respuesta refleja correctamente la inconsistencia."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contrasta las dos rutas y explica que la documentación entregada no confirma cuál es correcta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L101 y L104-L106 respaldan el contexto y el ejemplo marketplace; L108 respalda la mención de app. L108 se usa solo para señalar el conflicto, según la excepción."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la instalación y las rutas llevan citas pertinentes a L101-L108."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la discrepancia sin convertir la falta de resolución documental en una afirmación sobre cuál paquete existe."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Presenta la evidencia de ambas rutas antes de abstenerse de escoger una."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla las dos rutas ni afirma cuál está confirmada."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita el ejemplo y la nota discordante, sin resolverlo arbitrariamente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en L101-L108 y evalúan el conflicto sin exigir una forma de respuesta concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, nombra demand-forecast-docs y latest, y pregunta cuándo proporcionar ENV, conforme al conflicto planteado."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L196 distingue prepare de run; L224 dice que ENV se define al ejecutar y también que el valor se proporciona en preparación; L228 muestra el ejemplo de prepare con ENV:DEV. La respuesta presenta fielmente esa tensión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica las dos indicaciones documentales y concluye que no se puede confirmar cuál momento es correcto."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L196 respalda la separación entre preparación y ejecución; L224 y L228 respaldan las indicaciones en conflicto. Las líneas no citables se citan solo para señalarlo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el ciclo del workflow y el parámetro ENV están citadas en L196, L224 y L228."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Reconoce que la documentación no resuelve el momento de suministro sin afirmar que ENV no pueda pasarse en alguna etapa."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Comunica la evidencia disponible y su contradicción en lugar de limitarse a decir que no sabe."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue prepare de run y no declara una de las alternativas como confirmada."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Expone y cita la indicación de L224 y el ejemplo de L228, contextualizándolos con L196, sin escoger arbitrariamente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a las afirmaciones de L196, L224 y L228 y no requieren una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, nombra demand-forecast-docs y latest y se ajusta a la discrepancia entre el tag de desarrollo y ENV."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L148 documenta los tags dev, hml y prd; L162 usa -dev y L228-L231 muestra ENV:DEV y el tag interpretado como DEV. La respuesta reproduce correctamente esos datos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara las formas en minúscula y mayúscula y explica que la documentación no confirma cuál usar."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L148 y L162 respaldan los tags en minúscula; L214, L228 y L231 respaldan el ejemplo y la interpretación en mayúscula. Las líneas de conflicto no citables se usan solo para exponerlo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación verificable sobre los tags, la sustitución de ENV y el ejemplo está citada."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma cómo se comporta la comparación entre mayúsculas y minúsculas; indica correctamente que no está aclarado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone las evidencias relevantes antes de señalar que no puede confirmar la forma correcta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene diferenciados los tags de las imágenes y el valor usado en el ejemplo, sin resolver la discrepancia por invención."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita la evidencia de tags en minúscula y el ejemplo en mayúscula, sin elegir un valor como correcto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en L148, L162, L228 y L231 y no exigen una conclusión no respaldada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, identifica demand-forecast-docs y latest, y pregunta por la ubicación de clases y la ruta de importación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L279 sitúa las clases en src/app/pipes/ingest, mientras L839, L872 y L888 muestran imports desde marketplace.pipes.ingest. La respuesta refleja la diferencia."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contrasta la ruta del texto con los imports de ejemplo y no presenta una como confirmada."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L279 respalda la ubicación indicada en prosa y L839, L872 y L888 respaldan los imports marketplace. La línea 279 se usa únicamente para señalar el conflicto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre ubicación e imports están acompañadas de citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Indica que la documentación no permite confirmar cuál ruta corresponde, sin afirmar que una ruta no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la ubicación y varios ejemplos de importación antes de señalar el límite de la evidencia."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla las rutas ni inventa una explicación para la discrepancia."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica y cita ambas fuentes del conflicto, sin elegir arbitrariamente una."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en L279 y los ejemplos citados y no exigen una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, nombra demand-forecast-docs y latest y corresponde a las rutas en conflicto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L918 ubica el diccionario y el catálogo en src/app/pipes/main.py; L933 y L105 muestran imports desde marketplace.pipes.main. La respuesta describe correctamente la discrepancia."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contrasta la ubicación en el texto con los imports y concluye que no se puede confirmar una ruta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L918 respalda la ubicación en src/app y L933 y L105 respaldan los imports marketplace. L918, no citable, se usa solo para señalar el conflicto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica sobre las rutas y los ejemplos lleva una cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que la documentación no permite confirmar la ruta correcta sin afirmar que un módulo no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Presenta las dos evidencias relevantes antes de abstenerse de elegir."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas las rutas discrepantes y no las reconcilia mediante una explicación inventada."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita la ubicación y los ejemplos discordantes, sin resolverlo arbitrariamente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en L918, L933 y L105 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, nombra demand-forecast-docs y latest y solicita tanto el resultado de prepare como la sintaxis para ejecutar el plan."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L199 dice que prepare crea un workflow plan y que este es una versión congelada del workflow; L196 muestra el paso de prepare a run."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué produce prepare y señala que la sintaxis exacta y los flags para ejecutar un plan no están especificados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L199 respalda la creación y naturaleza del plan; L196 respalda el paso de ejecución con rda workflow run. No usa líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre prepare, el plan y run tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Identifica como faltantes la sintaxis, los argumentos y los flags, sin inventarlos; L196 y L199 solo describen la transición y el plan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada sobre el plan y limita la abstención a los detalles que faltan."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la preparación del plan de su ejecución y no atribuye argumentos no documentados a run."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados no presentan un conflicto pertinente a esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a L196 y L199 y al hueco sobre la sintaxis; son verificables y no exigen redacción literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en español, identifica demand-forecast-docs y latest y contiene una parte documentada y otra sobre el archivo yml cuyo detalle falta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L925 describe el catálogo y menciona un yml; L927 dice que, sin catálogo proporcionado, los datasets se guardan en memoria y presenta el caso de BigQuery; L930-L958 muestra el ejemplo de uso."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde dónde se guardan por defecto y cómo se pasa el catálogo para BigQuery; también indica que no se documentan el nombre ni la estructura del yml."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L925 respalda la descripción del catálogo y la mención del yml; L927 respalda el almacenamiento por defecto y la instrucción para BigQuery; L930-L958 respalda el ejemplo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el catálogo, el almacenamiento, el ejemplo de BigQuery y el yml llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La documentación entregada solo dice que los datasets se definen en un yml (L925); no indica su nombre ni estructura. La respuesta declara esa limitación sin afirmar que el archivo no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las partes documentadas y se abstiene únicamente de inventar el nombre o la estructura del yml."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación del almacenamiento por defecto y el ejemplo de BigQuery son compatibles con L927 y L930-L958."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental pertinente a esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en L925-L958 y no exigen una formulación concreta ni un dato ausente."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta es natural y está en español, pero no identifica el software; corresponde a la situación que exige pedir esa aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se proporciona respuesta técnica porque falta identificar el software."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide brevemente el dato necesario para poder responder."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "En falta_software no se llama a la herramienta ni se requieren citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La limitación pertinente es la falta del software, no una carencia en documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Pedir el software es la acción prevista cuando falta ese dato, no una abstención injustificada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a solicitar el software y no introduce información técnica."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no hay un conflicto que evaluar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la situación: sin llamada, pide el software y no pregunta la versión ni responde técnicamente."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta es natural y está en español, pero no identifica el software; corresponde a la situación que exige pedir esa aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se proporciona respuesta técnica porque falta identificar el software."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el dato necesario antes de responder la parte técnica."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "En falta_software no se llama a la herramienta ni se requieren citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La limitación pertinente es que el software no está especificado, no una carencia documental."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Pedir el software es el paso correcto para esta situación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta solicita únicamente el software y no da información técnica."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no hay un conflicto que evaluar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la falta de software y verifican que se pida ese dato sin preguntar la versión ni responder técnicamente."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

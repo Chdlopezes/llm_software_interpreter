@@ -1,0 +1,47 @@
+{
+ "task_id": "test-version_explicita-003",
+ "llamadas": [
+  {
+   "clave": "d56baeece3e6fe97fa6afd3ddfaa9cbd82673e89ef1ef4229672956d8aaf8767",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy con unified-transaction-configs v0.0.2 y tengo que dar de alta un grupo de usuarios nuevo. ¿En qué ruta creo la carpeta y qué archivo tiene que llevar dentro, con qué formato?",
+    "respuesta": "En la v0.0.2, la carpeta del grupo se crea en `$AMBIENTE/$TIPO_ARCHIVO/$SO/$POITYPE/$VERSION/$SITE/$GRUPO_USUARIOS`. Dentro tiene que haber un archivo llamado `users.json` [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L20].\n\nEse archivo es un JSON con una clave `users`, que contiene la lista de usuarios del grupo (en el ejemplo, valores numéricos del 1 al n) [unified-transaction-configs/v0.0.2/guide/howto.md:L22-L32]:\n\n```json\n{\n  \"users\": [1, 2, 3, ..., n]\n}\n```",
+    "answer_checks": [
+     "Indica que la carpeta se crea en la ruta $AMBIENTE/$TIPO_ARCHIVO/$SO/$POITYPE/$VERSION/$SITE/$GRUPO_USUARIOS.",
+     "Indica que dentro de la carpeta va un archivo llamado users.json.",
+     "Describe que el archivo users.json tiene una clave \"users\" con una lista de usuarios.",
+     "Cita líneas de unified-transaction-configs/v0.0.2/guide/howto.md dentro de la sección de carga de grupo de usuarios (L16-L33).",
+     "No cita la línea 47 ni inventa pasos o campos que no estén en el documento."
+    ]
+   }
+  },
+  {
+   "clave": "71314de4382a5ab77aa75f4a0ba320cdac30642799b3763cac5ccef634e9f2cc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy con unified-transaction-configs v0.0.2 y tengo que dar de alta un grupo de usuarios nuevo. ¿En qué ruta creo la carpeta y qué archivo tiene que llevar dentro, con qué estructura?",
+    "respuesta": "En la v0.0.2, la carpeta del grupo se crea en `$AMBIENTE/$TIPO_ARCHIVO/$SO/$POITYPE/$VERSION/$SITE/$GRUPO_USUARIOS`. Dentro tiene que llevar un archivo llamado `users.json` [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L20].\n\nEse archivo es un objeto JSON con una única clave, `users`, cuyo valor es un array con los usuarios del grupo. En el ejemplo de la guía son identificadores numéricos (1, 2, 3 … n) [unified-transaction-configs/v0.0.2/guide/howto.md:L22-L32]. Los `...` y la `n` del ejemplo solo indican que la lista sigue. No los copies tal cual: en el archivo real tienes que escribir cada usuario explícitamente, porque el JSON tiene que ser válido [unified-transaction-configs/v0.0.2/guide/howto.md:L37].",
+    "answer_checks": [
+     "Indica que la carpeta se crea en la ruta $AMBIENTE/$TIPO_ARCHIVO/$SO/$POITYPE/$VERSION/$SITE/$GRUPO_USUARIOS.",
+     "Indica que dentro de la carpeta va un archivo llamado users.json.",
+     "Describe que users.json es un objeto con la clave \"users\", cuyo valor es una lista o array de usuarios.",
+     "No presenta como JSON válido un ejemplo que contenga puntos suspensivos o la 'n' del ejemplo como valores literales.",
+     "Cita líneas de unified-transaction-configs/v0.0.2/guide/howto.md que respaldan la ruta y la estructura (L18-L32), sin citar la línea 47 ni inventar campos adicionales."
+    ]
+   }
+  }
+ ]
+}

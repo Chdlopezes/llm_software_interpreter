@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-015",
+ "llamadas": [
+  {
+   "clave": "997b8df2a59df4d63af43f2e39917d171bea70d006ada50fe12a4d76fe9235e3",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper, ¿cómo consulto los productos de un pedido concreto? ¿Qué ruta uso, qué parámetro necesito y qué me devuelve?",
+    "respuesta": "La documentación que devolvió la herramienta solo corresponde a la versión 1.1.6 de zenith-keeper, así que esto es lo que describe esa versión.\n\nPara obtener los productos de un pedido se usa `GET /api/v1/fresh-products/orders{idOrder}`. Tiene la etiqueta `Products`, el resumen «Get products in the order» y el `operationId` `productListOrder` [zenith-keeper/1.1.6/specs/swagger.yaml:L123-L128].\n\nNecesitas un parámetro, `idOrder`. Va en la ruta, es obligatorio y su esquema es de tipo `object` con formato `Long` [zenith-keeper/1.1.6/specs/swagger.yaml:L129-L135].\n\nLa respuesta correcta (descripción «OK») se devuelve en `application/json` y es un array de elementos `ProductDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L138-L144]. Cada `ProductDTO` tiene los campos `name` (string) y `price` (object con formato `Double`) [zenith-keeper/1.1.6/specs/swagger.yaml:L416-L423].",
+    "answer_checks": [
+     "Indica la ruta GET /api/v1/fresh-products/orders{idOrder} y la cita del swagger.yaml de la versión 1.1.6.",
+     "Explica que idOrder es un parámetro de ruta obligatorio de tipo object con formato Long.",
+     "Dice que la respuesta es un array de ProductDTO en application/json.",
+     "Atribuye los datos a la versión 1.1.6, sin pedir la versión al usuario y sin afirmar que otras versiones no lo tengan.",
+     "No inventa códigos de error ni campos que no aparecen en la documentación."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/93806a3eac2ad6aeb5ad6a92",
+ "llamadas": [
+  {
+   "clave": "93806a3eac2ad6aeb5ad6a92a6adafc2245e62ad9754aadb6dfb9a6280564d9f",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-software_en_historial-023",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, sobre demand-forecast-docs latest ya identificado en el historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El comando `retail create-version A.B.C` aparece en L25 y el requisito de instalar Retail Data Framework CLI en L20."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el paso para crear la versión y la herramienta necesaria, respaldados por L20 y L24-L25."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas README.md L20 y L24-L25 respaldan respectivamente el CLI y el comando tras el merge."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en README.md L20 y L24-L25."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada en README.md L20 y L24-L25."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible en README.md L20 y L24-L25."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla el procedimiento con otros flujos ni presenta datos contradictorios; README.md L20 y L24-L25 lo respalda."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre la llamada, el comando, el CLI y las citas son verificables en README.md L20 y L16-L25."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-025",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre workflows y WORKFLOW.TODAY_DATE en demand-forecast-docs latest, ya indicado en el historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El prepare crea un plan congelado que luego se ejecuta, y TODAY_DATE se sustituye al crear el plan con formato YYYY.M.D; overview.md L196-L199 y L222."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica tanto el efecto de prepare como el momento y formato de sustitución; overview.md L199 y L222."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas overview.md L189-L199, L216-L219 y L222 sostienen las afirmaciones correspondientes."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas con citas a overview.md L189-L199 y L216-L222."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La información solicitada está documentada en overview.md L196-L199 y L222."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible en overview.md L196-L199 y L222."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicción entre la descripción del plan y el momento de sustitución; overview.md L199 y L222."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen hechos y citas verificables en overview.md L196-L199 y L222, sin exigir una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-028",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre dónde encontrar explicaciones de las partes de explicabilidad; el software y latest constan en el historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La página presenta el objetivo del proyecto y remite a la barra lateral para las explicaciones de sus partes; explicabilidad/README.md L4-L6."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que las explicaciones están en la barra lateral, que es lo que pregunta el usuario; L6."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas explicabilidad/README.md L4 y L6 respaldan el objetivo y la referencia a la barra lateral."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la página están citadas en explicabilidad/README.md L4 y L6."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La ubicación de las explicaciones está indicada en explicabilidad/README.md L6."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la indicación disponible sobre la barra lateral en explicabilidad/README.md L6."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del objetivo y la remisión a la barra lateral son compatibles; explicabilidad/README.md L4-L6."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la referencia a la barra lateral en L6 y la ausencia de nombres de subpáginas inventados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-030",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre persistencia de datasets al ejecutar pipelines desde notebook; el software y latest están en el historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación dice que por defecto se guardan en memoria y muestra cómo usar el catálogo para guardar en BigQuery; overview.md L925-L927 y L930-L958."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el almacenamiento predeterminado y el uso del catálogo para BigQuery, incluido el ejemplo pertinente; overview.md L925-L927 y L930-L958."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas overview.md L925, L927 y L930-L958 respaldan las afirmaciones y el ejemplo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre catálogo, memoria y BigQuery tienen citas en overview.md L925-L927 y L930-L958."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada describe el comportamiento predeterminado y el ejemplo de BigQuery en overview.md L925-L958."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde ambas partes con la evidencia disponible en overview.md L925-L958."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción concuerda con el ejemplo, que importa el catálogo y lo pasa a IngestMarketplaceData; overview.md L930-L958."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre memoria, catálogo y el ejemplo de BigQuery se pueden verificar en overview.md L925-L958."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-033",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre el tipo y la granularidad inicial de las variables de Diarización; el software y latest constan en el historial."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Diarización trata la dailyization de variables exógenas mensuales; diarizacion.md L1-L3 y L29."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el tipo de variables, su granularidad mensual y su desagregación a diaria; diarizacion.md L1-L3 y L29."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas diarizacion.md L1-L3 y L29 respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en diarizacion.md L1-L3 y L29."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación especifica el tipo de variables y sus granularidades en diarizacion.md L1-L3 y L29."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia explícita de diarizacion.md L1-L3 y L29."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene coherentemente el paso de granularidad mensual a diaria, según diarizacion.md L1-L3 y L29."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre variables exógenas mensuales y desagregación diaria son verificables en diarizacion.md L1-L3 y L29."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español que nombra demand-forecast-docs latest y pide el flujo de ramas documentado."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta describe el prefijo fix/, la rama develop, el PR y el flujo release hacia master como en overview.md L15-L53."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Cubre cómo nombrar y crear la rama y los pasos posteriores hasta master; overview.md L15-L53."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md L15-L53 sostienen el flujo descrito."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre ramas, comandos, PR y release están citadas en overview.md L15-L53."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La guía contiene el flujo solicitado en overview.md L15-L53."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para describir el flujo completo; overview.md L15-L53."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla pasos incompatibles y sigue la secuencia documentada en overview.md L15-L53."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre fix/, develop, revisores y release son verificables en overview.md L15-L53."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre ejecutar forecasting desde notebook, con software y versión explícitos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los pipes, métodos y parámetros descritos coinciden con overview.md L881-L909; la carga de predicciones aparece en L911."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los pipes a encadenar y los valores de method, además de detalles pertinentes de Context; overview.md L881-L909."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas overview.md L881, L883, L894-L909 y L911 respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas, incluidos method, fh y processing_date, tienen citas a overview.md L883-L909."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada especifica los pipes y métodos en overview.md L881-L909."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los detalles disponibles en overview.md L881-L909."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla métodos ni altera el orden del ejemplo de pipes; overview.md L883-L909."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre pipes, métodos, parámetros y citas son verificables en overview.md L881-L909."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el reescalado de variables exógenas y la elección de método, para latest explícito."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fórmula de reescalado y la razón para preferir forecast proportions coinciden con diarizacion.md L57 y L62-L76."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el factor de reescalado y por qué top-down no es claro para meses de distinta longitud; L57 y L62-L76."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones y no incluyen la línea no citable 65; diarizacion.md L46-L57 y L62-L76."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en diarizacion.md L46-L57 y L62-L76."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación describe el método y la razón de elección en diarizacion.md L57 y L62-L76."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la fórmula y la explicación disponibles en diarizacion.md L57 y L62-L76."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La explicación del reescalado y de la conservación del total mensual es coherente con diarizacion.md L57 y L62-L76."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre el cociente, las longitudes mensuales y las citas sin L65 son verificables en diarizacion.md L46-L76."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre público y contenido de demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La documentación recoge metodologías del proyecto y se dirige principalmente a data scientists, aunque invita a otros roles interesados; README.md L13."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde quién es el público principal, qué contenido recoge y si un PM puede consultarla; README.md L13."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "README.md L13 respalda todas las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en README.md L13."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "README.md L13 contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información explícita de README.md L13."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del público y del contenido es coherente con README.md L13."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre público, contenido y cita se verifican en README.md L13."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre actualizar una dependencia y editar pyproject.toml en demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los comandos de Poetry, el uso de comillas y la recomendación sobre pyproject.toml coinciden con overview.md L83-L97; L65 respalda el papel de los archivos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el comando apropiado, cómo especificar la restricción y la recomendación de no editar el archivo directamente; overview.md L83-L97."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas overview.md L65, L83-L94 y L97 sostienen las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en overview.md L65, L83-L94 y L97."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La sección de Poetry documenta el comando y la recomendación; overview.md L83-L97."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible en overview.md L65 y L83-L97."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La recomendación sobre restricciones y edición directa es coherente con overview.md L83-L97."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks sobre `poetry add`, las comillas y pyproject.toml son verificables en overview.md L83-L97."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

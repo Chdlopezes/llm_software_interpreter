@@ -1,0 +1,203 @@
+{
+ "task_id": "verificador/2d152cb30bdccca8cd6a6b22",
+ "llamadas": [
+  {
+   "clave": "2d152cb30bdccca8cd6a6b22cba2f32b4cab2f163ea58f4bc1871665349e2305",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-version_explicita-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre price-engine-api latest, coherente con la llamada (software y versión indicados)."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La URL de producción figura en L15-L17; el tag y su descripción, en L19-L21; el propósito citado, en L11."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica tanto la URL del servidor de producción como el tag que agrupa los endpoints."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L15-L17, L19-L21 y L11 respaldan las afirmaciones; ninguna corresponde a líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en L11, L15-L17 y L19-L21."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información disponible en L11, L15-L17 y L19-L21."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican la llamada, la URL y el tag con respaldo en L15-L21, y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre el endpoint de price-engine-api latest, coherente con la llamada y la versión indicadas."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta sobre el array vacío y los códigos 200, 400 y 500 coincide con L28-L47; las descripciones y el modelo se apoyan en L86-L93 y L111-L136."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde qué ocurre sin ajustes activos y detalla los códigos de respuesta y sus significados documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones; no se citan las líneas no citables 60-62 ni 70."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en L28-L47, L86-L93 y L111-L136."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite responder la pregunta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible sobre el endpoint y sus respuestas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con L33-L47 y no requieren una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre price-engine-api latest, coherente con la versión y el software de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los valores admitidos de site_id constan en L51-L58; el header Accept-Version, su obligatoriedad y tipo, en L76-L82."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera los valores de site_id e identifica el header para indicar la versión."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L51-L58 y L76-L82 respaldan las afirmaciones y no incluyen líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en L51-L58 y L76-L82."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene la información solicitada."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible en las definiciones de parámetros."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con L51-L58 y L76-L82 y no convierten ejemplos en reglas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-version_explicita-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre errores de price-engine-api latest, coherente con la versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "RequestError es un objeto con code y message de tipo string según L122-L131; el enum de code está en L125-L128. Las respuestas 400 y 500 hacen referencia a ese modelo en L92-L97 y L111-L116."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe la forma del cuerpo, los campos y los valores permitidos de code."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L92-L97, L111-L116 y L122-L131 respaldan las afirmaciones; no citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica tiene una cita pertinente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada permite responder la pregunta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la definición del modelo y las referencias a este desde las respuestas 400 y 500."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones internas ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en L92-L97 y L111-L131 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

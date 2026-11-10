@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-008",
+ "llamadas": [
+  {
+   "clave": "fc6f874dfea630f5eaf362d38d949882948b4aa690afe3287c758229ccca3211",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando el diseño de catalog-portfolio-api 0.0.1-test-bench-v2a. ¿Qué principios sigue la arquitectura en cuanto a escalabilidad y fiabilidad?",
+    "respuesta": "En la versión 0.0.1-test-bench-v2a, los principios de arquitectura tratan la escalabilidad y la fiabilidad en dos apartados distintos.\n\nEscalabilidad: el servicio tiene un diseño stateless, puede escalar horizontalmente y usa connection pooling para acceder a la base de datos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L88-L91].\n\nFiabilidad: incluye un manejo completo de errores, patrones de circuit breaker para los servicios externos, y health checks y monitorización [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L93-L96].\n\nEstos dos apartados forman parte de los principios clave de la arquitectura. Los otros dos son la arquitectura en capas (controllers, services, DAOs y models) y la separación de responsabilidades [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L75-L86].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que, para escalabilidad, el servicio es stateless, escala horizontalmente y usa connection pooling para la base de datos.",
+     "Indica que, para fiabilidad, hay manejo completo de errores, circuit breakers para servicios externos, y health checks y monitorización.",
+     "Cita las líneas de Key Architectural Principles del documento guide/architecture/README.md de la versión 0.0.1-test-bench-v2a.",
+     "No añade mecanismos ni tecnologías concretas (por ejemplo, librerías de circuit breaker o tamaños del pool) que no aparezcan en los documentos."
+    ]
+   }
+  }
+ ]
+}

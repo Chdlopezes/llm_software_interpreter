@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/648be1de78e441f11eb11a03",
+ "llamadas": [
+  {
+   "clave": "648be1de78e441f11eb11a0394af817540dd60392ca0681027923d7391e13413",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-software_en_historial-027",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, corresponde al historial y usa zenith-keeper 1.1.6, que coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El parámetro es de ruta, obligatorio e integer; la especificación lista 200 y 404 con los cuerpos descritos (swagger.yaml, líneas 237-255)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica cómo va quantityOfDays, su tipo y la respuesta documentada cuando no se encuentra el recurso (líneas 237-255)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones y usan líneas citables del swagger.yaml (líneas 235-255)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas a las líneas pertinentes (235-255)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma comportamientos ausentes; describe la respuesta 404 documentada (líneas 250-255)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la información disponible sobre el parámetro y las respuestas (líneas 237-255)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es consistente con la especificación de la versión 1.1.6 (líneas 235-255)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto documental relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con el historial y las líneas 237-255; no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-032",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés corresponde al historial y al software y versión indicados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La especificación respalda la ruta, las respuestas y el esquema de éxito; también define los campos descritos (swagger.yaml, líneas 256-290 y 510-533)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera las respuestas y describe la estructura del cuerpo exitoso y sus campos (líneas 278-290 y 510-533)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan cada afirmación y no incluyen la línea no citable 263 (líneas 256-261, 278-290 y 510-533)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables llevan citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a lo descrito en la especificación y no inventa información ausente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre respuestas y esquemas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni contiene contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto entre documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con las líneas citadas y permiten formulaciones equivalentes."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, natural y referida explícitamente a zenith-keeper 1.1.6, coincidente con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El servidor declarado es http://localhost:8080 y la versión en info es 0.0.1; OpenAPI es 3.0.1 (swagger.yaml, líneas 1-11)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto por el servidor base como por la versión de API del bloque info."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones con líneas citables del swagger.yaml (líneas 1-11)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica lleva cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No introduce datos no documentados; el servidor y la versión aparecen en las líneas citadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles en la especificación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente la versión de la API 0.0.1 de la versión del software 1.1.6."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en las líneas 1-11 y no imponen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, menciona el software, la versión y la operación concreta de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El cuerpo obligatorio usa InsertBatchRequestDTO, que contiene inboundOrder; la respuesta exitosa es 201 con InsertBatchResponseDTO y batchStock (swagger.yaml, líneas 19-31 y 357-393)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el esquema y contenido documentado del cuerpo, además de la respuesta de éxito."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan lo afirmado y corresponden al documento entregado (líneas 13-31 y 357-393)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye campos ni comportamientos no documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para explicar el esquema del cuerpo y la respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no exigen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español identifica zenith-keeper 1.1.6 y distingue la operación sin filtro por categoría."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La operación tiene el parámetro quantityOfDays, de ruta, obligatorio e integer, y las respuestas documentadas 200 y 404 (swagger.yaml, líneas 232-255)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde sobre el parámetro, su tipo y las respuestas de la operación."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones y corresponden a líneas citables de la especificación (líneas 232-255)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Todas las afirmaciones técnicas verificables están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma respuestas o parámetros ausentes; enumera los documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de la especificación para contestar por completo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con el endpoint y la versión indicados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la operación y las líneas citables correspondientes."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-019",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y específica sobre el endpoint de zenith-keeper 1.1.6 indicado también en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "category y sort son parámetros obligatorios de ruta y string; las respuestas son 200 con BatchStockDTOResp y 404 con object (swagger.yaml, líneas 256-290)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde sobre tipo, ubicación, obligatoriedad y respuestas solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones y evitan la línea no citable 263."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por una cita pertinente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No hace afirmaciones injustificadas sobre información ausente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información de parámetros y respuestas disponible en la especificación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla parámetros de otra operación ni versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en las líneas citadas y no dependen de una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-023",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés es natural, nombra zenith-keeper 1.1.6 y concuerda con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La especificación describe el cuerpo obligatorio SignInRequestDTO con username y password string, y respuestas 200 string y 400 object (swagger.yaml, líneas 291-315 y 534-540)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el cuerpo esperado y los tipos de cuerpo para las respuestas documentadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones en el swagger.yaml entregado (líneas 291-315 y 534-540)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Aclara que el contenido de la cadena de éxito no se especifica y no lo inventa."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los detalles de petición y respuestas que sí están documentados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la sección de sign-in y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la especificación y no exigen afirmar un contenido concreto para la cadena."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-027",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español y específica sobre sign-up en zenith-keeper 1.1.6."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El esquema y sus campos coinciden con la especificación, al igual que las respuestas 200 string y 400 object (swagger.yaml, líneas 316-340 y 541-560)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe qué enviar en el cuerpo y las respuestas documentadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones sobre el endpoint, los esquemas y las respuestas (líneas 316-340 y 541-560)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa campos, requisitos ni comportamientos que no aparezcan en la documentación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información disponible sobre la petición y las respuestas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no requieren una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-031",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés es natural, corresponde a una sonda de salud y coincide con zenith-keeper 1.1.6 en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La especificación declara GET /ping y una respuesta 200 OK con contenido */* y esquema string (swagger.yaml, líneas 341-353)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el endpoint y los detalles solicitados para la respuesta exitosa; señala que el comportamiento ante fallos no está descrito."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones y usan líneas citables del swagger.yaml (líneas 341-353)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están acompañadas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa respuestas de error y aclara que la especificación no describe qué ocurre cuando el servicio está unhealthy (líneas 347-353)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con todos los detalles de éxito disponibles."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con el único endpoint y la respuesta documentados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la sección /ping y no exigen una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-034",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español es natural, corresponde al diagrama y menciona zenith-keeper 1.1.6."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama muestra primero ProductRepository y luego ProductTypesRepository, así como los dos errores HTTP 404 indicados (use-cases.md, líneas 90-120)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el orden de consultas, el método del servicio, la respuesta exitosa y los errores."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones en las líneas citables del diagrama (use-cases.md, líneas 100-120)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está respaldada por una cita pertinente."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma información ausente ni atribuye errores adicionales."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza la evidencia disponible para contestar todos los apartados."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el orden y los resultados que muestra el diagrama."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental relevante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en el diagrama citado y no dependen de una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

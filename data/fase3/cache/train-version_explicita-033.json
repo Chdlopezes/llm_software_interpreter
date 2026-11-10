@@ -1,0 +1,25 @@
+{
+ "task_id": "train-version_explicita-033",
+ "llamadas": [
+  {
+   "clave": "6b7c142cc6ef1eef0b2f2621e833c643f169b0a07fe358e3a1bd92ae1d76cfc0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando el pipeline de CI para payment-promise-gateway 0.0.10-test-crc-migration. ¿Con qué comando se lanzan los tests del proyecto?",
+    "respuesta": "En la versión 0.0.10-test-crc-migration, los tests se lanzan con Gradle usando `./gradlew test` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L515-L520].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software payment-promise-gateway y versión 0.0.10-test-crc-migration.",
+     "Indica que los tests se ejecutan con el comando ./gradlew test.",
+     "Cita la sección Testing del README de la versión 0.0.10-test-crc-migration.",
+     "No inventa opciones, flags ni pasos de CI adicionales que no estén en la documentación."
+    ]
+   }
+  }
+ ]
+}

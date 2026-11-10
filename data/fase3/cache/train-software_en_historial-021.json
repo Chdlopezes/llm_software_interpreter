@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-021",
+ "llamadas": [
+  {
+   "clave": "7aa9041890aee7ad792e794d5b7cffd6c8b3e65301b4fc430e9cc21bbc9f210a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con order-workflow-api 5.6.2-hotfix-1 y tengo que integrar la parte de configuración de workflows de nuestras apps.",
+    "historial_asistente": "Perfecto. Cuéntame qué necesitas saber de esa integración y lo busco en la documentación.",
+    "pregunta": "¿Qué hace exactamente el servicio cuando se desactiva el workflow de una app? Quiero saber en qué estado quedan las ramas.",
+    "respuesta": "El flujo empieza cuando la Configs API envía a la Workflow API el mensaje de desactivación del workflow. Los pasos son estos [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L87-L104]:\n\n1. La Workflow API pide a la base de datos la configuración del workflow y la recibe.\n2. Recorre todas las ramas estables y le pide al Github Proxy que les quite la protección. El proxy responde OK por cada una.\n3. Le pide al Github Proxy que ponga master como rama por defecto.\n4. Responde OK a la Configs API.\n\nAl terminar, las ramas estables del workflow ya no están protegidas y la rama por defecto del repositorio es master.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con order-workflow-api y la versión 5.6.2-hotfix-1 del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que la Workflow API obtiene de la base de datos la configuración del workflow.",
+     "Indica que se quita la protección de todas las ramas estables a través del Github Proxy y que master queda como rama por defecto.",
+     "Indica que, al final, se devuelve OK a la Configs API.",
+     "Cita el diagrama de desactivación de use-cases.md (alrededor de las líneas 87-104) y no inventa pasos que no salgan en él."
+    ]
+   }
+  }
+ ]
+}

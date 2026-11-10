@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-005",
+ "llamadas": [
+  {
+   "clave": "6a0b3994cd88b935e7ef9fc0730c2f48d2ad1f215b955f2ba96ec18a79089882",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 2.0, cuando actualizo un lote con el PUT de inboundorder, ¿qué esquema tiene la respuesta y qué código de estado devuelve si sale bien?",
+    "respuesta": "No encuentro documentación de zenith-keeper 2.0 en el catálogo, así que no puedo decirte qué esquema ni qué código de estado devuelve el PUT de inboundorder en esa versión. Si quieres, puedo buscarlo en las versiones de zenith-keeper que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 2.0 y recibe not_found.",
+     "Explica que no hay documentación de zenith-keeper 2.0 en el catálogo.",
+     "No inventa el esquema de respuesta ni el código de estado del PUT de inboundorder.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, sin pedir al usuario que indique una versión."
+    ]
+   }
+  }
+ ]
+}

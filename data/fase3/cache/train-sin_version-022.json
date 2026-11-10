@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-022",
+ "llamadas": [
+  {
+   "clave": "d22c836f3b2f1c0a384156345509dd3f70b6336d42c64b96d0f75dee86da086e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm trying to run payment-promise-gateway locally from IntelliJ. What environment variable do I need to set, and what VM options should I add to the run configuration?",
+    "respuesta": "Both documented versions, 0.0.10-test-crc-migration and latest, give the same instructions for this.\n\n**Environment variable:** to run the project locally, set the `SCOPE` environment variable to either `SCOPE=dev` or `SCOPE=local` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L494-L494] [payment-promise-gateway/latest/guide/README.md:L494-L494].\n\n**VM options:** in IntelliJ, right-click on `Main.java`, then go to Modify Run Configuration... → Modify options → Add VM options. In the VM OPTIONS field, enter:\n\n`-DconfigFileName=src/test/resources/application.properties -DchecksumEnabled=false -Djava.rmi.server.hostname=localhost`\n\n[payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L495-L497] [payment-promise-gateway/latest/guide/README.md:L495-L497].",
+    "answer_checks": [
+     "Indicates that the SCOPE environment variable must be set to dev or local to run the project locally.",
+     "Gives the VM options -DconfigFileName=src/test/resources/application.properties, -DchecksumEnabled=false and -Djava.rmi.server.hostname=localhost.",
+     "Describes the IntelliJ path: right-click Main.java, Modify Run Configuration, Modify options, Add VM options.",
+     "States that the instructions are the same in 0.0.10-test-crc-migration and latest, without attributing them to only one version and without asking the user for a version.",
+     "Does not invent extra settings or steps that are not in the documentation."
+    ]
+   }
+  }
+ ]
+}

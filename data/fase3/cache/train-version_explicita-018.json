@@ -1,0 +1,25 @@
+{
+ "task_id": "train-version_explicita-018",
+ "llamadas": [
+  {
+   "clave": "af4198c6772a9121865f37ba5e689ce989092c6b44b47e0b6ac6e87d7f715045",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway 0.0.10-test-crc-migration, ¿con qué servicios externos se comunica la capa de servicios según el diagrama de arquitectura? ¿Y qué componentes internos usa además de esos?",
+    "respuesta": "Según el diagrama de arquitectura de la versión 0.0.10-test-crc-migration, la capa de servicios (Services) se comunica con los tres servicios externos que aparecen: Core Payment Services, Promise Service y Metrics Service [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L22-L26] [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L34-L36].\n\nDentro del propio gateway, Services usa también Commands, Business Objects y Utils [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L13-L20] [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L31-L33]. Services recibe las peticiones de los Controllers, que a su vez las reciben de la capa REST API. Esa capa es la que llama el frontend [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L28-L30].",
+    "answer_checks": [
+     "Indica que la capa de servicios se comunica con Core Payment Services, Promise Service y Metrics Service.",
+     "Menciona que Services usa también Commands, Business Objects y Utils dentro del gateway.",
+     "Cita el diagrama de la sección Architecture Overview (líneas 5-38) del documento de la versión 0.0.10-test-crc-migration.",
+     "No inventa servicios externos ni componentes que no aparezcan en el diagrama."
+    ]
+   }
+  }
+ ]
+}

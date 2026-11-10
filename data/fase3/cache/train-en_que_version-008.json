@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-008",
+ "llamadas": [
+  {
+   "clave": "b4a280ba05ff98a3d7cd910a0eff713883726d5863757652aa53384e7aa65cc4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api vienen documentadas las URL base para Postman (prod y stage)? Necesito configurar el entorno y no sé qué versión de la guía mirar.",
+    "respuesta": "Las cuatro versiones de la documentación que tengo documentan las URL base de Postman, y en todas tienen los mismos valores: `vendor-stockkeeper.techzoneoffice.com` para prod y `vendor-stockkeeper-stage.techzoneoffice.com` para stage. Están en la sección «Domain» del `api.md` de cada versión:\n\n- 0.0.3-paused-seller [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L7-L9]\n- 0.0.6-ep-restock-man [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L7-L9]\n- 0.0.10-stock-consumer [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L7-L9]\n- latest [vendor-stockkeeper-api/latest/guide/api.md:L7-L9]\n\nEn las cuatro versiones, la misma sección da también las URL de TechZone Platform: `vendor-stockkeeper.techzonesystems.com` para prod y `vendor-stockkeeper-stage.techzonesystems.com` para stage [vendor-stockkeeper-api/latest/guide/api.md:L7-L8].\n\nAsí que cualquiera de las cuatro guías sirve para configurar Postman.",
+    "answer_checks": [
+     "Indica que las URL base de Postman están documentadas en las cuatro versiones: 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest.",
+     "Da los valores vendor-stockkeeper.techzoneoffice.com (prod) y vendor-stockkeeper-stage.techzoneoffice.com (stage) y señala que son iguales en todas las versiones.",
+     "Cita la sección Domain del api.md de las versiones que menciona.",
+     "No pide al usuario que indique una versión.",
+     "No afirma que esas versiones sean todas las que existen del software ni inventa URL que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

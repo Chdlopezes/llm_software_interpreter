@@ -1,0 +1,26 @@
+{
+ "task_id": "test-en_que_version-004",
+ "llamadas": [
+  {
+   "clave": "7019be78c91495ad983133ab196b449e67910bdc5f2c5a299c9db4095e6485e8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versión de 2p-revenue-optimizer-api viene explicado dónde se cambia la configuración de OpenAPI y la guía rápida para subir la especificación a VendorFlow Specs Hub?",
+    "respuesta": "Las dos versiones disponibles, 0.2.2 y latest, lo documentan en su README, y el contenido es el mismo en ambas.\n\n- **Configuración de OpenAPI:** el proyecto usa OpenAPI para generar las especificaciones de sus APIs JSON escritas con Spring [2p-revenue-optimizer-api/0.2.2/guide/README.md:L39-L39], y esa configuración se cambia en la clase SpringDocConfig [2p-revenue-optimizer-api/0.2.2/guide/README.md:L41-L41]. El README de latest dice lo mismo [2p-revenue-optimizer-api/latest/guide/README.md:L39-L41].\n- **Guía rápida de Specs Hub:** son siete pasos. Primero se instala el plugin de Specs Hub para VendorFlow CLI y el plugin de OpenAPI, luego se genera y se valida la especificación, se sube, y al final se visualiza y se gestiona en VendorFlow web [2p-revenue-optimizer-api/0.2.2/guide/README.md:L53-L61]. En latest aparece la misma lista [2p-revenue-optimizer-api/latest/guide/README.md:L53-L61].\n\nQue lo documenten estas dos versiones no significa que falte en otras: solo indica dónde aparece dentro de la documentación disponible.",
+    "answer_checks": [
+     "Identifica que tanto 0.2.2 como latest documentan la configuración de OpenAPI y la guía rápida de Specs Hub.",
+     "Indica que el contenido no cambia entre las dos versiones.",
+     "Menciona la clase SpringDocConfig como el lugar donde se cambia la configuración, con cita al README.",
+     "Cita el README de ambas versiones.",
+     "No pide la versión al usuario ni afirma que el contenido no exista en otras versiones."
+    ]
+   }
+  }
+ ]
+}

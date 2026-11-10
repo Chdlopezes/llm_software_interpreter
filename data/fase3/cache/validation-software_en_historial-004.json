@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-software_en_historial-004",
+ "llamadas": [
+  {
+   "clave": "ec219fd45fbf503358f5b5c8f8efd9ce9fb1e7ebc649d2249b997570fd4f7063",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con catalog-portfolio-api 0.0.1-test-bench-v2a en un entorno local y quiero revisar unos problemas de rendimiento que estamos viendo.",
+    "historial_asistente": "Perfecto. Dime qué problema estás viendo y busco lo que dice la documentación.",
+    "pregunta": "Las respuestas de la API tardan bastante. ¿Qué pasos de diagnóstico recomiendan y con qué comandos?",
+    "respuesta": "Para respuestas lentas, la guía de troubleshooting propone tres pasos. El primero es revisar el rendimiento de la base de datos con `SHOW PROCESSLIST;` y analizar con `EXPLAIN` las consultas sospechosas; el ejemplo de la guía es `EXPLAIN SELECT * FROM brand WHERE name LIKE '%test%';` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L152-L158]. El segundo es vigilar la memoria de la JVM con `jstat -gc $PID 5s` y `jstack $PID` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L160-L164]. El tercero es comprobar el pool de conexiones mirando las conexiones a la base de datos con `mysql -e \"SHOW STATUS LIKE 'Threads_connected';\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L166-L170].\n\nSi sospechas que el problema es de memoria, la misma guía sugiere revisar el uso con `free -h` y `ps aux | grep java`, ver el heap con `jstat -heap $PID` y ejecutar `jcmd $PID GC.run_finalization` y `jcmd $PID VM.classloader_stats` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L172-L185].",
+    "answer_checks": [
+     "Llama a la herramienta con catalog-portfolio-api y la versión 0.0.1-test-bench-v2a del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que hay que revisar el rendimiento de la base de datos con SHOW PROCESSLIST y EXPLAIN.",
+     "Indica que hay que vigilar la memoria de la JVM con jstat -gc y jstack.",
+     "Indica que hay que comprobar el pool de conexiones consultando Threads_connected en MySQL.",
+     "Cita la sección de rendimiento (Performance Issues) de la guía de troubleshooting y no añade comandos ni pasos que no estén en ella."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-008",
+ "llamadas": [
+  {
+   "clave": "8540085928cb9ef02d37d85f6fb688c99161e3c23da07defebc158ecc1dfe268",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando la creación de promesas de pago con payment-promise-gateway 0.0.10-test-crc-migration. Cuando llamo a POST /payment_promise, ¿tengo que mandar yo dateCreated en el cuerpo o lo pone el servicio?",
+    "respuesta": "La documentación de esta versión se contradice en este punto, así que no te puedo dar una respuesta segura.\n\nSegún el diagrama de secuencia de POST /payment_promise, el usuario envía un PromiseCommand en el cuerpo [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L197-L198], y después el propio servicio calcula dateCreated (`Service->>Service: Calculate dateCreated`) antes de llamar a PromiseService [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L200-L202]. Eso indica que el dato lo pone el servicio.\n\nPero el ejemplo con curl de ese mismo endpoint, en la misma página, sí incluye `\"dateCreated\"` dentro del cuerpo JSON de la petición [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L344-L355], y eso sugiere que es el cliente quien lo envía.\n\nLa documentación tampoco aclara si el servicio ignora el valor que llega en el cuerpo, si lo sobrescribe o si lo exige. Con lo que hay, no puedo confirmar cuál de las dos versiones es la correcta. Te conviene comprobarlo con el equipo responsable del servicio o directamente contra la API.",
+    "answer_checks": [
+     "Cita el diagrama de secuencia de POST /payment_promise, donde el servicio calcula dateCreated (en torno a la línea 201).",
+     "Cita el ejemplo curl de POST /payment_promise que envía dateCreated en el cuerpo (en torno a la línea 352).",
+     "Explica que las dos fuentes se contradicen y no elige ninguna.",
+     "No afirma como hecho confirmado que dateCreated sea obligatorio, opcional o que el servicio lo ignore.",
+     "Atribuye los datos a la versión 0.0.10-test-crc-migration sin mezclarla con otras versiones."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "task_id": "train-comparacion_versiones-008",
+ "llamadas": [
+  {
+   "clave": "80d715af0a831c3ad0ab4e4a6f30fa40e3016a6033c22a67909eebd55eb16c58",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api, ¿cambió algo entre 0.0.10-stock-consumer y latest en cómo se comprueba si los ítems de un flujo Feed son de prueba antes de ejecutarlo?",
+    "respuesta": "No. El procedimiento del flujo Feed es igual en las dos versiones. En las dos, el flujo tiene un Operation id que se usa para consultar la base de datos de 1p-3pl-integrator llamada 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240] [vendor-stockkeeper-api/latest/guide/important.md:L239-L240]. De esa tabla salen los datos clave para comprobar si los ítems son de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L245-L245] [vendor-stockkeeper-api/latest/guide/important.md:L245-L245].\n\nCon esos datos se consulta **materials**, por sap sku o por material id. Así se obtiene el ítem, y luego se consulta la API de ítems para revisar sus tags y validar si es de prueba [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254] [vendor-stockkeeper-api/latest/guide/important.md:L252-L254].\n\nEl curl de ejemplo también es igual en ambas. Llama a `https://1p-materials.techzoneoffice.com/materials/facade/search?limit=100&offset=0` con `Content-Type: application/json`. El cuerpo lleva un `query` con un `and` que combina un filtro `in` sobre `sap_sku` y un `eq` sobre `site_id`, y pide las projections `id`, `sap_sku`, `site_id` e `items` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L257-L282] [vendor-stockkeeper-api/latest/guide/important.md:L257-L282].",
+    "answer_checks": [
+     "Concluye que el procedimiento de verificación del flujo Feed no cambia entre 0.0.10-stock-consumer y latest.",
+     "Menciona que se usa el Operation id para consultar la tabla 1p_3pl_product_stock_mov de 1p-3pl-integrator y después materials por sap sku o material id, para luego revisar los tags en la API de ítems.",
+     "Cita el important.md de ambas versiones (0.0.10-stock-consumer y latest).",
+     "No inventa diferencias entre las versiones ni añade pasos que no están en los documentos."
+    ]
+   }
+  }
+ ]
+}

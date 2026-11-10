@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/a095269816948a8686bd52b7",
+ "llamadas": [
+  {
+   "clave": "a095269816948a8686bd52b720e646e017e6288bc55bfc96c8a03a6a84f8dc22",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-evidencia_parcial-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, nombra order-workflow-api y la versión indicada en la llamada, y pide datos del entorno de test."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El esquema y cluster de test son fulfillment2 y testenv02; los valores de producción también coinciden con la tabla (database.md:L4-L12). La documentación de arquitectura solo muestra una referencia a una imagen de test, no describe conexiones (architecture.md:L6-L7)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte de base de datos y señala que no puede describir las conexiones del entorno de test."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a database.md respaldan los datos de test y producción (L4-L12); no se cita la línea no citable de architecture.md."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las bases de datos están citadas; la limitación de arquitectura se comprueba en los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa la topología y limita la afirmación a que la documentación no la explica; architecture.md:L6-L7 solo referencia la imagen de test."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Da el esquema y cluster de test documentados (database.md:L9-L12) en vez de abstenerse de toda la pregunta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente los datos de test y producción (database.md:L4-L12)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables: database.md:L9-L12 documenta la base de datos de test y architecture.md:L6-L7 no describe la topología."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por el topic y el contenido de los mensajes de protección en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla relaciona /branches/protect con el topic y consumer citados (bigq.md:L5-L8); el mensaje de validación de pipeline se distingue correctamente (bigq.md:L18-L20)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el topic de producción y explica que los campos del mensaje de protección no están descritos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "bigq.md:L8 respalda la asociación del path, scope, topic y consumer; README.md:L49-L50 respalda la referencia a webhooks de EventCollector; bigq.md:L18-L20 respalda la comparación con la validación de pipeline."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluidas tienen citas; la falta de campos puede verificarse en los documentos entregados, donde bigq.md:L43 solo inicia el apartado de protección."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que los campos no están documentados, no que el mensaje carezca de ellos; bigq.md:L43 no aporta detalles del contenido."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la tabla de producción para identificar el topic (bigq.md:L5-L8)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el topic de producción de L8 con el topic de test de L13-L14, ni el mensaje de pipeline de L18-L20 con el de protección."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con la tabla de bigq.md:L5-L8 y con la ausencia de campos descritos en el apartado de protección (L43)."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por los campos de cron_branches y la estructura de Cron History en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "cron_branches contiene version_branch, stable_branch y target_branch (database.md:L139-L143); no se atribuye una estructura inventada a Cron History."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde los campos documentados de cron_branches y declara que no puede precisar la estructura de Cron History."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La cita database.md:L147 es una línea no citable; además, L14 no identifica por sí sola a Cron History como objeto almacenado. Las citas a L139-L143 y use-cases.md:L285-L298 sí respaldan sus otras afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas de la respuesta están acompañadas de citas, aunque la cita a database.md:L147 no es admisible como respaldo."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa la estructura de Cron History y limita la conclusión a que no está detallada; database.md:L147 es solo el encabezado del apartado y no describe campos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Informa los tres campos de cron_branches documentados en database.md:L139-L143."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los campos de cron_branches del contenido no especificado de Cron History."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables: database.md:L139-L143 documenta cron_branches y el apartado de Cron History no aporta una estructura."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta cita database.md:L147, que está marcada como no citable; además, L14 no respalda por sí sola que Cron History sea un objeto almacenado."
+     },
+     {
+      "case_id": "train-evidencia_parcial-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por códigos HTTP y endpoint de alta de workflows en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama muestra HTTP 201 cuando no existe y HTTP 409 cuando ya existe (use-cases.md:L202-L210); no ofrece una ruta ni un método HTTP."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde los códigos HTTP y aclara que la ruta y el método no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "use-cases.md:L196-L210 respalda las acciones y códigos mencionados; no cita las líneas no citables de usage.md."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Los datos de flujo y códigos tienen citas; la ausencia de ruta y método se verifica en los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que ruta y método no aparecen en la documentación, sin afirmar que no existan; use-cases.md:L196-L210 solo describe el flujo de inserción y sus respuestas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde los códigos HTTP que sí están documentados (use-cases.md:L202-L210)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue las ramas de workflow existente y no existente según use-cases.md:L202-L210."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con use-cases.md:L196-L210 y no exigen una ruta o método ausentes de los documentos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta naturalmente por el flujo de validación y búsqueda de pipeline para el software y versión indicados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las etapas descritas concuerdan con el diagrama de validación (use-cases.md:L119-L166); la búsqueda solo aparece listada (L108)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe el flujo de validación y declara que no se documentan la llamada ni la respuesta de búsqueda."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de use-cases.md:L119-L166 respaldan el flujo, y L108 respalda que la búsqueda aparece como un elemento listado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas; la falta de detalle de búsqueda se verifica en los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa endpoint, parámetros ni respuesta para búsqueda; use-cases.md:L108 solo la enumera."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con detalle las etapas de validación que sí están documentadas (use-cases.md:L119-L166)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La secuencia descrita sigue el orden del diagrama de use-cases.md:L119-L166."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican con use-cases.md:L108 y L119-L166 y no exigen detalles de búsqueda que no constan."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés es natural, nombra el software y versión, y pide el flujo de validación y el comportamiento de aborto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El flujo coincide con use-cases.md:L119-L166; bigq.md:L19-L20 respalda el mensaje con Pipeline ID y la obtención del Pipeline."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el flujo de validación y declara que los efectos del aborto no están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen los pasos de validación (use-cases.md:L119-L166) y el contenido del mensaje de BigQ (bigq.md:L19-L20); no cita la línea no citable del apartado Abort a pipeline."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre la validación tienen citas; la falta de detalle sobre el aborto se comprueba en el conjunto de documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa efectos del aborto ni afirma que la función no exista; use-cases.md:L169 solo es un encabezado no citable y no aporta pasos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el flujo de validación documentado en use-cases.md:L119-L166 y se limita sobre la parte no documentada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La secuencia y las condiciones de las validaciones coinciden con use-cases.md:L119-L166."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con use-cases.md:L119-L166 y no exigen un comportamiento de aborto que no está descrito."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por los campos de las reglas y por el flujo de creación de backports en la versión indicada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los campos descritos coinciden con la estructura de backport_rules en database.md:L92-L135; el caso de uso de crear un backport solo está listado en use-cases.md:L238-L240."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Describe los campos documentados y aclara que no se documenta la secuencia de llamadas para crear el backport."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "database.md:L92-L106 respalda los campos; README.md:L33 y L40-L42 respalda las afirmaciones adicionales; use-cases.md:L238-L240 muestra el título del caso de uso."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas; la ausencia de una secuencia se comprueba en los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa llamadas al GitHub Proxy ni afirma que los backports no existan; use-cases.md:L238-L240 solo los enumera."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la estructura documentada de reglas en database.md:L92-L106."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla los campos de configuración con el flujo de llamadas, que identifica correctamente como no descrito."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con database.md:L92-L106 y use-cases.md:L238-L240, y no prescriben una respuesta textual concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, pero omite el nombre del software, por lo que corresponde pedir esa aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No ofrece contenido técnico."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide únicamente el dato de software que falta, sin volver a pedir versión ni responder técnicamente."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se llamó a la herramienta ni se entregaron documentos."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solicita la aclaración necesaria y no hace declaraciones sobre documentación ausente."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La aclaración es necesaria porque la pregunta no identifica el software."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la falta de software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan correctamente que debe pedir el software y no llamar a la herramienta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta nombra order-workflow-api y la versión 2.0, coincidentes con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta informa que no se encontró documentación para el filtro solicitado, conforme al estado not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede describir los backports en esa versión y no inventa una respuesta técnica."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la situación not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre el funcionamiento que requieran citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Limita su afirmación a que el catálogo no tiene documentación para order-workflow-api 2.0, según not_found."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Ante not_found no hay evidencia disponible para responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta información de otra versión como si correspondiera a la 2.0."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con la llamada y el estado not_found, y permiten ofrecer consultar versiones disponibles."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta nombra order-workflow-api y la versión 2.0, coincidentes con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta informa que no se encontró documentación para el filtro solicitado, conforme al estado not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede determinar dónde se guarda el calendario en esa versión y no inventa datos."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la situación not_found no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre almacenamiento que requieran citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Se limita a informar que no hay documentación de la versión 2.0 en el catálogo, según not_found."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Ante not_found no hay evidencia disponible para responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No traslada a la versión 2.0 los datos de otras versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con la llamada y el estado not_found, y permiten ofrecer consultar versiones disponibles."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

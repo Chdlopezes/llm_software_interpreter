@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-005",
+ "llamadas": [
+  {
+   "clave": "c86acacf26a6bffad9a63b60949f7ff201ed789573091987bfc399a2213835bd",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, me acaban de pasar a un equipo que mantiene vendor-stockkeeper-api, versión 0.0.10-stock-consumer, y estoy intentando entender el servicio antes de tocar código.",
+    "historial_asistente": "¡Bienvenido al equipo! Pregúntame lo que necesites sobre el servicio y lo busco en su documentación.",
+    "pregunta": "Para empezar por lo básico: ¿de qué se encarga esta aplicación y qué tipos de reabastecimiento contempla?",
+    "respuesta": "Stockkeeper-api es la aplicación que se encarga de actualizar el stock de los ítems del área Standard que se ofrecen en TechZone. Para el reabastecimiento tiene dos endpoints principales: uno para los movimientos de stock 3PL, que mueven cantidades más pequeñas, y otro para los movimientos de inbound, que pueden traer cantidades más grandes [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/introduction.md:L5-L5].",
+    "answer_checks": [
+     "Llama a la herramienta con vendor-stockkeeper-api y la versión 0.0.10-stock-consumer del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que la aplicación actualiza el stock de los ítems del área Standard que se ofrecen en TechZone.",
+     "Menciona los dos endpoints principales de reabastecimiento: movimientos 3PL (cantidades más pequeñas) y movimientos de inbound (cantidades que pueden ser mayores).",
+     "Cita la sección About de introduction.md de la versión 0.0.10-stock-consumer.",
+     "No inventa qué ruta concreta corresponde a cada tipo de movimiento ni añade detalles que no estén en los documentos."
+    ]
+   }
+  }
+ ]
+}

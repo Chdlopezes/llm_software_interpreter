@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-035",
+ "llamadas": [
+  {
+   "clave": "0b3e662d52807459adbafd4693ee57837571ee0df1a1e3323ca58ca47e403bc1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Con qué stack tecnológico está construido payment-promise-gateway? Me interesa el lenguaje, el framework, la herramienta de build y qué usa para inyección de dependencias y monitoreo.",
+    "respuesta": "El stack técnico es el mismo en las dos versiones documentadas, 0.0.10-test-crc-migration y latest. Ambas lo describen igual:\n\n- Lenguaje: Java 17.\n- Framework: Spring Boot 3.2.4.\n- Herramienta de build: Gradle.\n- Inyección de dependencias: Google Guice.\n- Documentación de la API: OpenAPI/Swagger.\n- Monitoreo: DataDog Metrics.\n\n[payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L41-L46] [payment-promise-gateway/latest/guide/README.md:L41-L46]",
+    "answer_checks": [
+     "Llama con version=null; no pide la versión al usuario.",
+     "Indica Java 17 como lenguaje, Spring Boot 3.2.4 como framework y Gradle como herramienta de build.",
+     "Indica Google Guice para inyección de dependencias y DataDog Metrics para monitoreo.",
+     "Señala que el stack no cambia entre 0.0.10-test-crc-migration y latest, sin atribuirlo a una sola versión.",
+     "Cita las líneas de la sección Technical Stack y no añade componentes del stack que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

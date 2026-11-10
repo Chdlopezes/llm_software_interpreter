@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-sin_evidencia-004",
+ "llamadas": [
+  {
+   "clave": "c52d17679e82a3f5e2ab6c6801d11056796d0715420ff4bb03e73764d30398f3",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy integrando catalog-portfolio-api 0.0.1-test-bench-v2a y necesito subir el logo de una marca. ¿Qué campos lleva el cuerpo de la petición y qué devuelve la API cuando la subida sale bien?",
+    "respuesta": "En la versión 0.0.1-test-bench-v2a, la subida de logos solo aparece en la tabla de referencia rápida, como `POST /catalog/brands/{brandId}/logos` (\"Upload brand logo\") [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L39-L39]. La guía de arquitectura indica además que la subida pasa por el controlador y el servicio, llega a la Pictures API y termina en la base de datos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L102-L102].\n\nNinguno de los documentos de esta versión describe el cuerpo de la petición de ese endpoint ni su respuesta en caso de éxito, así que no puedo decirte qué campos enviar ni qué devuelve.",
+    "answer_checks": [
+     "Indica que el endpoint de subida es POST /catalog/brands/{brandId}/logos y lo cita en la tabla de referencia de la versión 0.0.1-test-bench-v2a.",
+     "Declara que la documentación entregada no describe el cuerpo de la petición ni la respuesta de la subida de logos.",
+     "No inventa campos del cuerpo (por ejemplo, tipo de logo o picture_id como campos de entrada) ni códigos de estado o estructuras de respuesta para la subida.",
+     "No afirma que el endpoint no exista o que no esté soportado."
+    ]
+   }
+  }
+ ]
+}

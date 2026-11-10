@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-001",
+ "llamadas": [
+  {
+   "clave": "8f5a347507c7f058692c0c534a4c1f6ee9d6a4e78e9e37d038e8ec8442d897b4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In catalog-portfolio-api, what checks does a brand have to pass before I can activate it? I want to make sure my brands won't get rejected when I call activate.",
+    "respuesta": "This part of the docs is identical in both documented versions, 0.0.1-test-bench-v2a and latest. Before a brand can be activated, it has to pass these validations:\n\n- A main logo has been uploaded and processed.\n- The category and site combination is valid.\n- It complies with the regulations service requirements.\n- All required fields are populated.\n\n[catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L158-L162] [catalog-portfolio-api/latest/guide/brand-management/README.md:L158-L162]",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "Lists the four pre-activation validations: main logo uploaded and processed, valid category/site combination, compliance with regulations service requirements, and all required fields populated.",
+     "States that the validation rules are the same in 0.0.1-test-bench-v2a and latest, without attributing them to only one version.",
+     "Cites the Validation Rules section of the brand-management README (lines 158-162) for at least one version.",
+     "Does not invent additional validation rules or activation behavior not present in the documents."
+    ]
+   }
+  }
+ ]
+}

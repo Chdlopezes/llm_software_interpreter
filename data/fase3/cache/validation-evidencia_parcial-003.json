@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-evidencia_parcial-003",
+ "llamadas": [
+  {
+   "clave": "c3b07f3aa91d820422d61ff972eda2e99abde37389c7d88c7182985edb4cf837",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué endpoint tengo que llamar para subir el logo de una marca y qué campos lleva el cuerpo de esa petición?",
+    "respuesta": "Para subir el logo de una marca se usa `POST /catalog/brands/{brandId}/logos`, que figura en la tabla de endpoints de logos como «Upload brand logo» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L39-L39]. Según la arquitectura, la subida de un logo recorre Client → Controller → Service → Pictures API → Database [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md:L102-L102].\n\nSobre el cuerpo de la petición, la documentación de esta versión no da información: el endpoint solo aparece en la tabla resumen, sin parámetros, sin esquema de petición y sin ejemplo de respuesta. Por eso no puedo decirte qué campos lleva ni en qué formato hay que enviar el logo.",
+    "answer_checks": [
+     "Indica que el logo se sube con POST /catalog/brands/{brandId}/logos y lo cita en la tabla de Logo Endpoints de la referencia de la API.",
+     "Declara que los campos del cuerpo de la petición (o sus parámetros) no están documentados para esta versión.",
+     "No inventa campos del cuerpo de la petición, como deducir type o picture_id a partir del objeto logo que devuelve Get Brand, ni un formato de envío como multipart.",
+     "No se abstiene en la parte documentada: da el endpoint con su cita en lugar de decir solo que no hay información."
+    ]
+   }
+  }
+ ]
+}

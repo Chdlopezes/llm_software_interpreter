@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-sin_version-005",
+ "llamadas": [
+  {
+   "clave": "6f588a786c9bef2b4a96aedde36b59f960dded7b8e7acd7a5aebb4e397e4f009",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué necesito tener instalado en mi máquina antes de levantar catalog-portfolio-api en local? Me interesan sobre todo las versiones mínimas de Java, Gradle y MySQL.",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, piden los mismos prerrequisitos con el mismo texto. Las versiones mínimas son:\n\n- **Java**: JDK 17 o superior.\n- **Gradle**: 7.3 o superior.\n- **MySQL**: 8.0 o superior.\n\nAdemás necesitas la **RetailFlow CLI** en su última versión y **Git** para el control de versiones [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L40-L44] [catalog-portfolio-api/latest/guide/setup/README.md:L40-L44].",
+    "answer_checks": [
+     "Indica que hace falta JDK 17 o superior, Gradle 7.3 o superior y MySQL 8.0 o superior.",
+     "Menciona también la RetailFlow CLI (última versión) y Git como prerrequisitos.",
+     "Indica que los prerrequisitos no cambian entre 0.0.1-test-bench-v2a y latest, o los cita en ambas versiones sin atribuirlos a una sola.",
+     "No pide la versión al usuario y no añade requisitos que no figuran en la documentación."
+    ]
+   }
+  }
+ ]
+}

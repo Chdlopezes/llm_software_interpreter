@@ -1,0 +1,391 @@
+{
+ "task_id": "verificador/62e5af9cabf319bcbabd1746",
+ "llamadas": [
+  {
+   "clave": "62e5af9cabf319bcbabd17460872472a09026039ae265c1d539f230a54fa4995",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-evidencia_parcial-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, con software y versión v0.0.2, y solicita tanto el procedimiento como datos que la documentación no detalla."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El merge a master está documentado en L42-L46; los documentos entregados no especifican endpoint, parámetros ni cuerpo. No inventa esos datos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el paso documentado y señala los detalles de la llamada que no puede precisar; véase L42-L46."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita L42-L46 respalda el merge. No cita la línea no citable 47."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre el merge tiene cita; la falta de detalles se declara sin presentarla como un hecho técnico distinto."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que el PUT no exista: declara que faltan sus datos concretos, algo que no aparece en ninguno de los documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia del merge a master en L42-L46."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue el paso documentado de los detalles no especificados; no hay contradicción."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados no presentan un conflicto sobre este procedimiento."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden hechos verificables en L42-L46 y que no se inventen ni se cite L47; son coherentes con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-falta_software-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y no identifica el software; corresponde a la situación en la que se debe pedir una aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se proporciona respuesta técnica ni se llamó a la herramienta."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta brevemente qué software es, que es la aclaración necesaria."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas ni citas que evaluar."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se consultaron documentos ni se hace una afirmación sobre falta de evidencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No intenta responder sin conocer el software; solicita el dato faltante."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a pedir el software."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen correctamente la aclaración esperada y la ausencia de llamada y de respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_evidencia-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, con software y versión explícitos, sobre endpoint, cuerpo y parámetros del PUT."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "L42-L46 documenta el merge a master; ningún documento entregado especifica endpoint, cuerpo ni parámetros del PUT."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede determinar los detalles solicitados e incluye el requisito documentado del merge (L42-L46)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita L42-L46 respalda el merge y no cita la línea no citable 47."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre el merge está citada; la falta de datos del PUT se declara tras revisar los documentos entregados."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El endpoint, el cuerpo y los parámetros faltan en todos los documentos entregados. No afirma que el PUT no exista ni que la actualización sea imposible."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con el requisito que sí está documentado en L42-L46, en vez de abstenerse por completo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Separa los datos del PUT que no constan del requisito del merge que sí consta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay versiones o fuentes entregadas que entren en conflicto sobre los datos solicitados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la ausencia de detalles del PUT y el requisito de merge citado, sin imponer una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés sobre el propósito del software, sin indicar versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El README de v0.0.2 describe el propósito como cargar las configuraciones de los distintos flujos (L1-L3). La respuesta no afirma que esta sea la única versión existente."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica el propósito documentado y delimita correctamente el alcance de los resultados recibidos."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita al README L1-L3 respalda el propósito indicado."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación técnica sobre el propósito tiene cita; la limitación se refiere a los documentos recibidos."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que no puede comparar versiones con los resultados disponibles, sin afirmar que no existan otras versiones."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el propósito con la evidencia disponible en README L1-L3."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Atribuye el propósito a v0.0.2 y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes en conflicto en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y coherentes con la llamada sin versión, el contenido de L1-L3 y la cautela sobre el alcance de los resultados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-sin_version-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre cómo cargar una configuración y la estructura de directorios, sin indicar versión; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El PR y la estructura están en L1-L14; los niveles, valores por defecto y requisitos citados coinciden con esas líneas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el mecanismo de carga y enumera en orden los niveles de la estructura, incluidos los requisitos de versión y grupo por defecto (L1-L14)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L1-L3 y L5-L14 respaldan el PR y los niveles; las citas L11 y L13 respaldan los requisitos por defecto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están acompañadas de citas pertinentes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara información como ausente ni hace afirmaciones de exhaustividad; atribuye la información a la versión devuelta."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con detalle a partir de la estructura documentada en L1-L14."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene la estructura y los requisitos dentro de la versión v0.0.2, sin mezclar versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes en conflicto en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a requisitos verificables en L1-L14 y no exigen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y corresponde al software y versión v0.0.2 identificados en el historial y usados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El límite de 50 kb y la razón KVS están en L36; las consideraciones de validez, semver, valores por defecto y estructura están en L37-L40. La estructura se detalla en L5-L14."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Cubre el límite de tamaño y las comprobaciones de JSON y directorios solicitadas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L36-L40 y L5-L14 respaldan las afirmaciones correspondientes; no cita la línea 47."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre límites, consideraciones y estructura tienen citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No presenta como faltante información que sí esté en los documentos ni afirma que no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información de L5-L14 y L36-L40 para responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se refiere a v0.0.2 y no mezcla información de otras versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en lo entregado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a hechos verificables en las líneas citadas y a la versión del historial."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-software_en_historial-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y el software y versión v0.0.2 constan en el historial y en los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El documento indica hacer merge a master para que la actualización impacte en mobile-flow-manager (L42-L46); también respalda el PR al repositorio en L1-L3."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica master como la rama de destino del merge, como pide la pregunta."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas L1-L3 y L42-L46 respaldan las afirmaciones; no cita la línea 47."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No se presenta como faltante el destino del merge, que está documentado en L42-L46."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con la rama documentada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La información se atribuye al mismo repositorio y versión, sin contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en los materiales entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con el requisito de merge a master en L42-L46 y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "test-version_explicita-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español que identifica software y versión, y solicita ruta, nombre de archivo y formato."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "La ruta, el nombre users.json y la estructura con la clave users están en L18-L32, pero el ejemplo reproducido con puntos suspensivos no es JSON válido, aunque la respuesta lo presenta como JSON; el documento exige que el JSON sea válido en L37."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Da la ruta y explica la clave y la lista de usuarios (L18-L32), pero el ejemplo literal no sirve como JSON válido."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "L18-L20 respalda la ruta y el nombre del archivo; L22-L32 respalda la estructura ilustrada, incluidos los puntos suspensivos tal como aparecen en el documento."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre ruta, archivo y estructura están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara faltantes indebidamente; la estructura y el nombre están documentados en L18-L32."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la evidencia disponible sobre la ubicación y la estructura del archivo."
+       },
+       "consistencia": {
+        "resultado": "parcial",
+        "justificacion": "La respuesta llama JSON a un ejemplo con puntos suspensivos que no es sintácticamente válido; esto también entra en tensión con la exigencia de JSON válido de L37."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre documentos; el problema es la validez del ejemplo reproducido."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden aspectos verificables en L16-L33 y no exigen reproducir literalmente la sintaxis con puntos suspensivos."
+       }
+      },
+      "needs_review": false,
+      "motivo": "El ejemplo de users.json reproduce los puntos suspensivos del documento como si fueran JSON válido, pese al requisito de JSON válido en L37."
+     }
+    ]
+   }
+  }
+ ]
+}

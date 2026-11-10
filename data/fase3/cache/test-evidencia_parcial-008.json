@@ -1,0 +1,47 @@
+{
+ "task_id": "test-evidencia_parcial-008",
+ "llamadas": [
+  {
+   "clave": "728ce2260f7a0614c8048cfff8953fc337c06acc9d741ef976c6495bc2a4d79e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿qué columnas tiene la tabla WHITELIST y cómo se relaciona con la tabla IP? Y aparte, ¿hay algún índice o restricción de unicidad sobre la columna address de IP?",
+    "respuesta": "La tabla WHITELIST tiene estas columnas: `id` (int, PK), `fk_ip` (int, FK), `creation_date` y `deletion_date` (datetime), `deleted` (bool) y `description` (varchar) [traffic-gate-api/latest/guide/sections/database.md:L34-L41]. Se relaciona con IP mediante la relación `AUTORIZADA_POR`, definida en el diagrama como `IP ||--|{ WHITELIST`. En notación mermaid, eso es una IP con uno o varios registros de whitelist [traffic-gate-api/latest/guide/sections/database.md:L73]. La columna `fk_ip` es la clave foránea que apunta a IP [traffic-gate-api/latest/guide/sections/database.md:L36].\n\nEn la tabla IP, `address` aparece como una columna `varchar` sin más anotaciones. En todo el diagrama, las únicas marcas de clave son PK y FK [traffic-gate-api/latest/guide/sections/database.md:L51-L53]. La documentación no habla de índices ni de restricciones de unicidad sobre `address`, así que no puedo decirte si existen.",
+    "answer_checks": [
+     "Enumera las columnas de WHITELIST: id (PK), fk_ip (FK), creation_date, deletion_date, deleted y description.",
+     "Indica que WHITELIST se relaciona con IP mediante la relación AUTORIZADA_POR o mediante la clave foránea fk_ip.",
+     "Declara que los índices o la restricción de unicidad sobre address no están documentados.",
+     "No inventa índices ni restricciones de unicidad, y no afirma que no existan.",
+     "Cita el diagrama entidad-relación de database.md para lo que sí responde."
+    ]
+   }
+  },
+  {
+   "clave": "6f60ae1febfc116d04506612f2891cb0fdeec3cb74606c7a9fbd755df7e0acaa",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En traffic-gate-api latest, ¿qué columnas tiene la tabla BLACKLIST y con qué otras tablas se relaciona? Y otra cosa: ¿qué longitud máxima admite la columna address de la tabla IP?",
+    "respuesta": "La tabla BLACKLIST tiene estas columnas: `id` (int, PK), `fk_rule` (int, FK), `fk_ip` (int, FK), `creation_date` y `deletion_date` (datetime) y `whitelisted` (bool) [traffic-gate-api/latest/guide/sections/database.md:L26-L33]. En el diagrama entidad-relación se relaciona con dos tablas. Con RULES, mediante la relación `DEFINE` (`RULES ||--|{ BLACKLIST`), y con IP, mediante la relación `BLOQUEA` (`BLACKLIST }|--|| IP`) [traffic-gate-api/latest/guide/sections/database.md:L71-L72].\n\nLa columna `address` de la tabla IP aparece declarada como `varchar` [traffic-gate-api/latest/guide/sections/database.md:L51-L53]. La documentación no indica su longitud máxima, así que no puedo decirte qué tamaño admite.",
+    "answer_checks": [
+     "Enumera las columnas de BLACKLIST: id (PK), fk_rule (FK), fk_ip (FK), creation_date, deletion_date y whitelisted.",
+     "Indica que BLACKLIST se relaciona con RULES (relación DEFINE) y con IP (relación BLOQUEA).",
+     "Indica que address es de tipo varchar y declara que su longitud máxima no está documentada.",
+     "No inventa una longitud concreta para address (por ejemplo, 45 o 255).",
+     "Cita el diagrama entidad-relación de database.md para la parte que sí responde."
+    ]
+   }
+  }
+ ]
+}

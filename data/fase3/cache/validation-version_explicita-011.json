@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-version_explicita-011",
+ "llamadas": [
+  {
+   "clave": "bc086a1a189a9b9fd767bd65978014bf31acfbb81d0355d031e9a752216bf38a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy usando catalog-portfolio-api 0.0.1-test-bench-v2a y necesito borrar una marca. ¿Qué tengo que mandar en la petición, tanto en la ruta como en los headers?",
+    "respuesta": "En 0.0.1-test-bench-v2a, para borrar una marca se usa `DELETE /{brandId}`. Esta operación elimina la marca de forma permanente [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L209-L213].\n\nEn la ruta va `brandId`, un parámetro de tipo integer y obligatorio con el ID de la marca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L215-L219]. También tienes que enviar el header `X-Client-Id` (string, obligatorio) con tu client ID, y ese ID tiene que estar en la whitelist [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L221-L225].\n\nLa petición de ejemplo queda así: `curl -X DELETE \"https://api.mp.internal.retailflow.com/catalog/brands/123\" -H \"X-Client-Id: your-client-id\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L227-L232].",
+    "answer_checks": [
+     "Llama a la herramienta con software catalog-portfolio-api y versión 0.0.1-test-bench-v2a.",
+     "Indica que el endpoint es DELETE /{brandId} y que brandId es un parámetro de ruta obligatorio de tipo integer.",
+     "Indica que el header X-Client-Id es obligatorio y que el client ID debe estar en la whitelist.",
+     "Cita la sección Delete Brand de brands.md sin apoyarse en la línea 238 (mensaje de la respuesta de ejemplo).",
+     "No inventa headers ni campos de cuerpo adicionales que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/ef2cb329aef2fca7fa3a388c",
+ "llamadas": [
+  {
+   "clave": "ef2cb329aef2fca7fa3a388c62f7db745d885c58f8078f8d889789045cc7a46a",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-evidencia_parcial-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por price-engine-api latest, coherente con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La URL de producción está en swagger.yaml, líneas 15-17; el propósito general, en la línea 11. La documentación entregada no describe la arquitectura interna."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da la URL solicitada y señala que no puede detallar los componentes ni la comunicación interna."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a swagger.yaml, líneas 11 y 15-17, respaldan las afirmaciones; no usa como respaldo líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas están citadas; la declaración de que falta información no requiere una cita de respaldo."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La arquitectura no está descrita en los documentos entregados; no afirma que el servicio carezca de componentes o dependencias."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada sobre la URL de producción, líneas 15-17 de swagger.yaml."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay afirmaciones contradictorias ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto entre documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan lo documentado y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés por price-engine-api latest y corresponde a la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Swagger documenta la ruta y el resultado para ausencia de ajustes activos, líneas 24-34, y el tipo de elementos, líneas 132-136. No documenta la lógica interna."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el resultado del endpoint y señala que el flujo interno no está descrito."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la ruta, el comportamiento y la estructura; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables llevan citas; la ausencia de descripción interna se declara sin atribuirle un hecho técnico no respaldado."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "En los documentos entregados no se describe cómo se deciden las zonas; la respuesta no afirma que tal lógica no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la información sobre el endpoint, incluidas las líneas 30-34 y 132-136 de swagger.yaml."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta distingue el resultado documentado de la lógica interna no documentada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con swagger.yaml y con la falta de documentación del flujo; no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-evidencia_parcial-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en inglés por price-engine-api latest, coherente con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El propósito está en swagger.yaml, línea 11; la ruta y responsabilidad del endpoint, líneas 24-31; y el caso sin ajustes activos, líneas 33-34."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el propósito documentado y la información disponible del endpoint, e identifica que no se documenta la creación ni aplicación de ajustes."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan cada afirmación positiva, incluidas la referencia a Guide en la línea 13 y la estructura de respuesta en las líneas 86-91 y 132-136."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas; la falta de un flujo funcional se declara sin citar texto de plantilla."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Los documentos entregados no explican la creación o aplicación de ajustes; la respuesta no afirma que esas operaciones no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde el propósito y lo que se conoce del endpoint antes de señalar la información faltante."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni presenta contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en swagger.yaml y en los documentos entregados, sin exigir una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-falta_software-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta no identifica software ni versión; corresponde pedir el software antes de llamar a la herramienta."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no ofrece información técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita la aclaración necesaria sobre el software."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas ni citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que requieran cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se llamó a la herramienta porque falta identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "Corresponde aclarar el software antes de responder."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a pedir el dato faltante."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen correctamente la aclaración y la ausencia de llamada o respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-falta_software-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta no especifica software ni versión, por lo que corresponde pedir el software."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no contiene información técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide la aclaración necesaria para identificar el software."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay citas ni afirmaciones técnicas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que deban citarse."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se llamó a la herramienta porque no se identificó el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La aclaración es necesaria antes de responder técnicamente."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta solo solicita el dato faltante."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks coinciden con la respuesta esperada al faltar el software."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por las responsabilidades y exclusiones de price-engine-api latest, en línea con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La línea 11 de swagger.yaml respalda el propósito general. Los documentos entregados no detallan las responsabilidades ni exclusiones solicitadas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que no se puede determinar la lista solicitada y aporta el propósito general disponible."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación sobre el propósito está respaldada por swagger.yaml, línea 11; no usa como respaldo las líneas TO DO."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "El dato técnico positivo está citado; la ausencia de detalle se declara con precisión."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que no hay información documentada sobre responsabilidades y exclusiones, sin afirmar que no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con el propósito general disponible en swagger.yaml, línea 11."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la información disponible y no requieren una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por la arquitectura y dependencias de price-engine-api latest; coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Swagger.yaml, línea 11, describe el propósito, y las líneas 24-31 describen la ruta y su resultado; no se documentan componentes internos ni dependencias."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que la arquitectura interna no está documentada y ofrece información relacionada que sí está disponible."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a swagger.yaml, líneas 11 y 24-31, respaldan el propósito y el endpoint. No cita arquitectura.md como respaldo."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas están citadas; la ausencia de información interna se declara sin inventar datos."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Los documentos entregados no describen los componentes ni las dependencias; no afirma que el servicio carezca de ellos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Incluye el propósito y el endpoint documentados en lugar de abstenerse de todo."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la información del endpoint de la arquitectura interna que no se explica."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables y concuerdan con las citas y la limitación documental."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-sin_evidencia-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español por el flujo interno de price-engine-api latest, en concordancia con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Swagger.yaml, líneas 24-31, documenta la ruta y el resultado; los documentos entregados no describen fuentes ni orden de consulta."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede describir el flujo interno y proporciona la ruta y el resultado que sí están documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a swagger.yaml, líneas 24-25 y 30-31, respaldan ruta y responsabilidad; no se cita el texto de plantilla de flujos.md."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas positivas tienen cita; la ausencia del flujo se expresa sin inventar detalles."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No hay información entregada sobre servicios, fuentes u orden interno; la respuesta no afirma que el endpoint carezca de dependencias."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los datos disponibles sobre la ruta y lo que devuelve el endpoint."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la llamada, swagger.yaml y el contenido entregado, y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica price-engine-api latest; la pregunta en español corresponde a ese contexto y a los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Swagger.yaml declara la URL de producción en líneas 15-17 y el escalamiento en la línea 9."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto la URL como el escalamiento de OpsGenie."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a swagger.yaml, líneas 9 y 15-17, sostienen las dos afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Ambas afirmaciones técnicas llevan cita."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La información solicitada está documentada; no declara faltantes."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde las dos partes de la pregunta con la evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No hay contradicciones ni mezcla de versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al historial, los argumentos de llamada y las líneas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-software_en_historial-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica price-engine-api latest y la pregunta en inglés corresponde a ese contexto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Swagger.yaml, líneas 24-47, documenta ruta, comportamiento y códigos; las líneas 92-119 describen ejemplos de error, y 132-136 el tipo de los elementos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica el resultado sin ajustes activos y enumera los códigos distintos de 200, con detalles de los errores documentados."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las afirmaciones y evitan las líneas no citables 60-62 y 70."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con rangos que las respaldan."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No hay una afirmación de ausencia de información que deba verificarse; los ejemplos se presentan como documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para responder ambas partes y ampliar los detalles de error."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos y comportamientos descritos son compatibles entre sí y corresponden a latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en la llamada y en las secciones citadas de swagger.yaml."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

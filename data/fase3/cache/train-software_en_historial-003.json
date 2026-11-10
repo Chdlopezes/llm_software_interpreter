@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-003",
+ "llamadas": [
+  {
+   "clave": "d68c4d92ddb36fddde38d431b5ea3de60424af3a6b1182c54e8b01c103ca8a8e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy integrando un frontend nuevo con payment-promise-gateway latest y quiero tener claro qué me ofrece la API antes de empezar.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber de la API y lo consultamos.",
+    "pregunta": "¿Qué endpoints principales expone y dónde puedo ver la documentación detallada de la API?",
+    "respuesta": "La API está documentada con OpenAPI/Swagger. Los endpoints principales son siete: `GET /payment_promise/form`, `GET /payment_promise/active`, `GET /offers`, `POST /payment_promise`, `POST /forgiveness_proposal`, `PUT /forgiveness_proposal` y `GET /forgiveness_proposal/{promiseId}` [payment-promise-gateway/latest/guide/README.md:L104-L112]. La documentación detallada está en specs-hub (https://web.workflowcloud.io/payment-promise-gateway/specs-hub) [payment-promise-gateway/latest/guide/README.md:L114].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con payment-promise-gateway y la versión latest del historial, sin volver a preguntar por el software ni por la versión.",
+     "Enumera los siete endpoints principales, incluidos GET /payment_promise/form, GET /payment_promise/active, GET /offers, POST /payment_promise, POST y PUT /forgiveness_proposal y GET /forgiveness_proposal/{promiseId}.",
+     "Indica que la documentación detallada está en specs-hub y da el enlace, o que la API está documentada con OpenAPI/Swagger.",
+     "Cita las líneas de la sección API Documentation del README de latest (L104-L114 o un subrango que contenga lo que afirma).",
+     "No inventa endpoints ni detalles de la documentación de specs-hub que no aparecen en el documento."
+    ]
+   }
+  }
+ ]
+}

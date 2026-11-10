@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-contradiccion-003",
+ "llamadas": [
+  {
+   "clave": "13f9a01c55a344cedd2f5a515fd7c982e847af78687b0743b1bc56a9d104dd6f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In catalog-portfolio-api 0.0.1-test-bench-v2a, if I call the brand search with site=MLA, will I only get MLA brands back? The example in the docs looks off to me.",
+    "respuesta": "The documentation isn't consistent here, so I can't confirm it either way. The search endpoint's parameter table lists `site` as an optional filter (\"Filter by site (MLA, MLB, MLC, etc.)\") [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L28-L28]. The example request uses that filter with `site=MLA&status=ACTIVE&limit=10` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L38-L40]. But the example response for that same request returns a brand with `\"site\": \"MLB\"` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L51-L51], which isn't the site in the filter.\n\nThe documentation doesn't explain the mismatch. It could be a mistake in the example, or the filter may not work the way its description suggests. These documents don't say which, so you'd need to test it against the service or check with the API owners.",
+    "answer_checks": [
+     "Cites the example request that filters by site=MLA (brands.md around L39) and the example response that returns a brand with site MLB (brands.md L51).",
+     "Explains that the request and the response contradict each other on the site value.",
+     "Does not state as a confirmed fact that the site filter only returns brands from the requested site, or that it ignores the filter.",
+     "Does not make up an explanation for the discrepancy (for example, a fallback between sites) that the documents don't support."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "task_id": "verificador/2614a04284fcde90f8d5f904",
+ "llamadas": [
+  {
+   "clave": "2614a04284fcde90f8d5f90426f1850b87876cf59f8ed44f21278cb4e2bb94ba",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "test-version_explicita-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, está en español y especifica unified-transaction-configs v0.0.2, coincidiendo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La ruta, el nombre users.json y su estructura coinciden con la guía [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L32]. La indicación de que el JSON debe ser válido está respaldada por la línea 37."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica dónde crear la carpeta, qué archivo incluir y la estructura de ese archivo [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L32]."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la ruta, el nombre y el ejemplo de estructura; la cita a L37 respalda el requisito de JSON válido. No se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas con las líneas pertinentes de la guía [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L32, L37]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte información; la guía contiene la ruta y el ejemplo de estructura [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L32]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para explicar la ruta y el archivo requerido [unified-transaction-configs/v0.0.2/guide/howto.md:L18-L32]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente y se limita a la versión v0.0.2 indicada en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "Los documentos entregados no presentan un conflicto relevante para esta pregunta."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen propiedades verificables en la guía y no exigen una redacción concreta; la estructura aparece en L18-L32 y el requisito de JSON válido en L37."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

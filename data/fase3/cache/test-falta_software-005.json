@@ -1,0 +1,26 @@
+{
+ "task_id": "test-falta_software-005",
+ "llamadas": [
+  {
+   "clave": "9ada300929c3b1f21bacf40aa1aa5d66fb4f28f948ab428b7067c5a9418e3161",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En la tabla de cabecera de reglas, ¿de qué tipo es la columna que marca si una regla es productiva y puede quedar en null?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario a qué software se refiere.",
+     "No pide la versión del software.",
+     "No da una respuesta técnica (no indica tipo de dato ni restricciones de la columna).",
+     "No incluye citas a documentos."
+    ]
+   }
+  }
+ ]
+}

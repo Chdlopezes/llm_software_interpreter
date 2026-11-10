@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-003",
+ "llamadas": [
+  {
+   "clave": "55881d1dd0d7e077f2a7d40e4a3a3f1d7945f6066ac69285a6a98cab357b81e1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs 1.0.0-beta, ¿para cuántas categorías de producto se generan los pronósticos de TGMV y TSI de cada site?",
+    "respuesta": "El catálogo no tiene documentación de la versión 1.0.0-beta de demand-forecast-docs, así que no puedo decirte para cuántas categorías de producto se generan los pronósticos en esa versión. Si te sirve, puedo buscarlo en las versiones de demand-forecast-docs que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software demand-forecast-docs y versión 1.0.0-beta, y recibe not_found.",
+     "Explica que no hay documentación de demand-forecast-docs 1.0.0-beta en el catálogo.",
+     "No da un número de categorías de producto ni otros datos técnicos sobre los pronósticos de TGMV o TSI.",
+     "No incluye citas a documentos.",
+     "Puede ofrecer consultar las versiones disponibles, pero no pide al usuario que elija una versión como condición para responder."
+    ]
+   }
+  }
+ ]
+}

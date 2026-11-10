@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-004",
+ "llamadas": [
+  {
+   "clave": "f6055b2b72cbfa8a2a0d77698048f6672ed57eb5ec4f1227540fff071c0e8cad",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api aparece la recomendación de comprobar que los movimientos de entrada y salida contienen todos sus ítems de prueba antes de ejecutar cualquier acción sobre los flujos de inventario?",
+    "respuesta": "Aparece en las cuatro versiones que devolvió la consulta: 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest. En todas, la introducción de la guía important.md lo explica con el mismo texto: antes de ejecutar cualquier acción sobre los flujos de inventario hay que asegurarse de que tanto el movimiento de entrada (inbound) como el de salida (outbound) contienen todos sus ítems de prueba. Según la guía, esa comprobación es fundamental para no afectar a la API de ítems y, con ella, al inventario.\n\nCitas por versión:\n- 0.0.3-paused-seller: [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L5-L6]\n- 0.0.6-ep-restock-man: [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L5-L6]\n- 0.0.10-stock-consumer: [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L5-L6]\n- latest: [vendor-stockkeeper-api/latest/guide/important.md:L5-L6]\n\nEn lo que respecta a esta recomendación, no hay diferencias entre las versiones.",
+    "answer_checks": [
+     "Indica que la recomendación aparece en las cuatro versiones 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest.",
+     "Explica que hay que verificar que tanto el movimiento de entrada como el de salida contienen todos sus ítems de prueba antes de actuar sobre los flujos de inventario, para no afectar a la API de ítems ni al inventario.",
+     "Cita el important.md de cada versión que menciona, con un rango que incluye el texto de la introducción (líneas 5-6).",
+     "No pide al usuario que indique una versión y no atribuye a una sola versión un contenido que es igual en todas.",
+     "No cita la línea 7 (no citable) ni añade afirmaciones sin respaldo en los documentos."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "task_id": "train-comparacion_versiones-007",
+ "llamadas": [
+  {
+   "clave": "e5b47a27335ae54b4ee890204fd030dee9cc141da8760b8a07c9b245933ea2cf",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué cambia en la sección de servicios de la API de vendor-stockkeeper-api entre la 0.0.3-paused-seller y la 0.0.10-stock-consumer? ¿Hay algún endpoint nuevo?",
+    "respuesta": "Sí. La 0.0.10-stock-consumer documenta una operación que no aparece en la 0.0.3-paused-seller: Operation Validation Consumer. Su ejemplo curl llama a `/stock-operations/3pl/validation/restock-consumer` con `Content-Type: application/json`, y el cuerpo es un objeto `msg` con los campos `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` y `message_id`. La respuesta es `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L68].\n\nLa 0.0.10 también añade un diagrama de esta operación. En él, ValidationRestockOrderNews:\n1. Obtiene el ítem a través de ItemAdapter (`get(itemId)`).\n2. Consulta el producto con GetStockBySkuAdapter (`apply(siteId, sapSku)`).\n3. Evalúa `stockBelowTolerance`.\n4. Pausa el ítem con `updateItemStatusAsSystem(\"paused\")`. Esa llamada termina en un `PUT /items/{itemId}` a API Items con `X-Seller-No-Intent` y `{status: \"paused\"}`, que devuelve `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L89].\n\nLo que sigue igual en las dos versiones:\n- **Restock Consumer:** se llama a `/fp/inventory/operations/restock-new` con los headers `x-api-scope: stage` y `Content-Type: application/json`. El cuerpo lleva `msg.inbound_shipment_id` y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L34] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L23-L35].\n- **Feed Consumer:** se llama a `/fp/inventory/operations/feed` con un cuerpo `msg.id` y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49].\n- **Get Detail Doma:** aparece en la tabla de servicios de las dos versiones como `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].",
+    "answer_checks": [
+     "Indica que la 0.0.10-stock-consumer documenta la operación Operation Validation Consumer con la ruta /stock-operations/3pl/validation/restock-consumer, que no aparece en la documentación de la 0.0.3-paused-seller, y cita el api.md de la 0.0.10.",
+     "Describe el cuerpo de esa operación (objeto msg con campos como order_id, item_id o sap_sku) o su flujo de pausa del ítem, atribuyéndolo solo a la 0.0.10.",
+     "Señala que Restock Consumer y Feed Consumer no cambian entre las dos versiones, citando el api.md de ambas.",
+     "No atribuye a la 0.0.3-paused-seller la operación de validación ni afirma que esa operación no se pueda usar en la 0.0.3; solo indica que no aparece documentada ahí.",
+     "No presenta como hechos técnicos valores de ejemplo como el inbound_shipment_id 900000734 o el order_id del ejemplo."
+    ]
+   }
+  },
+  {
+   "clave": "8f413e30219a8087dc9821e5f3756740f6ceb9b88e8e72d0b35193f529f468f1",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué cambia en la sección de servicios de la API de vendor-stockkeeper-api entre la 0.0.3-paused-seller y la 0.0.10-stock-consumer? ¿Hay algún endpoint nuevo?",
+    "respuesta": "Sí. La 0.0.10-stock-consumer documenta una operación que no aparece en la documentación de la 0.0.3-paused-seller: Operation Validation Consumer. Su ejemplo curl llama a `/stock-operations/3pl/validation/restock-consumer` con `Content-Type: application/json`. El cuerpo es un objeto `msg` con los campos `order_id`, `site`, `order_closed_date`, `material_id`, `item_id`, `sap_sku` y `message_id`, y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L51-L68].\n\nLa 0.0.10 también añade un diagrama de esta operación. En él, ValidationRestockOrderNews:\n1. Obtiene el ítem a través de ItemAdapter (`get(itemId)`).\n2. Consulta el producto con GetStockBySkuAdapter (`apply(siteId, sapSku)`).\n3. Evalúa `stockBelowTolerance`.\n4. Pausa el ítem con `updateItemStatusAsSystem(\"paused\")`.\n\nEsa última llamada termina en un `PUT /items/{itemId}` a API Items con `X-Seller-No-Intent` y `{status: \"paused\"}`, que devuelve `200 ok` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L82-L89].\n\nLo que se mantiene igual en las dos versiones:\n- **Restock Consumer:** el cuerpo lleva `msg.inbound_shipment_id` y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L28-L34] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L29-L35].\n- **Feed Consumer:** se llama a `/fp/inventory/operations/feed` con un cuerpo `msg.id`, y la respuesta es `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L48] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L37-L49].\n- **Get Detail Doma:** las dos versiones lo listan en la tabla de servicios como `GET /stock-operations/3pl/{identifierRegister}` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L20-L20] [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L20-L20].",
+    "answer_checks": [
+     "Indica que la 0.0.10-stock-consumer documenta la operación Operation Validation Consumer con la ruta /stock-operations/3pl/validation/restock-consumer, que no aparece en la documentación de la 0.0.3-paused-seller, y cita el api.md de la 0.0.10.",
+     "Describe el cuerpo de esa operación (objeto msg con campos como order_id, item_id o sap_sku) o su flujo de pausa del ítem, y lo atribuye solo a la 0.0.10.",
+     "Señala que Restock Consumer y Feed Consumer no cambian entre las dos versiones y cita el api.md de ambas.",
+     "No atribuye a la 0.0.3-paused-seller la operación de validación ni afirma que esa operación no se pueda usar en la 0.0.3; solo indica que no aparece documentada ahí.",
+     "No presenta como hechos técnicos valores de ejemplo como el inbound_shipment_id 900000734 o el order_id del ejemplo."
+    ]
+   }
+  }
+ ]
+}

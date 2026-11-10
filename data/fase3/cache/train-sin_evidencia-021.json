@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_evidencia-021",
+ "llamadas": [
+  {
+   "clave": "bf2d673e3d2c4b71463ba1887782d077ff0e5d80b2564aa0987ee7f876f63dc4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En payment-promise-gateway 0.0.10-test-crc-migration, ¿qué código de estado HTTP y qué cuerpo de error devuelve POST /payment_promise cuando el PromiseCommand no pasa la validación?",
+    "respuesta": "La documentación de esta versión no lo detalla, así que no puedo darte el código ni el formato del error. Lo único que dice es que el controlador ejecuta `validateRequestBody(promiseCommand)` antes de llamar al servicio [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L197-L199]. La sección de manejo de errores solo menciona de forma genérica códigos de estado HTTP, mensajes de error detallados y un formato de error consistente, sin indicar valores concretos [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L532-L536]. Para la documentación detallada de la API, el README remite a specs-hub, que no está incluido aquí [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L114-L114].",
+    "answer_checks": [
+     "Llama a la herramienta con software payment-promise-gateway y versión 0.0.10-test-crc-migration.",
+     "Dice que la documentación entregada no especifica el código de estado HTTP ni el cuerpo de error de POST /payment_promise cuando falla la validación.",
+     "No inventa códigos de estado (por ejemplo 400 o 422) ni campos del cuerpo de error.",
+     "Puede mencionar, con cita, que el controlador valida el cuerpo o que la documentación detallada se remite a specs-hub, sin presentarlo como respuesta al dato pedido.",
+     "No afirma que el endpoint no devuelva errores ni que la validación no exista."
+    ]
+   }
+  }
+ ]
+}

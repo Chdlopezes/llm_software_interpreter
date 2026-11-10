@@ -1,0 +1,26 @@
+{
+ "task_id": "train-en_que_version-009",
+ "llamadas": [
+  {
+   "clave": "88119eb0dfee28384f4b9b15aa240ccc4bedb311e5e89a450df37a42a681347a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿En qué versiones de vendor-stockkeeper-api aparece la indicación de comprobar que los movimientos de entrada y salida traen todos sus items de prueba antes de tocar los flujos de inventario?",
+    "respuesta": "Está en las cuatro versiones que devolvió la consulta: 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest. En las cuatro, la introducción de guide/important.md dice lo mismo. Antes de hacer cualquier acción sobre los flujos de inventario, hay que asegurarse de que el movimiento de entrada (inbound) y el de salida (outbound) contengan todos sus items de prueba. Según la guía, esta comprobación es fundamental para no afectar a la API de items ni, por tanto, al inventario.\n\nPuedes verlo en cada versión:\n- 0.0.3-paused-seller: [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L5-L6]\n- 0.0.6-ep-restock-man: [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md:L5-L6]\n- 0.0.10-stock-consumer: [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L5-L6]\n- latest: [vendor-stockkeeper-api/latest/guide/important.md:L5-L6]\n\nMe baso solo en estas versiones. Si existen otras, la documentación que tengo no dice nada sobre ellas.",
+    "answer_checks": [
+     "Indica que la indicación está documentada en 0.0.3-paused-seller, 0.0.6-ep-restock-man, 0.0.10-stock-consumer y latest.",
+     "Cita la introducción de guide/important.md (líneas 5-6) de al menos varias de esas versiones, atribuyendo cada cita a su versión.",
+     "Explica que la comprobación consiste en asegurar que los movimientos inbound y outbound contienen todos sus items de prueba antes de actuar sobre los flujos de inventario.",
+     "No pide al usuario que indique una versión.",
+     "No afirma que las versiones listadas sean todas las que existen ni que la indicación no exista en otras versiones."
+    ]
+   }
+  }
+ ]
+}

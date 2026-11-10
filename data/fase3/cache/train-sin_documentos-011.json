@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_documentos-011",
+ "llamadas": [
+  {
+   "clave": "8feef8f27ffb9e522cfc8dfc46981754cdc9036d09feac37381d39f04c4c2f58",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper 2.0, ¿qué devuelve el endpoint que lista productos filtrados por categoría cuando no encuentra resultados? ¿Sigue siendo un 404?",
+    "respuesta": "No encuentro documentación de zenith-keeper 2.0 en el catálogo, así que no puedo decirte qué devuelve ese endpoint en esa versión. Si quieres, consulto la documentación de las versiones de zenith-keeper que sí están disponibles.",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software zenith-keeper y versión 2.0, y recibe not_found.",
+     "Explica que no hay documentación de zenith-keeper 2.0 en el catálogo.",
+     "No inventa el código de estado ni la respuesta del endpoint de listado por categoría.",
+     "No presenta datos de otra versión (por ejemplo, 1.1.6) como si fueran de la 2.0.",
+     "No incluye citas a documentos."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/8f1295492a7a8c7a783de886",
+ "llamadas": [
+  {
+   "clave": "8f1295492a7a8c7a783de886bc6db5569f9e8ff57e9ccf468f75eb7a1038a7ba",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-falta_software-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural y no identifica el software, por lo que corresponde pedir esa aclaración antes de buscar documentación."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se ofrece una respuesta técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pide la aclaración necesaria para poder atender la consulta."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se llama a la herramienta ni se usan citas en esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que requieran citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se recibió documentación porque falta identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La aclaración es necesaria para realizar la consulta técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a pedir el dato que falta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan correctamente que no debe llamar ni dar una respuesta técnica, y que debe pedir el software."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta por demand-forecast-docs 1.0.0-beta y coincide con el filtro de software y versión de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La herramienta devolvió not_found y la respuesta informa que no hay documentación para ese filtro, sin añadir datos técnicos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder el número de categorías con la documentación no encontrada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la respuesta no incluye citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas respaldadas por documentos."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Comunica la limitación del catálogo sin afirmar que el producto no tenga esa capacidad."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La herramienta devolvió not_found, así que no había evidencia técnica disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con el estado not_found."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos que entren en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks concuerdan con not_found y no exigen una respuesta técnica ni una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por la ejecución de un plan y por argumentos o flags, sin especificar versión y usando demand-forecast-docs latest."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "Es correcto que no se documentan argumentos ni flags, pero decir en general que la guía no explica cómo usar el comando es demasiado amplio: el diagrama indica que `rda workflow run` conduce a la ejecución (overview.md, L196) y el paso 3 dice que se ejecuta un plan concreto (L199)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica qué información sobre el flujo sí aparece y señala que no hay sintaxis para identificar los argumentos o flags solicitados (overview.md, L196, L199)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md L196 y L199 respaldan respectivamente el flujo hacia la ejecución y la mención de ejecutar un plan concreto; no cita líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el flujo y el paso descrito llevan citas; la falta de sintaxis se refiere a la pregunta sobre esos mismos pasajes."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que faltan argumentos, flags y sintaxis sin afirmar que el comando no exista o que no los admita; L196 y L199 solo describen el flujo de forma general."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha lo que sí documentan overview.md L196 y L199 y se abstiene únicamente de inventar la sintaxis ausente."
+       },
+       "consistencia": {
+        "resultado": "parcial",
+        "justificacion": "La frase general de que no se explica cómo usar el comando queda matizada por la explicación posterior del flujo y del paso 3; sería más preciso limitar la falta a la sintaxis y los argumentos."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks distinguen correctamente entre el flujo general documentado en L196/L199 y la sintaxis de argumentos o flags que no se proporciona."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta acierta al señalar que no hay sintaxis ni argumentos, pero la afirmación general de que la guía no explica cómo usar el comando es más amplia de lo que permiten los pasajes citados."
+     },
+     {
+      "case_id": "train-sin_evidencia-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de forma natural por el nombre y la estructura del archivo yml, con demand-forecast-docs latest, que coincide con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Overview.md L925 dice que el catálogo relaciona nombres de datasets con clases y que en marketplace los datasets se definen en un archivo yml; no se inventa nombre ni estructura."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Aclara qué aspectos faltan y proporciona la información general que sí consta en overview.md L925."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "La cita a overview.md L925 respalda la relación entre nombres y clases, el manejo de guardado/carga y la referencia al archivo yml."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre lo que sí documenta la guía están citadas en overview.md L925."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "El nombre y la estructura no aparecen en los documentos entregados; la respuesta los presenta como información no indicada, no como algo que no exista. Overview.md L925 solo menciona un archivo yml."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Da la información disponible sobre el catálogo y el archivo yml, en vez de abstenerse por completo (overview.md, L925)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue coherentemente la información documentada de los detalles que faltan."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican contra overview.md L925 y no requieren un nombre o estructura concretos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_version-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta está en inglés, nombra demand-forecast-docs sin especificar versión y coincide con la llamada con version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "parcial",
+        "justificacion": "La descripción del proyecto y su alcance están respaldados por overview.md L5, pero la afirmación de que la documentación solo cubre latest no queda acreditada por esa línea y no debe presentarse como exhaustiva."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica qué pronostica el proyecto y el alcance por categorías, métricas y sites (overview.md, L5)."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "Overview.md L5 respalda la descripción del proyecto, pero no que latest sea la única versión cubierta."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "La descripción técnica está citada en overview.md L5; la afirmación sobre que solo se cubre latest carece de respaldo en esa línea."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que otras versiones no existan ni atribuye diferencias entre ellas; la información sustantiva se circunscribe a latest."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con la información disponible en overview.md L5."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla comportamientos de versiones distintas; atribuye el dato del alcance a latest."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden los datos de overview.md L5 y que no se inventen diferencias ni se niegue la existencia de otras versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta describe correctamente el alcance del proyecto, pero la afirmación de que latest es la única versión cubierta no está respaldada por overview.md L5."
+     },
+     {
+      "case_id": "train-software_en_historial-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica demand-forecast-docs latest; la pregunta continúa sobre ese flujo y la llamada usa ese software y versión."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El checkout y pull, el nombre y versionado de la rama release, y la aprobación automática del PR concuerdan con overview.md L36-L53."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde cómo seguir, cómo nombrar la rama y quién aprueba el PR (overview.md, L36-L53)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md L36-L53 y L56-L57 respaldan los pasos descritos y la nota adicional sobre task-images."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas llevan citas a overview.md en L36-L53 y L56-L57."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma detalles ausentes; la aprobación automática y los pasos se describen en overview.md L36-L53."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la información disponible para describir el flujo de release."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los pasos de develop, release y master se presentan en el orden documentado (overview.md, L36-L53)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son comprobables en overview.md L36-L57 y no exigen una formulación concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica demand-forecast-docs latest y la pregunta continúa sobre parámetros del pipeline en notebook."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los usos de fh, processing_date y method, así como los tres valores de method, concuerdan con overview.md L881-L883."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los valores de method y explica fh y processing_date; también resume cómo se ejecuta el pipeline (overview.md, L881-L913)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md L881-L883 y L885-L913 respaldan los parámetros, la composición del pipeline y el ejemplo de Context."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están acompañadas por citas a overview.md L881-L913."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta se limita a los valores y usos descritos en overview.md L881-L883, sin añadir otros comportamientos."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde con los tres métodos y los usos de fh y processing_date documentados en overview.md L883."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No mezcla versiones ni contradice el ejemplo documentado en overview.md L885-L913."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en overview.md L881-L913 y no exigen texto literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-017",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica demand-forecast-docs latest y la pregunta continúa sobre la desagregación mensual a diaria."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La explicación de por qué se prefiere forecast proportions y del factor de reescalado coincide con diarizacion.md L57 y L68-L74."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué top-down no se eligió y cómo se reescala la previsión diaria para conservar el total mensual."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a diarizacion.md L57, L68-L72 y L74 sostienen las afirmaciones; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en diarizacion.md L57 y L68-L74."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No añade motivos distintos a la dificultad de aplicar top-down cuando los meses tienen distinta duración, indicada en L57."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para responder tanto la comparación como el mecanismo de forecast proportions."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta distingue correctamente ambas estrategias y no mezcla versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a lo descrito en diarizacion.md L57 y L68-L74, sin exigir una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-018",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica demand-forecast-docs latest y la pregunta se refiere al público y uso de esa documentación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El README indica que el público principal son los data scientists y que otros roles interesados, incluidos PM, pueden leer y hacer preguntas (README.md, L13)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde tanto quién es el público principal como si un PM puede leer y preguntar."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a README.md L11-L13 respaldan el propósito y público de la documentación; no cita las líneas no citables 1-10."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el propósito y el público están citadas en README.md L11-L13."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa canales ni procedimientos para hacer preguntas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente con la información del README.md L13."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción del propósito en L11-L13 es coherente con la respuesta sobre el público."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se verifican en README.md L13 y no prescriben una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-software_en_historial-020",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "El historial identifica demand-forecast-docs latest y la pregunta se refiere a Poetry y pyproject.toml."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El uso de `poetry add` con la restricción, la recomendación de comillas y la advertencia sobre editar pyproject.toml coinciden con overview.md L83-L97."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Propone el comando para pandas<2.0 y responde que no conviene editar pyproject.toml directamente."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a overview.md L83-L97 respaldan las recomendaciones; la cita a L65 respalda la descripción de pyproject.toml y poetry.lock."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas en overview.md L65, L83-L97."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No añade indicaciones sobre versiones de pandas o Poetry que no estén documentadas."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los ejemplos y la recomendación disponibles en la sección de Poetry."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "El comando sugerido concuerda con la restricción solicitada y con la recomendación de usar comillas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes documentales en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se pueden verificar en overview.md L65 y L83-L97 y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

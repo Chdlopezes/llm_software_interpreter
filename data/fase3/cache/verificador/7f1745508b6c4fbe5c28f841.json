@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/7f1745508b6c4fbe5c28f841",
+ "llamadas": [
+  {
+   "clave": "7f1745508b6c4fbe5c28f841543fb033ee6abdc18638e75d5d04438ae8345e62",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "validation-comparacion_versiones-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre dos versiones, sin versión fijada en la llamada (version=null), como corresponde a una comparación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los métodos, rutas y descripciones de logos y collectors coinciden en ambas referencias: [api-reference/README.md:L36-L49] de cada versión."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara las rutas y métodos de ambos grupos y concluye que no cambian; [api-reference/README.md:L36-L49] en las dos versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan las rutas, métodos y descripciones; las líneas citadas son citables: [api-reference/README.md:L36-L49]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre endpoints y ausencia de cambios están citadas para ambas versiones: [api-reference/README.md:L36-L49]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los dos documentos entregados contienen las tablas relevantes y comparables: [api-reference/README.md:L36-L49]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia de las dos versiones para responder, en vez de abstenerse: [api-reference/README.md:L36-L49]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión y la enumeración de endpoints concuerdan con ambas tablas: [api-reference/README.md:L36-L49]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en las tablas de endpoints citadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden verificar llamada, igualdad, rutas y citas, todo cotejable con [api-reference/README.md:L36-L49] de ambas versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-comparacion_versiones-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que compara dos versiones; version=null es correcto para esta situación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La instalación de docsify, el directorio, el comando y la URL aparecen iguales en ambas portadas: [guide/README.md:L83-L93]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara todos los pasos solicitados y concluye que no cambian: [guide/README.md:L83-L93] en las dos versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan los pasos y la URL, y las líneas citadas son citables: [guide/README.md:L83-L93]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada paso técnico y la conclusión comparativa tienen citas para ambas versiones: [guide/README.md:L83-L93]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada sí contiene los pasos locales en ambas versiones: [guide/README.md:L80-L93]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha los pasos documentados para comparar las versiones: [guide/README.md:L83-L93]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de igualdad coincide con los pasos citados de ambas portadas: [guide/README.md:L83-L93]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto entre los documentos citados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables contra los pasos y comandos documentados en ambas versiones: [guide/README.md:L83-L93]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-comparacion_versiones-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés compara explícitamente las dos versiones y la llamada usa version=null, adecuado para comparar."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama mostrado —ruta, capas, servicios externos, métricas y componentes por dominio— es igual en ambos documentos: [architecture/README.md:L31-L60]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica si hubo cambios y enumera los componentes y servicios relevantes para justificarlo: [architecture/README.md:L31-L60]."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de los dos diagramas respaldan las afirmaciones; los rangos citados no incluyen líneas no citables: [architecture/README.md:L31-L60]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión y cada grupo de componentes o conexiones tienen citas para ambas versiones: [architecture/README.md:L31-L60]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Ambos diagramas están disponibles para comparación: [architecture/README.md:L31-L60]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Compara directamente los diagramas entregados y responde la pregunta: [architecture/README.md:L31-L60]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de identidad concuerda con los componentes y relaciones descritos en ambas versiones: [architecture/README.md:L31-L60]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en los diagramas comparados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks se refieren a los componentes y líneas verificables del diagrama en ambas versiones: [architecture/README.md:L31-L60]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-comparacion_versiones-004",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la portada de las dos versiones; la llamada con version=null corresponde a la comparación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El título y la descripción de la API REST y sus áreas de gestión coinciden en las dos portadas: [guide/README.md:L1-L3]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara la descripción del servicio y el título de la portada: [guide/README.md:L1-L3] en ambas versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas citadas respaldan el título y la descripción, y son citables: [guide/README.md:L1-L3]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre título, servicio y funciones están citadas en ambas versiones: [guide/README.md:L1-L3]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Las dos portadas entregadas contienen el texto que se compara: [guide/README.md:L1-L3]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la descripción presente en ambas portadas: [guide/README.md:L1-L3]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de que no cambia coincide con los textos citados de las dos versiones: [guide/README.md:L1-L3]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en las descripciones comparadas."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden datos verificables en las portadas citadas: [guide/README.md:L1-L3]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-comparacion_versiones-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que compara las dos versiones y la llamada correctamente usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos enumerados y el formato JSON coinciden en las dos versiones: [brands.md:L309-L314] y [brands.md:L318-L325]."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Cubre varios códigos y el formato, pero afirma que las tablas enteras tienen las mismas filas sin tratar el código 400, que aparece en la línea 308 y no está incluido en la cita."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las líneas citadas respaldan los códigos enumerados y los campos del formato; no cita la línea no citable 308: [brands.md:L309-L314] y [brands.md:L318-L325]."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las citas cubren los códigos enumerados y el formato, pero la afirmación amplia de identidad de las tablas no cubre el código 400 (línea 308, no citable)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Los códigos enumerados y el formato aparecen en ambas documentaciones: [brands.md:L309-L325]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para comparar los códigos citables y el formato: [brands.md:L309-L325]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Los códigos y campos enumerados concuerdan con las líneas citadas de ambas versiones: [brands.md:L309-L325]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay contradicción entre las versiones en los rangos citados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden comprobar igualdad y campos/códigos verificables en [brands.md:L309-L325]; no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta generaliza que las tablas completas son idénticas, aunque no incluye el código 400 de la línea 308 (no citable) en el análisis citado."
+     },
+     {
+      "case_id": "validation-comparacion_versiones-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre la migración entre dos versiones; version=null es apropiado para comparar."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Ambos documentos muestran el mismo formato con los campos error, message, status y cause: [api-reference/README.md:L75-L86]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica que el formato no cambia y describe los campos que el usuario necesita para parsear: [api-reference/README.md:L79-L86] en ambas versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambas versiones respaldan el formato y los campos; los rangos citados son citables: [api-reference/README.md:L75-L86]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión comparativa y la estructura del error están citadas en las dos versiones: [api-reference/README.md:L75-L86]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Ambos documentos incluyen un formato de error comparable: [api-reference/README.md:L75-L86]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de ambas versiones para responder la pregunta de parseo: [api-reference/README.md:L75-L86]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión y la descripción de los campos concuerdan con los ejemplos citados: [api-reference/README.md:L79-L86]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre las dos versiones en el formato citado."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las secciones de formato de error de ambas versiones: [api-reference/README.md:L75-L86]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-comparacion_versiones-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural que compara estados y transiciones entre dos versiones; version=null es correcto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los estados y flechas descritos aparecen en ambos diagramas y sus descripciones: [brand-management/README.md:L88-L107]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contesta sobre cambios, enumera los estados y describe las transiciones relevantes: [brand-management/README.md:L88-L107]."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de las dos versiones respaldan las descripciones y las transiciones; no incluyen líneas no citables: [brand-management/README.md:L88-L107]."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre estados, significados y transiciones están citadas para ambas versiones: [brand-management/README.md:L88-L107]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Ambas versiones contienen los estados y el diagrama de transiciones: [brand-management/README.md:L88-L107]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa el diagrama y las descripciones disponibles para contestar: [brand-management/README.md:L88-L107]."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La enumeración de estados y transiciones coincide con los diagramas y descripciones citados: [brand-management/README.md:L88-L107]."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental entre las dos versiones en esta sección."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen estados y transiciones directamente verificables en ambas versiones: [brand-management/README.md:L88-L107]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural sobre una versión concreta, y la llamada incluye catalog-portfolio-api y 0.0.1-test-bench-v2a."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Describe correctamente el formato general con data y los ejemplos de búsqueda y creación con estructuras distintas: [api-reference/README.md:L63] y [brands.md:L44-L67], [brands.md:L116-L124]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone ambos formatos documentados y deja claro que no puede determinar cuál devuelve realmente el servicio: [api-reference/README.md:L63], [brands.md:L44-L67], [brands.md:L116-L124]."
+       },
+       "respaldo_citas": {
+        "resultado": "parcial",
+        "justificacion": "La referencia general y el ejemplo de creación respaldan lo dicho; el rango [brands.md:L44-L67] incluye la línea no citable 51, que no es necesaria para mostrar el conflicto."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están respaldadas con citas a ambas fuentes contradictorias: [api-reference/README.md:L63], [brands.md:L44-L67], [brands.md:L116-L124]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Reconoce el conflicto y no afirma cuál formato es el real; ambos indicios aparecen en [api-reference/README.md:L63] y [brands.md:L44-L67], [brands.md:L116-L124]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No se abstiene de describir los dos formatos; limita la incertidumbre a cuál devuelve realmente el servicio, conforme a las líneas citadas."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los formatos general y de endpoints sin elegir uno ni contradecirse: [api-reference/README.md:L63], [brands.md:L44-L67], [brands.md:L116-L124]."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la discrepancia entre la referencia general y los ejemplos de marcas, cita ambas fuentes y no resuelve el conflicto por invención."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden verificar la discrepancia, ambas fuentes y la ausencia de una resolución inventada; todo es cotejable con las líneas citadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": "El rango amplio del ejemplo de búsqueda incluye la línea no citable 51, ajena al conflicto sobre el envoltorio data."
+     },
+     {
+      "case_id": "validation-contradiccion-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural y específica para catalog-portfolio-api 0.0.1-test-bench-v2a; la llamada usa esos argumentos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El formato general muestra data y el ejemplo de búsqueda usa results sin ese envoltorio: [api-reference/README.md:L63] y [brands.md:L44-L46]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la contradicción, cita ambas estructuras y no afirma cuál es la clave correcta: [api-reference/README.md:L63], [brands.md:L44-L46]."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan ambas afirmaciones conflictivas; las líneas no citables citadas son las que muestran el conflicto, excepción permitida en esta situación."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación sobre cada estructura y la conclusión de incertidumbre tienen citas: [api-reference/README.md:L63], [brands.md:L44-L46]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que los documentos no aclaran cuál estructura es correcta, sin negar que aparezcan ambas: [api-reference/README.md:L63], [brands.md:L44-L46]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta las dos estructuras documentadas y solo se abstiene de decidir cuál es la real."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La descripción de la contradicción concuerda con las dos fuentes citadas."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Señala explícitamente la contradicción, cita ambas fuentes y no elige arbitrariamente entre data y results."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la discrepancia y exigen evitar una conclusión no respaldada; se verifican en [api-reference/README.md:L63] y [brands.md:L44-L46]."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "validation-contradiccion-003",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés se refiere a la versión concreta indicada en la llamada y plantea la inconsistencia del ejemplo."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla define site como filtro, la petición usa MLA y el ejemplo de respuesta muestra MLB: [brands.md:L28], [brands.md:L38-L40], [brands.md:L51]."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Expone la inconsistencia y responde que la documentación no confirma si solo se devuelven marcas MLA: [brands.md:L28], [brands.md:L38-L40], [brands.md:L51]."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la definición del filtro, la petición y el valor discordante; la línea no citable 51 se cita para mostrar el conflicto, excepción permitida."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están citadas en la tabla y los ejemplos: [brands.md:L28], [brands.md:L38-L40], [brands.md:L51]."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Describe el desajuste sin afirmar que el filtro funcione o falle, ni inventar una explicación: [brands.md:L28], [brands.md:L38-L40], [brands.md:L51]."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia concreta del filtro y la respuesta de ejemplo; reserva la incertidumbre para lo que el documento no aclara."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separadas la descripción del filtro y la discrepancia del ejemplo, sin sostener conclusiones incompatibles."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica y cita los dos lados de la inconsistencia y no elige una explicación arbitraria: [brands.md:L28], [brands.md:L38-L40], [brands.md:L51]."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen datos cotejables en las líneas citadas y no exigen una redacción exacta ni una resolución inventada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

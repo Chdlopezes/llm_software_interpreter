@@ -1,0 +1,156 @@
+{
+ "task_id": "verificador/ee7870c8fabdbaefb4a5b05b",
+ "llamadas": [
+  {
+   "clave": "ee7870c8fabdbaefb4a5b05b37a7858eb3dd062b5bb7ba02e807c88163f1eb28",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-evidencia_parcial-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, especifica order-workflow-api 5.6.2-hotfix-1 y corresponde a la planificación de versiones y Cron History."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los campos de cron_branches aparecen en el ejemplo de Workflow en L139-L143; los documentos entregados no dan campos ni estructura para Cron History (el apartado solo aparece como encabezado en L147 y TODO no citable en L148)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica los tres campos de cron_branches y reconoce que no puede proporcionar la estructura de Cron History; el flujo relacionado está en L285-L298."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los campos de cron_branches (L139-L143), el almacenamiento de la planificación (README L40-L43) y los pasos del cron (use-cases.md L285-L298); no cita líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones sobre los campos y el flujo tienen citas, pero la afirmación de que Cron History no tiene campos documentados y que no se explican los datos guardados en ese paso carece de cita directa al apartado de Cron History (database.md L147)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara correctamente que los campos de Cron History faltan en los documentos entregados, sin afirmar que el objeto no exista; el apartado correspondiente solo presenta el encabezado en database.md L147 y no hay esquema en los demás documentos entregados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde lo que sí está documentado sobre cron_branches y el flujo del cron (database.md L139-L143; use-cases.md L285-L298)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los campos del ejemplo de gitflow de la información no documentada sobre Cron History, sin contradicciones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto entre fuentes en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan los campos documentados y exigen declarar la falta de esquema sin inventar campos ni afirmar que el objeto no existe."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es correcta, pero no cita directamente el apartado de Cron History al afirmar que sus campos y estructura no están documentados."
+     },
+     {
+      "case_id": "train-version_explicita-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en español, nombra el software y la versión de la llamada, y corresponde a los documentos entregados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El flujo de migración está condicionado por isMigration, itera mientras remainingPages > 0, pide archivos del diff y valida su ruta (use-cases.md L145-L154); después vienen los pasos citados en L155-L166."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica los pasos extra de migración y su ubicación respecto de las validaciones de ramas y del status check."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de use-cases.md L113-L117 y L145-L166 respaldan la identificación de participantes, las acciones y su orden; no se citan líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas están acompañadas por citas a las líneas pertinentes de use-cases.md (L113-L117 y L145-L166)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La pregunta queda respondida con el diagrama entregado (use-cases.md L145-L166); no se declara información faltante."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible para describir las acciones de migración y el resto del flujo (use-cases.md L145-L166)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene el orden mostrado en el diagrama: validaciones de ramas, validación de migración, status check, resultado y ACK (use-cases.md L145-L166)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en el diagrama y no exigen una redacción concreta; también son coherentes con los argumentos de llamada indicados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-version_explicita-021",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés, especifica order-workflow-api 5.6.2-hotfix-1 y corresponde a la sección de mensajes BigQ y al objeto Pipeline."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El mensaje procede del topic indicado y contiene un Pipeline ID; workflow-api obtiene la información completa del Orchestrator (bigq.md L19-L20). Los campos de ramas y commits están en L27-L35."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el topic, la acción posterior y los campos del objeto que contienen información de ramas y commits."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a bigq.md L18-L20, L22-L23, L27-L28 y L32-L35 respaldan las afirmaciones; no presenta los valores ilustrativos como hechos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cada afirmación técnica está acompañada por citas a las líneas pertinentes de bigq.md (L18-L20, L22-L23, L27-L35)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "Todos los elementos preguntados están respaldados por el documento entregado (bigq.md L19-L20 y L22-L35)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información del topic y del Pipeline presente en bigq.md L19-L20 y L22-L35."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue correctamente los campos de ramas y commits y aclara que los valores JSON son ejemplos (bigq.md L22-L35)."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental en los documentos entregados."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las líneas citadas y no exigen valores de ejemplo ni una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

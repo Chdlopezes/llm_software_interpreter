@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-018",
+ "llamadas": [
+  {
+   "clave": "e7456d4ddf43d285f505051f56adc30632b00714951ea4078bdc253c0e0b836f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy revisando demand-forecast-docs latest porque me acabo de incorporar como PM al proyecto de forecasting del marketplace y quiero orientarme antes de la próxima reunión con el equipo.",
+    "historial_asistente": "¡Bienvenido! Cuéntame qué necesitas saber y lo busco en la documentación.",
+    "pregunta": "¿Esta documentación está pensada para alguien como yo o es solo para el equipo técnico? ¿Puedo hacer preguntas sobre lo que lea?",
+    "respuesta": "El público principal de la documentación es el equipo de data scientists que trabaja en el proyecto. Aun así, indica que si eres PL, PM o tienes cualquier otro rol con interés en el proyecto, puedes leerla y hacer preguntas [demand-forecast-docs/latest/guide/README.md:L13-L13]. Su contenido es un repositorio de explicaciones de las metodologías que se usan en el proyecto de forecasting del marketplace [demand-forecast-docs/latest/guide/README.md:L11-L13].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con demand-forecast-docs y la versión latest del historial, sin volver a preguntar el software ni la versión.",
+     "Indica que el público principal son los data scientists que trabajan en el proyecto.",
+     "Indica que PL, PM u otros roles interesados pueden leerla y hacer preguntas.",
+     "Cita el README de la guía de latest (línea 13 o un rango que la contenga) y no cita las líneas 1-10.",
+     "No inventa canales concretos ni procedimientos para hacer las preguntas, porque no están documentados."
+    ]
+   }
+  }
+ ]
+}

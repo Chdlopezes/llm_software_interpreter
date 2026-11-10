@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-028",
+ "llamadas": [
+  {
+   "clave": "4a98c033257ccdd3988548959b8f616c5a85fbcfcdf5afe68d94ab8fc0582a85",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Voy a tocar código de payment-promise-gateway y quiero respetar su diseño. ¿Qué patrones de diseño usa y en qué clases se ve cada uno?",
+    "respuesta": "Las dos versiones documentadas (0.0.10-test-crc-migration y latest) describen los mismos cinco patrones con el mismo texto [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L64-L84] [payment-promise-gateway/latest/guide/README.md:L64-L84]:\n\n1. **Command**: se usa para encapsular los parámetros de las peticiones. Los ejemplos son `PromiseCommand` y `LateFeeForgivenessCommand` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L66-L68] [payment-promise-gateway/latest/guide/README.md:L66-L68].\n2. **Builder**: se usa para construir los Business Objects. El ejemplo es `ActivePromiseBO.Builder` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L70-L72] [payment-promise-gateway/latest/guide/README.md:L70-L72].\n3. **Dependency Injection**: se gestiona con Google Guice, y se usan tanto `@Autowired` de Spring como `@Inject` de Guice [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L74-L76] [payment-promise-gateway/latest/guide/README.md:L74-L76].\n4. **Factory**: se usa para crear y configurar servicios. Esta parte no da ninguna clase de ejemplo [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L78-L79] [payment-promise-gateway/latest/guide/README.md:L78-L79].\n5. **DTO**: se usa para transferir datos entre capas. Los ejemplos son `LateFeeForgivenessDTO` y `UserDebtDTO` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L81-L83] [payment-promise-gateway/latest/guide/README.md:L81-L83].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Enumera los cinco patrones: Command, Builder, Dependency Injection, Factory y DTO.",
+     "Da las clases de ejemplo documentadas: PromiseCommand y LateFeeForgivenessCommand (Command), ActivePromiseBO.Builder (Builder), LateFeeForgivenessDTO y UserDebtDTO (DTO), y menciona @Autowired/@Inject con Google Guice para la inyección de dependencias.",
+     "No inventa una clase de ejemplo para el patrón Factory, que no la tiene documentada.",
+     "Indica que el contenido es igual en 0.0.10-test-crc-migration y latest, sin atribuirlo a una sola versión."
+    ]
+   }
+  }
+ ]
+}

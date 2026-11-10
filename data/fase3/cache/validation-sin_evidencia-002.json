@@ -1,0 +1,47 @@
+{
+ "task_id": "validation-sin_evidencia-002",
+ "llamadas": [
+  {
+   "clave": "8f52873e51be703c8a28389fa9245f98427d1948ec52f51164e34035d66d7e80",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué mecanismo de autenticación usan los endpoints en general y cómo consigo las credenciales o el token para llamarlos?",
+    "respuesta": "La documentación de la versión 0.0.1-test-bench-v2a no dice qué mecanismo de autenticación general usan los endpoints ni cómo se consiguen credenciales o tokens. Por eso no puedo indicarte el esquema ni el proceso para obtenerlas.\n\nEsto es lo único relacionado que aparece:\n- El endpoint `DELETE /{brandId}` pide la cabecera `X-Client-Id`, que es obligatoria y debe ser un ID de cliente que esté en la lista blanca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L221-L225].\n- Entre los códigos de error comunes está el 401 `unauthorized`, que corresponde a una autenticación ausente o inválida [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L309-L309].\n\nFuera de esa cabecera del borrado, ninguna página explica cómo autenticar las demás llamadas.",
+    "answer_checks": [
+     "Indica que la documentación entregada de 0.0.1-test-bench-v2a no describe el mecanismo general de autenticación ni cómo obtener credenciales o tokens.",
+     "No inventa un esquema de autenticación (por ejemplo OAuth, Bearer token o API key) ni un procedimiento para obtener credenciales.",
+     "Si menciona información relacionada, la cita correctamente (por ejemplo, la cabecera X-Client-Id del DELETE en brands.md o el error 401 unauthorized).",
+     "No afirma que la API no requiera autenticación ni que la autenticación no exista.",
+     "No cita como respaldo la línea 7 de api-reference/README.md."
+    ]
+   }
+  },
+  {
+   "clave": "d36fefae064f6bd31d9e182057d8a94c7df957fb4b28f1ba6de8dd7977f13602",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué esquema de autenticación usan los endpoints en general y cómo consigo las credenciales o el token para llamarlos?",
+    "respuesta": "No puedo decirte qué esquema de autenticación general usa la API ni cómo conseguir credenciales o un token, porque la documentación de 0.0.1-test-bench-v2a no explica ninguna de las dos cosas.\n\nLo que sí aparece sobre el tema son referencias sueltas:\n- Para borrar una marca con `DELETE /{brandId}` hay que enviar la cabecera obligatoria `X-Client-Id`, y ese ID de cliente debe estar en una lista blanca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L213-L225]. La guía de Brand Management dice lo mismo: el borrado requiere que el client ID esté en esa lista [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L122-L123].\n- La guía de troubleshooting tiene un ejemplo de curl, bajo el comentario «Test authentication», que envía la cabecera `X-Client-Id: test` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L146-L147].\n- Si recibes un 401 Unauthorized por fallos de autenticación, esa misma guía recomienda verificar las API keys y los permisos [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L72-L72]. Entre los códigos de error comunes de la API está el 401 `unauthorized`, que corresponde a una autenticación ausente o inválida [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L309-L309].\n\nNinguna de estas referencias dice qué credencial exigen todos los endpoints, cómo se envían las API keys que se mencionan, ni cómo se da de alta un client ID o se añade a la lista blanca.",
+    "answer_checks": [
+     "Indica que la documentación de 0.0.1-test-bench-v2a no describe el esquema general de autenticación ni cómo obtener credenciales o tokens.",
+     "No inventa un esquema de autenticación (OAuth, Bearer token, formato de API key, etc.) ni un procedimiento para obtener credenciales o dar de alta un client ID.",
+     "Si menciona información relacionada, la cita correctamente (por ejemplo, la cabecera X-Client-Id en lista blanca para DELETE, la recomendación de verificar API keys y permisos ante un 401 en troubleshooting o el error 401 unauthorized) y no presenta un subconjunto como si fuera lo único documentado.",
+     "No afirma que la API no requiera autenticación ni que la autenticación no exista.",
+     "No cita como respaldo la línea 7 de api-reference/README.md."
+    ]
+   }
+  }
+ ]
+}

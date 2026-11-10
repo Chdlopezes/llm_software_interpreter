@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-035",
+ "llamadas": [
+  {
+   "clave": "c913b99a2837074fb3cd85986d29cbdf4e236b196cf5f712442c02113e9c2aa0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hi, I'm working with order-workflow-api 5.6.2-hotfix-1. I'm debugging how it handles the pipeline validation messages that come in through BigQ.",
+    "historial_asistente": "Sure, happy to help with that. What do you need to know about the pipeline validation handling?",
+    "pregunta": "When it pulls the full Pipeline from the Orchestrator, which fields tell me the branches and commits involved, and whether the PR comes from a fork?",
+    "respuesta": "When workflow-api gets a \"start work\" message with a Pipeline ID from the BigQ topic `batesting-orchestrator.order-orchestrator-api`, it fetches the full `Pipeline` from the Orchestrator [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L19-L20]. In that object, `head_branch` and `base_branch` give the branches [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L27-L28]. The commits are in `merge_commit` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L32-L32] and in `head_commit` and `base_commit` [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L34-L35]. The boolean `fork` tells you whether the pull request comes from a fork [order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md:L33-L33].",
+    "answer_checks": [
+     "Calls the tool with order-workflow-api and version 5.6.2-hotfix-1 from the earlier turn, and does not ask for the software or version again.",
+     "Names head_branch and base_branch as the branch fields and head_commit, base_commit (and optionally merge_commit) as the commit fields.",
+     "Names the `fork` field as the indicator for fork pull requests.",
+     "Cites the Pipeline JSON block in order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md, and does not present the example values (commit hashes, branch names, user) as fixed facts.",
+     "Does not cite line 25 (pipeline_id) or line 43 of bigq.md as support."
+    ]
+   }
+  }
+ ]
+}

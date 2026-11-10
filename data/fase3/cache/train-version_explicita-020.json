@@ -1,0 +1,25 @@
+{
+ "task_id": "train-version_explicita-020",
+ "llamadas": [
+  {
+   "clave": "9b339acd5f7a3b2d44330d30c529ea59ece0a329c95e03777e18aa6f6dcda2c4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En demand-forecast-docs latest, ¿de qué trata la sección de Diarización dentro de explicabilidad? ¿Qué variables se diarizan?",
+    "respuesta": "La sección de Diarización trata de la «dailyization», es decir, de cómo pasar a nivel diario las variables exógenas mensuales [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L1-L3]. Se hace porque los datos son diarios, pero de algunas variables exógenas futuras solo hay información mensual. Para poder usarlas en los modelos hay que desagregarlas a nivel diario [demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md:L29].",
+    "answer_checks": [
+     "Llama con software demand-forecast-docs y versión latest.",
+     "Indica que la sección explica la diarización (dailyization) de variables exógenas mensuales.",
+     "Cita el encabezado de diarizacion.md (líneas 1-3 o un rango que las contenga sin abarcar de más).",
+     "No inventa detalles de la sección que no estén en los documentos entregados (por ejemplo, nombres de variables concretas)."
+    ]
+   }
+  }
+ ]
+}

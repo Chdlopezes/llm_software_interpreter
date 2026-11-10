@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/5e78fe038aeb4b3ce85be546",
+ "llamadas": [
+  {
+   "clave": "5e78fe038aeb4b3ce85be546ee3aa6638986373306a4709498167fd214c53c92",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-comparacion_versiones-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta en inglés, natural y compara explícitamente las dos versiones; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_cumple",
+        "justificacion": "Es correcto que la operación de validación aparece en 0.0.10 (L51-L68) y no está en los ejemplos mostrados en latest (L22-L48), pero la frase «Neither guide adds an example that isn't in the other version» contradice esa diferencia."
+       },
+       "responde_pregunta": {
+        "resultado": "parcial",
+        "justificacion": "Identifica el ejemplo de validación que falta en latest, pero la afirmación contradictoria sobre que no hay ejemplos exclusivos deja confusa la comparación solicitada."
+       },
+       "respaldo_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "Las citas de la operación exclusiva son pertinentes (0.0.10 L51-L68; latest L22-L48), pero las líneas citadas no respaldan la afirmación de que no hay ejemplos exclusivos, que además contradice la evidencia."
+       },
+       "cobertura_citas": {
+        "resultado": "no_cumple",
+        "justificacion": "La afirmación de que ninguna versión añade un ejemplo exclusivo no tiene respaldo y contradice el ejemplo de validación citado en 0.0.10 (L51-L68)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Distingue que la falta de documentación en latest no prueba que el endpoint se haya eliminado; no afirma que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa los ejemplos disponibles para comparar las versiones (0.0.10 L51-L68; latest L22-L48)."
+       },
+       "consistencia": {
+        "resultado": "no_cumple",
+        "justificacion": "Primero identifica un ejemplo exclusivo de 0.0.10 (L51-L68) y luego afirma que ninguna guía tiene ejemplos que no aparezcan en la otra."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks comparan datos verificables y no exigen una formulación concreta; por ejemplo, los ejemplos de Restock y Feed aparecen en ambas guías (0.10 L29-L49; latest L28-L48)."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La comparación incluye una afirmación que contradice el hallazgo principal: el ejemplo de Operation Validation Consumer aparece en 0.0.10 y no en latest."
+     },
+     {
+      "case_id": "train-comparacion_versiones-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre dos versiones concretas; la llamada usa version=null, como corresponde a una comparación."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El procedimiento descrito concuerda con ambas guías: consultar la conciliación del inbound (L37, L40-L42) y revisar los tags en la API de ítems (L128)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica los pasos de verificación y contesta que el procedimiento es el mismo en ambas versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a L37, L40-L42 y L128 de ambas versiones respaldan los pasos; las referencias a L45 y L135 respaldan la diferencia de formato."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas y la comparación de formato incluyen citas a las dos versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara que falte información ni convierte una falta de documentación en una afirmación de inexistencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la evidencia de ambas guías (L37-L42 y L128)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación de que el procedimiento no cambia es coherente con los pasos citados en ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican el procedimiento y las citas pertinentes; no exigen redacción específica ni se apoyan en líneas no citables."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-013",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español que compara dos versiones específicas; version=null es correcto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los encabezados llevan [IMPORTANT] en 0.0.10 (L17, L29) y no llevan etiqueta en 0.0.6 (L17, L29); las descripciones y pasos citados coinciden (L19-L25, L31-L39)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Compara tanto las etiquetas como la forma de resolver las dos alertas."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas de ambos alerts.md respaldan los encabezados, descripciones y pasos descritos."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas incluyen citas a las líneas correspondientes de ambas versiones."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No afirma que falte información ni extrapola la documentación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha las descripciones y procedimientos disponibles para responder la comparación (L19-L25 y L31-L39)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de que solo cambia la etiqueta de prioridad concuerda con las líneas comparadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables contra ambos alerts.md y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre las URLs base de dos versiones concretas; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las dos guías muestran el mismo nombre y las mismas URLs de prod y stage para TechZone Platform y Postman (L5-L9)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde directamente que no hay cambios y enumera las cuatro URLs."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a L5-L9 de ambas versiones respaldan el nombre y las URLs mencionadas."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre las URLs están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara falta de información ni afirma hechos que no estén documentados."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Utiliza las URLs disponibles en ambas guías para resolver la comparación."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión coincide con los valores idénticos citados para ambas versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks describen valores comprobables en L5-L9 y no exigen una redacción particular."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-015",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre la introducción de la guía y la comparación entre versiones; version=null es correcto."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro versiones indican comprobar los movimientos inbound y outbound y sus ítems de prueba antes de actuar (L5-L6)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Contesta que la comprobación descrita en la introducción no cambia y resume su propósito."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las referencias a L5-L6 de las cuatro guías respaldan el resumen."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La afirmación comparativa y los detalles del procedimiento llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No sostiene que falte información ni infiere que algo no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia común de las cuatro versiones para contestar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La conclusión de que el texto es el mismo concuerda con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con L5-L6 de las versiones entregadas y no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-comparacion_versiones-016",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre la lista de flujos y otras versiones; la llamada usa version=null."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Las cuatro guías enumeran Restock y Feed (L11-L14); la comprobación previa de inbound y outbound está descrita en L5-L6."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica si cambia la lista, nombra los dos flujos y responde también sobre las otras versiones."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a L11-L14 y L5-L6 de las versiones mencionadas respaldan las afirmaciones."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "La lista de flujos y la descripción de la verificación están acompañadas por citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No declara falta de información ni presenta ausencia de documentación como inexistencia."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia de las cuatro guías para comparar las versiones."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La comparación de la lista y el resumen de la verificación son coherentes con las líneas citadas."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las guías citadas y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-009",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español que especifica software y versión, y solicita interpretar el enlace de la tabla."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La fila muestra el ancla #vendor-branch-search (L16), mientras que la página presenta un apartado Feed Consumer con el ejemplo en L37-L49."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Señala la discrepancia y ofrece el apartado Feed Consumer existente, sin asegurar cuál era el destino pretendido."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "En situación de contradicción, cita la fila relevante (L16) y el apartado con el ejemplo (L37-L47)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el enlace y el ejemplo están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No inventa el destino pretendido; indica que no puede confirmarlo a partir de la página."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta el ejemplo disponible en L37-L49 pese a no poder confirmar el destino del ancla."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue coherentemente el enlace de la tabla del apartado que contiene el ejemplo."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica la discrepancia y cita ambas partes relevantes: la fila en L16 y la sección Feed Consumer en L37-L47."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks piden verificar el ancla y el apartado existente, y no prescriben una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el método indicado y el body de una operación de software y versión concretos."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La tabla declara GET (L21), mientras que el ejemplo usa --data y muestra un JSON (L53-L65); la respuesta no elige arbitrariamente entre ambos."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la discrepancia y deja claro que la documentación no permite confirmar si el body es obligatorio."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita la línea no citable L21 para señalar el conflicto —excepción permitida— y el ejemplo en L53-L65."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre la tabla, el ejemplo y sus campos llevan citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no se puede confirmar el método ni la obligatoriedad del body, sin presentar una opción como hecho."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Expone los dos datos disponibles y sus límites en lugar de abstenerse de toda respuesta."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene la distinción entre lo que dice la tabla y lo que muestra el ejemplo."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica y cita las dos fuentes incompatibles (L21 y L53-L65), sin resolver la discrepancia por invención."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la contradicción documentada y no exigen elegir un método ni una redacción exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre el valor exacto del tag en software y versión especificados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía menciona test_items en L231 y el ejemplo muestra test_item en el array tags (L199-L206); la respuesta informa la discrepancia sin elegir."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica por qué no puede confirmar un valor exacto y señala dónde aparece cada forma."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita el texto de L231 —permitido para señalar el conflicto— y el ejemplo de tags en L199-L206."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre la consulta de tags y las dos formas del nombre están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No elige un valor como correcto ante la discrepancia y no inventa la lista de otros tags."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aporta la evidencia disponible de la API (L128) y del ejemplo (L199-L206), aunque reconoce el límite."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta presenta de forma coherente las dos formas documentadas y la incertidumbre resultante."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica el conflicto y cita ambas evidencias, sin resolverlo arbitrariamente."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican las dos formas documentadas y no requieren una respuesta literal."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español sobre los campos de una tabla en un software y versión especificados."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El ejemplo de registro no contiene material_id (L247), pero la lista posterior sí lo incluye (L250); la respuesta describe esa discrepancia."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Enumera la diferencia entre el ejemplo y la lista, y responde que no puede confirmarse si el registro trae material_id."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Cita la tabla, el ejemplo y la lista posterior (L239-L240, L245, L247, L250-L254); L250 se cita para señalar el conflicto, según la excepción."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones sobre el flujo, la tabla, los campos y el uso posterior están citadas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Reconoce que el ejemplo y la lista discrepan y no afirma como hecho si el registro contiene material_id."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Explica el flujo y los campos que sí aparecen en ambas evidencias, además de señalar el límite."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue los campos del ejemplo de los de la lista y no los mezcla como una conclusión única."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Cita el ejemplo (L247) y la lista conflictiva (L250), y deja sin resolver si el registro contiene material_id."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables con las líneas citadas y no exigen afirmar una respuesta no respaldada."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

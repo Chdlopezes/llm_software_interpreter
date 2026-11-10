@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-005",
+ "llamadas": [
+  {
+   "clave": "4ee3d35fbcba854e88f2d82b6cb1fae8686233ae417f6ac3b2d2ce273decde66",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando unas llamadas con curl contra payment-promise-gateway. ¿Qué headers hay que mandar en las peticiones y cómo se identifica al usuario en la llamada a GET /payment_promise/active?",
+    "respuesta": "Las versiones 0.0.10-test-crc-migration y latest traen los mismos ejemplos con curl, así que lo que sigue vale para las dos.\n\n**Headers:** en los ejemplos, todas las llamadas usan una base común `${BASE_URL}` y un token en `AUTH_TOKEN` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L313-L315] [payment-promise-gateway/latest/guide/README.md:L313-L315]. Cada petición envía dos headers: `Authorization: Bearer ${AUTH_TOKEN}` y `Content-Type: application/json`. Un ejemplo es la llamada a GET /payment_promise/form [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L319-L321] [payment-promise-gateway/latest/guide/README.md:L319-L321]. Los ejemplos de POST /forgiveness_proposal, PUT /forgiveness_proposal y GET /forgiveness_proposal/{promiseId} usan esos mismos dos headers [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L359-L383] [payment-promise-gateway/latest/guide/README.md:L359-L383].\n\n**Usuario en GET /payment_promise/active:** este ejemplo añade el header `x-caller-id` y además pasa `caller.id` con `--data-urlencode` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L327-L331] [payment-promise-gateway/latest/guide/README.md:L327-L331]. El diagrama de secuencia de ese endpoint también indica `x-caller-id` como header [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L153-L154] [payment-promise-gateway/latest/guide/README.md:L153-L154].",
+    "answer_checks": [
+     "Llama con version=null y no pide la versión al usuario.",
+     "Indica que los ejemplos envían los headers Authorization: Bearer <token> y Content-Type: application/json.",
+     "Indica que en GET /payment_promise/active el usuario se identifica con el header x-caller-id, además de enviar caller.id con --data-urlencode.",
+     "Señala que el contenido es igual en 0.0.10-test-crc-migration y en latest, sin atribuirlo a una sola versión.",
+     "No presenta valores de ejemplo (como el id 24517 o el token) como si fueran valores reales o necesarios."
+    ]
+   }
+  }
+ ]
+}

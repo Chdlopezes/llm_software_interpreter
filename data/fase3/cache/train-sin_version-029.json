@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-029",
+ "llamadas": [
+  {
+   "clave": "a8bd895be3b98a741d9025989e52e2d4bec4432fa6fd3a5e91c5015875aa39ab",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "¿Qué funcionalidades principales ofrece payment-promise-gateway? Quiero saber qué cubre en promesas de pago, recargos por mora y ofertas.",
+    "respuesta": "Las dos versiones documentadas, 0.0.10-test-crc-migration y latest, describen las funcionalidades principales con el mismo texto. Se agrupan en tres áreas.\n\n- **Promesas de pago (Payment Promises):** crear promesas de pago, obtener las promesas activas, consultar los formularios y las opciones de una promesa y gestionar la condonación de recargos por mora [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L87-L91] [payment-promise-gateway/latest/guide/README.md:L87-L91].\n- **Gestión de recargos por mora (Late Fee Management):** crear propuestas de condonación, confirmarlas y consultar en qué estado está una condonación [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L93-L96] [payment-promise-gateway/latest/guide/README.md:L93-L96].\n- **Gestión de ofertas (Offers Management):** obtener las ofertas o remedios disponibles para el usuario, es decir, las distintas opciones que tiene para regularizar su deuda [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L98-L100] [payment-promise-gateway/latest/guide/README.md:L98-L100].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "En promesas de pago menciona crear promesas, obtener las activas, consultar formularios y opciones, y gestionar la condonación de recargos por mora.",
+     "En recargos por mora menciona crear propuestas de condonación, confirmarlas y consultar su estado.",
+     "Explica que la gestión de ofertas obtiene las ofertas o remedios disponibles para que el usuario regularice su deuda.",
+     "Indica que el contenido es igual en 0.0.10-test-crc-migration y en latest, sin atribuirlo a una sola versión."
+    ]
+   }
+  }
+ ]
+}

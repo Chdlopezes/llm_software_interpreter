@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-008",
+ "llamadas": [
+  {
+   "clave": "2c4dacce774c48003d522bd82467965eabc85d2c9175faf70c7b8b98fcc547dc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, estoy trabajando con vendor-stockkeeper-api en la versión 0.0.6-ep-restock-man y tengo que configurar la conexión a sus bases de datos desde mi entorno.",
+    "historial_asistente": "Perfecto. Dime qué necesitas saber de la configuración y lo busco en la documentación.",
+    "pregunta": "¿Cómo se llama la base de stage y qué host y puerto tengo que usar para conectarme? ¿Son distintos de los de prod?",
+    "respuesta": "La base de stage se llama inventstg. Para conectarte usa el host proxysql.master.techzoneseginf.com y el puerto 6612 [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md:L10-L13]. Para prod no cambian: la base se llama inventprd, pero el host (proxysql.master.techzoneseginf.com) y el puerto (6612) son los mismos [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md:L18-L21]. El usuario y la contraseña que aparecen en la documentación son marcadores (your_user / your_password), así que no sirven como credenciales reales [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md:L14-L15].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con vendor-stockkeeper-api y la versión 0.0.6-ep-restock-man del historial, sin volver a preguntarlos.",
+     "Indica que la base de stage es inventstg, con host proxysql.master.techzoneseginf.com y puerto 6612.",
+     "Indica que prod (inventprd) usa el mismo host y el mismo puerto que stage.",
+     "No presenta your_user / your_password como credenciales reales.",
+     "Cita líneas de database.md dentro del rango L1-L24."
+    ]
+   }
+  }
+ ]
+}

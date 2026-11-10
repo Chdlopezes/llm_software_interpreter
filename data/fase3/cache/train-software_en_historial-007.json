@@ -1,0 +1,26 @@
+{
+ "task_id": "train-software_en_historial-007",
+ "llamadas": [
+  {
+   "clave": "ac613981f868bd326aac047081bd92dea4b3c5ac8e7e365a3dce49968c964a7a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "Hola, me acaban de pasar el mantenimiento de vendor-stockkeeper-api en la versión 0.0.3-paused-seller y estoy armando una nota de contexto para el equipo antes de tocar nada.",
+    "historial_asistente": "Perfecto, cuéntame qué necesitas saber de esa versión y lo busco en la documentación.",
+    "pregunta": "Para empezar, ¿de qué se encarga exactamente esta aplicación y qué vías tiene para hacer el restock? Quiero entender en qué se diferencian.",
+    "respuesta": "Según la documentación de esa versión, Stockkeeper-api actualiza el stock de los ítems del área Standard que se ofrecen en TechZone. Tiene dos endpoints principales para el restock: uno para los movimientos de stock de 3PL, que manejan cantidades más chicas, y otro para los movimientos de inbound, que pueden traer cantidades más grandes [vendor-stockkeeper-api/0.0.3-paused-seller/guide/introduction.md:L5-L5].",
+    "answer_checks": [
+     "Llama a la herramienta con vendor-stockkeeper-api y la versión 0.0.3-paused-seller del historial, sin volver a preguntar por el software ni por la versión.",
+     "Indica que la aplicación se encarga de actualizar el stock de los ítems del área Standard que se ofrecen en TechZone.",
+     "Distingue los dos endpoints principales de restock: uno para movimientos de stock de 3PL (cantidades más chicas) y otro para movimientos de inbound (cantidades que pueden ser más grandes).",
+     "Cita introduction.md de la versión 0.0.3-paused-seller como respaldo.",
+     "No inventa nombres de rutas, límites de cantidad ni otros detalles que no aparezcan en las líneas citables."
+    ]
+   }
+  }
+ ]
+}

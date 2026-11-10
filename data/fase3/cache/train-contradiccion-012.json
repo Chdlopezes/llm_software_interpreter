@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-012",
+ "llamadas": [
+  {
+   "clave": "123a243d5f5bb7507fdc2ece55daa9b9f0284aec3884ba7762ccf191d22d10d7",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api 0.0.10-stock-consumer, en el flujo de Feed, ¿qué campos saco del registro de la tabla 1p_3pl_product_stock_mov para luego comprobar si los items son de test? ¿Viene el material_id ahí?",
+    "respuesta": "En este punto la documentación no es coherente. En el flujo de Feed, con el Operation id se consulta la base de datos de 1p-3pl-integrator, en la tabla 1p_3pl_product_stock_mov [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L239-L240]. De esa tabla salen los datos clave para comprobar si los items son de test [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L245-L245].\n\nEl conflicto está en qué campos son:\n\n- El registro de ejemplo de la tabla incluye `sap_sku`, `site_id` y `seller_id`, pero no tiene ningún campo `material_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L247-L247].\n- Justo después, la guía enumera los campos clave como `sap_sku`, `material_id`, `site_id` y `seller_id`, o sea que sí incluye `material_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L250-L250].\n\nLa guía añade que estos datos sirven para consultar **materials** por sap sku o por material id. Así se obtiene el item, y con él se consultan sus tags en la API de items para saber si es de test [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md:L252-L254].\n\nPor tanto, `sap_sku`, `site_id` y `seller_id` aparecen en las dos fuentes. En cambio, no puedo confirmar si el registro de 1p_3pl_product_stock_mov trae `material_id`: la lista lo nombra, pero el ejemplo de la tabla no lo tiene.",
+    "answer_checks": [
+     "Indica que en el flujo de Feed se consulta la tabla 1p_3pl_product_stock_mov de 1p-3pl-integrator a partir del Operation id.",
+     "Cita el registro de ejemplo de la tabla (sin material_id) y la lista de campos que sí incluye material_id, y señala la discrepancia entre ambos.",
+     "No afirma como hecho confirmado que el registro de la tabla trae o no trae material_id.",
+     "No inventa campos ni pasos que no aparezcan en la documentación entregada."
+    ]
+   }
+  }
+ ]
+}

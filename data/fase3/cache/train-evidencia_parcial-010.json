@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-010",
+ "llamadas": [
+  {
+   "clave": "486449e1dd9bf2baabc3e1d1e3904d5dcdad83333246135d708eeb430cedeb89",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "For payment-promise-gateway 0.0.10-test-crc-migration, which endpoints does the API expose, and what HTTP response codes can each endpoint return according to its OpenAPI spec?",
+    "respuesta": "In 0.0.10-test-crc-migration the API is documented with OpenAPI/Swagger, and these are its main endpoints: `GET /payment_promise/form`, `GET /payment_promise/active`, `GET /offers`, `POST /payment_promise`, `POST /forgiveness_proposal`, `PUT /forgiveness_proposal` and `GET /forgiveness_proposal/{promiseId}` [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L104-L112].\n\nI can't tell you the response codes for each endpoint. The OpenAPI spec isn't part of these docs. The README just points to specs-hub for the detailed API documentation [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L114]. The only thing it says about errors is that the service uses HTTP status codes for API responses [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L530-L533]. It doesn't list which codes each endpoint returns. You'll need to check the spec in specs-hub for that.",
+    "answer_checks": [
+     "Lists the seven main endpoints (GET /payment_promise/form, GET /payment_promise/active, GET /offers, POST /payment_promise, POST /forgiveness_proposal, PUT /forgiveness_proposal, GET /forgiveness_proposal/{promiseId}) with a citation.",
+     "States that the per-endpoint HTTP response codes are not documented in the provided documentation and that the detailed API documentation is referred to specs-hub.",
+     "Does not invent specific HTTP status codes (e.g., 200, 400, 404, 500) for any endpoint.",
+     "Does not claim that the endpoints return no error codes or that the spec does not exist; it treats the missing data as undocumented.",
+     "Does not abstain from the documented part (the endpoint list)."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "task_id": "validation-version_explicita-015",
+ "llamadas": [
+  {
+   "clave": "9ba584b3665f65b6fb235b0a3ba33cd5d89adcd3d0a63c3ed1d10dff362279eb",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué endpoint uso para comprobar si una marca se puede activar antes de activarla, qué parámetro necesita y qué trae la respuesta cuando la marca no cumple los requisitos?",
+    "respuesta": "Para saber si una marca se puede activar se usa `GET /{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L272-L276]. La ruta completa es `/catalog/brands/{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L31-L31]. Necesita un único parámetro de ruta, `brandId`, de tipo integer y obligatorio, que es el ID de la marca [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L278-L282]. La llamada de ejemplo es un `curl` simple contra `https://api.mp.internal.retailflow.com/catalog/brands/123/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L284-L288].\n\nEn la respuesta de ejemplo de una marca que no cumple los requisitos aparece un array `validationDetails` con los motivos en texto, como \"Main logo is missing\" y \"Category validation failed\" [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L290-L299].",
+    "answer_checks": [
+     "Indica que el endpoint es GET /{brandId}/activable (o /catalog/brands/{brandId}/activable).",
+     "Indica que el parámetro de ruta brandId es integer y obligatorio.",
+     "Menciona que la respuesta incluye validationDetails con los motivos por los que la marca no se puede activar (por ejemplo, que falta el logo principal o que falló la validación de la categoría).",
+     "Cita la sección Check Brand Activable de brands.md de la versión 0.0.1-test-bench-v2a.",
+     "No inventa otros parámetros, headers ni campos de respuesta que no estén documentados."
+    ]
+   }
+  },
+  {
+   "clave": "5f2cc913513f3ff91fbaa4a2485cd19fae3f6803d1043fd88e0b3f594e548b27",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a, ¿qué endpoint uso para comprobar si una marca se puede activar antes de activarla, qué parámetro necesita y qué trae la respuesta cuando la marca no cumple los requisitos?",
+    "respuesta": "Para saber si una marca se puede activar se usa `GET /{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L272-L276]. La ruta completa es `/catalog/brands/{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L31-L31]. Solo necesita un parámetro de ruta, `brandId`: es el ID de la marca, de tipo integer y obligatorio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L278-L282]. La llamada de ejemplo es un `curl` simple contra `https://api.mp.internal.retailflow.com/catalog/brands/123/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L284-L288].\n\nCuando la marca no cumple los requisitos, la respuesta de ejemplo trae un array `validationDetails` con los motivos en texto, como \"Main logo is missing\" y \"Category validation failed\" [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L295-L298].",
+    "answer_checks": [
+     "Indica que el endpoint es GET /{brandId}/activable (o /catalog/brands/{brandId}/activable).",
+     "Indica que el parámetro de ruta brandId es integer y obligatorio.",
+     "Menciona que la respuesta incluye validationDetails con los motivos por los que la marca no se puede activar (por ejemplo, que falta el logo principal o que falló la validación de la categoría).",
+     "Cita la sección Check Brand Activable de brands.md de la versión 0.0.1-test-bench-v2a.",
+     "No inventa otros parámetros, headers ni campos de respuesta que no estén documentados."
+    ]
+   }
+  },
+  {
+   "clave": "128df4ba793393e104f740655801e2b1f0d5017325e0481b794ecaadc3804875",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En catalog-portfolio-api 0.0.1-test-bench-v2a quiero comprobar si una marca se puede activar antes de llamar a activate. ¿Qué método y qué ruta tengo que usar, qué parámetros recibe y cómo sería la llamada?",
+    "respuesta": "Para comprobar si una marca se puede activar, se usa `GET /{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L272-L276]. Sobre la base de la API, la ruta completa queda `/catalog/brands/{brandId}/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L31-L31].\n\nSolo recibe un parámetro de ruta, `brandId`, que es el ID de la marca, de tipo integer y obligatorio [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L278-L282].\n\nLa llamada de ejemplo es un `curl` simple, sin cuerpo ni headers, contra `https://api.mp.internal.retailflow.com/catalog/brands/123/activable` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md:L284-L288].",
+    "answer_checks": [
+     "Indica que el método es GET y que la ruta es /{brandId}/activable (o /catalog/brands/{brandId}/activable).",
+     "Indica que el único parámetro documentado es brandId, un parámetro de ruta de tipo integer y obligatorio.",
+     "Muestra o describe la llamada de ejemplo con curl a /catalog/brands/{id}/activable.",
+     "Cita la sección Check Brand Activable de brands.md de la versión 0.0.1-test-bench-v2a.",
+     "No inventa otros parámetros, headers ni cuerpo de petición que no estén documentados."
+    ]
+   }
+  }
+ ]
+}

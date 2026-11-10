@@ -1,0 +1,25 @@
+{
+ "task_id": "validation-sin_evidencia-005",
+ "llamadas": [
+  {
+   "clave": "362ef5d9df40bba8670e791d86f48bba7be7e55957865230387129ce81e72555",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy usando catalog-portfolio-api 0.0.1-test-bench-v2a y necesito asociar una marca con varios collectors. ¿Qué cuerpo tengo que mandar en la petición y qué campos son obligatorios?",
+    "respuesta": "En la versión 0.0.1-test-bench-v2a, la operación para asociar una marca con collectors solo aparece en la tabla de referencia rápida: `POST /catalog/brands/{brandId}/collectors`, descrita como «Associate brand with collectors» [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md:L48-L48]. Ningún documento de esa versión detalla este endpoint. No se describe el cuerpo de la petición, ni los campos obligatorios, ni la respuesta, así que con esta documentación no puedo decirte qué tienes que enviar.",
+    "answer_checks": [
+     "Identifica el endpoint POST /catalog/brands/{brandId}/collectors y lo cita de la tabla de referencia de la versión 0.0.1-test-bench-v2a.",
+     "Indica que la documentación entregada no describe el cuerpo de la petición ni los campos obligatorios de ese endpoint.",
+     "No inventa campos del cuerpo (por ejemplo, una lista de collector_ids) ni requisitos de obligatoriedad.",
+     "No afirma que el endpoint no exista o que no acepte cuerpo; solo dice que no está documentado."
+    ]
+   }
+  }
+ ]
+}

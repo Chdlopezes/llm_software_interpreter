@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-008",
+ "llamadas": [
+  {
+   "clave": "40c6f902f71746db90dc0aa571a0dcfdc0996b3222b5eb56ba74e80d193c4dbc",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Voy a montar catalog-portfolio-api en mi máquina para desarrollo local. ¿Cómo me bajo el repositorio para empezar?",
+    "respuesta": "Las dos versiones documentadas (0.0.1-test-bench-v2a y latest) explican igual el primer paso de la configuración local. Clonas el repositorio con la RetailFlow CLI, que es la vía recomendada, ejecutando `retailflow get catalog-portfolio-api`, y luego entras en el directorio del proyecto con `cd catalog-portfolio-api` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L19-L26] [catalog-portfolio-api/latest/guide/setup/local-development.md:L19-L26].\n\nPara eso necesitas tener instalada la RetailFlow CLI en su última versión. Está en la lista de requisitos previos, junto con Git [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L12-L13] [catalog-portfolio-api/latest/guide/setup/local-development.md:L12-L13].",
+    "answer_checks": [
+     "Llama a la herramienta con version=null y no pide la versión al usuario.",
+     "Indica que el repositorio se clona con el comando `retailflow get catalog-portfolio-api` de la RetailFlow CLI, que es el método recomendado.",
+     "Menciona que después hay que entrar en el directorio con `cd catalog-portfolio-api`.",
+     "Indica que este paso es igual en 0.0.1-test-bench-v2a y en latest, citando ambas versiones o dejando claro que no cambia.",
+     "No inventa otros métodos de clonado (por ejemplo, una URL de git clone) que no aparecen en los documentos."
+    ]
+   }
+  }
+ ]
+}

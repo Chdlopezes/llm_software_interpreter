@@ -1,0 +1,47 @@
+{
+ "task_id": "train-version_explicita-014",
+ "llamadas": [
+  {
+   "clave": "69361f348e71c98aa5539b1982a32dcafb282cac795fc923e9d40d59ca29f15f",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, cuando se valida un pipeline cuyo pull request es una migración, ¿qué pasos extra hace el servicio y en qué momento del flujo ocurren?",
+    "respuesta": "Los pasos de migración van justo después de las validaciones de ramas (\"Run branch validations\") [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L145-L145]. Si el pipeline es una migración (`isMigration`), Workflow API entra en un bucle que se repite mientras `remainingPages > 0`. En cada vuelta pide a GH Proxy la información de los archivos del diff, paginada, y recibe esa información. Al terminar el bucle, valida la ruta de migración de los archivos (\"Validate files migration path\") [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L146-L154].\n\nDespués de esa rama condicional, el flujo sigue igual que para cualquier pipeline:\n1. Fija el status check del pull request en GH Proxy [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L155-L158].\n2. Guarda el resultado de la ejecución del pipeline en la base de datos [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L159-L162].\n3. Envía un ACK al Orchestrator a través de BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L163-L166].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 5.6.2-hotfix-1.",
+     "Indica que, en el caso de migración, se piden a GH Proxy los archivos del diff de forma paginada en un bucle mientras queden páginas (remainingPages > 0).",
+     "Indica que después se valida la ruta de migración de los archivos.",
+     "Sitúa estos pasos después de las validaciones de ramas y antes de fijar el status check del pull request.",
+     "Cita el diagrama de validación de pipeline de use-cases.md sin citar las líneas 13 ni 169."
+    ]
+   }
+  },
+  {
+   "clave": "d12224930cc46ab043286f4bdcad1028163af07b2fec0683c5cf466b4f6467de",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En order-workflow-api 5.6.2-hotfix-1, cuando se valida un pipeline cuyo pull request es una migración, ¿qué pasos extra hace el servicio y en qué momento del flujo ocurren?",
+    "respuesta": "En el diagrama de validación de pipeline, G es GH Proxy y B es BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L113-L117].\n\nLos pasos de migración van justo después de las validaciones de ramas («Run branch validations») [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L145-L145]. Si el pipeline es una migración (`isMigration`), Workflow API entra en un bucle que se repite mientras `remainingPages > 0`. En cada vuelta pide a GH Proxy la información de los archivos del diff, paginada, y recibe esa información. Al salir del bucle, valida la ruta de migración de los archivos («Validate files migration path») [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L146-L154].\n\nDespués de esa rama condicional, el flujo continúa así:\n1. Fija el status check del pull request en GH Proxy [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L155-L158].\n2. Guarda el resultado de la ejecución del pipeline en la base de datos [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L159-L162].\n3. Envía un ACK al Orchestrator a través de BigQ [order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md:L163-L166].",
+    "answer_checks": [
+     "Llama a obtener_documentacion con software order-workflow-api y versión 5.6.2-hotfix-1.",
+     "Indica que, si es una migración, se piden a GH Proxy los archivos del diff de forma paginada, en un bucle que se repite mientras queden páginas (remainingPages > 0).",
+     "Indica que después del bucle se valida la ruta de migración de los archivos.",
+     "Sitúa estos pasos después de las validaciones de ramas y antes de fijar el status check del pull request.",
+     "Cita el diagrama de validación de pipeline de use-cases.md sin citar las líneas 13 ni 169, y no atribuye a participantes (como BigQ o GH Proxy) acciones sin citar las líneas que los identifican."
+    ]
+   }
+  }
+ ]
+}

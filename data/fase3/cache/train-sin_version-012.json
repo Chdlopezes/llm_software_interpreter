@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-012",
+ "llamadas": [
+  {
+   "clave": "7a4278ba8e9bfaf6c5044690cd35c6c781e8062f1537447a5f14b1e9de96c871",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En zenith-keeper, ¿qué endpoint uso para registrar un pedido con una lista de productos? Necesito saber qué cuerpo le mando y qué me devuelve si todo va bien.",
+    "respuesta": "La documentación de zenith-keeper que recibí es de la versión 1.1.6. Ahí la operación aparece como `POST /api/v1/fresh-products/orders`, con la etiqueta `Products`, el resumen \"Inserts order with products list\" y el operationId `addProductListOrder` [zenith-keeper/1.1.6/specs/swagger.yaml:L98-L103].\n\n**Cuerpo de la petición:** es obligatorio, va en `application/json` y sigue el esquema `PurchaseDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L104-L109]. `PurchaseDTO` tiene una sola propiedad, `purchaseOrder`, de tipo `PurchaseOrderDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L450-L454]. A su vez, `PurchaseOrderDTO` contiene estos campos [zenith-keeper/1.1.6/specs/swagger.yaml:L436-L449]:\n- `date` (LocalDate)\n- `buyerId` (string)\n- `orderStatus` (un `OrderStatusDTO`)\n- `products`: un array de `ProductsDTO`\n\nCada `ProductsDTO` lleva `productId` (string) y `quantity` (integer) [zenith-keeper/1.1.6/specs/swagger.yaml:L429-L435]. `OrderStatusDTO` lleva `statusCode` (string) [zenith-keeper/1.1.6/specs/swagger.yaml:L424-L428].\n\n**Respuesta si todo va bien:** un `201 CREATED` en `application/json` con un `PricePurchaseOrderDTO` [zenith-keeper/1.1.6/specs/swagger.yaml:L110-L116]. Ese objeto contiene `totalPrice`, con formato Long [zenith-keeper/1.1.6/specs/swagger.yaml:L455-L460].",
+    "answer_checks": [
+     "Indica que el endpoint es POST /api/v1/fresh-products/orders y atribuye el dato a la versión 1.1.6 documentada, sin pedir la versión al usuario.",
+     "Indica que el cuerpo es obligatorio y sigue el esquema PurchaseDTO, que contiene purchaseOrder.",
+     "Indica que si va bien la respuesta es 201 CREATED con un PricePurchaseOrderDTO, que contiene totalPrice.",
+     "No se apoya en la respuesta 400 ERROR del endpoint ni inventa otros códigos de error.",
+     "Cita líneas del documento zenith-keeper/1.1.6/specs/swagger.yaml que respaldan cada afirmación."
+    ]
+   }
+  }
+ ]
+}

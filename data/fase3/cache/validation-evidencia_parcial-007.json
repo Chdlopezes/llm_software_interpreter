@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-007",
+ "llamadas": [
+  {
+   "clave": "7fc00cd46138d6506cda24fbc1c2fdc40b231e83075c052ff456dc86505b3dba",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm getting catalog-portfolio-api 0.0.1-test-bench-v2a running on my machine. What MySQL version does it need, and how exactly do I configure the database connection (URL, credentials, which settings to put where) before starting the service?",
+    "respuesta": "The service needs MySQL 8.0 or higher [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L42-L42][catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md:L11-L11]. In the quick start, database configuration is a step between building the project with `./gradlew build` and running the service with `./gradlew run` [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L28-L31][catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md:L34-L35].\n\nThe documentation doesn't explain how to do that step, though. It doesn't give the connection URL, the credentials, the property names, or which file the settings go in. So I can't tell you how to configure the connection from these docs. All it offers is a way to check connectivity afterwards: run `mysql -h localhost -u your_username -p -e \"SELECT 1;\"` and check that a `brands_%` database exists [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md:L34-L40].",
+    "answer_checks": [
+     "States that MySQL 8.0 or higher is required.",
+     "Indicates that the quick start includes a database configuration step between building and running the service.",
+     "Declares that the documentation does not describe how to configure the database connection (URL, credentials, properties or file).",
+     "Does not invent connection properties, JDBC URLs, credential values or a configuration file location for the database.",
+     "Does not abstain from the documented part (the MySQL version requirement)."
+    ]
+   }
+  }
+ ]
+}

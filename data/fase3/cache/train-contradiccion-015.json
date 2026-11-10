@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-015",
+ "llamadas": [
+  {
+   "clave": "ffdae8e85dbeb5b612f931b9ace0d1e3984f0b3a09ed58887e2cef36dbb2c8a4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando la doc de la API de vendor-stockkeeper-api 0.0.3-paused-seller. En la tabla de servicios, el enlace de Restock Consumer no me lleva a ningún lado. ¿Qué sección documenta realmente esa operación y qué muestra?",
+    "respuesta": "La documentación no es coherente en este punto. En la tabla de servicios, Restock Consumer aparece como POST, y su enlace apunta al ancla `#get-branches-by-vendor-id` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L17-L17]. Ese ancla lleva el nombre de otra operación («get branches by vendor id»), y las secciones de la página son «Restock Consumer» y «Feed Consumer» [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L22] [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L36-L36]. Ninguna se llama así.\n\nLa página sí incluye una sección titulada «Restock Consumer» [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L22-L23]. En ella, el ejemplo envía los headers `x-api-scope: stage` y `Content-Type: application/json`, y un cuerpo JSON con `msg.inbound_shipment_id`. La respuesta mostrada es `200 OK` [vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md:L26-L34].\n\nCon esta documentación no puedo confirmar si el enlace de la tabla debía apuntar a esa sección o si se refiere a otra operación que no está documentada en la página.",
+    "answer_checks": [
+     "Indica que el enlace de Restock Consumer en la tabla apunta al ancla #get-branches-by-vendor-id, citando esa fila solo para mostrar el conflicto.",
+     "Señala que ese ancla nombra otra operación y que no hay en la página una sección con ese nombre.",
+     "Menciona la sección «Restock Consumer» de la página y describe lo que contiene (headers, cuerpo con msg.inbound_shipment_id, 200 OK), con citas.",
+     "No afirma que el ancla esté confirmada como un simple error tipográfico, ni que se refiera con certeza a una operación concreta: explica la discrepancia sin resolverla.",
+     "No inventa una operación «get branches by vendor id» ni su contenido."
+    ]
+   }
+  }
+ ]
+}

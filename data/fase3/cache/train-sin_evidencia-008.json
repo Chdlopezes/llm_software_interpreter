@@ -1,0 +1,47 @@
+{
+ "task_id": "train-sin_evidencia-008",
+ "llamadas": [
+  {
+   "clave": "e80ccf7cdbd8426e8dea42134629f90c41ad9dffddd55172c5a740f6c3bf4804",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api latest, ¿qué devuelve el endpoint Internal Item Detail y qué headers hay que mandarle?",
+    "respuesta": "La documentación de vendor-stockkeeper-api latest no me permite responder eso. En la guía de la API, las únicas operaciones que tienen una sección con detalle son Restock Consumer [vendor-stockkeeper-api/latest/guide/api.md:L22-L22] y Feed Consumer [vendor-stockkeeper-api/latest/guide/api.md:L36-L36]. Para Internal Item Detail no hay ninguna sección equivalente en ningún documento de esta versión. Por eso no puedo decirte qué devuelve ni qué headers necesita. Que no esté documentado no significa que el endpoint no exista ni que no tenga headers propios.",
+    "answer_checks": [
+     "Indica que la documentación de latest no describe la respuesta ni los headers de Internal Item Detail.",
+     "No inventa campos de respuesta, headers ni códigos de estado para Internal Item Detail.",
+     "No toma los headers de Restock Consumer o Feed Consumer como si fueran los de Internal Item Detail.",
+     "No afirma que el endpoint no exista ni que no devuelva nada.",
+     "Si cita algo relacionado, las citas apuntan a líneas citables de vendor-stockkeeper-api/latest/guide/api.md (no a la línea 19)."
+    ]
+   }
+  },
+  {
+   "clave": "cf4aea69b2e0f019794f9de2c925ad189eb80a6f4c104fc5daf441ad65118f0a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api latest, ¿qué me devuelve Internal Item Detail cuando lo llamo? Quiero saber la estructura de la respuesta.",
+    "respuesta": "Con la documentación de vendor-stockkeeper-api latest no puedo decirte qué devuelve Internal Item Detail. No aparece la estructura de su respuesta, ni campos ni códigos de estado. La guía de la API sí detalla otras operaciones. Por ejemplo, para Feed Consumer da un ejemplo de llamada con curl y la respuesta `200 OK` [vendor-stockkeeper-api/latest/guide/api.md:L36-L48]. Para Internal Item Detail no hay nada parecido. Que no esté documentado no quiere decir que el endpoint no exista ni que no devuelva datos.",
+    "answer_checks": [
+     "Indica que la documentación de latest no describe la respuesta de Internal Item Detail.",
+     "No inventa campos, estructura ni códigos de estado para la respuesta de Internal Item Detail.",
+     "No presenta la respuesta de Feed Consumer o Restock Consumer como si fuera la de Internal Item Detail.",
+     "No afirma que el endpoint no exista ni que no devuelva nada.",
+     "Si cita algo relacionado, las citas apuntan a líneas citables de los documentos de latest (no a la línea 19 de api.md)."
+    ]
+   }
+  }
+ ]
+}

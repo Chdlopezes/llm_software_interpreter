@@ -1,0 +1,26 @@
+{
+ "task_id": "test-sin_version-003",
+ "llamadas": [
+  {
+   "clave": "87b247266440a419309b15035a283de14713a46a31ccda829b3be0478376acb8",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "How do I authenticate my calls to traffic-gate-api, and what does the body look like when a request fails?",
+    "respuesta": "This comes from the `latest` traffic-gate-api spec, which is the only version in the documentation I got back.\n\nAuthentication: the API applies the `ApiKeyAuth` security scheme globally [traffic-gate-api/latest/specs/swagger.yaml:L21-L22]. That scheme is an API key sent in a header named `X-Tiger-Token` [traffic-gate-api/latest/specs/swagger.yaml:L308-L311].\n\nError body: the 400 (Bad request) and 500 (Internal server error) responses return an `ErrorResponse` schema [traffic-gate-api/latest/specs/swagger.yaml:L57-L68]. It's an object with one string field, `error`. The spec's example value is `bad_input` [traffic-gate-api/latest/specs/swagger.yaml:L388-L393].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that authentication is an API key sent in the X-Tiger-Token header (ApiKeyAuth scheme), citing the swagger components section.",
+     "States that error responses (400/500) use ErrorResponse, an object with a single string field 'error'.",
+     "Attributes the information to the latest version without claiming that no other versions exist.",
+     "Does not present the example value 'bad_input' as the only possible error value, and does not invent other error codes or auth mechanisms."
+    ]
+   }
+  }
+ ]
+}

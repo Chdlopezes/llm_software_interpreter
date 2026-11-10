@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_documentos-004",
+ "llamadas": [
+  {
+   "clave": "be37e0db7ad1980e2c28b3741a2a065dd9d4e3140bab87c3c9fd8d6214420a8e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy revisando catalog-portfolio-api 0.0.1-rc: ¿cómo está planteado el servicio para ofrecer alta disponibilidad y escalar dentro de la plataforma de catálogo?",
+    "respuesta": "No hay documentación de catalog-portfolio-api 0.0.1-rc en el catálogo, así que no puedo explicarte cómo está planteada su disponibilidad ni su escalabilidad. Si quieres, puedo consultar la documentación de las versiones disponibles de catalog-portfolio-api.",
+    "answer_checks": [
+     "Llama a la herramienta con software catalog-portfolio-api y versión 0.0.1-rc, y recibe not_found.",
+     "Explica que no hay documentación para catalog-portfolio-api 0.0.1-rc.",
+     "No describe la arquitectura, el framework ni los mecanismos de disponibilidad o escalabilidad del servicio.",
+     "No incluye citas a documentos.",
+     "No pide al usuario que indique la versión; como mucho ofrece consultar las versiones disponibles."
+    ]
+   }
+  }
+ ]
+}

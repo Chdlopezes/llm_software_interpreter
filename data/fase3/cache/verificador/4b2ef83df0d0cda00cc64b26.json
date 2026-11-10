@@ -1,0 +1,62 @@
+{
+ "task_id": "verificador/4b2ef83df0d0cda00cc64b26",
+ "llamadas": [
+  {
+   "clave": "4b2ef83df0d0cda00cc64b26574df800a5110c7b7e81f8b419ec8a5fb7a8d51d",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-version_explicita-035",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta natural en español, nombra zenith-keeper y la versión 1.1.6, que coinciden con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Los esquemas indican productId como string y warehouses como array de WarehouseDTOResp (swagger.yaml:L501-L509); WarehouseDTOResp contiene warehouseCode (string) y totalQuantity (integer) (L494-L500). La respuesta 200 referencia ProductQuantityDTOResp (L219-L224)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica los campos del esquema y cómo se desglosa el stock por almacén, según L494-L509."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan los campos, tipos y referencia de la respuesta 200; todas corresponden a líneas citables de un documento entregado (L219-L224, L494-L509)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre los esquemas y el endpoint llevan citas a L219-L224 y L494-L509."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "La documentación entregada contiene los esquemas necesarios para responder (L494-L509)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde usando la información documentada en L494-L509."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta describe coherentemente los campos y tipos indicados en L494-L509."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto entre fuentes."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables contra L494-L509 y L219-L224, coinciden con la respuesta y no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "task_id": "test-falta_software-003",
+ "llamadas": [
+  {
+   "clave": "aa03631a07247f6a56a29ec1966dd18ca21e1f0de0b90f8beea86d70b624255d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Necesito consultar el historial completo de bloqueos de una IP, sin filtrar por fechas. ¿Qué tengo que mandar en el body de esa petición y qué me devuelve si le paso algo mal?",
+    "respuesta": "¿Sobre qué software es tu consulta?",
+    "answer_checks": [
+     "No llama a la herramienta obtener_documentacion.",
+     "Pregunta al usuario por el software al que se refiere la consulta.",
+     "No pregunta por la versión.",
+     "No da una respuesta técnica (no menciona endpoints, campos del body ni códigos de respuesta)."
+    ]
+   }
+  }
+ ]
+}

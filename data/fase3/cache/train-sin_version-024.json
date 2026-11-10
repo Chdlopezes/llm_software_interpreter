@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-024",
+ "llamadas": [
+  {
+   "clave": "94db80240f9b67e04137cbc6ed9ded167b1805a019f1f2a599cfeac4213a5b29",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In zenith-keeper, how do I check how much stock of a product there is in each warehouse? What do I need to pass, and what does the response contain?",
+    "respuesta": "The documentation I got back covers version 1.1.6 of zenith-keeper, so everything below comes from that version.\n\nThis is a GET operation under the Warehouse tag. Its summary is \"Get product stock in all warehouse it appears\" and its operationId is `searchQuantityOfProductsByWarehouse` [zenith-keeper/1.1.6/specs/swagger.yaml:L207-L211]. It takes one parameter, `productId`. It's a string, it goes in the path, and it's required [zenith-keeper/1.1.6/specs/swagger.yaml:L212-L217].\n\nA successful call returns HTTP 200 with a `ProductQuantityDTOResp` body [zenith-keeper/1.1.6/specs/swagger.yaml:L218-L224]. That object holds the `productId` (string) and a `warehouses` array of `WarehouseDTOResp` items [zenith-keeper/1.1.6/specs/swagger.yaml:L501-L509]. Each item has a `warehouseCode` (string) and a `totalQuantity` (integer) [zenith-keeper/1.1.6/specs/swagger.yaml:L494-L500]. If the product isn't found, the spec gives a 404 \"Not Found\" response whose body is a generic object [zenith-keeper/1.1.6/specs/swagger.yaml:L225-L230].",
+    "answer_checks": [
+     "Says the required input is a `productId` path parameter of type string.",
+     "Says a successful response is HTTP 200 with a `ProductQuantityDTOResp` containing `productId` and a `warehouses` array.",
+     "Describes each warehouse entry as having `warehouseCode` and `totalQuantity`, citing the WarehouseDTOResp schema.",
+     "Mentions the 404 Not Found response, and attributes the information to version 1.1.6 without claiming it is the only version that exists.",
+     "Does not ask the user for a version and does not invent fields or status codes absent from the spec."
+    ]
+   }
+  }
+ ]
+}

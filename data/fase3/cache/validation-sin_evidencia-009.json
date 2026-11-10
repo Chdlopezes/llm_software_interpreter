@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_evidencia-009",
+ "llamadas": [
+  {
+   "clave": "33f7e11fcc19cd5bbf5363d15e0700fce66bfffba96d3beb3c275e2921f84495",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En price-engine-api latest, ¿cómo es la arquitectura del servicio? Necesito saber qué componentes internos tiene y de qué bases de datos u otros servicios depende para devolver las zonas moderadas.",
+    "respuesta": "No he encontrado en la documentación de price-engine-api latest nada que describa la arquitectura del servicio. Ningún documento indica qué componentes internos tiene ni de qué bases de datos o servicios depende, así que no puedo responder a eso.\n\nLo que sí está documentado:\n\n- **Para qué sirve:** la aplicación gestiona y modela los ajustes de configuración de ventas del seller [price-engine-api/latest/specs/swagger.yaml:L11-L11].\n- **Endpoint de zonas moderadas:** es `GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1`. Devuelve un array con las zonas del seller moderado por cobertura [price-engine-api/latest/specs/swagger.yaml:L24-L31].\n\nNinguna de las dos cosas explica cómo obtiene el servicio esos datos por dentro.",
+    "answer_checks": [
+     "Indica que la documentación entregada de latest no describe los componentes internos ni las dependencias (bases de datos u otros servicios) de la arquitectura.",
+     "No inventa componentes, bases de datos ni servicios de los que dependa price-engine-api.",
+     "No afirma que el servicio no tenga dependencias ni que la arquitectura no exista; solo que no está documentada.",
+     "Si menciona información relacionada (propósito de la aplicación o el endpoint de cobertura), la cita del swagger.yaml de latest con un rango que la respalde.",
+     "No cita como respaldo las líneas del documento arquitectura.md (no citables)."
+    ]
+   }
+  }
+ ]
+}

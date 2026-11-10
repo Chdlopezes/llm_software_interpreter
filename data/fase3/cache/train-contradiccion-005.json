@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-005",
+ "llamadas": [
+  {
+   "clave": "3ad3f7f710807461d6e20883c0867b739defe56b585975d40049d8a812b0a4db",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In demand-forecast-docs latest, where do the ingest classes live in the project? I want to import IngestMarketplaceData in a notebook and I'm not sure if the package is app or marketplace.",
+    "respuesta": "The documentation contradicts itself here. The overview gives the ingest classes' location as `src/app/pipes/ingest` [demand-forecast-docs/latest/guide/overview.md:L279-L279]. But the notebook examples on the same page import them from the `marketplace` package: `from marketplace.pipes.ingest.ingest_timeseries import IngestMarketplaceData` [demand-forecast-docs/latest/guide/overview.md:L839-L839], `from marketplace.pipes.ingest.holidays_and_campaigns import HolidaysDatasetPipe` [demand-forecast-docs/latest/guide/overview.md:L872-L872] and `from marketplace.pipes.ingest import HolidaysDatasetPipe, IngestMarketplaceData` [demand-forecast-docs/latest/guide/overview.md:L888-L888]. One passage says the package is `app` and the code examples use `marketplace`. With this documentation alone, I can't confirm which one matches the current code.",
+    "answer_checks": [
+     "Calls the tool with software demand-forecast-docs and version latest.",
+     "Cites the overview line that places the ingest classes at src/app/pipes/ingest.",
+     "Cites at least one notebook example that imports the ingest classes from marketplace.pipes.ingest.",
+     "Explains that the two disagree and does not present either app or marketplace as the confirmed package.",
+     "Does not invent extra explanations (e.g. a rename or a package alias) that the documents don't contain."
+    ]
+   }
+  }
+ ]
+}

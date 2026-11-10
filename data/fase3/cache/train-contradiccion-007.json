@@ -1,0 +1,26 @@
+{
+ "task_id": "train-contradiccion-007",
+ "llamadas": [
+  {
+   "clave": "5e59009ee5b79b99c01be90daa0fe9fe18e051032020c26d22f5ae6fbd5f0c73",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In payment-promise-gateway 0.0.10-test-crc-migration, can I send CREDIT_CARD as the paymentMethod when creating a payment promise with POST /payment_promise, or is that not one of the accepted methods?",
+    "respuesta": "The documentation for this version contradicts itself here. The curl example for POST /payment_promise sends `\"paymentMethod\": \"CREDIT_CARD\"` in the request body [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L351-L351]. However, GET /payment_promise/form is described as the endpoint for querying the available payment methods [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L121-L121], and its example response lists only CASH, DEBIT and ACCOUNT_MONEY in `payment_methods`. CREDIT_CARD is not among them [payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L392-L408]. From this documentation alone I can't confirm whether CREDIT_CARD is accepted. A practical check is to call GET /payment_promise/form for your user and site and see which methods it returns.",
+    "answer_checks": [
+     "Calls the tool with software payment-promise-gateway and version 0.0.10-test-crc-migration.",
+     "Cites the POST /payment_promise example that uses CREDIT_CARD as paymentMethod.",
+     "Cites the GET /payment_promise/form example response listing only CASH, DEBIT and ACCOUNT_MONEY.",
+     "Explains the discrepancy without stating as fact that CREDIT_CARD is or is not accepted.",
+     "Does not invent a list of accepted payment methods beyond what the documents show."
+    ]
+   }
+  }
+ ]
+}

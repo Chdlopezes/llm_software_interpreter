@@ -1,0 +1,26 @@
+{
+ "task_id": "test-evidencia_parcial-001",
+ "llamadas": [
+  {
+   "clave": "9aed203f718410d8efe1859d5a31235dcf950c2bf624ebd03066c54569e71ed9",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En 2p-revenue-optimizer-api 0.2.2, ¿qué datos guarda exactamente la tabla rule_header y qué columnas tiene? Quiero saber cuáles admiten nulos.",
+    "respuesta": "Sobre las columnas, la tabla rule_header de la versión 0.2.2 tiene `id` (bigint, not null, clave primaria autoincremental) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L9-L9], `created_date` (timestamp, not null, fecha de creación, con DEFAULT_GENERATED) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L11-L11], `username` (varchar(180), not null, usuario que creó la regla) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L12-L12], `name` y `description` (varchar(180), not null, nombre y descripción de la regla) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L13-L14], `productive` (boolean, not null, indica si es productiva) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L15-L15] y `productive_date` (timestamp, admite null, fecha en que pasa a productiva) [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md:L16-L16]. Entre estas columnas, la única que admite nulos es `productive_date`. Además, la tabla rule_row hace referencia a ella mediante `rule_id`, que apunta a `rule_header(id)` [2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md:L10-L10].\n\nLo que la documentación no explica es qué datos guarda la tabla en sí: la frase que debería describir su contenido está incompleta, así que no puedo decir qué representa cada registro más allá de lo que se deduce de las columnas.",
+    "answer_checks": [
+     "Enumera columnas documentadas de rule_header (por ejemplo id, created_date, username, name, description, productive, productive_date) con citas al documento rule_header.md.",
+     "Indica que productive_date es la columna que admite nulos, y que id, created_date, username, name, description y productive son not null.",
+     "Declara que la documentación no explica qué datos guarda la tabla rule_header, porque la descripción está incompleta.",
+     "No inventa una descripción del propósito de la tabla ni de la columna type.",
+     "No se abstiene en la parte de columnas, que sí está documentada."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/9a89667e98a23e0b319286aa",
+ "llamadas": [
+  {
+   "clave": "9a89667e98a23e0b319286aa893eb04b8029dfa972eedddabd7272524c23f7f7",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-contradiccion-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés nombra el software y la versión de la llamada, y pregunta por la aceptación de CREDIT_CARD."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta distingue el ejemplo de POST, que incluye CREDIT_CARD (L344-L355), de los métodos que aparecen en el ejemplo de respuesta del formulario (L392-L408), sin afirmar que uno determine la aceptación."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que la documentación no permite confirmar si CREDIT_CARD se acepta y propone consultar el formulario, descrito como fuente de opciones disponibles (L120-L121)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas sostienen las afirmaciones; la cita del ejemplo de petición incluye líneas no citables, permitido para mostrar el conflicto en esta situación (L344-L355)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el cuerpo de POST y las opciones del formulario tienen citas (L344-L355, L392-L408)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "No concluye que CREDIT_CARD sea aceptado o rechazado; señala que no puede confirmarlo a partir de estos ejemplos (L344-L355, L392-L408)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Usa la evidencia disponible de ambos ejemplos y responde que no basta para confirmar la aceptación (L344-L355, L392-L408)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados el método del ejemplo de petición y los métodos listados en el ejemplo de respuesta."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Expone la discrepancia entre los ejemplos y no decide arbitrariamente si CREDIT_CARD es aceptado (L344-L355, L392-L408)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a los ejemplos y a la cautela de la respuesta; no exigen una formulación específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-contradiccion-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español especifica software y versión, y pregunta quién proporciona dateCreated en POST."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El diagrama indica que el servicio calcula dateCreated (L197-L202), mientras que el ejemplo curl lo incluye en el cuerpo de la petición (L344-L355)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica ambas indicaciones y que la documentación no aclara cómo se resuelve su discrepancia (L197-L202, L344-L355)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan las dos fuentes en conflicto; las líneas no citables del ejemplo se usan para mostrar el conflicto, permitido en esta situación (L344-L355)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas sobre el diagrama, el cuerpo de la petición y la falta de aclaración están respaldadas por citas (L197-L202, L344-L355)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no puede confirmar cuál indicación rige y no afirma que el campo sea obligatorio, opcional o ignorado."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha ambas fuentes disponibles en vez de abstenerse sin explicar la discrepancia (L197-L202, L344-L355)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Mantiene separados el cálculo indicado en el diagrama y el campo incluido en el ejemplo."
+       },
+       "conflictos": {
+        "resultado": "cumple",
+        "justificacion": "Identifica las dos indicaciones y no elige una arbitrariamente (L197-L202, L344-L355)."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en las fuentes citadas y no imponen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés identifica software y versión, y pregunta por endpoints y códigos de respuesta."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La lista coincide con los siete endpoints principales (L104-L112); la documentación remite el detalle a specs-hub (L114) y solo menciona genéricamente códigos HTTP (L530-L533)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da la lista documentada y distingue esa información de los códigos por endpoint, que no aparecen en los documentos entregados (L104-L114, L530-L533)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la lista y la remisión a specs-hub; también respaldan la mención general de códigos HTTP (L104-L114, L530-L533)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables tienen cita (L104-L114, L530-L533)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que no están detallados los códigos por endpoint, sin afirmar que no existan códigos o que la especificación no exista (L114, L530-L533)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la parte documentada con los siete endpoints en vez de abstenerse por completo (L104-L112)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la lista de endpoints de la información ausente sobre sus códigos de respuesta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay un conflicto entre documentos o afirmaciones que deba resolverse."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la lista presente y a los límites de la documentación; no exigen códigos no documentados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español nombra software y versión, y separa los endpoints de los campos y tipos que solicita."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La lista coincide con los endpoints principales (L104-L112); POST /payment_promise requiere un PromiseCommand (L286-L289), pero no se detalla su esquema."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Responde la lista y el requisito de usar PromiseCommand, y explica que los campos obligatorios y sus tipos no están especificados aquí (L104-L114, L286-L289)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan tanto la lista y el requisito de PromiseCommand como la remisión a specs-hub (L104-L114, L286-L289)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables están citadas (L104-L114, L286-L289)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Señala que esos campos y tipos no están documentados en los documentos entregados, sin negar que existan (L114, L286-L289)."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Responde la lista de endpoints y el requisito documentado del objeto en vez de abstenerse por completo (L104-L112, L286-L289)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde el requisito del objeto PromiseCommand con un esquema de campos que no está detallado."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta un conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan lo documentado y no deducen el esquema a partir del ejemplo curl."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-evidencia_parcial-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español nombra software y versión, y pide tanto la ubicación de excepciones como detalles de respuestas de error."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "El árbol del proyecto incluye exceptions/ bajo la ruta indicada (L51-L61); la sección de errores enumera solo pautas generales (L530-L536)."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Indica la ubicación documentada y señala que no se especifican los códigos concretos ni la estructura JSON del error (L51-L61, L530-L536)."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas respaldan la ruta y las pautas generales de manejo de errores (L51-L61, L530-L536)."
+       },
+       "cobertura_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las afirmaciones técnicas verificables tienen cita (L51-L61, L530-L536)."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Identifica qué detalles faltan en la documentación entregada, sin afirmar que no existan códigos o estructura de error."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Contesta la ubicación de exceptions/ aunque los detalles de respuesta de error no estén documentados (L51-L61)."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "Distingue la ubicación del directorio de las pautas generales y de los detalles no especificados."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental que identificar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables en el árbol y la sección de errores, y no exigen detalles ausentes."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, pero omite el software, por lo que corresponde pedir una aclaración sin llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La situación requiere una aclaración y no una respuesta técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta brevemente por el software, que es el dato faltante."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la aclaración no requiere citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se recibió documentación ni se intenta responder sobre evidencia técnica."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "Pedir el software es la acción adecuada cuando falta ese dato."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la pregunta y la ausencia de software."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni hay conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks requieren aclarar el software y evitar una respuesta técnica, en línea con la situación."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-006",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta es natural, pero no identifica el software; corresponde una aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no debe incluir contenido técnico en esta situación."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta sobre qué software se trata, sin pedir la versión."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la respuesta no contiene citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que requieran citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se intenta responder a partir de documentación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La aclaración es necesaria al faltar el software."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la consulta sin software identificado."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks verifican que se pida el software y no se responda técnicamente ni se pregunte la versión."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-010",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, pero no identifica el proyecto; corresponde pedir esa aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta requerida es una aclaración, no una afirmación técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta de qué software es el proyecto que se quiere compilar."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no se necesitan citas para la aclaración."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se intenta responder sobre prerrequisitos sin identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "Pedir el software es necesario para continuar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la omisión del software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la aclaración esperada y evitan una respuesta técnica prematura."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta sobre el flujo de confirmación es natural, pero no nombra el software; corresponde pedirlo."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se espera una respuesta técnica antes de aclarar el software."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Solicita el software y no añade información técnica."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni se incluyen citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no contiene afirmaciones técnicas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se intenta determinar el método o los identificadores sin documentación."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La aclaración es necesaria porque no se identifica el software."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene el foco en obtener el dato que falta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan la aclaración requerida y prohíben correctamente la respuesta técnica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La consulta sobre una tarea de Gradle es natural, pero no identifica el software o proyecto."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "No se espera una respuesta técnica antes de identificar el proyecto."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Pregunta qué software o proyecto es, sin pedir versión."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la aclaración no necesita citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No intenta recomendar una tarea sin conocer el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "Solicitar el proyecto es la acción adecuada."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la información faltante."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con la situación y evitan dar una tarea sin saber el proyecto."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     }
+    ]
+   }
+  }
+ ]
+}

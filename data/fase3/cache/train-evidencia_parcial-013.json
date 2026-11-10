@@ -1,0 +1,26 @@
+{
+ "task_id": "train-evidencia_parcial-013",
+ "llamadas": [
+  {
+   "clave": "87e4c687b0adc530d8e1b5954237a0f7d206d0003907facf06293e46b2a95d8d",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En vendor-stockkeeper-api 0.0.10-stock-consumer, ¿con qué método y en qué ruta se llama a Restock Consumer? Además, en la tabla de servicios el enlace de esa operación apunta a «get-branches-by-vendor-id». ¿Dónde está documentada esa operación para obtener sucursales por vendor y qué parámetros lleva?",
+    "respuesta": "Restock Consumer se llama con POST en la ruta `/fp/inventory/operations/restock-new` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L17-L17]. El ejemplo de la sección Restock Consumer envía la cabecera `Content-Type: application/json` y un cuerpo JSON con un objeto `msg` que contiene `inbound_shipment_id` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L28-L33]. La respuesta que muestra es `200 OK` [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L35-L35].\n\nSobre «get-branches-by-vendor-id»: es el destino del enlace de Restock Consumer en la tabla de servicios [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L17-L17], pero ninguno de los documentos de esta versión tiene una sección con ese nombre ni describe una operación para obtener sucursales por vendor. Por eso no puedo decirte dónde está documentada ni qué parámetros lleva. La documentación de Restock Consumer está en su propia sección [vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md:L23-L23].",
+    "answer_checks": [
+     "Indica que Restock Consumer se llama con POST en /fp/inventory/operations/restock-new.",
+     "Declara que la documentación no describe ninguna operación «get-branches-by-vendor-id» (sucursales por vendor) ni sus parámetros.",
+     "No inventa parámetros, ruta ni comportamiento para una operación de obtener sucursales por vendor, ni afirma que esa operación no exista.",
+     "No se abstiene en la parte documentada y cita las líneas de api.md que la respaldan.",
+     "No apoya ninguna afirmación en la cabecera x-api-scope de la línea 27, que no es citable."
+    ]
+   }
+  }
+ ]
+}

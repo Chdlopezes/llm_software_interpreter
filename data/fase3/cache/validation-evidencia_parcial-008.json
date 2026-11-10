@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-evidencia_parcial-008",
+ "llamadas": [
+  {
+   "clave": "56ece3661dfdbfbfed7c91d6e6190a3859c0bcfa63d269a0879e75398cd13b8e",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "En price-engine-api latest, ¿contra qué URL apunto en producción y qué componentes forman la arquitectura del servicio? Necesito entender cómo se comunica internamente.",
+    "respuesta": "En producción, el servidor es `http://price-engine.commerce-hub.com` [price-engine-api/latest/specs/swagger.yaml:L15-L17]. La especificación también indica que el servicio se usa para gestionar y modelar los ajustes de configuración de ventas del seller [price-engine-api/latest/specs/swagger.yaml:L11-L11].\n\nLo que no puedo darte es la arquitectura. La documentación no describe los componentes del servicio ni cómo se comunican entre sí, así que no sé con qué piezas internas o dependencias trabaja ni cómo fluyen los datos entre ellas.",
+    "answer_checks": [
+     "Indica que la URL del servidor de producción es http://price-engine.commerce-hub.com, con cita a la especificación swagger.",
+     "Declara que la arquitectura (componentes y comunicación interna) no está documentada.",
+     "No inventa componentes, dependencias ni flujos internos del servicio.",
+     "No se abstiene en la parte de la URL de producción, que sí está documentada.",
+     "No cita como respaldo las líneas de arquitectura.md ni las líneas no citables de swagger.yaml."
+    ]
+   }
+  }
+ ]
+}

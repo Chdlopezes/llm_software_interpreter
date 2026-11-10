@@ -1,0 +1,68 @@
+{
+ "task_id": "train-sin_evidencia-002",
+ "llamadas": [
+  {
+   "clave": "ea915a61049dfd7b836b5315e1bd51165bd192ed93734a58783325a0b6aa7803",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, what does the Internal Item Detail endpoint return? I need to know the response fields and status codes before I call it from our service.",
+    "respuesta": "The 0.0.6-ep-restock-man documentation doesn't let me answer that. None of the documents for this version describe the Internal Item Detail response: they don't list its fields or its status codes. In the API guide, only two operations get their own detail section, Restock Consumer and Feed Consumer. Each one has a curl example and a `200 OK` response [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L48]. Since nothing documents what Internal Item Detail returns, I can't tell you its fields or status codes.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not describe the response fields or status codes of Internal Item Detail.",
+     "Does not invent response fields, status codes or example payloads for Internal Item Detail.",
+     "Does not claim the endpoint does not exist or returns nothing.",
+     "If it mentions the documented operations (Restock Consumer, Feed Consumer), it cites the api.md lines that contain them."
+    ]
+   }
+  },
+  {
+   "clave": "dbd02d8acd5fa8140960e54757b1a8c289c3cb0cea7859adb0db98947cd69aa0",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, what does the Internal Item Detail endpoint return? I need the response fields and status codes before we call it from our service.",
+    "respuesta": "I can't answer that from the 0.0.6-ep-restock-man documentation. None of the documents for this version describe what Internal Item Detail returns. They don't list its response fields or its status codes. In the API guide, only two operations have their own detail section. The Restock Consumer section has an operation example [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L23] that ends with `200 OK` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L34-L34]. The Feed Consumer section has a curl example [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L37] that also ends with `200 OK` [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L48-L48]. Internal Item Detail has no section like these, so I can't give you its fields or status codes.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not describe the response fields or status codes of Internal Item Detail.",
+     "Does not invent response fields, status codes or example payloads for Internal Item Detail.",
+     "Does not claim that the endpoint does not exist or returns nothing.",
+     "If it mentions the documented operations (Restock Consumer, Feed Consumer), it cites api.md lines that contain them."
+    ]
+   }
+  },
+  {
+   "clave": "5d5cd8c11c1f02e82fd437549a971e0d40496221fa59f4cc6a3b625c97f608f4",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, what does the Internal Item Detail endpoint return? I need the response fields and status codes before we call it from our service.",
+    "respuesta": "I can't answer that from the 0.0.6-ep-restock-man documentation. None of the documents for this version describe the Internal Item Detail response, so its fields and status codes aren't documented. The API guide only has detail sections for two operations: Restock Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L22] and Feed Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L36]. Internal Item Detail has no section like those. Before you call it, you'll need to confirm its response contract somewhere other than these documents.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not describe the response fields or status codes of Internal Item Detail.",
+     "Does not invent response fields, status codes or example payloads for Internal Item Detail.",
+     "Does not claim that the endpoint does not exist or returns nothing.",
+     "If it mentions the documented operations (Restock Consumer, Feed Consumer), it cites api.md lines that actually contain what it says about them."
+    ]
+   }
+  }
+ ]
+}

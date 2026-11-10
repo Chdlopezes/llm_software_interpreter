@@ -1,0 +1,47 @@
+{
+ "task_id": "train-sin_evidencia-001",
+ "llamadas": [
+  {
+   "clave": "3103964ec493f5de78849d9f9e60d21e6543368b9ada223c0f8580542ad34f8c",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, what does the Get Detail endpoint return? I need to know which fields come back in the response body.",
+    "respuesta": "I can't tell you what Get Detail returns from the 0.0.6-ep-restock-man documentation. None of the documents for that version describe its response body or its fields. In the API guide, only two operations have their own sections, each with an example call: Restock Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L24] and Feed Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L38]. Both sections show only a `200 OK` status, not a response body [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L34-L34][vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L48-L48]. You'll need another source to find out what fields Get Detail returns.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not describe the response or fields of Get Detail.",
+     "Does not invent response fields for Get Detail (e.g., does not borrow fields from the item API or inbound conciliation JSON examples).",
+     "Does not claim that the endpoint does not exist or returns nothing.",
+     "Any citations point to valid citable lines of the delivered documents (not the non-citable services-table lines 16-19 of api.md)."
+    ]
+   }
+  },
+  {
+   "clave": "036122a811432d4936a181493aa2b7c681b52e22a7376ef75203665558a04b7a",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.6-ep-restock-man, what does the Get Detail endpoint return? I need the fields in its response body.",
+    "respuesta": "The 0.0.6-ep-restock-man documentation doesn't tell me what Get Detail returns. None of the documents for that version describe its response body or its fields. The API guide has detailed sections for only two operations: Restock Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L22-L22] and Feed Consumer [vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md:L36-L36]. Neither one is about Get Detail. To get its response fields, you'll need a source outside this documentation.",
+    "answer_checks": [
+     "Calls the tool with software vendor-stockkeeper-api and version 0.0.6-ep-restock-man.",
+     "States that the documentation does not describe the response body or fields of Get Detail.",
+     "Does not invent response fields for Get Detail (e.g., does not borrow fields from the item API or inbound conciliation JSON examples).",
+     "Does not claim that the endpoint does not exist or returns nothing.",
+     "Does not cite non-citable lines of api.md (such as the services-table rows 16-19 or line 25) as support."
+    ]
+   }
+  }
+ ]
+}

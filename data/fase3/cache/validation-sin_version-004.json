@@ -1,0 +1,26 @@
+{
+ "task_id": "validation-sin_version-004",
+ "llamadas": [
+  {
+   "clave": "8f7b4e016e0c7b984c21eabb6bf48b2f5234d44173a86ddb149528d88b818fab",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "Estoy montando un script contra catalog-portfolio-api que da de alta una marca y luego la activa. ¿Cómo son esas dos llamadas con curl?",
+    "respuesta": "Las dos versiones documentadas, 0.0.1-test-bench-v2a y latest, traen los mismos ejemplos en la guía de Brand Management, así que esto no cambia entre versiones.\n\n1. **Crear la marca:** se hace un `POST` a `https://api.mp.internal.retailflow.com/catalog/brands` con la cabecera `Content-Type: application/json`. El cuerpo JSON lleva `name`, `site`, `category` y `type` (en el ejemplo, `\"type\": \"lighthouse\"`) [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L129-L139] [catalog-portfolio-api/latest/guide/brand-management/README.md:L129-L139].\n\n2. **Activarla:** se hace un `PUT` a `https://api.mp.internal.retailflow.com/catalog/brands/{id}/activate`, donde `{id}` es el ID de la marca. El ejemplo de la guía es solo la URL, sin cabeceras ni cuerpo [catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md:L151-L154] [catalog-portfolio-api/latest/guide/brand-management/README.md:L151-L154].",
+    "answer_checks": [
+     "Indica que la creación es un POST a /catalog/brands con la cabecera Content-Type: application/json y un cuerpo con name, site, category y type.",
+     "Indica que la activación es un PUT a /catalog/brands/{id}/activate.",
+     "Señala que los ejemplos son iguales en 0.0.1-test-bench-v2a y latest, o los cita en ambas versiones sin atribuirlos a una sola.",
+     "No inventa cabeceras, campos ni parámetros que no aparezcan en los ejemplos documentados.",
+     "No pide la versión al usuario."
+    ]
+   }
+  }
+ ]
+}

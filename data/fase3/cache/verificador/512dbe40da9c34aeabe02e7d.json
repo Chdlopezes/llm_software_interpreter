@@ -1,0 +1,485 @@
+{
+ "task_id": "verificador/512dbe40da9c34aeabe02e7d",
+ "llamadas": [
+  {
+   "clave": "512dbe40da9c34aeabe02e7df0d16bbf47ec31a5e468b47a4e2c4658d636d013",
+   "tarea": "verificador",
+   "modelo": "gpt-6-luna",
+   "backend": "openai_api",
+   "respuesta": {
+    "casos": [
+     {
+      "case_id": "train-falta_software-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés es natural, pero no identifica el software; corresponde pedir una aclaración antes de responder técnicamente."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solo pide aclarar el software y no hace afirmaciones técnicas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Como falta el software, la acción adecuada es preguntarlo; no debe responder aún sobre el endpoint."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No corresponde citar documentación al pedir el software antes de llamar a la herramienta."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que requieran citas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se recibió documentación porque la situación requiere primero aclarar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no se abstiene de una consulta técnica documentable; solicita el dato que falta para poder buscar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la falta de software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se plantea ningún conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan correctamente que debe pedir el software, no solicitar versión ni dar detalles técnicos."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-007",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés es natural, pero no identifica el software; corresponde pedir una aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta solo solicita el software, sin afirmaciones técnicas."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Ante la falta del software, pide la aclaración necesaria antes de responder."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No corresponde citar documentación al pedir el software."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas que citar."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos; primero debe aclararse el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta pide el dato necesario para realizar la búsqueda, no se abstiene de una respuesta con evidencia disponible."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta es coherente con la ausencia del software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la aclaración requerida y no exigen una formulación exacta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-falta_software-012",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en español es natural, pero omite el software; la respuesta pide esa aclaración."
+       },
+       "correccion_tecnica": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta no contiene información técnica."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Al faltar el software, pregunta correctamente cuál es antes de responder sobre el endpoint."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No corresponde citar documentos en una aclaración previa a la llamada."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y todavía falta identificar el software."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "no_aplica",
+        "justificacion": "Pide la información necesaria para buscar, en vez de abstenerse pese a tener evidencia."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta coincide con la falta de software en la pregunta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se presenta conflicto documental."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan correctamente que no debe llamar a la herramienta ni dar detalles técnicos antes de conocer el software."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-001",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural, identifica zenith-keeper y la versión 1.0.0-beta, que coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "Con estado not_found y sin documentos entregados, la respuesta no atribuye a esa versión una excepción ni un código."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede resolver la consulta para la versión solicitada y ofrece buscar versiones disponibles, sin inventar una respuesta técnica."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni se incluyen citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "La respuesta se limita a explicar la falta de documentación tras not_found."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la limitación del catálogo sin afirmar que la excepción o el código no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La herramienta devolvió not_found y no había evidencia para responder la parte técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta mantiene la limitación en la versión consultada y no mezcla datos de otras versiones."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos que entren en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan not_found, la limitación y la ausencia de afirmaciones técnicas no respaldadas."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-002",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural e identifica zenith-keeper 1.0.0-beta, de acuerdo con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no atribuye campos ni estructura a la versión que produjo not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la falta de documentación para esa versión y ofrece consultar versiones disponibles, sin inventar los campos solicitados."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni se presentan citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones técnicas sobre el esquema del registro."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta señala que no puede responder por falta de documentación, sin afirmar que esos campos no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La llamada devolvió not_found y no hay evidencia para responder sobre el cuerpo del registro."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla información de otras versiones con la versión solicitada."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron fuentes que puedan estar en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son coherentes con not_found y con la respuesta, y no exigen una redacción específica."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-005",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta identifica zenith-keeper 2.0, la misma versión que figura en los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no atribuye a 2.0 un esquema ni un código HTTP tras el resultado not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede responder para la versión consultada y ofrece buscar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y la respuesta no cita."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas sobre la respuesta del PUT."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Explica la falta de documentación en el catálogo sin afirmar que el esquema o el código no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No había evidencia técnica disponible: la herramienta devolvió not_found."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No incorpora datos de la versión 1.1.6 como si fueran de la 2.0."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados que puedan discrepar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden al estado not_found y a la ausencia de datos técnicos inventados."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-008",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta en inglés es natural y coincide con software y versión indicados en la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No describe el cuerpo 404 para la versión 2.0 tras recibir not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que no puede determinar la respuesta para esa versión y ofrece consultar las versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos y no se incluyen citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hace afirmaciones técnicas sobre el cuerpo 404."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara que falta documentación para la versión solicitada, sin convertir esa ausencia en una afirmación sobre el endpoint."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "El resultado not_found no proporciona evidencia para contestar la pregunta técnica."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "La respuesta no mezcla versiones ni contradice su explicación de la limitación."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay fuentes entregadas que puedan estar en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks corresponden a la llamada fallida y a la respuesta, sin exigir una frase concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural e identifica zenith-keeper 2.0, conforme a los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye un estado ni una respuesta al endpoint de 2.0 tras not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica la limitación para esa versión y ofrece consultar documentación disponible."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos ni se incluyen citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No contiene afirmaciones técnicas sobre el endpoint."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Informa que falta documentación sin afirmar que el endpoint no exista o que no devuelva 404."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "No había documentación utilizable para la versión consultada, según el resultado not_found."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta datos de otra versión como si correspondieran a 2.0."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados que puedan discrepar."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks reflejan not_found, la falta de datos y la ausencia de afirmaciones sobre otras versiones."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_documentos-014",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta identifica zenith-keeper 1.0.0-beta y coincide con los argumentos de la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "No atribuye a esa versión un esquema ni obligatoriedad del cuerpo tras not_found."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Explica que la documentación disponible no permite contestar para la versión solicitada y ofrece consultar versiones disponibles."
+       },
+       "respaldo_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay documentos entregados ni citas."
+       },
+       "cobertura_citas": {
+        "resultado": "no_aplica",
+        "justificacion": "No hace afirmaciones técnicas sobre el esquema o la obligatoriedad."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "Declara la limitación sin afirmar que el cuerpo o el esquema no existan."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "La herramienta devolvió not_found y no hay evidencia con la que responder sobre esa versión."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No presenta datos de otra versión como datos de 1.0.0-beta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No se entregaron documentos que puedan estar en conflicto."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables frente al estado not_found y concuerdan con la respuesta."
+       }
+      },
+      "needs_review": false,
+      "motivo": ""
+     },
+     {
+      "case_id": "train-sin_evidencia-011",
+      "criterios": {
+       "pregunta_coherente": {
+        "resultado": "cumple",
+        "justificacion": "La pregunta es natural e identifica software y versión que coinciden con la llamada."
+       },
+       "correccion_tecnica": {
+        "resultado": "cumple",
+        "justificacion": "La guía documenta la variante sin sort como GET /fresh-products/list{productId} y la llamada del controlador findBatchsOfProduct(productId) en líneas 217-218. La respuesta no inventa el prefijo /api/v1 ni el tipo para esa variante."
+       },
+       "responde_pregunta": {
+        "resultado": "cumple",
+        "justificacion": "Da el fragmento de ruta documentado y explica correctamente que los documentos no permiten completar la ruta solicitada ni determinar el tipo de productId para la variante sin sort; la guía muestra la ruta parcial en líneas 217-218."
+       },
+       "respaldo_citas": {
+        "resultado": "cumple",
+        "justificacion": "Las citas a la guía respaldan la ruta parcial, la llamada del controlador y la respuesta HTTP 200 con ProductBatchsResponseDTO en líneas 217-218 y 224-226. No cita líneas no citables."
+       },
+       "cobertura_citas": {
+        "resultado": "parcial",
+        "justificacion": "Las afirmaciones técnicas positivas están citadas, pero la afirmación de que OpenAPI no define la variante sin sort y la conclusión sobre la ausencia de ruta completa/tipo no llevan una cita a la especificación."
+       },
+       "evidencia_insuficiente": {
+        "resultado": "cumple",
+        "justificacion": "En los documentos entregados la guía da solo la ruta parcial en líneas 217-218; el swagger documenta una variante con sort en líneas 176-193, no el tipo de la variante sin sort. La respuesta no afirma que el endpoint no exista."
+       },
+       "sin_abstencion_injustificada": {
+        "resultado": "cumple",
+        "justificacion": "Aprovecha la evidencia disponible de la guía y separa lo que esta aporta de lo que no permite determinar."
+       },
+       "consistencia": {
+        "resultado": "cumple",
+        "justificacion": "No confunde la variante sin sort con la ruta documentada con sort ni le atribuye a aquella el tipo de parámetro de otra ruta."
+       },
+       "conflictos": {
+        "resultado": "no_aplica",
+        "justificacion": "No hay afirmaciones documentales contradictorias entre las fuentes entregadas sobre esta variante."
+       },
+       "answer_checks_validos": {
+        "resultado": "cumple",
+        "justificacion": "Los checks son verificables: la guía muestra la ruta parcial en líneas 217-218 y el swagger describe la variante con sort en líneas 176-193; no exigen una redacción concreta."
+       }
+      },
+      "needs_review": false,
+      "motivo": "La respuesta es correcta en lo sustancial, pero deja sin cita sus afirmaciones de ausencia en la especificación y sobre la información que no puede determinarse."
+     }
+    ]
+   }
+  }
+ ]
+}

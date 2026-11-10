@@ -1,0 +1,25 @@
+{
+ "task_id": "train-contradiccion-018",
+ "llamadas": [
+  {
+   "clave": "ec1b75a2a804286c447fc3f5c7f4ff7e1d585956f848bfd791e337f213093968",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "In vendor-stockkeeper-api 0.0.3-paused-seller, before sending a restock I need to check whether an item is a test item. What's the exact tag value I should look for in the item's tags?",
+    "respuesta": "The docs don't agree on the exact tag value, so I can't tell you which spelling is right.\n\nThe guide says to identify test items by looking up the item in the item API and checking its tags [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L128-L128]. After that, the two places that name the tag disagree:\n\n- The text says to check that the item has **`test_items`** (plural) \"or any of the tags\" that mark an item as a test item [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L231-L231].\n- The example item-detail response on the same page shows the tag as **`test_item`** (singular) in the `tags` array [vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md:L199-L206].\n\nSo the documentation has a plural and a singular spelling for the same check, and it doesn't say which one the item API really returns. The text also mentions \"any of the tags\" that identify a test item but never lists them. To settle it, check the tags on a real item you know is a test item, or ask the team that owns the guide.",
+    "answer_checks": [
+     "Cites the text that says to check for the tag test_items (important.md line 231).",
+     "Cites the example item response whose tags array contains test_item (around lines 199-206 of important.md).",
+     "Explains the plural vs. singular mismatch without stating either value as the confirmed correct tag.",
+     "Does not invent a list of other test-item tags beyond what the documents show."
+    ]
+   }
+  }
+ ]
+}

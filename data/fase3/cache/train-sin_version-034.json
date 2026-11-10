@@ -1,0 +1,26 @@
+{
+ "task_id": "train-sin_version-034",
+ "llamadas": [
+  {
+   "clave": "f059a95a72c58dcc4a5d16fdeb5c68b3070143ab588aca82d8e0936f77129867",
+   "tarea": "generador",
+   "modelo": "claude-opus-5-5",
+   "backend": "claude_code",
+   "respuesta": {
+    "omitir": false,
+    "motivo_omision": "",
+    "historial_usuario": "",
+    "historial_asistente": "",
+    "pregunta": "I'm writing a client for payment-promise-gateway. How does the service handle errors? What should I expect back when something goes wrong?",
+    "respuesta": "Both documented versions, 0.0.10-test-crc-migration and latest, describe error handling the same way. The service follows a standardized approach with four parts:\n\n- HTTP status codes on API responses\n- detailed error messages\n- custom exceptions for business logic\n- the same error format across all responses\n\n[payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md:L532-L536] [payment-promise-gateway/latest/guide/README.md:L532-L536]\n\nSo your client can count on HTTP status codes and a consistent error format. Neither version documents the specific status codes or the field structure of the error body. For those details, the README points to the detailed API documentation in specs-hub [payment-promise-gateway/latest/guide/README.md:L114-L114].",
+    "answer_checks": [
+     "Calls the tool with version=null and does not ask the user for a version.",
+     "States that the service uses a standardized approach: HTTP status codes, detailed error messages, custom exceptions for business logic and a consistent error format in responses.",
+     "Indicates that the error-handling description is the same in 0.0.10-test-crc-migration and latest, without attributing it to only one version.",
+     "Does not invent specific status codes or error body fields; if it mentions them, it says they are not documented.",
+     "Cites lines from the Error Handling section (around L532-L536) of the README."
+    ]
+   }
+  }
+ ]
+}
