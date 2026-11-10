@@ -1,6 +1,6 @@
-# Datos de entrenamiento a partir de documentación técnica
+# Diseño experimento de entrenamiento LLM a partir de documentación técnica
 
-Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de entrenamiento y evaluación para un modelo abierto pequeño. Cada fila de salida se puede rastrear hasta su archivo y sus líneas de origen.
+Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de entrenamiento y evaluación para un modelo abierto pequeño cuya tarea es responder preguntas técnicas a partir de documentación de software. Cada fila de salida se puede rastrear hasta su archivo y sus líneas de origen.
 
 ## Diseño general
 
@@ -226,7 +226,7 @@ Abre `data/fase0/human_review.csv` con Excel o cualquier hoja de cálculo. Cada 
 
 En la columna `decision`, escribe **`A`** o **`B`**, el criterio que te parezca correcto, y guarda el archivo. La sección toma la etiqueta completa del modelo elegido.
 
-Puedes dejar filas vacías. Al finalizar, se completan por defecto: gana el modelo que eligió `parcial`; si ninguno lo eligió, el que eligió `usable`.
+Puedes dejar filas vacías. Al finalizar, se completan por defecto: gana el modelo que eligió `parcial`; si ninguno lo eligió, el que eligió `usable`. Criterio para esto: (Conservar las secciones usables en mayor grado posible sin descartar posibles errores o incosistencias encontradas)
 
 ### 3. Finalizar la fase
 
@@ -249,18 +249,18 @@ El detalle de cada paso, los prompts, las reglas y el significado de cada archiv
 El asistente que se va a entrenar no recibe fragmentos elegidos de antemano. Ante una pregunta técnica, **llama a la herramienta `obtener_documentacion(software, version)`**, que devuelve los **documentos completos** de ese software (de todas sus versiones si `version` es `null`), y responde citando `[documento:Linicio-Lfin]`. La fase 1 deja listo todo lo necesario para generar esas conversaciones, sin generar todavía ninguna:
 
 1. **Catálogo.** Un documento por archivo de `docs_raw`, con su contenido normalizado (sin mover ninguna línea, para que las citas apunten al original), sus hashes y los tipos de evidencia que contiene (texto, tabla, código, diagrama, especificación OpenAPI, fórmula).
-2. **Restricciones.** Los resultados de la fase 0, trasladados a líneas de cada documento.
+2. **Restricciones.** Lo que la fase 0 marcó como no fiable (secciones no usables, afirmaciones excluidas y contradicciones), se convierte en rangos de líneas de cada documento. El modelo recibe los documentos completos, pero los ejemplos no pueden citar esas líneas, y la validación lo comprueba por código.
 3. **Herramienta.** El filtro exacto por software y versión, sin búsqueda semántica.
-4. **Contrato.** El prompt de sistema, las reglas, el formato de la conversación de entrenamiento y del caso de evaluación, y 10 conversaciones de referencia escritas a mano.
+4. **Contrato.** El prompt de modelo a entrenar (prompt de sistema), las reglas, el formato de la conversación de entrenamiento y del caso de evaluación, y 10 conversaciones de referencia escritas a mano. 
 
 **Decisión: los archivos de navegación quedan fuera del catálogo.** `_sidebar.md`, `_coverpage.md` y `documentationTypes.json` (33 de los 107 archivos) son índice, portada y metadatos de docsify. La fase 0 los clasificó como navegación, no contienen evidencia técnica y ocuparían contexto en cada llamada. El catálogo tiene 74 documentos.
 
 ### Criterios para crear los ejemplos
 
 - **La fase 0 decide de qué se crean ejemplos, no qué ve el modelo.** La herramienta siempre devuelve los documentos completos, como en el uso real. Las preguntas y respuestas objetivo, en cambio, solo pueden apoyarse en secciones `usable` o `parcial`, y nunca en sus afirmaciones excluidas.
-  - **Única excepción, la situación «contradicción»:** cita las líneas en conflicto para señalarlo, nunca como un hecho.
-  - **Documentos idénticos en varias versiones:** una línea es no citable si lo es en cualquiera de las copias.
-- **Diez situaciones que cubrir:**
+  - **Única excepción, la situación «contradicción»:** Cita las líneas en conflicto para señalarlo, nunca como un hecho.
+  - **Documentos idénticos en varias versiones:** Una línea es no citable si lo es en cualquiera de las copias (Evitar duplicidades).
+- **Diez situaciones o escenarios que cubrir:**
   - versión explícita;
   - sin versión;
   - «¿en qué versión…?»;
@@ -272,15 +272,15 @@ El asistente que se va a entrenar no recibe fragmentos elegidos de antemano. Ant
   - contradicción;
   - versión o software sin documentos.
 
-  Los huecos de la fase 0 son la fuente de los casos sin evidencia completa, y sus contradicciones, la de los conflictos.
-- **Llamada:** la versión solo se fija si la pregunta la nombra. En las preguntas «¿en qué versión?», en las comparaciones y cuando no se indica versión, va `null`.
+  Los huecos de la fase 0 son la fuente de los casos sin evidencia completa, y sus contradicciones, la de los conflictos. Esto se analizó con el primer LLM, el cual sugiere estos hallazgos de documentación faltante.
+- **Llamada:** la versión solo se agrega si la pregunta la nombra. En las preguntas como: "¿en qué versión?", en las comparaciones y cuando no se indica versión, se pone `null`.
 - **Respuesta:**
   - usa solo los documentos devueltos;
   - cita cada afirmación técnica;
   - no mezcla versiones;
   - distingue «no está documentado» de «no se soporta»;
   - responde lo que tiene respaldo y declara lo que falta.
-- **Idioma:** la mayoría de las preguntas en español y una parte en inglés. La respuesta va en el idioma de la pregunta.
+- **Idioma:** la mayoría de las preguntas en español y una parte en inglés. La respuesta va en el idioma de la pregunta. Esto para ver un poco el comportamiento del modelo en multilenguaje. 
 
 Las reglas completas están en [src/fase1/contract/reglas.md](src/fase1/contract/reglas.md).
 
@@ -306,17 +306,15 @@ El detalle de cada paso está en **[docs/fase1.md](docs/fase1.md)**.
 
 ## Fase 2 — Separación en conjuntos
 
-Antes de generar preguntas, se reparte cada software completo, con todas sus versiones, en **entrenamiento**, **validación** o **prueba**. Así la evaluación se hace sobre documentación que el modelo nunca vio al entrenar. La herramienta sigue teniendo el catálogo completo: el reparto decide a qué conjunto va cada conversación, según el software sobre el que pregunta.
+Antes de generar preguntas, se reparte cada software completo, con todas sus versiones, en **entrenamiento**, **validación** o **prueba**. Así la evaluación se hace sobre documentación que el modelo nunca vió al entrenar. 
 
 **Criterio.** Lo importante es que en cada conjunto se puedan plantear **los mismos tipos de pregunta**. Cuántas de cada tipo se balancea en la fase 3. El criterio tiene dos niveles:
 
 1. **Mínimo obligatorio.**
    - **En los tres conjuntos:** tablas, código, diagramas, OpenAPI, huecos, conflictos y algún software con varias versiones.
-   - **Solo en prueba:** un software cuyas versiones difieran en contenido.
    - **Excepciones:**
-     - no se exige lo que aparece en menos de 3 software, como la única fórmula del corpus;
-     - los dos software de los ejemplos de referencia van a entrenamiento.
-2. **Objetivo.** Entre los repartos que cumplen el mínimo, el más cercano a 60/20/20 en secciones aprovechables. Con pocos software se prueban todas las combinaciones; con muchos, se colocan uno a uno donde más falta.
+     - no se exige lo que aparece en menos de 3 software, pues no podria repartirse en los tres conjuntos. 
+2. **Objetivo.** Entre los repartos que cumplen el mínimo, el más cercano a 60/20/20 en secciones aprovechables. 
 
 **Resultado:**
 
@@ -341,19 +339,19 @@ El detalle está en **[docs/fase2.md](docs/fase2.md)**.
 
 ## Fase 3 — Generación de los ejemplos
 
-Se generan las conversaciones **candidatas** de `train`, `validation` y `test`, cada una con su caso de evaluación: llamada esperada, documentos esperados, respuesta de referencia con citas y `answer_checks` para el juez.
+Se generan las conversaciones **candidatas** de `train`, `validation` y `test`, cada una con su caso de evaluación: llamada esperada, documentos esperados, respuesta de referencia con citas y `answer_checks` para el juez. Esto último es una especie de "guia" o "referencia" para que el juez que se va a usar como evaluador, tenga una rúbrica sobre la que evaluar, con respecto las preguntas hechas. 
 
 **Cuántos y de qué tipo.**
 - **Tamaño:** 2 casos por sección aprovechable, es decir 232, 100 y 80.
-- **Situaciones:** la misma mezcla en los tres conjuntos (responder 45%, versiones 15%, falta información 20%, contradicción 8%, sin llamada o sin documentos 12%).
+- **Escenarios:** la misma mezcla en los tres conjuntos (responder 45%, versiones 15%, falta información 20%, contradicción 8%, sin llamada o sin documentos 12%).
 - **Idioma:** 20% en inglés.
 - **Semillas:** cada caso sale de una sección, un hueco o un conflicto real de un software de su conjunto.
 - **Argumentos:** los de la llamada los decide el programa según la situación, no el LLM.
 
 **Cómo se genera, por rondas (máximo 3):**
 1. **Generador** (`LLM_GENERADOR_*`): recibe la salida real de la herramienta y escribe la pregunta, la respuesta con citas y los `answer_checks`.
-2. **Código:** comprueba el contrato de la fase 1 y que la pregunta nombre (o no) el software y la versión según la situación. Si algo falla, el error vuelve al generador.
-3. **Verificador** (`LLM_VERIFICADOR_*`, otro proveedor): aplica la rúbrica de la evaluación a grupos de hasta 10 casos del mismo software, para enviar los documentos una sola vez por grupo.
+2. **Código:** comprueba las reglas de la fase 1 y que la pregunta nombre (o no) el software y la versión según la situación. Si algo falla, el error vuelve al generador.
+3. **Verificador** (`LLM_VERIFICADOR_*`, otro proveedor): aplica la rúbrica de la evaluación a grupos o lotes de preguntas (Para evitar sobre costo por tokens de entrada en cada validación).
 4. **Decisión:** la toma el programa. Un caso se aprueba solo si cumple todos los criterios. Si no, vuelve al generador con el motivo del rechazo.
 
 **Resultado.**
@@ -381,17 +379,17 @@ Los candidatos todavía no son el dataset final. En la fase 4 se eliminan duplic
 
 Se validan los candidatos de la fase 3 y se exportan los datasets finales. Es determinista y no usa LLM.
 
-**Modelo a ajustar: Qwen3.5-4B.** Solo se descarga su tokenizer, en una revisión fija, para renderizar cada conversación con su plantilla de chat y medirla en tokens. Al renderizar se aplican dos ajustes:
+**Modelo a ajustar: Qwen3.5-4B.** Solo se descarga el tokenizer, en una revisión fija, para renderizar cada conversación con su plantilla de chat y medirla en tokens. Al renderizar se aplican dos ajustes:
 - `version: null` se escribe como `null`, para que el parser de llamadas de Qwen lo lea como nulo;
-- se desactiva el modo de razonamiento (`enable_thinking=False`).
+- se desactiva el modo de razonamiento (`enable_thinking=False`). Pues no se crearon ejemplos para este escenario. 
 
 Los datos canónicos no cambian.
 
 **Pasos:**
-1. **Controles:** contrato de la fase 1, citas resueltas hasta el catálogo con su hash, aislamiento (ningún caso recibe documentos de otro conjunto), presupuesto de tokens y máscara de pérdida (solo se entrenan la llamada y la respuesta).
-2. **Duplicados:** dentro de cada conjunto y situación, los casos que piden el mismo contenido. Típicamente salen de una sección idéntica en dos versiones. La regla se calibró revisando a mano todos los pares candidatos.
-3. **Revisión humana** de validation y test, en `data/fase4/revision_humana.csv`. Con `python -m src.fase4.revisar --conjunto test` se recorren los casos pendientes uno a uno, con sus citas resueltas, y cada decisión se guarda al momento. En esta entrega se aprobaron en bloque como ejercicio del flujo, así que las referencias cuentan como verificadas por el LLM, no por una persona.
-4. **Exportación** de los datasets, con un manifiesto de hashes.
+1. **Controles:** Reglas de la fase 1, citas resueltas hasta el catálogo con su hash, aislamiento (ningún caso recibe documentos de otro conjunto, esto para validar en batches), presupuesto de tokens y máscara de función de pérdida o loss (solo se entrenan la llamada y la respuesta).
+2. **Duplicados:** Dentro de cada conjunto y situación, los casos que piden el mismo contenido. Típicamente salen de una sección idéntica en dos versiones. La regla se calibró revisando a mano todos los pares candidatos.
+3. **Revisión humana** De validation y test, en `data/fase4/revision_humana.csv`. Con `python -m src.fase4.revisar --conjunto test` se recorren los casos pendientes uno a uno, con sus citas resueltas, y cada decisión se guarda al momento. En esta entrega se aprobaron en bloque como ejercicio del flujo, así que las referencias cuentan como verificadas por el LLM, no por una persona. La idea aqui es que se verifique que los datos de validación sean consistentes de acuerdo al ejercicio pretendido, pasando por verificación humana. 
+4. **Exportación** de los datasets.
 
 **Resultado:**
 
@@ -401,7 +399,7 @@ Los datos canónicos no cambian.
 | `validation` | 97 | ~11.100 / ~21.300 |
 | `test` | 78 | ~4.650 / ~10.500 |
 
-Se rechazaron 26 de 412 tareas: 21 duplicados y las 5 omitidas en la fase 3. Ninguna conversación supera el presupuesto de 32.768 tokens.
+Ninguna conversación supera el presupuesto de 32.768 tokens.
 
 ### Un ejemplo de entrenamiento
 
@@ -461,13 +459,14 @@ Se diseña cómo comprobar si estos datos mejoran el modelo. **No se entrena nin
 - **La misma inferencia para los tres:** el modelo recibe solo el sistema, el historial y la pregunta. Él decide la llamada a la herramienta, y el orquestador la ejecuta.
 - **La selección se hace con `validation`;** `test` se evalúa una sola vez, al cierre.
 
-**Entrenar con Hugging Face.** `src/fase5/entrenar.py` entrena E1 o E2 con el `SFTTrainer` de TRL y LoRA, sobre `data/fase4/sft/`. Antes de dar el flujo por bueno se probó con TRL, y aparecieron cuatro problemas que habrían arruinado el entrenamiento sin dar ningún error:
-- la máscara de pérdida, que se resuelve con la plantilla de entrenamiento de Qwen3.5 que trae TRL;
-- `version: None`;
-- el modo de razonamiento;
-- `max_length`, que en TRL vale 1.024 por defecto y cortaría la respuesta.
+**Entrenar con Hugging Face.** `src/fase5/entrenar.py` entrena E1 o E2 con el `SFTTrainer` de TRL y LoRA, sobre `data/fase4/sft/`. Se probó con TRL para validar que los ejemplos estuvieran listos para entrenar.
 
-Los cuatro quedan resueltos. `--prueba` corre el mismo script en CPU con un modelo diminuto de Qwen3.5 (misma plantilla y vocabulario) para comprobar el flujo. No se entrenó el 4B: hace falta una GPU.
+Parámetros a tener en cuenta para este "entrenamiento de prueba"
+
+- el modo de razonamiento;
+- `max_length`, cambiar a 24k que en TRL vale 1.024 por defecto y cortaría la respuesta.
+
+Los cuatro quedan resueltos. `--prueba` corre el mismo script en CPU con un modelo "diminuto" de Qwen3.5 (misma plantilla y vocabulario) para comprobar el flujo. No se entrenó el 4B: hace falta una GPU.
 
 ```bash
 python -m src.fase5.run
@@ -486,7 +485,7 @@ El detalle, con lo que está fijado y lo pendiente, está en **[docs/fase5.md](d
 
 ## Fase 6 — Evaluación
 
-Cada respuesta del modelo se evalúa en tres niveles. Los dos primeros son deterministas; el tercero lo hace un LLM juez:
+Cada respuesta del modelo se evalúa en tres niveles. Los dos primeros son deterministas; el tercero lo hace un LLM que actua como "juez":
 
 | Medición | Pregunta | Quién |
 |---|---|---|
@@ -494,16 +493,16 @@ Cada respuesta del modelo se evalúa en tres niveles. Los dos primeros son deter
 | Documentos | ¿Recibió los documentos esperados? (también se comprueba que sus citas existan y estén permitidas) | Código |
 | Respuesta | ¿Es correcta y completa, cada afirmación tiene una cita que la respalda, y declara lo que falta sin inventarlo? | Juez (`LLM_JUEZ_*`) |
 
-**El juez** recibe los documentos que recibió el modelo, la pregunta, la referencia con sus `answer_checks` y la respuesta, sin saber qué modelo la escribió. Devuelve un juicio por criterio, por afirmación y por cita, con etiquetas de error. **La aprobación no la decide él**, sino una regla fija del programa. Si la referencia contradice a los documentos, marca una incidencia y no penaliza al modelo.
+**El juez** recibe los documentos que recibió el modelo, la pregunta, la referencia con sus `answer_checks` y la respuesta, sin saber qué modelo la escribió. Devuelve un juicio por criterio, por afirmación y por cita, con etiquetas de error. Medido en porcentaje para hacerlo numerable. **La aprobación no la decide él**, sino una regla fija del programa.
 
 ### Calibración del juez
 
-Antes de medir un modelo con un juez, hay que medir al juez. Se tomaron 15 casos de `validation` (y 2 de `train` para la mezcla de versiones; nunca de `test`). De cada uno se armaron variantes cuyo veredicto correcto se conoce de antemano:
-- correctas: la referencia y una paráfrasis;
+Antes de evaluar un modelo con un LLM juez, hay que medir al juez. Se tomaron 15 casos de `validation` (y 2 de `train` para la mezcla de versiones; nunca de `test`). De cada uno se armaron variantes cuyo veredicto correcto se conoce de antemano:
+- correctas: la referencia y una paráfrasis (forma distinta de decir lo mismo);
 - con un error a propósito: un hecho falso con una cita real, una respuesta que no contesta, una abstención excesiva, una mezcla de versiones, una respuesta sin citas, un dato inventado o una respuesta que elige una sola fuente en un conflicto;
 - con la referencia equivocada.
 
-Las variantes con error las escribe otro LLM, el corruptor (`LLM_CORRUPTOR_*`), y una persona las confirmó: 56 de 57, sin descartar ninguna.
+Las variantes con error las escribe otro LLM, el "corruptor" (`LLM_CORRUPTOR_*`), y una persona (yo) las confirmó: 56 de 57, sin descartar ninguna.
 
 ![Matriz de confusión del juez](data/reportes/fase6/calibracion_matriz_todas.svg)
 
@@ -520,7 +519,7 @@ Para llegar ahí se corrigió una regla del juez: en las contradicciones, citar 
 ### Diseño de la evaluación del modelo
 
 1. **Inferencia.** B0, E1 y E2 reciben las mismas entradas (`data/fase5/entradas_validation.jsonl`: sistema, historial y pregunta). Un **orquestador**, el programa que corre el modelo, ejecuta las llamadas a la herramienta que el modelo pida y guarda su respuesta en `predicciones_validation.jsonl`.
-2. **Evaluación.** `python -m src.fase6.evaluar --predicciones <archivo> --experimento E1` aplica los controles por código y el juez, y calcula las métricas de la guía con numerador y denominador, en total y por situación:
+2. **Evaluación.** `python -m src.fase6.evaluar --predicciones <archivo> --experimento E1` aplica los controles por código y el juez, y calcula las métricas de la guía con numerador y denominador, en total y por escenario, ejemplos:
    - llamada y documentos correctos;
    - citas válidas;
    - corrección y completitud;
@@ -528,8 +527,8 @@ Para llegar ahí se corrigió una regla del juez: en las contradicciones, citar 
    - abstención correcta e indebida;
    - respuesta parcial correcta.
 3. **Selección.** Se comparan los tres en `validation`. Gana el de mayor corrección sin empeorar el respaldo de citas ni la abstención, con márgenes fijados antes de mirar resultados. Las etiquetas de error de cada juicio dicen qué falla y orientan el siguiente experimento.
-4. **Revisión humana.** Una persona lee hasta 30 respuestas reales (10 con evidencia suficiente, 10 insuficiente y 10 parcial) para vigilar al juez con errores reales, que pueden ser más sutiles que los fabricados.
-5. **`test`, una sola vez,** con la configuración elegida (`--conjunto test --final`; sin `--final` el script se niega).
+4. **Revisión humana.** Una persona lee hasta 30 respuestas reales (10 con evidencia suficiente, 10 insuficiente y 10 parcial) para vigilar al juez con errores reales, solo por cuidar, pues pueden ser más sutiles que los fabricados.
+5. **`test`, una sola vez,** con la configuración elegida (`--conjunto test --final`).
 
 ### Extensión a otras formas de recuperar la documentación
 
@@ -560,13 +559,13 @@ El detalle, con el protocolo completo, está en **[docs/fase6.md](docs/fase6.md)
 
 Esta fase es solo de diseño. Así se llevaría el mismo flujo a millones de documentos:
 
-- **Procesar solo lo nuevo.** Cada documento y cada resultado se identifican por su hash. Al llegar documentación nueva o modificada, solo se reprocesa eso y lo que depende de ello; lo demás sale de la caché.
+
 - **Deduplicar sin comparar todo contra todo.** El hash detecta las copias exactas y MinHash con LSH los casi duplicados, que se verifican antes de agruparlos. La separación en conjuntos se resuelve de forma global, para que dos copias nunca terminen en conjuntos distintos.
 - **Primero lo barato, después el LLM.** Los controles deterministas filtran antes de cualquier llamada. Las llamadas van por lotes, con límites de concurrencia y presupuesto, y las copias heredan el resultado del original.
 - **Muestrear en lugar de generar todo.** No hace falta un ejemplo por cada sección: basta una muestra que cubra todos los tipos de contenido y de situación.
-- **Medir por etapa y poder retomar.** Se registran documentos por segundo, tokens, errores y costo por ejemplo aceptado, y cada etapa se puede retomar donde se cortó. Esto último ya se comprobó: cuando se agotaron los créditos de la API, la calibración se retomó sin repetir ninguna llamada.
 
-El código ya incluye las bases: claves estables por hash, caché por llamada, reanudación y verificación por lotes. Lo que falta para la escala real es la infraestructura: colas, almacenamiento particionado y ejecución distribuida.
+
+El código ya incluye las bases: claves estables por hash, caché por llamada, reanudación y verificación por lotes. Lo que falta para la escala real es la infraestructura: colas, almacenamiento particionado y ejecución por lotes.
 
 ## Reproducir y verificar los resultados
 
@@ -604,18 +603,18 @@ Un test comprueba la máscara de pérdida con TRL; se salta si no están instala
 **Datos**
 - **Cada fila se puede rastrear hasta su origen.** Cada cita apunta a un documento y a un rango de líneas con su hash, y el código la verifica antes de aceptar un ejemplo.
 - **Se audita todo antes de generar** (fase 0). Las secciones cubren el 100% de cada archivo. Dos LLM de proveedores distintos clasifican y revisan, y una persona resuelve las discrepancias. Los chequeos automáticos informan, no deciden.
-- **El modelo recibe documentos completos, no fragmentos elegidos de antemano** (fase 1). Así aprende a leer y a declarar lo que falta, como en el uso real. La recuperación es un filtro simple por software y versión; la fase 6 explica cómo evaluar un buscador más complejo con este mismo pipeline.
+- **El modelo recibe documentos completos** (fase 1). Así aprende a leer y a declarar lo que falta, como en el uso real. La recuperación es un filtro simple por software y versión; la fase 6 explica cómo evaluar un buscador más complejo con este mismo pipeline.
 - **La separación es por software completo** (fase 2). La evaluación se hace sobre documentación que el modelo nunca vio al entrenar.
 
 **Generación y validación**
-- **Cada tarea con LLM tiene su propia configuración,** y quien verifica nunca es el mismo modelo que quien genera.
-- **El programa decide, el LLM informa.** Los argumentos de la llamada, la aprobación de un caso y el veredicto del juez salen de reglas fijas aplicadas sobre la salida del LLM, no de su opinión.
-- **No hay ejemplos malos a propósito en los datasets.** Los errores deliberados solo existen en el conjunto de calibración del juez, que no sale de `test`.
-- **Los datos se prepararon para Hugging Face y se probaron con TRL** (fases 4 y 5). Esa prueba encontró cuatro problemas que habrían arruinado el entrenamiento sin dar error, y quedaron resueltos.
+- **Cada tarea con LLM tiene su propia configuración,** Quien verifica nunca es el mismo modelo que quien genera.
+- **Elementos decididos de forma determinista, otros por LLM.** Los argumentos de la llamada, la aprobación de un caso y el veredicto del juez salen de reglas fijas aplicadas sobre la salida del LLM.
+- **No hay ejemplos malos a propósito en los datasets.** Los errores deliberados solo existen en el conjunto de calibración del juez, que no salen de `test`.
+- **Los datos se prepararon para Hugging Face y se probaron con TRL** (fases 4 y 5). 
 
 **Evaluación**
 - **Primero lo determinista, después el LLM.** La llamada, los documentos y las citas se comprueban con código; el juez solo evalúa el contenido.
-- **El juez se calibra antes de usarlo,** con respuestas de etiqueta conocida y confirmadas por una persona. Se mide sobre todo cuántas respuestas malas aprueba, que es el error que inflaría las métricas.
+- **El juez se calibra antes de usarlo,** Con respuestas de etiqueta conocida y confirmadas por una persona. Se mide sobre todo cuántas respuestas malas aprueba, que es el error que inflaría las métricas.
 - **`test` se usa una sola vez.** La selección se hace con `validation`, y el código exige `--final` para evaluar `test`.
 
 El detalle y la justificación de cada decisión están en los documentos de cada fase, en [docs/](docs/).
