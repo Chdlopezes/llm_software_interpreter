@@ -12,6 +12,7 @@ Flujo local que convierte la documentación cruda de `docs_raw/` en datasets de 
 | 2 — Separación | Reparte los software en entrenamiento, validación y prueba | Hecha |
 | 3 — Generación | Genera y verifica las conversaciones candidatas de los tres conjuntos | Hecha |
 | 4 — Validación y exportación | Controles, duplicados, revisión humana y datasets finales para Qwen3.5 | Hecha |
+| 5 — Diseño del experimento | Baseline, entrenamiento con LoRA, ablación, inferencia y selección (sin entrenar) | Hecha |
 
 Las fases siguientes se añadirán a esta tabla a medida que se implementen.
 
@@ -27,12 +28,14 @@ src/               Todo el código del flujo
   fase2/             Fase 2: separación en conjuntos
   fase3/             Fase 3: generación y verificación de los ejemplos
   fase4/             Fase 4: validación y exportación de los datasets
+  fase5/             Fase 5: diseño del experimento (configuración y comprobaciones)
   utils/             Herramientas para inspeccionar resultados
   tests/             Tests deterministas
 data/              Todas las salidas generadas por el flujo (se suben al repositorio)
 reports/           Estadísticas de cada fase, para el reporte final
 docs/              Explicación detallada de cada fase y sus decisiones
 requirements.txt   Dependencias de Python, con versiones fijas
+requirements-entrenamiento.txt   Dependencias extra solo para entrenar (PyTorch, TRL, PEFT, datasets)
 .env.example       Plantilla de las variables de entorno (LLM y API keys)
 ```
 
@@ -110,6 +113,8 @@ LLM_CLASIFICADOR_BACKEND=claude_code   # fase 0: clasifica cada sección
 LLM_VALIDADOR_BACKEND=codex            # fase 0: valida cada clasificación
 LLM_GENERADOR_BACKEND=claude_code      # fase 3: genera las conversaciones candidatas
 LLM_VERIFICADOR_BACKEND=codex          # fase 3: verifica cada candidato
+LLM_CORRUPTOR_BACKEND=claude_code      # fase 6: escribe respuestas con errores deliberados para calibrar al juez
+LLM_JUEZ_BACKEND=codex                 # fase 6: evalúa las respuestas del modelo
 ```
 
 Los backends posibles son `claude_code`, `codex`, `anthropic_api` y `openai_api`. Las variables `LLM_<TAREA>_MODEL` pueden quedar vacías para usar los modelos por defecto.
@@ -163,6 +168,8 @@ Si todo está bien, la salida termina así:
 [ok] LLM validador (fase 0: valida cada clasificación): codex:gpt-6.1-sol
 [ok] LLM generador (fase 3: genera las conversaciones candidatas): claude_code:claude-opus-5-5
 [ok] LLM verificador (fase 3: verifica cada candidato): codex:gpt-6.1-sol
+[ok] LLM corruptor (fase 6: escribe respuestas con errores deliberados para calibrar al juez): claude_code:claude-opus-5-5
+[ok] LLM juez (fase 6: evalúa las respuestas del modelo): codex:gpt-6.1-sol
 [ok] docs_raw/ encontrada (107 archivos)
 [ok] data/ disponible para las salidas
 
@@ -180,6 +187,8 @@ python -m src.check_setup --ping
 [ok] ping LLM validador (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.2s
 [ok] ping LLM generador (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.0s
 [ok] ping LLM verificador (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.3s
+[ok] ping LLM corruptor (claude_code:claude-opus-5-5) -> {'respuesta': 'ok'} en 6.1s
+[ok] ping LLM juez (codex:gpt-6.1-sol) -> {'respuesta': 'ok'} en 6.2s
 
 Entorno listo.
 ```
@@ -402,13 +411,50 @@ python -m src.fase4.run
 
 | Archivo | Contenido |
 |---|---|
-| `data/fase4/train.jsonl`, `validation.jsonl`, `test.jsonl` | Conversaciones en formato de chat con *tool calling* (`messages` + `tools`, el formato conversacional de TRL), con su caso de evaluación, sus tokens y su estado de revisión humana |
+| `data/fase4/train.jsonl`, `validation.jsonl`, `test.jsonl` | Conversaciones en formato de chat con *tool calling* (`messages` + `tools`), con su caso de evaluación, sus tokens y su estado de revisión humana |
+| `data/fase4/sft/train.jsonl`, `validation.jsonl` | Lo mismo, listo para el `SFTTrainer` de TRL: solo las columnas que lee, `enable_thinking: false` por fila y `version: null` escrito como `"null"` |
 | `data/fase4/rejected.jsonl` | Tareas rechazadas, con la etapa y el motivo |
 | `data/fase4/revision_humana.csv` | Decisiones de la revisión humana |
 | `data/fase4/dataset_report.json`, `dataset_manifest.json` | Conteos por conjunto, situación, idioma, evidencia y software; hashes de archivos, entradas, prompts y tokenizer |
 | `reports/fase4/estadisticas.md` | Las cifras en tablas y la lista de duplicados |
 
 El detalle está en **[docs/fase4.md](docs/fase4.md)**.
+
+## Fase 5 — Diseño del experimento
+
+Se diseña cómo comprobar si estos datos mejoran el modelo. **No se entrena ningún modelo**: se entrega la configuración propuesta en `src/fase5/experimento.yaml` y un script que comprueba que el diseño sea coherente con los datos.
+
+| Experimento | Qué es |
+|---|---|
+| **B0** | Qwen3.5-4B sin ajuste: la línea de base |
+| **E1** | SFT con LoRA sobre todo `train` (211 conversaciones) |
+| **E2** | Ablación: como E1, pero sin los casos de información insuficiente o parcial (166). Ve los mismos ejemplos que E1, en más épocas, para que la comparación no dependa del volumen |
+
+- **La misma inferencia para los tres:** el modelo recibe solo el sistema, el historial y la pregunta. Él decide la llamada a la herramienta, y el arnés la ejecuta.
+- **La selección se hace con `validation`;** `test` se evalúa una sola vez, al cierre.
+
+**Entrenar con Hugging Face.** `src/fase5/entrenar.py` entrena E1 o E2 con el `SFTTrainer` de TRL y LoRA, sobre `data/fase4/sft/`. Antes de dar el flujo por bueno se probó con TRL, y aparecieron cuatro problemas que habrían arruinado el entrenamiento sin dar ningún error:
+- la máscara de pérdida, que se resuelve con la plantilla de entrenamiento de Qwen3.5 que trae TRL;
+- `version: None`;
+- el modo de razonamiento;
+- `max_length`, que en TRL vale 1.024 por defecto y cortaría la respuesta.
+
+Los cuatro quedan resueltos. `--prueba` corre el mismo script en CPU con un modelo diminuto de Qwen3.5 (misma plantilla y vocabulario) para comprobar el flujo. No se entrenó el 4B: hace falta una GPU.
+
+```bash
+python -m src.fase5.run
+pip install -r requirements-entrenamiento.txt              # solo para entrenar
+python -m src.fase5.entrenar --prueba                      # comprueba el flujo en CPU (~1 minuto)
+python -m src.fase5.entrenar --experimento E1              # en una GPU
+```
+
+| Archivo | Contenido |
+|---|---|
+| `data/fase5/entradas_validation.jsonl`, `entradas_test.jsonl` | Lo que recibirán los modelos en inferencia |
+| `data/fase5/experimentos.json` | Configuración y presupuesto (pasos, épocas, tokens) de cada experimento |
+| `reports/fase5/estadisticas.md` | Experimentos, situaciones de cada uno y entradas de inferencia |
+
+El detalle, con lo que está fijado y lo pendiente, está en **[docs/fase5.md](docs/fase5.md)**.
 
 ## Reproducir y verificar los resultados
 
@@ -421,15 +467,16 @@ python -m src.fase1.run
 python -m src.fase2.run
 python -m src.fase3.run --solo-cache
 python -m src.fase4.run
+python -m src.fase5.run
 git status --short data/ reports/
 ```
 
 Si `git status` no muestra nada, tus archivos son idénticos byte a byte a los entregados. Esto incluye las decisiones de la revisión humana, que están en el CSV.
 
-- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1, 2 y 4 y el plan de tareas de la fase 3.
+- **Los pasos con código son deterministas:** inventario, secciones, chequeos, validaciones, etiqueta final, las fases 1, 2, 4 y 5 y el plan de tareas de la fase 3.
 - **Los pasos con LLM no lo son,** pero se reproducen exactamente porque sus respuestas están guardadas en `data/cache/` (fase 0) y `data/fase3/cache/` (fase 3). Con `--solo-cache`, la fase 3 no llama a ningún LLM ni necesita API keys.
 
-Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md), [docs/fase3.md](docs/fase3.md) y [docs/fase4.md](docs/fase4.md).
+Ver [docs/fase0.md, sección 6](docs/fase0.md#6-reproducibilidad) , [docs/fase1.md](docs/fase1.md), [docs/fase2.md](docs/fase2.md), [docs/fase3.md](docs/fase3.md), [docs/fase4.md](docs/fase4.md) y [docs/fase5.md](docs/fase5.md).
 
 Para ejecutar los tests:
 

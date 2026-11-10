@@ -50,6 +50,8 @@ TAREAS = {
     "validador": "fase 0: valida cada clasificación",
     "generador": "fase 3: genera las conversaciones candidatas",
     "verificador": "fase 3: verifica cada candidato",
+    "corruptor": "fase 6: escribe respuestas con errores deliberados para calibrar al juez",
+    "juez": "fase 6: evalúa las respuestas del modelo",
 }
 
 

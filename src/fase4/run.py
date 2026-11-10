@@ -39,6 +39,8 @@ FASE4 = ROOT / "data" / "fase4"
 REVIEW_PATH = FASE4 / "revision_humana.csv"
 REVIEW_FIELDS = ["task_id", "conjunto", "situacion", "idioma", "pregunta", "decision", "comentario"]
 REVIEW_SETS = ("validation", "test")
+SFT_DIR = FASE4 / "sft"
+SFT_SETS = ("train", "validation")       # test no se usa al entrenar: solo en la evaluación final
 DECISIONES = {"": "pendiente", "aprobar": "aprobado", "rechazar": "rechazado"}
 
 
@@ -72,6 +74,14 @@ def exported_row(r: dict, medida: dict, revision: str) -> dict:
             "messages": r["conversacion"]["messages"], "tools": r["conversacion"]["tools"],
             "caso": r["caso"], "tokens": medida["tokens"], "tokens_supervisados": medida["tokens_supervisados"],
             "revision_humana": revision}
+
+
+def sft_row(r: dict) -> dict:
+    """Fila para TRL: `messages` + `tools` (formato conversacional con herramientas) y
+    `chat_template_kwargs`, que TRL pasa a la plantilla en cada fila. `version: null` va como el
+    texto «null» (ver tokens.para_qwen). `situacion` permite filtrar la ablación E2."""
+    return {"id": r["task_id"], "situacion": r["situacion"], "messages": tokens.para_qwen(r["conversacion"]["messages"]),
+            "tools": r["conversacion"]["tools"], "chat_template_kwargs": {"enable_thinking": False}}
 
 
 def stats(values: list[int]) -> dict:
@@ -150,6 +160,12 @@ def main() -> int:
         write_jsonl(path, [exported_row(r, medidas[r["task_id"]], revision[r["task_id"]])
                            for r in accepted if r["conjunto"] == n])
         files[n] = path
+    # Versión lista para el SFTTrainer de TRL: solo las columnas que lee, con los dos ajustes de render.
+    for n in SFT_SETS:
+        path = SFT_DIR / f"{n}.jsonl"
+        SFT_DIR.mkdir(parents=True, exist_ok=True)
+        write_jsonl(path, [sft_row(r) for r in accepted if r["conjunto"] == n])
+        files[f"sft_{n}"] = path
     rejected_rows = ([{"task_id": o["task_id"], "conjunto": o["task_id"].split("-")[0],
                        "situacion": o["task_id"].split("-")[1], "etapa": "fase3", "motivo": o["motivo"]}
                       for o in coverage3["omitidos"] + coverage3["errores"]]

@@ -124,7 +124,8 @@ Las cifras exactas están en [reports/fase4/estadisticas.md](../reports/fase4/es
 
 | Archivo | Contenido |
 |---|---|
-| `data/fase4/train.jsonl` | Una conversación por línea en formato de chat con *tool calling* (`messages` + `tools`, el formato conversacional de TRL; cargarlo con `datasets` y entrenar se prueba al preparar el entrenamiento), más el caso de evaluación, los tokens y el estado de la revisión humana |
+| `data/fase4/train.jsonl` | Una conversación por línea en formato de chat con *tool calling* (`messages` + `tools`), más el caso de evaluación, los tokens y el estado de la revisión humana. Es la versión canónica: `version` es `null` |
+| `data/fase4/sft/train.jsonl`, `validation.jsonl` | **La versión para entrenar con Hugging Face** (`SFTTrainer` de TRL): solo `id`, `situacion`, `messages`, `tools` y `chat_template_kwargs` = `{"enable_thinking": false}`, con `version: null` escrito `"null"`. Se cargan con `datasets.load_dataset("json", …)` y se probaron con TRL ([docs/fase5.md](fase5.md#4-entrenamiento)). `test` no se exporta aquí porque no se usa al entrenar |
 | `data/fase4/validation.jsonl`, `test.jsonl` | El mismo formato. Para evaluar, al modelo solo se le envían los mensajes hasta la pregunta (sistema, historial y pregunta); la llamada esperada, los documentos esperados, la referencia y los `answer_checks` se comparan después |
 | `data/fase4/rejected.jsonl` | Las tareas que no llegaron al dataset: etapa (fase 3, duplicado, revisión humana…) y motivo |
 | `data/fase4/revision_humana.csv` | Las decisiones de la revisión humana de validation y test |

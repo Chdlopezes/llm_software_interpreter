@@ -1,0 +1,6 @@
+# Solo para entrenar (python -m src.fase5.entrenar). No hace falta para las fases 0 a 5.
+-r requirements.txt
+torch==2.15.0
+trl==1.17.1
+peft==0.21.2
+datasets==5.2.0

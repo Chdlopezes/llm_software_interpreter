@@ -1,0 +1,73 @@
+# Fase 5 — Configuración propuesta del experimento (B0, E1, E2).
+#
+# Es una propuesta: no se ha entrenado ningún modelo. Lo marcado como «pendiente» se fija
+# antes de ver resultados comparativos (ver docs/fase5.md, sección 6).
+# python -m src.fase5.run comprueba esta configuración (paridad, presupuesto, conjuntos) y
+# prepara las entradas de inferencia.
+
+modelo:
+  id: Qwen/Qwen3.5-4B
+  revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a   # la misma que midió la fase 4
+  licencia: apache-2.0
+  contexto_maximo: 262144
+
+# Igual para B0, E1 y E2: lo único que cambia entre ellos son los pesos.
+inferencia:
+  prompt_sistema: src/fase1/contract/system_prompt.md
+  herramientas: obtener_documentacion            # ejecutada por el arnés con el catálogo de la fase 1
+  enable_thinking: false
+  temperatura: 0.0                               # decodificación voraz: misma entrada, misma salida
+  max_new_tokens: 1024
+  max_llamadas_herramienta: 2                    # si pide una tercera, el caso cuenta como fallo de llamada
+  longitud_maxima_entrada: 32768                 # presupuesto de la fase 1
+
+experimentos:
+  B0:
+    descripcion: Qwen3.5-4B sin ajuste, con la misma entrada y la misma inferencia que E1.
+    entrenamiento: null
+  E1:
+    descripcion: SFT con LoRA sobre todo train (las 10 situaciones).
+    entrenamiento:
+      datos: data/fase4/sft/train.jsonl
+      situaciones_excluidas: []
+  E2:
+    descripcion: Ablación. Como E1, pero sin los casos de información insuficiente o parcial.
+    entrenamiento:
+      datos: data/fase4/sft/train.jsonl
+      situaciones_excluidas: [evidencia_parcial, sin_evidencia]
+      # Mismo número de pasos que E1: E2 recorre sus ejemplos más veces (más épocas).
+      presupuesto: mismos_pasos
+
+entrenamiento:
+  metodo: sft_lora
+  supervision: turnos del asistente (TRL, assistant_only_loss) con la plantilla de entrenamiento qwen3_5_think_training
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    modulos: [q_proj, k_proj, v_proj, o_proj, in_proj_qkv, in_proj_z, out_proj, gate_proj, up_proj, down_proj]
+    alcance: model.language_model                # el encoder de visión y los embeddings quedan congelados
+  longitud_maxima: 24576                         # TRL usa 1024 por defecto; la conversación más larga de train tiene ~23.000
+  truncado: ninguno                              # una conversación que no cabe se descarta, no se corta
+  packing: false
+  batch_por_dispositivo: 1
+  acumulacion_gradiente: 8                       # batch efectivo: 8 conversaciones
+  epocas_E1: 3
+  optimizador: adamw
+  tasa_aprendizaje: 1.0e-4
+  programa: cosine
+  warmup: 0.05
+  weight_decay: 0.0
+  precision: bf16
+  gradient_checkpointing: true
+  semilla: 42
+
+seleccion:
+  conjunto: validation                           # test nunca se usa para elegir
+  checkpoints: final de cada época
+  criterio: >-
+    Mayor corrección y completitud en validation, sin empeorar el respaldo de citas
+    ni la abstención correcta respecto de B0.
+  margenes: pendiente                            # se fijan antes de comparar (docs/fase5.md, sección 6)
+  max_iteraciones: 3                             # configuraciones probadas en validation antes de ir a test
+  test: una sola evaluación, con la configuración elegida, al cierre

@@ -16,6 +16,16 @@
    "sha256": "e2b90777fc999723eec98f6bbd23e8013d4cd2b0957744536134de0567eace29",
    "filas": 78
   },
+  "sft_train": {
+   "ruta": "data/fase4/sft/train.jsonl",
+   "sha256": "b99dc26cb232c29b9ae0689d2d1f581fda45283d8a1f4faf9300c2cf5e610337",
+   "filas": 211
+  },
+  "sft_validation": {
+   "ruta": "data/fase4/sft/validation.jsonl",
+   "sha256": "4f52f055b7bd2f47849a09d2a9527f989dca3fac4a3a5a90ba422a42c2930891",
+   "filas": 97
+  },
   "rejected": {
    "ruta": "data/fase4/rejected.jsonl",
    "sha256": "cccb9c96b75b56f209ad4fd728ef183fc57858a4963b549d619349c8e690b52e",

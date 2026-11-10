@@ -255,3 +255,41 @@ def test_revisar_se_puede_cortar_y_retomar(review_copy, monkeypatch):
     rows = revisar.load_rows(path)
     assert [r["decision"] for r in rows] == ["", "", "aprobar"]
     assert [r["task_id"] for r in revisar.seleccion(rows, None, None, None, False)] == ids[:2]
+
+
+# --- Exportación para TRL (data/fase4/sft) ----------------------------------------
+
+@needs_export
+def test_la_exportacion_sft_tiene_lo_que_lee_trl_y_los_ajustes_de_render():
+    from src.fase4.run import SFT_DIR
+    for n in ("train", "validation"):
+        canon = {r["id"]: r for r in read_jsonl(FASE4 / f"{n}.jsonl")}
+        sft = read_jsonl(SFT_DIR / f"{n}.jsonl")
+        assert [r["id"] for r in sft] == list(canon)
+        for r in sft:
+            assert set(r) == {"id", "situacion", "messages", "tools", "chat_template_kwargs"}
+            assert r["chat_template_kwargs"] == {"enable_thinking": False}
+            assert r["messages"] == tokens.para_qwen(canon[r["id"]]["messages"])
+            args = [c["function"]["arguments"] for m in r["messages"] for c in m.get("tool_calls") or []]
+            assert all(a["version"] is not None for a in args)            # null → "null"
+    assert not (SFT_DIR / "test.jsonl").exists()                         # test no se usa al entrenar
+
+
+@needs_export
+def test_trl_supervisa_la_llamada_y_la_respuesta_y_no_la_pregunta(tok):
+    """La máscara que aplicará TRL (assistant_only_loss) con su plantilla de entrenamiento de Qwen3.5."""
+    pytest.importorskip("trl")
+    from trl.chat_template_utils import get_training_chat_template
+    from src.fase4.run import SFT_DIR
+    template = get_training_chat_template(tok)
+    assert template is not None and "{% generation %}" in template
+    for r in read_jsonl(SFT_DIR / "train.jsonl"):
+        out = tok.apply_chat_template(r["messages"], tools=r["tools"], chat_template=template, tokenize=True,
+                                      return_dict=True, return_assistant_tokens_mask=True, **r["chat_template_kwargs"])
+        sup = tok.decode([i for i, k in zip(out["input_ids"], out["assistant_masks"]) if k])
+        last_user = max(i for i, m in enumerate(r["messages"]) if m["role"] == "user")
+        assert r["messages"][-1]["content"] in sup and sup.rstrip().endswith("<|im_end|>"), r["id"]
+        assert r["messages"][last_user]["content"] not in sup and "<tool_response>" not in sup, r["id"]
+        if any(m.get("tool_calls") for m in r["messages"]):
+            assert "<tool_call>" in sup and "<parameter=version>\nNone" not in sup, r["id"]
+        assert len(out["input_ids"]) <= 24576
